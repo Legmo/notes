@@ -366,6 +366,8 @@
     <summary>История версий ES</summary>
     <ul>
       <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
+      <li>[Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)</li>
+      <li>[Официальная спецификация - архив (en)](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)</li>
     </ul>
     
     <ul>
@@ -383,7 +385,6 @@
       <li>[Официальная спецификация (en)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)</li>
       <li>[Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)</li>
       <li>[Что нового в ES2018 JavaScript](https://webformyself.com/chto-novogo-v-es2018-javascript/)</li>
-      <li>[]()</li>
     </ul>
   </div>
  <details>
@@ -425,8 +426,8 @@
     <summary>ES8 (ECMAScript 2017)</summary>
     <div>
       <ul>
+        <li>[Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/8.0/index.html)</li>      
         <li>[Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)</li>
-        <li>[]()</li>
       </ul>
       <p>Конструкция Async/Await - асинхронные функции, работают на основе promise </p>
       <p>Метод Object.values() - возвращает все значения собственных свойств объекта, исключая любые значения в цепочке прототипов.</p>
@@ -445,8 +446,8 @@
     <summary>ES7 (ECMAScript 2016)</summary>
     <div>
       <ul>
+        <li>[Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/7.0/index.html)</li>     
         <li>[Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)</li>
-        <li>[]()</li>
       </ul>
       <p>Метод Array.prototype.includes() - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве некий элемен</p>
       <p>Инфиксный оператор возведения в степень - **. Заменяет Math.pow().</p>
@@ -461,7 +462,7 @@
     <summary>ES6 (ECMAScript 2015)</summary>
     <div>
       <ul>
-        <li>[]()</li>
+        <li>[Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/6.0/index.html)</li> 
         <li>[learn.js](https://learn.javascript.ru/es-modern)</li>
         <li>[code.mu](http://code.mu/books/javascript/advanced/novovvedeniya-v-es6-dlya-novichkov.html)</li>
       </ul>
@@ -496,10 +497,10 @@
     <summary>Что нового в ES5 (ECMAScript 2009)?</summary>
     <div>
       <ul>
-      <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
+        <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
+        <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
         <li>[ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)</li>
         <li>[Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)</li>
-        <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
       </ul>
       <p>Среди изменений можно отметить:</p>
       <ul>
