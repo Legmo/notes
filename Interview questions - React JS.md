@@ -38,7 +38,8 @@
   * [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
       
   <br></p></details>
-    
+  
+       
   <a name="js_callback"></a>
   <details>
     <summary><b>Callback</b> - сами не вызываем функцию. Отдаём её как аругмент в другую функции, и та вызывает, когда сочтёт нужным.</summary><p>
@@ -90,11 +91,37 @@
       addQuote={store.addQuote.bind(store)} 
     />
   ```
+  
+  Функции call() и apply() - ещё один способ вызова callback-функции. Здесь мы сами устанавливаем контекст, в котором выполняется функция. Это означает, что когда мы используем ключевое слово this внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в call()/apply. (см. ниже)
+  
+  Пример:
+  ```
+  function showFullName() {alert(что-нибудь)}
+  
+  var user = {что-то}
+  
+  function_name.call(user); // вызываем колбек и в качестве контекста this передаём ему user
+  ```
+  
+  
   Ссылки:
   * [habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
   * [hexlet](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
   
   <br></p></details>
+
+
+  <a name="js_cal-aply"></a>
+  <details>
+    <summary><b>"Call" & "apply"</b> - явное указание this (//Todo)</summary><p>
+  
+  Мы сами устанавливаем контекст, в котором выполняется функция. Это означает, что когда мы используем ключевое слово this внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в call()/apply
+    
+  Ссылки:
+  * [learn.javascript.ru](https://learn.javascript.ru/call-apply)
+  
+  <br></p></details>   
+
 
   <a name="js_callback"></a>
   <details>
