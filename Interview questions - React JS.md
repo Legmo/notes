@@ -1,4 +1,4 @@
-# Шпаргалка для интервью React JS frontend #
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.com/libraries/github-markdown-css">
 <style>
@@ -9,9 +9,11 @@
     }
 
 </style>
+
 <article class="markdown-body">
+# Шпаргалка для интервью React JS frontend #
 <details>
-  <summary style="font-size:1.5em; padding-bottom: 15px;"><h4>JS</h4></summary>
+  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary>
   <br />
   <details>
     <summary>Обработчики событий</summary>
