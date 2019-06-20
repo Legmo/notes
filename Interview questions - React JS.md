@@ -560,13 +560,15 @@
 
   <br></p></details>
   
-</p></details>
+<br></p></details>
 
 
 <details>
 
-  <summary><b>JS - приёмы</b></summary>
-
+  <summary><b>JS - приёмы</b></summary><p>
+                                         
+  ---
+             
   <details>
     <summary><b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.</summary>
   </details>
@@ -579,13 +581,15 @@
   
   <br></p></details>
     
-</details>
+<br></p></details>
 
 
 
 <details>
 
-  <summary><b>JS - история версий</b></summary>
+  <summary><b>JS - история версий</b></summary><p>
+                                                                                        
+   ---
   
   <details>
     <summary>История версий ES</summary>
@@ -617,7 +621,8 @@
         <li>ES9 - 2018</li>
       </ul>
     </div>
-  </details>
+
+  <br></p></details>
   
   <details>
     <summary>ES9 (ECMAScript 2018 )</b></summary>
@@ -661,7 +666,8 @@
         <summary>Асинхронная итерация, цикл for-await-of - позволяет создавать циклы, работающие с асинхронным кодом.</summary> 
         <p>Добавляется новый оператор цикла вида <b>for-await-of</b>, который позволяет вызывать асинхронные функции, возвращающие промисы (или обрабатывать массивы, содержащие промисы) в цикле. Самое интересное здесь то, что цикл ждёт разрешения каждого промиса перед переходом к следующему шагу.</p>
     </details>
-  </details>
+
+  <br></p></details>
 
   <details>
     <summary>ES8 (ECMAScript 2017)</summary>
@@ -679,7 +685,8 @@
       <p></p>
       <p></p>
     </div>
-  </details>
+
+  <br></p></details>
   
   <details>
     <summary>ES7 (ECMAScript 2016)</summary>
@@ -693,7 +700,8 @@
       <p></p>
       <p></p>
     </div>
-  </details>
+
+  <br></p></details>
   
   <details>
     <summary>ES6 (ECMAScript 2015)</summary>
@@ -727,7 +735,8 @@
       <p>[Модули](https://learn.javascript.ru/modules) - введён официальный стандрат поддержки модулей в JS</p>
       <p>[Proxy](https://learn.javascript.ru/proxy) - особый объект, перехватывает обращения к другому объекту и, при необходимости, модифицирует их.</p>
     </div>
-  </details>
+    
+  <br></p></details>
   
   <details>
     <summary>ES5 (ECMAScript 2009)</summary><p>
@@ -750,7 +759,8 @@
   </ul>
   
   <br></p></details>
-</details>
+  
+<br></p></details>
   
 
 <details>
