@@ -12,10 +12,12 @@
   <details>
     <summary>Обработчики событий</summary><p>
     
-  * list
-  * with
+  Функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
+  
+  Ссылки:
+  * [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
+  * [Обработка событий](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
       
-  функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
     </p></details>
   
   <details>
