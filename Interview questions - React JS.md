@@ -1,6 +1,6 @@
 # Шпаргалка для интервью React JS frontend #
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="github-markdown.css">
+<link rel="stylesheet" href="https://cdnjs.com/libraries/github-markdown-css">
 <style>
     summary {
         color: red;
