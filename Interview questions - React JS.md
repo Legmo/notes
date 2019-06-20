@@ -2,7 +2,9 @@
   
 <details>
   <summary><b>JS</b></summary><p>
-  <br />
+  
+  ---
+  
   <details>
     <summary>Обработчики событий (events handlers)</summary><p>
     
