@@ -1,5 +1,5 @@
 # Шпаргалка для интервью React JS frontend #
-<style>
+<div><style>
     summary {
         color: red;
         font-size:1.5em; 
@@ -7,9 +7,9 @@
     }
 
 </style>
-
+</div>
 <details>
-  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary>
+  <summary style="font-size:1.5em; padding-bottom: 15px;"><h4>JS</h4></summary>
   <br />
   <details>
     <summary>Обработчики событий</summary>
