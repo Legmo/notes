@@ -1,6 +1,6 @@
 # Шпаргалка для интервью React JS frontend #
 <details>
-  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary>
+  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary><p>
   <br />
   <details>
     <summary>Обработчики событий</summary><p>
@@ -384,7 +384,7 @@ code block
       Язык Dart интересен тем, что он не только транслируется в JavaScript, как и другие языки, но и имеет свою независимую среду выполнения, которая даёт ему ряд возможностей и доступна для встраивания в приложения (вне браузера). Он разрабатывается компанией Google.
 
   </details>
-</details>
+</p></details>
 
 
 <details>
