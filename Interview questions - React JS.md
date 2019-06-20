@@ -1,7 +1,7 @@
 # Шпаргалка для интервью React JS frontend #
 
-## JS ##
 <details>
+  <summary><b>JS</b></summary>
   <details>
     <summary>Обработчики событий</summary>
      <p>функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них</p>
@@ -419,7 +419,7 @@
   </details>
   
   <details>
-    <summary>Что нового в ES9 (ECMAScript 2018 )?</b></summary>
+    <summary>ES9 (ECMAScript 2018 )</b></summary>
     <div>
       <ul>
         <li>[Официальная спецификация (en)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)</li>
@@ -530,7 +530,7 @@
   </details>
   
   <details>
-    <summary>Что нового в ES5 (ECMAScript 2009)?</summary>
+    <summary>ES5 (ECMAScript 2009)</summary>
     <div>
       <ul>
         <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
