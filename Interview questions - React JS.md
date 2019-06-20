@@ -444,7 +444,7 @@
 
   </details>
   
-</p></details>
+<br><br></p></details>
 
 
 <details>
