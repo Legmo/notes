@@ -972,23 +972,24 @@
   </p>
 </details>
 
-## REACT & CSS ##
+
 <details>
+    <summary>REACT & CSS</summary>
 
   <details>
-    <summary>Если нужно добавить свой CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css
+    <summary>Если нужно добавить свой CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css</summary>
   </details>
   
   <details>
-    <summary>CSS лучше писать по BEM-методологии - http://ru.bem.info/methodology
+    <summary>CSS лучше писать по BEM-методологии - http://ru.bem.info/methodology</summary>
   </details>
   
   <details>
-    <summary>Использовать css modules. 
+    <summary>Использовать css modules.</summary> 
   </details>
   
   <details>
-    <summary>Ещё крутая штука - Styled Components. Читать
+    <summary>Ещё крутая штука - Styled Components. Читать</summary>
   </details>
 </details>
   
