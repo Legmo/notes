@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,14 +35,14 @@
         <counts>
           <entry key="htm" value="1531" />
           <entry key="html" value="530" />
-          <entry key="md" value="1427" />
+          <entry key="md" value="1632" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="1427" />
+          <entry key="Markdown" value="1632" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -52,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="370" column="3" lean-forward="true" selection-start-line="370" selection-start-column="3" selection-end-line="370" selection-end-column="3" />
+            <state relative-caret-position="397">
+              <caret line="482" selection-start-line="482" selection-end-line="482" />
             </state>
           </provider>
         </entry>
@@ -141,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561014354431</updated>
       <workItem from="1561014355633" duration="9468000" />
-      <workItem from="1561030798564" duration="4490000" />
+      <workItem from="1561030798564" duration="6094000" />
     </task>
     <task id="LOCAL-00001" summary="React JS - in progress">
       <created>1561025246828</created>
@@ -318,11 +319,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561035260408</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="React JS - in progress">
+      <created>1561035296093</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1561035296093</updated>
+    </task>
+    <task id="LOCAL-00027" summary="React JS - in progress">
+      <created>1561035410835</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1561035410835</updated>
+    </task>
+    <task id="LOCAL-00028" summary="React JS - in progress">
+      <created>1561036826661</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1561036826661</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13958000" />
+    <option name="totallyTimeSpent" value="15562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,8 +402,8 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="370" column="3" lean-forward="true" selection-start-line="370" selection-start-column="3" selection-end-line="370" selection-end-column="3" />
+        <state relative-caret-position="397">
+          <caret line="482" selection-start-line="482" selection-end-line="482" />
         </state>
       </provider>
     </entry>

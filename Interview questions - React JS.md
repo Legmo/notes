@@ -480,8 +480,6 @@
     </div>
   </details>
   
-  
-  <p><b>Что нового в ES7 (ECMAScript 2016)?</b></p>
   <details>
     <summary>ES7 (ECMAScript 2016)</summary>
     <div>
