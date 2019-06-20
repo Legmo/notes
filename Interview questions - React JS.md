@@ -362,12 +362,27 @@
     </div>
   </details>
 
-  <p><b>Версии ES - что нового?</b></p>
-  <p>ES9 (ECMAScript 2018 )</p>
+  <details>
+    <summary>История версий ES</summary>
+    <ul>
+      <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
+    </ul>
+    
+    <ul>
+      <li>ES1 - 1997</li>
+      <li>ES2 - 1998</li>
+      <li>ES3 - 1999</li>
+      <li>ES4 - не выпущена</li>
+      <li>ES5 - 2009</li>
+    </ul>
+  </details>
+  
+  <p><b>Что нового в ES9 (ECMAScript 2018 )?</b></p>
   <div>
     <ul>
       <li>[Официальная спецификация (en)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)</li>
       <li>[Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)</li>
+      <li>[Что нового в ES2018 JavaScript](https://webformyself.com/chto-novogo-v-es2018-javascript/)</li>
       <li>[]()</li>
     </ul>
   </div>
@@ -404,8 +419,8 @@
     <summary>Асинхронная итерация, цикл for-await-of - позволяет создавать циклы, работающие с асинхронным кодом.</summary> 
     <p>Добавляется новый оператор цикла вида <b>for-await-of</b>, который позволяет вызывать асинхронные функции, возвращающие промисы (или обрабатывать массивы, содержащие промисы) в цикле. Самое интересное здесь то, что цикл ждёт разрешения каждого промиса перед переходом к следующему шагу.</p>
 </details>
-                                                                                                                                  
 
+  <p><b>Что нового в ES8 (ECMAScript 2017)?</b></p>
   <details>
     <summary>ES8 (ECMAScript 2017)</summary>
     <div>
@@ -423,6 +438,9 @@
       <p></p>
     </div>
   </details>
+  
+  
+  <p><b>Что нового в ES7 (ECMAScript 2016)?</b></p>
   <details>
     <summary>ES7 (ECMAScript 2016)</summary>
     <div>
@@ -436,6 +454,9 @@
       <p></p>
     </div>
   </details>
+  
+  
+  <p><b>Что нового в ES6 (ECMAScript 2015)?</b></p>
   <details>
     <summary>ES6 (ECMAScript 2015)</summary>
     <div>
@@ -469,13 +490,27 @@
       <p>[Proxy](https://learn.javascript.ru/proxy) - особый объект, перехватывает обращения к другому объекту и, при необходимости, модифицирует их.</p>
     </div>
   </details>
+  
+  //<!-- <p><b>Что нового в ES5 (ECMAScript 2009)?</b></p>-->
   <details>
-    <summary>ES5 (ECMAScript 2014)</summary>
+    <summary>Что нового в ES5 (ECMAScript 2009)?</summary>
     <div>
       <ul>
-        <li>[]()</li>
+      <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
+        <li>[ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)</li>
+        <li>[Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)</li>
+        <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
       </ul>
-      <p></p>
+      <p>Среди изменений можно отметить:</p>
+      <ul>
+        <li>поддержку строгого режима (strict mode);</li>
+        <li>аксессоры getters и setters;</li>
+        <li>возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;</li>
+        <li>многострочные строковые литералы;</li>
+        <li>новую функциональность в стандартной библиотеке;</li>
+        <li>поддержку JSON.</li>
+        <li></li>
+      </ul>
     </div>
   </details>
 </details>
