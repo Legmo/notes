@@ -1,7 +1,6 @@
 # Шпаргалка для интервью React JS frontend #
   <details>
-    <summary><small>nested</small> stuff</summary><p>
-<!-- alternative placement of p shown above -->
+    <summary>Test</summary><p>
 
 * list
 * with
