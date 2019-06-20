@@ -1,10 +1,4 @@
 # Шпаргалка для интервью React JS frontend #
-<details>
-  <summary>Test</summary><p>
-  
-* list
-* with
-</p></details>
   
 <details>
   <summary><b>JS</b></summary><p>
@@ -14,14 +8,16 @@
     
   Блоки кода (обычно функции), которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
   
+  
   Когда такой блок кода определен для запуска в ответ на срабатывание события, мы говорим, что мы регистрируем обработчик событий. 
   Обработчики событий иногда называют прослушивателями событий (event listeners). Они в значительной степени взаимозаменяемы для наших целей, хотя, строго говоря, они работают вместе. Прослушиватель слушает событие, а обработчик — это код, который запускается в ответ на событие.
   
   Ссылки:
   * [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
   * [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
-  * [Обработка событий](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
+  * [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
       
+    <br>
     </p></details>
   
   <details>
