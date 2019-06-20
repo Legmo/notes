@@ -1,6 +1,7 @@
 # Шпаргалка для интервью React JS frontend #
 <details>
   <summary>Test</summary><p>
+  
 * list
 * with
   </p></details>
