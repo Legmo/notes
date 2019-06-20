@@ -3,10 +3,10 @@
 <details>
   <summary><b>JS</b></summary><p>
   
-  ---
+  --
   
   <details>
-    <summary><b>Обработчики событий (events handlers)</b></summary><p>
+    <summary><b>Обработчики событий</b> (events handlers)</summary><p>
     
   Блоки кода (обычно функции), которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
   
