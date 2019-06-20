@@ -1,7 +1,7 @@
 # Шпаргалка для интервью React JS frontend #
 
 <details>
-  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary>
+  <summary style="font-size:1.5em; padding-bottom: 15px;"><b style="font-size:1.5em; padding-bottom: 15px;">JS</b></summary>
   <details>
     <summary>Обработчики событий</summary>
      <p>функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них</p>
