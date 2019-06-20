@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="29" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,14 +39,14 @@
         <counts>
           <entry key="htm" value="1531" />
           <entry key="html" value="530" />
-          <entry key="md" value="2163" />
+          <entry key="md" value="2374" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="2163" />
+          <entry key="Markdown" value="2374" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -53,9 +57,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
+            <state split_layout="SPLIT">
               <first_editor relative-caret-position="450">
-                <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+                <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
               </first_editor>
               <second_editor />
             </state>
@@ -152,42 +156,7 @@
       <updated>1561014354431</updated>
       <workItem from="1561014355633" duration="9468000" />
       <workItem from="1561030798564" duration="6317000" />
-      <workItem from="1561037142418" duration="6462000" />
-    </task>
-    <task id="LOCAL-00014" summary="React JS - in progress">
-      <created>1561028924648</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1561028924648</updated>
-    </task>
-    <task id="LOCAL-00015" summary="React JS - in progress">
-      <created>1561029016239</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1561029016239</updated>
-    </task>
-    <task id="LOCAL-00016" summary="React JS - in progress">
-      <created>1561029079306</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1561029079306</updated>
-    </task>
-    <task id="LOCAL-00017" summary="React JS - in progress">
-      <created>1561029131411</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1561029131411</updated>
-    </task>
-    <task id="LOCAL-00018" summary="React JS - in progress">
-      <created>1561029181118</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1561029181118</updated>
+      <workItem from="1561037142418" duration="7356000" />
     </task>
     <task id="LOCAL-00019" summary="React JS - in progress">
       <created>1561029214703</created>
@@ -497,11 +466,46 @@
       <option name="project" value="LOCAL" />
       <updated>1561045883503</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="React JS - in progress">
+      <created>1561045956817</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1561045956817</updated>
+    </task>
+    <task id="LOCAL-00064" summary="React JS - in progress">
+      <created>1561046026329</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1561046026329</updated>
+    </task>
+    <task id="LOCAL-00065" summary="React JS - in progress">
+      <created>1561046066675</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1561046066675</updated>
+    </task>
+    <task id="LOCAL-00066" summary="React JS - in progress">
+      <created>1561046115800</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1561046115800</updated>
+    </task>
+    <task id="LOCAL-00067" summary="React JS - in progress">
+      <created>1561046566473</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1561046566473</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22247000" />
+    <option name="totallyTimeSpent" value="23141000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -523,7 +527,7 @@
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32970026" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32833788" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="bottom" id="Run" order="7" />
@@ -551,9 +555,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
+        <state split_layout="SPLIT">
           <first_editor relative-caret-position="450">
-            <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+            <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
           </first_editor>
           <second_editor />
         </state>
