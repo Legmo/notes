@@ -262,7 +262,7 @@
   <br><p></details>
 
   <details>
-    <summary><b>_переменная</b> - если название переменной начинается с _, её не надо менять или читать снаружи объекта.</summary><p> 
+    <summary><b>_переменная</b> - если название переменной начинается с _ , её не надо менять или читать снаружи объекта.</summary><p> 
       
   Чтоб делать это - используй специальные методы: 
   * сеттеры (set... - присвоить) 
@@ -270,7 +270,9 @@
 
   <br><p></details>
 
-  * <b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.
+  <details>
+    <summary><b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.</summary>
+  </details>
   
   <details>
     <summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
