@@ -39,14 +39,14 @@
         <counts>
           <entry key="htm" value="1531" />
           <entry key="html" value="530" />
-          <entry key="md" value="3007" />
+          <entry key="md" value="3456" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="3007" />
+          <entry key="Markdown" value="3456" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -58,8 +58,8 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="645">
-                <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+              <first_editor relative-caret-position="177">
+                <caret line="2283" column="2" selection-start-line="2283" selection-start-column="2" selection-end-line="2283" selection-end-column="2" />
               </first_editor>
               <second_editor />
             </state>
@@ -145,21 +145,7 @@
       <workItem from="1561014355633" duration="9468000" />
       <workItem from="1561030798564" duration="6317000" />
       <workItem from="1561037142418" duration="7892000" />
-      <workItem from="1561047926169" duration="1395000" />
-    </task>
-    <task id="LOCAL-00025" summary="React JS - in progress">
-      <created>1561035260408</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1561035260408</updated>
-    </task>
-    <task id="LOCAL-00026" summary="React JS - in progress">
-      <created>1561035296093</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1561035296093</updated>
+      <workItem from="1561047926169" duration="3543000" />
     </task>
     <task id="LOCAL-00027" summary="React JS - in progress">
       <created>1561035410835</created>
@@ -490,11 +476,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561048749283</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="React JS - in progress">
+      <created>1561049516773</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1561049516773</updated>
+    </task>
+    <task id="LOCAL-00075" summary="React JS - in progress">
+      <created>1561051126001</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1561051126001</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25072000" />
+    <option name="totallyTimeSpent" value="27220000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,8 +550,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="645">
-            <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <first_editor relative-caret-position="177">
+            <caret line="2283" column="2" selection-start-line="2283" selection-start-column="2" selection-end-line="2283" selection-end-column="2" />
           </first_editor>
           <second_editor />
         </state>
