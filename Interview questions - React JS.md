@@ -299,7 +299,7 @@
 </details>
 
 <br />
-<br />
+
 ## REACT - базовые понятия ##
 
 <details>
