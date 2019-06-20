@@ -63,7 +63,7 @@
   Появились в ES6
     
   Ссылки:
-    * [learn.javascript.ru](https://learn.javascript.ru/es-function)
+  * [learn.javascript.ru](https://learn.javascript.ru/es-function)
         
   <br></p></details>
          
