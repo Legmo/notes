@@ -32,13 +32,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="142" />
-          <entry key="md" value="386" />
+          <entry key="md" value="745" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="142" />
-          <entry key="Markdown" value="386" />
+          <entry key="Markdown" value="745" />
         </counts>
       </usages-collector>
     </session>
@@ -48,14 +48,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="683" column="17" lean-forward="true" selection-start-line="683" selection-start-column="17" selection-end-line="683" selection-end-column="17" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="250">
+                <caret line="396" column="146" selection-start-line="396" selection-start-column="146" selection-end-line="396" selection-end-column="146" />
                 <folding>
                   <element signature="e#45#53#0" />
-                  <element signature="e#16162#16181#0" />
                   <element signature="e#21216#21227#0" />
                   <element signature="e#29905#29923#0" />
+                  <element signature="e#38708#38725#0" />
                   <element signature="e#40426#40435#0" />
                   <element signature="e#40876#40885#0" />
                   <element signature="e#61958#61989#0" />
@@ -67,7 +67,7 @@
                   <element signature="e#109340#109349#0" />
                   <element signature="e#111161#111172#0" />
                   <element signature="e#113646#113657#0" />
-                  <marker date="1561025205623" expanded="false" signature="62292:62543" ph="..." />
+                  <marker date="1561025745143" expanded="false" signature="62888:63139" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -156,12 +156,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561014354431</updated>
-      <workItem from="1561014355633" duration="3915000" />
+      <workItem from="1561014355633" duration="4454000" />
     </task>
+    <task id="LOCAL-00001" summary="React JS - in progress">
+      <created>1561025246828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561025246828</updated>
+    </task>
+    <task id="LOCAL-00002" summary="React JS - in progress">
+      <created>1561025388637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561025388637</updated>
+    </task>
+    <task id="LOCAL-00003" summary="React JS - in progress">
+      <created>1561025488155</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561025488155</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3915000" />
+    <option name="totallyTimeSpent" value="4454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -177,7 +199,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17516778" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17516778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -204,17 +226,21 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="React JS - in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="React JS - in progress" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="683" column="17" lean-forward="true" selection-start-line="683" selection-start-column="17" selection-end-line="683" selection-end-column="17" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="250">
+            <caret line="396" column="146" selection-start-line="396" selection-start-column="146" selection-end-line="396" selection-end-column="146" />
             <folding>
               <element signature="e#45#53#0" />
-              <element signature="e#16162#16181#0" />
               <element signature="e#21216#21227#0" />
               <element signature="e#29905#29923#0" />
+              <element signature="e#38708#38725#0" />
               <element signature="e#40426#40435#0" />
               <element signature="e#40876#40885#0" />
               <element signature="e#61958#61989#0" />
@@ -226,7 +252,7 @@
               <element signature="e#109340#109349#0" />
               <element signature="e#111161#111172#0" />
               <element signature="e#113646#113657#0" />
-              <marker date="1561025205623" expanded="false" signature="62292:62543" ph="..." />
+              <marker date="1561025745143" expanded="false" signature="62888:63139" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
