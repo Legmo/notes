@@ -32,14 +32,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="530" />
-          <entry key="md" value="986" />
+          <entry key="md" value="1008" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="530" />
-          <entry key="Markdown" value="986" />
+          <entry key="Markdown" value="1008" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -51,10 +51,9 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="523">
-                <caret line="2077" lean-forward="true" selection-start-line="2077" selection-end-line="2077" />
+              <first_editor relative-caret-position="18">
+                <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
                 <folding>
-                  <element signature="e#46#54#0" />
                   <element signature="e#17330#17359#0" />
                   <element signature="e#23129#23140#0" />
                   <element signature="e#32468#32486#0" />
@@ -70,7 +69,8 @@
                   <element signature="e#116064#116076#0" />
                   <element signature="e#119246#119255#0" />
                   <element signature="e#121383#121394#0" />
-                  <marker date="1561028908106" expanded="true" signature="67232:67696" ph="..." />
+                  <element signature="e#124370#124381#0" />
+                  <marker date="1561029125137" expanded="true" signature="67233:67697" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -159,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561014354431</updated>
-      <workItem from="1561014355633" duration="7613000" />
+      <workItem from="1561014355633" duration="7830000" />
     </task>
     <task id="LOCAL-00001" summary="React JS - in progress">
       <created>1561025246828</created>
@@ -252,11 +252,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561028525731</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="React JS - in progress">
+      <created>1561028924648</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028924648</updated>
+    </task>
+    <task id="LOCAL-00015" summary="React JS - in progress">
+      <created>1561029016239</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1561029016239</updated>
+    </task>
+    <task id="LOCAL-00016" summary="React JS - in progress">
+      <created>1561029079306</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1561029079306</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7613000" />
+    <option name="totallyTimeSpent" value="7830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,10 +328,9 @@
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="523">
-            <caret line="2077" lean-forward="true" selection-start-line="2077" selection-end-line="2077" />
+          <first_editor relative-caret-position="18">
+            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             <folding>
-              <element signature="e#46#54#0" />
               <element signature="e#17330#17359#0" />
               <element signature="e#23129#23140#0" />
               <element signature="e#32468#32486#0" />
@@ -326,7 +346,8 @@
               <element signature="e#116064#116076#0" />
               <element signature="e#119246#119255#0" />
               <element signature="e#121383#121394#0" />
-              <marker date="1561028908106" expanded="true" signature="67232:67696" ph="..." />
+              <element signature="e#124370#124381#0" />
+              <marker date="1561029125137" expanded="true" signature="67233:67697" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
