@@ -3,19 +3,15 @@
   <summary>Test</summary><p>
 * list
 * with
-</p></details>
+  </p></details>
   
 <details>
-  <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary><p>
+  <summary><b>JS</b></summary><p>
   <br />
   <details>
     <summary>Обработчики событий</summary><p>
       функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
 функции, которые позволяют обрабатывать события (например щелчок мыши) и реагировать на них.
-##*formatted* **heading** with [a](link)
-```java
-code block
-```
   </p></details>
   
   <details>
