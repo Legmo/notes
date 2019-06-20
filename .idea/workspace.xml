@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,14 +39,14 @@
         <counts>
           <entry key="htm" value="1531" />
           <entry key="html" value="530" />
-          <entry key="md" value="6017" />
+          <entry key="md" value="6302" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="6017" />
+          <entry key="Markdown" value="6302" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -57,8 +58,8 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="357">
-                <caret line="349" column="48" selection-start-line="349" selection-start-column="48" selection-end-line="349" selection-end-column="48" />
+              <first_editor relative-caret-position="375">
+                <caret line="356" column="73" selection-start-line="356" selection-start-column="73" selection-end-line="356" selection-end-column="73" />
               </first_editor>
               <second_editor />
             </state>
@@ -153,28 +154,7 @@
       <workItem from="1561014355633" duration="9468000" />
       <workItem from="1561030798564" duration="6317000" />
       <workItem from="1561037142418" duration="7892000" />
-      <workItem from="1561047926169" duration="13643000" />
-    </task>
-    <task id="LOCAL-00064" summary="React JS - in progress">
-      <created>1561046026329</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1561046026329</updated>
-    </task>
-    <task id="LOCAL-00065" summary="React JS - in progress">
-      <created>1561046066675</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1561046066675</updated>
-    </task>
-    <task id="LOCAL-00066" summary="React JS - in progress">
-      <created>1561046115800</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1561046115800</updated>
+      <workItem from="1561047926169" duration="14256000" />
     </task>
     <task id="LOCAL-00067" summary="React JS - in progress">
       <created>1561046566473</created>
@@ -498,11 +478,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561060497202</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="React JS - in progress">
+      <created>1561061811248</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1561061811248</updated>
+    </task>
+    <task id="LOCAL-00114" summary="React JS - in progress">
+      <created>1561061883285</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1561061883285</updated>
+    </task>
+    <task id="LOCAL-00115" summary="React JS - in progress">
+      <created>1561062110329</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1561062110329</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37320000" />
+    <option name="totallyTimeSpent" value="37933000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -558,8 +559,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="357">
-            <caret line="349" column="48" selection-start-line="349" selection-start-column="48" selection-end-line="349" selection-end-column="48" />
+          <first_editor relative-caret-position="375">
+            <caret line="356" column="73" selection-start-line="356" selection-start-column="73" selection-end-line="356" selection-end-column="73" />
           </first_editor>
           <second_editor />
         </state>
