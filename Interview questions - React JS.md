@@ -344,12 +344,7 @@
   Ссылки:
   * [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
   * [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-  * [habr - Знай свой инструмент: Event Loop в libuv](https://habr.com/ru/post/336498/)
   * [learn.javascript.ru (en)](https://javascript.info/async-await)
-  * [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
-  * [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
-  * [Как управлять event loop в JavaScript. Часть 1](https://skillbox.ru/media/code/event_loop_chast_1/)
-  * [Как управлять event loop в JavaScript. Часть 2](https://skillbox.ru/media/code/event_loop_chast_2/)
   * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
   * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
   
@@ -358,9 +353,21 @@
   
   <details>
     <summary><b>Асинхронность в JS. Event loop</b></summary><p>
+   Ну, это про то как устроена работа с асинхронными событиями в JS и браузере. И как они взаимодействуют.<br>
+   Стэк вызова, очередь, event loop, web-socket... вот это вод всё...
    
+   Почему promise отработают раньше timeout и т.д.
      
   Ссылки:
+  * [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+  * [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+  * [habr - Знай свой инструмент: Event Loop в libuv](https://habr.com/ru/post/336498/)
+  * [learn.javascript.ru (en)](https://javascript.info/async-await)
+  * [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
+  * [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
+  * [Как управлять event loop в JavaScript. Часть 1](https://skillbox.ru/media/code/event_loop_chast_1/)
+  * [Как управлять event loop в JavaScript. Часть 2](https://skillbox.ru/media/code/event_loop_chast_2/)
+  * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
   * [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
   * [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
   * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
