@@ -5,6 +5,7 @@
   
   ---
   
+  <a name="js_events-handlers"></a>
   <details>
     <summary><b>Обработчики событий</b> (events handlers)</summary><p>
     
@@ -21,8 +22,9 @@
       
   <br></p></details>
   
+  <a name="js_objects-arrays"></a>
   <details>
-    <summary>Объекты {} и массивы []</summary><p>
+    <summary><b>Объекты {} и массивы []<b></summary><p>
                                                   
   - ``{ width: 300,  height: 200, }`` - объект. Структура для хранения данных в формате ключ-значение.
   - ``[ 300, 200, ]``                 - массив. Для хранения пронумерованных значений. Особый тип объектов. 
@@ -37,35 +39,47 @@
       
   <br></p></details>
     
+  <a name="js_callback"></a>
   <details>
-    <summary>Callback - сами не вызываем функцию. Отдаём её кому-то, и он вызывает, когда сочтёт нужным. В одну функцию передаём другую</summary>
-      Например: 
-        <button onClik={function}>txt</button> 
-        когда произойдёт событие onClick, кнопка вызовет эту функцию
+    <summary><b>Callback</b> - сами не вызываем функцию. Отдаём её кому-то, и он вызывает, когда сочтёт нужным. В одну функцию передаём другую</summary><p>
+    
+  Например: 
+    ``<button onClik={function}>txt</button>`` 
+  Когда произойдёт событие onClick, кнопка вызовет эту функцию
+  
+  Неправильно: 
+    ``<button onClik={function()}>txt</button>`` 
+  Здесь функция не передаётся, а сразу вызывается.
       
-      Неправильно: 
-        <button onClik={function()}>txt</button> 
-        функция вызывается.
+  При вызове callback может нарушиться контекст вызова this. Т.е. отвалиться привязка this к родительскому объекту.
+  ```js
+  <App
+      addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
+    />
+  ````
+  В таком случае, при создании callback надо сделать привязку контекста - bind
+  ```js
+    <App
+      addQuote={store.addQuote.bind(store)} 
+    />
+  ```
+  Ссылки:
+  * [habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
+  * [hexlet](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
   
-      При вызове callback может нарушиться контекст вызова this. 
-      Т.е. отвалиться привязка this к родительскому объекту.
-        <App
-          addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
-        />
-      В таком случае, при создании callback надо сделать привязку контекста - bind
-        <App
-          addQuote={store.addQuote.bind(store)} 
-        />
-  
-    - bind - позволяет привязать контекст к функции. Важно при callback. 
-      При вызове callback может нарушиться контекст вызова this. Т.е. отвалиться привязка this  к родительскому объекту.
-        <App
-          addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
-        />
-      В таком случае, при создании callback надо сделать привязку контекста - bind
-        <App
-          addQuote={store.addQuote.bind(store)} 
-        />
+  <br></p></details>
+
+  <a name="js_callback"></a>
+  <details>
+    <summary><b>Bind - позволяет привязать контекст к функции. Важно при callback.</summary><p> 
+    При вызове callback может нарушиться контекст вызова this. Т.е. отвалиться привязка this  к родительскому объекту.
+      <App
+        addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
+      />
+    В таком случае, при создании callback надо сделать привязку контекста - bind
+      <App
+        addQuote={store.addQuote.bind(store)} 
+      />
   </details>
   
   <details>
