@@ -36,14 +36,14 @@
         <counts>
           <entry key="htm" value="1531" />
           <entry key="html" value="530" />
-          <entry key="md" value="1642" />
+          <entry key="md" value="1716" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="1642" />
+          <entry key="Markdown" value="1716" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -55,8 +55,8 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="36">
-                <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <first_editor relative-caret-position="425">
+                <caret line="383" lean-forward="true" selection-start-line="383" selection-end-line="383" />
               </first_editor>
               <second_editor />
             </state>
@@ -147,7 +147,7 @@
       <updated>1561014354431</updated>
       <workItem from="1561014355633" duration="9468000" />
       <workItem from="1561030798564" duration="6317000" />
-      <workItem from="1561037142418" duration="1781000" />
+      <workItem from="1561037142418" duration="2059000" />
     </task>
     <task id="LOCAL-00001" summary="React JS - in progress">
       <created>1561025246828</created>
@@ -352,11 +352,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561036901997</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="React JS - in progress">
+      <created>1561039039378</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1561039039378</updated>
+    </task>
+    <task id="LOCAL-00031" summary="React JS - in progress">
+      <created>1561039225816</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1561039225816</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17566000" />
+    <option name="totallyTimeSpent" value="17844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,8 +421,8 @@
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="36">
-            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <first_editor relative-caret-position="425">
+            <caret line="383" lean-forward="true" selection-start-line="383" selection-end-line="383" />
           </first_editor>
           <second_editor />
         </state>

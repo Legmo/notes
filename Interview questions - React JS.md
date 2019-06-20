@@ -381,6 +381,7 @@
   </details>
 </details>
 
+
 <details>
   <summary><b>JS - история версий</b></summary>
   <details>
@@ -549,8 +550,6 @@
   </details>
 </details>
   
-<br />
-
 
 <details>
     <summary><b>REACT - базовые понятия </b></summary> 
@@ -655,7 +654,6 @@
   </details>
 </details>
 
-<br />
 
 <details>
   <summary><b>REDUX</b></summary>
@@ -820,7 +818,6 @@
   </details>
 </details>
 
-<br />
 
 <details>
   <summary><b>REDUX & AJAX</b></summary>  
@@ -946,8 +943,6 @@
   </details>
 </details>
 
-<br />
-
 <details>
   <summary><b>REACT CONTEXT API</b></summary>
   [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
@@ -976,8 +971,6 @@
   <p>Обычно контекст используется, если необходимо обеспечить доступ данных во многих компонентах на разных уровнях вложенности. По возможности не используйте его, так как это усложняет переиспользование компонентов.
   </p>
 </details>
-
-<br />
 
 ## REACT & CSS ##
 <details>
