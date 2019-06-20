@@ -699,22 +699,19 @@
   <details>
     <summary>ES5 (ECMAScript 2009)</summary><p>
     
-  
-    [Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)
-    [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
-    [ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)
-    [Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)
-  
-  Среди изменений можно отметить:
-  
-    поддержку строгого режима (strict mode);
-    аксессоры getters и setters;
-    возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;
-    многострочные строковые литералы;
-    новую функциональность в стандартной библиотеке;
-    поддержку JSON.
+  Среди изменений:
+  * поддержку строгого режима (strict mode);
+  * аксессоры getters и setters;
+  * возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;
+  * многострочные строковые литералы;
+  * новую функциональность в стандартной библиотеке;
+  * поддержку JSON.
     
-  
+  Ссылки:
+  * [Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)
+  * [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
+  * [ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)
+  * [Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)
   
   <br></p></details>
   
