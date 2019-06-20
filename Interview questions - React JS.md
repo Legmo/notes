@@ -10,7 +10,7 @@
 ```java
 code block
 ```
-  </details>
+  </p></details>
   
   <details>
     <summary>Объекты {} и массивы []</summary>
