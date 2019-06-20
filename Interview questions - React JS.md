@@ -405,6 +405,8 @@
   </details>
 </details>
 
+<br />
+
 ## REDUX ##
 <details>
   <details>
@@ -568,6 +570,8 @@
   </details>
 </details>
 
+<br />
+
 ## REDUX & AJAX ##
 <details>
   <details>
@@ -692,6 +696,8 @@
   </details>
 </details>
 
+<br />
+
 ## REACT CONTEXT API ##
 <details>
   [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
@@ -721,6 +727,8 @@
   </p>
 </details>
 
+<br />
+
 ## REACT & CSS ##
 <details>
 
@@ -741,6 +749,8 @@
   </details>
 </details>
   
+
+<br />
 
 ## JSX ##
 <details>
@@ -861,6 +871,8 @@
       но можно заменить ее тернарным оператором.
   </details>
 </details>
+
+<br />
 
 ## КОМПОНЕНТЫ ##
 <details>
@@ -1136,6 +1148,8 @@
   </details>
 </details>
 
+<br />
+
 ## ЖИЗНЕННЫЙ ЦИКЛ КОМПОНЕНТА ##
 <details>
   <details>
@@ -1282,6 +1296,8 @@
   </div>
 </details>
 
+<br />
+
 ## ХУКИ REACT ##
 <details>
   - https://ru.reactjs.org/docs/hooks-intro.html
@@ -1407,6 +1423,8 @@
   </details>
 </details>
 
+<br />
+
 ## REACT РОУТИНГ ##
 <details>
   http://bogdanov-blog.ru/react-router-v4-notes/
@@ -1445,6 +1463,8 @@
         NavLink - при клике меняет адрес в адресной строке
   </details>
 </details>
+
+<br />
 
 ## СТРОГАЯ ТИПЗАЦИЯ ##
 <details>
@@ -1549,6 +1569,8 @@
       - PropTypes - инструмент проверки во время запуска. Теоретически может отловить ошибки, которые могут быть пропущены Flow
   </details>
 </details>
+
+<br />
 
 ## AJAX, JSON, CORS и т.д. ##
 <details>
@@ -1898,6 +1920,8 @@
   </details>
 </details>
 
+<br />
+
 ## РАЗНОЕ ##
 <details>
   <details>
@@ -1957,6 +1981,8 @@
   </details>
 </details>
 
+<br />
+
 ## ООП ##
 <details>
 	http://code.mu/books/javascript/oop/
@@ -1998,6 +2024,8 @@
         Абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций.
   </details>
 </details>
+
+<br />
 
 ## ОБЩЕЕ ##
 <details>
@@ -2059,6 +2087,8 @@
         -  можно отметить нужную строчку кода, как точку останова, затем перегрузить страницу браузера по [F5], и получить желаемое — инструмент отладки внутри WebStorm.
   </details>
 </details>
+
+<br />
 
 ## UX/UI ##
 <details>
