@@ -361,8 +361,14 @@
         <p>В следующем примере функция getAmount() вызывает две асинхронные функции — getUser() и getBankBalance(). Сделать это можно и в промисе, но использование конструкции async/await позволяет решить эту задачу проще и элегантнее.</p>
     </div>
   </details>
+</details>
 
-  <details>
+<br />
+
+## JS - история версий ##
+
+<details>
+  </details>
     <summary>История версий ES</summary>
     <ul>
       <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
@@ -515,7 +521,7 @@
     </div>
   </details>
 </details>
-
+  
 <br />
 
 ## REACT - базовые понятия ##
