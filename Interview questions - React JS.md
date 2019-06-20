@@ -1,19 +1,9 @@
 # Шпаргалка для интервью React JS frontend #
-  <details>
-    <summary>Test</summary><p>
-
+<details>
+  <summary>Test</summary><p>
 * list
 * with
-
- 1. nested
- 1. items
-
-    ```java
-    // including code
-    ```
- 1. blocks
-
-  </p></details>
+</p></details>
   
 <details>
   <summary style="font-size:1.5em; padding-bottom: 15px;"><b>JS</b></summary><p>
