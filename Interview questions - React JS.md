@@ -1,5 +1,7 @@
 # Шпаргалка для интервью React JS frontend #
-<div><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="github-markdown.css">
+<style>
     summary {
         color: red;
         font-size:1.5em; 
@@ -7,7 +9,7 @@
     }
 
 </style>
-</div>
+<article class="markdown-body">
 <details>
   <summary style="font-size:1.5em; padding-bottom: 15px;"><h4>JS</h4></summary>
   <br />
@@ -2350,3 +2352,4 @@
 
 </details>
 
+</article>
