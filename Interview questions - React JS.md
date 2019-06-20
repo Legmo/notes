@@ -381,11 +381,8 @@
   </details>
 </details>
 
-<br />
-
-## JS - история версий ##
-
 <details>
+  <summary><b>JS - история версий</b></summary>
   <details>
     <summary>История версий ES</summary>
     <ul>
@@ -554,10 +551,9 @@
   
 <br />
 
-## REACT - базовые понятия ##
 
 <details>
-
+    <summary><b>REACT - базовые понятия </b></summary> 
   <details>
     <summary>React — это библиотека для создания пользовательских интерфейсов. Facebook</summary> 
       Библиотека, которая умеет эффективно отрисовывать HTML - реагировать на кнопки и т.д. Эффективно рисует UI
@@ -661,8 +657,8 @@
 
 <br />
 
-## REDUX ##
 <details>
+  <summary><b>REDUX</b></summary>
   <details>
     <summary>Redux = библиотека для управления state, которая реализует Flux-архитектуру</summary>
       Её надо инсталлировать отдельно
@@ -826,8 +822,8 @@
 
 <br />
 
-## REDUX & AJAX ##
 <details>
+  <summary><b>REDUX & AJAX</b></summary>  
   <details>
     <summary>самый простой вариант - делаем запрос внутри actionCreator.</summary>  
       Например, при помощи fetch:
@@ -952,8 +948,8 @@
 
 <br />
 
-## REACT CONTEXT API ##
 <details>
+  <summary><b>REACT CONTEXT API</b></summary>
   [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
   
   <details>
