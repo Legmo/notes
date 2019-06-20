@@ -104,7 +104,6 @@
 
   ```
   
-  
   Ссылки:
   * [habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
   * [hexlet](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
@@ -126,7 +125,7 @@
 
   <a name="js_callback"></a>
   <details>
-    <summary><b>Bind - позволяет привязать контекст к функции. Важно при callback.</summary><p> 
+    <summary><b>Bind</b> - позволяет привязать контекст к функции. Важно при callback.</summary><p> 
     При вызове callback может нарушиться контекст вызова this. Т.е. отвалиться привязка this  к родительскому объекту.
       <App
         addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
