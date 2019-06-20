@@ -269,18 +269,6 @@
   * геттеры (get... - получить)
 
   <br><p></details>
-
-  <details>
-    <summary><b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.</summary>
-  </details>
-  
-  <details>
-    <summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
-    
-  Ссылки:
-  *[MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
-  
-  <br></p></details>
   
   <details>
     <summary><b>Promises</b> - способ организации асинхронного кода. Объект, который содержит своё состояние</summary><p>
@@ -363,22 +351,22 @@
   **Использование прокси для объекта**<br>
   Используем обработчик с перехватчиком get. Обработчик передаст целевой объект и запрошенный ключ перехватчику.
   ```
-        let handler = {
-            get: function(target, name) {
-            return name in target ? target[name] : "Key does not exist";
-          }
-        }
-  
-        let obj = {
-          c: "car",
-          b: "bike"
-        };
-  
-        let proxyObj = new Proxy(obj, handler);
-  
-        document.write(proxyObj.b, ""); //Результат -> "bike"
-        document.write(proxyObj.c, ""); //Результат -> "car"
-        document.write(proxyObj.l);     //Результат -> "Key does not exist"
+    let handler = {
+        get: function(target, name) {
+        return name in target ? target[name] : "Key does not exist";
+      }
+    }
+
+    let obj = {
+      c: "car",
+      b: "bike"
+    };
+
+    let proxyObj = new Proxy(obj, handler);
+
+    document.write(proxyObj.b, ""); //Результат -> "bike"
+    document.write(proxyObj.c, ""); //Результат -> "car"
+    document.write(proxyObj.l);     //Результат -> "Key does not exist"
   ```
   
   Ссылки:
@@ -387,22 +375,31 @@
   <br></p></details>
   
   <details>
-    <summary><b>Функции-генераторы</b> - function*</summary>
-      https://learn.javascript.ru/generator
-      Могут приостанавливать своё выполнение, возвращать промежуточный результат и возобновляться позже.
-      Код такой функции не выполняется. Вместо этого она возвращает специальный объект, который как раз и называют «генератором»
-  </details>
+    <summary><b>Функции-генераторы</b> - function*</summary><p>
+    
+  Могут приостанавливать своё выполнение, возвращать промежуточный результат и возобновляться позже.<br>
+  Код такой функции не выполняется. Вместо этого она возвращает специальный объект, который как раз и называют «генератором»
+      
+  Ссылки:
+  * [learn.javascript.ru](https://learn.javascript.ru/generator)
+  
+  <br></p></details>
   
   <details>
-    <summary><b>Итераторы</b> - тип объектов, содержимое которых можно перебрать в цикле. Например массив, функция-генератор, список DOM-узлов, строка...</summary>
-      https://learn.javascript.ru/iterator
-      По сути - объект, предназначенный для перебора другого объекта.
-      - Для перебора таких объектов добавлен новый синтаксис цикла: for..of.
-      - итераторы дают возможность сделать «перебираемыми» любые объекты.
-  </details>
+    <summary><b>Итераторы</b> - тип объектов, содержимое которых можно перебрать в цикле. Например массив, функция-генератор, список DOM-узлов, строка...</summary><p>
+    
+  По сути - объект, предназначенный для перебора другого объекта.
+  
+  Для перебора таких объектов добавлен новый синтаксис цикла: for..of.
+  Итераторы дают возможность сделать «перебираемыми» любые объекты.
+  
+  Ссылки:
+  * [learn.javascript.ru](https://learn.javascript.ru/iterator)
+    
+  <br></p></details>
   
   <details>
-    <summary>debounce - возвращает обертку, которая откладывает вызов исходной функции на определенное время.</summary>
+    <summary><b>Bebounce</b> - возвращает обертку, которая откладывает вызов исходной функции на определенное время.</summary>
         Превращает несколько вызовов функции в течение определенного времени в один вызов. 
         Причем задержка начинает заново отсчитываться с каждой новой попыткой вызова. 
         Возможны два варианта:
@@ -519,6 +516,26 @@
   </details>
   
 <br></p></details>
+
+
+<details>
+
+  <summary><b>JS - приёмы</b></summary>
+
+  <details>
+    <summary><b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.</summary>
+  </details>
+  
+  <details>
+    <summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
+    
+  Ссылки:
+  *[MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
+  
+  <br></p></details>
+    
+</details>
+
 
 
 <details>
