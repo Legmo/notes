@@ -4,7 +4,7 @@
   
 * list
 * with
-  </p></details>
+</p></details>
   
 <details>
   <summary><b>JS</b></summary><p>
