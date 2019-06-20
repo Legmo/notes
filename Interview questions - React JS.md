@@ -425,6 +425,7 @@
         <p>В следующем примере функция getAmount() вызывает две асинхронные функции — getUser() и getBankBalance(). Сделать это можно и в промисе, но использование конструкции async/await позволяет решить эту задачу проще и элегантнее.</p>
     </div>
   </details>
+  
   <details>
   <summary>Языки поверх JavaScript</summary>
   https://learn.javascript.ru/intro
@@ -443,11 +444,14 @@
       Язык Dart интересен тем, что он не только транслируется в JavaScript, как и другие языки, но и имеет свою независимую среду выполнения, которая даёт ему ряд возможностей и доступна для встраивания в приложения (вне браузера). Он разрабатывается компанией Google.
 
   </details>
+  
 </p></details>
 
 
 <details>
+
   <summary><b>JS - история версий</b></summary>
+  
   <details>
     <summary>История версий ES</summary>
     <ul>
@@ -556,7 +560,6 @@
     </div>
   </details>
   
-  
   <details>
     <summary>ES6 (ECMAScript 2015)</summary>
     <div>
@@ -592,26 +595,26 @@
   </details>
   
   <details>
-    <summary>ES5 (ECMAScript 2009)</summary>
-    <div>
-      <ul>
-        <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
-        <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
-        <li>[ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)</li>
-        <li>[Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)</li>
-      </ul>
-      <p>Среди изменений можно отметить:</p>
-      <ul>
-        <li>поддержку строгого режима (strict mode);</li>
-        <li>аксессоры getters и setters;</li>
-        <li>возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;</li>
-        <li>многострочные строковые литералы;</li>
-        <li>новую функциональность в стандартной библиотеке;</li>
-        <li>поддержку JSON.</li>
-        <li></li>
-      </ul>
-    </div>
-  </details>
+    <summary>ES5 (ECMAScript 2009)</summary><p>
+    
+  <ul>
+    <li>[Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)</li>
+    <li>[ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)</li>
+    <li>[ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)</li>
+    <li>[Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)</li>
+  </ul>
+  <p>Среди изменений можно отметить:</p>
+  <ul>
+    <li>поддержку строгого режима (strict mode);</li>
+    <li>аксессоры getters и setters;</li>
+    <li>возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;</li>
+    <li>многострочные строковые литералы;</li>
+    <li>новую функциональность в стандартной библиотеке;</li>
+    <li>поддержку JSON.</li>
+    <li></li>
+  </ul>
+  
+  <br></p></details>
 </details>
   
 
