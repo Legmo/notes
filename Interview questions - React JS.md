@@ -2,6 +2,7 @@
 
 <details>
   <summary><b>JS</b></summary>
+    <br>
   <details>
     <br>
     <summary>Обработчики событий</summary>
