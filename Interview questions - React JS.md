@@ -44,21 +44,21 @@
     <summary><b>Callback</b> - сами не вызываем функцию. Отдаём её кому-то, и он вызывает, когда сочтёт нужным. В одну функцию передаём другую</summary><p>
     
   Например: 
-    ``<button onClik={function}>txt</button>`` 
+    ``<button onClik={function}>txt</button>``<br> 
   Когда произойдёт событие onClick, кнопка вызовет эту функцию
   
   Неправильно: 
-    ``<button onClik={function()}>txt</button>`` 
+    ``<button onClik={function()}>txt</button>``<br> 
   Здесь функция не передаётся, а сразу вызывается.
       
   При вызове callback может нарушиться контекст вызова this. Т.е. отвалиться привязка this к родительскому объекту.
-  ```js
+  ```javascript
   <App
       addQuote={store.addQuote} //нет скобок после addQuote - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего имени
     />
   ```
   В таком случае, при создании callback надо сделать привязку контекста - bind
-  ```js
+  ```javascript
     <App
       addQuote={store.addQuote.bind(store)} 
     />
