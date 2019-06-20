@@ -974,7 +974,7 @@
 
 
 <details>
-    <summary>REACT & CSS</summary>
+    <summary><b>REACT & CSS</b></summary>
 
   <details>
     <summary>Если нужно добавить свой CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css</summary>
@@ -995,7 +995,7 @@
   
 
 <details>
-  <summary>JSX</summary>  
+  <summary><b>JSX</b></summary>  
   <details>
     <summary>JSX - специальный синтаксис, синтаксический сахар для JS.</summary>  
       https://learn.javascript.ru/screencast/react#03-jsx
@@ -1116,7 +1116,7 @@
 
 
 <details>
-  <summary>КОМПОНЕНТЫ </summary>
+  <summary><b>КОМПОНЕНТЫ</b></summary>
   <details>
     <summary>Компонент(а) = функция. Возвращает какую-то JSX разметку.</summary>
       Когда компонент создан, автоматически появляется тэг <Имя_Компонента /> - при его помощи мы выводим этот JSX в нужном месте.
@@ -1391,7 +1391,7 @@
 
 
 <details>
-  <summary>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</summary> 
+  <summary><b>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</b></summary> 
   <details>
     <summary>Ссылки</summary>
       <li>[Схема](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)</li>
@@ -1538,7 +1538,7 @@
 
 
 <details>
-  <summary>REACT - ХУКИ</summary>
+  <summary><b>REACT - ХУКИ</b></summary>
   - https://ru.reactjs.org/docs/hooks-intro.html
   <details>
     <summary>Хук — функция, с помощью которой можно «подцепиться» к state и методам жизненного цикла React из функц. компонент. Не работает в  классах.</summary>
@@ -1664,7 +1664,7 @@
 
 
 <details>
-  <summary>REACT - РОУТИНГ</summary>
+  <summary><b>REACT - РОУТИНГ</b></summary>
   http://bogdanov-blog.ru/react-router-v4-notes/
   https://habrahabr.ru/post/329996/
   
@@ -1704,7 +1704,7 @@
 
 
 <details>
-  <summary>REACT - СТРОГАЯ ТИПЗАЦИЯ</summary>
+  <summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary>
 
   <details>
     <summary>Type Script - язык, Microsoft</summary>
@@ -1809,7 +1809,7 @@
 
 
 <details>
-  <summary>AJAX, JSON, CORS и т.д.</summary>
+  <summary><b>AJAX, JSON, CORS и т.д.</b></summary>
   - https://clck.ru/GUCaN
   <details>
     <summary>Порт — это номер, который, выдаёт операционная система каждой программе, которая хочет отослать данные в сеть</summary>
@@ -2158,7 +2158,7 @@
 
 
 <details>
-  <summary>РАЗНОЕ</summary>
+  <summary><b>РАЗНОЕ</b></summary>
   <details>
       <summary>В React мы никогда не лезем в DOM напрямую.</summary>
       Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM
@@ -2218,7 +2218,7 @@
 
 
 <details>
-  <summary>ООП</summary>
+  <summary><b>ООП</b></summary>
 	http://code.mu/books/javascript/oop/
 	http://code.mu/books/php/oop/osnovy-raboty-s-objektno-orientirovannym-programmirovaniem-v-php-1.html
 
@@ -2261,7 +2261,7 @@
 
 
 <details>
-  <summary>ОБЩЕЕ</summary>
+  <summary><b>ОБЩЕЕ</b></summary>
   <details>
     <summary>React = функционально ориентированное программирование</summary>
   </details>
@@ -2323,7 +2323,7 @@
 
 
 <details>
-    <summary>UX/UI</summary>
+    <summary><b>UX/UI</b></summary>
   <details>
     <summary>UX дизайнер -  планирует то, как вы будете взаимодействовать с интерфейсом и какие шаги вам нужно предпринять</summary>
       Когда изобретатель очередного точильного камня думал: будет ли он сидеть и сам нажимать педаль, или он упростит механизм, но приставит раба который будет раскручивать колесо рукой, то в тот момент он был UX дизайнером.
