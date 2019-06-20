@@ -270,9 +270,7 @@
 
   <br><p></details>
 
-  <details>
-    * <b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.
-  </details>
+  * <b>`true && expression`</b> - всегда вычисляется как expression, а выражение <b>`false && expression`</b> — как false.
   
   <details>
     <summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
