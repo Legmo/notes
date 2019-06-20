@@ -2,7 +2,8 @@
 
 <details>
 
-  <summary>## JS ##</summary>
+  <summary><h2>JS</h2></summary>
+  
   
   <details>
     <summary>Обработчики событий</summary>

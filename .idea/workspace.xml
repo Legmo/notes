@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,15 +30,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="528" />
-          <entry key="md" value="850" />
+          <entry key="html" value="530" />
+          <entry key="md" value="871" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="528" />
-          <entry key="Markdown" value="850" />
+          <entry key="HTML" value="530" />
+          <entry key="Markdown" value="871" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -48,13 +47,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Interview questions - React JS.html">
+        <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="492">
-                <caret line="2057" column="110" selection-start-line="2057" selection-start-column="110" selection-end-line="2057" selection-end-column="110" />
+              <first_editor relative-caret-position="108">
+                <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
                 <folding>
-                  <marker date="1561028092567" expanded="true" signature="63142:63574" ph="..." />
+                  <marker date="1561028281541" expanded="true" signature="64290:64722" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -70,8 +69,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Interview questions - React JS.md" />
         <option value="$PROJECT_DIR$/Interview questions - React JS.html" />
+        <option value="$PROJECT_DIR$/Interview questions - React JS.md" />
       </list>
     </option>
   </component>
@@ -143,7 +142,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561014354431</updated>
-      <workItem from="1561014355633" duration="6798000" />
+      <workItem from="1561014355633" duration="6987000" />
     </task>
     <task id="LOCAL-00001" summary="React JS - in progress">
       <created>1561025246828</created>
@@ -187,11 +186,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561026133438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="React JS - in progress">
+      <created>1561028117221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028117221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="React JS - in progress">
+      <created>1561028148718</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028148718</updated>
+    </task>
+    <task id="LOCAL-00009" summary="React JS - in progress">
+      <created>1561028243495</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561028243495</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6798000" />
+    <option name="totallyTimeSpent" value="6987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,7 +227,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17516778" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17516778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -239,13 +259,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="React JS - in progress" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.html">
+    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="492">
-            <caret line="2057" column="110" selection-start-line="2057" selection-start-column="110" selection-end-line="2057" selection-end-column="110" />
+          <first_editor relative-caret-position="108">
+            <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
             <folding>
-              <marker date="1561028092567" expanded="true" signature="63142:63574" ph="..." />
+              <marker date="1561028281541" expanded="true" signature="64290:64722" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
