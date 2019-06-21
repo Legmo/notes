@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="809" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1410" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="633" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3001" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3109" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2955" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2601" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2491" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1738" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1704" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1578" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1889" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2165" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2448" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2318" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="814" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1415" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="638" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3006" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3114" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2960" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2606" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2496" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1743" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1709" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1583" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1894" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2170" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2453" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2323" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
@@ -54,14 +54,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="18038" />
+          <entry key="md" value="18084" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2067" />
-          <entry key="Markdown" value="18038" />
+          <entry key="Markdown" value="18084" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -73,18 +73,16 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="195">
-                <caret line="1268" column="53" selection-start-line="1268" selection-start-column="53" selection-end-line="1268" selection-end-column="53" />
+              <first_editor relative-caret-position="506">
+                <caret line="771" column="6" lean-forward="true" selection-start-line="771" selection-start-column="6" selection-end-line="771" selection-end-column="6" />
                 <folding>
                   <element signature="e#92#100#0" />
                   <element signature="e#27879#27987#0" />
-                  <element signature="e#28090#28137#0" />
                   <element signature="e#33263#34248#0" />
                   <element signature="e#35101#36348#0" />
                   <element signature="e#36362#36610#0" />
                   <element signature="e#36724#37026#0" />
                   <element signature="e#37042#37406#0" />
-                  <element signature="e#38060#38680#0" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -195,14 +193,7 @@
       <workItem from="1561030798564" duration="6317000" />
       <workItem from="1561037142418" duration="7892000" />
       <workItem from="1561047926169" duration="18458000" />
-      <workItem from="1561100574993" duration="24349000" />
-    </task>
-    <task id="LOCAL-00093" summary="React JS - in progress">
-      <created>1561054998222</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1561054998222</updated>
+      <workItem from="1561100574993" duration="24611000" />
     </task>
     <task id="LOCAL-00094" summary="React JS - in progress">
       <created>1561055234429</created>
@@ -540,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561150325915</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="React JS - in progress">
+      <created>1561150702772</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1561150702772</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66484000" />
+    <option name="totallyTimeSpent" value="66746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,18 +603,16 @@
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="195">
-            <caret line="1268" column="53" selection-start-line="1268" selection-start-column="53" selection-end-line="1268" selection-end-column="53" />
+          <first_editor relative-caret-position="506">
+            <caret line="771" column="6" lean-forward="true" selection-start-line="771" selection-start-column="6" selection-end-line="771" selection-end-column="6" />
             <folding>
               <element signature="e#92#100#0" />
               <element signature="e#27879#27987#0" />
-              <element signature="e#28090#28137#0" />
               <element signature="e#33263#34248#0" />
               <element signature="e#35101#36348#0" />
               <element signature="e#36362#36610#0" />
               <element signature="e#36724#37026#0" />
               <element signature="e#37042#37406#0" />
-              <element signature="e#38060#38680#0" />
             </folding>
           </first_editor>
           <second_editor />
