@@ -1090,7 +1090,7 @@
   <br></p></details>
   
   <details>
-    <summary>State (состояние)</summary><p> 
+    <summary><b>State (состояние)</b></summary><p> 
     
   Специальный js-объект внутри компонента. Хранит данные, которые могут изменятся с течением времени.<br>
   Описывает внутреннее состояние компонента. 
@@ -1168,7 +1168,7 @@
   <br></p></details>
   
   <details>
-    <summary><b>Key</b> //ToDo - Доработать</summary><p>
+    <summary><b>Key</b> //ToDo - доработать</summary><p>
     
   Атрибут, особое уникальное свойство элемента. Связывает данные и элементы React.<br>
   Если быть точным - это special props. Не включается в объект props и недоступно внутри самого компонента.
@@ -1266,11 +1266,17 @@
   <br></p></details>
   
   <details>
-    <summary>PureComponent изменяет lifecycle-метод shouldComponentUpdate, автоматически проверяя, нужно ли заново отрисовывать компонент.</summary><p>
+    <summary><b>PureComponent</b> //ToDo - доработать</summary><p>
 
-  Ссылки:
-  * https://habr.com/ru/company/redmadrobot/blog/318222/
-  * https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7
+  Особый способ создания классовых компонент.<br>
+  Изменяет lifecycle-метод shouldComponentUpdate, автоматически проверяя, нужно ли заново отрисовывать компонент.
+
+  **Ссылки**
+  - [habr](https://habr.com/ru/company/redmadrobot/blog/318222/)
+  - [medium](https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7)
+  - [Оф. документация - Виртуальный DOM и детали его реализации в React](https://ru.reactjs.org/docs/faq-internals.html)
+  - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+  - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
         
   <br></p></details>
     
@@ -1286,8 +1292,11 @@
   <br></p></details>
     
   <details>
-    <summary>C Bootsrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React.</summary>
-  </details>
+    <summary>React + Bootstrap</summary><p>
+    
+   C Bootsrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
+   
+  <br></p></details>
     
   <details>
     <summary>Создание приложения обычно выглядит так:</summary><p>
