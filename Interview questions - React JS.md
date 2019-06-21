@@ -1568,7 +1568,9 @@
 
 
 <details>
-    <summary><b>REACT & CSS</b></summary>
+    <summary><b>REACT & CSS</b></summary><p>
+
+  ---
 
   <details>
     <summary>Если нужно добавить свой CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css</summary>
@@ -1585,6 +1587,7 @@
   <details>
     <summary>Ещё крутая штука - Styled Components. Читать</summary>
   </details>
+  
 <br></p></details>
   
 
