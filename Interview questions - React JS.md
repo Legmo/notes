@@ -780,20 +780,11 @@
     <summary><b>REACT - базовые понятия </b></summary><p>
 
   ---
-  
-  **Ссылки:**
-  - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
-  - [Оф. документация - обучение практическое](https://ru.reactjs.org/tutorial/tutorial.html)
-  - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
-  - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
-  - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
-  - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
-  - [какой-то кур](https://habr.com/ru/company/ruvds/blog/432636/)
                                                           
   <details>
-    <summary>Что такое React?</summary><p>
+    <summary><b>Что такое React и какие у него особенности?</b></summary><p>
    
-  Варианты определения:  
+  **Варианты определения** 
   1. JS-библиотека для создания пользовательских интерфейсов. <br>
   1. Библиотека, которая умеет эффективно отрисовывать HTML - реагировать на кнопки и т.д. Эффективно рисует UI<bk>
 
@@ -803,7 +794,7 @@
   
   Это не фрэйморвк! React сам по себе не позволит создать веб-приложение, поскольку он предназначен для создания представлений (следовательно, это «V» в MVC). React может создать компонентные представления, данные которых могут передаваться дочерним представлениям. 
   
-  Также Facebook разработал Flux, который является архитектурным шаблоном, который дополняет React. 
+  Также Facebook разработал **Flux**, который является архитектурным шаблоном, который дополняет React (см. Redux). 
   
   **Babel**
   Транспилятор. Преобразует JSX в обычный JS<br>
@@ -854,11 +845,12 @@
   Ссылки:
   [Angular vs. React: Сравнение 7 Основных характеристик](https://code.tutsplus.com/ru/articles/angular-vs-react-7-key-features-compared--cms-29044)
   
-  
   <br><p></details>
   
   <details>
-    <summary>Компоненты — это объекты JavaScript, которые представляют HTML-элементы.</summary><p>
+    <summary><b>Что такое компоненты?</b></summary><p>
+    
+  Компоненты — это объекты JavaScript, которые представляют HTML-элементы
                                                                                                    
   Компонент = JavaScript-функция, которая возвращает кусок кода, представляющего фрагмент страницы. 
   Описывают DOM-элементы (h1, div, section...) Обычно это части пользовательского интерфейса, которые содержат свою структуру и функциональность. 
@@ -1097,12 +1089,23 @@
   В обоих случаях аргумент e, представляющий событие React, будет передан как второй аргумент после идентификатора. Используя стрелочную функцию, необходимо передавать аргумент явно, но с bind любые последующие аргументы передаются автоматически.
   </details>
   
+  **Ссылки:**
+  - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
+  - [Оф. документация - обучение практическое](https://ru.reactjs.org/tutorial/tutorial.html)
+  - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
+  - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
+  - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
+  - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
+  - [какой-то кур](https://habr.com/ru/company/ruvds/blog/432636/)
   
 <br></p></details>
 
 
 <details>
-  <summary><b>REDUX</b></summary>
+  <summary><b>REDUX</b></summary><p>
+
+  ---
+
   <details>
     <summary>Redux = библиотека для управления state, которая реализует Flux-архитектуру</summary>
       Её надо инсталлировать отдельно
@@ -1262,7 +1265,8 @@
     <summary>Provider - компонента, оборачивается вокруг корневой компоненты (<App>). Позволяет передавать store всем потомкам - теперь у connect() есть доступ к store.</summary>
       - пакет react-redux предоставляет разработчику компонент <Provider>, который можно использоваться для оборачивания корневого компонента приложения. Он принимает свойство store. Предполагается, что оно представляет собой ссылку на хранилище Redux, которое планируется использовать в приложении. Свойство store передаётся, в соответствии с иерархией приложения, компонентам-контейнерам, с использованием механизма контекста React:
   </details>
-</details>
+  
+<br></p></details>
 
 
 <details>
@@ -1387,11 +1391,16 @@
       В контейнерной компоненте, в функции mapDispatchToProps создаём callback для вызова этого action. При вызове этого action - он добавит задачи в state 
       Сам факт захода пользователя на страницу со списком задач = действие (т.е. диспатч), которое вызывает этот action. 
   </details>
-</details>
+
+<br></p></details>
+
 
 <details>
-  <summary><b>REACT CONTEXT API</b></summary>
-  [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
+  <summary><b>REACT CONTEXT API</b></summary><p>
+  
+  ---
+  
+  - [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
   
   <details>
     <summary>3 составляющих Context API:</summary>
@@ -1416,7 +1425,8 @@
   
   <p>Обычно контекст используется, если необходимо обеспечить доступ данных во многих компонентах на разных уровнях вложенности. По возможности не используйте его, так как это усложняет переиспользование компонентов.
   </p>
-</details>
+  
+<br></p></details>
 
 
 <details>
@@ -1441,7 +1451,10 @@
   
 
 <details>
-  <summary><b>JSX</b></summary>  
+  <summary><b>JSX</b></summary<p>
+  
+  ---
+    
   <details>
     <summary>Что такое JSX?</summary>  
       
@@ -1560,11 +1573,15 @@
       Нельзя, например, использовать конструкцию if/else (точно?)
       но можно заменить ее тернарным оператором.
   </details>
-</details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>КОМПОНЕНТЫ</b></summary>
+  <summary><b>КОМПОНЕНТЫ</b></summary><p>
+  
+  ---
+  
   <details>
     <summary>Компонент(а) = функция. Возвращает какую-то JSX разметку.</summary>
       Когда компонент создан, автоматически появляется тэг <Имя_Компонента /> - при его помощи мы выводим этот JSX в нужном месте.
@@ -1832,19 +1849,15 @@
       Важно помнить, что PureComonent пропускает отрисовку не только самого компонента, но и всех его “детей”, так что безопаснее всего применять его в presentational-компонентах, без “детей” и без зависимости от глобального состояния приложения. 
       В случае, если pure-компонент имеет детей, все дочерние компоненты, зависящие от смены контекста, не будут реагировать на изменения, если в родительском pure-компоненте не будет объявлен contextTypes.
   </details>
-</details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</b></summary> 
-  <details>
-    <summary>Ссылки</summary>
-      [Схема](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-      [https://metanit.com/web/react/2.6.php](https://metanit.com/web/react/2.6.php)
-      [https://learn-reactjs.ru/reference/react-component](https://learn-reactjs.ru/reference/react-component)
-      [https://reactjs.org/docs/react-component.html](https://reactjs.org/docs/react-component.html)
-  </details>
+  <summary><b>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</b></summary><p>
   
+  ---
+ 
   <details>
     <summary>Методы, которые React вызывает при разных событиях из жизни компонента (появление, удаление...)</summary>
       Каждый компонент имеет несколько «методов жизненного цикла»,
@@ -1979,11 +1992,25 @@
         - props
         - state
   </div>
-</details>
+
+  <details>
+    <summary>Ссылки</summary><p>
+    
+  - [Схема](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  - [https://metanit.com/web/react/2.6.php](https://metanit.com/web/react/2.6.php)
+  - [https://learn-reactjs.ru/reference/react-component](https://learn-reactjs.ru/reference/react-component)
+  - [https://reactjs.org/docs/react-component.html](https://reactjs.org/docs/react-component.html)
+  
+  </p></details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>REACT - ХУКИ</b></summary>
+  <summary><b>REACT - ХУКИ</b></summary><p>
+  
+  ---
+  
   - https://ru.reactjs.org/docs/hooks-intro.html
   <details>
     <summary>Хук — функция, с помощью которой можно «подцепиться» к state и методам жизненного цикла React из функц. компонент. Не работает в  классах.</summary>
@@ -2105,14 +2132,17 @@
   <details>
     <summary>Поскольку хуки являются функциями, мы можем передавать информацию между ними.</summary>
   </details>
-</details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>REACT - РОУТИНГ</b></summary>
-  http://bogdanov-blog.ru/react-router-v4-notes/
-  https://habrahabr.ru/post/329996/
+  <summary><b>REACT - РОУТИНГ</b></summary><p>
   
+  ---
+  
+  - http://bogdanov-blog.ru/react-router-v4-notes/
+  - https://habrahabr.ru/post/329996/
   
   <details>
     <summary>React-Router - набор компонентов определяющих на основе текущего пути, какой компонент будет выводиться.</summary>
@@ -2145,13 +2175,16 @@
         Route - меняет содержимое страницы, в зависимости от того, что введено в адресной строке. Следит за ней, и при изменениии - отрабатывает
         NavLink - при клике меняет адрес в адресной строке
   </details>
-</details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary>
+  <summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary><p>
+  
+  ---
 
-https://ru.reactjs.org/docs/static-type-checking.html
+  - https://ru.reactjs.org/docs/static-type-checking.html
 
   <details>
     <summary>Type Script - язык, Microsoft</summary>
@@ -2252,12 +2285,17 @@ https://ru.reactjs.org/docs/static-type-checking.html
       - Flow - инструмент статического анализа 
       - PropTypes - инструмент проверки во время запуска. Теоретически может отловить ошибки, которые могут быть пропущены Flow
   </details>
-</details>
+
+<br></p></details>
 
 
 <details>
-  <summary><b>AJAX, JSON, CORS и т.д.</b></summary>
+  <summary><b>AJAX, JSON, CORS и т.д.</b></summary><p>
+  
+  ---
+  
   - https://clck.ru/GUCaN
+  
   <details>
     <summary>Порт — это номер, который, выдаёт операционная система каждой программе, которая хочет отослать данные в сеть</summary>
   </details>
@@ -2603,9 +2641,12 @@ https://ru.reactjs.org/docs/static-type-checking.html
   </details>
 </details>
 
+<br></p></details>
 
 <details>
-  <summary><b>ЧИСТЫЕ ФУНКЦИИ</b></summary>
+  <summary><b>ЧИСТЫЕ ФУНКЦИИ</b></summary><p>
+  
+  ---
   
   - Чистая функция:
      - идемпотента 	    - при повторении операции даст тот же эффект
@@ -2643,8 +2684,8 @@ https://ru.reactjs.org/docs/static-type-checking.html
   <details>
     <summary>Иммутабельность - неизменяемость. Функция не меняет входящие данные. Делает копию, и работает уже с ней.</summary>
   </details>
-  
-</details>
+
+<br></p></details>
 
 
 <details>
