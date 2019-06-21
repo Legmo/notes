@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="33" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,35 +15,36 @@
     <session id="-1806687496">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="1" />
+          <entry key="md" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="htm" value="1531" />
+          <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="7447" />
+          <entry key="md" value="7873" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2061" />
-          <entry key="Markdown" value="7447" />
+          <entry key="HTML" value="2067" />
+          <entry key="Markdown" value="7873" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -58,9 +56,23 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="1815">
-                <caret line="2613" column="6" selection-start-line="2613" selection-start-column="6" selection-end-line="2613" selection-end-column="6" />
+              <first_editor relative-caret-position="486">
+                <caret line="598" selection-start-line="598" selection-end-line="598" />
+                <folding>
+                  <element signature="e#92#100#0" />
+                  <element signature="e#27879#27987#0" />
+                </folding>
               </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -112,7 +124,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="legmo_notes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="legmo_notes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -154,21 +179,8 @@
       <workItem from="1561014355633" duration="9468000" />
       <workItem from="1561030798564" duration="6317000" />
       <workItem from="1561037142418" duration="7892000" />
-      <workItem from="1561047926169" duration="16634000" />
-    </task>
-    <task id="LOCAL-00071" summary="React JS - in progress">
-      <created>1561048516812</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1561048516812</updated>
-    </task>
-    <task id="LOCAL-00072" summary="React JS - in progress">
-      <created>1561048615931</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1561048615931</updated>
+      <workItem from="1561047926169" duration="18458000" />
+      <workItem from="1561100574993" duration="1522000" />
     </task>
     <task id="LOCAL-00073" summary="React JS - in progress">
       <created>1561048749283</created>
@@ -499,11 +511,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561063485407</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="React JS - in progress">
+      <created>1561097743299</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1561097743299</updated>
+    </task>
+    <task id="LOCAL-00121" summary="React JS - in progress">
+      <created>1561098807280</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1561098807280</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40311000" />
+    <option name="totallyTimeSpent" value="43657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -518,7 +544,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18053691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18322147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -534,6 +560,7 @@
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32833788" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32833788" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -551,16 +578,24 @@
     <option name="LAST_COMMIT_MESSAGE" value="React JS - in progress" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="11160">
-          <caret line="536" column="98" lean-forward="true" selection-start-line="536" selection-start-column="98" selection-end-line="536" selection-end-column="98" />
+    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.htm" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1815">
-            <caret line="2613" column="6" selection-start-line="2613" selection-start-column="6" selection-end-line="2613" selection-end-column="6" />
+          <first_editor relative-caret-position="486">
+            <caret line="598" selection-start-line="598" selection-end-line="598" />
+            <folding>
+              <element signature="e#92#100#0" />
+              <element signature="e#27879#27987#0" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
