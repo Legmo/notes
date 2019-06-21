@@ -1040,7 +1040,7 @@
   <br></p></details>
   
   <details>
-    <summary>Virtual DOM //<b>ToDo - доработать</b></summary><p>
+    <summary><b>Virtual DOM</b> //ToDo - доработать</summary><p>
     
   Это дерево React элементов на JavaScript.
  
@@ -1198,7 +1198,7 @@
   <br></p></details>
   
   <details>
-    <summary><b>Refs</b>//ToDo - доработать</summary><p>
+    <summary><b>Refs</b> //ToDo - доработать</summary><p>
  
   Аттрибут HTML-элемента или классового компонента.<br>
   Если быть точным - это special props. Не включается в объект props и недоступно внутри самого компонента.<br>
@@ -1251,11 +1251,34 @@
 
   Особый способ создания классовых компонент.<br>
   Изменяет lifecycle-метод shouldComponentUpdate, автоматически проверяя, нужно ли заново отрисовывать компонент.
+  
+  Разница между Component и PureComponent заключается в методе updating lifecycle: shouldComponentUpdate.<br> 
+  Component не реализует shouldComponentUpdate(), PureComponent реализует его поверхностным сравнением пропсов и состояния.
+   
+  В Component этот метод выглядит так:
+  ```
+  shouldComponentUpdate() {
+   return true;
+  }
+  ```
+  
+  В PureComponent:
+  ```
+  shouldComponentUpdate(nextProps, nextState) {
+   return !shallowEqual(nextProps, this.props) || !shallowEqual(nextState, this.state);
+  }
+  ```
+    
+  Метод shouldComponentUpdate() базового класса React.PureComponent делает только поверхностное сравнение объектов. Если они содержат сложные структуры данных, это может привести к неправильной работе для более глубоких различий (то есть, различий, не выраженных на поверхности структуры). 
+  
+  Наследуйте класс PureComponent только тогда, когда вы ожидаете использовать простые пропсы и состояние, или используйте forceUpdate(), когда знаете, что вложенные структуры данных изменились. Также подумайте об использовании иммутабельных объектов, чтобы упростить процесс сравнения вложенных данных.
+  
+  Кроме того, метод shouldComponentUpdate() базового класса React.PureComponent пропускает обновление пропсов для всего поддерева компонентов. Убедитесь, что все дочерние компоненты также являются «чистыми».
 
   **Ссылки**
-  - [habr](https://habr.com/ru/company/redmadrobot/blog/318222/)
-  - [medium](https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7)
-  - [Оф. документация - Виртуальный DOM и детали его реализации в React](https://ru.reactjs.org/docs/faq-internals.html)
+  - [Оф. документация - React.PureComponent](https://ru.reactjs.org/docs/react-api.html#reactpurecomponent)
+  - [habr - Разбор: как и зачем применять PureComponent в React](https://habr.com/ru/company/redmadrobot/blog/318222/)
+  - [PureComponent и Components](https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7)
   - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
   - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
         
