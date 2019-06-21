@@ -717,7 +717,7 @@
   <br></p></details>
   
   <details>
-    <summary><b>ES6 (ECMAScript 2015)</b></summary><p>
+    <summary><span style="color:blue"><b>ES6 (ECMAScript 2015)</b></span></summary><p>
       
   * [Переменные: let и const](https://learn.javascript.ru/let-const)
   * [Деструктуризация](https://learn.javascript.ru/destructuring)
