@@ -1585,7 +1585,7 @@
   <details>
     <summary>Ещё крутая штука - Styled Components. Читать</summary>
   </details>
-</details>
+<br></p></details>
   
 
 <details>
@@ -1594,7 +1594,7 @@
   ---
     
   <details>
-    <summary>Что такое JSX?</summary>  
+    <summary>Что такое JSX?</summary><p>
       
   JavaScript XML (JSX) - расширение синтаксиса JavaScript, "синтаксический сахар" для JS. Позволяет использовать похожий на HTML синтаксис для описания структуры интерфейса.
       https://learn.javascript.ru/screencast/react#03-jsx
