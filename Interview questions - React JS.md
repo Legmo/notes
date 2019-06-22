@@ -596,8 +596,7 @@
                                          
   ---
  
-  <details>
-    <summary><b>_переменная</b></summary><p> 
+  <details><summary><b>_переменная</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной начинается с _ , её не надо менять или читать снаружи объекта.<br>
   Это просто соглашение об именовании, которое напоминает разработчику о том, что переменная (свойство) или метод являются либо private, либо protected, и к ним нельзя получить доступ из-за пределов класса. 
@@ -611,28 +610,27 @@
 
   <br><p></details>
   
-  <details>
-      <summary><b>ПЕРЕМЕННАЯ</b></summary><p> 
+  <details><summary><b>ПЕРЕМЕННАЯ</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной написано ЗАГЛАВНЫМИ, её не надо менять. Это константа.<br>
   
   **Ссылки**   
   * [learn.js](https://learn.javascript.ru/variables)      
-  * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69) 
+  * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69)
+   
   <br><p></details>
   
-  <details>
-      <summary><b>Переменная</b></summary><p> 
+  <details><summary><b>Переменная</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной начинается с заглавной, значит это не переменная а класс ООП.<br>
   У класса есть методы и всё такое...
      
   **Ссылки**
   * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69) 
+  
   <br><p></details>
               
-  <details>
-    <summary><b>true && expression</b></summary><p>
+  <details><summary><b>true && expression</b></summary><p>
     
   `true && expression</b>` - всегда вычисляется как expression, 
     
