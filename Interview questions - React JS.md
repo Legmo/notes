@@ -622,11 +622,9 @@
   Ссылки:
   *[MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
   
-    <br></p></details>
-  
+  <br></p></details>
     
-<br></p>
-</details>
+<br></p></details>
 
 
 <details>
