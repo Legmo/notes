@@ -1781,6 +1781,12 @@
   
   **2. Обновление** - когда компонент повторно перерисовывается. Может быть вызвано изменениями в свойствах или состоянии
  
+   <details><summary>static getDerivedStateFromProps()</summary><p>
+   
+   [static getDerivedStateFromProps()](https://ru.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
+   
+   <br></p></details>
+ 
   <details><summary><b>shouldComponentUpdate()</b> - каждый раз при обновлении объекта props или state</summary><p>
   
   - позволяет оптимизировать приложение в ручном режиме, управляя тем, нужно ли перестраивать виртуальный DOM для этого компонента или нет?
@@ -1812,6 +1818,13 @@
   class Article extends PureComponent {
   ...
   }
+  
+  <br></p></details>
+ 
+   
+  <details><summary>getSnapshotBeforeUpdate()</summary><p>
+  
+  [getSnapshotBeforeUpdate()](https://ru.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)
   
   <br></p></details>
   
