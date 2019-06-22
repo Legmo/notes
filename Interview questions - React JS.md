@@ -1,6 +1,7 @@
 # Шпаргалка для интервью React JS frontend #
   
-<details><summary><b>JS</b></summary><p>
+<details>
+  <summary><b>JS</b></summary><p>
   
   ---
   
@@ -566,7 +567,7 @@
   Ссылки:
   [https://habr.com/ru/company/ruvds/blog/332384/](https://habr.com/ru/company/ruvds/blog/332384/)
   
-  <br></p></details>  
+  <br></p></details>
   
 <br></p></details>
 
