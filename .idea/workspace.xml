@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="811" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1430" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="635" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3031" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3139" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2985" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2631" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2521" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1762" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1728" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1599" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1913" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2195" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2478" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2348" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3119" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="781" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="630" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="574" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1786" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="806" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="633" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2997" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3105" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2954" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2286" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2054" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1422" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1702" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2014" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1884" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3083" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="776" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="628" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="575" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2161" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2660" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2827" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1852" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2638" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="" />
+    <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview questions - React JS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - React JS.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +62,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="18648" />
+          <entry key="md" value="18893" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="18644" />
+          <entry key="Markdown" value="18889" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -77,32 +81,33 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="432">
-                <caret line="621" column="13" selection-start-line="621" selection-start-column="13" selection-end-line="621" selection-end-column="13" />
+              <first_editor relative-caret-position="36">
+                <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
                 <folding>
-                  <marker date="1561202813926" expanded="false" signature="91:28630" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="94:28630" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="28684:30562" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="28685:30562" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="30635:40448" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="30636:40448" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="40518:78195" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="40519:78195" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="78244:87573" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="78245:87573" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="87626:97233" ph="..." />
-                  <marker date="1561202813926" expanded="true" signature="87627:97233" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="97294:99227" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="99284:99810" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="99861:104403" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="104457:122481" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="122552:130522" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="130578:137107" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="137175:143182" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="143249:171590" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="171647:180041" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="180089:181021" ph="..." />
-                  <marker date="1561202813926" expanded="false" signature="181072:182324" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="88:28663" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="91:28663" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="28714:30585" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="28715:30585" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="30654:40464" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="30655:40464" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="40530:78202" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="40531:78202" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="78260:96284" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="96358:104327" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="104386:106319" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="106371:112899" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="112963:118969" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="119020:151965" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="123625:151965" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="152016:152542" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="152587:161916" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="161965:171572" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="171626:173330" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="171626:180015" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="173373:180015" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="180060:181013" ph="..." />
+                  <marker date="1561204097533" expanded="true" signature="180070:181013" ph="..." />
+                  <marker date="1561204097533" expanded="false" signature="181059:182311" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -217,28 +222,7 @@
       <workItem from="1561191702193" duration="2024000" />
       <workItem from="1561200979107" duration="29000" />
       <workItem from="1561201035342" duration="79000" />
-      <workItem from="1561201138530" duration="1704000" />
-    </task>
-    <task id="LOCAL-00108" summary="React JS - in progress">
-      <created>1561059525812</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1561059525812</updated>
-    </task>
-    <task id="LOCAL-00109" summary="React JS - in progress">
-      <created>1561059679274</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1561059679274</updated>
-    </task>
-    <task id="LOCAL-00110" summary="React JS - in progress">
-      <created>1561059788322</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1561059788322</updated>
+      <workItem from="1561201138530" duration="2956000" />
     </task>
     <task id="LOCAL-00111" summary="React JS - in progress">
       <created>1561060295522</created>
@@ -562,11 +546,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561202817992</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="React JS - in progress">
+      <created>1561202867920</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1561202867920</updated>
+    </task>
+    <task id="LOCAL-00158" summary="React JS - in progress">
+      <created>1561202888428</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1561202888428</updated>
+    </task>
+    <task id="LOCAL-00159" summary="React JS - in progress">
+      <created>1561203466945</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1561203466945</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74321000" />
+    <option name="totallyTimeSpent" value="75573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,32 +625,33 @@
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="432">
-            <caret line="621" column="13" selection-start-line="621" selection-start-column="13" selection-end-line="621" selection-end-column="13" />
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
             <folding>
-              <marker date="1561202813926" expanded="false" signature="91:28630" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="94:28630" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="28684:30562" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="28685:30562" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="30635:40448" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="30636:40448" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="40518:78195" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="40519:78195" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="78244:87573" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="78245:87573" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="87626:97233" ph="..." />
-              <marker date="1561202813926" expanded="true" signature="87627:97233" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="97294:99227" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="99284:99810" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="99861:104403" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="104457:122481" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="122552:130522" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="130578:137107" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="137175:143182" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="143249:171590" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="171647:180041" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="180089:181021" ph="..." />
-              <marker date="1561202813926" expanded="false" signature="181072:182324" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="88:28663" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="91:28663" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="28714:30585" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="28715:30585" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="30654:40464" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="30655:40464" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="40530:78202" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="40531:78202" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="78260:96284" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="96358:104327" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="104386:106319" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="106371:112899" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="112963:118969" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="119020:151965" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="123625:151965" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="152016:152542" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="152587:161916" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="161965:171572" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="171626:173330" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="171626:180015" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="173373:180015" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="180060:181013" ph="..." />
+              <marker date="1561204097533" expanded="true" signature="180070:181013" ph="..." />
+              <marker date="1561204097533" expanded="false" signature="181059:182311" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
