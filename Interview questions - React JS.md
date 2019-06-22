@@ -1,7 +1,6 @@
 # Шпаргалка для интервью React JS frontend #
   
-<details>
-  <summary><b>JS</b></summary><p>
+<details><summary><b>JS</b></summary><p>
   
   ---
   
@@ -567,10 +566,8 @@
   Ссылки:
   [https://habr.com/ru/company/ruvds/blog/332384/](https://habr.com/ru/company/ruvds/blog/332384/)
   
-  <br></p></details>
-  
+  <br></p></details>  
 <br></p></details>
-
 
 <details>
   <summary><b>JS - приёмы</b></summary><p>
@@ -623,16 +620,15 @@
   Ссылки:
   *[MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
   
-  <br></p></details>
+    <br></p></details>
+  
     
-<br></p></details>
-
-
+<br></p>
+</details>
 
 <details>
-
   <summary><b>JS - история версий</b></summary><p>
-                                                                                        
+
    ---
   
   <details>
@@ -780,9 +776,8 @@
   
 <br></p></details>
   
-
 <details>
-    <summary><b>REACT - базовые понятия </b></summary><p>
+  <summary><b>REACT - базовые понятия </b></summary><p>
 
   ---
                                                           
@@ -1426,8 +1421,8 @@
   - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
   - [какой-то кур](https://habr.com/ru/company/ruvds/blog/432636/)
   
-<br></p></details>
-
+    <br></p>
+</details>
 
 <details>
   <summary><b>REDUX</b></summary><p>
@@ -1435,8 +1430,9 @@
   ---
 
   <details>
-    <summary>Redux = библиотека для управления state, которая реализует Flux-архитектуру</summary>
-      Её надо инсталлировать отдельно
+    <summary>Redux</summary><>
+Библиотека для управления state, которая реализует Flux-архитектуру      
+Её надо инсталлировать отдельно
       Позволяет создавать свой store командой, а не вручную
       В частности, уменьшает связность - позволяет передавать данные не по цепочке props,  а сразу в нужную компоненту
   </details>
@@ -1596,9 +1592,11 @@
   
 <br></p></details>
 
-
 <details>
-  <summary><b>REDUX & AJAX</b></summary>  
+  <summary><b>REDUX & AJAX</b></summary>
+  
+  ---
+  
   <details>
     <summary>самый простой вариант - делаем запрос внутри actionCreator.</summary>  
       Например, при помощи fetch:
@@ -1722,7 +1720,6 @@
 
 <br></p></details>
 
-
 <details>
   <summary><b>REACT CONTEXT API</b></summary><p>
   
@@ -1756,7 +1753,6 @@
   
 <br></p></details>
 
-
 <details>
     <summary><b>REACT & CSS</b></summary><p>
 
@@ -1780,7 +1776,6 @@
   
 <br></p></details>
   
-
 <details>
     <summary><b>JSX</b></summary><p>
   
@@ -1906,7 +1901,6 @@
     </details>
 
 <br></p></details>
-
 
 <details>
   <summary><b>КОМПОНЕНТЫ</b></summary><p>
@@ -2189,7 +2183,6 @@
 
 <br></p></details>
 
-
 <details>
   <summary><b>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</b></summary><p>
   
@@ -2341,7 +2334,6 @@
   </p></details>
 
 <br></p></details>
-
 
 <details>
   <summary><b>REACT - ХУКИ</b></summary><p>
@@ -2515,7 +2507,6 @@
 
 <br></p></details>
 
-
 <details>
   <summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary><p>
   
@@ -2624,7 +2615,6 @@
   </details>
 
 <br></p></details>
-
 
 <details>
   <summary><b>AJAX, JSON, CORS и т.д.</b></summary><p>
@@ -3113,7 +3103,6 @@
   
 <br></p></details>
 
-
 <details>
     <summary><b>UX/UI</b></summary>
   <details>
@@ -3132,7 +3121,6 @@
   См. отдельный файл-шпаргалку по UX-UI (скоро выложу)
 
 </details>
-
 
 <details>
   <summary><b>РАЗНОЕ</b></summary> <p>
@@ -3158,3 +3146,4 @@
  - Повторять устройство Redux (store, createStore, state, reducer, actions, action creators, dispatch, provider, connect, middleware,  mapDispatchToProps, mapStateToProps)
 
 <br></p></details>
+
