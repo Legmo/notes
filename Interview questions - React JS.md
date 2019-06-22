@@ -45,7 +45,7 @@
     sayHi('Вася');
   ```    
   
-  Ссылки:
+  **Ссылки:**
   * [learn.javascript.ru](https://learn.javascript.ru/closures)
         
   <br></p></details>
@@ -138,7 +138,7 @@
 
 
   <a name="js_cal-aply"></a>
-  <details><summary><b>"Call" & "apply"</b> //Todo - дополнить</summary><p>
+  <details><summary><b>"Call" & "apply"</b> //ToDo - доработать</summary><p>
   
   Явное указание this
   
@@ -359,7 +359,7 @@
   <br></p></details>
   
   
-  <details><summary><b>Асинхронность в JS. Event loop</b></summary><p>
+  <details><summary><b>Асинхронность в JS. Event loop</b> //ToDo - доработать</summary><p>
   
    Ну, это про то как устроена работа с асинхронными событиями в JS и браузере. И как они взаимодействуют.<br>
    Стэк вызова, очередь, event loop, web workers... Вот это вот всё...<br>
