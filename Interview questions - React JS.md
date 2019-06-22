@@ -628,6 +628,7 @@
 <br></p>
 </details>
 
+
 <details>
   <summary><b>JS - история версий</b></summary><p>
 
@@ -778,6 +779,7 @@
   
 <br></p></details>
   
+
 <details>
   <summary><b>REACT - базовые понятия </b></summary><p>
 
@@ -1426,6 +1428,7 @@
     <br></p>
 </details>
 
+
 <details>
   <summary><b>REDUX</b></summary><p>
 
@@ -1594,6 +1597,7 @@
   
 <br></p></details>
 
+
 <details>
   <summary><b>REDUX & AJAX</b></summary>
   
@@ -1722,6 +1726,7 @@
 
 <br></p></details>
 
+
 <details>
   <summary><b>REACT CONTEXT API</b></summary><p>
   
@@ -1755,6 +1760,7 @@
   
 <br></p></details>
 
+
 <details>
     <summary><b>REACT & CSS</b></summary><p>
 
@@ -1778,6 +1784,7 @@
   
 <br></p></details>
   
+
 <details>
     <summary><b>JSX</b></summary><p>
   
@@ -1903,6 +1910,7 @@
     </details>
 
 <br></p></details>
+
 
 <details>
   <summary><b>КОМПОНЕНТЫ</b></summary><p>
@@ -2185,6 +2193,7 @@
 
 <br></p></details>
 
+
 <details>
   <summary><b>КОМПОНЕНТЫ - ЖИЗНЕННЫЙ ЦИКЛ</b></summary><p>
   
@@ -2336,6 +2345,7 @@
   </p></details>
 
 <br></p></details>
+
 
 <details>
   <summary><b>REACT - ХУКИ</b></summary><p>
@@ -2509,6 +2519,7 @@
 
 <br></p></details>
 
+
 <details>
   <summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary><p>
   
@@ -2617,6 +2628,7 @@
   </details>
 
 <br></p></details>
+
 
 <details>
   <summary><b>AJAX, JSON, CORS и т.д.</b></summary><p>
@@ -3105,6 +3117,7 @@
   
 <br></p></details>
 
+
 <details>
     <summary><b>UX/UI</b></summary>
   <details>
@@ -3123,6 +3136,7 @@
   См. отдельный файл-шпаргалку по UX-UI (скоро выложу)
 
 </details>
+
 
 <details>
   <summary><b>РАЗНОЕ</b></summary> <p>
