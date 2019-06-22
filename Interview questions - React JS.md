@@ -1818,6 +1818,7 @@
   
   <br></p></details>
   
+  
   <details><summary><b>render()</b></summary><p>
    
   - чистый, не пихать сюда ничего. 
@@ -1833,8 +1834,13 @@
   
   <br></p></details>
   
-  <details><summary></b>componentWillUpdate()</b> - УСТАРЕВШИЙ! перед обновлением компонента (если shouldComponentUpdate возвращает true)</summary>
-  </details>
+  
+  <details><summary><b>componentWillUpdate()</b> - УСТАРЕВШИЙ! перед обновлением компонента (если sCU вернул true)</summary><p>
+  
+  если shouldComponentUpdate возвращает true
+  
+  <br></p></details>
+  
   
   <details><summary><b>render()</b></summary>
   </details>
@@ -1844,6 +1850,8 @@
   чаще всего нужен, если нас интересуют составляющие реального DOM (размер компонента, позиционирование...)
   
   <br></p>></details>
+  
+  <br>
   
   **Эти методы считаются устаревшими, и вам следует избегать их в новом коде:**
   - UNSAFE_componentWillUpdate()
