@@ -1850,7 +1850,7 @@
   </p></details>
 <br></p></details>
 
-<details><summary><b>REACT - CONTEXT API</b></summary><p>
+<details><summary><b>REACT - Context API</b></summary><p>
   
   ---
   
@@ -1882,7 +1882,7 @@
   
 <br></p></details>
 
-<details><summary><b>REACT - ХУКИ</b></summary><p>
+<details><summary><b>REACT - Хуки</b></summary><p>
   
   ---
   
@@ -2052,7 +2052,7 @@
   </details>
 <br></p></details>
 
-<details><summary><b>REACT - СТРОГАЯ ТИПЗАЦИЯ</b></summary><p>
+<details><summary><b>REACT - Строгая типзация</b></summary><p>
   
   ---
 
