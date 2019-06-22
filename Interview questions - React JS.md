@@ -1776,7 +1776,7 @@
 
   <br></p></details>
   
-  
+  <br>
   
   **2. Обновление** - когда компонент повторно перерисовывается. Может быть вызвано изменениями в свойствах или состоянии
   
@@ -1893,8 +1893,7 @@
   - [Оф. документация - React.Component](https://reactjs.org/docs/react-component.html)
   - [https://metanit.com/web/react/2.6.php](https://metanit.com/web/react/2.6.php)
   - [https://learn-reactjs.ru/reference/react-component](https://learn-reactjs.ru/reference/react-component)
-  
-  <br></p></details>
+
 <br></p></details>
 
 <details><summary><b>REACT - Context API</b></summary><p>
