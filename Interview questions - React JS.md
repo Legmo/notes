@@ -1753,17 +1753,7 @@
   Вы не должны вызывать setState() в constructor(). Вместо этого, если вашему компоненту нужно использовать локальное состояние, присвойте начальное состояние this.state непосредственно в конструкторе
   
   <br></p></details>
-  
-  
-
-  
-  
-  <details><summary><b>render()</b> - рендеринг компонента</summary><p>
-  
-  чистый, не пихать сюда ничего. Только для того, чтобы строить виртуальный DOM компонента
-  
-  <br></p></details>
-  
+    
     
   <details><summary>static getDerivedStateFromProps()</summary><p>
   
@@ -1771,6 +1761,12 @@
   
   <br></p></details>
   
+  
+  <details><summary><b>render()</b> - рендеринг компонента</summary><p>
+  
+  чистый, не пихать сюда ничего. Только для того, чтобы строить виртуальный DOM компонента
+  
+  <br></p></details>
 
   <details><summary><b>componentDidMount()</b> - после рендеринга компонента. Здесь можно выполнять запросы к удаленным ресурсам.</summary><p>
 
@@ -1885,6 +1881,7 @@
   <details><summary>2. componentWillUpdate() - перед обновлением компонента (если shouldComponentUpdate вернул true)</summary></details>
   
   <br>
+
   
   **I. Другие API**- каждый компонент также предоставляет некоторые другие API:
   - setState()
