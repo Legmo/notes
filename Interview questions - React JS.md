@@ -1762,7 +1762,7 @@
   <br></p></details>
  
  
-  <details><summary><b>Компоненты высшего порядка</b> (Hight Order Component) //ToDo - доработать</summary><p>
+  <details><summary><b>Компоненты высшего порядка</b> (Higher Order Components, HOC) //ToDo - доработать</summary><p>
   
   Способ повторного использования логики.
   
@@ -1770,9 +1770,11 @@
   
   Благодаря HOC мы можем создавать одотипные контейнерные компоненты, передававя в них презентационные компоненты (которые надо обернуть)
      
-   **Ссылки**
-   - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
-   - [YouTube - IT-Камасутра](https://www.youtube.com/watch?v=7W4PD4BN3eY)
+
+  **Ссылки**
+  - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
+  - [YouTube - IT Kamasutra 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
+  - [YouTube - IT Kamasutra 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
   
   <br></p></details>
   
@@ -1789,16 +1791,6 @@
     
   Каждый раз дублируя код - думать чтоб вынести её в отдельный компонент/функцию.  
      
-  <br></p></details>
-  
-  
-  <details><summary><b>Компоненты высшего порядка (Higher order components, HOC)</b></summary><p>
-  
-  
-  **Ссылки**
-  - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
-  - [IT Kamasutra - 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
-  - [IT Kamasutra - 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
   <br></p></details>
 
 <br></p></details>
