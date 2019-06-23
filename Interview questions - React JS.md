@@ -1021,6 +1021,48 @@
   
   <br></p></details>
   
+  
+  <details><summary><b>Props и производительность</b></summary><p>
+  
+  Основная опасность - увеличение количества render, которые мешают производительности
+  
+  Важно: при вызове render() перерисовывается не только родительский компонент, но и все дочерние (хотя, в них свойства могли и не поменяться). Т.е. если у родительского компонента внутри render есть дочерние компоненты - они будут перерисовываться. Соотвественно, если мы вызываем render на родительском компоненте - перерисуем всё приложение. Чтоб решить этот вопрос - используем создание компонента от PureComponent
+    
+  Даже если я создал класс от PureComponent - это не гарантирует отсутсвие лишних ренедров при тех же данных. Одна из причин - анонимные функци (они при каждом рендере новые). 
+  ```
+  //Неверно:
+  render() {
+    return <Component onClick= {() => this.hangleClick}>
+  }
+  
+  //Верно:
+  handleClick = () => {...}
+  render() {
+    return <Component onClick= {this.hangleClick}>
+  }
+  ```
+  
+  То же самое с объектами - не создаём их прямо в функции, а подключаем как константу
+  
+    ```
+    //Неверно:
+    render() {
+      return <Component test= {{a: 1}}>
+    }
+    
+    //Верно:
+    const obj = {a:1}
+    render() {
+      return <Component test= {obj}>
+    }
+    ```
+  
+ **Ссылки**
+  - [YouTube - Какие props портят производительность](https://www.youtube.com/watch?v=zSDOxWhPG_U)
+  
+  <br></p></details>
+  
+  
   <details><summary><b>State (состояние)</b></summary><p> 
     
   Специальный js-объект внутри компонента. Хранит данные, которые могут изменятся с течением времени.<br>
@@ -1673,6 +1715,18 @@
   
   **UNSORTED**
   
+  
+  Важно: при вызове render() перерисовывается не только родительский компонент, но и все дочерние (хотя, в них свойства могли и не поменяться). Т.е. если у родительского компонента внутри render есть дочерние компоненты - они будут перерисовываться. Соотвественно, если мы вызываем render на родительском компоненте - перерисуем всё приложение. Чтоб решить этот вопрос - используем создание компонента от PureComponent
+  
+  Даже если я создал класс от PureComponent - это не гарантирует отсутсвие лишних ренедров при тех же данных. Одна из причин - анонимные функци (они при каждом рендере новые). 
+  ```
+  //Неверно:
+  <Component onClick= {() => this.hangleClick}>
+  
+  //Верно:
+  <Component onClick= {this.hangleClick}>
+  ```
+  
   автоматически проверяет, должен ли компонент обновляться. Не нужно писать shouldComponentUpdate самостоятельно.
 
   PureComponent будет вызывать функцию render(), только если обнаруживает изменения в props или в состоянии. 
@@ -1700,11 +1754,27 @@
   - [habr - Разбор: как и зачем применять PureComponent в React](https://habr.com/ru/company/redmadrobot/blog/318222/)
   - [PureComponent и Components](https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7)
   - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+  - [YouTube - Какие props портят производительность](https://www.youtube.com/watch?v=zSDOxWhPG_U)
   - [totser](https://toster.ru/q/384870)
   - [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
           
   <br></p></details>
  
+ 
+  <details><summary><b>Компоненты высшего порядка</b> (Hight Order Component) //ToDo - доработать</summary><p>
+  
+  Способ повторного использования логики.
+  
+  Это функция, которая принимает компонент и возвращает новый контейнерный компонент.
+  
+  Благодаря HOC мы можем создавать одотипные контейнерные компоненты, передававя в них презентационные компоненты (которые надо обернуть)
+     
+   **Ссылки**
+   - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
+   - [YouTube - IT-Камасутра](https://www.youtube.com/watch?v=7W4PD4BN3eY)
+  
+  <br></p></details>
+  
   
   <details><summary><b>Советы по организации кода</b></summary><p>
     
@@ -1944,7 +2014,8 @@
   
 <br></p></details>
 
-<details><summary><b>REACT - Хуки</b></summary><p>
+<details>
+<summary><b>REACT - Хуки</b></summary><p>
   
   ---
   
@@ -2072,7 +2143,8 @@
 
 <br></p></details>
 
-<details><summary><b>REACT - Роутинг</b></summary><p>
+<details>
+<summary><b>REACT - Роутинг</b></summary><p>
   
   ---
   
