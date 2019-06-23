@@ -234,7 +234,7 @@
   let a = 1
   
   //Или так
-  const a = 1`
+  const a = 1
   ```
   Ссылки:
   * [learn.javascript.ru](https://learn.javascript.ru/variables)
