@@ -1790,6 +1790,16 @@
   Каждый раз дублируя код - думать чтоб вынести её в отдельный компонент/функцию.  
      
   <br></p></details>
+  
+  
+  <details><summary><b>Компоненты высшего порядка (Higher order components, HOC)</b></summary><p>
+  
+  
+  **Ссылки**
+  - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
+  - [IT Kamasutra - 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
+  - [IT Kamasutra - 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
+  <br></p></details>
 
 <br></p></details>
 
@@ -3299,6 +3309,8 @@
 
 <details><summary><b>Ещё подборки вопросов-ответов</b></summary><p>
 
+  ---
+
   - [Вопросы на собеседовании React.js](https://github.com/likezninjaz/react-ru-interview-questions)
     - JavaScript
       - Какие типы данных существуют в JavaScript?
@@ -3318,7 +3330,7 @@
       - Что такое Компонент высшего порядка (Higher-Order Component, HOC)?
       - Что такое хуки в React?
       - Что такое порталы в React?
-  - [React.js + Redux — interview questions (1)](https://medium.com/@olgakozlova/react-js-redux-interview-questions-1-e6d2f12f2d79)
+  - [Козлова О - React.js + Redux — interview questions](https://medium.com/@olgakozlova/react-js-redux-interview-questions-1-e6d2f12f2d79)
     - Зачем вообще нужен реакт?
     - Что такое виртуальный DOM?
     - Жизненный цикл React компонента?
@@ -3441,4 +3453,3 @@
 
 <br></p></details>
 
----
