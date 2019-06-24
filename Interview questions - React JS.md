@@ -604,7 +604,7 @@
   <br></p></details>  
 <br></p></details>
 
-##
+#
 <details><summary><b>JS - приёмы</b></summary><p>
                                          
   ---
