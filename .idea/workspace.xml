@@ -23,10 +23,7 @@
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interview - notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview - notes.md" afterDir="false" />
-    </list>
+    <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +58,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="29035" />
+          <entry key="md" value="29063" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="29031" />
+          <entry key="Markdown" value="29059" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -111,8 +108,8 @@
         <entry file="file://$PROJECT_DIR$/Interview - notes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="645">
-                <caret line="308" lean-forward="true" selection-start-line="308" selection-end-line="308" />
+              <first_editor relative-caret-position="195">
+                <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
                 <folding>
                   <element signature="e#14373#14374#0" />
                   <element signature="e#16216#16217#0" />
@@ -242,35 +239,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="7005000" />
-    </task>
-    <task id="LOCAL-00195" summary="React JS - in progress">
-      <created>1561304385070</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1561304385070</updated>
-    </task>
-    <task id="LOCAL-00196" summary="React JS - in progress">
-      <created>1561311498918</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1561311498918</updated>
-    </task>
-    <task id="LOCAL-00197" summary="React JS - in progress">
-      <created>1561311578796</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1561311578796</updated>
-    </task>
-    <task id="LOCAL-00198" summary="React JS - in progress">
-      <created>1561313560280</created>
-      <option name="number" value="00198" />
-      <option name="presentableId" value="LOCAL-00198" />
-      <option name="project" value="LOCAL" />
-      <updated>1561313560280</updated>
+      <workItem from="1561350040822" duration="7256000" />
     </task>
     <task id="LOCAL-00199" summary="React JS - in progress">
       <created>1561346321126</created>
@@ -587,11 +556,39 @@
       <option name="project" value="LOCAL" />
       <updated>1561358624795</updated>
     </task>
-    <option name="localTasksCounter" value="244" />
+    <task id="LOCAL-00244" summary="React JS - in progress">
+      <created>1561359005509</created>
+      <option name="number" value="00244" />
+      <option name="presentableId" value="LOCAL-00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1561359005509</updated>
+    </task>
+    <task id="LOCAL-00245" summary="React JS - in progress">
+      <created>1561359044893</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1561359044893</updated>
+    </task>
+    <task id="LOCAL-00246" summary="React JS - in progress">
+      <created>1561359131537</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1561359131537</updated>
+    </task>
+    <task id="LOCAL-00247" summary="React JS - in progress">
+      <created>1561359173717</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1561359173717</updated>
+    </task>
+    <option name="localTasksCounter" value="248" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114291000" />
+    <option name="totallyTimeSpent" value="114542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,8 +1007,8 @@
     <entry file="file://$PROJECT_DIR$/Interview - notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="645">
-            <caret line="308" lean-forward="true" selection-start-line="308" selection-end-line="308" />
+          <first_editor relative-caret-position="195">
+            <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
             <folding>
               <element signature="e#14373#14374#0" />
               <element signature="e#16216#16217#0" />
