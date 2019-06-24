@@ -24,8 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Interview - Drupal 7-8 notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interview - Drupal 7-8 notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - Drupal 7-8.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,26 +48,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="14" />
+          <entry key="md" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="14" />
+          <entry key="Markdown" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="29562" />
+          <entry key="md" value="29746" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="29558" />
+          <entry key="Markdown" value="29742" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -132,11 +131,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Interview - Drupal 7-8 notes.md">
+        <entry file="file://$PROJECT_DIR$/Interview questions - Drupal 7-8.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-435">
-                <caret line="134" column="59" selection-start-line="134" selection-start-column="59" selection-end-line="134" selection-end-column="59" />
+              <first_editor relative-caret-position="126">
+                <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="57" selection-start-column="57" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -270,6 +281,8 @@
         <option value="$PROJECT_DIR$/Interciew questions - UX-UI.md" />
         <option value="$PROJECT_DIR$/List of competencies - Drupal.md" />
         <option value="$PROJECT_DIR$/Interview - Drupal 7-8 notes.md" />
+        <option value="$PROJECT_DIR$/Interview  questions - HTML-CSS.md" />
+        <option value="$PROJECT_DIR$/Interview questions - Drupal 7-8.md" />
       </list>
     </option>
   </component>
@@ -357,21 +370,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="9411000" />
-    </task>
-    <task id="LOCAL-00216" summary="React JS - in progress">
-      <created>1561354832007</created>
-      <option name="number" value="00216" />
-      <option name="presentableId" value="LOCAL-00216" />
-      <option name="project" value="LOCAL" />
-      <updated>1561354832007</updated>
-    </task>
-    <task id="LOCAL-00217" summary="React JS - in progress">
-      <created>1561355103766</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
-      <option name="project" value="LOCAL" />
-      <updated>1561355103766</updated>
+      <workItem from="1561350040822" duration="9700000" />
     </task>
     <task id="LOCAL-00218" summary="React JS - in progress">
       <created>1561355186341</created>
@@ -702,11 +701,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561361409287</updated>
     </task>
-    <option name="localTasksCounter" value="265" />
+    <task id="LOCAL-00265" summary="React JS - in progress">
+      <created>1561361510815</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1561361510815</updated>
+    </task>
+    <task id="LOCAL-00266" summary="React JS - in progress">
+      <created>1561361614889</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1561361614889</updated>
+    </task>
+    <option name="localTasksCounter" value="267" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116697000" />
+    <option name="totallyTimeSpent" value="116986000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1232,11 +1245,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interview - Drupal 7-8 notes.md">
+    <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-435">
-            <caret line="134" column="59" selection-start-line="134" selection-start-column="59" selection-end-line="134" selection-end-column="59" />
+          <first_editor>
+            <caret column="57" selection-start-column="57" selection-end-column="57" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview questions - Drupal 7-8.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="126">
+            <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
           </first_editor>
           <second_editor />
         </state>
