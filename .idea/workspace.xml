@@ -24,7 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Interciew questions - UX-UI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interciew questions - UX-UI.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interciew questions - UX-UI.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +60,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="29262" />
+          <entry key="md" value="29365" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="29258" />
+          <entry key="Markdown" value="29361" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -110,8 +110,8 @@
         <entry file="file://$PROJECT_DIR$/Interciew questions - UX-UI.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="486">
-                <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+              <first_editor relative-caret-position="645">
+                <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               </first_editor>
               <second_editor />
             </state>
@@ -330,21 +330,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="8590000" />
-    </task>
-    <task id="LOCAL-00210" summary="React JS - in progress">
-      <created>1561349531768</created>
-      <option name="number" value="00210" />
-      <option name="presentableId" value="LOCAL-00210" />
-      <option name="project" value="LOCAL" />
-      <updated>1561349531768</updated>
-    </task>
-    <task id="LOCAL-00211" summary="React JS - in progress">
-      <created>1561351025199</created>
-      <option name="number" value="00211" />
-      <option name="presentableId" value="LOCAL-00211" />
-      <option name="project" value="LOCAL" />
-      <updated>1561351025200</updated>
+      <workItem from="1561350040822" duration="8865000" />
     </task>
     <task id="LOCAL-00212" summary="React JS - in progress">
       <created>1561351273276</created>
@@ -675,11 +661,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561360230859</updated>
     </task>
-    <option name="localTasksCounter" value="259" />
+    <task id="LOCAL-00259" summary="React JS - in progress">
+      <created>1561360661850</created>
+      <option name="number" value="00259" />
+      <option name="presentableId" value="LOCAL-00259" />
+      <option name="project" value="LOCAL" />
+      <updated>1561360661850</updated>
+    </task>
+    <task id="LOCAL-00260" summary="React JS - in progress">
+      <created>1561360709134</created>
+      <option name="number" value="00260" />
+      <option name="presentableId" value="LOCAL-00260" />
+      <option name="project" value="LOCAL" />
+      <updated>1561360709134</updated>
+    </task>
+    <option name="localTasksCounter" value="261" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115876000" />
+    <option name="totallyTimeSpent" value="116151000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,8 +1188,8 @@
     <entry file="file://$PROJECT_DIR$/Interciew questions - UX-UI.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="486">
-            <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+          <first_editor relative-caret-position="645">
+            <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           </first_editor>
           <second_editor />
         </state>
