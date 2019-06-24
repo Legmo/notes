@@ -60,14 +60,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="28393" />
+          <entry key="md" value="28775" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="28389" />
+          <entry key="Markdown" value="28771" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -110,8 +110,8 @@
         <entry file="file://$PROJECT_DIR$/Interview - notes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="-54">
-                <caret line="117" column="2" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
+              <first_editor relative-caret-position="360">
+                <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
                 <folding>
                   <element signature="e#7544#7545#0" />
                   <element signature="e#10898#10899#0" />
@@ -242,21 +242,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="6013000" />
-    </task>
-    <task id="LOCAL-00189" summary="React JS - in progress">
-      <created>1561233902617</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1561233902617</updated>
-    </task>
-    <task id="LOCAL-00190" summary="React JS - in progress">
-      <created>1561234175213</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1561234175213</updated>
+      <workItem from="1561350040822" duration="6332000" />
     </task>
     <task id="LOCAL-00191" summary="React JS - in progress">
       <created>1561234440558</created>
@@ -587,11 +573,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561357901873</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="React JS - in progress">
+      <created>1561358012151</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1561358012151</updated>
+    </task>
+    <task id="LOCAL-00239" summary="React JS - in progress">
+      <created>1561358070585</created>
+      <option name="number" value="00239" />
+      <option name="presentableId" value="LOCAL-00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1561358070585</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113299000" />
+    <option name="totallyTimeSpent" value="113618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,12 +615,12 @@
       <window_info anchor="bottom" id="Statistic" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.32833788" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" weight="0.32833788" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32833788" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32833788" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1010,8 +1010,8 @@
     <entry file="file://$PROJECT_DIR$/Interview - notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="-54">
-            <caret line="117" column="2" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
+          <first_editor relative-caret-position="360">
+            <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
             <folding>
               <element signature="e#7544#7545#0" />
               <element signature="e#10898#10899#0" />
