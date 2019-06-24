@@ -1304,13 +1304,17 @@
    
   <br></p></details>
     
-  <details><summary>Среда React. Для работы используется:</summary><p>
+  <details><summary><b>Среда React</b></summary><p>
     
-  - **NPM/Yarn** - для управления зависимостями. Ну, и чтобы установить Create React App 
-  - WebPack, 
-  - WebPack server 
-  - Create React App - специальная npm/yarn утилита . 
+  Для работы используется:
+  - **NPM/Yarn** - для управления зависимостями. Ну, и чтобы установить Create React App (для работы npm нужен Ruby)
+  - **Babel**
+  - **WebPack** 
+  - **WebPack server** 
+  - **Create React App** - специальная npm/yarn утилита дл ябыстрого развоарчивания проекта на React. Содержит Babel, WebPack и прочее
   - OpenServer не нужен!
+  
+  Вообще, можно без всего этого добра - добавить в код ссылку на CDN Реакта и всё. Но с "добром" удобнее.
   
   <br></p></details>
     
