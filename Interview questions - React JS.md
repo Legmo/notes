@@ -2056,8 +2056,7 @@
 <details><summary><b>REACT - Context API</b></summary><p>
   
   ---  
-  
-  <details><summary><b>Что такое контекст и зачем он нужен?</b></summary> <p>
+  <details><summary><b>Что такое контекст и зачем он нужен?</b></summary><p>
   
   Объект, который создаётся у родителя и доступен всем детям.
   
@@ -2093,9 +2092,9 @@
   
   <br></p></details> 
   
-  **Ссылки:**
-    - [Оф. документация - Контекст](https://ru.reactjs.org/docs/context.html)
-    - [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
+  **Ссылки**
+  - [Оф. документация - Контекст](https://ru.reactjs.org/docs/context.html)
+  - [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
   
 <br></p></details>
 
