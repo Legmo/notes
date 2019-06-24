@@ -569,7 +569,7 @@
   
   <br></p></details>
   
-  <details><summary>Деструктуризация массивов</summary><p>
+  <details><summary><b>Деструктуризация массивов</b></summary><p>
 
   const [fruit, setFruit] = useState('банан');
 
