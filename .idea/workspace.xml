@@ -24,7 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Interview - notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview - notes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Interciew questions - UX-UI.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,26 +48,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="11" />
+          <entry key="md" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="11" />
+          <entry key="Markdown" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="29208" />
+          <entry key="md" value="29262" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="29204" />
+          <entry key="Markdown" value="29258" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -79,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="432">
+              <first_editor relative-caret-position="486">
                 <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="20" />
                 <folding>
                   <element signature="e#42394#42395#0" />
@@ -107,15 +107,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Interciew questions - UX-UI.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="486">
+                <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interview - notes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="432">
-                <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
+              <first_editor relative-caret-position="467">
+                <caret line="31" column="6" selection-start-line="30" selection-start-column="3" selection-end-line="31" selection-end-column="6" />
                 <folding>
                   <element signature="e#139#486#0" />
-                  <element signature="e#1097#1805#0" />
-                  <element signature="e#1810#1980#0" />
                   <element signature="e#4787#4945#0" />
                   <element signature="e#4819#4945#0" />
                   <element signature="e#4987#5138#0" />
@@ -232,6 +242,7 @@
         <option value="$PROJECT_DIR$/1.md" />
         <option value="$PROJECT_DIR$/Interview questions - React JS.md" />
         <option value="$PROJECT_DIR$/Interview - notes.md" />
+        <option value="$PROJECT_DIR$/Interciew questions - UX-UI.md" />
       </list>
     </option>
   </component>
@@ -319,21 +330,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="8137000" />
-    </task>
-    <task id="LOCAL-00208" summary="React JS - in progress">
-      <created>1561349031404</created>
-      <option name="number" value="00208" />
-      <option name="presentableId" value="LOCAL-00208" />
-      <option name="project" value="LOCAL" />
-      <updated>1561349031404</updated>
-    </task>
-    <task id="LOCAL-00209" summary="React JS - in progress">
-      <created>1561349279043</created>
-      <option name="number" value="00209" />
-      <option name="presentableId" value="LOCAL-00209" />
-      <option name="project" value="LOCAL" />
-      <updated>1561349279043</updated>
+      <workItem from="1561350040822" duration="8590000" />
     </task>
     <task id="LOCAL-00210" summary="React JS - in progress">
       <created>1561349531768</created>
@@ -664,11 +661,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561360095746</updated>
     </task>
-    <option name="localTasksCounter" value="257" />
+    <task id="LOCAL-00257" summary="React JS - in progress">
+      <created>1561360137810</created>
+      <option name="number" value="00257" />
+      <option name="presentableId" value="LOCAL-00257" />
+      <option name="project" value="LOCAL" />
+      <updated>1561360137810</updated>
+    </task>
+    <task id="LOCAL-00258" summary="React JS - in progress">
+      <created>1561360230859</created>
+      <option name="number" value="00258" />
+      <option name="presentableId" value="LOCAL-00258" />
+      <option name="project" value="LOCAL" />
+      <updated>1561360230859</updated>
+    </task>
+    <option name="localTasksCounter" value="259" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115423000" />
+    <option name="totallyTimeSpent" value="115876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,7 +694,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17919463" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17919463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -1055,44 +1066,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="432">
-            <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="20" />
-            <folding>
-              <element signature="e#42394#42395#0" />
-              <element signature="e#74607#74608#0" />
-              <element signature="e#102072#102073#0" />
-              <element signature="e#110422#110423#0" />
-              <element signature="e#112841#112842#0" />
-              <element signature="e#116253#116254#0" />
-              <element signature="e#118101#118102#0" />
-              <element signature="e#124717#124718#0" />
-              <element signature="e#129231#129232#0" />
-              <element signature="e#129810#129811#0" />
-              <element signature="e#139882#139883#0" />
-              <element signature="e#149507#149508#0" />
-              <element signature="e#178203#178204#0" />
-              <element signature="e#180180#180181#0" />
-              <element signature="e#188706#188707#0" />
-              <element signature="e#189688#189689#0" />
-              <element signature="e#191265#191266#0" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interview - notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="432">
-            <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
+          <first_editor relative-caret-position="467">
+            <caret line="31" column="6" selection-start-line="30" selection-start-column="3" selection-end-line="31" selection-end-column="6" />
             <folding>
               <element signature="e#139#486#0" />
-              <element signature="e#1097#1805#0" />
-              <element signature="e#1810#1980#0" />
               <element signature="e#4787#4945#0" />
               <element signature="e#4819#4945#0" />
               <element signature="e#4987#5138#0" />
@@ -1171,6 +1151,45 @@
               <element signature="e#29277#29521#0" />
               <element signature="e#29524#29847#0" />
             </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="486">
+            <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="20" />
+            <folding>
+              <element signature="e#42394#42395#0" />
+              <element signature="e#74607#74608#0" />
+              <element signature="e#102072#102073#0" />
+              <element signature="e#110422#110423#0" />
+              <element signature="e#112841#112842#0" />
+              <element signature="e#116253#116254#0" />
+              <element signature="e#118101#118102#0" />
+              <element signature="e#124717#124718#0" />
+              <element signature="e#129231#129232#0" />
+              <element signature="e#129810#129811#0" />
+              <element signature="e#139882#139883#0" />
+              <element signature="e#149507#149508#0" />
+              <element signature="e#178203#178204#0" />
+              <element signature="e#180180#180181#0" />
+              <element signature="e#188706#188707#0" />
+              <element signature="e#189688#189689#0" />
+              <element signature="e#191265#191266#0" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interciew questions - UX-UI.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="486">
+            <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>
