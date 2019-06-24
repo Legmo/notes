@@ -2229,7 +2229,7 @@
   
   <br></p></details>
   
-  <details><summary>Компонент <Route/></summary><p>
+  <details><summary>Компонент Route</summary><p>
   
   <Route/> - компонент, строительный блок React Router'а.
   Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент <Route/>
@@ -2246,16 +2246,16 @@
   
   <br></p></details>
 
-  **Ссылка**
+  **Ссылки**
   - http://bogdanov-blog.ru/react-router-v4-notes/
   - https://habrahabr.ru/post/329996/
        
 <br></p></details>
 
+#
 <details><summary><b>REACT - Статическая типзация</b></summary><p>
   
   ---
-
   <details><summary><b>Про статическую типизацию</b></summary><p>
   
   При статической типизации мне необязательно напоминать компилятору, что данная переменная, например, целое число, и всегда должно им оставаться. Эта информация хранится в программе, и даже если я, забывшись, попытаюсь изменить ее значение на недопустимое, ничего страшного не произойдет.
@@ -2400,10 +2400,10 @@
 
 <br></p></details>
 
+#
 <details><summary><b>REACT - JSX</b></summary><p>
   
   ---
-    
   <details><summary>Что такое JSX?</summary><p>
   
   JavaScript XML (JSX) - расширение синтаксиса JavaScript, "синтаксический сахар" для JS. Позволяет использовать похожий на HTML синтаксис для описания структуры интерфейса.
@@ -2545,26 +2545,23 @@
   
 <br></p></details>
 
+#
 <details><summary><b>REDUX</b></summary><p>
 
   ---
-
-  <details>
-    <summary>Redux</summary><>
+  <details><summary>Redux</summary><>
 Библиотека для управления state, которая реализует Flux-архитектуру      
 Её надо инсталлировать отдельно
       Позволяет создавать свой store командой, а не вручную
       В частности, уменьшает связность - позволяет передавать данные не по цепочке props,  а сразу в нужную компоненту
   </details>
   
-  <details>
-    <summary>React-redux = отдельная библиотека, выступает как прослойка между React и Redux.</summary> 
+  <details><summary>React-redux = отдельная библиотека, выступает как прослойка между React и Redux.</summary> 
       Позволяет работать с Redux не заморачиваясь кучей сложностей. 
       Инкапсулирует часть вещей, прячет от нас всякие детали связанные с контекстом, store, dispatch, subscribe...
   </details>
   
-  <details>
-    <summary>State (анг. состояние) — специальный js-объект <внутри компонента>. Хранит данные, которые могут изменятся с течением времени. </summary>
+  <details><summary>State (анг. состояние) — специальный js-объект <внутри компонента>. Хранит данные, которые могут изменятся с течением времени. </summary>
   
     <div>
       https://ru.reactjs.org/docs/state-and-lifecycle.html
@@ -2640,16 +2637,14 @@
     </div>
   </details>
   
-  <details>
-    <summary>Store (анг. хранилище) - ООП-объект, который управляет state (объект хранящий состояние приложения).</summary> 
+  <details><summary>Store (анг. хранилище) - ООП-объект, который управляет state (объект хранящий состояние приложения).</summary> 
       Там лежит: 
         - сам state
         - методы для работы с ним
       Создаётся при помощи метода(?) createStore(reducers)
   </details>
   
-  <details>
-    <summary>Dispath (анг. отправка) - метод объекта store, через который вызываем все другие методы объекта Store (что изменить state, т.е. состояние приложения).</summary> 
+  <details><summary>Dispath (анг. отправка) - метод объекта store, через который вызываем все другие методы объекта Store (что изменить state, т.е. состояние приложения).</summary> 
       Мы вводим в наш объект store один единственный метод, через который будем вызывать все другие методы объекта.
       Он принимает некий объект action. Выглядит так: dispath(action). 
       У action обязательно должно быть текстовое свойство type='' - в нём передаётся название требуемого действия (т.е. метода). 
@@ -2657,14 +2652,12 @@
       State всегда меняется через dispath(action)
   </details>
   
-  <details>
-    <summary>Action - объект, который через метод dispath передаётся в наш объект store, и там производит некие действия с данными (state). 
+  <details><summary>Action - объект, который через метод dispath передаётся в наш объект store, и там производит некие действия с данными (state). 
       У action есть как минимум одно свойство, type. 
       По type dispath определяет, какие именно действия надо произвести со state (какую ветку действий выбрать)
   </details>
   
-  <details>
-    <summary>Action Creator - функции, которые возвращают объект action. То, что передаётся в mapDispatchToProps</summary>
+  <details><summary>Action Creator - функции, которые возвращают объект action. То, что передаётся в mapDispatchToProps</summary>
       Содержит action - type и список данных, которые может получать. 
       Пример:
         export const updateTaskStatus = (status, id) => ({
@@ -2674,8 +2667,7 @@
         });
   </details>
   
-  <details>
-    <summary>Reducer (анг. уменьшатель) - чистая функция, принимает state и action. Та самая простынь, где много switch</summary>
+  <details><summary>Reducer (анг. уменьшатель) - чистая функция, принимает state и action. Та самая простынь, где много switch</summary>
       Применяет action к этому state (если нужно) и возвращает новый state (если не изменился - тот же). 
       Позволяет разделить метод dispath на отдельные куски, чтоб с ним было удобнее работать. 
       Обычно каждый reducer отвечает за какую-то ветку state - например этот работает с одной страницей, а тот с другой; или один работает с цитатами, а другой с пользователями. 
@@ -2733,12 +2725,11 @@
   
 <br></p></details>
 
+#
 <details><summary><b>REDUX & AJAX</b></summary>
   
   ---
-  
-  <details>
-    <summary>самый простой вариант - делаем запрос внутри actionCreator.</summary>  
+  <details><summary>самый простой вариант - делаем запрос внутри actionCreator.</summary>  
       Например, при помощи fetch:
         const fetchDog = (dispatch) => {
           dispatch(requestDog());
@@ -2756,8 +2747,7 @@
       Промежуточные слои могут соединяться в цепочку вызовов для различной обработки действия (action), но на выходе обязательно должен быть простой объект (действие)
   </details>
   
-  <details>
-    <summary>middlewares - промежуточные слои Redux. Используются для реализации асинхронности в Redux</summary> 	
+  <details><summary>middlewares - промежуточные слои Redux. Используются для реализации асинхронности в Redux</summary> 	
       - функция, которая запускается каждый раз при отправке action’а
       - Ядро Redux это контейнер состояния (state container), который поддерживает только синхронные потоки данных. 
       На каждое действие, в хранилище (store) посылается объект, описывающий что произошло, затем вызывается редюсер (reducer) и состояние (state) сразу обновляется.
@@ -2774,8 +2764,7 @@
   
   </details>
   
-  <details>
-    <summary>redux-thunk - библиотека, один из вариантов реализации middleware (промежуточный слой) для React-Redux</summary> 
+  <details><summary>redux-thunk - библиотека, один из вариантов реализации middleware (промежуточный слой) для React-Redux</summary> 
       https://habr.com/ru/post/351168/
       https://monsterlessons.com/project/lessons/reduxjs-asinhronnye-eksheny-s-pomoshyu-redux-thunk
       https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov
@@ -2824,8 +2813,7 @@
         https://www.youtube.com/watch?v=eWdnjfRu9Io
   </details>
   
-  <details>
-    <summary>redux saga - другая библиотека, для реализации middleware (промежуточный слой) React-Redux</summary> 
+  <details><summary>redux saga - другая библиотека, для реализации middleware (промежуточный слой) React-Redux</summary> 
       - Для упрощения и улучшения сайд-эффектов в приложениях React-Redux. Прежде всего - асинхронные запросы (извлечение данных и т.д.) и нечистые вещи (доступ к кешу браузера и т.д.)
       - Их легче тестировать, на них легче реализовать сложную логику (задержки, параллельные задачи, отмена задач,)
       - Саги это дизайн паттерн, который пришел из мира распределенных транзакций, где сага управляет процессами, которые необходимо выполнять транзакционным способом, сохраняя состояние выполнения и компенсируя неудачные процессы.
@@ -2839,13 +2827,11 @@
         - redux-logic (также базирующийся на RxJS наблюдателях, но дающий свободу писать вашу логику в других стилях).
   </details>
   
-  <details>
-    <summary>axios - инструмент для отправки ajax-запросов, основанный на промисах, очень похожий на jQuery.</summary> 
+  <details><summary>axios - инструмент для отправки ajax-запросов, основанный на промисах, очень похожий на jQuery.</summary> 
       - Альтернативы: got, fetch, SuperAgent, jQuery
   </details>
   
-  <details>
-    <summary>Вариант организации AJAX (IT-Kamasutra)</summary> 
+  <details><summary>Вариант организации AJAX (IT-Kamasutra)</summary> 
       https://www.youtube.com/watch?v=c34P8-9YVMQ&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=51
   
       для работы с серверным API & AJAX - используем axios  
@@ -2860,10 +2846,10 @@
 
 <br></p></details>
 
+#
 <details><summary><b>AJAX, JSON, CORS и т.д.</b></summary><p>
   
   ---
-  
   <details><summary>Порт — это номер, который, выдаёт операционная система каждой программе, которая хочет отослать данные в сеть</summary>
   </details>
   
@@ -3018,8 +3004,7 @@
       https://grishaev.me/cors/
   </details>
   
-  <details>
-    <summary>JSONPP (англ. parameterized JSON with padding — «параметризованный JSON с подкладкой») — развитие идеи JSONP</summary>
+  <details><summary>JSONPP (англ. parameterized JSON with padding — «параметризованный JSON с подкладкой») — развитие идеи JSONP</summary>
       развитие идеи JSONP
       включает в себя URL источника, имя функции, которая будет обрабатывать JSON данные, строка для eval после получения данных и строка для eval после окончания обработки данных
   </details>
@@ -3200,6 +3185,7 @@
   
 <br></p></details>
 
+#
 <details><summary><b>Чистые функции</b></summary><p>
   
   ---
@@ -3253,6 +3239,7 @@
 
 <br></p></details>
 
+#
 <details><summary><b>ООП</b></summary><p>
   
   ---
@@ -3359,28 +3346,26 @@
   
 <br></p></details>
 
+#
 <details><summary><b>UX/UI</b></summary><p>
 
   ---
-  
-  <details>
-    <summary>UX дизайнер -  планирует то, как вы будете взаимодействовать с интерфейсом и какие шаги вам нужно предпринять</summary>
+  <details><summary>UX дизайнер -  планирует то, как вы будете взаимодействовать с интерфейсом и какие шаги вам нужно предпринять</summary>
       Когда изобретатель очередного точильного камня думал: будет ли он сидеть и сам нажимать педаль, или он упростит механизм, но приставит раба который будет раскручивать колесо рукой, то в тот момент он был UX дизайнером.
   </details>
   
-  <details>
-    <summary>UI дизайнер - придумывает, как каждый из этих шагов будет выглядеть</summary>
+  <details><summary>UI дизайнер - придумывает, как каждый из этих шагов будет выглядеть</summary>
       Человек, который думал, какой величины будет камень, какого цвета выбрать дерево для подставки и чем скрепить деревянные жерди (гвоздями или кожаными жгутами?) и какой длины будет ручка, был UI дизайнером.
   </details>
   
-  <details>
-    <summary>Интерфейс - тот способ, каким бы в результате вы затачивали меч. Вместе со всеми решениями UX и UI.</summary>
+  <details><summary>Интерфейс - тот способ, каким бы в результате вы затачивали меч. Вместе со всеми решениями UX и UI.</summary>
   </details>
   
   См. отдельный файл-шпаргалку по UX-UI (скоро выложу)
 
 <br></p></details>
 
+#
 <details><summary><b>Разное</b></summary><p>
   
   ---
@@ -3418,6 +3403,7 @@
 
 <br></p></details>
 
+#
 <details><summary><b>Ещё подборки вопросов-ответов</b></summary><p>
 
   ---
