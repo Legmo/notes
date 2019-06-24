@@ -295,7 +295,7 @@
 #
 <details><summary><b>Термины и обороты</b></summary><p>
 
-- VC - резюме
+- CV - резюме
 - rate, pay rate - зарпалата, ставка зарплаты
 - gross salary  - зарплата до вычетов 
 - net salary  - зарплата на руки 
