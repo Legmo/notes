@@ -2521,8 +2521,9 @@
         но можно заменить ее тернарным оператором.
   </details>
 
-  <br></p></details>
+<br></p></details>
 
+#
 <details><summary><b>REACT - CSS</b></summary><p>
 
   ---
