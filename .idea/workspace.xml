@@ -24,7 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4abacb2b-a389-4973-b00f-3f520143322f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Interview - Drupal 7-8 notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Interview questions - Drupal 7-8.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +60,14 @@
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="29746" />
+          <entry key="md" value="29808" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="29742" />
+          <entry key="Markdown" value="29804" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -75,11 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="486">
+              <first_editor relative-caret-position="432">
                 <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="20" />
                 <folding>
                   <element signature="e#42394#42395#0" />
@@ -99,146 +99,6 @@
                   <element signature="e#188706#188707#0" />
                   <element signature="e#189688#189689#0" />
                   <element signature="e#191265#191266#0" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interview questions - UX-UI.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="72">
-                <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/List of competencies - Drupal.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="342">
-                <caret line="176" column="17" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Interview questions - Drupal 7-8.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="126">
-                <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="57" selection-start-column="57" selection-end-column="57" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Interview - notes.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="467">
-                <caret line="31" column="6" selection-start-line="30" selection-start-column="3" selection-end-line="31" selection-end-column="6" />
-                <folding>
-                  <element signature="e#139#486#0" />
-                  <element signature="e#4787#4945#0" />
-                  <element signature="e#4819#4945#0" />
-                  <element signature="e#4987#5138#0" />
-                  <element signature="e#5588#5852#0" />
-                  <element signature="e#6231#6432#0" />
-                  <element signature="e#6243#6376#0" />
-                  <element signature="e#6345#6672#0" />
-                  <element signature="e#6789#7882#0" />
-                  <element signature="e#6205#6540#0" />
-                  <element signature="e#6568#6995#0" />
-                  <element signature="e#7024#7145#0" />
-                  <element signature="e#7216#7294#0" />
-                  <element signature="e#7890#7929#0" />
-                  <element signature="e#7174#7175#0" />
-                  <element signature="e#7236#7323#0" />
-                  <element signature="e#7325#7517#0" />
-                  <element signature="e#7544#7545#0" />
-                  <element signature="e#7602#7664#0" />
-                  <element signature="e#7666#10915#0" />
-                  <element signature="e#8145#8542#0" />
-                  <element signature="e#8602#9294#0" />
-                  <element signature="e#10795#11568#0" />
-                  <element signature="e#11598#12210#0" />
-                  <element signature="e#10757#10915#0" />
-                  <element signature="e#10898#10899#0" />
-                  <element signature="e#12445#12667#0" />
-                  <element signature="e#12681#14138#0" />
-                  <element signature="e#12727#12924#0" />
-                  <element signature="e#12929#13402#0" />
-                  <element signature="e#13506#14138#0" />
-                  <element signature="e#13701#14138#0" />
-                  <element signature="e#14004#14138#0" />
-                  <element signature="e#14154#14432#0" />
-                  <element signature="e#14448#14902#0" />
-                  <element signature="e#14500#14640#0" />
-                  <element signature="e#14913#15041#0" />
-                  <element signature="e#15057#15133#0" />
-                  <element signature="e#15149#15305#0" />
-                  <element signature="e#15321#15463#0" />
-                  <element signature="e#15355#15463#0" />
-                  <element signature="e#15479#15794#0" />
-                  <element signature="e#15813#15940#0" />
-                  <element signature="e#15959#16146#0" />
-                  <element signature="e#16002#16112#0" />
-                  <element signature="e#17124#17125#0" />
-                  <element signature="e#19077#29903#0" />
-                  <element signature="e#19307#19677#0" />
-                  <element signature="e#19760#21036#0" />
-                  <element signature="e#19762#20180#0" />
-                  <element signature="e#20187#20410#0" />
-                  <element signature="e#20417#21036#0" />
-                  <element signature="e#21153#23024#0" />
-                  <element signature="e#21359#21741#0" />
-                  <element signature="e#22743#23081#0" />
-                  <element signature="e#23151#23721#0" />
-                  <element signature="e#23733#23888#0" />
-                  <element signature="e#23929#24273#0" />
-                  <element signature="e#24014#24356#0" />
-                  <element signature="e#24307#25130#0" />
-                  <element signature="e#24698#25130#0" />
-                  <element signature="e#25164#26140#0" />
-                  <element signature="e#24240#24482#0" />
-                  <element signature="e#24600#24875#0" />
-                  <element signature="e#26190#26508#0" />
-                  <element signature="e#26624#27468#0" />
-                  <element signature="e#28402#28994#0" />
-                  <element signature="e#28402#28988#0" />
-                  <element signature="e#29076#29273#0" />
-                  <element signature="e#29353#29464#0" />
-                  <element signature="e#29592#29714#0" />
-                  <element signature="e#29590#29708#0" />
-                  <element signature="e#27057#27058#0" />
-                  <element signature="e#27116#27902#0" />
-                  <element signature="e#27993#27994#0" />
-                  <element signature="e#28446#29243#0" />
-                  <element signature="e#29277#29521#0" />
-                  <element signature="e#29524#29847#0" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -277,12 +137,12 @@
         <option value="$USER_HOME$/Desktop/README.md" />
         <option value="$PROJECT_DIR$/1.md" />
         <option value="$PROJECT_DIR$/Interview questions - React JS.md" />
-        <option value="$PROJECT_DIR$/Interview - notes.md" />
         <option value="$PROJECT_DIR$/Interciew questions - UX-UI.md" />
         <option value="$PROJECT_DIR$/List of competencies - Drupal.md" />
         <option value="$PROJECT_DIR$/Interview - Drupal 7-8 notes.md" />
         <option value="$PROJECT_DIR$/Interview  questions - HTML-CSS.md" />
         <option value="$PROJECT_DIR$/Interview questions - Drupal 7-8.md" />
+        <option value="$PROJECT_DIR$/Interview - notes.md" />
       </list>
     </option>
   </component>
@@ -370,28 +230,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="9700000" />
-    </task>
-    <task id="LOCAL-00218" summary="React JS - in progress">
-      <created>1561355186341</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
-      <option name="project" value="LOCAL" />
-      <updated>1561355186341</updated>
-    </task>
-    <task id="LOCAL-00219" summary="React JS - in progress">
-      <created>1561356107226</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
-      <option name="project" value="LOCAL" />
-      <updated>1561356107226</updated>
-    </task>
-    <task id="LOCAL-00220" summary="React JS - in progress">
-      <created>1561356408144</created>
-      <option name="number" value="00220" />
-      <option name="presentableId" value="LOCAL-00220" />
-      <option name="project" value="LOCAL" />
-      <updated>1561356408144</updated>
+      <workItem from="1561350040822" duration="10451000" />
     </task>
     <task id="LOCAL-00221" summary="React JS - in progress">
       <created>1561356502446</created>
@@ -715,11 +554,32 @@
       <option name="project" value="LOCAL" />
       <updated>1561361614889</updated>
     </task>
-    <option name="localTasksCounter" value="267" />
+    <task id="LOCAL-00267" summary="React JS - in progress">
+      <created>1561361702755</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1561361702755</updated>
+    </task>
+    <task id="LOCAL-00268" summary="React JS - in progress">
+      <created>1561361931654</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1561361931654</updated>
+    </task>
+    <task id="LOCAL-00269" summary="React JS - in progress">
+      <created>1561362055462</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1561362055462</updated>
+    </task>
+    <option name="localTasksCounter" value="270" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116986000" />
+    <option name="totallyTimeSpent" value="117737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,7 +594,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17919463" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17919463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -1109,10 +969,9 @@
     <entry file="file://$PROJECT_DIR$/Interview - notes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="467">
-            <caret line="31" column="6" selection-start-line="30" selection-start-column="3" selection-end-line="31" selection-end-column="6" />
+          <first_editor relative-caret-position="288">
+            <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
             <folding>
-              <element signature="e#139#486#0" />
               <element signature="e#4787#4945#0" />
               <element signature="e#4819#4945#0" />
               <element signature="e#4987#5138#0" />
@@ -1196,10 +1055,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="57" selection-start-column="57" selection-end-column="57" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview questions - Drupal 7-8.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="339">
+            <caret line="141" column="82" selection-start-line="141" selection-start-column="82" selection-end-line="141" selection-end-column="82" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/List of competencies - Drupal.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="342">
+            <caret line="176" column="17" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interview questions - UX-UI.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="72">
+            <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="486">
+          <first_editor relative-caret-position="432">
             <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="20" />
             <folding>
               <element signature="e#42394#42395#0" />
@@ -1220,46 +1119,6 @@
               <element signature="e#189688#189689#0" />
               <element signature="e#191265#191266#0" />
             </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interview questions - UX-UI.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="72">
-            <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/List of competencies - Drupal.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="342">
-            <caret line="176" column="17" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="57" selection-start-column="57" selection-end-column="57" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interview questions - Drupal 7-8.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="126">
-            <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
           </first_editor>
           <second_editor />
         </state>
