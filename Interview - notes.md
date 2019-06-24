@@ -108,7 +108,7 @@
   <br></p></details>
 
 
-  <details><summary><bЗачем вам деньги?</b></summary><p>
+  <details><summary><b>Зачем вам деньги?</b></summary><p>
   
   Вопрос чаще задают менджерам и т.д.
   
