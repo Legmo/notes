@@ -178,7 +178,7 @@
 <br></p></details>
 
 #
-<details><summary><b>Обратить внимание</b></summary><p>
+<details><summary><b>Заметки</b></summary><p>
                                                           
 ---
 
