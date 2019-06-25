@@ -341,9 +341,10 @@
   Если очередной then вернул промис, то далее по цепочке будет передан не сам этот промис, а его результат.
   
   Ссылки:
-  *[learn.javascript.ru](https://learn.javascript.ru/promise)
-  * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-  * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+  - [learn.javascript.ru](https://learn.javascript.ru/promise)
+  - [habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
+  - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
+  - [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
   
   <br></p></details>
   
@@ -1507,6 +1508,32 @@
   В обоих случаях аргумент e, представляющий событие React, будет передан как второй аргумент после идентификатора. Используя стрелочную функцию, необходимо передавать аргумент явно, но с bind любые последующие аргументы передаются автоматически.
   </details>
   
+  <details><summary><b>Тестирование</b></summary><p>
+  
+  **Популярные варианты**
+  - [Jest](https://facebook.github.io/jest/) - delightful JavaScript testing used by Facebook to test all JavaScript code including React applications. Разрабатывается Facebook
+  - [Enzyme](https://github.com/airbnb/enzyme/) - a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components’ output.
+  - [Mocha](https://mochajs.org/)
+  
+  **На оф. сайте также упоминаются**
+  - [react-testing-library](https://github.com/kentcdodds/react-testing-library) - Simple and complete React DOM testing utilities that encourage good testing practices.
+  - [React-unit](https://github.com/pzavolinsky/react-unit) - a lightweight unit test library for ReactJS with very few (js-only) dependencies.
+  - [Skin-deep](https://github.com/glenjamin/skin-deep) - Testing helpers for use with React’s shallowRender test utils.
+  - [Unexpected-react](https://github.com/bruderstein/unexpected-react/) - Plugin for the unexpected assertion library that makes it easy to assert over your React Components and trigger events.
+  
+  **Ссылки**
+  [Оф. документация - инструменты тестирования (en)](https://ru.reactjs.org/community/testing.html)
+  [habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
+  [Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
+  [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
+  [learn.javascript.ru - Автоматические тесты при помощи chai и mocha](https://learn.javascript.ru/testing)
+  [Знакомство с разработкой через тестирование в JavaScript (Mocha)](https://tproger.ru/translations/unit-testing-in-javascript/)
+  [Hexlet - Тестирование JSReact (платный доступ)](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
+  [Пацианский М - Тестирование React компонентов с помощью jest и enzyme](https://maxpfrontend.ru/vebinary/testirovanie-komponentov-s-pomoschyu-jest-enzyme/)
+  []()
+  
+  <br></p></details>
+  
   **Ссылки:**
   - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
   - [Оф. документация - обучение практическое](https://ru.reactjs.org/tutorial/tutorial.html)
@@ -1514,7 +1541,8 @@
   - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
   - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
   - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
-  - [какой-то кур](https://habr.com/ru/company/ruvds/blog/432636/)
+  - [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
+  - [Максим Пацианский](https://maxpfrontend.ru/)
   
 <br></p></details>
 
@@ -3702,6 +3730,44 @@
     - Что такое «хранилище» в Redux?
     - Что такое чистая функция?
     - Как бы вы отключили хранилище Redux, чтобы оно не принимало никаких изменений в состоянии?
+  - [Пацианский М - Вопросы для собеседования javascript разработчика](https://maxpfrontend.ru/vebinary/voprosy-dlya-sobesedovaniya-javascript-razrabotchika/)
+    - Основы 
+      - прицнипы ООП (хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм)
+      - типы данных javascript
+      - что такое свойство объекта, а что метод
+      - написать функцию, add, чтобы вызов add(1)(2) вернул 3 (замыкания)
+      - армия функций
+      - кофеварка (один раз написать самому, подсматривая в учебник обязательно)
+      - знать, что объекты передаются по ссылке
+      - как сделать debounce функцию
+      - map, filter, reduce
+      - XMLHttpRequest и как его отменить, современный вариант fetch
+      - promise
+    - React
+      - Какую проблему решает react? 
+      - Мгновенно ли срабатывает setState? Если нет, то как выполнить код, который 100% выполнится после того, как новый state будет установлен
+      - Зачем многие постоянно пишут в constructor: this.FUNCTION_NAME = this.FUNCTION_NAME.bind(this) и отсюда вопрос вытекает чему равно this в разных местах вашего компонента… 
+      - в каких методах жизненного цикла стоит выполнять xhr запросы? В каких стоит «обновлять state на основе props«? 
+      - Что будет если вызвать this.setState в render методе компонента? 
+      - Зачем нужен componenWIllUnmount, приведите пример 
+      - Контролируемые, не контролируемые компоненты 
+      - Как организовать роутинг в реакт приложении? 
+      - Зачем нужны propTypes? Что происходит с ними в production сборке? 
+      - Как можно удобно «отлаживать» чужой код приложения, написанного на react (намек в сторону React devtools) 
+    - Redux
+      - Какую проблему решает redux? 
+      - Зачем многие создают типы действий NAME_REQUEST / NAME_SUCCESS ? А заодно, что такое «действие», а что такое «создатель действия»… 
+      - Что такое редьюсер? Можете написать простой редьюсер без react/redux? 
+      - Для чего нужен redux-thunk? Как он работает? Напишите (можно псевдокод) асинхронный создатель действия (либо, если надоело говорить «терминами» — асинхронный aciton) 
+      - Как компоненты приложения получают «пропсы» из «стора»? 
+      - Можно ли (и считается ли это нормальным) использовать state, если используется Redux? 
+      - Почему в reducer’ax мы возвращаем новые объекты? Приведите пример, когда вы возвращаете новый объект, а когда тот же самый. 
+      - Что возвращает функция connect (из react-redux)? 
+    - Общие вопросы (что это и для чего?)
+      - package.json
+      - Webpack, gulp, и т.д.
+      - node.js
+      - promise 
   - [Козлова О - Вопросы из Яндекса](https://medium.com/@olgakozlova/%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%B8%D0%B7-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-895261c94e16)
   - [Козлова О - Сети в вопросах и ответах. HTTP-протокол. AJAX. JSONP. CORS.COMET.](https://medium.com/@olgakozlova/%D1%81%D0%B5%D1%82%D0%B8-%D0%B2-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D1%85-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D1%85-http-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-ajax-jsonp-cors-comet-53c60319a5a7)
   - [CSSSR - «И так сойдёт!» или главные ошибки кандидатов](http://blog.csssr.ru/2018/08/16/candidates-mistakes)
