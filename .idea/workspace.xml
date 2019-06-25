@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2570" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="805" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3283" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="975" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1459" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2074" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2274" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2548" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="750" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3369" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="809" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3230" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2422" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2605" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="806" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3318" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="976" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1460" />
     <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2106" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2234" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="945" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1884" />
-    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3391" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2306" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2583" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="751" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3404" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="810" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3265" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2454" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2138" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="2266" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="946" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="1916" />
+    <bookmark url="file://$PROJECT_DIR$/Interview questions - React JS.md" line="3426" />
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
@@ -49,26 +49,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="15" />
+          <entry key="md" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="15" />
+          <entry key="Markdown" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="htm" value="1537" />
           <entry key="html" value="530" />
-          <entry key="md" value="30497" />
+          <entry key="md" value="31382" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2071" />
-          <entry key="Markdown" value="30493" />
+          <entry key="Markdown" value="31378" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -80,19 +80,19 @@
         <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="494">
-                <caret line="642" column="2" selection-start-line="642" selection-start-column="2" selection-end-line="642" selection-end-column="2" />
+              <first_editor relative-caret-position="488">
+                <caret line="2468" column="89" selection-start-line="2468" selection-start-column="89" selection-end-line="2468" selection-end-column="89" />
                 <folding>
+                  <element signature="e#48#51#0" />
                   <element signature="e#30606#30607#0" />
                   <element signature="e#32557#32558#0" />
-                  <element signature="e#42394#42395#0" />
                   <element signature="e#74607#74608#0" />
                   <element signature="e#102072#102073#0" />
                   <element signature="e#110422#110423#0" />
                   <element signature="e#112841#112842#0" />
                   <element signature="e#116253#116254#0" />
-                  <element signature="e#118101#118102#0" />
                   <element signature="e#124717#124718#0" />
+                  <element signature="e#129231#129232#0" />
                   <element signature="e#129810#129811#0" />
                   <element signature="e#139882#139883#0" />
                   <element signature="e#149507#149508#0" />
@@ -100,7 +100,6 @@
                   <element signature="e#180180#180181#0" />
                   <element signature="e#188706#188707#0" />
                   <element signature="e#189688#189689#0" />
-                  <element signature="e#191265#191266#0" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -125,6 +124,11 @@
       <find>Ref</find>
       <find>Деструктуризация массивов</find>
       <find>type</find>
+      <find>тести</find>
+      <find>деньги</find>
+      <find>деньг</find>
+      <find>Jest</find>
+      <find>ТИпиз</find>
     </findStrings>
     <replaceStrings>
       <replace>*</replace>
@@ -234,21 +238,7 @@
       <workItem from="1561346521076" duration="3059000" />
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
-      <workItem from="1561350040822" duration="13945000" />
-    </task>
-    <task id="LOCAL-00223" summary="React JS - in progress">
-      <created>1561356724071</created>
-      <option name="number" value="00223" />
-      <option name="presentableId" value="LOCAL-00223" />
-      <option name="project" value="LOCAL" />
-      <updated>1561356724071</updated>
-    </task>
-    <task id="LOCAL-00224" summary="React JS - in progress">
-      <created>1561356813471</created>
-      <option name="number" value="00224" />
-      <option name="presentableId" value="LOCAL-00224" />
-      <option name="project" value="LOCAL" />
-      <updated>1561356813471</updated>
+      <workItem from="1561350040822" duration="20262000" />
     </task>
     <task id="LOCAL-00225" summary="React JS - in progress">
       <created>1561356982462</created>
@@ -579,11 +569,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561362810028</updated>
     </task>
-    <option name="localTasksCounter" value="272" />
+    <task id="LOCAL-00272" summary="React JS - in progress">
+      <created>1561439151712</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
+      <option name="project" value="LOCAL" />
+      <updated>1561439151712</updated>
+    </task>
+    <task id="LOCAL-00273" summary="React JS - in progress">
+      <created>1561443819207</created>
+      <option name="number" value="00273" />
+      <option name="presentableId" value="LOCAL-00273" />
+      <option name="project" value="LOCAL" />
+      <updated>1561443819207</updated>
+    </task>
+    <option name="localTasksCounter" value="274" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121231000" />
+    <option name="totallyTimeSpent" value="127548000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +602,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17919463" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17919463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -970,95 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interview - notes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="288">
-            <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-            <folding>
-              <element signature="e#4787#4945#0" />
-              <element signature="e#4819#4945#0" />
-              <element signature="e#4987#5138#0" />
-              <element signature="e#5588#5852#0" />
-              <element signature="e#6231#6432#0" />
-              <element signature="e#6243#6376#0" />
-              <element signature="e#6345#6672#0" />
-              <element signature="e#6789#7882#0" />
-              <element signature="e#6205#6540#0" />
-              <element signature="e#6568#6995#0" />
-              <element signature="e#7024#7145#0" />
-              <element signature="e#7216#7294#0" />
-              <element signature="e#7890#7929#0" />
-              <element signature="e#7174#7175#0" />
-              <element signature="e#7236#7323#0" />
-              <element signature="e#7325#7517#0" />
-              <element signature="e#7544#7545#0" />
-              <element signature="e#7602#7664#0" />
-              <element signature="e#7666#10915#0" />
-              <element signature="e#8145#8542#0" />
-              <element signature="e#8602#9294#0" />
-              <element signature="e#10795#11568#0" />
-              <element signature="e#11598#12210#0" />
-              <element signature="e#10757#10915#0" />
-              <element signature="e#10898#10899#0" />
-              <element signature="e#12445#12667#0" />
-              <element signature="e#12681#14138#0" />
-              <element signature="e#12727#12924#0" />
-              <element signature="e#12929#13402#0" />
-              <element signature="e#13506#14138#0" />
-              <element signature="e#13701#14138#0" />
-              <element signature="e#14004#14138#0" />
-              <element signature="e#14154#14432#0" />
-              <element signature="e#14448#14902#0" />
-              <element signature="e#14500#14640#0" />
-              <element signature="e#14913#15041#0" />
-              <element signature="e#15057#15133#0" />
-              <element signature="e#15149#15305#0" />
-              <element signature="e#15321#15463#0" />
-              <element signature="e#15355#15463#0" />
-              <element signature="e#15479#15794#0" />
-              <element signature="e#15813#15940#0" />
-              <element signature="e#15959#16146#0" />
-              <element signature="e#16002#16112#0" />
-              <element signature="e#17124#17125#0" />
-              <element signature="e#19077#29903#0" />
-              <element signature="e#19307#19677#0" />
-              <element signature="e#19760#21036#0" />
-              <element signature="e#19762#20180#0" />
-              <element signature="e#20187#20410#0" />
-              <element signature="e#20417#21036#0" />
-              <element signature="e#21153#23024#0" />
-              <element signature="e#21359#21741#0" />
-              <element signature="e#22743#23081#0" />
-              <element signature="e#23151#23721#0" />
-              <element signature="e#23733#23888#0" />
-              <element signature="e#23929#24273#0" />
-              <element signature="e#24014#24356#0" />
-              <element signature="e#24307#25130#0" />
-              <element signature="e#24698#25130#0" />
-              <element signature="e#25164#26140#0" />
-              <element signature="e#24240#24482#0" />
-              <element signature="e#24600#24875#0" />
-              <element signature="e#26190#26508#0" />
-              <element signature="e#26624#27468#0" />
-              <element signature="e#28402#28994#0" />
-              <element signature="e#28402#28988#0" />
-              <element signature="e#29076#29273#0" />
-              <element signature="e#29353#29464#0" />
-              <element signature="e#29592#29714#0" />
-              <element signature="e#29590#29708#0" />
-              <element signature="e#27057#27058#0" />
-              <element signature="e#27116#27902#0" />
-              <element signature="e#27993#27994#0" />
-              <element signature="e#28446#29243#0" />
-              <element signature="e#29277#29521#0" />
-              <element signature="e#29524#29847#0" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interview  questions - HTML-CSS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1099,22 +1014,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interview - notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="380">
+            <caret line="423" column="29" selection-start-line="423" selection-start-column="29" selection-end-line="423" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="494">
-            <caret line="642" column="2" selection-start-line="642" selection-start-column="2" selection-end-line="642" selection-end-column="2" />
+          <first_editor relative-caret-position="488">
+            <caret line="2468" column="89" selection-start-line="2468" selection-start-column="89" selection-end-line="2468" selection-end-column="89" />
             <folding>
+              <element signature="e#48#51#0" />
               <element signature="e#30606#30607#0" />
               <element signature="e#32557#32558#0" />
-              <element signature="e#42394#42395#0" />
               <element signature="e#74607#74608#0" />
               <element signature="e#102072#102073#0" />
               <element signature="e#110422#110423#0" />
               <element signature="e#112841#112842#0" />
               <element signature="e#116253#116254#0" />
-              <element signature="e#118101#118102#0" />
               <element signature="e#124717#124718#0" />
+              <element signature="e#129231#129232#0" />
               <element signature="e#129810#129811#0" />
               <element signature="e#139882#139883#0" />
               <element signature="e#149507#149508#0" />
@@ -1122,7 +1047,6 @@
               <element signature="e#180180#180181#0" />
               <element signature="e#188706#188707#0" />
               <element signature="e#189688#189689#0" />
-              <element signature="e#191265#191266#0" />
             </folding>
           </first_editor>
           <second_editor />
