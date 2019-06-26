@@ -819,6 +819,56 @@
   - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
   
   <br></p></details>
+  
+    
+  
+  <details><summary><b>Чистота кода</b></summary><p>
+  
+  **Идеи**
+  - Фигурные скобки
+  - Длина строки - 120 символов
+  - Отступы горизонтальные - не нарушать структуру
+  - отступы вертикальные - не более 9 строк кода подряд без вертикального отступа.
+  - Точка с запятой - ставить
+  - Имя переменной – существительное.
+  - Имя функции – глагол или начинается с глагола.
+  - Уровней вложенности должно быть немного.
+  - Функции = Комментарии
+  - Большие функции дробить на мелкие
+  - Вначале код, под ним функции
+  - Разумные комментарии - не "Что делает?" а "Как устроено?", "Какие параметры принимает?", "Почему выбрано это решение?"
+  
+  **Книги**
+  - []()
+  
+  **Руководства по стилю**
+  - [Google JavaScript Style Guide (en)](https://google.github.io/styleguide/jsguide.html)
+  - [jQuery JavaScript Style Guide (en)](http://contribute.jquery.org/style-guide/js/)
+  - [Airbnb JavaScript Style Guide (en)](https://github.com/airbnb/javascript) 
+  - [Airbnb JavaScript Style Guide (ru)](https://github.com/leonidlebedev/javascript-airbnb)
+  - [Idiomatic.JS (en)](https://github.com/rwaldron/idiomatic.js) 
+  - [Idiomatic.JS (ru)](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ru_RU)
+  - [Dojo Style Guide (en)](https://dojotoolkit.org/reference-guide/1.10/developer/styleguide.html)
+  - [JSLint style (en)](https://www.jslint.com/help.html)
+
+  **Автоматизированные средства проверки (линтеры)**
+  - [JSLint](http://www.jslint.com/)
+  - [JSHint ](http://www.jshint.com/) - вариант JSLint с б*о*льшим количеством настроек
+
+  **Ссылки**
+  - [learnjavascript - Как писать неподдерживаемый код?](https://learn.javascript.ru/write-unmain-code)
+  - [learnjavascript - Советы по стилю кода](https://learn.javascript.ru/coding-style)
+  - [habr - Рекомендации по написанию чистого кода на JavaScript](https://habr.com/ru/company/ruvds/blog/454520/)
+  - [habr - JavaScript: путь к ясности кода](https://habr.com/ru/company/ruvds/blog/342404/)
+  - [habr - 7 рекомендаций по оформлению кода на JavaScript](https://habr.com/ru/company/ruvds/blog/418631/)
+  - [habr - Как писать чистый и красивый код](https://habr.com/ru/company/ruvds/blog/347610/)
+  - [habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
+  - []()
+  - []()
+  - []()
+  
+  <br></p></details>
+  
 <br></p></details>
 
 #
@@ -1602,9 +1652,12 @@
   - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
   - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
   - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
+  - [habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
   - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
   - [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
   - [Максим Пацианский](https://maxpfrontend.ru/)
+  - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
+  - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
   
 <br></p></details>
 
@@ -2282,6 +2335,37 @@
   - state
   
   <br>
+  
+  **Unsorted**
+   1. Сначала определяется шаблон React.js для создания элементов из компонента.
+   1. Указывается где он будет использован. К примеру, внутри вызова функции рендера иного компонента или с помощью ReactDOM.render.
+   1. Реакт создает экземпляр элемента и передает ему набор свойств (props), доступ к которым будет доступен через this.props. 
+   1. Поскольку описанное является JavaScript-ом, будет вызван метод конструктора класса (если он определен). Это первый из методов, которые называются методами жизненного цикла компонента.
+   1. React обрабатывает результат вызова функции рендера.
+   1. Затем React осуществит монтирование компонента: взаимодействуя с браузером через DOM API, React выполнит рендеринг.
+   1. Следом, Реакт вызывает другой метод жизненного цикла, который называется componentDidMount. Этот метод можно использовать, чтобы что-то сделать в дереве документа. Весь DOM, с которым мы работали ранее был виртуальным.
+   1. Демонтирование. Жизненный цикл некоторых компонентов заканчивается уже на этом этапе. Компоненты могут быть демонтированы из документа по разным причинам. Однако, перед этим Реакт вызывает другой метод – componentWillUnmount.
+   
+   Реакт контролирует состояние каждого компонента на случай изменений. Для того, чтобы React действовал эффективно, необходимо изменить поле состояния с помощью API React и функции this.setState.
+   
+   Входными данными для render() являются свойства (props) и внутреннее состояние, которое может быть обновлено в любое время.
+   
+   Когда для render меняются входные данные, меняется и результат ее выполнения.
+   
+   React.js ведет запись жизненного цикла компонента. Когда React.js видит, что один рендер отличается от другого, он переводит разницу между своим виртуальным представлением в операции с DOM API, которые будут отрисованы в документе.
+   
+  Теперь, когда мы знаем, что за магия происходит при изменении состояния компонента, рассмотрим оставшиеся концепции.
+  
+  1. Компонент может быть необходимо повторно отрисовать, если его состояние будет обновлено, либо, если родительский элемент изменит свои свойства.
+  1. Если были изменены свойства, React.js вызовет метод жизненного цикла componentWillReceiveProps.
+  1. Если объект или его свойства были изменены, React.js вызывает еще один метод – shouldComponentUpdate, который, по сути, является вопросом. Так что, если есть необходимость самостоятельно настроить процесс рендера, вы можете ответить на этот вопрос вернув true или false.
+  1. Если shouldComponentUpdate не объявлен, Реакт вызовет безусловный componentWillUpdate и рассчитает различия между текущим компонентом и его новым видом, с учетом изменений.
+  1. Если никаких изменений не зафиксировано, React.js ничего не сделает.
+  1. Если разница есть, фреймворк отрисует компонент.
+  1. Так как процесс обновления в любом случае произошел, Реакт вызовет метод componentDidUpdate.
+
+
+  
   
   **Ссылки**    
   - [Схема (en)](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
