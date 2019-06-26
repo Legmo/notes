@@ -820,19 +820,91 @@
   
   <br></p></details>
   
-  <details><summary><b>Использование console.log</b></summary><p>
+  <details><summary><b>Console.log</b></summary><p>
   
-  Console.dir()
-    
-  Методы подобные log, но отличающихся внешне. 
+  Брайзер добавляет глобальную переменную с именем «console» к каждой загруженной веб-странице. Объект содержит много методов, которые возволят писать на консоль и показывать информацию, проходящую через скрипты.
+  
+  **Console.dir(object)**<br>
+  Позволяет смотреть в консоли свойства заданного javascript объекта.<br>
+  Также когда нужно как-то указать в логах на DOM-узел - лучшего всего использовать методы console.dir() или console.dirxml(). Они могут перечислить свойства элемента или вывести HTML кода элемента.
+  
+  При помощи метода console.dir() можно вывести список всех свойств объекта. Выглядит аналогично тому, что Вы бы увидели во вкладке DOM.
+   
+  **Группировка**<br>
+  Иногда бывает полезно сгруппировать логи для упрощения работы с ними. 
+  - console.group()
+  - console.groupCollapsed()
+  - console.groupEnd()
+  ```
+    console.group("Overlord");
+    console.log("Overlord stuff");
+     
+    console.group("Lord");
+    console.log("Overlord stuff");
+     
+    console.group("Minion");
+    console.log("Minion stuff");
+    console.groupEnd();
+     
+    console.groupCollapsed("Servant");
+    console.log("Servant stuff");
+  ```
+  
+  **Раскраска**<br>
+  Методы подобные log, но отличающихся внешне: 
   - console.info()
   - console.warn() 
   - console.error()
   
-  Шаблонные строки: console.log(\`Значение переменной = ${var_name}\`)
+  **Шаблонные строки**<br> 
+  console.log(\`Значение переменной = ${var_name}\`)
+  
+  **Профилирование и замеры**<br>
+  Консоль позволяет точно замерять время, используя метод console.time() и console.timeEnd(). Расположите вызов первого из них перед кодом, время исполнения которого хотите замерить, а второго — после.
+  ```
+  console.time("Execution time took");
+  // Some code to execute
+  console.timeEnd("Execution time took");
+  ```
+  Таймеры связаны между собой метками (передаются первым аргументом и могут быть любой строкой), так что Вы можете запустить несколько таймеров одновременно. Когда сработает console.timeEnd(), будет выведено сообщение с меткой и прошедшим временем в миллисекундах.
+  
+  Помимо замера времени можно профилировать Ваш код и вывести стек профилирования, который подробно показывает, где и сколько времени потратил браузер.
+  ```
+  console.profile();
+  // Some code to execute
+  console.profileEnd();
+  ```
+  
+  **Assert**
+  Полезно при работе с unit-тестами.
+  
+  Assert'ы позволяют обеспечивать соблюдение правил в коде и быть уверенным, что результаты выполнения этого кода соответствуют ожиданиям. Метод console.assert() позволяет проводить элементарное тестирование кода: если что-то пойдет не так, будет выброшено исключение. Первым аргументом может быть все, что угодно: функция, проверка на равенство или проверка существования объекта.
+  ```
+  var a = 1, b = "1";
+  console.assert(a === b, "A doesn't equal B");
+  ```
+  Метод assert принимает условие, которое является обязательным к выполнению (в данном случае простая строгая проверка на равенство) и, вторым аргументом, сообщение, которое будет выведено в консоль вместе с выброшенным исключением, если первое условие не будет выполнено.
+  
+  **Console.trace()**<br>
+  Вывод стека вызовов до текущего момента. Скажет, какие функции есть в стеке, и какие аргументы были переданы каждой. 
+  
+ 
+  **Ещё есть** 
+  - console.clear - очищает консоль
+  - console.count - выводит, сколько раз данный код был выполнен.
+  - console.dirxml - выводит XML код элемента
+  - console.exception - выводит ошибку и результат trace() для места, откуда она была вызвана
+  - console.table - выводит таблицу ([Подробнее](www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/))
+  - console.timeStamp - выводит текущий timestamp с текстом, который был передан в name.
+
   
   **Ссылки:**
-  [habr - Используем console на полную](https://habr.com/ru/post/114483/)
+  - [habr - Используем console на полную](https://habr.com/ru/post/114483/)
+  - [habr - FireBug* Console API](https://habr.com/ru/post/188066/)
+  - [learn.javascript.ru - строки-шаблоны](https://learn.javascript.ru/es-string)
+  - [MDN - console.dir](https://developer.mozilla.org/ru/docs/Web/API/console/dir)
+  - [MDN - console.trace](https://habr.com/ru/post/141042/)
+  - [Про console.table (en)](www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
     
   <br></p></details>
   
