@@ -894,7 +894,7 @@
   - console.count - выводит, сколько раз данный код был выполнен.
   - console.dirxml - выводит XML код элемента
   - console.exception - выводит ошибку и результат trace() для места, откуда она была вызвана
-  - console.table - выводит таблицу ([Подробнее](www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/))
+  - console.table - выводит таблицу ([Подробнее](http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/))
   - console.timeStamp - выводит текущий timestamp с текстом, который был передан в name.
 
   
@@ -904,7 +904,7 @@
   - [learn.javascript.ru - строки-шаблоны](https://learn.javascript.ru/es-string)
   - [MDN - console.dir](https://developer.mozilla.org/ru/docs/Web/API/console/dir)
   - [MDN - console.trace](https://habr.com/ru/post/141042/)
-  - [Про console.table (en)](www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
+  - [Про console.table (en)](http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
     
   <br></p></details>
   
@@ -1204,6 +1204,7 @@
   **Ссылки**
   - [Angular vs. React: Сравнение 7 Основных характеристик](https://code.tutsplus.com/ru/articles/angular-vs-react-7-key-features-compared--cms-29044)
   - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
+  - [Все фундаментальные принципы React.js, собранные в одной статье](https://medium.com/@divermak/%D0%B2%D1%81%D0%B5-%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-react-js-%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B2-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B5-ec6a97bfd1bf)
   
   <br><p></details>
   
@@ -2974,6 +2975,12 @@
           }
   </details>
     
+  <details><summary>Внутри JSX можно использовать только выражени</summary>
+  
+  Внутри JSX можно использовать только выражения. Так, например, вы не можете использовать оператор if, но можете использовать тернарное выражение.
+  
+  </details>
+  
   <details><summary>JSX предотвращает атаки, основанные на инъекции кода.</summary>  
         https://ru.reactjs.org/docs/introducing-jsx.html
         Данные, введённые пользователем, можно безопасно использовать в JSX. 
