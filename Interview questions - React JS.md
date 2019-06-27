@@ -383,7 +383,9 @@
   Ссылки:
   * [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
   * [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-  * [habr - Знай свой инструмент: Event Loop в libuv](https://habr.com/ru/post/336498/)
+  * [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+  * [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
+  <br></p></details>   
   * [learn.javascript.ru (en)](https://javascript.info/async-await)
   * [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
   * [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
@@ -396,7 +398,6 @@
   * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
   * [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
   * [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
-  <br></p></details>   
   
   
   <details><summary><b>Как работают современные движки JavaScript?</b> //ToDo - доработать</summary><p>
@@ -1751,10 +1752,8 @@
     <summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
   </details>
   
-  <details>
-    <summary>Передача аргументов в обработчики событий</summary>
-  https://ru.reactjs.org/docs/handling-events.html
-
+  <details><summary>Передача аргументов в обработчики событий</summary><p>
+  
   Внутри цикла часто нужно передать дополнительный аргумент в обработчик события. 
   Например, если id — это идентификатор строки, можно использовать следующие варианты:
 
@@ -1764,7 +1763,11 @@
   Две строки выше — эквивалентны, и используют стрелочные функции и Function.prototype.bind соответственно.
 
   В обоих случаях аргумент e, представляющий событие React, будет передан как второй аргумент после идентификатора. Используя стрелочную функцию, необходимо передавать аргумент явно, но с bind любые последующие аргументы передаются автоматически.
-  </details>
+  
+  **Ссылки**
+  - https://ru.reactjs.org/docs/handling-events.html
+  <br></p></details>
+  
   
   <details><summary><b>Тестирование</b></summary><p>
   
@@ -1784,6 +1787,7 @@
   - [Unexpected-react](https://github.com/bruderstein/unexpected-react/) - Plugin for the unexpected assertion library that makes it easy to assert over your React Components and trigger events.
   
   **Ссылки**
+  [Википедия - модульное тестирование](https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
   [Оф. документация - инструменты тестирования (en)](https://ru.reactjs.org/community/testing.html)
   [habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
   [Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
