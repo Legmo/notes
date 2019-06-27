@@ -395,6 +395,7 @@
   * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
   * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
   * [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
+  * [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
   <br></p></details>   
   
   
@@ -1412,6 +1413,7 @@
 - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
 - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
+- [learnjavascript - про обычный DOM](https://learn.javascript.ru/browser-environment)
      
   <br></p></details>
   
@@ -2324,6 +2326,21 @@
   Каждый раз дублируя код - думать чтоб вынести её в отдельный компонент/функцию.  
      
   <br></p></details>
+  
+  
+  <details><summary><b>Быстродействие. Оптимизация</b> //ToDo - осмыслять</summary><p>
+  
+  **Ссылки**
+  - [Гайд по оптимизации веб- приложений в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BF%D0%BE-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-5684280a445d)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/455505/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/442650/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/343888/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
+  - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+  - [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
+  
+  <br></p></details>
 
 <br></p></details>
 
@@ -2882,6 +2899,9 @@
 
   В целях производительности, propTypes проверяются только в режиме разработки (development). Т.е. сам код остаётся, но не проверяется. Для удаления кода есть спец. модуль
   
+  
+  propTypes и defaultProps это статичные свойства. Объявлять их надо как можно выше в коде (позже вам скажут спасибо многие разработчики).
+  
   **Ссылки:**
   -[habr](https://habr.com/ru/post/319358/)
   -[habr](https://habr.com/ru/post/326304)
@@ -3055,30 +3075,62 @@
 <br></p></details>
 
 #
+<details><summary><b>REACT - best practices</b></summary><p>
+      
+   **Ссылки**
+  - [Паттерны React](https://habr.com/ru/post/309422/) 
+  - [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80) 
+  - [11 советов для тех, кто использует Redux при разработке React-приложений](https://habr.com/ru/company/ruvds/blog/456336/) 
+  
+  <br></p></details>
+
+#
 <details><summary><b>REACT - CSS</b></summary><p>
 
   ---
 
-  <details>
-    <summary>Если нужно добавить свой CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css</summary>
-  </details>
+  <details><summary><b>Структура проекта</b></summary><p>
   
-  <details>
-    <summary>CSS лучше писать по BEM-методологии - http://ru.bem.info/methodology</summary>
-  </details>
+  Если нужно добавить для компонента CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css
   
-  <details>
-    <summary>Использовать css modules.</summary> 
-  </details>
+  Есть ещё различные варианты CSS-in-JS - когда CSS хранится и генерируется прямо в JS-коде. Подходы интересные, но со совимим минусами. См Styled component.
   
-  <details>
-    <summary><b>Styled Components</b> //ToDo - дополнить</summary>
+  <br><p></details>
+  
+  <details><summary><b>Заметки</b></summary><p>
+    
+  - Если не используешь CSS-modules - CSS лучше писать по BEM-методологии - http://ru.bem.info/methodology
+  - CSS-переменные - https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+  
+  <br></p></details>
+  
+  <details><summary><b>Сss-modules</b></summary><p> 
+  
+  CSS модуль — это CSS файл, в котором все имена классов и анимаций имеют локальную область видимости по умолчанию.
+  
+  Такой метод подключения CSS, при можно использовать одинаковые имена css-классов в разных компонентах, и конфликта не будет. Что-то типа автоматизированного BEM. При это css по-прежнему хранятся в отдельном файле и пишутся практически как обычно
+  
+  **Ссылки**
+  - [habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
+  - [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+  - [You-Tube - IT-Kamasutra 14. Уроки React JS (css-модули, css-modules)](https://youtu.be/bQ3UPYFHyJ0)
+  
+  <br></p></details>
+  
+  <details><summary><b>Styled components</b> //ToDo - дополнить</summary><p>
+    
+  Среди причин выбора CSS-in-JS можно назвать то, что эта технология позволяет ограничивать область видимости стилей и отказаться от глобальной стилизации. Её удобно применять для работы с темами приложений.  
+    
+  В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
     
   **Ссылки**
-  [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
-  [habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
-  [habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
-  </details>
+  - [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
+  - [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+  - [habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
+  - [habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
+  - [habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
+  
+  <br></p></details>
   
 <br></p></details>
 
