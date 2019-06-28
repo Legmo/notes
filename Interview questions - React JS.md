@@ -47,6 +47,9 @@
   
   **Ссылки:**
   * [learn.javascript.ru](https://learn.javascript.ru/closures)
+  * [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
+  * [htmlacademy - Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
+  * [Wikipedia](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
         
   <br></p></details>
   
@@ -279,6 +282,10 @@
   Константы, которые жёстко заданы всегда, во время всей программы, обычно пишутся в верхнем регистре. Например: const ORANGE = "#ffa500".
   
   Большинство переменных – константы в другом смысле: они не меняются после присвоения. Но при разных запусках функции это значение может быть разным. Для таких переменных можно использовать const и обычные строчные буквы в имени.
+  
+  Использование const вместо var или let не говорит от том, что значение является константой или что оно иммутабельно (неизменяемо). Ключевое слово const просто указывает компилятору следить за тем, что переменной больше не будет присвоено никаких других значений.
+  
+  В случае использования const современные JavaScript-движки могут выполнить ряд дополнительных оптимизаций.
   
   Введена в язык в ES6 (ES-2015)
     
@@ -1882,6 +1889,7 @@
   - [habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
   - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
   - [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
+  - [ещё курc](https://vk.com/@489914144)
   - [Максим Пацианский](https://maxpfrontend.ru/)
   - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
   - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
@@ -3178,6 +3186,11 @@
   - [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80) 
   - [11 советов для тех, кто использует Redux при разработке React-приложений](https://habr.com/ru/company/ruvds/blog/456336/) 
   - [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b) 
+  - [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
+  - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
+  - []()
+  - []()
+  
   
   <br></p></details>
 
