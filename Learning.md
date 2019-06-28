@@ -80,7 +80,11 @@
   
 <br></p></details>
 
-**Ссылки**
+
+<details><summary><b>Ссылки</b></summary><p>  
+
+---
+
 - [Процесс изучения](https://rakh.im/learning/)
 - [A Nobel Prize Winner's 3-Step Plan to Mastering Any Subject (en)](https://www.inc.com/jessica-stillman/a-nobel-prize-winners-3-step-plan-to-master-any-subject.html)
 - [YouTue. Мокевнин - Как эффективно обучаться программированию](https://www.youtube.com/watch?v=AgR-vFn094Y)
@@ -92,3 +96,5 @@
 - [Шкала уровней компетентности, краткий обзор](https://olegmatveev.livejournal.com/929544.html)
 - [YouTube - Как научиться учиться (Хаббард)](https://www.youtube.com/watch?v=_nh9ZMbwx34)
 - []()
+
+<br></p></details>
