@@ -45,12 +45,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="md" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="16" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -109,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>##</find>
       <find>React JS - in progress</find>
       <find>Языки поверх JavaScript</find>
       <find>&lt;div&gt;</find>
@@ -139,6 +140,7 @@
       <find>статическая</find>
       <find>Keys</find>
       <find>https://medium.com/@apolyntsev/9-</find>
+      <find>best</find>
     </findStrings>
     <replaceStrings>
       <replace>*</replace>
@@ -251,21 +253,7 @@
       <workItem from="1561349603583" duration="163000" />
       <workItem from="1561349772901" duration="265000" />
       <workItem from="1561350040822" duration="41997000" />
-      <workItem from="1561542749779" duration="20693000" />
-    </task>
-    <task id="LOCAL-00244" summary="React JS - in progress">
-      <created>1561359005509</created>
-      <option name="number" value="00244" />
-      <option name="presentableId" value="LOCAL-00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1561359005509</updated>
-    </task>
-    <task id="LOCAL-00245" summary="React JS - in progress">
-      <created>1561359044893</created>
-      <option name="number" value="00245" />
-      <option name="presentableId" value="LOCAL-00245" />
-      <option name="project" value="LOCAL" />
-      <updated>1561359044893</updated>
+      <workItem from="1561542749779" duration="20943000" />
     </task>
     <task id="LOCAL-00246" summary="React JS - in progress">
       <created>1561359131537</created>
@@ -596,11 +584,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561706415745</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="React JS - in progress">
+      <created>1561706717124</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1561706717124</updated>
+    </task>
+    <task id="LOCAL-00294" summary="React JS - in progress">
+      <created>1561706824748</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1561706824748</updated>
+    </task>
+    <option name="localTasksCounter" value="295" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169976000" />
+    <option name="totallyTimeSpent" value="170226000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,9 +615,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -630,7 +631,7 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32833788" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32833788" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32970026" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -709,6 +710,9 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Interview questions - React JS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
