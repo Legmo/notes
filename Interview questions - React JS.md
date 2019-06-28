@@ -1322,6 +1322,7 @@
   
   **Ссылки:**
   [React Elements против React Components](https://tuhub.ru/posts/react-elements-protiv-react-components)
+  
   <br></p></details>
   
   <details><summary><b>Компонент(а)</b></summary><p>
