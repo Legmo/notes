@@ -1269,8 +1269,7 @@
   <br><p></details>
   
   
-  <details>
-    <summary><b>Элемент</b></summary><p>
+  <details><summary><b>Элемент</b></summary><p>
  
   Это JS-объект, который описывает узел DOM. <br>  
   Объектное представление некоторого пользовательского интерфейса. 
@@ -1323,7 +1322,6 @@
   
   **Ссылки:**
   [React Elements против React Components](https://tuhub.ru/posts/react-elements-protiv-react-components)
-        
   <br></p></details>
   
   <details><summary><b>Компонент(а)</b></summary><p>
@@ -2896,6 +2894,7 @@
       hasCode: boolean = true;
   
   **Ссылки**
+  - [Оф. документация - Статическая типизация](https://ru.reactjs.org/docs/static-type-checking.html)
   - [Hexlet - Введение в программирование. Типизация](https://ru.hexlet.io/courses/introduction_to_programming/lessons/types/theory_unit)
   - [Wat by Gary Bernhardt (юмористическое видео про неявную типизацию)](https://www.destroyallsoftware.com/talks/wat)
   
@@ -3241,7 +3240,11 @@
   Позволяет работать с Redux не заморачиваясь кучей сложностей. 
   
   Инкапсулирует часть вещей, прячет от нас всякие детали связанные с контекстом, store, dispatch, subscribe...
-      
+  
+  Пакет react-redux обладает очень простым интерфейсом. В частности, самое интересное в этом интерфейсе сводится к следующему:
+  - <Provider store> — позволяет создавать обёртку для React-приложения и делать состояние Redux доступным для всех компонентов-контейнеров в его иерархии.
+  - connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]) — позволяет создавать компоненты высшего порядка. Это нужно для создания компонентов-контейнеров на основе базовых компонентов React.
+
       
    **Ссылки**
    - https://ru.reactjs.org/docs/state-and-lifecycle.html
