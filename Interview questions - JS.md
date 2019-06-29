@@ -1,9 +1,5 @@
 # Шпаргалка по JavaScript #
-  
-#  
-<details><summary><b>JS</b></summary><p>
-  
-  ---  
+ 
   <details><summary><b>Замыкания</b></summary><p>
     
   * v1 - Функция, содержащая в себе ссылки на переменные из внешней области видимости..
@@ -393,7 +389,6 @@
   * [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
   * [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
   * [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
-  <br></p></details>   
   * [learn.javascript.ru (en)](https://javascript.info/async-await)
   * [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
   * [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
@@ -407,6 +402,7 @@
   * [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
   * [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
   
+  <br></p></details>   
   
   <details><summary><b>Как работают современные движки JavaScript?</b> //ToDo - доработать</summary><p>
   
@@ -774,10 +770,8 @@
   [https://habr.com/ru/company/ruvds/blog/332384/](https://habr.com/ru/company/ruvds/blog/332384/)
   
   <br></p></details>  
-<br></p></details>
 
-#
-<details><summary><b>JS - приёмы</b></summary><p>
+## JS - приёмы ##
                                          
   ---
   <details><summary><b>_переменная</b></summary><p> 
@@ -1020,7 +1014,6 @@
   
   <br></p></details>
   
-<br></p></details>
 
 #
 <details><summary><b>JS - история версий</b></summary><p>
