@@ -719,8 +719,8 @@
   
   6. Замыкания - при опр. условиях
   
-  Ссылки:
-  *[habr](https://habr.com/ru/post/309318/)
+  **Ссылки**
+  - [habr](https://habr.com/ru/post/309318/)
   
   <br></p></details>
   
