@@ -1013,13 +1013,11 @@
   - [habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
   - [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
   
-  <br></p></details>
+  <br></p></details><br>
   
 
-#
-<details><summary><b>JS - история версий</b></summary><p>
+## JS - история версий ##
 
-  ---
   <details><summary><b>История версий ES</b></summary><p>
     
   JavaScript создавался как скриптовый язык для Netscape. Изначально разработкой занимались Брендан Эйх, Марк Андрессен и Билл Джой.<br>
@@ -1155,8 +1153,8 @@
   * [learn.javascript.ru](https://learn.javascript.ru/intro)
   
   <br></p></details>
-<br></p></details>
- 
 
+<br> 
+<br> 
 
 *[Legmo, 2019](https://github.com/Legmo/notes/)*
