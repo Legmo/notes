@@ -591,13 +591,11 @@ Model-View-Controller (модель-вид-контроллер)<br>
  - DRY
  - KISS
  - YAGNI
- +
  - SOLID (см ООП) 
  - GRASP
  - CQS
  - Law of Demeter  (см ООП)
  - Single level of Abstraction Principle
- +
  - Интересные идеи на тему: [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
 
 <br></p></details>
