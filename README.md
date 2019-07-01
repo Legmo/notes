@@ -2,6 +2,7 @@
 
 - [Как учиться?](/Learning.md)
 - [Как проходить собеседования?](/Interview%20-%20notes.md)
+- [Как программисту повысить производительность работы?](/Productivity increase.png)
 - [JavaScript](/Interview%20questions%20-%20JS.md)
 - [React JS & Redux](/Interview%20questions%20-%20React%20JS.md)
 - [HTML/CSS](/Interview%20%20questions%20-%20HTML-CSS.md)
