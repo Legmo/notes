@@ -115,7 +115,7 @@
 - https://linkedin.com
 - https://moikrug.ru/
 - https://djinni.co
-- https://rabota.yandex.ru/?rid=63
+- https://rabota.yandex.ru
 - https://www.flexjobs.com/
 - https://www.superjob.ru/
 - https://remote.com/
@@ -141,9 +141,9 @@
 
 
 **Поиск Drupal-разработчиков**
-- http://dru.io/u/legmo
+- http://dru.io/orders
+- https://drupal.ru/forum/commerce/job
 - https://www.drupal.org
-- http://drupal.ru/username/legmo
 
 
 **Telegram**
@@ -169,9 +169,11 @@
 - @ru_pythonjobs — канал для питонистов. Парсинг с сайта HeadHunter. 
 
 
-**Странное**
-- https://toloka.yandex.ru/
-- https://robotvera.com/static/newrobot/index.html
+**Разное**
+- [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
+- [Работа в Яндексе](https://yandex.ru/jobs/vacancies/)
+- [Работа в Mail.Ru](https://team.mail.ru/vacancy/)
+- [Робот Вера - ИИ для посика сотрудников](https://robotvera.com/static/newrobot/index.html)
 - [habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
 
 <br> 
