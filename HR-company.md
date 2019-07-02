@@ -169,10 +169,15 @@
 - @ru_pythonjobs — канал для питонистов. Парсинг с сайта HeadHunter. 
 
 
-**Разное**
-- [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
+**Вакансии в известных IT-фирмах**
 - [Работа в Яндексе](https://yandex.ru/jobs/vacancies/)
 - [Работа в Mail.Ru](https://team.mail.ru/vacancy/)
+- [Работа в JetBrains](https://jetbrains.ru/careers/)
+- [JetBrains - как устроиться к нам?](https://jetbrains.ru/careers/how-to-apply/)
+
+
+**Разное**
+- [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
 - [Робот Вера - ИИ для посика сотрудников](https://robotvera.com/static/newrobot/index.html)
 - [habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
 
