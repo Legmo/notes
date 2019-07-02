@@ -53,7 +53,6 @@
 - https://www.kaus-group.ru/
 - https://ru.globalcareer.eu/
 - https://president-msk.ru/
-- https://www.kellyservices.ru/
 - http://gkbfg.ru/
 - http://www.smart-boutique.ru/
 - http://www.maxima-mos.ru/
@@ -67,7 +66,6 @@
 - https://favorit.pro/
 - http://www.exrp.ru/
 - http://www.teamforce.ru/
-- https://www.it-selection.biz/
 - http://www.lightmans.ru/
 - http://www.vipcontact.ru/
 - http://www.zest-personal.ru/
@@ -85,7 +83,6 @@
 - http://www.sirius-hr.ru/
 - http://uniqa-agency.com/
 - http://www.mechel.com/
-- https://global-minds.ru/
 - https://consort.ru/
 - https://www.brunel.net/
 - http://www.expertcompany.ru/
