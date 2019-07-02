@@ -57,6 +57,35 @@
 - http://www.maxima-mos.ru/
 - https://hr365.ru/
 - https://sber-solutions.ru/about/career/
+- http://personnel.ru/
+- https://jobcart.ru/
+- http://www.human-capital.ru/home
+- https://gmsservices.ru/
+- https://hr-profi.ru/
+- https://favorit.pro/
+- http://www.exrp.ru/
+- http://www.teamforce.ru/
+- https://www.it-selection.biz/
+- http://www.lightmans.ru/
+- http://www.vipcontact.ru/
+- http://www.zest-personal.ru/
+- https://antgrup.ru/
+- http://rosexpert.ru/
+- http://staffmix.ru/
+- http://tnn.com.ru/
+- http://planetapodbora.ru/
+- http://www.adecco.ru/
+- http://www.centrp.ru/
+- http://www.kontakt.ru/
+- https://oak24.ru/
+- http://satorihr.ru/
+- https://www.it-people.ru/
+- http://www.sirius-hr.ru/
+- http://uniqa-agency.com/
+- http://www.mechel.com/
+- https://global-minds.ru/
+- https://consort.ru/
+- https://www.brunel.net/
 - 
 - 
 - 
