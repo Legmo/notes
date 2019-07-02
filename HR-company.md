@@ -141,7 +141,7 @@
 
 **Поиск Drupal-разработчиков**
 - [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
-- [Drupal.org - крутые компании-разработчики](https://www.drupal.org/organizations)
+- [Drupal.org](https://www.drupal.org/organizations) - список крупных компаний-разработчиков
 - [Dru.io](http://dru.io/orders)
 - [Drupal.ru](https://drupal.ru/forum/commerce/job)
 
