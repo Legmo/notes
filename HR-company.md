@@ -86,15 +86,28 @@
 - https://global-minds.ru/
 - https://consort.ru/
 - https://www.brunel.net/
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
+- http://www.expertcompany.ru/
+- http://www.mbcon.ru/
+- http://www.rng-services.ru/
+- http://www.hr.ibc.ru/
+- https://www.globalpas.com/
+- http://asap-sol.com/
+- http://kartatalanta.ru/
+- https://enginecareers.com/
+- http://www.pbg-consulting.ru/
+- https://trueintel.ru/ru/
+- https://assistans.pro/
+- https://www.hr-executive.ru/
+- https://profkadr.com/
+- http://www.rpa-consult.ru/#/
+- http://hrsolutions.ru/
+- https://barona.ru/
+- http://agekke.ru/
+- http://www.preservice.ru/
+- https://www.airswift.com/russian/
+- http://www.hr-irk.ru/
+- http://www.sharp-dev.net/
+- http://www.connect-personal.ru/
 
 **Биржи вакансий / сотрудников**
 - https://hh.ru
