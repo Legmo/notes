@@ -1,32 +1,35 @@
 # Где искать работу? #
 
-**Рекрутинговые/аутсорсинговые агенства**
-- [hh.ru - список агентств](https://hh.ru/agencies/list)
-- https://www.epam-group.ru/
-- [web-peppers](https://web-peppers.com/
-- http://ownstr.com/
+**Рекрутинговые/аутсорсинговые агенства**<br>
+Тут же есть крупные команды разработчиков (потом причешу)
+- [HH.ru - список агентств](https://hh.ru/agencies/list)
+- [EPAM](https://www.epam-group.ru)
+- [Hays](https://hays.ru)
+- [Adyax](https://www.adyax.com/) - крупнейшая компания по междунарожной разработке на Drupal
+- [Web Peppers](https://web-peppers.com)
+- [O.W.N.S.T.R.](http://ownstr.com)
+- [CSSSR](http://csssr.com)
+- [Soshace](https://soshace.com/jobs)
+- [Beejee](https://beejee.org)
+- [rubrain](https://rubrain.com/office)
+- [Do IT relocation](https://do-itrelocation.com) - заточено под релокацию
+- [Nitka](http://www.nitka.com)
+- [Z-Wolves](http://zwolves.by)
+- [Star staff](http://star-staff.ru)
+- [Ancor](https://ancor.ru/)
 - https://smstaffmatters.com/
 - http://openservices.biz/ru/
-- https://rubrain.com/office
 - https://www.createit.com/outstaffing/
-- https://soshace.com/jobs
 - https://dataart.ua/
 - https://www.allenrec.com/
 - http://okconsult.group/
-- http://www.nitka.com/
 - https://www.it-selection.biz/
-- http://zwolves.by/
-- https://beejee.org/
 - https://global-minds.ru
-- https://do-itrelocation.com/
 - https://www.luxoft.com/
 - http://agileps.net/
 - https://zojax.com/
 - https://affmy.com/
 - https://getpayever.com/
-- http://star-staff.ru
-- https://ancor.ru/
-- https://hays.ru/
 - http://selecty.ru/
 - http://www.uk-group.ru/
 - https://www.unity.ru/
