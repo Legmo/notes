@@ -52,11 +52,11 @@
 - https://ru.globalcareer.eu/
 - https://president-msk.ru/
 - https://www.kellyservices.ru/
-- 
-- 
-- 
-- 
-- 
+- http://gkbfg.ru/
+- http://www.smart-boutique.ru/
+- http://www.maxima-mos.ru/
+- https://hr365.ru/
+- https://sber-solutions.ru/about/career/
 - 
 - 
 - 
@@ -70,6 +70,7 @@
 **Биржи вакансий / сотрудников**
 - https://hh.ru
 - https://linkedin.com
+- https://moikrug.ru/
 - https://djinni.co
 - https://rabota.yandex.ru/?rid=63
 - https://www.flexjobs.com/
@@ -101,6 +102,7 @@
 - https://www.drupal.org
 - http://drupal.ru/username/legmo
 
+
 **Telegram**
 - https://telegram.me/arbeit_bot
 - https://telegram.me/seekubot
@@ -128,7 +130,7 @@
 **Странное**
 - https://toloka.yandex.ru/
 - https://robotvera.com/static/newrobot/index.html
-
+- [рфик - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
 
 <br> 
 <br> 
