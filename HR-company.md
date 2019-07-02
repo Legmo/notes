@@ -9,8 +9,8 @@
 - [O.W.N.S.T.R.](http://ownstr.com)
 - [CSSSR](http://csssr.com)
 - [Soshace](https://soshace.com/jobs)
-- [Beejee](https://beejee.org)
-- [rubrain](https://rubrain.com/office)
+- [BeeJee](https://beejee.org)
+- [RuBrain](https://rubrain.com/office)
 - [Do IT relocation](https://do-itrelocation.com) - заточено под релокацию
 - [Nitka](http://www.nitka.com)
 - [Z-Wolves](http://zwolves.by)
