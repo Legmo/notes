@@ -5,7 +5,6 @@
 - [HH.ru - список агентств](https://hh.ru/agencies/list)
 - [EPAM](https://www.epam-group.ru)
 - [Hays](https://hays.ru)
-- [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - [Web Peppers](https://web-peppers.com)
 - [O.W.N.S.T.R.](http://ownstr.com)
 - [CSSSR](http://csssr.com)
@@ -144,6 +143,7 @@
 
 
 **Поиск Drupal-разработчиков**
+- [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - http://dru.io/orders
 - https://drupal.ru/forum/commerce/job
 - https://www.drupal.org
