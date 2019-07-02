@@ -1,9 +1,9 @@
 # Где искать работу? #
 
 **Рекрутинговые/аутсорсинговые агенства**
-- https://hh.ru/agencies/list (список с hh.ru)
+- [hh.ru - список агентств](https://hh.ru/agencies/list)
 - https://www.epam-group.ru/
-- https://web-peppers.com/
+- [web-peppers](https://web-peppers.com/
 - http://ownstr.com/
 - https://smstaffmatters.com/
 - http://openservices.biz/ru/
@@ -180,6 +180,47 @@
 - [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
 - [Робот Вера - ИИ для посика сотрудников](https://robotvera.com/static/newrobot/index.html)
 - [habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
+
+**Unsorted**
+- CareerBuilder 
+- CareerCentric 
+- CareerJet 
+- Craigslist 
+- Eluta 
+- Employee Referral 
+- Facebook 
+- Glassdoor 
+- Indeed Sponsored 
+- Job Ad Rewrite 
+- Job Blast
+- Job Inventory 
+- JobBoost 
+- Jobbydoo 
+- JobCase 
+- JobisJob 
+- Jobs2Careers 
+- Jooble 
+- Joveo Programmatic Job Distribution - Standard 
+- Juju.com (USA Only) 
+- LinkedIn 
+- Linkedin Organic 
+- LinkUp 
+- Monster 
+- Monster Controlled (USA Only) 
+- MyJobHelper 
+- Neuvoo 
+- Oodle.com 
+- Recruit.net 
+- Refer.io 
+- SimplyHired 
+- TopUSAJobs 
+- Trovit 
+- US Jobs 
+- Workplace Diversity Network 
+- WowJobs 
+- ZipRecruiter Boost 
+- ZipRecruiter Organic 	
+
 
 <br> 
 <br> 
