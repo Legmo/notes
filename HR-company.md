@@ -107,7 +107,7 @@
 - http://www.hr-irk.ru/
 - http://www.sharp-dev.net/
 - http://www.connect-personal.ru/
-
+- https://thecovert.org/
 
 **Биржи вакансий / сотрудников**
 - https://hh.ru
