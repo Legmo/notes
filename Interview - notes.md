@@ -178,6 +178,42 @@
 <br></p></details>
 
 #
+<details><summary><b>Краткий английский словарик</b></summary><p>
+                                                                                   
+---
+
+- Я делал работу 	- I did the work
+- Я хочу сделать 	- I want to do
+- Я хотел бы 		- I would like to
+- Я хотел бы 		- I wanted
+- Я имел			- I had
+- Я буду иметь    - I'll have
+- Мне нравится 	- I like
+- Мне не нравится	- I do not like
+
+- Переписка 	- correspondence
+- Общение			- communication
+- Митинг 			- meeting (невероятно!)
+- Спокойно		- calmly
+- Срочно			- urgently
+- Опыт 			- experience
+- Такие как		- such as
+- Много			- A lot of
+- Не много		- A little of
+- Старый код		- Legacy code
+
+- Изучать 						- To study
+- Сжатые сроки выполнения			- Short deadlines
+- Высоконагруженные проекты 		- Highload projects
+- В течении моей работы, я...		- During my work, I...
+- Мои задачи включали 			- My tasks included
+- Делать что-то полезное			- Do something useful
+- Развиваться в этом направлении	- Develop in this direction
+- Большая международная команда 	- A large international team
+  
+<br></p></details>
+
+#
 <details><summary><b>Заметки</b></summary><p>
                                                           
 ---
