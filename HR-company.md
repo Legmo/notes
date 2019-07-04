@@ -172,7 +172,8 @@
 **Вакансии в известных IT-фирмах**
 - [Работа в Яндексе](https://yandex.ru/jobs/vacancies/)
 - [Работа в Mail.Ru](https://team.mail.ru/vacancy/)
-- [Работа в JetBrains](https://jetbrains.ru/careers/)
+- [Работа в JetBrains (ru)](https://jetbrains.ru/careers/)
+- [Работа в JetBrains (en)](https://www.jetbrains.com/careers/jobs/)
 - [JetBrains - как устроиться к нам?](https://jetbrains.ru/careers/how-to-apply/)
 
 
