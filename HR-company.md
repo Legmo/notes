@@ -140,10 +140,12 @@
 
 
 **Поиск Drupal-разработчиков**
-- [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - [Drupal.org](https://www.drupal.org/organizations) - список крупных компаний-разработчиков
-- [Dru.io](http://dru.io/orders)
-- [Drupal.ru](https://drupal.ru/forum/commerce/job)
+- [Drupal Development Companies](https://www.g2.com/categories/drupal-development) - список крупных компаний-разработчиков
+- [Dru.io](http://dru.io/orders) - русскоязычный форум
+- [Drupal.ru](https://drupal.ru/forum/commerce/job) - русскоязычный форум
+- [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
+- [Appnovation](https://www.appnovation.com/) - крупнейшая международная компания по Drupal-разработке
 
 
 **Telegram**
