@@ -148,6 +148,8 @@
 - [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - [Appnovation](https://www.appnovation.com/) - крупнейшая международная компания по Drupal-разработке
 - **UNSORTED**
+  - https://www.drupalgeeks.com/drupal-software-developers
+  - https://www.europeitoutsourcing.com/careers/front-end-developer-job/
   - https://drupal.partners/
   - https://internetdevels.com/outsource/hire-drupal-developer
   - https://alphawebgroup.com/company/contacts
@@ -160,6 +162,7 @@
   - https://webyourway.com.au/services/outsourcing-drupal.html
   - https://www.drupalgeeks.com/drupal-software-developers
   - https://www.scopelinks.com/contact-us
+  - https://www.psd2html.com/drupal-development.html
   
 
 **Telegram**
