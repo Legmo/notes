@@ -108,6 +108,7 @@
 - http://www.sharp-dev.net/
 - http://www.connect-personal.ru/
 - https://thecovert.org/
+- https://www.viventor.com/
 
 **Биржи вакансий / сотрудников**
 - https://hh.ru
@@ -146,7 +147,20 @@
 - [Drupal.ru](https://drupal.ru/forum/commerce/job) - русскоязычный форум
 - [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - [Appnovation](https://www.appnovation.com/) - крупнейшая международная компания по Drupal-разработке
-
+- **UNSORTED**
+  - https://drupal.partners/
+  - https://internetdevels.com/outsource/hire-drupal-developer
+  - https://alphawebgroup.com/company/contacts
+  - https://qarea.com/hire-developers/drupal
+  - https://www.pixelcrayons.com/cms-development/drupal-development
+  - https://www.sparxitsolutions.com/hire-drupal-developer.shtml
+  - https://www.droptica.com/services/drupal/
+  - https://orange949.com/web-development-miami
+  - http://zeptosystems.com/contact-us/
+  - https://webyourway.com.au/services/outsourcing-drupal.html
+  - https://www.drupalgeeks.com/drupal-software-developers
+  - https://www.scopelinks.com/contact-us
+  
 
 **Telegram**
 - https://telegram.me/arbeit_bot

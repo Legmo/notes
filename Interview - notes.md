@@ -201,6 +201,7 @@
 - Много			- A lot of
 - Не много		- A little of
 - Старый код		- Legacy code
+- Проблемы, вызовы - Challenges
 
 - Изучать 						- To study
 - Сжатые сроки выполнения			- Short deadlines
