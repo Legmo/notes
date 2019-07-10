@@ -4,6 +4,9 @@
 Тут же есть крупные команды разработчиков (потом причешу)
 - [HH.ru - список агентств](https://hh.ru/agencies/list)
 - [EPAM](https://www.epam-group.ru)
+- [GlobalLogic](https://www.globallogic.com/)
+- [IntellectSoft](https://www.intellectsoft.net/)
+- [Luxoft](https://www.luxoft.com/)
 - [Hays](https://hays.ru)
 - [Web Peppers](https://web-peppers.com)
 - [O.W.N.S.T.R.](http://ownstr.com)
@@ -166,6 +169,7 @@
   
 
 **Telegram**
+- [netology.ru - 133 канала и чата в Telegram для программистов](https://netology.ru/blog/prg-tg)
 - https://telegram.me/arbeit_bot
 - https://telegram.me/seekubot
 - https://t.me/getFreelance
