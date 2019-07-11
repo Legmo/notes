@@ -4,6 +4,7 @@
 - [Как проходить собеседования?](/Interview%20-%20notes.md)
 - [Где искать работу?](/HR-company.md)
 - [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Productivity%20increase.png)
+- [Как повысить уровень жизненной энергии?](/Energy.md)
 - [JavaScript](/Interview%20questions%20-%20JS.md)
 - [React JS & Redux](/Interview%20questions%20-%20React%20JS.md)
 - [HTML/CSS](/Interview%20%20questions%20-%20HTML-CSS.md)
