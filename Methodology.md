@@ -1,27 +1,27 @@
 # Методологии разработки #
 
 **Самые популярные**
-- Waterfall
-- Agile
-- Scrum
+- **Waterfall** (каскадная)
+- **Agile** (гибкая)
+- **Scrum** 
   - фреймворк гибкой разработки ПО, самая поплуряная реализация Agile. Разработана в конце 80-х — начале 90-х годов. Термины: Product backlog (список требований), истории, спринт...
-- Extreme Programming (XP или экстремальное программирование)
+- **Extreme Programming** (XP или экстремальное программирование)
   - Возникло в конце 90-х. Концепция из 12 приёмов. Типа Scrum, но сильнее упор на тестирование
-- Kanban
+- **Kanban**
   - стараемся реализовать Scrum как неперерывный конвейер. Часто используется доска, где столбикик = этапы, а карточки = задачи
-- Lean (Бережливая)
+- **Lean** (бережливая)
 
 
 **Стоит знать**
-- Waterfall Model (каскадная модель или «водопад»)
-- V-Model
-- Incremental Model (инкрементная модель)
-- RAD Model (rapid application development model или быстрая разработка приложений
-- Agile Model (гибкая методология разработки) 
-- Iterative Model (итеративная или итерационная модель)
-- Spiral Model (спиральная модель)
-- Feature Driven Development (FDD)
-- Lean Model (бережливая)
+- **Waterfall Model** (каскадная модель или «водопад»)
+- **V-Model**
+- **Incremental Model** (инкрементная модель)
+- **RAD Model** (rapid application development model или быстрая разработка приложений
+- **Agile Model** (гибкая методология разработки) 
+- **Iterative Model** (итеративная или итерационная модель)
+- **Spiral Model** (спиральная модель)
+- **Feature Driven Development** (FDD)
+- **Lean Model** (бережливая)
 
 
 **Заметки**
