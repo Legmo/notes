@@ -348,7 +348,8 @@
   
   <details><summary>HTTP/2 - следующая ступень протокола HTTP.</summary>
   
-  https://sebweo.com/ru/vse-chto-nuzhno-znat-o-http-2/
+  - [Wikipedia](https://ru.wikipedia.org/wiki/HTTP/2)
+  - https://sebweo.com/ru/vse-chto-nuzhno-znat-o-http-2/
   
   Новшества HTTP/2 заключаются в повышении эффективности передачи данных по сети.
   
