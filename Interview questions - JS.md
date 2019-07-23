@@ -446,8 +446,10 @@
  Массивы обычно используются для хранения _упорядоченных_ коллекций данных, например – списка товаров на странице, студентов в группе и т.п. Предлагает дополнительные методы для удобного манипулирования такой коллекцией. Элементы в массиве должны идти подряд, иначе теряется большая часть преимуществ этой структуры.
     
   Ссылки:
-  * [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
-  * [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+  - [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
+  - [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+  - [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
+  - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
       
   <br></p></details>
   
