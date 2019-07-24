@@ -1,5 +1,34 @@
 # Шпаргалка по JavaScript #
  
+  <details><summary><b>Значения и ссылки</b></summary><p>
+  
+  Примитивы (строки, числа, булевы значения, null/undefined) при присваивании переменных копируются целиком или, как говорят, **по значению**.
+  ```
+  var message = "Привет!";
+  var phrase = message;
+  ```
+  В результате получили две независимые переменные, каждая из которых хранит значение "Привет!". Изменение `message` никак не повлияет на `phrase`
+  
+  Объекты (в том числе массивы и функции) копируются **по ссылке**.<br> 
+  В переменной, которой присвоен объект, хранится не сам объект, а «адрес его места в памяти», иными словами – «ссылка» на него.
+  
+  Если есть две переменные с одной и той же функцией - в них не лежит копия этой функции, а обе эти переменные ссылаются на одну и ту же функцию:
+  ```
+  function func() {
+  	alert('!');
+  });
+  
+  var test = func; //И test и func указывают на одну и ту же функцию
+  ``` 
+  
+  **Ссылки**
+  - [learn.javascript.ru](https://learn.javascript.ru/object-reference)
+  - [TOП-12 JavaScript-концепций: от ссылок до асинхронных операций](https://proglib.io/p/js-concepts/)
+  - [Передача параметров по значению и по ссылке](https://metanit.com/web/javascript/3.7.php)
+  - [habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
+        
+  <br></p></details>
+  
   <details><summary><b>Замыкания</b></summary><p>
     
   - v1 - Функция, содержащая в себе ссылки на переменные из внешней области видимости
@@ -190,6 +219,7 @@
   - [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures)
   - [Wikipedia](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
   - [Hexlet - Возврат функций из функций](https://ru.hexlet.io/courses/js-functions/lessons/return-function/theory_unit)
+  - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
         
   <br></p></details>
   
@@ -272,6 +302,7 @@
   - [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
   - [learn.javascript.ru - Функциональные выражения](https://learn.javascript.ru/function-declaration-expression)
   - [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
+  - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
         
   <br></p></details>
          
@@ -450,6 +481,7 @@
   - [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
   - [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
   - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
+  - [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
       
   <br></p></details>
   
