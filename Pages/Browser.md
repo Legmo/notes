@@ -279,14 +279,8 @@
   - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
-<br></p></details>   
-
-
-<details><summary><b></b></summary><p>
-  MutationObserver
-  
-<br></p></details>   
-  
+<br></p></details><br>
+ 
   
   ## Полезные ссылки по теме ##
   - [Как работает браузер](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
