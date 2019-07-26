@@ -135,7 +135,7 @@
 <br></p></details>  
 
 
-<details><summary><b>Web workers</b></summary><p>
+<details><summary><b>Web Worker API</b></summary><p>
   
   Веб-воркеры — это потоки, принадлежащие браузеру, которые можно использовать для выполнения JS-кода без блокировки цикла событий. Введены в HTML 5.
   
