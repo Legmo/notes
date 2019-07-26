@@ -1,6 +1,5 @@
 # AJAX, JSON, CORS и т.д. #
 
-#
 <details><summary><b>Порт</b></summary><p>
 
   Номер, который, выдаёт операционная система каждой программе, которая хочет отослать данные в сеть.
@@ -8,7 +7,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>TCP/IP</b></summary><p>
   
   Сетевая модель передачи данных, представленных в цифровом виде.
@@ -36,7 +34,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>HTTP</b></summary><p>
 
   Протокол передачи данных.
@@ -56,7 +53,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>HTTP/2</b></summary><p>
 
   Вторая крупная версия сетевого протокола HTTP, используемая для доступа к World Wide Web. 
@@ -98,7 +94,6 @@
 <br></p></details>   
 
 
-#
 <details><summary><b>HTTPS</b></summary><p>
       
   Распространённое расширение HTTP, которое реализует упаковку передаваемых данных в криптографический протокол SSL или TLS.
@@ -119,7 +114,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>JSON</b> (Javascript Object Notation)</summary><p>
   
   Формат данных, который используется для представления объектов в виде строки
@@ -141,7 +135,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>AJAX</b> (Asynchronous JavaScript And XML)</summary><p>
 
   Технология отправки запросов к серверу из клиентского кода JavaScript без перезагрузки страницы
@@ -192,7 +185,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>DHTML (Dynamic HTML)</b></summary><p>
 
   совокупность технологий CSS, DOM и JavaScript
@@ -200,7 +192,6 @@
 <br></p></details>   
 
 
-#
 <details><summary><b>JSONP</b> (JSON with Padding, JSON с набивкой)</summary><p>
 
   Протокол. Дополнение к формату JSON. Способ запросить данные с сервера, находящегося в другом домене.
@@ -250,7 +241,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>JSONPP</b> (parameterized JSON with padding — параметризованный JSONP)</summary><p>
 
   Развитие идеи JSONP.
@@ -264,7 +254,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>CORS</b></summary><p>
 
   Кросс-доменные запросы. Разрешаем кросс-доменный AJAX (если сервер согласен его принять)
@@ -304,7 +293,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>COMET</b></summary><p>
 
   Общий термин, описывающий различные техники получения данных по инициативе сервера.
@@ -343,7 +331,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>WebSocket</b></summary><p>
   
   Протокол для пересылки любых данных, на любой домен, безопасно и почти без лишнего сетевого трафика. Замена AJAX.
@@ -432,7 +419,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>SSE API</b> (Server-Sent events)</summary><p>
   
   SSE — это механизм, который позволяет серверу асинхронно отправлять данные клиенту после установления клиент-серверного соединения.
@@ -460,7 +446,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><b>Server Push</b></summary><p>
 
   HTTP/2 вводит технологию Server Push, которая позволяет серверу отправлять данные в клиентский кэш по собственной инициативе. Однако, при использовании этой технологии данные нельзя отправлять прямо в приложение. Данные, отправленные сервером по своей инициативе, обрабатывает браузер, при этом нет API, которые позволяют, например, уведомить приложение о поступлении данных с сервера и отреагировать на это событие.
@@ -474,7 +459,6 @@
   <br></p></details> 
 
 
-#
 <details><summary><b>XMLHttpRequest</b> (XHR)</summary><p>
 
   Объект, который дает возможность браузеру из JavaScript делать HTTP-запросы к серверу без перезагрузки страницы.
@@ -489,7 +473,6 @@
 <br></p></details> 
 
 
-#
 <details><summary><p>Fetch</p></summary><p>
 
   встроенный метод браузера для AJAX-запросов, замена XMLHttpRequest.
@@ -506,12 +489,10 @@
 <br></p></details> 
 
 
-#
 **Ссылки**
   - [Сети в вопросах и ответах. HTTP-протокол. AJAX. JSONP. CORS.COMET](https://medium.com/@olgakozlova/%D1%81%D0%B5%D1%82%D0%B8-%D0%B2-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D1%85-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D1%85-http-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-ajax-jsonp-cors-comet-53c60319a5a7)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
   - [Основы TCP/IP для будущих дилетантов](https://habr.com/ru/post/326574/)
-
 
 <br> 
 <br> 
