@@ -764,18 +764,6 @@
   - [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
   * [Ад обратных вызовов](http://callbackhell.ru/)
   
-  <br></p></details>
-  
-  
-  <details><summary><b>Стрелочные функции</b></summary><p>
-    
-  Не имеют своего this. Внутри стрелочных функций тот же this, что и снаружи. Удобно в обработчиках событий и коллбэках.<br>
-  Не имеют своего arguments. Используются аргументы внешней «обычной» функции.<br>
-  Появились в ES6.
-    
-  **Ссылки**
-  - [learn.javascript.ru](https://learn.javascript.ru/es-function)
-        
 <br></p></details>
   
   
@@ -809,6 +797,18 @@
   - [Атрибут defer](http://htmlbook.ru/html/script/defer)
   
 <br></p></details>   
+    
+    
+<details><summary><b>Стрелочные функции</b></summary><p>
+    
+  Не имеют своего this. Внутри стрелочных функций тот же this, что и снаружи. Удобно в обработчиках событий и коллбэках.<br>
+  Не имеют своего arguments. Используются аргументы внешней «обычной» функции.<br>
+  Появились в ES6.
+    
+  **Ссылки**
+  - [learn.javascript.ru](https://learn.javascript.ru/es-function)
+        
+<br></p></details>
   
   
 <details><summary><b>Самовыполняющиеся функции. Модули</b> ( function(){} )()</summary><p>
@@ -879,10 +879,10 @@
   - [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
   - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
         
-  <br></p></details>
+<br></p></details>
          
          
-  <details><summary><b>Function Declaration, Function Expression</b></summary><p>
+<details><summary><b>Function Declaration, Function Expression</b></summary><p>
   
   Function Declaration – функция, объявленная в основном потоке кода. 
   - `function sayHi() {...}`
@@ -897,10 +897,11 @@
   - Функции, объявленные как Function Declaration, создаются полностью и готовы к использованию.
   - Переменные объявлены, но равны undefined. Присваивания выполнятся позже, когда выполнение дойдет до них.
   
-  <br></p></details>
+<br></p></details>
 
-  <a name="js_callback"></a>
-  <details><summary><b>Callback</b></summary><p>
+
+<a name="js_callback"></a>
+<details><summary><b>Callback</b></summary><p>
     
   Функция, которая должна быть выполнена после того, как другая функция завершила выполнение (отсюда и название: callback – функция обратного вызова).
    
@@ -980,11 +981,11 @@
   * [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
   * [Ад обратных вызовов](http://callbackhell.ru/)
   
-  <br></p></details>
+<br></p></details>
 
 
-  <a name="js_cal-aply"></a>
-  <details><summary><b>"Call" & "apply"</b> //ToDo - доработать</summary><p>
+<a name="js_cal-aply"></a>
+<details><summary><b>"Call" & "apply"</b> //ToDo - доработать</summary><p>
   
   Явное указание this
   
@@ -994,12 +995,12 @@
   * [learn.javascript.ru](https://learn.javascript.ru/call-apply)
   * [habr](https://habr.com/ru/post/199456/) 
   
-  <br></p></details>   
+<br></p></details>   
 
 
-  <a name="js_bind"></a>
-  <details><summary><b>Bind</b></summary><p> 
-    
+<a name="js_bind"></a>
+<details><summary><b>Bind</b></summary><p> 
+  
   Метод. Позволяет привязать контекст к функции. Важно при callback
   
   Метод bind() создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в привязанную функцию аргументами при её вызове.
@@ -1020,14 +1021,16 @@
   ```
   
   Ссылки:
-  * [learn.javascript.ru](https://learn.javascript.ru/bind)
-  * [code.mu](http://code.mu/javascript/context/bind.html) 
-  * [habr](https://habr.com/ru/post/199456/) 
-  * [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
-  <br></p></details>
+  - [learn.javascript.ru](https://learn.javascript.ru/bind)
+  - [code.mu](http://code.mu/javascript/context/bind.html) 
+  - [habr](https://habr.com/ru/post/199456/) 
+  - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+  
+<br></p></details>
     
-  <a name="js_events-handlers"></a>
-  <details><summary><b>Обработчики событий</b> (events handlers)</summary><p>
+    
+<a name="js_events-handlers"></a>
+<details><summary><b>Обработчики событий</b> (events handlers)</summary><p>
     
   Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
   
@@ -1039,10 +1042,11 @@
   * [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
   * [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
       
-  <br></p></details>
-        
-  <a name="js_objects-arrays"></a>
-  <details><summary><b>Объекты {} и массивы []</b></summary><p>
+<br></p></details>
+      
+      
+<a name="js_objects-arrays"></a>
+<details><summary><b>Объекты {} и массивы []</b></summary><p>
                                                   
   - ``{ width: 300,  height: 200, }`` - объект. Структура для хранения данных в формате ключ-значение.
   - ``[ 300, 200, ]``                 - массив. Для хранения пронумерованных значений. Особый тип объектов. 
