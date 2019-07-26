@@ -135,7 +135,7 @@
 <br></p></details> 
 
 
-<details><summary><b>AJAX</b> (Asynchronous JavaScript And XML)</summary><p>
+<details><summary><b>AJAX</b> (Asynchronous JavaScript and XML)</summary><p>
 
   Технология отправки запросов к серверу из клиентского кода JavaScript без перезагрузки страницы
   
@@ -192,7 +192,7 @@
 <br></p></details>   
 
 
-<details><summary><b>JSONP</b> (JSON with Padding, JSON с набивкой)</summary><p>
+<details><summary><b>JSONP</b> (JSON with Padding - JSON с набивкой)</summary><p>
 
   Протокол. Дополнение к формату JSON. Способ запросить данные с сервера, находящегося в другом домене.
 
@@ -241,7 +241,7 @@
 <br></p></details> 
 
 
-<details><summary><b>JSONPP</b> (parameterized JSON with padding — параметризованный JSONP)</summary><p>
+<details><summary><b>JSONPP</b> (Parameterized JSON with padding — параметризованный JSONP)</summary><p>
 
   Развитие идеи JSONP.
   
