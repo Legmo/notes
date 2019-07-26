@@ -101,7 +101,7 @@
   **Ссылки**
   - [https://habr.com/ru/company/ruvds/blog/332384/](https://habr.com/ru/company/ruvds/blog/332384/)
   
-<br></p></details><br>
+<br></p></details>
 
 
 <details><summary><b>ООП - некоторые понятия</b></summary><p>
