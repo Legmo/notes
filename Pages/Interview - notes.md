@@ -162,7 +162,7 @@
     - Дао Дэ Дзин (Лао Цзы)
       
   <br></p></details>
-<br></p></details>
+</p></details>
 
 #
 <details><summary><b>Вопросы на английском</b></summary><p>
