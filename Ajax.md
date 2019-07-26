@@ -473,7 +473,7 @@
 <br></p></details> 
 
 
-<details><summary><p>Fetch</p></summary><p>
+<details><summary><b>Fetch</b></summary><p>
 
   встроенный метод браузера для AJAX-запросов, замена XMLHttpRequest.
 
