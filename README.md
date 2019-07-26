@@ -12,14 +12,14 @@
 - [Где искать работу?](/Pages/HR-company.md)
 - [Как проходить собеседования?](/Pages/Interview%20-%20notes.md)
 
-## Drupal ##
-- [Drupal - список компетенций](/Pages/List%20of%20competencies%20-%20Drupal.md)
-- [Drupal - вопросы для собеседования frontend-разработчика](/Pages/Interview%20questions%20-%20Drupal%207-8.md)
-
 ## Саморазвитие ##
 - [Как учиться?](/Pages/Learning.md)
 - [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Productivity%20increase.png)
 - [Как повысить уровень жизненной энергии?](/Pages/Energy.md)
+
+## Drupal ##
+- [Drupal - список компетенций](/Pages/List%20of%20competencies%20-%20Drupal.md)
+- [Drupal - вопросы для собеседования frontend-разработчика](/Pages/Interview%20questions%20-%20Drupal%207-8.md)
 
 ## Общие вопросы ##
 - [UX/UI](/Pages/Interview%20questions%20-%20UX-UI.md)
