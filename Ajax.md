@@ -488,7 +488,7 @@
   **Ссылки**
   - https://learn.javascript.ru/fetch
     
-<br></p></details> 
+<br></p></details><br>
 
 
 ## Полезные ссылки ##
