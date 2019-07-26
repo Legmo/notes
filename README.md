@@ -3,10 +3,10 @@
 ## Технологии ##
 - [JavaScript](/Pages/Interview%20questions%20-%20JS.md)
 - [React JS & Redux](/Pages/Interview%20questions%20-%20React%20JS.md)
-- [HTML/CSS](/Pages/Interview%20%20questions%20-%20HTML-CSS.md)
 - [Работа браузера](/Pages/Browser.md)
 - [AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/Interview%20questions%20-%20Questions.md)
+- [Вопросы-ответы про Bootstrap 4 & SASS](/Pages/Interview%20%20questions%20-%20HTML-CSS.md)
 
 ## Поиск работы ##
 - [Где искать работу?](/Pages/HR-company.md)
