@@ -276,7 +276,7 @@
   Протокол для пересылки любых данных, на любой домен, безопасно и почти без лишнего сетевого трафика. Замена AJAX.
   
   **Ссылки**
-  - [AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
+  - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p></details>   
