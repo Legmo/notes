@@ -1474,7 +1474,7 @@
   - [habr](https://habr.com/ru/post/309318/)
   - [habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
   
-<br></p></details>
+<br></p></details><br>
 
 
 ## JS - приёмы ##
