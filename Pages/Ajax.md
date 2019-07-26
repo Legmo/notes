@@ -509,8 +509,7 @@
   **Ссылки**
   - https://learn.javascript.ru/fetch
     
-<br></p></details><br
->
+<br></p></details><br>
 
 
 ## Полезные ссылки ##
