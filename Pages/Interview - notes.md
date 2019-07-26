@@ -134,6 +134,22 @@
   - Сергей Чикуенок 		- вёрстка
   - телеграмм-каналы можно упомянуть
   
+  **Рекомендации от Алекса (программист expert)**<br>
+  Читать что-то конкретное, я не читаю.<br>
+  Изредка, когда охота "покатать вату", ищу что-то на Medium<br>
+  Из фронтового, слушаю подкасты, если говорят о чем-то интересном, захожу в show-notes и смотрю ссылки или ищу.
+  
+  Из отечественных подкастов по фронту:
+  - [Frontend Weekend](https://soundcloud.com/frontend-weekend)
+  - [Девшахта](https://medium.com/devschacht/tagged/девшахта)
+  - [Фронтенд Юность (18+)](https://soundcloud.com/frontend_u) - может показатся хулиганским, 
+  но уровень у ведущих хороший.
+
+  Обязательно, хотя бы раз в неделю захожу сюда
+  - [Awesome JavaScript Sorrycc GitHub](https://github.com/sorrycc/awesome-javascript) - a collection of awesome browser-side JavaScript libraries, resources and shiny things.
+  - [Awesome JavaScript Uhub GitHub](https://github.com/uhub/awesome-javascript) - a curated list of awesome JavaScript frameworks, libraries and software.
+  - [bestofjs.org](https://bestofjs.org/)
+ 
   <br></p></details>
 
   <details><summary><b>Книги</b></summary><p>
