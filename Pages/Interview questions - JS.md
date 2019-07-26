@@ -767,7 +767,7 @@
 <br></p></details>
   
   
-<details><summary><b>Атрибуты async и defer у тега script</b></summary><p>
+<details><summary><b>Атрибуты async и defer тега script</b></summary><p>
   
   Аттрибуты тэга `<script>`. Влияют на то, когда будет загружаться и выполняться этот скрипт. Будет ли заблокирован парсинг HTML на время загрузки/выполнения или нет.
   
