@@ -185,7 +185,7 @@
 <br></p></details> 
 
 
-<details><summary><b>DHTML (Dynamic HTML)</b></summary><p>
+<details><summary><b>DHTML</b> (Dynamic HTML)</summary><p>
 
   совокупность технологий CSS, DOM и JavaScript
 
