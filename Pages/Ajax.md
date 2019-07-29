@@ -515,6 +515,7 @@
 ## Полезные ссылки ##
   - [Сети в вопросах и ответах. HTTP-протокол. AJAX. JSONP. CORS.COMET](https://medium.com/@olgakozlova/%D1%81%D0%B5%D1%82%D0%B8-%D0%B2-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D1%85-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D1%85-http-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-ajax-jsonp-cors-comet-53c60319a5a7)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
+  - [Как работает JS: сетевая подсистема браузеров, оптимизация её производительности и безопасности](https://habr.com/ru/company/ruvds/blog/354070/)
   - [Основы TCP/IP для будущих дилетантов](https://habr.com/ru/post/326574/)
 
 <br> 
