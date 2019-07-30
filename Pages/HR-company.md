@@ -10,6 +10,7 @@
 - [Hays](https://hays.ru)
 - [Web Peppers](https://web-peppers.com)
 - [O.W.N.S.T.R.](http://ownstr.com)
+- [Z-Wolves](http://zwolves.by)
 - [CSSSR](http://csssr.com)
 - [Evil Martians](https://evilmartians.com/)
 - [Soshace](https://soshace.com/jobs)
@@ -17,7 +18,6 @@
 - [RuBrain](https://rubrain.com/office)
 - [Do IT relocation](https://do-itrelocation.com) - заточено под релокацию
 - [Nitka](http://www.nitka.com)
-- [Z-Wolves](http://zwolves.by)
 - [Star staff](http://star-staff.ru)
 - [Ancor](https://ancor.ru/)
 - https://smstaffmatters.com/
@@ -151,22 +151,24 @@
 - [Drupal.ru](https://drupal.ru/forum/commerce/job) - русскоязычный форум
 - [Adyax](https://www.adyax.com/) - крупнейшая международная компания по Drupal-разработке
 - [Appnovation](https://www.appnovation.com/) - крупнейшая международная компания по Drupal-разработке
+- [Web Peppers](https://web-peppers.com) - аутсорс-компания
+- [O.W.N.S.T.R.](http://ownstr.com) - аутсорс-компания
+- [Z-Wolves](http://zwolves.by) - аутсорс-компания
 - **UNSORTED**
-  - https://www.drupalgeeks.com/drupal-software-developers
-  - https://www.europeitoutsourcing.com/careers/front-end-developer-job/
-  - https://drupal.partners/
-  - https://internetdevels.com/outsource/hire-drupal-developer
-  - https://alphawebgroup.com/company/contacts
-  - https://qarea.com/hire-developers/drupal
-  - https://www.pixelcrayons.com/cms-development/drupal-development
-  - https://www.sparxitsolutions.com/hire-drupal-developer.shtml
-  - https://www.droptica.com/services/drupal/
-  - https://orange949.com/web-development-miami
-  - http://zeptosystems.com/contact-us/
-  - https://webyourway.com.au/services/outsourcing-drupal.html
-  - https://www.drupalgeeks.com/drupal-software-developers
-  - https://www.scopelinks.com/contact-us
-  - https://www.psd2html.com/drupal-development.html
+  - [Alpha web group](https://alphawebgroup.com/company/contacts) - Украина
+  - [Internetdevels](https://internetdevels.com/outsource/hire-drupal-developer) - Украина
+  - [Europe IT outsourcing](https://www.europeitoutsourcing.com/careers/front-end-developer-job/) - Украина
+  - [Drupal Geeks](https://www.droptica.com/services/drupal/) - Poland
+  - [Drupal Partners](https://www.drupalpartners.com/) - USA
+  - https://www.drupalgeeks.com/drupal-software-developers - USA
+  - https://qarea.com/hire-developers/drupal - USA
+  - https://orange949.com/web-development-miami - USA
+  - https://www.psd2html.com/drupal-development.html - USA
+  - http://zeptosystems.com/contact-us/ - England
+  - https://webyourway.com.au/services/outsourcing-drupal.html - Australia
+  - https://www.scopelinks.com/contact-us - Egypt
+  - https://www.pixelcrayons.com/cms-development/drupal-development - India/USA/England/...
+  - https://www.sparxitsolutions.com/hire-drupal-developer.shtml - India/USA
   
 
 **Telegram**
