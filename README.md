@@ -25,6 +25,7 @@
 - [UX/UI](/Pages/Interview%20questions%20-%20UX-UI.md)
 - [Методологии разработки](/Pages/Methodology.md)
 - [Программирование в целом](/Pages/Interview%20questions%20-%20Programming.md)
+- [Общение с иностранными работадателями. Особенности менталитета](/Pages/Foreign%20mentality.md)
 
 <br>
 

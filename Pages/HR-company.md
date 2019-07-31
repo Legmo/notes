@@ -155,9 +155,9 @@
 - [O.W.N.S.T.R.](http://ownstr.com) - аутсорс-компания
 - [Z-Wolves](http://zwolves.by) - аутсорс-компания
 - **UNSORTED**
-  - [Alpha web group](https://alphawebgroup.com/company/contacts) - Украина
-  - [Internetdevels](https://internetdevels.com/outsource/hire-drupal-developer) - Украина
-  - [Europe IT outsourcing](https://www.europeitoutsourcing.com/careers/front-end-developer-job/) - Украина
+  - [Alpha web group](https://alphawebgroup.com/company/contacts) - Украина (+)
+  - [Internetdevels](https://internetdevels.com/outsource/hire-drupal-developer) - Украина (+)
+  - [Europe IT outsourcing](https://www.europeitoutsourcing.com/careers/front-end-developer-job/) - Украина (+)
   - [Drupal Geeks](https://www.droptica.com/services/drupal/) - Poland
   - [Drupal Partners](https://www.drupalpartners.com/) - USA
   - https://www.drupalgeeks.com/drupal-software-developers - USA
@@ -192,7 +192,12 @@
 - @javascript_jobs_feed — еще один канал для адептов JS. Многие вакансии дублируются в предыдущем канале, но можно подписаться наудачу.
 - @moikrug — канал портала «Мой круг». Очень много вакансий: сюда дублируются все новые IT-вакансии с сайта. 
 - @Getitrussia — серьезные вакансии с серьезными зарплатами. 
-- @ru_pythonjobs — канал для питонистов. Парсинг с сайта HeadHunter. 
+- @ru_pythonjobs — канал для питонистов. Парсинг с сайта HeadHunter.
+***
+- t.me/flfeedit
+- t.me/Remoteit
+- t.me/Getitrussia
+- t.me/remoteitworld
 
 
 **Вакансии в известных IT-фирмах**

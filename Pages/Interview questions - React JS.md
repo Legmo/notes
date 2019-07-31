@@ -574,15 +574,15 @@
   
   <br></p></details>
     
-  <details>
-    <summary><b>React + Bootstrap</b></summary><p>
+    
+  <details><summary><b>React + Bootstrap</b></summary><p>
     
    C Bootsrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
    
   <br></p></details>
     
-  <details>
-    <summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
+    
+  <details><summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
     
   - есть некий дизайн (UI)
   - глядя на него, я начинаю общаться с заказчиком, и разбираться - какие данный приходят на ту или иную страницу, какие с ними действия происходят, и т.д.
@@ -593,13 +593,13 @@
       
   <br></p></details>
     
-  <details>
-    <summary>устанавливая пакет - дописывать в конце --save Означает, что нужно внести запись в package.json</summary>
+    
+  <details><summary>устанавливая пакет - дописывать в конце --save Означает, что нужно внести запись в package.json</summary>
       npm install react-router-dom --save
   </details>
     
-  <details>
-    <summary><b>Методы отладки React</b></summary><p>
+    
+  <details><summary><b>Методы отладки React</b></summary><p>
 
   - React devtools поставляется в двух видах
     - отдельным пакетами
@@ -623,8 +623,7 @@
   <br></p></details>
   
   
-   <details>
-        <summary>В React мы никогда не лезем в DOM напрямую.</summary>
+   <details><summary>В React мы никогда не лезем в DOM напрямую.</summary>
         Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM
     </details>
     
