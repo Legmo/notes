@@ -296,6 +296,32 @@
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p></details><br>
+
+
+<details><summary><b>Shadow DOM</b></summary><p>
+  
+   Технология для создания приложений, основанных на компонентах. 
+
+  **Ссылки**
+  - [Как работает JS: технология Shadow DOM и веб-компоненты](https://habr.com/ru/company/ruvds/blog/415881/)
+
+<br></p></details>  
+
+
+<details><summary><b>Системы хранения данных</b></summary><p>
+  
+   Некоторые популярные системы хранения данных, доступные веб-разработчикам:
+   - API FileSystem
+   - API LocalStorage
+   - API SessionStorage
+   - API Cookie
+   - API Cache
+   - API IndexedDB
+
+  **Ссылки**
+  - [Как работает JS: системы хранения данных](https://habr.com/ru/company/ruvds/blog/415505/)
+
+<br></p></details>   
  
   
   ## Полезные ссылки по теме ##
