@@ -3,18 +3,18 @@
 Небольшие заметки по общению с иностранными работадателями.
 
 **Лия Ким**
-- https://www.facebook.com/lilya.kim/posts/854400218094959
-- https://www.facebook.com/lilya.kim/posts/856755727859408
-- https://www.facebook.com/lilya.kim/posts/857087764492871
-- https://www.facebook.com/lilya.kim/posts/911970715671242
+- [Про язык. Оси "иерархия - формальность"](https://www.facebook.com/lilya.kim/posts/854400218094959)
+- [Про завершения разговора и сарказм](https://www.facebook.com/lilya.kim/posts/856755727859408)
+- [По каким language chunks можно понять, что переговоры идут хорошо.](https://www.facebook.com/lilya.kim/posts/857087764492871)
 - https://www.facebook.com/lilya.kim/posts/941863909348589
 - https://www.facebook.com/lilya.kim/posts/942446105957036
 - https://www.facebook.com/lilya.kim/posts/945480698986910
 - https://www.facebook.com/lilya.kim/posts/945480698986910
 - https://www.facebook.com/lilya.kim/posts/956098131258500
-- [Про терапию средой](https://www.facebook.com/lilya.kim/posts/945480698986910)
 - [Про нытье](https://www.facebook.com/lilya.kim/posts/504755123059472)
 - [Как я мгновенно преодолела все неврозы и стала эффективной](https://www.facebook.com/lilya.kim/posts/508998492635135)
+- [Про терапию средой](https://www.facebook.com/lilya.kim/posts/945480698986910)
+- [Про торговлю и аренду квартир](https://www.facebook.com/lilya.kim/posts/911970715671242)
 
 **Лия Ким - Силиконовый дневник** (экскурсии по штабам крупных IT-компаний) 
 - https://www.facebook.com/lilya.kim/posts/847778745423773
