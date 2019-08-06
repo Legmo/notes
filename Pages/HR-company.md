@@ -173,6 +173,7 @@
 
 **Telegram**
 - [netology.ru - 133 канала и чата в Telegram для программистов](https://netology.ru/blog/prg-tg)
+- [hh.ru - Development (Разработка)](https://t.me/s/hh_vacancy_development)
 - https://telegram.me/arbeit_bot
 - https://telegram.me/seekubot
 - https://t.me/getFreelance
