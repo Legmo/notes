@@ -267,7 +267,6 @@
   - [Как работает JS: отслеживание изменений в DOM с помощью MutationObserver](https://habr.com/ru/company/ruvds/blog/351256/)
   
 <br></p></details>   
-  
 
 <details><summary><b>WebSocket</b></summary><p>
   
@@ -280,7 +279,6 @@
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p></details>   
-  
 
 <details><summary><b>SSE API (Server-Sent events)</b></summary><p>
   
@@ -292,8 +290,7 @@
   - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
-<br></p></details><br>
-
+<br></p></details>
 
 <details><summary><b>WebRTC и механизмы P2P-коммуникаций</b></summary><p>
 
@@ -302,14 +299,11 @@
   WebRTC, позволяет веб-приложениям создавать P2P-соединения (peer-to-peer, соединения типа «точка-точка», одноранговые, пиринговые сети). 
   
   Например - создание чата.
-  
    
   **Ссылки**
   - [Как работает JS: WebRTC и механизмы P2P-коммуникаций](https://habr.com/ru/company/ruvds/blog/416821/)
-  - []()
-  - []()
   
-<br></p></details><br>
+<br></p></details>
 
 <details><summary><b>Shadow DOM</b></summary><p>
   
