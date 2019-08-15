@@ -553,6 +553,7 @@
   * [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
   * [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
   * [Ад обратных вызовов](http://callbackhell.ru/)
+  * [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
   
 <br></p></details>   
   
