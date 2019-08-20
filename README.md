@@ -14,7 +14,7 @@
 
 ## Саморазвитие ##
 - [Как учиться?](/Pages/Learning.md)
-- [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Productivity%20increase.png)
+- [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Productivity%20increase.png)
 - [Как повысить уровень жизненной энергии?](/Pages/Energy.md)
 
 ## Drupal ##
