@@ -2477,7 +2477,22 @@
   
   **Ссылки**
   - [YouTube - IT Kamasutra 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
+   
+  <br></p></details>
   
+  <details><summary><b>Connect</b></summary><p>
+  
+  connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+  
+  API react-redux connect() используется для создания компонентов-контейнеров, которые подключены к хранилищу Redux. 
+  
+  Если вам, в React-компоненте, нужно получать данные из хранилища, или требуется диспетчеризовать действия, или нужно делать и то и другое, вы можете преобразовать обычный компонент в компонент-контейнер, обернув его в компонент высшего порядка, возвращаемый функцией connect() из react-redux. 
+  
+  Если ваше React-приложение использует несколько хранилищ Redux, то connect() позволяет легко указывать конкретное хранилище, к которому должен быть подключён компонент-контейнер.
+  
+  **Ссылки**
+  - [Habr - Использование функции connect() из пакета react-redux](https://habr.com/ru/company/ruvds/blog/423157/)
+   
   <br></p></details>
   
 <br></p></details>
