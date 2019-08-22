@@ -520,6 +520,17 @@
     
 <br></p></details><br>
 
+<details><summary><b>Документация API при помощи RAML</b></summary><p>
+
+  Специализированный язык для описания REST API
+
+  В частности, его используют для описани документации IT-Kamasutra
+  
+  **Ссылки**
+  - [habr - Пишем документацию API при помощи RAML](https://habr.com/ru/company/selectel/blog/265337/)
+    
+<br></p></details><br>
+
 
 ## Полезные ссылки ##
   - [Сети в вопросах и ответах. HTTP-протокол. AJAX. JSONP. CORS.COMET](https://medium.com/@olgakozlova/%D1%81%D0%B5%D1%82%D0%B8-%D0%B2-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D1%85-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D1%85-http-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-ajax-jsonp-cors-comet-53c60319a5a7)
