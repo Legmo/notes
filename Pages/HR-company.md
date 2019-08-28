@@ -119,6 +119,7 @@
 - https://linkedin.com
 - https://moikrug.ru/
 - https://djinni.co
+- https://trudvsem.ru
 - https://rabota.yandex.ru
 - https://www.flexjobs.com/
 - https://www.superjob.ru/
