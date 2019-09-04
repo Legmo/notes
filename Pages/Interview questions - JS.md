@@ -1066,6 +1066,15 @@
   <br></p></details>
   
   
+  <details><summary><b>Декораторы</b></summary><p>
+  
+  Ссылки:
+  - [habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+  - [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
+      
+  <br></p></details>
+  
+  
   <details><summary><b>var = х</b></summary><p>
   
   Способ объявления переменной. Используем в обычных случаях
