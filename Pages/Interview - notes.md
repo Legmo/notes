@@ -376,7 +376,7 @@
   - [Как сделать так, чтобы получать больше предложений по работе](https://pikabu.ru/story/kak_sdelat_tak_chtobyi_poluchat_bolshe_predlozheniy_po_rabote_6332920)
   - [hh.ru - Стойка на руках и губы уточкой: как выбрать фото для резюме](https://irkutsk.hh.ru/article/23994)
   - [hh.ru - 30 слов и выражений, которые помогут составить хорошее резюме](https://irkutsk.hh.ru/article/302406)
-  - [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Pages/7-years-resume.jpg)
+  - [Пример эволюции резюме UX-дизайнера за 7 лет (Airbnb)](https://raw.githubusercontent.com/Legmo/notes/master/Pages/7-years-resume.jpg)
 
 <br></p></details>
 
