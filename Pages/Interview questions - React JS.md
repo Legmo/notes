@@ -2107,11 +2107,15 @@
   В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
     
   **Ссылки**
+  - [Официальный сайт проекта (en)](https://www.styled-components.com)
   - [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
+  - [habr - Знакомство с Styled components](https://habr.com/ru/company/digital-ecosystems/blog/321804/)
   - [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
   - [habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
   - [habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
   - [habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
+  - [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
+  - [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
   
   <br></p></details>
   

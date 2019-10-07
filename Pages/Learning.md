@@ -99,7 +99,7 @@
 - [Чем отличается junior от middle? а Senior?](https://toster.ru/q/124171)
 - [Шкала уровней компетентности, краткий обзор](https://olegmatveev.livejournal.com/929544.html)
 - [YouTube - Как научиться учиться (Хаббард)](https://www.youtube.com/watch?v=_nh9ZMbwx34)
-- []()
+- [Про миллиардеров, родиышихся в нищих семьях](https://finparty.ru/opinions/66496/)
 
 <br></p></details>
 
