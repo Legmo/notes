@@ -99,7 +99,8 @@
 - [Чем отличается junior от middle? а Senior?](https://toster.ru/q/124171)
 - [Шкала уровней компетентности, краткий обзор](https://olegmatveev.livejournal.com/929544.html)
 - [YouTube - Как научиться учиться (Хаббард)](https://www.youtube.com/watch?v=_nh9ZMbwx34)
-- [Про миллиардеров, родиышихся в нищих семьях](https://finparty.ru/opinions/66496/)
+- [Про миллиардеров, родившихся в нищих семьях](https://finparty.ru/opinions/66496/)
+- [YouTue. Курпатов - "Усилие воли" и полезные привычки: можно ли перехитрить свой мозг?](https://youtu.be/6u1f9lwLFKU)
 
 <br></p></details>
 
