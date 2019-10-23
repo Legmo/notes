@@ -1,6 +1,7 @@
 # Как понять, чем я хочу заниматься? #
 
 <details><summary><b>Чего вы хотите? (комикс)</b></summary><p>  
+
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_1.jpg)
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_2.jpg)
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_3.jpg)
@@ -9,9 +10,12 @@
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_6.jpg)
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_7.jpg)
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/destination_8.jpg)
+
 <br></p></details>
 
 <details><summary><b>Про обучение на примере других</b></summary><p>  
+
+![](https://hsto.org/r/w1560/webt/g-/tv/yx/g-tvyxlxy0e3kc0c_quq_r0d9uo.png)
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/Quotes.jpg) 
 <br></p></details>
 
