@@ -27,10 +27,12 @@
 
 <br></p></details>
 
+<!--
 <details><summary><b>Про следование чужим советам</b></summary><p>  
 
 ![](https://raw.githubusercontent.com/Legmo/notes/master/Pic/Quotes.jpg) 
 <br></p></details>
+-->
 
 <details><summary><b>Ссылки</b></summary><p>  
 
