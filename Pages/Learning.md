@@ -140,6 +140,8 @@
 - [Про метакомпетенции и способность менять сферу деятельности](https://knife.media/skills-for-the-future/)
 - [YouTue. Курпатов - "Усилие воли" и полезные привычки: можно ли перехитрить свой мозг?](https://youtu.be/6u1f9lwLFKU)
 - [Coursera.org - Научитесь учиться. Бесплатный курс (en)](https://www.coursera.org/learn/learning-how-to-learn)
+- [Tim Urban - Почему прокрастинаторы прокрастинируют (откладывают дела «на потом») и как побороть прокрастинацию](https://habr.com/ru/post/298192/)
+- [Tim Urban - https://habr.com/ru/post/303140/](https://habr.com/ru/post/303140/)
 - [Яна Франк - "Муза, где твои крылья?". Хорошая книга о том как учиться, развиватсья и работать людям творчесикх профессий](https://www.ozon.ru/context/detail/id/147230030/)
 <br></p></details>
 

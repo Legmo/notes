@@ -72,6 +72,14 @@
 
 <br></p>
 
+<details><summary><b>Ссылки</b></summary><p>  
+
+---
+
+- [Tim Urban - Почему прокрастинаторы прокрастинируют (откладывают дела «на потом») и как побороть прокрастинацию](https://habr.com/ru/post/298192/)
+- [Tim Urban - https://habr.com/ru/post/303140/](https://habr.com/ru/post/303140/)
+<br></p></details>
+
 <br> 
 <br> 
 
