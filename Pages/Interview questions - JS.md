@@ -1537,7 +1537,19 @@
   - [habr](https://habr.com/ru/post/309318/)
   - [habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
   
-<br></p></details><br>
+<br></p></details>
+  
+  
+  <details><summary><b>Примитив - Symbol</b></summary><p>
+   
+  Символ (анг. Symbol) — это уникальный и неизменяемый тип данных, который может быть использован как идентификатор для свойств объектов. Символьный объект (анг. symbol object) — это объект-обёртка (англ. wrapper) для примитивного символьного типа.
+  
+  Появился в ES6 (в 2015 году).
+  
+  **Ссылки:**
+  - [learn.javascript.ru](https://learn.javascript.ru/symbol)
+  - [https://developer.mozilla.org (ru)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+  - [Habr - Особенности использования типа данных Symbol в JavaScript](https://habr.com/ru/company/ruvds/blog/444340/)
 
 
 ## JS - приёмы ##
