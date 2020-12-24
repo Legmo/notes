@@ -5,7 +5,7 @@
   **Ссылки**
   - [Как работает JS: движки рендеринга веб-страниц и советы по оптимизации их производительности](https://habr.com/ru/company/ruvds/blog/351802/)
   - [Как работает браузер](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
-  
+  - [Mozilla Firefox - документация по инструментам разработчика Firefox](https://developer.mozilla.org/ru/docs/Tools)
 <br></p></details>   
 
 
