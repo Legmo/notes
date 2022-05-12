@@ -4,9 +4,10 @@
 <details><summary><b>Ссылки</b></summary><p>
 
 - [Офф. сайт]( https://ru.reactjs.org/)
-- [Офф. сайт - учебный курс]( https://ru.reactjs.org/tutorial/tutorial.html )
+- [Офф. сайт - учебный курс]( https://ru.reactjs.org/tutorial/tutorial.html)
+- [IT-Kamasutra - лучший учебный курс (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
 - [LearnJS - Курс](https://learn.javascript.ru/screencast/react )
-- [Code.mu - Курс](http://code.mu/books/advanced/javascript/react/ )
+- [Code.mu - Курс](http://code.mu/ru/javascript/framework/react/book/prime/)
 - [Habr - учебный курс (около 28 уроков)](https://habr.com/ru/company/ruvds/blog/432636 )
 - [FDS - курс (6 месяцев)](https://ptchk.typeform.com/to/qZXOYF)
 - [Monsters - курс](https://monsterlessons.com/project/series/react-dlya-nachinayushih )
@@ -18,7 +19,20 @@
 - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
 - []()
 - []()
-
+- -[IT-Kamasutra - ReactJS - Путь Самурая 2.0 (YouTube, 23 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
+  -[IT-Kamasutra - JS+React для Juniors (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMuHec4RCfGuMwiij2_IvFR)
+  -[IT-Kamasutra - React JS - путь самурая 1.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+  -[IT-Kamasutra - GIT (YouTube, 2 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPgk3pH7vDxoMh2C5fM8fXP)
+  -[IT-Kamasutra - JS в деталях (YouTube, 48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
+  -[IT-Kamasutra - Уроки JavaScript с нуля (YouTube, 29 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
+  -[IT-Kamasutra - React - Кабзда как подробно (YouTube, 3 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM49Jb2XZSf4READ3kO4UFL)
+  -[IT-Kamasutra - Todolist - React, TypeScript (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMM8zDacOPhWfVitvOa_Fhu)
+  -[IT-Kamasutra - Ajax в деталях (YouTube, 9 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNDDIp2MGbv8cMYsoUO1lew)
+  -[IT-Kamasutra - addEventListener в деталях (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNwI9PyQ_IFW_dLpqBIuIyu)
+  -[IT-Kamasutra - react-четверг (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN-JSjyJDFtGdRlsapKDpp9)
+  -[IT-Kamasutra - JavaScript для собеседований (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMu_yc4R9btXnbbn4XqEwWj)
+  -[IT-Kamasutra - TypeScript Камасутра (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM6f9AdaI8bUctNuGiAYKpO)
+  -[IT-Kamasutra - React English (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DOOi7Wqsv7ia5GJ_S9YlfDg)
 
 <br></p>
 </details>
