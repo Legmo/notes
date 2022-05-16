@@ -8,6 +8,7 @@
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/Interview%20questions%20-%20Questions.md)
 - [GIT](/Pages/GIT.md)
 - [Вопросы-ответы про Bootstrap 4 & SASS](/Pages/Interview%20%20questions%20-%20HTML-CSS.md)
+- [Консоли](/Pages/Console.md)
 
 ## Поиск работы ##
 - [Где искать работу?](/Pages/HR-company.md)
