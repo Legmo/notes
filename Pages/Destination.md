@@ -47,4 +47,4 @@
 <br> 
 <br> 
 
-*[legmo, 2019](https://github.com/legmo/notes/)*
+*[Legmo, 2019-2022](https://github.com/legmo/notes/)*
