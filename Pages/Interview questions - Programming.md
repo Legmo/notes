@@ -353,4 +353,4 @@ Model-View-Controller (модель-вид-контроллер)<br>
 <br>
 <br>
 
-*[Legmo, 2019](https://github.com/Legmo/notes/)*
+*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
