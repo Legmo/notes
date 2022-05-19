@@ -1,5 +1,8 @@
 # Заметки о web-разработке #
 
+<span style="color:blue">some *blue* text</span>.
+
+
 ## Технологии ##
 - [JavaScript](/Pages/Interview%20questions%20-%20JS.md)
 - [NodeJS](/Pages/NodeJS.md)
