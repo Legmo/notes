@@ -45,7 +45,7 @@
 <br>
 <br>
 
-<details><summary><b>Cmd.exe</b></summary><p>
+<details><summary><b>Оболочка Cmd.exe</b></summary><p>
 
   - интерпретатор командной строки Windows
   - поставляется в комплекте с Windows
@@ -61,7 +61,7 @@
 
 <br></p></details>
 
-<details><summary><b>IDE PhpStorm</b></summary><p>
+<details><summary><b>Консоль IDE PhpStorm</b></summary><p>
 
   - Плагин в IDE PhpStorm. Позволяет прямо в IDE запускать команды для терминала
   - По-умолчанию терминалом для PhpStorm является стандартный терминал windows cmd.exe.
@@ -78,12 +78,12 @@
 <details><summary><b>Консоль FAR manager</b></summary><p>
 
   - FAR = консольный файловый менеджер для Windows
-  - консоль = cmd в Windows. Также, сюда вписываются консольные команды при подключении к серверам по SSH (SFTP), FTP, WebDav
+  - в качестве консоли использует `cmd` Windows. Также, сюда вписываются консольные команды при подключении к серверам по SSH (SFTP), FTP, WebDav
   - Есть много плагинов и всяких настроек.
 
 <br></p></details>
 
-<details><summary><b>Git Bash</b></summary><p>
+<details><summary><b>Оболочка Git Bash</b></summary><p>
 
   - Оболочка `bash` (Bourne-Again Shell) - это улучшенная реализация оболочки sh, т.е. все, что вы можете делать в sh, также можно сделать в bash. Bash имеет дополнительные функции, упрощающие написание скриптов.
   - Оболочка `Git bash` - это оболочка `msys`, включенная в Git for Windows, поскольку Windows изначально не поддерживает функции `bash` (если вы не добавите Подсистема Windows для Linux).
@@ -101,42 +101,17 @@
 
 <details><summary><b>Различия Git Bash и Git CMD в Windows</b></summary><p>
 
-- Не бывает `git cmd` или `git bash`. Есть только сервисные утилиты, а точнее одна сервисная утилита с разными именами: `git-cmd.exe` и `git-bash.exe`.
-- Оба эти exe-шника делают следующее:
+- Не бывает `git cmd` или `git bash`. Есть одна сервисная утилита с разными именами: `git-cmd.exe` и `git-bash.exe`.
+- Оба эти exe-файла делают следующее:
   1. Инициализация переменных окружения (PATH, и пр.)
   2. Запуск терминала.
-- Разница между ними только одна 
-   - по умолчанию `git-bash.exe` запускает терминал `mintty` с `bash` внутри. 
-   - `git-cmd.exe` запускает стандартный терминал Windows с `cmd.exe`. 
-   - Более того, `git-cmd.exe` имеет ключик `--command=...` с помощью которого можно запустить `bash` вместо `cmd` при желании.
-- `git.exe` это самостоятельная программа рядом с которой лежат все необходимые утилиты из пакета `msys` (например `ls`, `vim`, `sed`, и прочая), а недостающие утилиты можно "доставить" с помощью `pacman`. Предполагаемая проблема с "путями" не имеет оснований - все команды выполняет сам гит. `git add **/*.cpp` будет обрабатываться самим гитом.
+- Разница между ними: 
+   - `git-bash.exe` запускает терминал `mintty` с `bash` внутри. 
+   - `git-cmd.exe` запускает стандартный терминал Windows с `cmd.exe`. Имеет ключик `--command=...` с помощью которого можно запустить в нём `bash` вместо `cmd` при желании.
 - Реальные различия:
     1. Из командной строки `cmd.exe` несколько меняется синтаксис, т.к. `^` это управляющий символ `cmd.exe`. Например, вместо `git.exe rebase -i 2385397^1` нужно писать `git.exe rebase -i 2385397^^1`.
     2. Маски файлов, вроде вышеописанного `git add *.cpp` не "разворачиваются" в список файлов, то есть аргументы передаются без изменений и git самостоятельно выполняет поиск подходящих файлов. В итоге мы имеем ошибочное поведение когда `git add *.cpp` добавляет файлы из подкаталогов.
     3. В консоли `cmd.exe` (если только она не в ConEmu запущена) нельзя использовать 256 цветов в Vim.
-
-**git-bash.exe, bash.exe, sh.exe**
-В папке git для Windows есть 3 exe файла:
-- git-bash.exe,
-- bin/bash.exe,
-- bin/sh.exe
-
-- sh.exe и bash.exe - это оболочки. Примеры оболочек включают cmd, powershell, sh, bash, zsh и т. Д. (bash и zsh — более мощные версии sh).
-- git-bash.exe - это приложение-терминал (очень простое, его имя "mintty"), которое автоматически открывает оболочку bash.
-- 
-<br>
-<br>
-
-**git-bash.exe, bash.exe, sh.exe**<br>
-В папке git для Windows есть 3 exe файла:
-- git-bash.exe,
-- bin/bash.exe,
-- bin/sh.exe
-
-- sh.exe и bash.exe - это оболочки. Примеры оболочек включают cmd, powershell, sh, bash, zsh и т. Д. (bash и zsh — более мощные версии sh).
-- git-bash.exe - это приложение-терминал (очень простое, его имя "mintty"), которое автоматически открывает оболочку bash.
-<br>
-<br>
   
   **Ссылки**
   - [Stackoverflow - Разница в использовании git cmd и git bash под windows](https://ru.stackoverflow.com/questions/512702/%D0%A0%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-git-cmd-%D0%B8-git-bash-%D0%BF%D0%BE%D0%B4-windows)
@@ -144,7 +119,18 @@
 
 <br></p></details>
 
+<details><summary><b>Различия git-bash.exe, bash.exe, sh.exe в Windows</b></summary><p>
+
+- В папке git для Windows есть 3 exe файла: `git-bash.exe`,`bin/bash.exe`, `bin/sh.exe`. В чём различия?
+- `sh.exe` и `bash.exe` - это оболочки. Примеры оболочек: cmd, powershell, sh, bash, zsh и т.д. Bash и zsh — более мощные версии sh.
+- `git-bash.exe` - это очень простое приложение-терминал `mintty`, которое автоматически открывает оболочку `bash`.
+
+<br></p></details>
+
 <details><summary><b>Node JS command prompt</b></summary><p>
+
+- Это ярлык, который сначала запускает `cmd.exe`, а затем `node.exe` (через `.bat`). Аналогично тому, если бы вы сами запустили `[win+r] > cmd.exe > [enter]` и там запустили `node.exe` (через `.bat`).
+
 <br></p></details>
 
 <details><summary><b>Windows PowerShell</b></summary><p>
@@ -162,8 +148,9 @@
 
 <br></p></details>
 
-<details><summary><b>Windows PowerShell ISE (Integrated Scripting Environment — Интегрированная Среда Сценариев)</b></summary><p>
+<details><summary><b>Windows PowerShell ISE</b></summary><p>
   
+  - Integrated Scripting Environment — Интегрированная Среда Сценариев
   - является полноценной средой разработки с поддерживающим вкладки и подсветку синтаксиса редактором кода, конструктором команд, встроенным отладчиком и другими программистскими радостями. Если в редакторе среды разработки после имени команды написать знак дефис, вы получите в выпадающем списке все доступные параметры с указанием типа.
 
 **Ссылки**
