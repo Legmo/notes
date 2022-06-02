@@ -258,6 +258,28 @@
 - Для более удобной работы с Git хуками установим [Husky](https://github.com/typicode/husky)
 - Чтобы проверять только тот код, который добавлен в коммит [lint-staged](https://github.com/okonet/lint-staged). Это полезно в больших проектах, где линтинг занимает много времени. Пакет Lint-staged позволяет проверять с помощью линтера индексированные файлы, что помогает предотвратить отправку в репозиторий кода с ошибками.
 
+
+**Установка / Настройка**
+- Устанавливаю Husky и lint-staged локально в проект (даже если использую Create React APP)
+    - `yarn add --dev husky lint-staged`
+- В `packge.json` добавляю секцию
+    ```
+  "scripts": {
+     ...
+  },
+  "husky": {
+     "hooks": {
+        "pre-commit": "lint-staged --relative"
+     }
+  },
+  "lint-staged": {
+     "*.{js,ts}": [
+        "eslint --fix"
+     ]
+  },
+    ```
+- получается, перед каждым коммитом будет вызываться ESLint в режиме `--fix`
+
 **Ссылки**
 - [Husky official GitHub](https://github.com/typicode/husky)
 - [lint-staged official GitHub](https://github.com/okonet/lint-staged)
