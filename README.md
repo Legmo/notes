@@ -10,6 +10,7 @@
 - [GIT](/Pages/GIT.md)
 - [Bootstrap 4 & SASS](/Pages/Interview%20%20questions%20-%20HTML-CSS.md)
 - [Консоли, терминалы и оболочки](/Pages/Console.md)
+- [Качество кода - линтеры и т.д.](/Pages/Code-quality.md)
 
 ## Поиск работы ##
 - [Где искать работу?](/Pages/HR-company.md)
