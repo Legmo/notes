@@ -276,6 +276,34 @@
     - Если варианта `React JSX` нет - можно выбрать `ECMAScript 6+`
 - включаю JSHint в настройках PHP Strom `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
 - указываю путь к Custom configuration file в настройках PHP Strom `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
+<br>
+<br>
+
+**Пример фала конфигурации для JSHint (файл `.jshintrc`)**
+```
+{
+    "bitwise":    true,
+    "curly":      true,
+    "eqeqeq":     true,
+    "esversion":    9,
+    "forin":      true,
+    "funcscope":    true,
+    "futurehostile":  true,
+    "indent":     2,
+    "latedef":    true,
+    "maxdepth":   5,
+    "maxerr":     100,
+    "maxparams":    5,
+    "noarg":      true,
+    "noempty":    true,
+    "nonew":      true,
+    "quotmark":   "double",
+    "strict":     true,
+    "undef":      true,
+    "unused":     true,
+    "browser":    true
+}
+```
 
 <br></p></details>
 
