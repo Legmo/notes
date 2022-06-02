@@ -69,6 +69,7 @@
   - У меня стоит настройка "C:\Program Files\Git\bin\sh.exe" --login -i" + какая папка открывается при запуске (D:\Work\_Localsites\legmo_notes)
 
   **Ссылки**
+  - [Git bash в PhpStorm для Windows](https://isaevdimka.ru/paper/all/git-bash-phpstorm-for-the-windows/)
   - [ru.stackoverflow.com - Настроить консоль phpStorm, чтобы были доступны unix-команды (как в Git bash)](https://ru.stackoverflow.com/questions/432445/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C-phpstorm-%D1%87%D1%82%D0%BE%D0%B1%D1%8B-%D0%B1%D1%8B%D0%BB%D0%B8-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BD%D1%8B-unix-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-%D0%BA%D0%B0%D0%BA-%D0%B2-git-bash)
   - [JetBarins - Terminal PhpStorm](https://www.jetbrains.com/help/phpstorm/terminal-emulator.html)
 
@@ -84,13 +85,17 @@
 
 <details><summary><b>Git Bash</b></summary><p>
 
-  - Приложение для сред Microsoft Windows, эмулирующее работу командной строки Git
-  - Пакет, который устанавливает в операционную систему Windows оболочку Bash (которая используется в Linux), некоторые распространенные утилиты Bash и систему Git.
+  - Оболочка `bash` (Bourne-Again Shell) - это улучшенная реализация оболочки sh, т.е. все, что вы можете делать в sh, также можно сделать в bash. Bash имеет дополнительные функции, упрощающие написание скриптов.
+  - Оболочка `Git bash` - это оболочка `msys`, включенная в Git for Windows, поскольку Windows изначально не поддерживает функции `bash` (если вы не добавите Подсистема Windows для Linux).
+  - Оболочка `Git bash` - приложение для сред Microsoft Windows, эмулирующее работу командной строки Git
+  - Пакет, который устанавливает в Windows оболочку `Bash` (используется в Linux), некоторые распространенные утилиты `Bash` и систему `Git`.
   - Обычно ставится автоматически вместе с установкой Git для Windows
 
+  
   **Ссылки**
   - [Bitbucket - Git Bash](https://www.atlassian.com/ru/git/tutorials/git-bash)
   - [Git. Краткое руководство по терминалу](https://github.com/netology-code/guides/blob/master/git-terminal/git-terminal.md)
+  - [Stackoverflow - In the install path of Git for Windows, what's the difference between ./git-bash.exe and bin/bash.exe and bin/sh.exe?](https://stackoverflow.com/questions/53980686/in-the-install-path-of-git-for-windows-whats-the-difference-between-git-bash)
 
 <br></p></details>
 
@@ -111,9 +116,21 @@
     3. В консоли `cmd.exe` (если только она не в ConEmu запущена) нельзя использовать 256 цветов в Vim.
 <br>
 <br>
+
+**git-bash.exe, bash.exe, sh.exe**<br>
+В папке git для Windows есть 3 exe файла:
+- git-bash.exe,
+- bin/bash.exe,
+- bin/sh.exe
+
+- sh.exe и bash.exe - это оболочки. Примеры оболочек включают cmd, powershell, sh, bash, zsh и т. Д. (bash и zsh — более мощные версии sh).
+- git-bash.exe - это приложение-терминал (очень простое, его имя "mintty"), которое автоматически открывает оболочку bash.
+<br>
+<br>
   
   **Ссылки**
   - [Stackoverflow - Разница в использовании git cmd и git bash под windows](https://ru.stackoverflow.com/questions/512702/%D0%A0%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-git-cmd-%D0%B8-git-bash-%D0%BF%D0%BE%D0%B4-windows)
+  - [Stackoverflow - In the install path of Git for Windows, what's the difference between ./git-bash.exe and bin/bash.exe and bin/sh.exe?](https://stackoverflow.com/questions/53980686/in-the-install-path-of-git-for-windows-whats-the-difference-between-git-bash)
 
 <br></p></details>
 
