@@ -31,12 +31,14 @@
 <br>
 
 **Установка / Настройка**
-- устанавливаю локально в проекте (кажется, нужно только если не использую `Create React APP`)
+- поддержка JSHint включена в PhpStrom по-умолчанию, никаких доп. плагинов к самому PhpStrom ставить не надо
+- устанавливаю ESLint локально в проекте 
+  - кажется, нужно только если не использую `Create React APP`
   - `yarn add eslint eslint-plugin-react eslint-plugin-jsx-a11y --dev`
-- также рекомендуют поставить эти плагины
+- рекомендуют поставить эти плагины
   - `yarn add eslint-plugin-prettier eslint-config-prettier babel-eslint --dev`
-- закидываю в корень свой конфигурационный файл .eslintrc.json
-  Обратить внимание: если я использую дополнительные плагины, например `React` и `JSX A11y` - их надо включить в секции `extends`
+- закидываю в корень свой конфигурационный файл `.eslintrc.json`
+- если я использую дополнительные плагины, например `React` и `JSX A11y` - их надо включить в секции `extends`
     - пример
       ```
       "extends": [
@@ -44,22 +46,25 @@
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended"
       ],
-- включаю режим `React JSX` в настройках PhpStorm - `Settings\Languages & Frameworks\JavaScript`
-  - Если варианта `React JSX` нет - можно выбрать `ECMAScript 6+`
-- включаю `ESLint` в настройках PhpStorm
-    - `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
-- настраиваю `Settings\Languages & Frameworks\JavaScript\Code Quality Tool\ES Lint`
-  - включаю `manual ES Lint configuration`
-  - указываю путь к папке `ESLint package`
-    - например `D:\Work\_Localsites\legmo_hotquotes\node_modules\eslint`
-    - т.е. указываю путь не к глобальному модулю, а к модулю из Create React App, внутри проекта
-  - указываю папку `Working directories`
-    - например `D:\Work\_Localsites\legmo_hotquotes\src`
-  - указываю путь к файлу конфигурации `Configuration file`
-    - например D:\Work\_Localsites\legmo_hotquotes\.eslintrc.json
-    - Его пришлось убрать и перевести в режим `Automatic search`. Плюс убрать все конфиг файлы ESLint из папок верхних уровней (`D:\Work\_Localsites`, `D:\Work\` и т.д.). После этого PhpStorm "увидел" конфиг файл в проекте
-- в файле package.json (корень проекта) дописываю команды в секцию "scripts"
-  - пример:
+- в настройках PhpStorm
+  - включаю режим `React JSX` - `Settings\Languages & Frameworks\JavaScript`
+    - Если варианта `React JSX` нет - можно выбрать `ECMAScript 6+`
+  - включаю `ESLint` в настройках PhpStorm
+      - `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
+  - настраиваю `Settings\Languages & Frameworks\JavaScript\Code Quality Tool\ES Lint`
+    - включаю `manual ES Lint configuration`
+    - указываю путь к папке `ESLint package`
+      - например `D:\Work\_Localsites\legmo_hotquotes\node_modules\eslint`
+      - т.е. указываю путь не к глобальному модулю, а к модулю из Create React App, внутри проекта
+    - указываю папку `Working directories`
+      - например `D:\Work\_Localsites\legmo_hotquotes\src`
+    - указываю путь к файлу конфигурации `Configuration file`
+      - например D:\Work\_Localsites\legmo_hotquotes\.eslintrc.json
+      - Его пришлось убрать и перевести в режим `Automatic search`. Плюс убрать все конфиг файлы ESLint из папок верхних уровней (`D:\Work\_Localsites`, `D:\Work\` и т.д.). После этого PhpStorm "увидел" конфиг файл в проекте
+  - чтобы получать предупреждения об ошибках в синтаксисе JSX - открыть раздел настроек `Editor | Inspections`
+    - включаю инспектор синтаксиса `React JSX` в `JavaScript and TypeScript | General node`.
+- в файле `package.json` (корень проекта) дописываю команды в секцию "scripts"
+  - например:
   ```
   "scripts": {
     <что там было>
@@ -67,13 +72,10 @@
     "lint-fix": "eslint --debug src/ --fix"
   },
   ```
-- Чтобы получать предупреждения об ошибках в синтаксисе JSX
-  - в настройках PhpStorm иду  `Editor | Inspections`
-  - включаю инспектор синтаксиса `React JSX` в `JavaScript and TypeScript | General node`.
-- Настраиваю файл .eslintignore - чтобы исключить из проверки директории/файлы указываем их в виде списка
-- За основу можно взять .gitignore
-<br>
-<br>
+- Настраиваю файл `.eslintignore` - чтобы исключить из проверки директории/файлы указываем их в виде списка
+  - За основу можно взять .gitignore
+  <br>
+  <br>
 
 **Плагины**
 - Eslint-plugin-react
@@ -263,6 +265,17 @@
 - [Хабр - Prettier, ESLint, Husky, Lint-Staged и EditorConfig: инструменты для написания аккуратного кода (2018)](https://habr.com/ru/company/ruvds/blog/428173/)
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
+
+<br></p></details>
+
+<details><summary><b>JSHint</b></summary><p>
+
+**Установка / Настройка**
+- поддержка JSHint включена в PhpStrom по-умолчанию, никаких доп. плагинов к самому PhpStrom ставить не надо
+- включаю режим `React JSX` в настройках PhpStrom `Settings\Languages & Frameworks\JavaScript`
+    - Если варианта `React JSX` нет - можно выбрать `ECMAScript 6+`
+- включаю JSHint в настройках PHP Strom `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
+- указываю путь к Custom configuration file в настройках PHP Strom `Settings\Languages & Frameworks\JavaScript\Code Quality Tool`
 
 <br></p></details>
 
