@@ -6,6 +6,14 @@
 - Повторить мой конспект опроса Drupal-frontend
 - Вспомнить как ставятся готовые сборки Drupal 7
 - Повторить инструкцию для Drupal-разработчиков от компании Nextep
+- [Подключение скриптов](https://habr.com/ru/post/161039/)
+- Paragraphs, Layouts
+- PostCSS
+- [Sass](https://tproger.ru/translations/complete-sass-guide/#sass-variables)
+- GIT
+- Docker
+- Jira...
+- Figma / Zeplin /Avocode
 
 ## Книги ##
 - https://www.drupal.org/books
