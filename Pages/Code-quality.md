@@ -8,6 +8,7 @@
     - [Husky](https://github.com/typicode/husky) и [lint-staged](https://github.com/okonet/lint-staged) - позволяет запускать эти проверки перед отправкой коммита. Использует возможности [Git hooks](https://git-scm.com/book/ru/v2/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git-%D0%A5%D1%83%D0%BA%D0%B8-%D0%B2-Git).
 - Отказался
     - [JSHint](https://jshint.com/) - не разобрался как отключить некоторые ошибки. Например, не умеет воспринимать стрелочные функции в классовых компонентах React JS, даже в режиме ES6. Пишет "Class properties must be methods". Возможно сейчас ситуация улучшилась, но пока не актуально
+    - [TSLint](https://palantir.github.io/tslint/) — поддержка прекращена в 2019. Переходите на ESLint
 
 <br></p></details>
 
@@ -260,24 +261,28 @@
 
 
 **Установка / Настройка**
+- Важно! В версии husky 6 и выше нужно использовать файлы настроек в .husky (вместо packge.json)
 - Устанавливаю Husky и lint-staged локально в проект (даже если использую Create React APP)
-    - `yarn add --dev husky lint-staged`
-- В `packge.json` добавляю секцию
-    ```
-  "scripts": {
-     ...
-  },
-  "husky": {
-     "hooks": {
-        "pre-commit": "lint-staged --relative"
-     }
-  },
-  "lint-staged": {
-     "*.{js,ts}": [
-        "eslint --fix"
-     ]
-  },
-    ```
+    - `npm install husky --save-dev`
+    - Включаю Git hooks
+      - `npx husky install` 
+    - В `packge.json` добавляю секцию
+        ```
+      "scripts": {
+         ...
+        "prepare": "husky install"
+      }
+        ```
+    - В `.husky/pre-commit` дописываю внизу файла комманды, которые должны выполняться перед коммитом:
+      ```
+      #!/usr/bin/env sh
+      . "$(dirname -- "$0")/_/husky.sh"
+  
+      eslint --fix
+      prettier -u -w .
+      npm run build
+      git add
+      ```
 - получается, перед каждым коммитом будет вызываться ESLint в режиме `--fix`
 
 **Ссылки**
