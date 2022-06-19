@@ -211,18 +211,20 @@
 
 - это помощник по части оформления кода. Можно писать с пробелами перед именем свойства, кавычками, запятыми в последней строке и тд тп — преттир, настроенный на сохранение или на пре-коммит хук «перетрясет» ваши файлы и оформит их в соответствии с настройками, которых у него минимум. Это сделано специально, ибо чем меньше настроек, тем меньше конфигураций.
 - Зачем использовать Prettier, если ESLint тоже умеет форматировать код? Ответ — Prettier форматирует код намного лучше: убирает всё форматирование и полностью переписывает код в едином стиле. Это позволяет разработчикам забыть о форматировании кода и не тратить время на обсуждение стиля кода на ревью. ESLint не всегда может всё исправить, часто он просто показывает "здесь ошибка", и править её требуется в ручном режиме.
-- [Prettier miscellaneous](https://github.com/arijs/prettier-miscellaneous) - форк (альтернативная версия) Prettier. Добавляет поддержку некоторых дополнительных правил. Например, поддерживает (выравнивание значений в объектах друг-над-другом)[https://github.com/prettier/prettier/issues/1622] - чтоб не было конфликат с правилом ESLint [KeySpacing align after column by value](https://github.com/prettier/prettier/issues/1622). 
+- [Prettier miscellaneous](https://github.com/arijs/prettier-miscellaneous) - форк (альтернативная версия) Prettier. Ставлю его. Добавляет поддержку некоторых дополнительных правил. Например, поддерживает (выравнивание значений в объектах друг-над-другом)[https://github.com/prettier/prettier/issues/1622] - чтоб не было конфликат с правилом ESLint [KeySpacing align after column by value](https://github.com/prettier/prettier/issues/1622). 
 <br>
 <br>
 
 **Установка / Настройка**
 - Устанавливаю Prettier локально в проект (даже если использую Create React APP)
   - `yarn add --dev --exact prettier`
+  - или `yarn add prettier-miscellaneous --dev`
 - Также рекомендуют поставить эти плагины
   - `yarn add eslint-plugin-prettier eslint-config-prettier babel-eslint --dev`
 - В настройках `PhpStorm / Plugins` включаю плагин `Prettier`
 - В настройках `PhpStorm / Languages & Frameworks / Javascript / Prettier`
   - указываю путь к `Prettier package`, например `D:\Work\_Localsites\legmo_hotquotes\node_modules\prettier`
+  - или `D:\Work\_Localsites\legmo_hotquotes\node_modules\prettier-miscellaneous`
   - включаю настройку `Run on Reformat code action`
   - включаю настройку `Run on save`
 - Копирую в корень проекта файл конфигурации `.prettierrc.json`
