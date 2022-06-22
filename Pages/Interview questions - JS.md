@@ -1,6 +1,65 @@
 # Шпаргалка по JavaScript #
  
 
+<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
+
+**ES 6**
+  - const
+  - let
+  - шаблонные строки
+  - параметры функции по умолчанию
+  - стрелочный функции
+  - ? map
+  - ? spred оператор
+  - Деструктурирующее присваивание
+  - Promises (обещания) -  объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка изображений и т. д.)
+
+**ES 7**
+  - The 7th edition, or ECMAScript 2016, was finalized in June 2016. Its features include block-scoping of variables and functions, destructuring patterns (of variables), proper tail calls, exponentiation operator ** for numbers, await, async keywords for asynchronous programming (as a preparation for ES2017), and the Array.prototype.includes function. 
+  - The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python, F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
+
+**ES 8**
+  - The 8th edition, or ECMAScript 2017, was finalized in June 2017. Its features include the Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects, async / await constructions which use generators and promises, and additional features for concurrency and atomics.
+
+**ES 9**
+  - The 9th edition, or ECMAScript 2018, was finalized in June 2018. New features include the spread operator and rest parameters (...) for object literals, asynchronous iteration, Promise.prototype.finally and additions to RegExp.
+  - The spread operator allows for the easy copying of object properties
+
+**ES 10**
+  - The 10th edition, or ECMAScript 2019, was published in June 2019. Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort and Object.fromEntries.
+  - Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all subarray elements (up to the specified depth) are concatenated recursively. 
+  - Another notable change is that so-called catch binding became optional.
+
+**ES 11**
+  - The 11th edition, or ECMAScript 2020, was published in June 2020. In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the nullish coalescing operator, and the globalThis object.
+  - BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow. 
+  - The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined. This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
+    - `undefined ?? "string" // -> "string"`
+    - `null ?? "string" // -> "string"`
+    - `false ?? "string" // -> false `
+    - `NaN ?? "string" // -> NaN`
+  - Optional chaining makes it possible to access the nested properties of an object without having an AND check at each level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will be undefined.
+
+**ES 12 (2021)**
+  - replaceAll method for strings; 
+  - Promise.any, a promise combinator that short-circuits when an input value is fulfilled; 
+  - AggregateError, a new error type to represent multiple errors at once; 
+  - logical assignment operators (??=, &&=, ||=); 
+  - WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to manage registration and unregistration of cleanup operations performed when target objects are garbage collected; 
+  - separators for numeric literals (1_000); 
+  - Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort order.
+    <br/>
+
+  **Ссылки**
+  - [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
+  - [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
+  - [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
+  - [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
+
+
+<br></p></details>
+
+
 <details><summary><b>Значения и ссылки</b></summary><p>
   
   Примитивы (строки, числа, булевы значения, null/undefined) при присваивании переменных копируются целиком или, как говорят, **по значению**.
