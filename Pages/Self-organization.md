@@ -26,4 +26,4 @@
 Про [GTD](https://ru.wikipedia.org/wiki/Getting_Things_Done) рекомендую почитать отдельно - вначале статью из Википедии (см выше), потом поищи в Интернете. Есть много обзорных статей (на [Хабре](https://habr.com/ru/search/?q=GTD&target_type=posts&order=relevance) например) И роликов на [YouTube](https://www.youtube.com/results?search_query=GTD). Можно почитать книги самого Аллана и его последователей.
 
 **Полезные ссылки**:
- - [Максим ДОрофеев. Официальный сайт](https://mnogosdelal.ru/)
+ - [Максим Дорофеев. Официальный сайт](https://mnogosdelal.ru/)

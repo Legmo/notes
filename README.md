@@ -20,7 +20,6 @@
 - [Про самоорганизацию](/Pages/Self-organization.md)
 - [Как учиться?](/Pages/Learning.md)
 - [Как понять, чем я хочу заниматься?](/Pages/Destination.md)
-- [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Productivity%20increase.png)
 - [Как повысить уровень жизненной энергии?](/Pages/Energy.md)
 
 ## Drupal ##
