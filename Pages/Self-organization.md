@@ -13,8 +13,7 @@
 - Дорофеев М - [Джедайские техники. Как воспитать свою обезьяну, опустошить инбокс и сберечь мыслетопливо](http://links.mnogosdelal.ru/book)
 - Дорофеев М - [Путь джедая. Поиск собственной методики продуктивности](http://links.mnogosdelal.ru/JediWay)
 - Франк Я - [Муза, где твои крылья](https://www.labirint.ru/reviews/goods/381285/)
-- Все книги можно найти в бесплатном доступе, если купить нет совсем никакой возможности. [Flibusta](http://flibusta.net/booksearch), [RuTracker](http://rutracker.org/) и прочие в помощь. Если не умеешь обходить блокировки и пользоваться VPN - самое время научиться, это 
-- не сложно.
+- Все книги можно найти в бесплатном доступе, если купить нет совсем никакой возможности. [Flibusta](http://flibusta.net/booksearch), [RuTracker](http://rutracker.org/) и прочие в помощь. Если не умеешь обходить блокировки и пользоваться VPN - самое время научиться, это не сложно.
 
 <br></p></details>
 
@@ -37,7 +36,9 @@
 
 <br></p></details>
 
-<p>Про [GTD](https://ru.wikipedia.org/wiki/Getting_Things_Done) рекомендую почитать отдельно - вначале статью из Википедии (см выше), потом поищи в Интернете. Есть много обзорных статей (на [Хабре](https://habr.com/ru/search/?q=GTD&target_type=posts&order=relevance) например) И роликов на [YouTube](https://www.youtube.com/results?search_query=GTD). Можно почитать книги самого Аллана и его последователей.</p>
+Про [GTD](https://ru.wikipedia.org/wiki/Getting_Things_Done) рекомендую почитать отдельно - вначале статью из Википедии (см выше), потом поищи в Интернете. Есть много обзорных статей (на [Хабре](https://habr.com/ru/search/?q=GTD&target_type=posts&order=relevance) например) И роликов на [YouTube](https://www.youtube.com/results?search_query=GTD). Можно почитать книги самого Аллана и его последователей.
+
+<br>
 
 **Полезные ссылки:**
  - [Максим Дорофеев. Официальный сайт](https://mnogosdelal.ru/)
