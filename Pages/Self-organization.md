@@ -9,6 +9,7 @@
 <br></p></details>
 
 <details><summary><b>2) Прочитай эти книги</b></summary><p> 
+
 - Дорофеев М - [Джедайские техники. Как воспитать свою обезьяну, опустошить инбокс и сберечь мыслетопливо](http://links.mnogosdelal.ru/book)
 - Дорофеев М - [Путь джедая. Поиск собственной методики продуктивности](http://links.mnogosdelal.ru/JediWay)
 - Франк Я - [Муза, где твои крылья](https://www.labirint.ru/reviews/goods/381285/)
@@ -18,14 +19,17 @@
 <br></p></details>
 
 <details><summary><b>3) Попробуй посмотреть лекции [Андрея Курпатова](https://www.youtube.com/c/AndreyKurpatov/playlists)</b></summary><p> 
-  Это отдельная тема - лучше вначале посмотреть несколько вводных лекций, чтоб примерно разобраться о чём речь. Лично мне очень помогает
-  Пара видео «для затравки»:
+
+Это отдельная тема - лучше вначале посмотреть несколько вводных лекций, чтоб примерно разобраться о чём речь. Лично мне очень помогает
+
+Пара видео «для затравки»:
 - ["Усилие воли" и полезные привычки: можно ли перехитрить свой мозг?](https://www.youtube.com/watch?v=6u1f9lwLFKU&list=PLCQfRMyspsaPxrpC8UxXCJwBeM4zGQQrR&index=29)
 - [Разбор факт-карты «Хочу успевать больше!»](https://www.youtube.com/watch?v=MGfqRHFKZEk&list=PLCQfRMyspsaN_YewGyQUQikpGh0notlds&index=7&t=11s)
 
 <br></p></details>
 
 <details><summary><b>Немного вводной информации о самых популярных подходах к организации времени</b></summary><p> 
+
 - Wikipedia - [Getting Things Done](https://ru.wikipedia.org/wiki/Getting_Things_Done)
 - Wikipedia - [Метод помидора](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BF%D0%BE%D0%BC%D0%B8%D0%B4%D0%BE%D1%80%D0%B0)
 - Wikipedia - [Хронофаги](https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BD%D0%BE%D1%84%D0%B0%D0%B3%D0%B8)
