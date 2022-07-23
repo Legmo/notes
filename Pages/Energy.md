@@ -85,7 +85,7 @@
 https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Dorofeev_-_Save_your_brain-fuel.jpg
 
 2. С Хабра
-https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Productivity-increase.png
+![Картинка](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Productivity-increase.png)
 
 <br></p></details>
 
