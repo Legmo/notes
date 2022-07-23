@@ -17,6 +17,7 @@
 - [Как проходить собеседования?](/Pages/Interview%20-%20notes.md)
 
 ## Саморазвитие ##
+- [Про самоорганизацию](/Pages/Self-organization.md)
 - [Как учиться?](/Pages/Learning.md)
 - [Как понять, чем я хочу заниматься?](/Pages/Destination.md)
 - [Как программисту повысить производительность работы?](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Productivity%20increase.png)
