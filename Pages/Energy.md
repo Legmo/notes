@@ -82,10 +82,10 @@
 <details><summary><b>А теперь слайды</b></summary><p>  
 
 1. От [Максима Дорофеева](https://mnogosdelal.ru/)
-https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Dorofeev_-_Save_your_brain-fuel.jpg
+![Как сберечь «мыслетопливо»](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Dorofeev_-_Save_your_brain-fuel.jpg)
 
-2. С Хабра
-![Картинка](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Productivity-increase.png)
+2. От MagicWolf c [Хабра](https://habr.com/ru/post/136905/)
+![Ментальная карта - Повышаем производительность программирования](https://raw.githubusercontent.com/Legmo/notes/master/Pages/Img/Productivity-increase.png)
 
 <br></p></details>
 
