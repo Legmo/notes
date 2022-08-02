@@ -1132,13 +1132,38 @@
   Ссылки:
   - [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
   - [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+  - [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
   - [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
   - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
   - [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
       
-  <br></p></details>
-  
-  
+    <br></p></details>
+
+
+  <details><summary><b>Деструктуризация массивов</b></summary><p>
+
+    const [fruit, setFruit] = useState('банан');
+
+    Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)».
+    Он означает, что мы создаём две новые переменные, fruit и setFruit.
+    Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
+
+    Это равносильно такому коду:
+    ```
+        var fruitStateVariable = useState('банан'); // Возвращает пару значений
+        var fruit = fruitStateVariable[0]; // Извлекаем первое значение
+        var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
+    ```
+
+    Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+
+    **Ссылки:**
+- [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
+  - [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
+
+<br></p></details>
+
+
   <details><summary><b>Декораторы</b></summary><p>
   
   Ссылки:
@@ -1343,30 +1368,6 @@
         getFunc()(); // 2, из LexicalEnvironment функции getFunc
   ```
 
-  <br></p></details>
-  
-  
-  <details><summary><b>Деструктуризация массивов</b></summary><p>
-
-  const [fruit, setFruit] = useState('банан');
-
-  Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)». 
-  Он означает, что мы создаём две новые переменные, fruit и setFruit. 
-  Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе. 
-
-  Это равносильно такому коду:
-  ```
-    var fruitStateVariable = useState('банан'); // Возвращает пару значений
-    var fruit = fruitStateVariable[0]; // Извлекаем первое значение
-    var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
-  ```
-  
-  Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
-
-  **Ссылки:**
-  - [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
-  - [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
-  
   <br></p></details>
   
   
