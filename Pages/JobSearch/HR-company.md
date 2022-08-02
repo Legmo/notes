@@ -2,6 +2,7 @@
 
 **Рекрутинговые/аутсорсинговые агенства**<br>
 Тут же есть крупные команды разработчиков (потом причешу)
+- [LinkedIn - заполнить профиль и откликаться на вакансии](https://www.linkedin.com)
 - [HH.ru - список агентств](https://hh.ru/agencies/list)
 - [EPAM](https://www.epam-group.ru)
 - [GlobalLogic](https://www.globallogic.com/)
