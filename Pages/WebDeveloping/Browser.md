@@ -275,7 +275,7 @@
   SSE API (Server-Sent events) - ещё более продвинутая технология для тех же целей.
   
   **Ссылки**
-  - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
+  - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p></details>   
@@ -287,7 +287,7 @@
   Альтернатива WebSocket. Технология SSE основана на HTTP, т.е. нет необходимости вводить новый протокол (WebSocket) - а это важное преимущество (безопасность, простоат, настройка сервера)
   
   **Ссылки**
-  - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/Ajax.md)
+  - [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
   - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p></details>
