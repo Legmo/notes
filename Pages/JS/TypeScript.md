@@ -19,6 +19,7 @@
 <br></p></details>
 
 <details><summary><b>Ссылки</b></summary><p>
+
 - [Официальный репозиторий на GitHub](https://github.com/Microsoft/TypeScript)
 - [Metanit.com - Введение в TypeScript](https://metanit.com/web/typescript/1.1.php)
 - [It-Kamasutra - Путь самурая 2.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
