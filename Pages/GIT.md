@@ -1,6 +1,12 @@
 # GIT #
 
-<details><summary><b>Про текстовый редактор</b></summary><p>
+<details><summary><b>Методологии работы с GIT (workflow)</b></summary><p>
+
+- [Кратко о git-flow](http://ruwhynot.com/2016/03/08/briefly-about-gitflow/)
+- [В чём состоит отличие между различными workflow?](https://ru.stackoverflow.com/questions/676514/%D0%92-%D1%87%D1%91%D0%BC-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D0%B5-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%D0%B8-workflow)
+<br></p></details>
+
+<details><summary><b>Про текстовый редактор для коммитов</b></summary><p>
 
 - Я использую nano
 
@@ -13,7 +19,6 @@
 - [Wikipedia - GIT](https://ru.wikipedia.org/wiki/Git)
 - [GIT Book (ru)](https://git-scm.com/book/ru/v2)
 - [Pro Git (ru)](http://www.linuxcookbook.ru/books/progit/index.html)
-- [Кратко о git-flow](http://ruwhynot.com/2016/03/08/briefly-about-gitflow/)
 - [Хабр - Git. Коротко о главном](https://habr.com/ru/post/588801/)
 - [GIT за полчаса](https://proglib.io/p/git-for-half-an-hour)
 - [Конспект по GIT](https://gist.github.com/vchernogorov/030144a7b0832c683adc3e0b502ad3e5)
