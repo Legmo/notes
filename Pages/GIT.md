@@ -4,6 +4,8 @@
 
 - [Кратко о git-flow](http://ruwhynot.com/2016/03/08/briefly-about-gitflow/)
 - [В чём состоит отличие между различными workflow?](https://ru.stackoverflow.com/questions/676514/%D0%92-%D1%87%D1%91%D0%BC-%D1%81%D0%BE%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D0%B5-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%D0%B8-workflow)
+- [Модели ветвления в Git: какую выбрать?](https://proglib.io/p/git-workflow)
+- [Оригинальная статья Vincent Driessen с описанием модели GitFlow (перевод на русский)](https://habr.com/ru/post/106912/)
 <br></p></details>
 
 <details><summary><b>Про текстовый редактор для коммитов</b></summary><p>
