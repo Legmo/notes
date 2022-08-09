@@ -2540,6 +2540,7 @@
 
 
   <details><summary><b>Ссылки</b></summary><p>
+
   - [Оф. документация React-redux (en)](https://react-redux.js.org/)
   - [Оф. документация React-redux (ru)](https://rajdee.gitbooks.io/redux-in-russian/content/)
   - [Изучаем Redux на примере создания мини-Redux](https://medium.com/devschacht/jakob-lind-learn-redux-by-coding-a-mini-redux-d1a58e830514)
