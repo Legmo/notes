@@ -4,7 +4,7 @@
 - [JavaScript](/Pages/JS/Interview%20questions%20-%20JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
-- [React JS & Redux](/Pages/JS/Interview%20questions%20-%20React%20JS.md)
+- [React JS & Redux](/Pages/JS/React%20JS%20and%20Redux.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
 - [AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/Interview%20questions%20-%20Questions.md)
