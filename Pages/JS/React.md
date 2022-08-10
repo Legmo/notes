@@ -2226,6 +2226,8 @@
   - [habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
   - [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
   - [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
+  - [Как использовать стилизованные компоненты в React](https://webformyself.com/kak-ispolzovat-stilizovannye-komponenty-v-react/)
+  - [Знакомство с библиотекой Styled Components в React](https://medium.com/nuances-of-programming/%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%BE-%D1%81-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%BE%D0%B9-styled-components-%D0%B2-react-8bc58cd9d07d)
   
   <br></p>
 </details>
