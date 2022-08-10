@@ -41,8 +41,7 @@
 <details><summary><b>REACT - базовые понятия </b></summary><p>
 
   ---
-  <details>
-    <summary><b>Что такое React и какие у него особенности?</b></summary><p>
+  <details><summary><b>Что такое React и какие у него особенности?</b></summary><p>
    
   JS-библиотека для создания пользовательских интерфейсов.
   
@@ -89,11 +88,10 @@
   - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
   - [Все фундаментальные принципы React.js, собранные в одной статье](https://medium.com/@divermak/%D0%B2%D1%81%D0%B5-%D1%84%D1%83%D0%BD%D0%B4%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-react-js-%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B2-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B5-ec6a97bfd1bf)
   
-  <br><p></details>
+  <br><p>
+</details>
   
-  
-  <details>
-    <summary><b>Ещё разное про React</b> //ToDo - разбирать и дополнять</summary><p>
+  <details><summary><b>Ещё разное про React</b> //ToDo - разбирать и дополнять</summary><p>
       
   **React JS и React Native**
   - React JS - js-библиотека для создания UI (2013)
@@ -153,7 +151,8 @@
    
   **//ToDo** - разобраться какая часть системы отвечает за преобразование JS в HTML? Скорее всего - браузер.
   
-  <br><p></details>
+  <br><p>
+</details>
   
   
   <details><summary><b>Элемент</b></summary><p>
@@ -673,12 +672,14 @@
   
   <details>
     <summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
+
+	```javascript
         let onQuoteChanged = (event) => {
           let text = event.target.value;
         };
-        return (
-              <textarea onChange={onQuoteChanged} />
-        }
+        return ( <textarea onChange={onQuoteChanged} value="Test" /> }
+	```
+
   </details>
   
   <details><summary><b>Избегать изменения элементов/данных по ссылке</b></summary><p>
@@ -1266,7 +1267,7 @@
   HOC часто называют с префиксом with - withRedirect, withAuth... В заивисмости от того, какую функциональность добавляет данный HOC.
   
   Ещё есть декораторы. Судя по всему - реализуют похожую функциональность. 
-  - [Декораторы в React или как оптимизировать ваши компоненты](http://webtricks-master.ru/reactjs/dekoratory-v-react-ili-kak-optimizirovat-vashi-komponenty/)
+  - [Декораторы в React или как оптимизировать ваши компоненты](https://webtricks-master.ru/reactjs/dekoratory-v-react-ili-kak-optimizirovat-vashi-komponenty/)
   - [В чем разница между HOC и декоратором?](https://qa-help.ru/questions/react-js-v-chem-raznicza-mezhdu-hoc-i-dekoratorom)
 
   **Ссылки**
@@ -1770,8 +1771,8 @@
   
   <details><summary>Компонент Route</summary><p>
   
-  <Route/> - компонент, строительный блок React Router'а.
-  Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент <Route/>
+  `<Route/>` - компонент, строительный блок React Router'а.
+  Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент `<Route/>`
   
   <br></p></details>
   
@@ -2016,14 +2017,17 @@
           Иначе - только через массив с уникальными ключами
   </details>
     
-  <details><summary>В JSX обязательно надо закрывать открытый тэг. Но, можно использовать такой синтаксис <Article /></summary>  
-    
+  <details><summary>В JSX обязательно надо закрывать открытый тэг</summary>
+
+    Но, можно использовать такой синтаксис `<Article />`
+
   </details>
     
-  <details><summary>В JSX есть соглашение - все кастомные (т.е. мной созданные) компоненты называются с большой буквы .</summary>  
+  <details><summary>В JSX есть соглашение - все кастомные (т.е. мной созданные) компоненты называются с большой буквы .</summary>
+
         Пример: Aricle, MyComponent...
         Т.к. компонент = класс. 
-        И при выводе их внутри других компонентов - тоже (<Aricle />, <MyComponent />, ...)
+        И при выводе их внутри других компонентов - тоже (`<Aricle />`, `<MyComponent />`, ...)
   
   </details>
     
@@ -2044,13 +2048,17 @@
   </details>
     
   <details><summary>В JXS аттрибуты html пишут так:</summary> 
+
+	```javascript
           function Test() {
             return (
               <div className="test" style={{color: 'red'}}>
                 <h1>Title</h1>
               </div>
-            )
+            );
           }
+	```
+
   </details>
     
   <details><summary>Внутри JSX можно использовать только выражения</summary>
@@ -2121,8 +2129,8 @@
   
   <details><summary><b>Заметки</b></summary><p>
     
-  - Если не используешь CSS-modules - CSS лучше писать по BEM-методологии - http://ru.bem.info/methodology
-  - CSS-переменные - https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+  - Если не используешь CSS-modules - CSS лучше писать по [BEM-методологии](https://ru.bem.info/methodology/)
+  - Про [CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
   
   <br></p></details>
   
@@ -2198,7 +2206,7 @@
   Инкапсулирует часть вещей, прячет от нас всякие детали связанные с контекстом, store, dispatch, subscribe...
   
   Пакет react-redux обладает очень простым интерфейсом. В частности, самое интересное в этом интерфейсе сводится к следующему:
-  - <Provider store> — позволяет создавать обёртку для React-приложения и делать состояние Redux доступным для всех компонентов-контейнеров в его иерархии.
+  - `<Provider store>` — позволяет создавать обёртку для React-приложения и делать состояние Redux доступным для всех компонентов-контейнеров в его иерархии.
   - connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]) — позволяет создавать компоненты высшего порядка. Это нужно для создания компонентов-контейнеров на основе базовых компонентов React.
 
       
@@ -2207,8 +2215,34 @@
   - [Оф. документация React - State и жизненный цикл](https://ru.reactjs.org/docs/state-and-lifecycle.html)
   - [Redux и Thunk вместе с React. Руководство для чайников.](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov) 
 
+<br></p></details>
+
+
+<details><summary><b>Redux Toolkit</b></summary><p>
+
+Библиотека от разработчиков Redux.
+Релиз 2019.
+Официально поддерживается разработчиками Redux.
+Аналог «Create React App» для React — можно работать и без неё, но с ней намного удобнее. До релиза библиотека называлась «redux-starter-kit»
+
+Зачем:
+    - помогает быстро начать использовать Redux;
+    - упрощает работу с типичными задачами и кодом Redux;
+    - позволяет использовать лучшие практики Redux по умолчанию;
+    - предлагает решения, которые уменьшают недоверие к бойлерплейтам.
+
+Наиболее значимые функции:
+    - configureStore — функция, предназначенная упростить процесс создания и настройки хранилища;
+    - createReducer — функция, помогающая лаконично и понятно описать и создать редьюсер;
+    - createAction — возвращает функцию создателя действия для заданной строки типа действия;
+    - createSlice — объединяет в себе функционал createAction и createReducer;
+    - createSelector — функция из библиотеки Reselect, переэкспортированная для простоты использования.
+
+**Ссылки**
+- [Оф. документация React-redux (en)](https://redux-toolkit.js.org/)
+- [Оф. документация React-redux (ru)](https://rajdee.gitbook.io/redux-toolkit-in-russian/soderzhanie/quick-start)
+- [Habr - Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/)
   <br></p></details>
-  
   
   <details><summary><b>State (состояние)</b></summary><p>
 
@@ -2273,7 +2307,7 @@
 
     Своё состояние можно передать и другому пользовательскому компоненту:
 
-      <FormattedDate date={this.state.date} />
+      `<FormattedDate date={this.state.date} />`
 
     Компонент FormattedDate получает date через пропсы, но он не знает, откуда они взялись изначально — из состояния Clock, пропсов Clock или просто JavaScript-выражения:
 
