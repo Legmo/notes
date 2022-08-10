@@ -16,7 +16,8 @@
 - Реализует в JS многие концепции, которые свойственны объектно-ориентированным языкам, как, например, наследование, полиморфизм, инкапсуляция и модификаторы доступа и так далее.
 - Позволяет быстрее и проще писать большие сложные комплексные программы. Их легче поддерживать, развивать, масштабировать и тестировать, чем на стандартном JavaScript.
 
-<br></p></details>
+<br></p>
+</details>
 
 <details><summary><b>Ссылки</b></summary><p>
 
@@ -26,4 +27,10 @@
 - [It-Kamasutra - Путь самурая 2.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
 - [TypeScript и React с использованием create-react-app: пошаговое руководство по настройке вашего первого приложения](https://dev-gang.ru/article/typescript-i-react-s-ispolzovaniem-create-react-app-poshagovoe-rukovodstvo-po-nastroike-vashego-pervogo-prilozhenija/)
 - [Справочник TypeScript for React & Redux (piotrwitek)](https://github.com/piotrwitek/react-redux-typescript-guide)
-<br></p></details>
+
+  <br></p>
+</details>
+<br>
+<br>
+
+*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*

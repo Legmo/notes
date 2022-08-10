@@ -1,38 +1,38 @@
 # Заметки о web-разработке #
 
 ## Технологии ##
-- [JavaScript](/Pages/JS/Interview%20questions%20-%20JS.md)
+- [JavaScript](/Pages/JS/JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [React JS](/Pages/JS/React.md)
 - [Redux (for React)](/Pages/JS/Redux.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
 - [AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
-- [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/Interview%20questions%20-%20Questions.md)
-- [GIT](/Pages/GIT.md)
-- [Bootstrap 4 & SASS](/Pages/WebDeveloping/Interview%20%20questions%20-%20HTML-CSS.md)
-- [Консоли, терминалы и оболочки](/Pages/Console.md)
-- [Качество кода - линтеры и т.д.](/Pages/JS/Code%20quality%20JS.md)
+- [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
+- [GIT](/Pages/_Other/GIT.md)
+- [Bootstrap 4 & SASS](/Pages/WebDeveloping/HtmlCssQuestions.md)
+- [Консоли, терминалы и оболочки](/Pages/_Other/Console.md)
+- [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
 
 ## Поиск работы ##
 - [Где искать работу?](/Pages/JobSearch/HR-company.md)
-- [Как проходить собеседования?](/Pages/JobSearch/Interview%20-%20notes.md)
-- [Как понять, чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
+- [Как проходить собеседования?](/Pages/JobSearch/Interview.md)
+- [Как понять чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
+- [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
 
 ## Саморазвитие ##
-- [Про самоорганизацию](/Pages/SelfOrgainzation/Self-organization.md)
+- [Про самоорганизацию](/Pages/SelfOrgainzation/SelfOrganization.md)
 - [Как учиться?](/Pages/SelfOrgainzation/Learning.md)
 - [Как повысить уровень жизненной энергии?](/Pages/SelfOrgainzation/Energy.md)
 
 ## Drupal ##
-- [Drupal - список компетенций](/Pages/Drupal/List%20of%20competencies%20-%20Drupal.md)
-- [Drupal - вопросы для собеседования frontend-разработчика](/Pages/Drupal/Interview%20questions%20-%20Drupal%207-8.md)
+- [Drupal - список компетенций](/Pages/Drupal/CompetenciesList.md)
+- [Drupal - вопросы для собеседования frontend-разработчика](/Pages/Drupal/DrupalQuestions.md)
 
 ## Общие вопросы ##
-- [UX/UI](/Pages/UxUi.md)
+- [UX/UI](/Pages/_Other/UxUi.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
-- [Программирование в целом](/Pages/Programming/Interview%20questions%20-%20Programming.md)
-- [Общение с иностранными работодателями. Особенности менталитета](/Pages/Foreign%20mentality.md)
+- [Программирование в целом](/Pages/Programming/Programming.md)
 
 <br>
 
@@ -45,4 +45,8 @@
 Со временем будет ещё лучше :smiling_imp: 
 
 PS: конструктивная обратная связь приветствуется.
+<br>
+<br>
+
+*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
 
