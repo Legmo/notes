@@ -1227,6 +1227,7 @@
   HOC часто называют с префиксом «with» — `withRedirect`, `withAuth`...<br> 
   В зависимости от того, какую функциональность добавляет данный HOC.
   <br>
+  <br>
 
   **Примеры:**
   - Компонент, возвращает JSX
@@ -1261,6 +1262,7 @@
   - `Connect` из Redux - это тоже HOC. Ну, если быть точным - он возвращает HOC
   - `withRouter` из React Router - это тоже HOC.
   <br>
+  <br>
 
   **Декораторы**<br>  
   Ещё есть декораторы. Декораторы и HOC делают одно и то же. 
@@ -1270,8 +1272,11 @@
   - декораторы используются для мутации переменной, a HOC рекомендуется так не использовать. 
   - HOC должен представлять компонент, в то время как декораторы могут возвращать разные вещи в зависимости от реализации.
 
+  Ссылки по декораторам:
   - [Декораторы в React или как оптимизировать ваши компоненты](https://webtricks-master.ru/reactjs/dekoratory-v-react-ili-kak-optimizirovat-vashi-komponenty/)
   - [В чем разница между HOC и декоратором? (en)](https://stackoverflow.com/questions/48686826/react-js-what-is-the-difference-betwen-hoc-and-decorator)
+    <br>
+    <br>
 
   **Ссылки**
   - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
