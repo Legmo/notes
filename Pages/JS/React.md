@@ -54,8 +54,9 @@
   <br><p>
 </details>
   
-<details><summary><b>Ещё разное про React</b> //*ToDo - разбирать и дополнять*</summary><p>
-      
+<details><summary><b>Ещё разное про React</b> </summary><p>
+
+  [//]: # (ToDo - разбирать и дополнять)
   **React JS и React Native**
   - React JS - js-библиотека для создания UI (2013)
   - React Native - платформа для разработки мобильных приложений, создает мобильные приложения с помощью React.js (2015)
