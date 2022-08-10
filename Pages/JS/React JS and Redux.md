@@ -45,7 +45,7 @@
    
   JS-библиотека для создания пользовательских интерфейсов.
   
-  Это не фрэймворк! Cам по себе не позволит создать веб-приложение, предназначен для создания представлений (это «V» в MVC). React – это только представление. Это язык шаблонов + несколько функций, которые позволяют отрисовать HTML. Результат работы React – это HTML.
+  Это не фреймворк! Сам по себе не позволит создать веб-приложение, предназначен для создания представлений (это «V» в MVC). React – это только представление. Это язык шаблонов + несколько функций, которые позволяют отрисовать HTML. Результат работы React – это HTML.
   
   Разрабатывается и поддерживается Facebook + Instagram и сообществом отдельных разработчиков и корпораций. <br>
   Открытый исходный код
@@ -209,7 +209,8 @@
   **Ссылки:**
   [React Elements против React Components](https://tuhub.ru/posts/react-elements-protiv-react-components)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Компонент(а)</b></summary><p>
     
@@ -236,7 +237,8 @@
   **Ссылки:**
   [React Elements против React Components](https://tuhub.ru/posts/react-elements-protiv-react-components)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>События</b> //ToDo - доработать</summary><p>
     
@@ -244,7 +246,8 @@
   
   React.js создает для DOM-события обертку в виде собственного объекта, чтобы оптимизировать производительность работы с событиями. Внутри обработчика все так же возможно получить доступ ко всем методам, доступным для документа.   
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Как работает React?</b> //ToDo - доработать</summary><p>
   
@@ -321,7 +324,8 @@
   - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
   - []()
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Virtual DOM</b> //ToDo - доработать</summary><p>
     
@@ -379,7 +383,8 @@
 - [learnjavascript - про обычный DOM](https://learn.javascript.ru/browser-environment)
 - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
      
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Props (свойства)</b></summary><p>
   
@@ -398,7 +403,8 @@
     
   ```      
   
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Props и производительность</b></summary><p>
@@ -439,7 +445,8 @@
  **Ссылки**
   - [YouTube - Какие props портят производительность](https://www.youtube.com/watch?v=zSDOxWhPG_U)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>State (состояние)</b></summary><p> 
@@ -470,15 +477,16 @@
   **Ссылки**
   - [оф. документация](https://ru.reactjs.org/docs/state-and-lifecycle.html)
     
-  <br></p></details>
+  <br></p>
+</details>
   
     
-  <details>
-    <summary><b>Композиция в React</b></summary><p>
+  <details><summary><b>Композиция в React</b></summary><p>
     
   Комбинирование меньших компонентов при формировании большего.
       
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Reverse Data Flow - обратный поток данных</b></summary><p> 
   
@@ -503,10 +511,10 @@
   **Ссылки**
   - [React. 1 . Props, State, Жизненный цикл, Reverse Data Flow](https://vk.com/@489914144-react-vvedenie)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details>
-    <summary><b>State lifting - подъём состояния</b></summary><p>
+  <details><summary><b>State lifting - подъём состояния</b></summary><p>
     
   Перенос данных / функций из дочернего элемента в родителя, чтоб они были доступны нескольким потомкам. 
   А из потомка вызываю эти обработчики как коллбэки (через props) или получаю эти данные в виде props.
@@ -516,7 +524,8 @@
   **Ссылки**
     - [Оф. документация - Подъём состояния](https://ru.reactjs.org/docs/lifting-state-up.html)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Key</b> //ToDo - доработать</summary><p>
     
@@ -541,10 +550,10 @@
    - [habr - подробная статья](https://habr.com/ru/company/hh/blog/352150/)   
    - [YouTube - Отображение массивов, смысл аттрибута key](https://www.youtube.com/watch?v=tn9HyYRVZ9A)   
       
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details>
-    <summary><b>Refs</b> //ToDo - доработать</summary><p>
+  <details><summary><b>Refs</b> //ToDo - доработать</summary><p>
  
   Аттрибут HTML-элемента или классового компонента.<br>
   Если быть точным - это special props. Не включается в объект props и недоступно внутри самого компонента.<br>
@@ -590,7 +599,8 @@
    - [monsterlessons.com](https://monsterlessons.com/project/lessons/react-refs)
    - [Refs в React: Всё что нужно знать](https://medium.com/@abraztsov/refs-%D0%B2-react-%D0%B2%D1%81%D1%91-%D1%87%D1%82%D0%BE-%D0%BD%D1%83%D0%B6%D0%BD%D0%BE-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-266a979690f8)
    
-  <br></p></details>
+  <br></p>
+</details>
     
   <details><summary><b>Среда React</b></summary><p>
     
@@ -608,14 +618,16 @@
   Специльное приложение от разработчиков React. По сути - готовая среа для работы, с настроенным Babel, WebPack, live development server, линтерами  и всеми чудесами. Установил - и можешь сразу начинать работать. <br>
   [GitHub](https://github.com/facebook/create-react-app)
   
-  <br></p></details>
+  <br></p>
+</details>
     
     
   <details><summary><b>React + Bootstrap</b></summary><p>
     
    C Bootsrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
    
-  <br></p></details>
+  <br></p>
+</details>
     
     
   <details><summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
@@ -627,7 +639,8 @@
   - потом начинаю кодить компоненты UI и связывать их со state
   - ну, и тестирование
       
-  <br></p></details>
+  <br></p>
+</details>
     
     
   <details><summary>устанавливая пакет - дописывать в конце --save Означает, что нужно внести запись в package.json</summary>
@@ -656,22 +669,21 @@
     - Откроется браузер с предупреждением "JetBrains IDE Support отлаживает этот браузер". Замечено, что если теперь открыть Chrome DevTools по [F12], то отладка в WebStorm завершится — не надо этого делать)
     -  можно отметить нужную строчку кода, как точку останова, затем перегрузить страницу браузера по [F5], и получить желаемое — инструмент отладки внутри WebStorm.
     
-  <br></p></details>
+  <br></p>
+</details>
   
   
    <details><summary>В React мы никогда не лезем в DOM напрямую.</summary>
         Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM
     </details>
     
-  <details>
-      <summary>Избегать циркулярных (циклических) зависимостей</summary>
+  <details><summary>Избегать циркулярных (циклических) зависимостей</summary>
       когда , например,  файл  a.js импортирует в себя файл b.js, и при этом внутри b,js есть импорт файла a.js. То есть фалы импортируются друг в друга. Это говнокод, идущий в разрез с принципами функционального программирования. Т.е не должно быть именно взаимных импортов. 
       Но, можно вызвать функцию из другого файла, и в качестве данных отдать в неё свою функцию. Т.е. использовать callback.
       https://www.youtube.com/watch?v=iN6QXbHedQc
   </details>
   
-  <details>
-    <summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
+  <details><summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
 
 	```javascript
         let onQuoteChanged = (event) => {
@@ -700,10 +712,10 @@
   newObject = {...oldObject}
   Но, если в объекте oldObject были вложенные объекты/массивы - они передадутся опять по ссылке, а не создадут полноценной копии.
   
-  <br></p></details>
+  <br></p>
+- </details>
   
-  <details>
-    <summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
+  <details><summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
   </details>
   
   <details><summary>Передача аргументов в обработчики событий</summary><p>
@@ -720,7 +732,9 @@
   
   **Ссылки**
   - https://ru.reactjs.org/docs/handling-events.html
-  <br></p></details>
+ 
+  <br></p>
+ </details>
   
   
   <details><summary><b>Тестирование</b></summary><p>
@@ -752,7 +766,8 @@
   [Пацианский М - Тестирование React компонентов с помощью jest и enzyme](https://maxpfrontend.ru/vebinary/testirovanie-komponentov-s-pomoschyu-jest-enzyme/)
   [Модульное тестирование React-приложения с помощью Jest и Enzyme](https://medium.com/devschacht/berry-de-witte-unit-testing-your-react-application-with-jest-and-enzyme-6ef3658fdc93)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   **Ссылки:**
   - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
@@ -768,7 +783,8 @@
   - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
   - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
   
-<br></p></details>
+<br></p>
+</details>
 
 #
 <details><summary><b>REACT - компоненты</b></summary><p>
@@ -779,8 +795,8 @@
   Это важно, так как в работе будут сочетаться HTML-элементы и элементы React. <br>
   Названия со строчных букв зарезервированы для HTML. Если вы попробуете назвать элемент просто button, при рендере фреймворк проигнорирует его и отрисует обычную HTML-кнопку.
   
-  <br></p></details>
-  
+  <br></p>
+</details>
   
   <details><summary><b>Компоненты = чистые функции</b></summary><p>
      
@@ -821,7 +837,8 @@
   - [Оф. документация - Компоненты и пропсы](https://ru.reactjs.org/docs/components-and-props.html)
   - [YouTube - Отладка React-приложений (javascript.learn)](https://www.youtube.com/watch?v=NhT5nMvve4Q)
     
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Компоненты и Props</b> //ToDo  - доработать</summary><p>
@@ -870,7 +887,8 @@
   **Ссылки**
   - [Оф. документация - Компоненты и пропсы](https://ru.reactjs.org/docs/components-and-props.html)
     
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Компоненты контейнерные и презентационные (умные/глупые)</b> ToDo - доработать</summary><p>
@@ -944,8 +962,6 @@
   
   - Презентационные компоненты. Они отвечают лишь за внешний вид приложения и не осведомлены о состоянии Redux. Они получают данные через свойства и могут вызывать коллбэки, которые также передаются им через свойства.
   - Компоненты-контейнеры. Они ответственны за работу внутренних механизмов приложения и взаимодействуют с состоянием Redux. Их часто создают с использованием react-redux, они могут осуществлять диспетчеризацию действий Redux. Кроме того, они подписываются на изменения состояния.
-
-  
   
   **Ссылки:**
   - [Презентационный компонент и контейнер в React](https://medium.com/@kanby/%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82-%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80-%D0%B2-react-f0e118480809)
@@ -953,7 +969,8 @@
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
             
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Компоненты с состоянием и без (stateful/stateless)</b></summary><p>
@@ -973,7 +990,8 @@
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Компоненты классовые и функциональные</b> //ToDo - доработать</summary><p>
@@ -997,7 +1015,6 @@
     //Или так:
     class Welcome extends React.PureComponent {}
    ```
-   
    
    **UNSORTED**
    
@@ -1101,7 +1118,8 @@
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
    
-  <br></p></details>
+  <br></p>
+</details>
   
 
   <details><summary><b>Компоненты контролируемые и не контролируемые</b> (controlled и uncontrolled) //ToDo - доработать</summary><p>
@@ -1118,13 +1136,13 @@
   Компонент, содержащий форму, будет отслеживать значение ввода в своем состоянии и повторно визуализировать компонент каждый раз, когда вызывается функция обратного вызова onChange, например, при обновлении состояния. 
 
   Элемент ввода формы, значение которого контролируется React, таким образом называется «контролируемым компонентом».
-
    
   **Ссылки:**
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>PureComponent</b> //ToDo - доработать</summary><p>
   
@@ -1215,8 +1233,9 @@
   - [totser](https://toster.ru/q/384870)
   - [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
           
-  <br></p></details>
- 
+  <br></p>
+</details>
+
  
   <details><summary><b>Компоненты высшего порядка</b> (Higher Order Components, HOC) //ToDo - доработать</summary><p>
   
@@ -1277,7 +1296,8 @@
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Render Callbacks (Функция в render)</b> //ToDo - осмыслять</summary><p>
@@ -1288,7 +1308,8 @@
   - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
   - [habr - Паттерны React](https://habr.com/ru/post/309422/)
     
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Советы по организации кода</b></summary><p>
     
@@ -1302,7 +1323,8 @@
     
   Каждый раз дублируя код - думать чтоб вынести её в отдельный компонент/функцию.  
      
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary><b>Быстродействие. Оптимизация</b> //ToDo - осмыслять</summary><p>
@@ -1317,9 +1339,11 @@
   - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
   - [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
   
-  <br></p></details>
+  <br></p>
+</details>
 
-<br></p></details>
+<br></p>
+</details>
 
 #
 <details><summary><b>REACT - компоненты. Жизненный цикл</b></summary><p>
@@ -1352,21 +1376,22 @@
   
   Вы не должны вызывать setState() в constructor(). Вместо этого, если вашему компоненту нужно использовать локальное состояние, присвойте начальное состояние this.state непосредственно в конструкторе
   
-  <br></p></details>
-    
+  <br></p>
+</details>
     
   <details><summary>static getDerivedStateFromProps()</summary><p>
   
   [static getDerivedStateFromProps()](https://ru.react.js.org/docs/react-component.html#static-getderivedstatefromprops)
   
-  <br></p></details>
-  
+  <br></p>
+</details>
   
   <details><summary><b>render()</b> - рендеринг компонента</summary><p>
   
   чистый, не пихать сюда ничего. Только для того, чтобы строить виртуальный DOM компонента
   
-  <br></p></details>
+  <br></p>
+</details>
 
   <details><summary><b>componentDidMount()</b> - после рендеринга компонента. Здесь можно выполнять запросы к удаленным ресурсам.</summary><p>
 
@@ -1375,13 +1400,14 @@
   - происходит один единственный раз - при отрисовке компоненты на странице. При обновлении - не вызывается.
   - Все сайд-эффекты делать в ComponentDidMount() Например, там вызываются запросы на сервак, AJAX-запросы, setTimeout и все манипуляции с DOOM
 
-  <br></p></details>
+  <br></p>
+</details>
   
   <br>
   
   **2. Обновление** - когда компонент перерисовывается. Может быть вызвано изменениями в state или props
  
-   <details><summary>static getDerivedStateFromProps()</summary><p>
+  <details><summary>static getDerivedStateFromProps()</summary><p>
    
    Заменяет componentWillReceiveProps()
    
@@ -1407,7 +1433,8 @@
    - [React v16.4.0: события указателя](https://learn-reactjs.ru/updates/react-v16.4.0-pointer-events)
    - [YouTube - React 16.3 news (субтитры)](https://www.youtube.com/watch?v=XqFCMObsyKk)
    
-   <br></p></details>
+   <br></p>
+</details>
  
   <details><summary><b>shouldComponentUpdate()</b> - каждый раз при обновлении объекта props или state</summary><p>
   
@@ -1425,8 +1452,8 @@
   **Ссылки:**
   [YouTube - Оптимизация приложений, shouldComponentUpdate](https://www.youtube.com/watch?v=Jw1zocLDnnc)
   
-  <br></p></details>
-  
+  <br></p>
+</details>
   
   <details><summary><b>render()</b></summary><p>
    
@@ -1436,21 +1463,22 @@
   Т.е. не надо каждый раз объявлять «отслеживай ещё изменения этого параметра» — он будет следить по-умолчанию.
   Но, без необходимости лучше не использовать — могу вылезти сложные баги
   
-  <br></p></details>
+  <br></p>
+</details>
  
-   
   <details><summary>getSnapshotBeforeUpdate()</summary><p>
   
   [getSnapshotBeforeUpdate()](https://ru.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)
   
-  <br></p></details>
-  
+  <br></p>
+</details>
     
   <details><summary><b>componentDidUpdate()</b> - сразу после обновления компонента (если shouldComponentUpdate возвращает true</summary><p>
   
   чаще всего нужен, если нас интересуют составляющие реального DOM (размер компонента, позиционирование...)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <br>
     
@@ -1464,7 +1492,8 @@
   
   Например, остановить и обнулить таймер
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <br>
 
@@ -1478,7 +1507,8 @@
   - ошибки в методе жизненного цикла
   - ошибки в конструкторе любого дочернего компонента.
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <br>
   
@@ -1493,7 +1523,8 @@
    - если нужно выставить изначальное состояние компоеннта - делайте это в конструкторе
    - если нужно изменять DOM - делайте это в componentDid Mount
    
-   <br></p></details>
+   <br></p>
+</details>
  
   <details><summary>2. componentWillReceiveProps()</summary><p>
     
@@ -1515,7 +1546,8 @@
   - поменялись важные данные и надо отреагировать. Например пришла новая статья и надо загрузить её с сервера
   - мы завязали состояние компонента на porps (не лучшая практика, но иногда оптимальная) - теперь надо следить за изменениями в props, и приводить state к нужному виду. Например, состояние статьи (свёрнута/развёрнута) приходят в компонент из другого компонента, через props. Тогда надо отслеживать -изменились ли эти props, и перерисовывать состояния статьи
             
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary>2. componentWillUpdate()</summary><p>
   
@@ -1523,7 +1555,8 @@
   
   Вместо него рекомендуется использовать componentDidUpdate
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <br>
 
@@ -1590,7 +1623,9 @@
   - [https://learn-reactjs.ru/reference/react-component](https://learn-reactjs.ru/reference/react-component)
   - [Основные концепции React.js, о которых стоит знать](https://proglib.io/p/react-js-concepts/)
   - [YouTube - React 16.3 news (субтитры) ](https://www.youtube.com/watch?v=XqFCMObsyKk)
-<br></p></details>
+
+  <br></p>
+</details>
 
 #
 <details><summary><b>REACT - Context API</b></summary><p>
@@ -1610,7 +1645,8 @@
   
   Раньше был [старый синтаксис](https://ru.reactjs.org/docs/legacy-context.html) Context, его использовать не надо
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Context API: createContext, Provider, Consumer</b></summary><p>
 
@@ -1618,25 +1654,29 @@
   - Provider (возвращается createContext) - устанавливает «шину» для прямой передачи данных, проходящую через дерево компонентов
   - Consumer (возвращается createContext) - впитывается в «шину» для извлечения данных
 
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Provider</b></summary><p>
   
   Provider очень похож на Provider в React-Redux. Он принимает значение, которое может быть всем, чем хотите (это может быть даже store Redux… но это было бы глупо). Скорее всего, это объект, содержащий ваши данные и любые actions, которые вы хотите выполнить с данными.
   
-  <br></p></details>
+  <br></p>
+</details>
                                                                       
   <details><summary><b>Consumer</b></summary><p> 
   
   Consumer работает немного похоже как функция connect в React-Redux, подключаясь к данным, и сделав их доступными для компонента, который их использует.
   
-  <br></p></details> 
+  <br></p>
+</details> 
   
   **Ссылки**
   - [Оф. документация - Контекст](https://ru.reactjs.org/docs/context.html)
   - [https://habr.com/ru/post/419449/](https://habr.com/ru/post/419449/)
   
-<br></p></details>
+<br></p>
+</details>
 
 #
 <details><summary><b>REACT - Хуки</b></summary><p>
@@ -1663,7 +1703,8 @@
   **Ссылки**
    - [Оф. документация](https://ru.reactjs.org/docs/hooks-intro.html)
    
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary>Пользовательские хуки</summary><p>
@@ -1673,12 +1714,13 @@
   **Ссылки**
   - [Оф. документация](https://ru.reactjs.org/docs/hooks-custom.html)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   
   <details><summary>Пример хука состояния (useState)</summary><p>
 
-  ```
+  ```javascript
   import React, { useState } from 'react';
 
   function Example() {
@@ -1701,7 +1743,8 @@
   Это похоже на this.state.count и this.setState в классах, с той лишь разницей, что сейчас мы принимаем их сразу в паре. 
 
   В классовой компоненте это выглядело бы так:
-  ```
+
+  ```javascript
     class Example extends React.Component {
       constructor(props) {
         super(props);
@@ -1722,6 +1765,7 @@
       }
     }
   ```  
+
   Чтоб прочитать state из хука мы используем переменную, которую ранее объявили</summary>
   Например:
     <p>Вы кликнули {count} раз(а)</p>
@@ -1744,8 +1788,11 @@
   **Ссылки**
   - https://ru.reactjs.org/docs/hooks-state.html
   
-  <br></p></details>
-<br></p></details>
+  <br></p>
+</details>
+
+<br></p>
+</details>
 
 #
 <details><summary><b>REACT - Роутинг</b></summary><p>
@@ -1757,7 +1804,8 @@
   - react-router - пакет с базовым набором функций
   - router-dom - пакет с набором функций для работы в браузере
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary>BrowserRouter и HashRouter</summary><p>
   
@@ -1767,14 +1815,16 @@
   
   Обычно предпочтительнее использовать BrowserRouter, но если ваш сайт расположен на статическом сервере(как github pages), то использовать HashRouter это хорошее решение проблемы.
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary>Компонент Route</summary><p>
   
   `<Route/>` - компонент, строительный блок React Router'а.
   Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент `<Route/>`
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary>Как связаны Route и NavLink?</summary><p>
   
@@ -1784,16 +1834,18 @@
   - Route - меняет содержимое страницы, в зависимости от того, что введено в адресной строке. Следит за ней, и при изменениии - отрабатывает
   - NavLink - при клике меняет адрес в адресной строке
   
-  <br></p></details>
+  <br></p>
+</details>
 
   **Ссылки**
   - http://bogdanov-blog.ru/react-router-v4-notes/
   - https://habrahabr.ru/post/329996/
        
-<br></p></details>
+<br></p>
+</details>
 
 #
-<details><summary><b>REACT - Статическая типзация</b></summary><p>
+<details><summary><b>REACT - Статическая типизация</b></summary><p>
   
   ---
   <details><summary><b>Про статическую типизацию</b></summary><p>
@@ -1829,28 +1881,28 @@
   - [Hexlet - Введение в программирование. Типизация](https://ru.hexlet.io/courses/introduction_to_programming/lessons/types/theory_unit)
   - [Wat by Gary Bernhardt (юмористическое видео про неявную типизацию)](https://www.destroyallsoftware.com/talks/wat)
   
-  <br></p></details>
-  
+  <br></p>
+</details>
   
   <details><summary><b>Type Script</b> - язык (Microsoft)</summary><p>
   
-  язык разработанный Microsoft. Совместим с JS (расширяет его). Добавляет возможности статической типизации и ООП.
+  Язык разработанный Microsoft. Совместим с JS (расширяет его). Добавляет возможности статической типизации и ООП.<br>
   
-  представляет собой надмножество, которое компилируется в JavaScript — хотя по ощущениям TypeScript похож на новый язык со статической типизацией сам по себе. То есть очень похож на JavaScript и не сложен в освоении.
+  Представляет собой надмножество, которое компилируется в JavaScript — хотя по ощущениям TypeScript похож на новый язык со статической типизацией сам по себе. То есть очень похож на JavaScript и не сложен в освоении.
   
-  есть аналогичное решение от Facebook - Flow.
+  Есть аналогичное решение от Facebook - Flow.
   
-  в Angular разработка ведётся на TypScript
+  В Angular разработка ведётся на TypScript
   
   Динамический пример на JS
-  ```
+  ```javascript
         var name = "Susan",
           age = 25,
           hasCode = true;
   ```
   
   Статический пример на TypeScript
-  ```
+  ```typescript
         let name: string = "Susan",
           age: number = 25,
           hasCode: boolean = true;
@@ -1860,18 +1912,20 @@
           
   **Ссылки**
   - [habr - Использование Typescript с React – руководство для новичков](https://habr.com/ru/company/otus/blog/456124/)
-    
-  </details>
-  
-  <details>
-    <summary><b>Flow</b> - библиотека (Facebook)</summary>
-      open source библиотека для статической проверки типов, которую разработала и выпустила Facebook. 
-      Позволяет постепенно добавлять типы в ваш код JavaScript.
-      Flow представляет собой инструмент статического анализа, который использует надмножество языка, позволяя добавлять аннотации типов к ко всему вашему коду и улавливать весь класс ошибок во время компиляции.
-      
+
+<br></p>
+</details>
+
+  <details><summary><b>Flow</b> - библиотека (Facebook)</summary><p>
+
+  Open source библиотека для статической проверки типов.<br>
+  Библиотеку разработала и выпустила Facebook.<br>
+  Позволяет постепенно добавлять типы в ваш код JavaScript.<br>
+  Flow представляет собой инструмент статического анализа. Использует надмножество языка, позволяя добавлять аннотации типов ко всему вашему коду и улавливать весь класс ошибок во время компиляции.<br>
    Надо явно сообщить React, в каких файлах осуществлять проверку типов - указывать в начале кода комментарий @flow.
-   
-  </details>
+
+  <br></p>
+</details>
   
   <details><summary><b>PropTypes</b> - библиотека React</summary><p>
     
@@ -1890,7 +1944,6 @@
 
   - propTypes - специальное свойство класса компонента (так было раньше?). Задают типы входных параметров для отрисовываемого компонента.
   
-  
   В случае несовпадения (например вместо числа пришла строка) позволяют получить ошибку в react-dev-tools и отловить этот момент во время выполнения. 
   
   Это была встроенная возможность контроля типов для больших приложений, но с недавнего времени вынесена в отдельный пакет. 
@@ -1898,7 +1951,7 @@
   Для некоторых приложений, вы можете использовать расширения JavaScript такие как Flow или TypeScript осуществляя проверку типов всего вашего приложения. Но если вы не используете таковые — React предоставляет некоторые встроенные возможности проверки типов.
   
   Пример:
-  ```
+  ```javascript
   class Greeting extends React.Component {
     render() {
       return (
@@ -1914,16 +1967,16 @@
 
   В целях производительности, propTypes проверяются только в режиме разработки (development). Т.е. сам код остаётся, но не проверяется. Для удаления кода есть спец. модуль
   
-  
-  propTypes и defaultProps это статичные свойства. Объявлять их надо как можно выше в коде (позже вам скажут спасибо многие разработчики).
+  PropTypes и defaultProps это статичные свойства. Объявлять их надо как можно выше в коде (позже вам скажут спасибо многие разработчики).
   
   **Ссылки:**
   -[habr](https://habr.com/ru/post/319358/)
   -[habr](https://habr.com/ru/post/326304)
         
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Различия PropTypes и Flow</b></summary>
+  <details><summary><b>Различия PropTypes и Flow</b></summary><p>
     
   Flow - почти язык
   
@@ -1941,46 +1994,49 @@
   
   Если вы просто хотите проверить типы props, не делайте излишнюю усложнение остальной части своей кодовой базы и идите с более простой опцией.
   
-  
   - Flow - инструмент статического анализа 
   - PropTypes - инструмент проверки во время запуска. Теоретически может отловить ошибки, которые могут быть пропущены Flow
   
-  <br></p></details>
+  <br></p>
+</details>
   
   **Ссылки:**
   - https://ru.reactjs.org/docs/static-type-checking.html
 
-<br></p></details>
+<br></p>
+</details>
 
 #
 <details><summary><b>REACT - JSX</b></summary><p>
   
   ---
+
   <details><summary>Что такое JSX?</summary><p>
   
-  JavaScript XML (JSX) - расширение синтаксиса JavaScript, "синтаксический сахар" для JS. Позволяет использовать похожий на HTML синтаксис для описания структуры интерфейса.
-        https://learn.javascript.ru/screencast/react#03-jsx
-        При помощи Babel он компилируется в обычный JS. В JSX пишется и html-содержимое компонентов.
-        Расширение .jsx использоватьтолько для компонент. Не использовать для редьюсеров и т.д.т
+  JavaScript XML (JSX) - расширение синтаксиса JavaScript, "синтаксический сахар" для JS. Позволяет использовать похожий на HTML синтаксис для описания структуры интерфейса.<br>
+  https://learn.javascript.ru/screencast/react#03-jsx<br>
+  При помощи Babel он компилируется в обычный JS. В JSX пишется и html-содержимое компонентов.<br>
+  Расширение .jsx использовать только для компонент. Не использовать для редьюсеров и т.д.т<br>
+  JSX - синтаксическое расширение JavaScript.<br> 
+  JSX производит React-элементы. <br>
+  Можно работать с React на обычном JS, без JSX. <br>
+  Babel компилирует JSX в вызовы React.createElement().<br>
     
-        - JSX - синтаксическое расширение JavaScript. 
-          JSX производит React-элементы. 
-          Можно работать с React на обычном JS, без JSX. 
-          Babel компилирует JSX в вызовы React.createElement().
+  <br></p>
+</details>
     
-  <br></p></details>
-    
-  <details><summary>Зачем нужен JSX?</summary> 
+  <details><summary>Зачем нужен JSX?</summary><p>
   
   React учитывает тот факт, что логика отрисовки связана с другой логикой пользовательского интерфейса: как обрабатываются события, как изменяется состояние со временем и как данные подготавливаются для отображения.
 
-Вместо того, чтобы искусственно отделять технологии, помещая разметку и логику в отдельные файлы, React разделяет задачи , используя слабо связанные единицы, называемыми «компонентами», которые содержат и разметку, и логику. 
-  
-  </details>
+  Вместо того чтобы искусственно отделять технологии, помещая разметку и логику в отдельные файлы, React разделяет задачи , используя слабо связанные единицы, называемыми «компонентами», которые содержат и разметку, и логику. 
+
+  <br></p>
+</details>
     
-    
-  <details><summary>В JSX нельзя вывести два html-элемента рядом, вот так:</summary> 
+  <details><summary>В JSX нельзя вывести два html-элемента рядом, вот так:</summary><p> 
         
+  ```
         function Test() {
           return (
             <h1>Title</h1>
@@ -1988,8 +2044,10 @@
             <div></div>
           )
         }
-    
-        Надо так:
+  ```  
+
+  Надо так:
+  ```javascript
           function Test() {
             return (
               <div>
@@ -1998,41 +2056,49 @@
               </div>
             )
           }
-    
-        Или так:
+  ```  
+  
+  Или так:
+  ```javascript
           function Test() {
             return [
               <h1 key = 'a'>Title</h1>,
               <p  key = 'b'>Text</p>
             ]
           }
+  ``` 
     
-    
-        - чтоб создать в JSX пустую корневую компоненту можно сделать так:
+  Чтоб создать в JSX пустую корневую компоненту можно сделать так:
+  ```javascript
           return <>
             <ComponentOne />
             <ComponentTwo />
           </>
+  ```  
+  Иначе - только через массив с уникальными ключами
+  <br></p>
+</details>
     
-          Иначе - только через массив с уникальными ключами
-  </details>
-    
-  <details><summary>В JSX обязательно надо закрывать открытый тэг</summary>
+  <details><summary>В JSX обязательно надо закрывать открытый тэг</summary><p>
 
-    Но, можно использовать такой синтаксис `<Article />`
-
-  </details>
-    
-  <details><summary>В JSX есть соглашение - все кастомные (т.е. мной созданные) компоненты называются с большой буквы .</summary>
-
-        Пример: Aricle, MyComponent...
-        Т.к. компонент = класс. 
-        И при выводе их внутри других компонентов - тоже (`<Aricle />`, `<MyComponent />`, ...)
+  Но, можно использовать такой синтаксис `<Article />`
   
-  </details>
+  <br></p>
+</details>
     
-  <details><summary>В JXS, если надо написать кусок на обычном JS, я помещаю его в фигурные скобки.</summary>  
-        Например, создаю и вывожу переменную
+  <details><summary>В JSX есть соглашение - все кастомные (т.е. мной созданные) компоненты называются с большой буквы .</summary><p>
+
+  Пример: Aricle, MyComponent...
+  Т.к. компонент = класс. 
+  И при выводе их внутри других компонентов - тоже (`<Aricle />`, `<MyComponent />`, ...)
+
+  <br></p>  
+</details>
+    
+  <details><summary>В JXS, если надо написать кусок на обычном JS, я помещаю его в фигурные скобки.</summary><p>
+
+  Например, создаю и вывожу переменную
+  ```javascript
           function Test() {
             const text = <p>Text</p>
             return (
@@ -2042,26 +2108,29 @@
               </div>
             )
           }
-    
-        Лучше не злоупотреблять выводом внутри JSX фигруных скобок с JS - тяжело разбираться. 
-        Если нужны большие объёмы - выноси в переменные (см выше)
-  </details>
-    
-  <details><summary>В JXS аттрибуты html пишут так:</summary> 
+  ```
+  Лучше не злоупотреблять выводом внутри JSX фигурных скобок с JS - тяжело разбираться. 
+  Если нужны большие объёмы - выноси в переменные (см выше)
 
-	```javascript
-          function Test() {
-            return (
-              <div className="test" style={{color: 'red'}}>
-                <h1>Title</h1>
-              </div>
-            );
-          }
-	```
-
-  </details>
+  <br></p>
+</details>
     
-  <details><summary>Внутри JSX можно использовать только выражения</summary>
+  <details><summary>В JXS аттрибуты html пишут так:</summary><p>
+
+  ```javascript
+        function Test() {
+          return (
+            <div className="test" style={{color: 'red'}}>
+              <h1>Title</h1>
+            </div>
+          );
+        }
+  ```
+
+  <br></p>
+</details>
+    
+  <details><summary>Внутри JSX можно использовать только выражения</summary><p>
   
   Внутри JSX можно использовать только выражения. Так, например, вы не можете использовать оператор if, но можете использовать тернарное выражение.
   
@@ -2072,33 +2141,43 @@
   Вы можете использовать элемент React внутри JSX, потому что это тоже выражение
   
   Вы также можете использовать все функциональные методы JavaScript для коллекций (map, reduce, filter, concat и т. д.) внутри JSX. Опять же, потому что они возвращают выражения
-  
-  </details>
-  
-  <details><summary>JSX предотвращает атаки, основанные на инъекции кода.</summary>  
-        https://ru.reactjs.org/docs/introducing-jsx.html
-        Данные, введённые пользователем, можно безопасно использовать в JSX. 
-        По умолчанию React DOM экранирует все значения, включённые в JSX перед тем как отрендерить их. 
-        Это гарантирует, что вы никогда не внедрите чего-либо, что не было явно написано в вашем приложении. 
-        Всё преобразуется в строчки, перед тем как быть отрендеренным. 
-        Это помогает предотвращать атаки межсайтовым скриптингом (XSS).
-  </details>
-    
-  <details><summary>Все атрибуты элементов React именуются с помощью camelCase.</summary>  
-        CSS-class записываем как className
-        tabindex = tabIndex
-  </details>
-    
-  <details><summary>Внутри JSX разметки можно использовать только готовые выражения.</summary>  
-        Нельзя, например, использовать конструкцию if/else (точно?)
-        но можно заменить ее тернарным оператором.
-  </details>
 
-<br></p>
+  <br></p>
+</details>
+  
+  <details><summary>JSX предотвращает атаки, основанные на инъекции кода.</summary><p>
+
+  https://ru.reactjs.org/docs/introducing-jsx.html
+  Данные, введённые пользователем, можно безопасно использовать в JSX. 
+  По умолчанию React DOM экранирует все значения, включённые в JSX перед тем как отрендерить их. 
+  Это гарантирует, что вы никогда не внедрите чего-либо, что не было явно написано в вашем приложении. 
+  Всё преобразуется в строчки, перед тем как быть отрендеренным. 
+  Это помогает предотвращать атаки межсайтовым скриптингом (XSS).
+
+  <br></p>
+</details>
+    
+  <details><summary>Все атрибуты элементов React именуются с помощью camelCase.</summary><p>
+
+  CSS-class записываем как className
+  tabindex = tabIndex
+
+  <br></p>
+</details>
+    
+  <details><summary>Внутри JSX разметки можно использовать только готовые выражения.</summary><p>
+
+  Нельзя, например, использовать конструкцию if/else (точно?)
+  но можно заменить ее тернарным оператором.
+
+  <br></p>
+</details>
+
+  <br></p>
 </details>
 
 #
-<details><summary><b>REACT - best practices</b></summary><p>
+<details><summary><b>REACT - best practices (ссылки)</b></summary><p>
       
    **Ссылки**
   - [Паттерны React](https://habr.com/ru/post/309422/) 
@@ -2107,9 +2186,6 @@
   - [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b) 
   - [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
   - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
-  - []()
-  - []()
-  
   
   <br></p>
 </details>
@@ -2121,37 +2197,37 @@
 
   <details><summary><b>Структура проекта</b></summary><p>
   
-  Если нужно добавить для компонента CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css
+  - Если нужно добавить для компонента CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css
+  - Есть ещё различные варианты CSS-in-JS - когда CSS хранится и генерируется прямо в JS-коде. Подходы интересные, но со совимим минусами. См Styled component.
   
-  Есть ещё различные варианты CSS-in-JS - когда CSS хранится и генерируется прямо в JS-коде. Подходы интересные, но со совимим минусами. См Styled component.
-  
-  <br><p></details>
+  <br><p>
+</details>
   
   <details><summary><b>Заметки</b></summary><p>
     
   - Если не используешь CSS-modules - CSS лучше писать по [BEM-методологии](https://ru.bem.info/methodology/)
   - Про [CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Сss-modules</b></summary><p> 
   
-  CSS модуль — это CSS файл, в котором все имена классов и анимаций имеют локальную область видимости по умолчанию.
-  
-  Такой метод подключения CSS, при можно использовать одинаковые имена css-классов в разных компонентах, и конфликта не будет. Что-то типа автоматизированного BEM. При это css по-прежнему хранятся в отдельном файле и пишутся практически как обычно
+  - CSS модуль — это CSS файл, в котором все имена классов и анимаций имеют локальную область видимости по умолчанию.
+  - Такой метод подключения CSS, при можно использовать одинаковые имена css-классов в разных компонентах, и конфликта не будет. Что-то типа автоматизированного BEM. При это css по-прежнему хранятся в отдельном файле и пишутся практически как обычно
   
   **Ссылки**
   - [habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
   - [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
   - [You-Tube - IT-Kamasutra 14. Уроки React JS (css-модули, css-modules)](https://youtu.be/bQ3UPYFHyJ0)
   
-  <br></p></details>
+  <br></p>
+</details>
   
   <details><summary><b>Styled components</b> //ToDo - дополнить</summary><p>
     
-  Среди причин выбора CSS-in-JS можно назвать то, что эта технология позволяет ограничивать область видимости стилей и отказаться от глобальной стилизации. Её удобно применять для работы с темами приложений.  
-    
-  В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
+  - Среди причин выбора CSS-in-JS можно назвать то, что эта технология позволяет ограничивать область видимости стилей и отказаться от глобальной стилизации. Её удобно применять для работы с темами приложений.  
+  - В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
     
   **Ссылки**
   - [Официальный сайт проекта (en)](https://www.styled-components.com)
@@ -2164,89 +2240,86 @@
   - [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
   - [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-<br></p></details>
+  <br></p>
+</details>
 
 #
 <details><summary><b>REDUX</b></summary><p>
 
   ---
-  <details><summary><b>Redux</b></summary><p>
+<details><summary><b>Redux</b></summary><p>
   
-  Библиотека для управления state, которая реализует Flux-архитектуру      
-  Её надо инсталлировать отдельно
+  - Библиотека для управления state, которая реализует Flux-архитектуру.
+  - Её надо инсталлировать отдельно
+  - Позволяет создавать свой store командой, а не вручную
+  - В частности, уменьшает связность - позволяет передавать данные не по цепочке props, а сразу в нужную компоненту
   
-  Позволяет создавать свой store командой, а не вручную
-  
-  В частности, уменьшает связность - позволяет передавать данные не по цепочке props,  а сразу в нужную компоненту
-  
-  Есть несколько библиотек, которые очень хорошо дополняют Redux:
+  Есть несколько библиотек, которые очень хорошо дополняют Redux:<br>
   - Immutable.js — немутабельные структуры данных для JavaScript! Используйте их для хранения состояния, чтобы быть уверенным, что оно не меняется там, где не должно, а также чтобы сохранить функциональную чистоту редьюсеров
-   - redux-thunk — используется когда нужно, чтобы действия (actions) имели какой-либо побочный эффект в дополнение к обновлению состояния приложения. Например, вызов REST API, или установка маршрутов (routes), или даже вызов других действий.
-   - reselect — используется для создания составных, лениво исполняемых отображений. Например для конкретного компонента вам может потребоваться:
-      1. вставить только определенную часть глобального состояния, а не полностью
-      2. вставить дополнительные производные данные, например "итого" или "результаты валидации данных", не сохраняя все это в состоянии
-      
+  - redux-thunk — используется когда нужно, чтобы действия (actions) имели какой-либо побочный эффект в дополнение к обновлению состояния приложения. Например, вызов REST API, или установка маршрутов (routes), или даже вызов других действий.
+  - reselect — используется для создания составных, лениво исполняемых отображений. Например для конкретного компонента вам может потребоваться:
+     1. вставить только определенную часть глобального состояния, а не полностью
+     2. вставить дополнительные производные данные, например "итого" или "результаты валидации данных", не сохраняя все это в состоянии
       
   **Ссылки**
   - [Изучаем Redux на примере создания мини-Redux](https://medium.com/devschacht/jakob-lind-learn-redux-by-coding-a-mini-redux-d1a58e830514)
   - [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
   - [Build Yourself a Redux (en)](https://zapier.com/engineering/how-to-build-redux/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>React-redux</b></summary><p>
+<details><summary><b>React-redux</b></summary><p>
 
-  Отдельная библиотека, выступает как прослойка между React и Redux.
-  
-  Позволяет работать с Redux не заморачиваясь кучей сложностей. 
-  
-  Инкапсулирует часть вещей, прячет от нас всякие детали связанные с контекстом, store, dispatch, subscribe...
-  
-  Пакет react-redux обладает очень простым интерфейсом. В частности, самое интересное в этом интерфейсе сводится к следующему:
-  - `<Provider store>` — позволяет создавать обёртку для React-приложения и делать состояние Redux доступным для всех компонентов-контейнеров в его иерархии.
-  - connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]) — позволяет создавать компоненты высшего порядка. Это нужно для создания компонентов-контейнеров на основе базовых компонентов React.
+  - Отдельная библиотека, выступает как прослойка между React и Redux.
+  - Позволяет работать с Redux не заморачиваясь кучей сложностей. 
+  - Инкапсулирует часть вещей, прячет от нас всякие детали связанные с контекстом, store, dispatch, subscribe...
+  - Обладает очень простым интерфейсом. 
+  - Самое интересное:
+    - `<Provider store>` — позволяет создавать обёртку для React-приложения и делать состояние Redux доступным для всех компонентов-контейнеров в его иерархии.
+    - `connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])` — позволяет создавать компоненты высшего порядка. Это нужно для создания компонентов-контейнеров на основе базовых компонентов React.
 
-      
    **Ссылки**
   - [Оф. документация React-redux (en)](https://react-redux.js.org/) 
   - [Оф. документация React - State и жизненный цикл](https://ru.reactjs.org/docs/state-and-lifecycle.html)
   - [Redux и Thunk вместе с React. Руководство для чайников.](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov) 
 
-<br></p></details>
-
+  <br></p>
+</details>
 
 <details><summary><b>Redux Toolkit</b></summary><p>
+  
+  - Библиотека от разработчиков Redux.
+  - Релиз — 2019.
+  - Аналог «Create React App» для React — можно работать и без неё, но с ней намного удобнее. До релиза библиотека называлась «redux-starter-kit»<br>
+  
+  Зачем:
+      - помогает быстро начать использовать Redux;
+      - упрощает работу с типичными задачами и кодом Redux;
+      - позволяет использовать лучшие практики Redux по умолчанию;
+      - предлагает решения, которые уменьшают недоверие к бойлерплейтам.
 
-Библиотека от разработчиков Redux.
-Релиз 2019.
-Официально поддерживается разработчиками Redux.
-Аналог «Create React App» для React — можно работать и без неё, но с ней намного удобнее. До релиза библиотека называлась «redux-starter-kit»
-
-Зачем:
-    - помогает быстро начать использовать Redux;
-    - упрощает работу с типичными задачами и кодом Redux;
-    - позволяет использовать лучшие практики Redux по умолчанию;
-    - предлагает решения, которые уменьшают недоверие к бойлерплейтам.
-
-Наиболее значимые функции:
+  Наиболее значимые функции:
     - configureStore — функция, предназначенная упростить процесс создания и настройки хранилища;
     - createReducer — функция, помогающая лаконично и понятно описать и создать редьюсер;
     - createAction — возвращает функцию создателя действия для заданной строки типа действия;
     - createSlice — объединяет в себе функционал createAction и createReducer;
     - createSelector — функция из библиотеки Reselect, переэкспортированная для простоты использования.
+    
+  **Ссылки**
+    - [Оф. документация React-redux (en)](https://redux-toolkit.js.org/)
+    - [Оф. документация React-redux (ru)](https://rajdee.gitbook.io/redux-toolkit-in-russian/soderzhanie/quick-start)
+    - [Habr - Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/)
 
-**Ссылки**
-- [Оф. документация React-redux (en)](https://redux-toolkit.js.org/)
-- [Оф. документация React-redux (ru)](https://rajdee.gitbook.io/redux-toolkit-in-russian/soderzhanie/quick-start)
-- [Habr - Redux Toolkit как средство эффективной Redux-разработки](https://habr.com/ru/company/inobitec/blog/481288/)
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>State (состояние)</b></summary><p>
+<details><summary><b>State (состояние)</b></summary><p>
 
-  специальный js-объект <внутри компонента>. Хранит данные, которые могут изменятся с течением времени.
+  Cпециальный js-объект <внутри компонента>. Хранит данные, которые могут изменятся с течением времени.
   
   Это инструмент, позволяющий обновлять пользовательский интерфейс, основываясь на событиях. 
   
@@ -2256,7 +2329,7 @@
   
   Изменить состояние можно с помощью this.setState(), если передадим этой функции объект, представляющий новое состояние. 
 
-  - **state-managment - управление данными**<br>
+  - **State-managment - управление данными**<br>
     Задумывая архитектуру нового приложения, первым делом всегда думать - как я собираюсь организовать state-managment (управление данными)? 
     Чаще всего выбор зависит от того, в чём больше опыта. 
     State (Business Logic Layer) важнее чем UI.
@@ -2266,36 +2339,38 @@
         - MobX - ООП
         - и ещё много других
 
-
   - **Не изменяйте state напрямую**<br>
     // Неправильно
-    this.state.comment = 'Привет';
+    `this.state.comment = 'Привет';`
 
     Вместо этого используйте setState():
     // Правильно
-    this.setState({comment: 'Привет'});
+    `this.setState({comment: 'Привет'});`
 
     Конструктор — это единственное место, где вы можете присвоить значение this.state напрямую.
 
-  - **Обновления state могут быть асинхронными**<br>
-    React может сгруппировать несколько вызовов setState() в одно обновление для улучшения производительности.
+    - **Обновления state могут быть асинхронными**<br>
+      React может сгруппировать несколько вызовов setState() в одно обновление для улучшения производительности.
 
-    Поскольку this.props и this.state могут обновляться асинхронно, вы не должны полагаться на их текущее значение для вычисления следующего состояния.
+      Поскольку this.props и this.state могут обновляться асинхронно, вы не должны полагаться на их текущее значение для вычисления следующего состояния.
 
-    Например, следующий код может не обновить счётчик:
+      Например, следующий код может не обновить счётчик:
 
-    // Неправильно
-    this.setState({
-      counter: this.state.counter + this.props.increment,
-    });
+      // Неправильно
+      ```
+      this.setState({
+        counter: this.state.counter + this.props.increment,
+      });
+      ```
+      
+      Правильно будет использовать второй вариант вызова setState(), который принимает функцию, а не объект. Эта функция получит предыдущее состояние в качестве первого аргумента и значения пропсов непосредственно во время обновления в качестве второго аргумента:
 
-    Правильно будет использовать второй вариант вызова setState(), который принимает функцию, а не объект. Эта функция получит предыдущее состояние в качестве первого аргумента и значения пропсов непосредственно во время обновления в качестве второго аргумента:
-
-    // Правильно
-    this.setState((state, props) => ({
-      counter: state.counter + props.increment
-    }));
-
+      // Правильно
+      ```
+      this.setState((state, props) => ({
+        counter: state.counter + props.increment
+      }));
+      ```
 
   - **Однонаправленный поток данных**<br>
     В иерархии компонентов, ни родительский, ни дочерние компоненты не знают, задано ли состояние другого компонента. 
@@ -2303,29 +2378,30 @@
     Состояние часто называют «локальным», «внутренним» или инкапсулированным. Оно доступно только для самого компонента и скрыто от других.
     Компонент может передать своё состояние вниз по дереву в виде пропсов дочерних компонентов:
 
-      <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
+      `<h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>`
 
     Своё состояние можно передать и другому пользовательскому компоненту:
 
       `<FormattedDate date={this.state.date} />`
 
     Компонент FormattedDate получает date через пропсы, но он не знает, откуда они взялись изначально — из состояния Clock, пропсов Clock или просто JavaScript-выражения:
-
+    ```
       function FormattedDate(props) {
         return <h2>Сейчас {props.date.toLocaleTimeString()}.</h2>;
       }
-
-    Этот процесс называется «нисходящим» («top-down») или «однонаправленным» («unidirectional») потоком данных. Состояние всегда принадлежит определённому компоненту, а любые производные этого состояния могут влиять только на компоненты, находящиеся «ниже» в дереве компонентов.
-
-    Если представить иерархию компонентов как водопад пропсов, то состояние каждого компонента похоже на дополнительный источник, который сливается с водопадом в произвольной точке, но также течёт вниз.
+    ```
     
-   **Ссылки**
-   - https://ru.reactjs.org/docs/state-and-lifecycle.html
+  Этот процесс называется «нисходящим» («top-down») или «однонаправленным» («unidirectional») потоком данных. Состояние всегда принадлежит определённому компоненту, а любые производные этого состояния могут влиять только на компоненты, находящиеся «ниже» в дереве компонентов.
+
+  Если представить иерархию компонентов как водопад пропсов, то состояние каждого компонента похоже на дополнительный источник, который сливается с водопадом в произвольной точке, но также течёт вниз.
+    
+  **Ссылки**
+  - https://ru.reactjs.org/docs/state-and-lifecycle.html
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Store (хранилище)</b></summary> 
+<details><summary><b>Store (хранилище)</b></summary> 
       
   ООП-объект, который управляет state (объект хранящий состояние приложения)
   
@@ -2335,10 +2411,10 @@
     
   Создаётся при помощи метода(?) createStore(reducers)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Dispath (отправка)</b></summary><p> 
+<details><summary><b>Dispath (отправка)</b></summary><p> 
       
   метод объекта store, через который вызываем все другие методы объекта Store (что изменить state, т.е. состояние приложения)
   
@@ -2352,20 +2428,20 @@
   
   State всегда меняется через dispath(action)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Action</b></summary><p> 
+<details><summary><b>Action</b></summary><p> 
     
   - объект, который через метод dispath передаётся в наш объект store, и там производит некие действия с данными (state) 
   
   У action есть как минимум одно свойство, type. 
   По type dispath определяет, какие именно действия надо произвести со state (какую ветку действий выбрать)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Action Creator</b></summary><p> 
+<details><summary><b>Action Creator</b></summary><p> 
   
   функции, которые возвращают объект action. То, что передаётся в mapDispatchToProps
 
@@ -2378,12 +2454,12 @@
       taskId: id,
     });
     
-  <br></p></details>
+  <br></p>
+</details>
   
+<details><summary><b>Reducer (уменьшатель)</b></summary><p>
   
-  <details><summary><b>Reducer (уменьшатель)</b></summary><p>
-  
-  чистая функция, принимает state и action. Та самая простынь, где много switch
+  Чистая функция, принимает state и action. Та самая простынь, где много switch
 
   Применяет action к этому state (если нужно) и возвращает новый state (если не изменился - тот же).
   
@@ -2397,6 +2473,7 @@
   
   Если тип action неизвестен - выдаём изначальный state
 
+  ```javascript
   const task_tables_reducer = (state = initialState, action) => {
     switch(action.type) {
       case IS_PAGINATION: {
@@ -2406,11 +2483,11 @@
         return state;
     }
   }
+  ```  
+  <br></p>
+</details>
   
-  <br></p></details>
-  
-
- <details><summary><b>connect(mapStateToProps, mapDispatchToProps)</b></summary><p>
+<details><summary><b>connect(mapStateToProps, mapDispatchToProps)</b></summary><p>
   - API-функция предоставляемая пакетом react-redux.<br> 
   
   Позволяет создавать контейнерные компоненты
@@ -2436,11 +2513,12 @@
   Прежде чем преобразовывать обычный компонент React в компонент-контейнер с использованием connect(), нужно создать хранилище Redux, к которому будет подключён этот компонент.
   
   Функция connect(), предоставляемая пакетом react-redux, может принимать до четырёх аргументов, каждый из которых является необязательным. После вызова функции connect() возвращается компонент высшего порядка, который можно использовать для оборачивания любого компонента React.
-  ```
+
+  ```javascript
   connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]) 
   ```
   
-  **mergeProps**<br>    
+  **mergeProps**<br>
   Если функции connect() передаётся аргумент mergeProps, то он представляет собой функцию, которая принимает следующие три параметра:
   - stateProps — объект свойств, возвращённый из вызова mapStateToProps().
   - dispatchProps — объект свойств с генераторами действий из mapDispatchToProps().
@@ -2449,7 +2527,8 @@
   Эта функция возвращает простой объект со свойствами, который будет передан заключённому в обёртку компоненту. Это полезно для осуществления условного маппинга части состояния хранилища Redux или генераторов действий на основе свойств.
     
   Если connect() не передают эту функцию, то используется её стандартная реализация:
-  ```  
+
+  ```javascript  
     const mergeProps = (stateProps, dispatchProps, ownProps) => {
       return Object.assign({}, ownProps, stateProps, dispatchProps)
     }
@@ -2460,27 +2539,27 @@
   
   Содержит параметры, предназначенные для изменения поведения этой функции. Так, connect() представляет собой специальную реализации функции connectAdvanced(), она принимает большинство параметров, доступных connectAdvanced(), а также некоторые дополнительные параметры.
   
-  [Страница документации](https://react-redux.js.org/api/connect)- какие параметры можно использовать с connect(), и как они модифицируют поведение этой функции.
+  [Страница документации](https://react-redux.js.org/api/connect) - какие параметры можно использовать с connect(), и как они модифицируют поведение этой функции.
 
-  
   **Ссылки**
   - [Использование функции connect() из пакета react-redux](https://habr.com/ru/company/ruvds/blog/423157/)
   - [Оф. документация React-redux (en)](https://react-redux.js.org/) 
   - [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>mapStateToProps</b></summary><p>
+<details><summary><b>mapStateToProps</b></summary><p>
     
-  mapStateToProps - функция, которая возвращает либо обычный объект, либо другую функцию. 
+  Функция, возвращает либо обычный объект, либо другую функцию. 
   
   Передача mapStateToProps в качестве аргумента для функции connect() приводит к подписке компонента-контейнера на обновления Redux Store. mapStateToProps будет вызываться каждый раз, когда состояние Store изменяется. Если слежение за обновлениями состояния не нужно - передайте connect() в качестве значения этого аргумента undefined или null.
   
-  mapStateToProps объявляется с двумя параметрами, второй из которых является необязательным. 
+  mapStateToProps() объявляется с двумя параметрами, второй из которых является необязательным:
   - Первый параметр представляет собой текущее состояние хранилища Redux. 
   - Второй параметр (ownProps), если его передают, представляет собой объект свойств, переданных компоненту **//ToDo: разбираться**
-  ```
+
+  ```javascript
   const mapStateToProps = (state, ownProps) => ({
     coin: coinSelector(state, ownProps),
     isLoading: isCoinsLoadingSelector(state),
@@ -2494,8 +2573,7 @@
   
   Однако тут есть одна проблема. Если число обязательных параметров объявленной функции mapStateToProps меньше, чем 2, тогда ownProps передаваться не будет. Но если функция объявлена с отсутствием обязательных параметров или, как минимум, с 2 параметрами, ownProps будет передаваться.
   
-  ---
-  
+  ***  
   Если из mapStateToProps будет возвращён обычный объект, то возвращённый объект stateProps объединяется со свойствами компонента. 
   
   Если же mapStateToProps возвращает функцию, то эта функция используется как mapStateToProps для каждого экземпляра компонента. Это может пригодиться для улучшения производительности рендеринга и для мемоизации.
@@ -2503,19 +2581,18 @@
   **Ссылки**
   - [Использование функции connect() из пакета react-redux](https://habr.com/ru/company/ruvds/blog/423157/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
+<details><summary><b>mapDispatchToProps</b></summary><p>
   
-  <details><summary><b>mapDispatchToProps</b></summary><p>
+  Объект, содержащий набор actionCreators.<br>
   
-  объект, содержащий набор actionCreators.<br>
-  
-  может быть либо объектом, либо функцией, которая возвращает обычный объект или другую функцию. 
+  Может быть либо объектом, либо функцией, которая возвращает обычный объект или другую функцию. 
 
   Используется в connect
 
   Позволяет контейнерной компоненте диспатчить изменения в store
-  
   
   Если в качестве аргумента mapDispatchToProps используется объект, то каждая функция в объекте будет воспринята в качестве генератора действий Redux и обёрнута в вызов метода хранилища dispatch(), что позволит вызывать его напрямую. Получившийся в результате объект с генераторами действий, dispatchProps, будет объединён со свойствами компонента.
   
@@ -2526,38 +2603,42 @@
   **Ссылки**
   - [Использование функции connect() из пакета react-redux](https://habr.com/ru/company/ruvds/blog/423157/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
+<details><summary><b>Provider</b></summary><p>
   
-  <details><summary><b>Provider</b></summary><p>
+  Компонент, оборачивается вокруг корневой компоненты (<App>). Позволяет передавать store всем потомкам - теперь у connect() есть доступ к store
   
-  компонента, оборачивается вокруг корневой компоненты (<App>). Позволяет передавать store всем потомкам - теперь у connect() есть доступ к store
+ Пакет react-redux предоставляет разработчику компонент <Provider>, который можно использоваться для оборачивания корневого компонента приложения. Он принимает свойство store. Предполагается, что оно представляет собой ссылку на хранилище Redux, которое планируется использовать в приложении. Свойство store передаётся, в соответствии с иерархией приложения, компонентам-контейнерам, с использованием механизма контекста React:
   
-   пакет react-redux предоставляет разработчику компонент <Provider>, который можно использоваться для оборачивания корневого компонента приложения. Он принимает свойство store. Предполагается, что оно представляет собой ссылку на хранилище Redux, которое планируется использовать в приложении. Свойство store передаётся, в соответствии с иерархией приложения, компонентам-контейнерам, с использованием механизма контекста React:
+  <br></p>
+</details>
   
-  <br></p></details>
-  
-  <details><summary><b>Compose</b></summary><p>
+<details><summary><b>Compose</b></summary><p>
   
   Подход из функционального программирования
   Реализацию этой функции предоставляет, в частности, Redux
   
   Позволяет объединить несколько последовательных вызовов функций. Полезно в ситуации конвейера - мы передаём данные в функцию A, результат её работы передаётся в функцию B, результат работы B передаётся в C... и так далее
   
+  ```javascript
   compose(
     connect(mapStateToProps, mapDispatchToProps),
     withAuthRedirect
   )
   (component)
-  
-  Обрачивание идёт "снизу вверх" - вначале обернёт withAuthRedirect(), потом connect(mapStateToProps, mapDispatchToProps)()
+  ```
+
+  Оборачивание идёт "снизу вверх" - вначале обернёт withAuthRedirect(), потом connect(mapStateToProps, mapDispatchToProps)()
   
   **Ссылки**
   - [YouTube - IT Kamasutra 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
    
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Connect</b></summary><p>
+<details><summary><b>Connect</b></summary><p>
   
   connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
   
@@ -2570,10 +2651,10 @@
   **Ссылки**
   - [Habr - Использование функции connect() из пакета react-redux](https://habr.com/ru/company/ruvds/blog/423157/)
    
-  <br></p></details>
+  <br></p>
+</details>
 
-
-  <details><summary><b>Ссылки</b></summary><p>
+<details><summary><b>Ссылки</b></summary><p>
 
   - [Оф. документация React-redux (en)](https://react-redux.js.org/)
   - [Оф. документация React-redux (ru)](https://rajdee.gitbooks.io/redux-in-russian/content/)
@@ -2581,17 +2662,23 @@
   - [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
   - [Build Yourself a Redux (en)](https://zapier.com/engineering/how-to-build-redux/)
   - [Redux и Thunk вместе с React. Руководство для чайников](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov)
-  <br></p></details>
+
+  <br></p>
+</details>
+
+<br></p>
+</details>
 
 #
 <details><summary><b>REDUX & AJAX</b></summary>
   
   ---
-  <details><summary><b>Запрос внутри actionCreator</b></summary><p> 
+<details><summary><b>Запрос внутри actionCreator</b></summary><p> 
   
-  самый простой вариант - делаем запрос внутри actionCreator
+  - Самый простой вариант - делаем запрос внутри actionCreator
+  - Например, при помощи fetch:
 
-  Например, при помощи fetch:
+  ```javascript
     const fetchDog = (dispatch) => {
       dispatch(requestDog());
       return fetch('https://dog.ceo/api/breeds/image/random')
@@ -2601,6 +2688,7 @@
           err => dispatch(requestDogError())
         );
     };
+  ```
     
   Это простой, но очень негибкий подход.
    
@@ -2612,29 +2700,31 @@
   
   Промежуточные слои могут соединяться в цепочку вызовов для различной обработки действия (action), но на выходе обязательно должен быть простой объект (действие)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Middlewares</b></summary><p>
-  	
-   - промежуточные слои Redux. Используются для реализации асинхронности в Redux
-
+<details><summary><b>Middlewares</b></summary><p>
+  
+  - Промежуточные слои Redux. Используются для реализации асинхронности в Redux
   - функция, которая запускается каждый раз при отправке action’а
   - Ядро Redux это контейнер состояния (state container), который поддерживает только синхронные потоки данных. 
-  На каждое действие, в хранилище (store) посылается объект, описывающий что произошло, затем вызывается редюсер (reducer) и состояние (state) сразу обновляется.
+  - На каждое действие, в хранилище (store) посылается объект, описывающий что произошло, затем вызывается редюсер (reducer) и состояние (state) сразу обновляется.
   - Промежуточный слой это кусок кода, который выполняется после отправки действия, но перед вызовом редюсера.
   - Промежуточные слои могут соединяться в цепочку вызовов для различной обработки действия (action), но на выходе обязательно должен быть простой объект (действие)
   - Для асинхронных операций, Redux предлагает использовать redux-thunk промежуточный слой.
+  <br>
 
   Написание собственной middleware не так сложно, как может показаться, и позволяет использовать некоторые мощные средства.
-  Например
+  Например:
   - Хотите посылать API-запрос каждый раз, когда имя action’a начинается с FETCH_? Вы можете сделать это с помощью middleware.
   - Хотите централизованное место для логирования событий в вашем аналитическом ПО? Middleware — хорошее место для этого.
   - Хотите предотвратить запуск action’a в определенный момент времени? Вы можете сделать это с помощью middleware, невидимого для остальной части вашего приложения.
   - Хотите перехватить action, имеющий токен JWT, и автоматически сохранить его в localStorage? Да, middleware.
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Redux-thunk</b></summary><p>
+<details><summary><b>Redux-thunk</b></summary><p>
 
   - библиотека, один из вариантов реализации middleware (промежуточный слой) для React-Redux
 
@@ -2685,9 +2775,10 @@
   - https://www.youtube.com/watch?v=eWdnjfRu9Io
   - [Redux и Thunk вместе с React. Руководство для чайников.](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Redux saga</b></summary><p>
+<details><summary><b>Redux saga</b></summary><p>
   
   - другая библиотека, для реализации middleware (промежуточный слой) React-Redux
   - Для упрощения и улучшения сайд-эффектов в приложениях React-Redux. Прежде всего - асинхронные запросы (извлечение данных и т.д.) и нечистые вещи (доступ к кешу браузера и т.д.)
@@ -2702,36 +2793,40 @@
     - redux-observable (который базируется на RxJS) 
     - redux-logic (также базирующийся на RxJS наблюдателях, но дающий свободу писать вашу логику в других стилях).
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary><b>Axios</b></summary><p>
+<details><summary><b>Axios</b></summary><p>
 
   - инструмент для отправки ajax-запросов, основанный на промисах, очень похожий на jQuery.
   - Альтернативы: got, fetch, SuperAgent, jQuery
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  <details><summary>Вариант организации AJAX (IT-Kamasutra)</summary><p>
+<details><summary>Вариант организации AJAX (IT-Kamasutra)</summary><p>
 
-  для работы с серверным API & AJAX - используем axios  
-  Изначально у нас в стэйте нет данных (например, списка задач) - мы должны получить их с сервера
-  Берём reducer, в котором эти данные выводятся и соответствующий action
-  Создаём новый action = setTasks //получить-установить задачу
-  В reducer пишем реакцию на этот action - добавить в state данные из объекта, который приходит с этим action
-  В контейнерной компоненте, в функции mapStateToProps добавляем в state компоненты задачи из общего state 
-  В контейнерной компоненте, в функции mapDispatchToProps создаём callback для вызова этого action. При вызове этого action - он добавит задачи в state 
-  Сам факт захода пользователя на страницу со списком задач = действие (т.е. диспатч), которое вызывает этот action. 
+  - для работы с серверным API & AJAX - используем axios  
+  - Изначально у нас в стэйте нет данных (например, списка задач) - мы должны получить их с сервера
+  - Берём reducer, в котором эти данные выводятся и соответствующий action
+  - Создаём новый action = setTasks //получить-установить задачу
+  - В reducer пишем реакцию на этот action - добавить в state данные из объекта, который приходит с этим action
+  - В контейнерной компоненте, в функции mapStateToProps добавляем в state компоненты задачи из общего state 
+  - В контейнерной компоненте, в функции mapDispatchToProps создаём callback для вызова этого action. При вызове этого action - он добавит задачи в state 
+  - Сам факт захода пользователя на страницу со списком задач = действие (т.е. диспатч), которое вызывает этот action. 
   
   **Ссылки**
   - https://www.youtube.com/watch?v=c34P8-9YVMQ&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=51
       
-  <br></p></details>
+  <br></p>
+</details>
   
   **Ссылки**
   - [Лучшие практики React AJAX](https://tuhub.ru/posts/luchshie-praktiki-react-ajax)
   - [Redux и Thunk вместе с React. Руководство для чайников.](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov)
 
-<br></p></details>
+<br></p>
+</details>
 
 <br>
 <br>
