@@ -1,12 +1,10 @@
 # Шпаргалка по JavaScript #
- 
 
 <details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
 
 **Про обновления**
 - Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей языка переносятся в [черновик](https://tc39.github.io/ecma262), а затем публикуются в [спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
 - Разработчики JS-движков сами решают, какие предложения реализовать в первую очередь. Могут заранее добавить поддержку функций, которые ещё находятся в черновике, или отложить разработку функций, которые уже перенесены в спецификацию. Довольно часто в движке (браузер например) реализуется только часть стандарта. Текущее состояние поддержки различных возможностей JS можно проверить здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
-
 
 **ES 6**
   - const
@@ -71,8 +69,8 @@
   - [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
 
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Значения и ссылки</b></summary><p>
   
@@ -101,8 +99,8 @@
   - [Передача параметров по значению и по ссылке](https://metanit.com/web/javascript/3.7.php)
   - [habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
         
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Замыкания</b></summary><p>
     
@@ -298,10 +296,11 @@
   - [proglib - Пора понять замыкания в JavaScript! Часть 1. Готовим фундамент](https://proglib.io/p/js-closures-1/)
   - [proglib - Пора понять замыкания в JavaScript! Часть 2. Переходим к делу](https://proglib.io/p/js-closures-2/)
         
-<br></p></details>
-  
-  
-<details><summary><b>Как работают движки JavaScript?</b> //ToDo - доработать</summary><p>
+<br></p>
+</details>
+
+[//]: # (todo: доработать)
+<details><summary><b>Как работают движки JavaScript?</b></summary><p>
   
   Прежде всего, исходный код (текст на JS) проходит через парсер, в результате возникает внутреннее представление кода — абстрактное синтаксическое дерево. 
   
@@ -348,10 +347,11 @@
   - [habr - Знакомство с WebAssembly](https://m.habr.com/ru/post/342180/)
   - [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://m.habr.com/ru/company/wrike/blog/302896/)
   
-<br></p></details>   
+<br></p>
+</details>   
 
-
-<details><summary><b>Асинхронность в JS</b> //ToDo - упростить</summary><p>
+[//]: # (todo: упростить)
+<details><summary><b>Асинхронность в JS</b></summary><p>
       
    ![](https://miro.medium.com/max/875/1*quyTIOs2hioCx1jRQ7-ojw.png)   
       
@@ -451,7 +451,6 @@
 Цикл событий решает одну основную задачу: наблюдает за стеком вызовов и очередью коллбэков (callback queue). Если стек вызовов пуст, цикл берёт первое событие из очереди и помещает его в стек, что приводит к запуску этого события на выполнение.
 
 Подобная итерация называется тиком (tick) цикла событий. Каждое событие — это просто коллбэк  
-
   
   **Микро и макро-задачи (microtask и macrotask)**<br>
   На самом деле, очередь задач устроена несколько сложнее, чем написано выше: 
@@ -460,7 +459,6 @@
   - В одной итерации Event loop обрабатывается одна макрозадача (т.е. классичесакая задача) из очереди колбэков. После этого в том же цикле обрабатываются все микрозадачи из очереди микрозадач. Они как-бы пристраиваются хвостом к первому колбэку. Очередь заданий — это очередь, которая присоединена к концу каждого тика в очереди цикла событий. Эти микрозадачи могут добавлять в очередь другие микрозадачи, и процесс будет продолжаться, пока очередь микрозадач не опустеет. Т.е. до запуска следующей макрозадачи может пройти довольно много времени. Это может привести к зависанию интерфейса пользователя или простою приложения.
   
   В мире ECMAScript микрозадачи именуют заданиями («jobs»).
-  
   
 Очередность
   - вначале в стэке выполнятся текущие маркозадачи (например, все console.log). Пока стек не очистится.
@@ -511,7 +509,6 @@
   Timeout
   ```
   
-  
   Макрозадачи планируются с помощью 
   - setTimeout
   - setInterval
@@ -527,12 +524,11 @@
   
   Начиная обработку, движок JS выбирает первую макрозадачу из очереди и выполняет обработчик обратного вызова:
   
-  
   Микрозадачи обычно планируются для вещей, который должны исполняться моментально после текущего исполняемого сценария. Например, реагирование на пачку действий или для того, чтобы сделать что-то асинхронно без необходимости терять производительность на пустом месте из-за полностью новой задачи. Очередь микрозадач развёртывается в конце каждой полной задачи, а также после колбеков в случае если никакой другой JavaScript не находится на стадии исполнения. Любые дополнительные микрозадачи, поставленные в очередь во время развёртывания очереди микрозадач, добавляются в конец очереди и тоже обрабатываются. Микрозадачи включают в себя колбеки Mutation observer и промисов, как в примере выше.
   
-  Как только промис решается или если он уже был решён, он ставит в очередь микрозадачу на исполнение колбека. Это даёт уверенность, что колбеки промисов исполняются асинхронно даже если они уже решены. 
+  Как только промис решается или если он уже был решён, он ставит в очередь микрозадачу на исполнение колбека. Это даёт уверенность, что колбеки промисов исполняются асинхронно даже если они уже решены.
   
-  **//ToDo - дополнить.** Постоянно спрашивают.
+[//]: # (todo: дополнить. Постоянно спрашивают на собеседованиях!) 
   - https://habr.com/ru/post/264993/
   - https://refaq.ru/voprosy/raznicza_mezhdu_mikrozadachej_i_makrozadachej_v_kontekste_czikla_sobytij
   
@@ -628,8 +624,8 @@
   * [Ад обратных вызовов](http://callbackhell.ru/)
   * [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
   
-<br></p></details>   
-  
+<br></p>
+</details>   
   
 <details><summary><b>Promises</b></summary><p>
     
@@ -751,8 +747,8 @@
   * [Ад обратных вызовов](http://callbackhell.ru/)
   * [habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/
   
-<br></p></details>
-  
+<br></p>
+</details>
     
 <details><summary><b>Async/Await</b></summary><p>
   
@@ -770,7 +766,6 @@
   [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
   
   ***
-
   Конструкция async-await появилась в стандарте ES6, и само слово await четко дает понять, что мы должны дождаться выполнения асинхронной функции getData(), не помещать ее в event loop, а выполнить прямо здесь и записать результат в i-й элемент массива. 
   
   ```
@@ -784,9 +779,7 @@
   
   Это значит, что при вызове асинхронной функции fillArray() она попадет в очередь контекстов и будет исполнена. Но, как мы уже знаем, следующий контекст будет ждать, пока текущий завершится. Все пользовательские события, таймеры и прочие помещаемые в очередь контексты будут ждать, пока не пройдут десять тысяч запросов к серверу. 
   
-  
   ***
-  
   Async/Await пытается решить одну из главных головных болей языка со времен его появления - асинхронность.<br> 
   До их появления, основная работа c асинхронностью шла через callbacks 
   ```
@@ -838,8 +831,8 @@
   - [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
   * [Ад обратных вызовов](http://callbackhell.ru/)
   
-<br></p></details>
-  
+<br></p>
+</details>
   
 <details><summary><b>Атрибуты async и defer тега script</b></summary><p>
   
@@ -870,8 +863,8 @@
   - [Разница между async и defer у тега script](https://wp-kama.ru/id_12151/raznitsa-async-defer.html)
   - [Атрибут defer](http://htmlbook.ru/html/script/defer)
   
-<br></p></details>   
-    
+<br></p>
+</details>   
     
 <details><summary><b>Стрелочные функции</b></summary><p>
     
@@ -882,8 +875,8 @@
   **Ссылки**
   - [learn.javascript.ru](https://learn.javascript.ru/es-function)
         
-<br></p></details>
-  
+<br></p>
+</details>
   
 <details><summary><b>Самовыполняющиеся функции. Модули</b> ( function(){} )()</summary><p>
   
@@ -953,8 +946,8 @@
   - [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
   - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
         
-<br></p></details>
-         
+<br></p>
+</details>
          
 <details><summary><b>Function Declaration, Function Expression</b></summary><p>
   
@@ -971,10 +964,9 @@
   - Функции, объявленные как Function Declaration, создаются полностью и готовы к использованию.
   - Переменные объявлены, но равны undefined. Присваивания выполнятся позже, когда выполнение дойдет до них.
   
-<br></p></details>
+<br></p>
+</details>
 
-
-<a name="js_callback"></a>
 <details><summary><b>Callback</b></summary><p>
     
   Функция, которая должна быть выполнена после того, как другая функция завершила выполнение (отсюда и название: callback – функция обратного вызова).
@@ -1055,11 +1047,11 @@
   * [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
   * [Ад обратных вызовов](http://callbackhell.ru/)
   
-<br></p></details>
+<br></p>
+</details>
 
-
-<a name="js_cal-aply"></a>
-<details><summary><b>"Call" & "apply"</b> //ToDo - доработать</summary><p>
+[//]: # (todo: доработать)
+<details><summary><b>"Call" & "apply"</b></summary><p>
   
   Явное указание this
   
@@ -1069,10 +1061,9 @@
   * [learn.javascript.ru](https://learn.javascript.ru/call-apply)
   * [habr](https://habr.com/ru/post/199456/) 
   
-<br></p></details>   
+<br></p>
+</details>   
 
-
-<a name="js_bind"></a>
 <details><summary><b>Bind</b></summary><p> 
   
   Метод. Позволяет привязать контекст к функции. Важно при callback
@@ -1100,10 +1091,9 @@
   - [habr](https://habr.com/ru/post/199456/) 
   - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
   
-<br></p></details>
+<br></p>
+</details>
     
-    
-<a name="js_events-handlers"></a>
 <details><summary><b>Обработчики событий</b> (events handlers)</summary><p>
     
   Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
@@ -1116,10 +1106,9 @@
   * [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
   * [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
       
-<br></p></details>
+<br></p>
+</details>
       
-      
-<a name="js_objects-arrays"></a>
 <details><summary><b>Объекты {} и массивы []</b></summary><p>
                                                   
   - ``{ width: 300,  height: 200, }`` - объект. Структура для хранения данных в формате ключ-значение.
@@ -1149,8 +1138,8 @@
   - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
   - [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
       
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Деструктуризация массивов</b></summary><p>
 
@@ -1173,8 +1162,8 @@ const [fruit, setFruit] = useState('банан');
 - [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
 - [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Декораторы</b></summary><p>
   
@@ -1182,10 +1171,10 @@ const [fruit, setFruit] = useState('банан');
   - [habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
   - [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
       
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>var = х</b></summary><p>
+<details><summary><b>var = х</b></summary><p>
   
   Способ объявления переменной. Используем в обычных случаях
   
@@ -1214,10 +1203,10 @@ const [fruit, setFruit] = useState('банан');
   * [learn.javascript.ru](https://learn.javascript.ru/let-const)
   * [habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
        
-  <br><p></details>
+  <br><p>
+</details>
   
-
-  <details><summary><b>let = х</b></summary><p>
+<details><summary><b>let = х</b></summary><p>
     
   Способ объявления переменной. Используем если будем переопределять значение переменной. Видна в блоке
   
@@ -1234,10 +1223,10 @@ const [fruit, setFruit] = useState('банан');
   * [learn.javascript.ru](https://learn.javascript.ru/variables)
   * [learn.javascript.ru](https://learn.javascript.ru/let-const)
        
-  <br><p></details>
+  <br><p>
+</details>
 
-
-  <details><summary><b>const = х</b></summary><p>
+<details><summary><b>const = х</b></summary><p>
 
   Способ объявления переменной. Используем для констант 
 
@@ -1265,10 +1254,10 @@ const [fruit, setFruit] = useState('банан');
   * [learn.javascript.ru](https://learn.javascript.ru/variables)
   * [learn.javascript.ru](https://learn.javascript.ru/let-const)
        
-  <br><p></details>  
+  <br><p>
+</details>  
   
-  
-  <details><summary><b>Proxy-объекты</b></summary><p>
+<details><summary><b>Proxy-объекты</b></summary><p>
     
   Особые объекты, позволяют перехватывать и изменять действия, выполняемые над другими объектами.
 
@@ -1315,10 +1304,10 @@ const [fruit, setFruit] = useState('банан');
   Ссылки:
   * [habr](https://habr.com/ru/company/ruvds/blog/359060/)
   
-  <br></p></details>
-  
-  
-  <details><summary><b>Функции-генераторы</b> - function* ()</summary><p>
+  <br></p>
+</details>
+
+<details><summary><b>Функции-генераторы</b> - function* ()</summary><p>
     
   Могут приостанавливать своё выполнение, возвращать промежуточный результат и возобновляться позже.<br>
   Код такой функции не выполняется. Вместо этого она возвращает специальный объект, который как раз и называют «генератором»
@@ -1341,10 +1330,10 @@ const [fruit, setFruit] = useState('банан');
   Ссылки:
   * [learn.javascript.ru](https://learn.javascript.ru/generator)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Итераторы</b></summary><p>
+<details><summary><b>Итераторы</b></summary><p>
   
   Тип объектов, содержимое которых можно перебрать в цикле
     
@@ -1358,10 +1347,10 @@ const [fruit, setFruit] = useState('банан');
   Ссылки:
   * [learn.javascript.ru](https://learn.javascript.ru/iterator)
     
-  <br></p></details>
+  <br></p>
+</details>
   
-   
-  <details><summary><b>function()()</b></summary><p>
+<details><summary><b>function()()</b></summary><p>
     
   Зачем при вызове функции ставят две двойные скобки?
     
@@ -1380,10 +1369,10 @@ const [fruit, setFruit] = useState('банан');
         getFunc()(); // 2, из LexicalEnvironment функции getFunc
   ```
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Лексическое всплытие</b></summary><p>
+<details><summary><b>Лексическое всплытие</b></summary><p>
    
   Организация процесса обработки события (например клика по div), при котором вначале срабатывают обработчики на целевом объекте (сам div), потом на его родителе, потом выше... 
       
@@ -1398,10 +1387,10 @@ const [fruit, setFruit] = useState('банан');
   **Ссылки:**
   - [learn.javascript.ru - Всплытие и перехват](https://learn.javascript.ru/event-bubbling)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ООП в JS</b></summary><p>
+<details><summary><b>ООП в JS</b></summary><p>
    
   ***
   На самом деле, поддержка JS-классов браузерами — не более чем «синтаксический сахар». Эти конструкции преобразуются в те же базовые структуры, которые уже поддерживаются языком. В результате, даже если пользоваться новым синтаксисом, на более низком уровне всё будет выглядеть как создание конструкторов и манипуляции с прототипами объектов.
@@ -1419,10 +1408,10 @@ const [fruit, setFruit] = useState('банан');
   - [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
   - [Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ООП в JS</b></summary><p>
+<details><summary><b>ООП в JS</b></summary><p>
    
   ***
   На самом деле, поддержка JS-классов браузерами — не более чем «синтаксический сахар». Эти конструкции преобразуются в те же базовые структуры, которые уже поддерживаются языком. В результате, даже если пользоваться новым синтаксисом, на более низком уровне всё будет выглядеть как создание конструкторов и манипуляции с прототипами объектов.
@@ -1440,10 +1429,10 @@ const [fruit, setFruit] = useState('банан');
   - [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
   - [Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Утечки памяти в JS</b></summary><p>
+<details><summary><b>Утечки памяти в JS</b></summary><p>
     
   В двух словах, утечки памяти можно определить как фрагменты памяти, которые больше не нужны приложению, но по какой-то причине не возвращённые операционной системе или в пул свободной памяти.
   
@@ -1623,10 +1612,10 @@ const [fruit, setFruit] = useState('банан');
   - [habr](https://habr.com/ru/post/309318/)
   - [habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
   
-<br></p></details>
+<br></p>
+</details>
   
-  
-  <details><summary><b>Примитив - Symbol</b></summary><p>
+<details><summary><b>Примитив - Symbol</b></summary><p>
    
   Символ (анг. Symbol) — это уникальный и неизменяемый тип данных, который может быть использован как идентификатор для свойств объектов. Символьный объект (анг. symbol object) — это объект-обёртка (англ. wrapper) для примитивного символьного типа.
   
@@ -1636,11 +1625,13 @@ const [fruit, setFruit] = useState('банан');
   - [learn.javascript.ru](https://learn.javascript.ru/symbol)
   - [https://developer.mozilla.org (ru)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
   - [Habr - Особенности использования типа данных Symbol в JavaScript](https://habr.com/ru/company/ruvds/blog/444340/)
-
+    
+  <br><p>
+</details>
 
 ## JS - приёмы ##
-                                         
-  <details><summary><b>_переменная</b></summary><p> 
+
+<details><summary><b>_переменная</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной начинается с _ , её не надо менять или читать снаружи объекта.<br>
   Это просто соглашение об именовании, которое напоминает разработчику о том, что переменная (свойство) или метод являются либо private, либо protected, и к ним нельзя получить доступ из-за пределов класса. 
@@ -1652,10 +1643,10 @@ const [fruit, setFruit] = useState('банан');
   **Ссылки**
   * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69) 
 
-  <br><p></details>
+  <br><p>
+</details>
   
-  
-  <details><summary><b>ПЕРЕМЕННАЯ</b></summary><p> 
+<details><summary><b>ПЕРЕМЕННАЯ</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной написано ЗАГЛАВНЫМИ, её не надо менять. Это константа.<br>
   
@@ -1663,10 +1654,10 @@ const [fruit, setFruit] = useState('банан');
   * [learn.js](https://learn.javascript.ru/variables)      
   * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69)
    
-  <br><p></details>
+  <br><p>
+</details>
   
-  
-  <details><summary><b>Переменная</b></summary><p> 
+<details><summary><b>Переменная</b></summary><p> 
       
   Общеприянтое соглашение - если название переменной начинается с заглавной, значит это не переменная а класс ООП.<br>
   У класса есть методы и всё такое...
@@ -1674,27 +1665,27 @@ const [fruit, setFruit] = useState('банан');
   **Ссылки**
   * [9 сбивающих с толку соглашений об именовании](http://www.codeharmony.ru/materials/69) 
   
-  <br><p></details>
+  <br><p>
+</details>
               
-              
-  <details><summary><b>true && expression</b></summary><p>
+<details><summary><b>true && expression</b></summary><p>
     
   `true && expression</b>` - всегда вычисляется как expression, 
     
   `false && expression` - всегда вычисляется как false.
     
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
+<details><summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
     
   **Ссылки:**
   - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Console.log</b></summary><p>
+<details><summary><b>Console.log</b></summary><p>
   
   Брайзер добавляет глобальную переменную с именем «console» к каждой загруженной веб-странице. Объект содержит много методов, которые возволят писать на консоль и показывать информацию, проходящую через скрипты.
   
@@ -1779,10 +1770,10 @@ const [fruit, setFruit] = useState('банан');
   - [MDN - console.trace](https://habr.com/ru/post/141042/)
   - [Про console.table (en)](http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
     
-  <br></p></details>
-  
-  
-  <details><summary><b>Чистота кода</b></summary><p>
+  <br></p>
+</details>
+
+<details><summary><b>Чистота кода</b></summary><p>
   
   **Общее**
   - Форматирование кода направлено на передачу информации, а передача информации является первоочередной задачей профессионального разработчика.
@@ -1882,12 +1873,13 @@ const [fruit, setFruit] = useState('банан');
   - [habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
   - [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
   
-<br></p></details><br>
-
+  <br></p>
+</details>
+<br>
 
 ## JS - история версий ##
 
-  <details><summary><b>История версий ES</b></summary><p>
+<details><summary><b>История версий ES</b></summary><p>
     
   JavaScript создавался как скриптовый язык для Netscape. Изначально разработкой занимались Брендан Эйх, Марк Андрессен и Билл Джой.<br>
   После чего он был отправлен в ECMA International для стандартизации (ECMA — это ассоциация, деятельность которой посвящена стандартизации информационных и коммуникационных технологий). Стандартизированная версия имеет название ECMAScript, описывается стандартом ECMA-262.
@@ -1917,10 +1909,10 @@ const [fruit, setFruit] = useState('банан');
   * [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
   * [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ES10 (ECMAScript 2019 )</b></summary><p>
+<details><summary><b>ES10 (ECMAScript 2019 )</b></summary><p>
     
   Выход ожидается летом 2019
   
@@ -1945,10 +1937,10 @@ const [fruit, setFruit] = useState('банан');
   * [Что нового в JavaScript ES2019](https://m.habr.com/ru/post/439532/)      
   * [Что нового в JavaScript 2019](https://medium.com/web-standards/es2019-417d8b406346) 
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ES9 (ECMAScript 2018 )</b></summary><p>
+<details><summary><b>ES9 (ECMAScript 2018 )</b></summary><p>
     
   * <b>Разделяемая память (shared memory) и атомарные операции (atomics)</b> - касается ядра JS-движков. Позволяет писать высокопроизводительные параллельные приложения, дает возможность управлять памятью самостоятельно, не отдавая выполнение всех аспектов этой задачи JS-движку.
   * <b>Оператора rest</b> - выглядит как три точки. Позволяет извлекать свойства объекта. Используется в левой части выражения.
@@ -1966,10 +1958,10 @@ const [fruit, setFruit] = useState('банан');
   * [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
   * [Что нового в ES2018 JavaScript](https://webformyself.com/chto-novogo-v-es2018-javascript/)
 
-  <br></p></details>
-
-
-  <details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
+  <br></p>
+</details>
+  
+<details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
   
   - **Конструкция Async/Await** - асинхронные функции, работают на основе promise 
   - **Метод Object.values()** - возвращает все значения собственных свойств объекта, исключая любые значения в цепочке прототипов.
@@ -1982,10 +1974,10 @@ const [fruit, setFruit] = useState('банан');
   * [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/8.0/index.html)      
   * [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)  
 
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
+<details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
       
   * <b>Метод Array.prototype.includes()</b> - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве некий элемен. <br>
   * <b>Оператор возведения в степень</b> - **. Заменяет Math.pow().
@@ -1994,10 +1986,10 @@ const [fruit, setFruit] = useState('банан');
   * [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/7.0/index.html)     
   * [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
 
-  <br></p></details>
-  
-  
-  <details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
+  <br></p>
+</details>
+
+<details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
       
   * [Переменные: let и const](https://learn.javascript.ru/let-const)
   * [Деструктуризация](https://learn.javascript.ru/destructuring)
@@ -2018,10 +2010,10 @@ const [fruit, setFruit] = useState('банан');
   * [learn.js](https://learn.javascript.ru/es-modern)
   * [code.mu](http://code.mu/books/javascript/advanced/novovvedeniya-v-es6-dlya-novichkov.html)  
     
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
+<details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
     
   Среди изменений:
   * поддержка строгого режима (strict mode);
@@ -2037,10 +2029,10 @@ const [fruit, setFruit] = useState('банан');
   * [ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)
   * [Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)
   
-  <br></p></details>
+  <br></p>
+</details>
   
-  
-  <details><summary><b>Языки поверх JavaScript</b></summary><p>
+<details><summary><b>Языки поверх JavaScript</b></summary><p>
     
   Синтаксис JavaScript устраивает не всех - одним он кажется слишком свободным, другим слишком ограниченным, третьи хотят добавить дополнительные возможности…
       
@@ -2056,9 +2048,10 @@ const [fruit, setFruit] = useState('банан');
   **Ссылки:**
   * [learn.javascript.ru](https://learn.javascript.ru/intro)
   
-  <br></p></details>
+  <br></p>
+</details>
 
 <br> 
-<br> 
+<br>
 
 *[Legmo, 2019-2022](https://github.com/Legmo/notes/)*

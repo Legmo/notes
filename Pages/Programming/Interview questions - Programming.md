@@ -1,7 +1,8 @@
 # Шпаргалка по общим вопросам программирования и frontend-разработки #
 
+#
 <details><summary><b>Чистые функции</b></summary><p>
-  
+
   ---
   
   - Чистая функция:
@@ -11,22 +12,23 @@
      - без сайд-эффектов - побочных эффектов 
        Например: какой-то внешний объект изменился, и при тех же входящих данных мы получили новый результат
   
-      Такие функции называют «чистыми», потому что они не меняют свои входные данные и предсказуемо возвращают один и тот же результат для одинаковых аргументов.
+  Такие функции называют «чистыми», потому что они не меняют свои входные данные и предсказуемо возвращают один и тот же результат для одинаковых аргументов.
 
-    
-    Пример чистой функции -  не меняет свои входные данные и предсказуемо возвращает один и тот же результат для одинаковых аргументов:
-    ```
-      function sum(a, b) {
-        return a + b;
-      }
-    ```    
-      
-    Пример нечистой функции — записывает данные в свои же аргументы:
-    ```
+  Пример чистой функции - не меняет свои входные данные и предсказуемо возвращает один и тот же результат для одинаковых аргументов:
+
+  ```javascript
+  function sum(a, b) {
+    return a + b;
+  }
+  ```    
+  
+  Пример нечистой функции — записывает данные в свои же аргументы:
+
+  ```javascript
     function withdraw(account, amount) {
         account.total -= amount;
       }
-    ```
+  ```
     
   <details>
     <summary>Инкапсуляция = сокрытие лишних деталей</summary>
@@ -51,8 +53,8 @@
     <summary>Иммутабельность - неизменяемость. Функция не меняет входящие данные. Делает копию, и работает уже с ней.</summary>
   </details>
 
-<br></p></details>
-
+  <br></p>
+</details>
 
 <details><summary><b>Debounce</b></summary><p>
 
@@ -79,8 +81,8 @@
   * [learn.javascript.ru - реализация на js](https://learn.javascript.ru/task/debounce)
   * [7 важных функций JavaScript](https://getinstance.info/articles/javascript/essential-javascript-functions/)
     
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Мемоизация</b></summary><p>
       
@@ -101,8 +103,8 @@
   **Ссылки**
   - [https://habr.com/ru/company/ruvds/blog/332384/](https://habr.com/ru/company/ruvds/blog/332384/)
   
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Советы по оптимизации рендеринга web-страниц</b></summary><p>
 
@@ -161,14 +163,14 @@
   **Ссылки**
   - [Как работает JS: движки рендеринга веб-страниц и советы по оптимизации их производительности](https://habr.com/ru/company/ruvds/blog/351802/)
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>ООП - некоторые понятия</b></summary><p>
-  
+
   ---
   
-**Объе́ктно-ориенти́рованное программи́рование (ООП)** — методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определенного класса, а классы образуют иерархию наследования. 
+**Объектно-ориентированное программирование (ООП)** — методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определенного класса, а классы образуют иерархию наследования. 
 
 **Базовые понятия**
 - **Класс** - абстрактное описание автомобиля. Чертёж
@@ -190,7 +192,6 @@
 
 **Шаблоны проектирования "банды четрыёх" GoF**
 - [Шпаргалка по шаблонам проектирования](https://habr.com/ru/post/210288/)
-
 
 **Принципы SOLID**
   <details>
@@ -222,20 +223,19 @@
         Абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций.
   </details>
   
+  **Ссылки**
+  - [code.mu - на пальцах](http://code.mu/books/javascript/oop/)
+  - [code.mu - тоже на пальцах](http://code.mu/books/php/oop/osnovy-raboty-s-objektno-orientirovannym-programmirovaniem-v-php-1.html)
+  - [habr - на пальцах 1](https://habr.com/ru/post/87205/)
+  - [habr - на пальцах 2](https://habr.com/ru/post/87119/)
+  - [Что такое ООП в паре слов](https://javarush.ru/groups/posts/1966-principih-obhhektno-orientirovannogo-programmirovanija)
+  - [habr - Понимание ООП в JS](https://habr.com/ru/company/enterra/blog/153365/)
+  - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)  
+  - [Википедия - парадигмы программирования](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%B8%D0%B3%D0%BC%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)  
+  - [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
   
-**Ссылки**
-- [code.mu - на пальцах](http://code.mu/books/javascript/oop/)
-- [code.mu - тоже на пальцах](http://code.mu/books/php/oop/osnovy-raboty-s-objektno-orientirovannym-programmirovaniem-v-php-1.html)
-- [habr - на пальцах 1](https://habr.com/ru/post/87205/)
-- [habr - на пальцах 2](https://habr.com/ru/post/87119/)
-- [Что такое ООП в паре слов](https://javarush.ru/groups/posts/1966-principih-obhhektno-orientirovannogo-programmirovanija)
-- [habr - Понимание ООП в JS](https://habr.com/ru/company/enterra/blog/153365/)
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)  
-- [Википедия - парадигмы программирования](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%B8%D0%B3%D0%BC%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)  
-- [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
-  
-<br></p></details>
-
+  <br></p>
+</details>
 
 <details><summary><b>Другие методологии программирования</b></summary><p>
 
@@ -254,8 +254,8 @@
   **Ссылки**
   - [Википедия - парадигмы программирования](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%B8%D0%B3%D0%BC%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)  
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>MVC для web</b></summary><p>
 
@@ -300,14 +300,14 @@ Model-View-Controller (модель-вид-контроллер)<br>
 **Модификации**<br>
 Есть много модификаций швблона MVC -HMVC (Hierarchical MVC) и другие
 
-//ToDo - дополнить
+[//]: # (todo: дополнить)
 
 **Ссылки**
 - [Концепция MVC для чайников](https://ruseller.com/lessons.php?id=666)
 - [MVC для веб: проще некуда](https://habr.com/ru/post/181772/)
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>Некоторые принципы программирования</b></summary><p>
 
@@ -348,7 +348,8 @@ Model-View-Controller (модель-вид-контроллер)<br>
   
   См видео "[Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)"
 
-<br></p></details>
+<br></p>
+</details>
 
 <br>
 <br>
