@@ -1,4 +1,4 @@
-# Шпаргалка по React JS & Redux #
+# Шпаргалка по React JS#
 
 #
 <details><summary><b>Базовые понятия</b></summary><p>
@@ -54,7 +54,7 @@
   <br><p>
 </details>
   
-<details><summary><b>Ещё разное про React</b> //ToDo - разбирать и дополнять</summary><p>
+<details><summary><b>Ещё разное про React</b> //*ToDo - разбирать и дополнять*</summary><p>
       
   **React JS и React Native**
   - React JS - js-библиотека для создания UI (2013)
@@ -171,7 +171,7 @@
   <br></p>
 </details>
   
-<details><summary><b>Компонент(а)</b></summary><p>
+<details><summary><b>Компонент</b></summary><p>
     
   Компонент - класс или функция, которая принимает данные и возвращает элементы React.
                                                                                              
