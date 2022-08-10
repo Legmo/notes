@@ -1,6 +1,5 @@
 # Шпаргалка по Redux #
 
-
 #
 <details><summary><b>REDUX</b></summary><p>
 
@@ -582,7 +581,6 @@ API react-redux connect() используется для создания ко�
 
 <br></p>
 </details>
-
 <br>
 <br>
 

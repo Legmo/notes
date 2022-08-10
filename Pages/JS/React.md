@@ -3,8 +3,8 @@
 #
 <details><summary><b>Базовые понятия</b></summary><p>
 
-  ---
-  <details><summary><b>Что такое React и какие у него особенности?</b></summary><p>
+---
+<details><summary><b>Что такое React и какие у него особенности?</b></summary><p>
    
   JS-библиотека для создания пользовательских интерфейсов.
   
@@ -54,7 +54,7 @@
   <br><p>
 </details>
   
-  <details><summary><b>Ещё разное про React</b> //ToDo - разбирать и дополнять</summary><p>
+<details><summary><b>Ещё разное про React</b> //ToDo - разбирать и дополнять</summary><p>
       
   **React JS и React Native**
   - React JS - js-библиотека для создания UI (2013)
@@ -105,20 +105,20 @@
   
   Когда пользователь открывает сайт, содержимое страницы должно быть загружено с сервера. В случае с SPA, это может занять некоторое время. Во время загрузки пользователи видят либо пустую страницу, либо анимацию загрузки. Учитывая, что по современным стандартам ожидание в течение более чем двух секунд может быть весьма заметным неудобством для пользователя, сокращение времени загрузки может оказаться крайне важным.
   
-  Virtual DOM позволяет React легко создавать изоморфные приложения.  В других JS-фрэймворках клиентская часть кода часто полагается на DOM браузера, которого нет на серверной стороне => нельзя использовать один код и на клиенте, и на сервере. React же дает нам абстракцию браузерного DOMа в виде виртуального DOMа. Это дает два основных преимущества:
- - код, который работает с виртуальным DOM в React не зависит от браузера и может выполняться на сервере;
- - React может оптимизировать операции над документами и снизить количество обращений к браузерному DOM и за счет этого значительно ускорить работу фронтенда.
+  Virtual DOM позволяет React легко создавать изоморфные приложения.  В других JS-фрэймворках клиентская часть кода часто полагается на DOM браузера, которого нет на серверной стороне => нельзя использовать один код и на клиенте, и на сервере. React же дает нам абстракцию браузерного DOMа в виде виртуального DOMа. 
+  
+  Это дает два основных преимущества:
+  - код, который работает с виртуальным DOM в React не зависит от браузера и может выполняться на сервере;
+  - React может оптимизировать операции над документами и снизить количество обращений к браузерному DOM и за счет этого значительно ускорить работу фронтенда.
  
  Одной из основных особенностей React является то, что он может выполняться на стороне клиента и, при этом, рендериться на стороне сервера, и эти части могут взаимодействовать друг с другом. Поэтому он широко используется для создания высокопроизводительных веб-приложений и пользовательских интерфейсов.
-   
    
   **//ToDo** - разобраться какая часть системы отвечает за преобразование JS в HTML? Скорее всего - браузер.
   
   <br><p>
 </details>
   
-  
-  <details><summary><b>Элемент</b></summary><p>
+<details><summary><b>Элемент</b></summary><p>
  
   Это JS-объект, который описывает узел DOM. <br>  
   Объектное представление некоторого пользовательского интерфейса. 
@@ -144,8 +144,8 @@
     <div id='login-btn'>Login</div>    
   ```
   
-  Компонент, же - класс или функция, которая принимает данные и возвращает элементы.
-  ```
+  Компонент же — класс или функция, которая принимает данные и возвращает элементы.
+  ```jsx
   //компонент Button принимает функцию onLogin и возвращает React элемент
     function Button ({ onLogin }) {
       return React.createElement(
@@ -157,15 +157,11 @@
   ```
   
   Надо только учесть, что когда мы работаем с JSX - мы не видим `React.createElement`. JSX позволяет писать это проще, но по факту, переделывает в тот самый `React.createElement`
-  ```
-  //Примеры создания React элемента
-  
-  React.createElement('div', className: 'container', 'Hello!')
-  
-  <div className='container'>Hello!</div>
-  
-  <Hello />
-  ```
+
+  Примеры создания React элемента:
+  - `React.createElement('div', className: 'container', 'Hello!')`
+  - `<div className='container'>Hello!</div>`
+  - `<Hello />`
   
   Т.е. компонент (класс/функция) генеририрует элемент (js-объект). Этот элемент будет отображён в DOM (с помощью функции ReactDOM.render), и у нас появиться новый DOM узел. А браузер на основе этого DOM-узла отобразит какую-то информацию на экране (кнопку, например)
   
@@ -175,7 +171,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>Компонент(а)</b></summary><p>
+<details><summary><b>Компонент(а)</b></summary><p>
     
   Компонент - класс или функция, которая принимает данные и возвращает элементы React.
                                                                                              
@@ -188,7 +184,6 @@
   Когда компонент создан, автоматически появляется тэг <Имя_Компонента /> - при его помощи мы выводим этот JSX в нужном месте.
     
   Т.е. компонент (класс/функция) генеририрует элемент (js-объект). Этот элемент будет отображён в DOM (с помощью функции ReactDOM.render), и у нас появиться новый DOM узел. А браузер на основе этого DOM-узла отобразит какую-то информацию на экране (кнопку, например)
-  
   
   Основополагающая концепция React.js – многоразовые компоненты. Разработчик создает небольшие части кода, которые можно объединять, чтобы сформировать более крупные или использовать их как самостоятельные элементы интерфейса.
   
@@ -203,7 +198,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>События</b> //ToDo - доработать</summary><p>
+<details><summary><b>События</b> //ToDo - доработать</summary><p>
     
   При обработке событий важно понимать, что все атрибуты элементов React именуются с помощью camelCase. При работе с функциями, мы передаем фактическую ссылку на функцию, а не строку.
   
@@ -212,7 +207,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>Как работает React?</b> //ToDo - доработать</summary><p>
+<details><summary><b>Как работает React?</b> //ToDo - доработать</summary><p>
   
   **В целом, схема работы примерно такая (примерм из PReact)**
   - Компоненты написанные на JSX (HTML и JS) преобразуются в чистый JS с помощью CLI инструмента Babel. 
@@ -251,8 +246,6 @@
   
   *Сценарий #3: Удаление/Unmounting компонента*
   - Удаление компонента похоже на удаление одного узла. За исключением того, что мы удаляем узел, который имеет ссылку на компонент, в этом случае библиотека вызовет “componentWillUnmount”, а затем рекурсивно удалит все дочерние элементы DOM.
-  
-        
         
   **Babel**<br>
   Транспилятор. Преобразует JSX в обычный JS<br>
@@ -279,18 +272,15 @@
   
   Самым популярным бандлером сначала был Browserify, выпущенный в 2011 г. Он был пионером в использовании node.js-выражений require во фронтенде (это позволило npm стать самым востребованным диспетчером пакетов). К 2015-му лидером стал webpack (ему помогла популярность фронтенд-фреймворка React, использующего все возможности этого бандлера).
   
-  
-  
   **Ссылки**
   - [habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
   - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
   - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
-  - []()
   
   <br></p>
 </details>
   
-  <details><summary><b>Virtual DOM</b> //ToDo - доработать</summary><p>
+<details><summary><b>Virtual DOM</b> //ToDo - доработать</summary><p>
     
   Это дерево React элементов на JavaScript.
  
@@ -318,7 +308,6 @@
    Важен тот момент, что так как значение берется из кеша, то возвращается та же самая ссылка. И так как у нас все данные иммутабельны, то нужна мемоизация, которая будет проверять значения по ссылке, а не глубоким сравнением
    
    Также многие забывают, что использование стрелочных функций, bind и литералов массивом \ объектов в рендере создает новую ссылку при каждом рендере. Решается использованием bind один раз в конструкторе или использованием свойств класса и выносом литералов за пределы рендера. См. подробнее: [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
-   
    
    Когда мы создаем динамичную интерактивную веб-страницу, мы хотим, чтобы DOM обновлялся так быстро, как это возможно после изменения состояния определенного элемента. Для данной задачи некоторые фреймворки используют прием, который называется «dirty checking» и заключается в регулярном опросе состояния документа и проверке изменений в структуре данных. Как вы можете догадаться, подобная задача может стать самой настоящей головной болью в случае высоконагруженных приложений. Virtual DOM, в свою очередь, хранится в памяти. Именно поэтому в момент, когда «настоящий» DOM меняется, React может изменять Virtual DOM в мгновение ока. React «собирает» такие изменения сравнивает их с состоянием DOM, а затем перерисовывает изменившиеся компоненты.
    
@@ -349,7 +338,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>Props (свойства)</b></summary><p>
+<details><summary><b>Props (свойства)</b></summary><p>
   
   Произвольные данные, которые принимают компоненты. Это могут быть и функции.
   
@@ -369,21 +358,22 @@
   <br></p>
 </details>
   
-  
-  <details><summary><b>Props и производительность</b></summary><p>
+<details><summary><b>Props и производительность</b></summary><p>
   
   Основная опасность - увеличение количества render, которые мешают производительности
   
-  Важно: при вызове render() перерисовывается не только родительский компонент, но и все дочерние (хотя, в них свойства могли и не поменяться). Т.е. если у родительского компонента внутри render есть дочерние компоненты - они будут перерисовываться. Соотвественно, если мы вызываем render на родительском компоненте - перерисуем всё приложение. Чтоб решить этот вопрос - используем создание компонента от PureComponent
+  Важно: при вызове render() перерисовывается не только родительский компонент, но и все дочерние (хотя, в них свойства могли и не поменяться). Т.е. если у родительского компонента внутри render есть дочерние компоненты - они будут перерисовываться. Соответственно, если мы вызываем render на родительском компоненте - перерисуем всё приложение. Чтоб решить этот вопрос - используем создание компонента от PureComponent
     
-  Даже если я создал класс от PureComponent - это не гарантирует отсутсвие лишних ренедров при тех же данных. Одна из причин - анонимные функци (они при каждом рендере новые). 
+  Даже если я создал класс от PureComponent - это не гарантирует отсутствие лишних ренедров при тех же данных. Одна из причин - анонимные функции (они при каждом рендере новые). 
+  Неверно:
   ```
-  //Неверно:
   render() {
     return <Component onClick= {() => this.hangleClick}>
   }
-  
-  //Верно:
+  ```
+
+  Верно:
+  ```
   handleClick = () => {...}
   render() {
     return <Component onClick= {this.hangleClick}>
@@ -391,19 +381,20 @@
   ```
   
   То же самое с объектами - не создаём их прямо в функции, а подключаем как константу
-  
-    ```
-    //Неверно:
-    render() {
+  Неверно:
+  ```
+    render(){
       return <Component test= {{a: 1}}>
-    }
-    
-    //Верно:
+    };
+  ```
+
+  Верно:
+  ```
     const obj = {a:1}
     render() {
       return <Component test= {obj}>
     }
-    ```
+  ```
   
  **Ссылки**
   - [YouTube - Какие props портят производительность](https://www.youtube.com/watch?v=zSDOxWhPG_U)
@@ -411,8 +402,7 @@
   <br></p>
 </details>
   
-  
-  <details><summary><b>State (состояние)</b></summary><p> 
+<details><summary><b>State (состояние)</b></summary><p> 
     
   Специальный js-объект внутри компонента. Хранит данные, которые могут изменятся с течением времени.<br>
   Описывает внутреннее состояние компонента. 
@@ -442,16 +432,15 @@
     
   <br></p>
 </details>
-  
     
-  <details><summary><b>Композиция в React</b></summary><p>
+<details><summary><b>Композиция в React</b></summary><p>
     
   Комбинирование меньших компонентов при формировании большего.
       
   <br></p>
 </details>
   
-  <details><summary><b>Reverse Data Flow - обратный поток данных</b></summary><p> 
+<details><summary><b>Reverse Data Flow - обратный поток данных</b></summary><p> 
   
   Изменение state родительского компонента из его компонента-потомка.
   
@@ -477,7 +466,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>State lifting - подъём состояния</b></summary><p>
+<details><summary><b>State lifting - подъём состояния</b></summary><p>
     
   Перенос данных / функций из дочернего элемента в родителя, чтоб они были доступны нескольким потомкам. 
   А из потомка вызываю эти обработчики как коллбэки (через props) или получаю эти данные в виде props.
@@ -490,7 +479,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>Key</b> //ToDo - доработать</summary><p>
+<details><summary><b>Key</b> //ToDo - доработать</summary><p>
     
   Атрибут, особое уникальное свойство элемента. Связывает данные и элементы React.<br>
   Если быть точным - это special props. Не включается в объект props и недоступно внутри самого компонента.
@@ -516,7 +505,7 @@
   <br></p>
 </details>
   
-  <details><summary><b>Refs</b> //ToDo - доработать</summary><p>
+<details><summary><b>Refs</b> //ToDo - доработать</summary><p>
  
   Аттрибут HTML-элемента или классового компонента.<br>
   Если быть точным - это special props. Не включается в объект props и недоступно внутри самого компонента.<br>
@@ -565,7 +554,7 @@
   <br></p>
 </details>
     
-  <details><summary><b>Среда React</b></summary><p>
+<details><summary><b>Среда React</b></summary><p>
     
   Для работы используется:
   - **NPM/Yarn** - для управления зависимостями. Ну, и чтобы установить Create React App (для работы npm нужен Ruby)
@@ -584,16 +573,14 @@
   <br></p>
 </details>
     
+<details><summary><b>React + Bootstrap</b></summary><p>
     
-  <details><summary><b>React + Bootstrap</b></summary><p>
-    
-   C Bootsrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
+ C Bootstrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
    
   <br></p>
 </details>
     
-    
-  <details><summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
+<details><summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
     
   - есть некий дизайн (UI)
   - глядя на него, я начинаю общаться с заказчиком, и разбираться - какие данный приходят на ту или иную страницу, какие с ними действия происходят, и т.д.
@@ -605,13 +592,15 @@
   <br></p>
 </details>
     
+<details><summary>устанавливая пакет - дописывать в конце `--save`</summary><p>
+
+  Означает, что нужно внести запись в package.json
+  `npm install react-router-dom --save`
+
+  <br></p>
+</details>
     
-  <details><summary>устанавливая пакет - дописывать в конце --save Означает, что нужно внести запись в package.json</summary>
-      npm install react-router-dom --save
-  </details>
-    
-    
-  <details><summary><b>Методы отладки React</b></summary><p>
+<details><summary><b>Методы отладки React</b></summary><p>
 
   - React devtools поставляется в двух видах
     - отдельным пакетами
@@ -635,18 +624,32 @@
   <br></p>
 </details>
   
-  
-   <details><summary>В React мы никогда не лезем в DOM напрямую.</summary>
-        Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM
-    </details>
+<details><summary>В React мы никогда не лезем в DOM напрямую.</summary><p>
+
+  Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM    
+
+  <br></p>
+</details>
     
-  <details><summary>Избегать циркулярных (циклических) зависимостей</summary>
-      когда , например,  файл  a.js импортирует в себя файл b.js, и при этом внутри b,js есть импорт файла a.js. То есть фалы импортируются друг в друга. Это говнокод, идущий в разрез с принципами функционального программирования. Т.е не должно быть именно взаимных импортов. 
-      Но, можно вызвать функцию из другого файла, и в качестве данных отдать в неё свою функцию. Т.е. использовать callback.
-      https://www.youtube.com/watch?v=iN6QXbHedQc
-  </details>
+<details><summary>Избегать циркулярных (циклических) зависимостей</summary>
+
+  Например: 
+  - файл a.js импортирует в себя файл b.js, 
+  - при этом внутри b,js есть импорт файла a.js. 
+  - То есть фалы импортируются друг в друга. 
   
-  <details><summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
+  Это плохой код, идущий в разрез с принципами функционального программирования. 
+  Т.е не должно быть именно взаимных импортов. 
+  
+  Но, можно вызвать функцию из другого файла, и в качестве данных отдать в неё свою функцию. Т.е. использовать callback.
+
+  **Ссылки**
+  - https://www.youtube.com/watch?v=iN6QXbHedQc
+
+  <br></p>
+</details>
+  
+<details><summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
 
 	```javascript
         let onQuoteChanged = (event) => {
@@ -655,9 +658,9 @@
         return ( <textarea onChange={onQuoteChanged} value="Test" /> }
 	```
 
-  </details>
+</details>
   
-  <details><summary><b>Избегать изменения элементов/данных по ссылке</b></summary><p>
+<details><summary><b>Избегать изменения элементов/данных по ссылке</b></summary><p>
   
   https://www.youtube.com/watch?v=NhT5nMvve4Q
   
@@ -676,12 +679,12 @@
   Но, если в объекте oldObject были вложенные объекты/массивы - они передадутся опять по ссылке, а не создадут полноценной копии.
   
   <br></p>
-- </details>
+</details>
   
-  <details><summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
-  </details>
+<details><summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
+</details>
   
-  <details><summary>Передача аргументов в обработчики событий</summary><p>
+<details><summary>Передача аргументов в обработчики событий</summary><p>
   
   Внутри цикла часто нужно передать дополнительный аргумент в обработчик события. 
   Например, если id — это идентификатор строки, можно использовать следующие варианты:
@@ -697,10 +700,9 @@
   - https://ru.reactjs.org/docs/handling-events.html
  
   <br></p>
- </details>
+</details>
   
-  
-  <details><summary><b>Тестирование</b></summary><p>
+<details><summary><b>Тестирование</b></summary><p>
   
   Есть unit-тестирование и e2e тестирование. Разбираться.
   
@@ -732,7 +734,7 @@
   <br></p>
 </details>
   
-  **Ссылки:**
+**Ссылки:**
   - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
   - [Оф. документация - обучение практическое](https://ru.reactjs.org/tutorial/tutorial.html)
   - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
@@ -2226,22 +2228,21 @@
 - [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b)
 - [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
 - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
-- []()
-- []()
-- -[IT-Kamasutra - ReactJS - Путь Самурая 2.0 (YouTube, 23 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
-  -[IT-Kamasutra - JS+React для Juniors (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMuHec4RCfGuMwiij2_IvFR)
-  -[IT-Kamasutra - React JS - путь самурая 1.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
-  -[IT-Kamasutra - GIT (YouTube, 2 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPgk3pH7vDxoMh2C5fM8fXP)
-  -[IT-Kamasutra - JS в деталях (YouTube, 48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
-  -[IT-Kamasutra - Уроки JavaScript с нуля (YouTube, 29 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
-  -[IT-Kamasutra - React - Кабзда как подробно (YouTube, 3 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM49Jb2XZSf4READ3kO4UFL)
-  -[IT-Kamasutra - Todolist - React, TypeScript (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMM8zDacOPhWfVitvOa_Fhu)
-  -[IT-Kamasutra - Ajax в деталях (YouTube, 9 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNDDIp2MGbv8cMYsoUO1lew)
-  -[IT-Kamasutra - addEventListener в деталях (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNwI9PyQ_IFW_dLpqBIuIyu)
-  -[IT-Kamasutra - react-четверг (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN-JSjyJDFtGdRlsapKDpp9)
-  -[IT-Kamasutra - JavaScript для собеседований (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMu_yc4R9btXnbbn4XqEwWj)
-  -[IT-Kamasutra - TypeScript Камасутра (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM6f9AdaI8bUctNuGiAYKpO)
-  -[IT-Kamasutra - React English (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DOOi7Wqsv7ia5GJ_S9YlfDg)
+
+-[IT-Kamasutra - ReactJS - Путь Самурая 2.0 (YouTube, 23 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
+-[IT-Kamasutra - JS+React для Juniors (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMuHec4RCfGuMwiij2_IvFR)
+-[IT-Kamasutra - React JS - путь самурая 1.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+-[IT-Kamasutra - GIT (YouTube, 2 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPgk3pH7vDxoMh2C5fM8fXP)
+-[IT-Kamasutra - JS в деталях (YouTube, 48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
+-[IT-Kamasutra - Уроки JavaScript с нуля (YouTube, 29 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
+-[IT-Kamasutra - React - Кабзда как подробно (YouTube, 3 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM49Jb2XZSf4READ3kO4UFL)
+-[IT-Kamasutra - Todolist - React, TypeScript (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMM8zDacOPhWfVitvOa_Fhu)
+-[IT-Kamasutra - Ajax в деталях (YouTube, 9 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNDDIp2MGbv8cMYsoUO1lew)
+-[IT-Kamasutra - addEventListener в деталях (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNwI9PyQ_IFW_dLpqBIuIyu)
+-[IT-Kamasutra - react-четверг (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN-JSjyJDFtGdRlsapKDpp9)
+-[IT-Kamasutra - JavaScript для собеседований (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMu_yc4R9btXnbbn4XqEwWj)
+-[IT-Kamasutra - TypeScript Камасутра (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM6f9AdaI8bUctNuGiAYKpO)
+-[IT-Kamasutra - React English (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DOOi7Wqsv7ia5GJ_S9YlfDg)
 
 <br></p>
 </details>
