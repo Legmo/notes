@@ -733,8 +733,9 @@
   
   <br></p>
 </details>
-  
-**Ссылки:**
+
+<details><summary><b>Ссылки</b></summary><p>
+
   - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
   - [Оф. документация - обучение практическое](https://ru.reactjs.org/tutorial/tutorial.html)
   - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
@@ -747,7 +748,10 @@
   - [Максим Пацианский](https://maxpfrontend.ru/)
   - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
   - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
-  
+
+<br></p>
+</details>
+
 <br></p>
 </details>
 
