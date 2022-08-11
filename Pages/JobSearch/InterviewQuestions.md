@@ -17,11 +17,6 @@
     - Основные понятия React.
     - Устройство Redux (store, createStore, state, reducer, actions, action creators, dispatch, provider, connect, middleware,  mapDispatchToProps, mapStateToProps)
 
-  - [github.com/learning-zone — React Interview Questions (en)](https://github.com/learning-zone/react-interview-questions)
-  - [Агапов Е - Вопросы по React для подготовки к собеседованию. Old. Версия 1 (322 вопроса, 2021 год)](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
-  - [Агапов Е - Вопросы по React для подготовки к собеседованию. Old. Версия 2 (180 вопросов, 2021 год)](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
-  - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 1](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
-  - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 2](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
   - [Вопросы на собеседовании React.js](https://github.com/likezninjaz/react-ru-interview-questions)
     - JavaScript
       - Какие типы данных существуют в JavaScript?
@@ -200,6 +195,11 @@
   - [Козлова О - Сети в вопросах и ответах. HTTP-протокол. AJAX. JSONP. CORS.COMET.](https://medium.com/@olgakozlova/%D1%81%D0%B5%D1%82%D0%B8-%D0%B2-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0%D1%85-%D0%B8-%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D0%B0%D1%85-http-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-ajax-jsonp-cors-comet-53c60319a5a7)
   - [CSSSR - «И так сойдёт!» или главные ошибки кандидатов](http://blog.csssr.ru/2018/08/16/candidates-mistakes)
   - [Кожанова М («Нетология») - Что спрашивают у начинающего разработчика JavaScript на собеседованиях и в тестовых заданиях](https://habr.com/ru/company/netologyru/blog/667520/)
+  - [github.com/learning-zone — React Interview Questions (en)](https://github.com/learning-zone/react-interview-questions)
+  - [Агапов Е - Вопросы по React для подготовки к собеседованию. Old. Версия 1 (322 вопроса, 2021 год)](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
+  - [Агапов Е - Вопросы по React для подготовки к собеседованию. Old. Версия 2 (180 вопросов, 2021 год)](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
+  - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 1](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
+  - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 2](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
 
   - **Популярные задачки**
     - Замыкания - например использование var/let в for()
