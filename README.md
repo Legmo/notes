@@ -32,6 +32,7 @@
 ## Общие вопросы ##
 - [UX/UI](/Pages/_Other/UxUi.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
+- [Тестирование](/Pages/Programming/Testing.md)
 - [Программирование в целом](/Pages/Programming/Programming.md)
 
 <br>
