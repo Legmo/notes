@@ -2243,12 +2243,6 @@
 <details><summary><b>Ссылки</b></summary><p>
 
 - [Офф. сайт]( https://ru.reactjs.org/)
-- [Паттерны React](https://habr.com/ru/post/309422/)
-- [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80)
-- [11 советов для тех, кто использует Redux при разработке React-приложений](https://habr.com/ru/company/ruvds/blog/456336/)
-- [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b)
-- [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
-- [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
 - [Агапов Е - База знаний в GitHub](https://github.com/harryheman/my-js)
 - [Агапов Е - my-js.org/](https://my-js.org/)
 
