@@ -1,9 +1,11 @@
 <h1>Шпаргалка по React JS</h1>
 
 [//]: # (Базовые понятия)
-<details><summary><b>Базовые понятия</b></summary><p>
+<details><summary><h3>Базовые понятия</h3></summary><p>
 
 ---
+
+[//]: # (Что такое React и какие у него особенности?)
 <details><summary><b>Что такое React и какие у него особенности?</b></summary><p>
    
   JS-библиотека для создания пользовательских интерфейсов.
@@ -54,7 +56,7 @@
   <br><p>
 </details>
 
-[//]: # (todo: разбирать и дополнять)
+[//]: # (Ещё разное про React todo: разбирать и дополнять)
 <details><summary><b>Ещё разное про React</b> </summary><p>
 
   **React JS и React Native**
@@ -118,7 +120,8 @@
   
   <br><p>
 </details>
-  
+
+[//]: # (Элемент)
 <details><summary><b>Элемент</b></summary><p>
  
   Это JS-объект, который описывает узел DOM. <br>  
@@ -171,7 +174,8 @@
   
   <br></p>
 </details>
-  
+
+[//]: # (Компонент)
 <details><summary><b>Компонент</b></summary><p>
     
   Компонент - класс или функция, которая принимает данные и возвращает элементы React.
@@ -344,7 +348,8 @@
      
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>Props (свойства)</b></summary><p>
 
   Определения:  
@@ -396,7 +401,8 @@
 
 <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>Props и производительность</b></summary><p>
   
   Основная опасность - увеличение количества render, которые мешают производительности
@@ -440,7 +446,8 @@
   
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>State (состояние)</b></summary><p> 
     
   Специальный js-объект внутри компонента. Хранит данные, которые могут изменятся с течением времени.<br>
@@ -471,14 +478,16 @@
     
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary><b>Композиция в React</b></summary><p>
     
   Комбинирование меньших компонентов при формировании большего.
       
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>Reverse Data Flow - обратный поток данных</b></summary><p> 
   
   Изменение state родительского компонента из его компонента-потомка.
@@ -504,7 +513,8 @@
   
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>State lifting - подъём состояния</b></summary><p>
     
   Перенос данных / функций из дочернего элемента в родителя, чтоб они были доступны нескольким потомкам. 
@@ -594,7 +604,8 @@
    
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary><b>Среда React</b></summary><p>
     
   Для работы используется:
@@ -613,14 +624,16 @@
   
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary><b>React + Bootstrap</b></summary><p>
     
  C Bootstrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React. 
    
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary><b>Алгоритм мыследеятельности при создании React-приложения</b></summary><p>
     
   - есть некий дизайн (UI)
@@ -632,7 +645,8 @@
       
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary>устанавливая пакет - дописывать в конце `--save`</summary><p>
 
   Означает, что нужно внести запись в package.json
@@ -640,7 +654,8 @@
 
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary><b>Методы отладки React</b></summary><p>
 
   - React devtools поставляется в двух видах
@@ -664,14 +679,16 @@
     
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary>В React мы никогда не лезем в DOM напрямую.</summary><p>
 
   Никаких getElementById и т.д. Мы работаем с VirtualDOm, а уже сам React занимается связкой Virtual DOM & DOM    
 
   <br></p>
 </details>
-    
+
+[//]: # ()
 <details><summary>Избегать циркулярных (циклических) зависимостей</summary>
 
   Например: 
@@ -689,7 +706,8 @@
 
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary>Как правильно получать данные из html-элемента (без использования ref)</summary>
 
 	```javascript
@@ -700,7 +718,8 @@
 	```
 
 </details>
-  
+
+[//]: # ()
 <details><summary><b>Избегать изменения элементов/данных по ссылке</b></summary><p>
   
   https://www.youtube.com/watch?v=NhT5nMvve4Q
@@ -721,10 +740,12 @@
   
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary>При работе с функциями, мы передаём фактическую ссылку на функцию, а не строку.</summary>
 </details>
-  
+
+[//]: # ()
 <details><summary>Передача аргументов в обработчики событий</summary><p>
   
   Внутри цикла часто нужно передать дополнительный аргумент в обработчик события. 
@@ -742,7 +763,8 @@
  
   <br></p>
 </details>
-  
+
+[//]: # ()
 <details><summary><b>Тестирование</b></summary><p>
   
   Есть unit-тестирование и e2e тестирование. Разбираться.
@@ -775,6 +797,7 @@
   <br></p>
 </details>
 
+[//]: # ()
 <details><summary><b>Ссылки</b></summary><p>
 
   - [Оф. документация - обучение теоретическое](https://ru.reactjs.org/docs/)
@@ -796,10 +819,10 @@
 <br></p>
 </details>
 
----
 [//]: # (Компоненты)
 <details><summary><h3>Компоненты</h3></summary><p>
-
+  
+[//]: # ()
   <details><summary><b>Названия компонент начинаются с Заглавной буквы</b></summary><p>
     
   Это важно, так как в работе будут сочетаться HTML-элементы и элементы React. <br>
@@ -807,7 +830,8 @@
   
   <br></p>
 </details>
-  
+
+[//]: # ()
   <details><summary><b>Компоненты = чистые функции</b></summary><p>
      
   React-компоненты обязаны вести себя как чистые функции по отношению к своим пропсам.<br>
@@ -932,6 +956,7 @@
   <br></p>
 </details>
 
+[//]: # ()
   <details><summary><b>Компоненты с состоянием и без (stateful/stateless)</b></summary><p>
     
    Некоторые компоненты используют в React метод setState(), а некоторые нет.<br>
@@ -1104,7 +1129,7 @@
 </details>
 
 [//]: # (todo: доработать) 
-<details><summary><b>PureComponent</b></summary><p>
+  <details><summary><b>PureComponent</b></summary><p>
   
   Особый способ создания классовых компонент.<br>
   Изменяет lifecycle-метод shouldComponentUpdate, автоматически проверяя, нужно ли заново отрисовывать компонент.
@@ -1196,7 +1221,8 @@
   <br></p>
 </details>
 
-<details><summary><b>Компоненты высшего порядка. Отличия от декораторов</b> (Higher Order Components, HOC)</summary><p>
+[//]: # (Компоненты высшего порядка. Отличия от декораторов Higher Order Components, HOC)
+  <details><summary><b>Компоненты высшего порядка. Отличия от декораторов</b> (Higher Order Components, HOC)</summary><p>
 
   HOC — функция.<br> 
   Принимает компонент и возвращает новый контейнерный компонент (функциональный или классовый).<br>
@@ -1275,8 +1301,8 @@
   Ещё один способ сделать логику переиспользуемой. Это становится возможным при помощи передаваемого children-а в виде функции.
 
   **Ссылки**
-  - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-  - [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
+- [habr - Паттерны React](https://habr.com/ru/post/309422/)
     
   <br></p>
 </details>
@@ -1299,12 +1325,9 @@
 <br></p>
 </details>
 
----
 [//]: # (Компоненты. Жизненный цикл)
 <details><summary><b>Компоненты. Жизненный цикл</b></summary><p>
   
-  ---
- 
   Методы, которые React вызывает при разных событиях из жизни компонента (появление, удаление...)<br>
   Каждый классовый компонент имеет несколько «методов жизненного цикла».<br>
   Можно переопределить методы для запуска кода в определённое время в процессе работы приложения.<br>
@@ -1557,7 +1580,6 @@
   1. Если разница есть, фреймворк отрисует компонент.
   1. Так как процесс обновления в любом случае произошел, Реакт вызовет метод componentDidUpdate.
 
-  ---
   
   1. Сначала мы определяем шаблон для React для создания элементов из компонента.
   1. Затем мы указываем React где будем его использовать. Например, внутри вызова функции render другого компонента или с помощью ReactDOM.render.
@@ -1585,7 +1607,6 @@
 [//]: # (Context API)
 <details><summary><b>Context API</b></summary><p>
   
-  ---  
   <details><summary><b>Что такое контекст и зачем он нужен?</b></summary><p>
   
   Объект, который создаётся у родителя и доступен всем детям.
@@ -1636,7 +1657,6 @@
 [//]: # (Хуки)
 <details><summary><b>Хуки</b></summary><p>
   
-  ---
   
   <details><summary>Что такое Хук и зачем он нужен?</summary><p>
   
@@ -1752,7 +1772,6 @@
 [//]: # (Роутинг)
 <details><summary><b>Роутинг</b></summary><p>
   
-  ---  
 <details><summary>Что такое React-Router?</summary><p>
   
   React-Router - набор компонентов определяющих на основе текущего пути, какой компонент будет выводиться.
@@ -1814,8 +1833,8 @@
 [//]: # (Статическая типизация)
 <details><summary><b>Статическая типизация</b></summary><p>
   
-  ---
-  <details><summary><b>Про статическую типизацию</b></summary><p>
+[//]: # ()
+<details><summary><b>Про статическую типизацию</b></summary><p>
   
   При статической типизации мне необязательно напоминать компилятору, что данная переменная, например, целое число, и всегда должно им оставаться. Эта информация хранится в программе, и даже если я, забывшись, попытаюсь изменить ее значение на недопустимое, ничего страшного не произойдет.
     
@@ -1850,8 +1869,9 @@
   
   <br></p>
 </details>
-  
-  <details><summary><b>Type Script</b> - язык (Microsoft)</summary><p>
+
+[//]: # ()
+<details><summary><b>Type Script</b> - язык (Microsoft)</summary><p>
   
   Язык разработанный Microsoft. Совместим с JS (расширяет его). Добавляет возможности статической типизации и ООП.<br>
   
@@ -1883,7 +1903,8 @@
 <br></p>
 </details>
 
-  <details><summary><b>Flow</b> - библиотека (Facebook)</summary><p>
+[//]: # ()
+<details><summary><b>Flow</b> - библиотека (Facebook)</summary><p>
 
   Open source библиотека для статической проверки типов.<br>
   Библиотеку разработала и выпустила Facebook.<br>
@@ -1893,8 +1914,9 @@
 
   <br></p>
 </details>
-  
-  <details><summary><b>PropTypes</b> - библиотека React</summary><p>
+
+[//]: # ()
+<details><summary><b>PropTypes</b> - библиотека React</summary><p>
     
   Очень простой - проверяет только props.
   
@@ -1942,8 +1964,9 @@
         
   <br></p>
 </details>
-  
-  <details><summary><b>Различия PropTypes и Flow</b></summary><p>
+
+[//]: # ()
+<details><summary><b>Различия PropTypes и Flow</b></summary><p>
     
   Flow - почти язык
   
@@ -2141,7 +2164,6 @@
   <br></p>
 </details>
 
----
 [//]: # (CSS)
 <details><summary><h3>CSS</h3></summary><p>
 
@@ -2201,7 +2223,6 @@
   <br></p>
 </details>
 
----
 [//]: # (Ducks. todo: осмыслять)
 <details><summary><h3>Ducks</h3></summary><p>
 
@@ -2212,7 +2233,6 @@
 <br></p>
 </details>
 
----
 [//]: # (Тестирование React-component)
 <details><summary><h3>Тестирование React-component</h3></summary><p>
 
@@ -2225,7 +2245,6 @@
 <br></p>
 </details>
 
----
 [//]: # (Быстродействие и оптимизация React. todo: осмыслять)
 <details><summary><h3>Быстродействие и оптимизация React</h3></summary><p>
 
@@ -2250,21 +2269,20 @@
 
 **Ссылки**
 - [Гайд по оптимизации веб- приложений в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BF%D0%BE-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-5684280a445d)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/455505/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/442650/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/343888/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
-- [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
-- [Habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
-- [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)
-- [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
-- [см. раздел «Redux» - Быстродействие и оптимизация Redux](Redux.md)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/455505/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/442650/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/343888/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
+  - [habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
+  - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+  - [Habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
+  - [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)
+  - [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
+  - [см. раздел «Redux» - Быстродействие и оптимизация Redux](Redux.md)
 
 <br></p>
 </details>
 
----
 [//]: # (Ссылки)
 <details><summary><h3>Ссылки</h3></summary><p>
 
