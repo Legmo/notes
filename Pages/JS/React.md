@@ -2202,39 +2202,26 @@
 </details>
 
 #
-<details><summary><b>Ссылки — Best practices</b></summary><p>
-
-**Ссылки**
-- [Паттерны React](https://habr.com/ru/post/309422/)
-- [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80)
-- [11 советов для тех, кто использует Redux при разработке React-приложений](https://habr.com/ru/company/ruvds/blog/456336/)
-- [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b)
-- [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
-- [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
-
-<br></p>
-</details>
-
-#
 [//]: # (todo: осмыслять)
-<details><summary><b>Быстродействие и оптимизация</b></summary><p>
+<details><summary><b>Быстродействие и оптимизация React</b></summary><p>
 
-**Про изменение параметров функции, сайд-эффекты, cloneDeep и оптимизацию react-приложений**
-Никогда, никогда, никогда в жизни не делайте так
-Изменения параметров функции это зашквар если честно - это сразу +50% к появлению сайд эффектов
-Изменять параметры функции можно только в одном случае, если у вас рекурсия и вы изменяете объект
+**Изменение параметров функции, side-эффекты и cloneDeep**<br>
+Никогда, никогда, никогда в жизни не делайте так!
+Изменения параметров функции это зашквар если честно - это сразу +50% к появлению сайд эффектов.
+Изменять параметры функции можно только в одном случае, если у вас рекурсия и вы изменяете объект.
 
-хотите такой же объект, делайте копию
-есть крутая штука, cloneDeep у lodash
-пользуйтесь ей - это сразу избавил вас от неожиданных последствий
+Хотите такой же объект, делайте копию. 
+Есть крутая штука, cloneDeep у lodash
+Пользуйтесь ей - это сразу избавил вас от неожиданных последствий
 
-Оптимизацию react приложений, я всех с кем в проектах участвую заставляю изучать, это сейчас маст хэв
+Оптимизацию react приложений, я заставляю изучать всех, с кем в проектах участвую. Это сейчас «must have»
 
-В ComponentDidMount мы имеем право сделать сайд-эффект
+**Side-эффекты в методах жизненного цикла**<br>
+В `ComponentDidMount` мы имеем право сделать сайд-эффект
 Сайд-эффектами являются запросы на сервер, асинхронные операции, setTimeout, обращения к DOM-элементам напрямую
 В результате компонента будет перерисована, и будет вызван уже не ComponentDidMount, а ComponentDidUpdate
 
-В ComponentDidUpdate мы имеем право сделать сайд-эффект, но уже с неким условием, которое позволить его в какой-то момент прекратить
+В `ComponentDidUpdate` мы имеем право сделать сайд-эффект, но уже с неким условием, которое позволить его в какой-то момент прекратить
 Потому что в результате будет вызвана перерисовка компоненты, снова вызван ComponentDidUpdate... И если нет условия - получим цикл, и приложение зависнет
 
 **Ссылки**
@@ -2247,7 +2234,21 @@
 - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
 - [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)
-- [Раздел Redux - Оптимизация React-Redux](Redux.md)
+- [см. раздел «Redux» - Быстродействие и оптимизация Redux](Redux.md)
+
+<br></p>
+</details>
+
+#
+<details><summary><b>Ссылки — Best practices</b></summary><p>
+
+**Ссылки**
+- [Паттерны React](https://habr.com/ru/post/309422/)
+- [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80)
+- [11 советов для тех, кто использует Redux при разработке React-приложений](https://habr.com/ru/company/ruvds/blog/456336/)
+- [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b)
+- [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
+- [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
 
 <br></p>
 </details>
@@ -2271,21 +2272,21 @@
 - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
 - [Агапов Е - База знаний в GitHub](https://github.com/harryheman/my-js)
 - [Агапов Е - my-js.org/](https://my-js.org/)
-
--[IT-Kamasutra - ReactJS - Путь Самурая 2.0 (YouTube, 23 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
--[IT-Kamasutra - JS+React для Juniors (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMuHec4RCfGuMwiij2_IvFR)
--[IT-Kamasutra - React JS - путь самурая 1.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
--[IT-Kamasutra - GIT (YouTube, 2 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPgk3pH7vDxoMh2C5fM8fXP)
--[IT-Kamasutra - JS в деталях (YouTube, 48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
--[IT-Kamasutra - Уроки JavaScript с нуля (YouTube, 29 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
--[IT-Kamasutra - React - Кабзда как подробно (YouTube, 3 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM49Jb2XZSf4READ3kO4UFL)
--[IT-Kamasutra - Todolist - React, TypeScript (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMM8zDacOPhWfVitvOa_Fhu)
--[IT-Kamasutra - Ajax в деталях (YouTube, 9 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNDDIp2MGbv8cMYsoUO1lew)
--[IT-Kamasutra - addEventListener в деталях (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNwI9PyQ_IFW_dLpqBIuIyu)
--[IT-Kamasutra - react-четверг (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN-JSjyJDFtGdRlsapKDpp9)
--[IT-Kamasutra - JavaScript для собеседований (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMu_yc4R9btXnbbn4XqEwWj)
--[IT-Kamasutra - TypeScript Камасутра (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM6f9AdaI8bUctNuGiAYKpO)
--[IT-Kamasutra - React English (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DOOi7Wqsv7ia5GJ_S9YlfDg)
+- 
+- [IT-Kamasutra - ReactJS - Путь Самурая 2.0 (YouTube, 23 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
+- [IT-Kamasutra - JS+React для Juniors (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMuHec4RCfGuMwiij2_IvFR)
+- [IT-Kamasutra - React JS - путь самурая 1.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+- [IT-Kamasutra - GIT (YouTube, 2 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPgk3pH7vDxoMh2C5fM8fXP)
+- [IT-Kamasutra - JS в деталях (YouTube, 48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
+- [IT-Kamasutra - Уроки JavaScript с нуля (YouTube, 29 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
+- [IT-Kamasutra - React - Кабзда как подробно (YouTube, 3 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM49Jb2XZSf4READ3kO4UFL)
+- [IT-Kamasutra - Todolist - React, TypeScript (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMM8zDacOPhWfVitvOa_Fhu)
+- [IT-Kamasutra - Ajax в деталях (YouTube, 9 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNDDIp2MGbv8cMYsoUO1lew)
+- [IT-Kamasutra - addEventListener в деталях (YouTube, 4 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNwI9PyQ_IFW_dLpqBIuIyu)
+- [IT-Kamasutra - react-четверг (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN-JSjyJDFtGdRlsapKDpp9)
+- [IT-Kamasutra - JavaScript для собеседований (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DMu_yc4R9btXnbbn4XqEwWj)
+- [IT-Kamasutra - TypeScript Камасутра (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM6f9AdaI8bUctNuGiAYKpO)
+- [IT-Kamasutra - React English (YouTube, 1 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DOOi7Wqsv7ia5GJ_S9YlfDg)
 
 <br></p>
 </details>
