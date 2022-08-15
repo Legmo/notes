@@ -89,6 +89,14 @@
 <br></p>
 </details>
 
+[//]: # (Тестирование React-component )
+<details><summary><b>Тестирование React-component</b></summary><p>
+
+См. «React - Тестирование React-component»
+
+- <br></p>
+</details>
+
 [//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>
 

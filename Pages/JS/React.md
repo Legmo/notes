@@ -1,6 +1,6 @@
-# Шпаргалка по React JS#
+<h1>Шпаргалка по React JS</h1>
 
-#
+[//]: # (Базовые понятия)
 <details><summary><b>Базовые понятия</b></summary><p>
 
 ---
@@ -796,10 +796,11 @@
 <br></p>
 </details>
 
-#
-<details><summary><b>Компоненты</b></summary><p>
+[//]: # (Компоненты)
+<details><summary><h3>Компоненты</h3></summary><p>
   
-  ---
+
+
   <details><summary><b>Названия компонент начинаются с Заглавной буквы</b></summary><p>
     
   Это важно, так как в работе будут сочетаться HTML-элементы и элементы React. <br>
@@ -1299,7 +1300,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (Компоненты. Жизненный цикл)
 <details><summary><b>Компоненты. Жизненный цикл</b></summary><p>
   
   ---
@@ -1581,7 +1582,7 @@
   <br></p>
 </details>
 
-#
+[//]: # (Context API)
 <details><summary><b>Context API</b></summary><p>
   
   ---  
@@ -1632,7 +1633,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (Хуки)
 <details><summary><b>Хуки</b></summary><p>
   
   ---
@@ -1748,7 +1749,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (Роутинг)
 <details><summary><b>Роутинг</b></summary><p>
   
   ---  
@@ -1810,7 +1811,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (Статическая типизация)
 <details><summary><b>Статическая типизация</b></summary><p>
   
   ---
@@ -1972,7 +1973,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (JSX)
 <details><summary><b>JSX</b></summary><p>
   
   ---
@@ -2142,7 +2143,7 @@
   <br></p>
 </details>
 
-#
+[//]: # (CSS)
 <details><summary><b>CSS</b></summary><p>
 
   ---
@@ -2201,8 +2202,7 @@
   <br></p>
 </details>
 
-#
-[//]: # (todo: осмыслять)
+[//]: # (Ducks. todo: осмыслять)
 <details><summary><b>Ducks</b></summary><p>
 
 **Ссылки**
@@ -2212,8 +2212,19 @@
 <br></p>
 </details>
 
-#
-[//]: # (todo: осмыслять)
+[//]: # (Тестирование React-component)
+<details><summary><b>Тестирование React-component</b></summary><p>
+
+// todo: **Вынести в «React» и поставить ссылку**
+- То что входит в компоненту через props должно быть доступно ей изнутри, например в её стэйте
+
+**Ссылки**
+- [IT-Kamasutra #92 - тестируем компоненты, тесты, react-test-renderer - React JS](https://youtu.be/Kyc_Z_2b2Hc)
+
+<br></p>
+</details>
+
+[//]: # (Быстродействие и оптимизация React. todo: осмыслять)
 <details><summary><b>Быстродействие и оптимизация React</b></summary><p>
 
 **Изменение параметров функции, side-эффекты и cloneDeep**<br>
@@ -2251,7 +2262,7 @@
 <br></p>
 </details>
 
-#
+[//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>
 
 - [Офф. сайт]( https://ru.reactjs.org/)
