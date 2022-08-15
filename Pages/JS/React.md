@@ -2244,7 +2244,7 @@
 
 - [Офф. сайт]( https://ru.reactjs.org/)
 - [Агапов Е - База знаний в GitHub](https://github.com/harryheman/my-js)
-- [Агапов Е - my-js.org/](https://my-js.org/)
+- [Агапов Е - База знаний на my-js.org](https://my-js.org/)
 
 **Курсы**
 - [Reactjs.org (офф. сайт) - учебный курс ]( https://ru.reactjs.org/tutorial/tutorial.html)
