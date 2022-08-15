@@ -71,9 +71,20 @@
 [//]: # (JEST)
 <details><summary><b>JEST</b></summary><p>
 
+Среда запуска тестов.<br>
+В `CreateReactApp` встроена изначально.
+
 - [Hexlet - JS: React. Тестирование ](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
 - [Habr - React: тестируем компоненты с помощью Jest и Testing Library](https://habr.com/ru/company/timeweb/blog/670480/)
 - [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
+
+<br></p>
+</details>
+
+[//]: # (Snapshot тесты )
+<details><summary><b>Snapshot тесты </b></summary><p>
+
+Тесты, которые делают скриншот экрана (эталонный скриншот) и сравнивают с актуальным скриншотом, который делается во время прогона тестов.
 
 <br></p>
 </details>
