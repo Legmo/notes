@@ -22,6 +22,11 @@
 Хорошо подходит для `юнит-тестирования` (проверка работы отдельных модулей самих по себе).
 `TDD` проверяет работу функций.
 
+**Преимущества**<br>
+- Программа будет удобной, ткю мы начинаем ей пользоваться до того как создали. А не «создали, теперь придумаем как её удобно использовать»
+- Будет модульная архитектура - иначе тестами не покроешь
+- 
+
 <br></p>
 </details>
 
@@ -50,6 +55,16 @@
 
 - `TDD` проверяет работу функций
 - `BDD` проверяет пользовательские сценарии.
+
+<br></p>
+</details>
+
+#
+<details><summary><b>JEST</b></summary><p>
+
+- [Hexlet - JS: React. Тестирование ](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
+- [Habr - React: тестируем компоненты с помощью Jest и Testing Library](https://habr.com/ru/company/timeweb/blog/670480/)
+- [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
 
 <br></p>
 </details>
