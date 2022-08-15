@@ -2241,6 +2241,7 @@
 
 #
 <details><summary><b>Ссылки</b></summary><p>
+
 - [Офф. сайт]( https://ru.reactjs.org/)
 - [Паттерны React](https://habr.com/ru/post/309422/)
 - [Гайд как писать на React в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BA%D0%B0%D0%BA-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C-%D0%BD%D0%B0-react-%D0%B2-2017-8128906dae80)
