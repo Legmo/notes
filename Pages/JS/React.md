@@ -796,10 +796,9 @@
 <br></p>
 </details>
 
+---
 [//]: # (Компоненты)
 <details><summary><h3>Компоненты</h3></summary><p>
-  
-
 
   <details><summary><b>Названия компонент начинаются с Заглавной буквы</b></summary><p>
     
@@ -1300,6 +1299,7 @@
 <br></p>
 </details>
 
+---
 [//]: # (Компоненты. Жизненный цикл)
 <details><summary><b>Компоненты. Жизненный цикл</b></summary><p>
   
@@ -1974,9 +1974,7 @@
 </details>
 
 [//]: # (JSX)
-<details><summary><b>JSX</b></summary><p>
-  
-  ---
+<details><summary><h3>JSX</h3></summary><p>
 
   <details><summary>Что такое JSX?</summary><p>
   
@@ -2143,8 +2141,9 @@
   <br></p>
 </details>
 
+---
 [//]: # (CSS)
-<details><summary><b>CSS</b></summary><p>
+<details><summary><h3>CSS</h3></summary><p>
 
   ---
 
@@ -2202,8 +2201,9 @@
   <br></p>
 </details>
 
+---
 [//]: # (Ducks. todo: осмыслять)
-<details><summary><b>Ducks</b></summary><p>
+<details><summary><h3>Ducks</h3></summary><p>
 
 **Ссылки**
 - [Habr - Масштабирование Redux-приложения с помощью ducks (2020)](https://habr.com/ru/company/otus/blog/492638/?ysclid=l6sz05stk7523793176)
@@ -2212,8 +2212,9 @@
 <br></p>
 </details>
 
+---
 [//]: # (Тестирование React-component)
-<details><summary><b>Тестирование React-component</b></summary><p>
+<details><summary><h3>Тестирование React-component</h3></summary><p>
 
 // todo: **Вынести в «React» и поставить ссылку**
 - То что входит в компоненту через props должно быть доступно ей изнутри, например в её стэйте
@@ -2224,8 +2225,9 @@
 <br></p>
 </details>
 
+---
 [//]: # (Быстродействие и оптимизация React. todo: осмыслять)
-<details><summary><b>Быстродействие и оптимизация React</b></summary><p>
+<details><summary><h3>Быстродействие и оптимизация React</h3></summary><p>
 
 **Изменение параметров функции, side-эффекты и cloneDeep**<br>
 Никогда, никогда, никогда в жизни не делайте так!
@@ -2262,8 +2264,9 @@
 <br></p>
 </details>
 
+---
 [//]: # (Ссылки)
-<details><summary><b>Ссылки</b></summary><p>
+<details><summary><h3>Ссылки</h3></summary><p>
 
 - [Офф. сайт]( https://ru.reactjs.org/)
 - [Агапов Е - База знаний в GitHub](https://github.com/harryheman/my-js)
