@@ -1,6 +1,5 @@
 <h1> Шпаргалка по Redux </h1>
 
----
 [//]: # (Что такое Redux)
 <details><summary><b>Что такое Redux</b></summary><p>
 
@@ -555,23 +554,13 @@ mapStateToProps() объявляется с двумя параметрами, �
 <br></p>
 </details>
 
-[//]: # (Ссылки)
-<details><summary><b>Ссылки</b></summary><p>
-
-- [Оф. документация React-redux (en)](https://react-redux.js.org/)
-- [Оф. документация React-redux (ru)](https://rajdee.gitbooks.io/redux-in-russian/content/)
-- [Изучаем Redux на примере создания мини-Redux](https://medium.com/devschacht/jakob-lind-learn-redux-by-coding-a-mini-redux-d1a58e830514)
-- [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
-- [Build Yourself a Redux (en)](https://zapier.com/engineering/how-to-build-redux/)
-- [Redux и Thunk вместе с React. Руководство для чайников](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov)
-
-<br></p>
-</details>
+---
 
 [//]: # (AJAX и асинхронные операции)
 <details><summary><b>AJAX и асинхронные операции</b></summary>
-  
----
+<br>
+ 
+
 [//]: # (Асинхронные операции)
 <details><summary><b>Асинхронные операции</b></summary><p> 
 
@@ -762,6 +751,20 @@ mapStateToProps() объявляется с двумя параметрами, �
 
 <br></p>
 </details>
+
+[//]: # (Ссылки)
+<details><summary><b>Ссылки</b></summary><p>
+
+- [Оф. документация React-redux (en)](https://react-redux.js.org/)
+- [Оф. документация React-redux (ru)](https://rajdee.gitbooks.io/redux-in-russian/content/)
+- [Изучаем Redux на примере создания мини-Redux](https://medium.com/devschacht/jakob-lind-learn-redux-by-coding-a-mini-redux-d1a58e830514)
+- [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
+- [Build Yourself a Redux (en)](https://zapier.com/engineering/how-to-build-redux/)
+- [Redux и Thunk вместе с React. Руководство для чайников](https://tuhub.ru/posts/redux-i-thunk-vmeste-react-rukovodstvo-dlya-chajnikov)
+
+<br></p>
+</details>
+
 <br>
 <br>
 
