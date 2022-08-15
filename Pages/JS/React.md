@@ -2203,6 +2203,17 @@
 
 #
 [//]: # (todo: осмыслять)
+<details><summary><b>Ducks</b></summary><p>
+
+**Ссылки**
+- [Habr - Масштабирование Redux-приложения с помощью ducks (2020)](https://habr.com/ru/company/otus/blog/492638/?ysclid=l6sz05stk7523793176)
+- [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
+
+<br></p>
+</details>
+
+#
+[//]: # (todo: осмыслять)
 <details><summary><b>Быстродействие и оптимизация React</b></summary><p>
 
 **Изменение параметров функции, side-эффекты и cloneDeep**<br>
@@ -2232,8 +2243,9 @@
 - [habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
 - [habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
 - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
-- [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
+- [Habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
 - [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)
+- [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
 - [см. раздел «Redux» - Быстродействие и оптимизация Redux](Redux.md)
 
 <br></p>
