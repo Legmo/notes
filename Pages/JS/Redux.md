@@ -537,11 +537,11 @@ API react-redux connect() используется для создания ко�
 <details ><summary><b>Оптимизация React-Redux</b></summary><p>
 
 **Ссылки**
-- [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
-- [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
 - [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)
 - [Habr - Готовим селекторы в Redux](https://habr.com/ru/post/564004/)
-- [Раздел React - Быстродействие и оптимизация](Reac.md)
+- [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
+- [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
+- [Раздел React - Быстродействие и оптимизация](React.md)
 
 <br></p>
 </details>
