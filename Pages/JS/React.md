@@ -1648,10 +1648,6 @@ React содержит несколько встроенных хуков, та�
 
 Поскольку хуки являются функциями, мы можем передавать информацию между ними.
 
-**Ссылки**
-
-- [Оф. документация](https://ru.reactjs.org/docs/hooks-intro.html)
-
 <br></p>
 </details>
 
@@ -1755,6 +1751,11 @@ function Example() {
 <br></p>
 </details>
 
+**Ссылки**
+
+- [Оф. документация](https://ru.reactjs.org/docs/hooks-intro.html)
+- [IT-Kamasutra #84 - hook, useState, хуки](https://youtu.be/EbqQg0K4wbo)
+
 <br></p>
 </details>
 
@@ -1762,6 +1763,7 @@ function Example() {
 <details><summary><h3>JSX</h3></summary><p>
 
 ---
+
 [//]: # (Что такое JSX?)
 <details><summary>Что такое JSX?</summary><p>
 
