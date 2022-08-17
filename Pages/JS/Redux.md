@@ -305,10 +305,9 @@ Reducers - это отдельные функции, а не методы объ
 Reducer - только преобразователь. Он не вызывает subscriber и другие callbacks.
 
 Если тип action неизвестен - выдаём изначальный state
-
-  ```javascript
-  const task_tables_reducer = (state = initialState, action) => {
-  switch(action.type) {
+```javascript
+    const task_tables_reducer = (state = initialState, action) => {
+  switch (action.type) {
     case IS_PAGINATION: {
       return {...state};
     }
@@ -316,7 +315,10 @@ Reducer - только преобразователь. Он не вызывае�
       return state;
   }
 }
-  ```  
+```  
+
+Смотри также в разделе «[React — Компоненты. Компоненты = чистые функции](React.md)»
+
 <br></p>
 </details>
 
