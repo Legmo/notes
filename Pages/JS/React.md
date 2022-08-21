@@ -1309,24 +1309,26 @@ PureComponent, т.к. метод connect() оборачивает ваш ком�
     <br>
 
 **Ссылки**
-
 - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
 - [YouTube - IT Kamasutra 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
 - [YouTube - IT Kamasutra 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
 - [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Разбираемся с Render Props и HOC в React](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
+- [Путь Самурая 2.0 - #15. Hooks, оно нам надо?](https://youtu.be/UR7YwFevxb4)
 
 <br></p>
 </details>
 
-[//]: # (Render Callbacks todo: осмыслять)
-<details><summary><b>Render Callbacks (Функция в render)</b></summary><p>
+[//]: # (Render props todo: осмыслять)
+<details><summary><b>Render props, Render Callbacks (Функция в render)</b></summary><p>
 
 Ещё один способ сделать логику переиспользуемой. Это становится возможным при помощи передаваемого children-а в виде
 функции.
 
 **Ссылки**
 
+- [Разбираемся с Render Props и HOC в React](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
 - [habr - Паттерны React](https://habr.com/ru/post/309422/)
 
@@ -2207,8 +2209,7 @@ tabindex = tabIndex
 Classnames немного популярнее, и более функциональна (читай документацию)<br>
 CLSX полегче и побыстрее (потому что функциональность меньше)
 
-Links:
-
+Ссылки:
 - [classnames](https://www.npmjs.com/package/classnames)
 - [clsx](https://www.npmjs.com/package/clsx)
 - [npmtrends](https://npmtrends.com/classnames-vs-clsx)
