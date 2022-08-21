@@ -3,9 +3,9 @@
 ## Технологии ##
 - [JavaScript](/Pages/JS/JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
-- [NodeJS](/Pages/JS/NodeJS.md)
 - [React JS](/Pages/JS/React.md)
 - [Redux (for React)](/Pages/JS/Redux.md)
+- [NodeJS](/Pages/JS/NodeJS.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
 - [AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
