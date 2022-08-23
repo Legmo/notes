@@ -1161,6 +1161,11 @@ const [fruit, setFruit] = useState('банан');
 **Ссылки:**
 - [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
 - [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
+- [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
+- [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
+- [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
+- [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
+- [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/blog/444348/)
 
 <br></p>
 </details>

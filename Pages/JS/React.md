@@ -734,13 +734,14 @@ function NumberList(props) {
 - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
 - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
 - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
-  - [habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
-  - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
-  - [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
-  - [ещё курc](https://vk.com/@489914144)
-  - [Максим Пацианский](https://maxpfrontend.ru/)
-  - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
-  - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
+- [habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
+- [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
+- [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
+- [ещё курc](https://vk.com/@489914144)
+- [developer.mozilla.org - раздел про JS-фрэймворки (частично на русском)](https://developer.mozilla.org/ru/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
+- [Максим Пацианский](https://maxpfrontend.ru/)
+- [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
+- [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
 
 <br></p>
 </details>
@@ -2352,12 +2353,15 @@ Material UI использует «под капотом» библиотеку 
 Краткий алгоритм установки/настройки
 
 - ставим Material Ui и зависимости
-  - `yarn add @mui/material @mui/styled-engine-sc styled-components`
-  - Шрифт Roboto `yarn add @fontsource/roboto` или подключить из
+  - сам Material Ui `yarn add @mui/material @mui/styled-engine-sc styled-components`
+  - шрифт Roboto `yarn add @fontsource/roboto` или подключить из
     CDN (https://mui.com/material-ui/react-typography/#general)
   - SVG-иконки `yarn add @mui/icons-material`
 - ставим пакеты типизации (кажется не нужно, всё работает из коробки)
-- настраиваем IDE (подсветка Styled-components/Emotion и т.д.)
+- опционально: настраиваем IDE (подсветка Styled-components/Emotion и т.д.)
+  - Настройки: File | Settings | Plugins
+  - [Styled Components & Styled JSX](https://plugins.jetbrains.com/plugin/9997-styled-components--styled-jsx)
+  - https://www.jetbrains.com/help/phpstorm/react.html
 - настраиваю провайдер `theme` — объект с базовыми настройками дефолтных стилей, прокидывается по дереву проекта (или
   его части) на подобии `context`
   - https://mui.com/material-ui/customization/theming/
@@ -2387,6 +2391,14 @@ Material UI использует «под капотом» библиотеку 
         </ThemeProvider>
       );
     ```
+- задаю базовую разметку страницы
+  ```
+    <Box>
+      <Container>
+        < >
+      </Container>
+    </Box>
+  ```
 - подключаю готовые стилизованные компоненты (кнопки, меню и т.д.)
 - если надо - настраиваю и стилизую их
 
@@ -2395,7 +2407,7 @@ Material UI использует «под капотом» библиотеку 
 - [Оф. сайт](https://mui.com)
 - [Руководство - русский перевод (Notion, 2021)](https://www.notion.so/rsgd/Material-Design-2-afad31afd1bd48ed933005bc02f4527f)
 - [Руководство - русский перевод (Medium, 2021)](https://medium.com/@ruslanshgd)
-- [Habr - Reactjs, Material-UI with JSS. Краткий гайд (2020)](https://habr.com/ru/post/492378/)
+- [Habr - Reactjs, Material-UI with JSS. Краткий гайд (2020, устарело)](https://habr.com/ru/post/492378/)
 - [Полное руководство по React JS material-ui (2018)](https://webformyself.com/polnoe-rukovodstvo-po-react-js-material-ui/)
 
 <br></p>
@@ -3033,6 +3045,20 @@ https://www.youtube.com/watch?v=NhT5nMvve4Q
 **Ссылки**
 
 - https://ru.reactjs.org/docs/handling-events.html
+
+<br></p>
+</details>
+
+[//]: # (Деструктуризация)
+<details><summary>Деструктуризация</summary><p>
+
+- [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
+- [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
+- [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
+- [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
+- [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
+- [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
+- [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/blog/444348/)
 
 <br></p>
 </details>
