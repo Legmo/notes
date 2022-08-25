@@ -1412,6 +1412,7 @@ const [fruit, setFruit] = useState('банан');
   - [learn.javascript.ru - ООП в функциональном стиле](https://learn.javascript.ru/oop)
   - [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
   - [Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
+  - [Web-dev - Классы (YouTube)](https://youtu.be/BASquaxab_w)
   
   <br></p>
 </details>
@@ -1433,8 +1434,9 @@ const [fruit, setFruit] = useState('банан');
   - [learn.javascript.ru - ООП в функциональном стиле](https://learn.javascript.ru/oop)
   - [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
   - [Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
-  
-  <br></p>
+  - [Web-dev - Классы (YouTube)](https://youtu.be/BASquaxab_w)
+
+    <br></p>
 </details>
   
 <details><summary><b>Утечки памяти в JS</b></summary><p>

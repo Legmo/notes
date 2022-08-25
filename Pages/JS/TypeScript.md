@@ -35,14 +35,14 @@
 - `null`  - null в js (*в js typeof null = object, так сложилось исторически*)
 - `undefined` - undefined в js
 - `never` - ТS only. Представляет отсутствие значения. Для типизации ответа функций, которые генерируют или возвращают
-  ошибку
+  ошибку. Или если в функции бесконечный цикл
 - `void` - ТS only. Определят отсутствующие типы. Для типизации ответа функций, которые не возвращают ничего (нет
   return)
 - `object`
-- `Array` - массивы (*number[] или Array<number>*)
-- `Tuple` - кортежи. Массивы в которых могут быть разные типы данных
-- `enum` - перечисления
-- `any` - что угодно
+- `array` - массивы (*number[] или `Array<number>`*)
+- `tuple` - кортежи. Массивы в которых могут быть разные типы данных (*let x: [string,number]*)
+- `enum` - перечисления. Задание понятных имён набору численных значений
+- `any` - что угодно (ключевое слово)
 - Void
 - Object
 - Function - представляет объект с методами bind, call, apply.
@@ -62,10 +62,40 @@
 <br></p>
 </details>
 
+[//]: # (type - Псевдонимы типов, Allias)
+<details><summary><b>type (Псевдонимы типов). Allias</b></summary><p>
+
+- `type id = number | string;`
+- псевдоним = Allias
+- полезны для работы со сложными объектами `{name: string; age: number}`
+
+<br></p>
+</details>
+
+[//]: # (& - Расширения)
+<details><summary><b>& (Расширения)</b></summary><p>
+
+- В одном типе можно заимствовать или расширять код других типов, при помощи операции `&`
+  - ```ts
+      type Person = {name: string; age: number};
+      type Employee = Person & {company: string};
+    ```
+
+<br></p>
+</details>
+
 [//]: # (union - Объединения)
 <details><summary><b>union (Объединения)</b></summary><p>
 
-- `a | b` - позволяют комбинировать или объединить другие типы
+- `a | b` - позволяет комбинировать или объединить другие типы
+
+<br></p>
+</details>
+
+[//]: # (? - Опциональные аргументы)
+<details><summary><b>?(Опциональные аргументы)</b></summary><p>
+
+- `let person: { name: string; age?: number };` - свойство age необязательное
 
 <br></p>
 </details>
@@ -86,20 +116,6 @@
 <br></p>
 </details>
 
-[//]: # (type - Псевдонимы типов. & - Расширения)
-<details><summary><b>type (Псевдонимы типов). & (Расширения)</b></summary><p>
-
-- `type id = number | string;`
-- полезны для работы со сложными объектами `{name: string; age: number}`
-- псевдонимы могут заимствовать или расширять код других. Для этого применяется операция `&`
-  - ```ts
-      type Person = {name: string; age: number};
-      type Employee = Person & {company: string};
-    ```
-
-<br></p>
-</details>
-
 [//]: # (Type assertion. As - Преобразование к типу)
 <details><summary><b>Type assertion. As (Преобразование к типу)</b></summary><p>
 
@@ -112,14 +128,6 @@
 - такие преобразования будут иметь силу, если мы точно знаем, что значение может быть преобразовано к целевому типу.
   Например, на странице есть элемент с id=header, поэтому мы можем преобразовать значение к типу HTMLElement. Если
   такого элемента нет, то во время выполнения мы получим ошибку.
-
-<br></p>
-</details>
-
-[//]: # (Необязательные свойства объекта - ?)
-<details><summary><b>Необязательные свойства объекта (?)</b></summary><p>
-
-- `let person: { name: string; age?: number };` - свойство age необязательное
 
 <br></p>
 </details>
@@ -198,9 +206,51 @@
 [//]: # (enum - Перечисления)
 <details><summary><b>enum (Перечисления)</b></summary><p>
 
-- позволяет определить набор именнованных констант, которые описывают определенные
-  состояния. https://metanit.com/web/typescript/2.11.php
+- Задание понятных имён набору численных значений
+- ```ts
+    enum Directions {
+      Up, //0
+      Down = 1,
+      Left = 4,
+      Right, //5
+    }
+  ```
+- можно получать ключ по значению (`Directions.Up // 0`, `Directions['Up'']`)
+- можно получать значение по ключу (`Directions[0] // 'Up'`) = Reverse Enum
+
+- можно задавать свои индексы вместо чисел
+- ```ts
+    enum Links {
+      vk = 'https://vk.com/',
+      facebook = 'https://facebook.com/',
+      youtube = 'https://youtube.com/',
+    }
+  ```
+- теперь `Links[0]` или `Links['https://vk.com/']` не сработает
+- сработает `Links.vk` или `Links['vk']`
+
+**Константные перечисления**
+
+- ссылки к enum всегда выполняются как доступы к свойству, и никогда не встраиваются. Т.е. написав enum, и описав его
+  перечисляемые значения вы всегда получите генерацию объекта через функцию. Даже если этот объект не будет
+  использоваться
+- если надо оптимизировать ресурсы и мощности - используем константные перечисления. Тогда мы получим соответствующие
+  значения только при обращении к опр. элементу enum. Генерации объекта при этом не происходит
+- ```ts
+  const enum Links {
+  vk = 'https://vk.com/',
+  facebook = 'https://facebook.com/',
+  youtube = 'https://youtube.com/',
+  }
+  ```
+
+- позволяет определить набор именованных констант, которые описывают определенные состояния.
 - существует возможность создавать текстовые и числовые константы.
+
+  **Ссылки**
+- https://metanit.com/web/typescript/2.11.php
+- [WebDev - TypeScript. Базовые типы 2 (YouTube)](https://youtu.be/MNcl1Fni4cw?t=200)
+- [WebDev - TypeScript. Перечисления Enums (YouTube)](https://youtu.be/FltLrtKWMak)
 
 <br></p>
 </details>
@@ -246,6 +296,22 @@
 [//]: # (Классы)
 <details><summary><b>Классы</b></summary><p>
 
+```ts
+  class User {
+  public name: string;
+  private nickName: string;
+  protected age: number = 20; //задано дефолтное значение
+  readonly pass: number;
+
+  constructor(name: string, nickName: string, age: number, pass: number) {
+    this.name = name;
+    this.nickName = nickName;
+    this.age = age;
+    this.pass = pass;
+  }
+}
+```
+
 - TypeScript предоставляет нам все те же классы, однако с некоторыми улучшениями, а именно:
   - Поля
   - Параметры только для чтения
@@ -256,6 +322,14 @@
   - Дженерики в классах
   - Параметризированные свойства
   - Абстрактные классы и инстансы
+
+**4 модификатора доступа**
+
+- управляют доступностью к свойствам класса
+- `public` - значение по умолчанию. Можно получить свободный доступ.
+- `private` - не доступен за предеалми класса. Ни классам-наследникам, ни объектам созданным с помощью данного класса
+- `protected` - доступен только наследникам
+- `readonly` - доступен только для чтения
 
 <br></p>
 </details>
@@ -290,6 +364,22 @@
 <details><summary><b>Декораторы</b></summary><p>
 
 - https://metanit.com/web/typescript/6.1.php
+
+<br></p>
+</details>
+
+[//]: # (Типизация функций)
+<details><summary><b>Типизация функций</b></summary><p>
+
+```ts
+  let MyFunc: (someArgName: string) => void;
+
+function otherFunc(name: string): void {
+  alert(`Hello ${name}!`);
+};
+
+myFunc = otherFunc
+```
 
 <br></p>
 </details>
