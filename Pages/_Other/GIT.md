@@ -1,5 +1,6 @@
 <h1>GIT</h1>
 
+[//]: # (Методологии работы с GIT &#40;workflow&#41;)
 <details><summary><h3>Методологии работы с GIT (workflow)</h3></summary><p>
 
 - [Кратко о git-flow](http://ruwhynot.com/2016/03/08/briefly-about-gitflow/)
@@ -7,16 +8,15 @@
 - [Модели ветвления в Git: какую выбрать?](https://proglib.io/p/git-workflow)
 - [Оригинальная статья Vincent Driessen с описанием модели GitFlow (перевод на русский)](https://habr.com/ru/post/106912/)
 
-- <br></p>
-
+<br></p>
 </details>
 
+[//]: # (Про текстовый редактор для коммитов)
 <details><summary><h3>Про текстовый редактор для коммитов</h3></summary><p>
 
 - Я использую nano
 
 **Ссылки**
-
 - [stackoverflow - Замена дефолтного редактора кода в git (ru)](https://ru.stackoverflow.com/questions/437331/%D0%97%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-%D0%B4%D0%B5%D1%84%D0%BE%D0%BB%D1%82%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B2-git)
 - [Связывание текстового редактора с Git](https://ymatuhin.ru/tools/git-default-editor/)
 
