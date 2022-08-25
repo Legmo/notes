@@ -28,17 +28,21 @@
 [//]: # (Типы переменных)
 <details><summary><b>Типы переменных</b></summary><p>
 
-- `boolean` - логическое значение true или false
-- `number` - числовое значение
-- `string` - строки
-- `Array` - массивы
-- `Tuple` - кортежи
+- `number` - числа
+- `string` - строки, в т.ч. шаблонные
+- `boolean` - логическое значение
+- `symbol` - symbol в js
+- `null`  - null в js (*в js typeof null = object, так сложилось исторически*)
+- `undefined` - undefined в js
+- `never` - ТS only. Представляет отсутствие значения. Для типизации ответа функций, которые генерируют или возвращают
+  ошибку
+- `void` - ТS only. Определят отсутствующие типы. Для типизации ответа функций, которые не возвращают ничего (нет
+  return)
+- `object`
+- `Array` - массивы (*number[] или Array<number>*)
+- `Tuple` - кортежи. Массивы в которых могут быть разные типы данных
 - `enum` - перечисления
-- `any` - произвольный тип
-- `symbol`
-- `null` и `undefined` - соответствуют значениям null и undefined в javascript
-- `never` - также представляет отсутствие значения и используется в качестве возвращаемого типа функций, которые
-  генерируют или возвращают ошибку
+- `any` - что угодно
 - Void
 - Object
 - Function - представляет объект с методами bind, call, apply.
@@ -49,6 +53,11 @@
 - Intersection - и (&)
 - Inference - автоматическое определние типа
 - Assertion - as
+
+**Ссылки**
+
+- [WebDev - TypeScript. Базовые типы 1 (YouTube)](https://youtu.be/iugNHvMWBw4)
+- [WebDev - TypeScript. Базовые типы 2 (YouTube)](https://youtu.be/MNcl1Fni4cw)
 
 <br></p>
 </details>
@@ -285,9 +294,11 @@
 <br></p>
 </details>
 
+[//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>
 
 - [Официальный репозиторий на GitHub](https://github.com/Microsoft/TypeScript)
+- [WebDev - Лекции по TypeScript (YouTube)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMEm1FgiLjHqSky27x5rXvQa)
 - [Metanit.com - Введение в TypeScript](https://metanit.com/web/typescript/1.1.php)
 - [Книга и Справочник TypeScript](https://scriptdev.ru/)
 - [It-Kamasutra - Путь самурая 2.0 (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DM3z1XqMw0kPuxpbyMo3HvN)
