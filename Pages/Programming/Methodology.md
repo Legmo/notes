@@ -16,8 +16,8 @@
 - **Waterfall Model** (каскадная модель или «водопад»)
 - **V-Model**
 - **Incremental Model** (инкрементная модель)
-- **RAD Model** (rapid application development model или быстрая разработка приложений
-- **Agile Model** (гибкая методология разработки) 
+- **RAD Model** (rapid application development model или быстрая разработка приложений)
+- **Agile Model** (гибкая методология разработки)
 - **Iterative Model** (итеративная или итерационная модель)
 - **Spiral Model** (спиральная модель)
 - **Feature Driven Development** (FDD)

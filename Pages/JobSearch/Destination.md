@@ -5,27 +5,33 @@
 находишь занятие, которое нравится тебе настолько, что готов заниматься им бесплатно. и занимаешься.
 
 Как работает:
+
 - чтоб получать деньги надо стать мастером;
-- чтоб стать мастером надо потратить на эту сферу намного больше времени, чем другие. тебя зовут на вечеринку, а ты: "не, я посижу отлажу программу (поиграю на гитаре / разучу движения / порисую...)". и так раз за разом. 
+- чтоб стать мастером надо потратить на эту сферу намного больше времени, чем другие. тебя зовут на вечеринку, а ты: "
+  не, я посижу отлажу программу (поиграю на гитаре / разучу движения / порисую...)". и так раз за разом.
 - потом количество потраченного времени перейдёт в качество. и ты станешь крутым специалистом в данном деле.
-- если пытаешься заниматься тем, чего не любишь - ты просто не сможешь заставить себя тратить нужное количество времени. никак не выйдет. надо, чтоб эта деятельность была как компьютерная игра для подростка - пора спать (домой / в кино...), но очень хочется пройти этот уровень (поправить баг, сверстать страницу, дорисовать иллюстрацию...)
-- и в целом, люди чувствует, когда кто-то любит своё дело (это невозможно подделать). а к тем кто любит своё дело обращаются чаще и охотнее.
+- если пытаешься заниматься тем, чего не любишь - ты просто не сможешь заставить себя тратить нужное количество времени.
+  никак не выйдет. надо, чтоб эта деятельность была как компьютерная игра для подростка - пора спать (домой / в кино...)
+  , но очень хочется пройти этот уровень (поправить баг, сверстать страницу, дорисовать иллюстрацию...)
+- и в целом, люди чувствует, когда кто-то любит своё дело (это невозможно подделать). а к тем кто любит своё дело
+  обращаются чаще и охотнее.
 
-<br></p></details>
-
+<br></p>
+</details>
 
 <details><summary><b>чего вы хотите? (комикс)</b></summary><p>  
 
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_1.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_2.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_3.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_4.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_5.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_6.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_7.jpg)
-![](https://raw.githubusercontent.com/legmo/notes/master/pic/destination_8.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_1.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_2.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_3.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_4.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_5.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_6.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_7.jpg)
+![](https://github.com/Legmo/notes/blob/master/Assets/Img/destination_8.jpg)
 
-<br></p></details>
+<br></p>
+</details>
 
 <!--
 <details><summary><b>про следование чужим советам</b><ѵ/summary><p>  
@@ -42,7 +48,8 @@
 - [youtube. IT-Kamasutra - Как стать программистом! 3 бесплатных крутых шага! (JavaScript, Front-end)](https://youtu.be/hFOZYaVHD6A)
 - [youtube. IT-Kamasutra - Как стать программистом за 1 месяц? Никак?](https://www.youtube.com/watch?v=__B3kJ8YhSw)
 
-<br></p></details>
+<br></p>
+</details>
 
 <br> 
 <br> 

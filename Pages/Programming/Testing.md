@@ -107,7 +107,7 @@
 
 См. «React - Тестирование React-component»
 
-- <br></p>
+<br></p>
 </details>
 
 [//]: # (Ссылки)
