@@ -1,4 +1,4 @@
-<h1>TypeScript</h1>
+<h1>Шпаргалка по TypeScript</h1>
 
 [//]: # (Общая информация)
 <details><summary><b>Общая информация</b></summary><p>

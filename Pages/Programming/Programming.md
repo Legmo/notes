@@ -78,24 +78,25 @@
 - Изменение в файловой системе
 - Запросы DOM
 
-**В ReactJS / Redux**
+**В ReactJS / Redux**<br>
 Чистыми функциями должны быть:
 
 - компоненты
 - редьюсеры
 - селекторы
-
 <br>
+
 Пример чистой функции
-```javascript
-function sum(a, b) {
+
+```js
+    function sum(a, b) {
     return a + b;
 }
 ```    
 
 Пример нечистой функции (записывает данные в свои же аргументы)
 
-```javascript
+```js
 function withdraw(account, amount) {
     account.total -= amount;
 }
