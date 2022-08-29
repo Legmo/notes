@@ -160,6 +160,7 @@ function withdraw(account, amount) {
 
 **Ссылки**
 * [habr - Декораторы](https://habr.com/ru/post/60957/)
+* [learn JS - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
 
 <br></p>
 </details>
