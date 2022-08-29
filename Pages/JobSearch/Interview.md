@@ -110,9 +110,10 @@
 
 Вариация предыдущего вопроса.
 
-Вариант ответа:<br>
-Хороший начальник обладает опытом и развитыми «soft-skills», т.е. умением строить коммуникации
+Вариант ответа:
 
+- Хороший начальник обладает опытом и развитыми «soft-skills», т.е. умением строить коммуникации
+-
 - Терпелив
 - Умеет слушать
 - Не занимается «микро-менджментом»
@@ -202,26 +203,32 @@
 </details>
 
 [//]: # (Ресурсы  по специальности и около)
-<details><summary><b>Ресурсы по специальности и около (от Алекса программист-expert в EPAM)</b></summary><p> 
+<details><summary><b>Ресурсы по специальности и около ()</b></summary><p> 
 
-Читать что-то конкретное, я не читаю.<br>
-Изредка, когда охота "покатать вату", ищу что-то на Medium<br>
-Из фронтового, слушаю подкасты, если говорят о чем-то интересном, захожу в show-notes и смотрю ссылки или ищу.
+От Алекса программист-expert в EPAM
 
-Из отечественных подкастов по фронту:
+- Читать что-то конкретное, я не читаю. Изредка, когда охота "покатать вату", ищу что-то
+  на [Medium](https://medium.com/)
+- Из фронтового, слушаю подкасты, если говорят о чем-то интересном, захожу в show-notes и смотрю ссылки или ищу.
+- Из отечественных подкастов по фронту:
+  - [Frontend Weekend](https://soundcloud.com/frontend-weekend)
+  - [Девшахта](https://medium.com/devschacht/tagged/девшахта)
+  - [Фронтенд Юность (18+)](https://soundcloud.com/frontend_u) - может показатся хулиганским,
+    но уровень у ведущих хороший.
+- Обязательно, хотя бы раз в неделю захожу сюда
+  - [Awesome JavaScript Sorrycc GitHub](https://github.com/sorrycc/awesome-javascript) - a collection of awesome
+    browser-side JavaScript libraries, resources and shiny things.
+  - [Awesome JavaScript Uhub GitHub](https://github.com/uhub/awesome-javascript) - a curated list of awesome JavaScript
+    frameworks, libraries and software.
+  - [bestofjs.org](https://bestofjs.org/)
 
-- [Frontend Weekend](https://soundcloud.com/frontend-weekend)
-- [Девшахта](https://medium.com/devschacht/tagged/девшахта)
-- [Фронтенд Юность (18+)](https://soundcloud.com/frontend_u) - может показатся хулиганским,
-  но уровень у ведущих хороший.
+От себя
 
-Обязательно, хотя бы раз в неделю захожу сюда
-
-- [Awesome JavaScript Sorrycc GitHub](https://github.com/sorrycc/awesome-javascript) - a collection of awesome
-  browser-side JavaScript libraries, resources and shiny things.
-- [Awesome JavaScript Uhub GitHub](https://github.com/uhub/awesome-javascript) - a curated list of awesome JavaScript
-  frameworks, libraries and software.
-- [bestofjs.org](https://bestofjs.org/)
+- Дмитрий Кузюбердин - [IT-Kamasutra](https://www.youtube.com/c/ITKAMASUTRA)
+- Илья Кaнтop - [learn.javascript.ru](https://learn.javascript.ru)
+- Дмитрий Трепачёв - [code.mu](http://code.mu)
+- Кирилл Мокевнин - [Hexlet](https://ru.hexlet.io/)
+- Евгений Кавальчук - [WebDev](https://www.youtube.com/c/YauhenKavalchuk)
 
 <br></p>
 </details>
