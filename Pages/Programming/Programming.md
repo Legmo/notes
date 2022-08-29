@@ -111,7 +111,7 @@ function withdraw(account, amount) {
 </details>
 
 [//]: # (Инкапсуляция)
-<details><summary>Инкапсуляция</summary>
+<details><summary>Инкапсуляция</summary><p>
 
 Сокрытие лишних деталей.
 
@@ -130,7 +130,7 @@ function withdraw(account, amount) {
 </details>
 
 [//]: # (Идемпотентность)
-<details ><summary>Идемпотентность</summary>
+<details ><summary>Идемпотентность</summary><p>
 
 Св-во объекта или операции — при повторном применении операции к объекту давать тот же результат, что и при первом.
 
@@ -156,7 +156,7 @@ function withdraw(account, amount) {
 </details>
 
 [//]: # (Декоратор)
-<details><summary><b>Debounce</b></summary><p>
+<details><summary><b>Декоратор</b></summary><p>
 
 Декораторы (микропаттерны оптимизации) функций позволяют добавить дополнительное поведение функции, не изменяя ее.
 
