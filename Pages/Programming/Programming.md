@@ -89,13 +89,12 @@
 Пример чистой функции
 
 ```js
-    function sum(a, b) {
+function sum(a, b) {
     return a + b;
 }
 ```    
 
 Пример нечистой функции (записывает данные в свои же аргументы)
-
 ```js
 function withdraw(account, amount) {
     account.total -= amount;
@@ -424,15 +423,31 @@ Model-View-Controller (модель-вид-контроллер)<br>
 [//]: # (Некоторые принципы программирования)
 <details><summary><b>Некоторые принципы программирования</b></summary><p>
 
- - DRY
- - KISS
- - YAGNI
- - SOLID (см ООП) 
- - GRASP
- - CQS
- - Law of Demeter  (см ООП)
- - Single level of Abstraction Principle
- - Интересные идеи на тему: [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
+- `DRY` - Don't repeat yourself (Не повторяйся)
+- `KISS` - Keep it simple, stupid (Делай проще, тупица)
+- `YAGNI` - You aren't gonna need it (Вам это не понадобится)
+- `SOLID`
+    - (см ООП)
+    - Single Responsibility Principle («Принцип единой ответственности», SRP)
+    - Open-Closed Principle («Принцип открытости-закрытости», OCP)
+    - Liskov Substitution Principle («Принцип подстановки Барбары Лисков», LSP)
+    - Interface Segregation Principle («Принцип разделения интерфейса», ISP)
+    - Dependency Inversion Principle («Принцип инверсии зависимостей», DIP)
+- `GRASP` - Gneral responsibility assignment software patterns (общие шаблоны распределения ответственностей, паттерны
+  проектирования) ООП
+    - Информационный эксперт (Information Expert)
+    - Создатель (Creator)
+    - Контроллер (Controller)
+    - Слабое зацепление (Low Coupling)
+    - Высокая связность (High Cohesion)
+    - Полиморфизм (Polymorphism)
+    - Чистое изготовление (Pure Fabrication)
+    - Перенаправление (Indirection)
+    - Устойчивость к изменениям (Protected Variations)
+- `CQS` - Command-query Separation (Разделение ответственности команд и запросов)
+- `Law of Demeter` - Закон Деметры (см ООП)
+- `SLAP` - Single level of Abstraction Principle (Принцип единого уровня абстракций)
+- Интересные идеи на тему: [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
   
   
   **Некоторые принципы Объектно Ориентированнаого Дизайна** 

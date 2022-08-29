@@ -33,6 +33,7 @@
 - [UX/UI](/Pages/_Other/UxUi.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
+- [Микросервисная архитектура](/Pages/Programming/Microservices.md)
 - [Программирование в целом](/Pages/Programming/Programming.md)
 
 <br>
