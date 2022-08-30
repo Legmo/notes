@@ -3064,6 +3064,8 @@ https://www.youtube.com/watch?v=NhT5nMvve4Q
 </details>
 
 
+[Habr - Техники повторного использования кода и разбиения сложных объектов на составные](https://habr.com/ru/post/545368/)
+
 <br><p>
 </details>
 
