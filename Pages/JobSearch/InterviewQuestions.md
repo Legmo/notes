@@ -2,17 +2,17 @@
 
 [//]: # (Повторять)
 <details><summary><b>Повторять</b></summary><p>
-  - JS
-    - [Замыкания](https://learn.javascript.ru/closure)
-    - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
-      и [ещё они же](https://learn.javascript.ru/arrow-functions)
-    - [Promise](https://learn.javascript.ru/async)
-    - [Ver, Let, Const](https://learn.javascript.ru/var)
-    - [Прототипы](https://learn.javascript.ru/prototypes)
-    - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
-  - React
-    - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
 
+- JS
+  - [Замыкания](https://learn.javascript.ru/closure)
+  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
+    и [ещё они же](https://learn.javascript.ru/arrow-functions)
+  - [Promise](https://learn.javascript.ru/async)
+  - [Ver, Let, Const](https://learn.javascript.ru/var)
+  - [Прототипы](https://learn.javascript.ru/prototypes)
+  - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
+- React
+  - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
 - [WebSocket](https://learn.javascript.ru/websocket) и [ещё](/Pages/WebDeveloping/Ajax.md) - протокол связи поверх
   TCP. Для обмена данными между браузером и сервером через постоянное соединение.
 - [Микросервисная архитектура](/Pages/Programming/Microservices.md)
