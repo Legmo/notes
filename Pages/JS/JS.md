@@ -672,6 +672,12 @@ promise
 - `.catch` = чтобы поставить обработчик только на ошибку
   - `.catch(onRejected)` – сработает только при неудачном завершении промиса
   - `.catch(onRejected)` = сокращённая запись `.then(null, onRejected).`
+- `.finally` = выполнится в любом случае: и при успехе, и при ошибке
+  - обработчик для выполнения очистки/доведения после завершения предыдущих операций. Например остановить индикатор
+    загрузки.
+  - В finally мы не знаем, как был завершён промис - успешно ли нет
+  - finally «пропускает» результат или ошибку дальше, к последующим обработчикам. Поэтому обычно ставится в коле выше
+    чем `then` и `catch`
 
 **Сhaining (чейнинг)**
 
@@ -696,16 +702,18 @@ promise
     .then(user => {
         console.log(user);
         let githubUser = httpGet(`https://api.github.com/users/${user.name}`)
-        return githubUser;
+      return githubUser;
     })
-    // 3. Вывести картинку юзера
-    .then(githubUser => {
-        console.log(githubUser);
-        githubUser = JSON.parse(githubUser);
-        img.src = githubUser.avatar_url;
-        document.body.appendChild(img);
-    });
+        // 3. Вывести картинку юзера
+        .then(githubUser => {
+          console.log(githubUser);
+          githubUser = JSON.parse(githubUser);
+          img.src = githubUser.avatar_url;
+          document.body.appendChild(img);
+        });
 ```
+
+Вызов promise.then тоже возвращает промис, так что мы можем вызвать на нём следующий .then.
 
 При чейнинге `.then…then…then`, в каждый следующий `then` переходит результат от предыдущего.<br>
 Если очередной `then` вернул промис, то далее по цепочке будет передан не сам этот промис, а его результат.
