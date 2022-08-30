@@ -31,10 +31,10 @@
 
 ## Общие вопросы ##
 - [UX/UI](/Pages/_Other/UxUi.md)
-- [REST](/Pages/Programming/REST.md)
+- [REST](/Pages/WebDeveloping/REST.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
-- [Микросервисная архитектура](/Pages/Programming/Microservices.md)
+- [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
 - [Программирование в целом](/Pages/Programming/Programming.md)
 
