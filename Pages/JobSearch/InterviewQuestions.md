@@ -1,13 +1,88 @@
 # Подборки вопросов-ответов для собеседования разработчика #
 
-  - **Из личного опыта:**
+- **Повторять**
+    - JS
+        - [Promise](https://learn.javascript.ru/async)
+        - [Promise.all](https://learn.javascript.ru/promise-api)
+    - React
+        - Reselect - библиотека для создания мемоизированных селекторов (https://youtu.be/_jyrQh0ZdTA)
+
+    - [WebSocket](https://learn.javascript.ru/websocket) - протокол связи поверх TCP. Для обмена данными между браузером
+      и сервером через постоянное соединение. Данные передаются по нему в обоих направлениях в виде «пакетов», без
+      разрыва соединения и дополнительных HTTP-запросов. Долэен поддерживаться клиентом (браузер) и сервером
+    - Микросервисная архитектура
+    - ООП - Основные понятия
+        - Класс
+        - Объект
+        - Свойства
+        - Методы
+        - Геттеры/сеттеры
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - ООП - Базовые принципы
+        - **Наследование** - механизм описания новых классов на основе родительского.
+        - Абстракция
+        - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
+          классе данные и методы для работы с ними, .
+        - Полиморфизм - возможность работать с несколькими типами так, будто это один и тот же тип. Cв-во системы,
+          позволяет использовать объекты с одинаковым интерфейсом, не зная о типе и внутр. стр-ре объекта.
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - Принципы SOLID
+        - Single Responsibility Principle («Принцип единой ответственности», SRP)
+        - Open-Closed Principle («Принцип открытости-закрытости», OCP)
+        - Liskov Substitution Principle («Принцип подстановки Барбары Лисков», LSP)
+        - Interface Segregation Principle («Принцип разделения интерфейса», ISP)
+        - Dependency Inversion Principle («Принцип инверсии зависимостей», DIP)
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - MVC
+        - Общее
+        - Приложение к веб
+        - Приложение к React
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - Термины
+        - инкапсуляция
+        - **идемпотентность** - сколько раз не вызовем операцию, всегда получаем тот же результат
+        - **детерминированность** - результат однозначно определяется исходными данными.
+        - иммутабельность,
+        - декоратор,
+        - дебаунс,
+        - мемоизация - reselect. Используется селектор с мемоизацией. Выполняем вычисления только если в соотв. части
+          дерева state произошли изменения.
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - Акронимы принципов программирования
+        - `DRY`,
+        - `KISS`,
+        - `YAGNI`,
+        - `SOLID`
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - Советы по оптимизации рендеринга web-страниц
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Programming.md
+    - Паттерны ООП - 23 шаблона
+        - https://github.com/Legmo/notes/blob/master/Pages/Programming/Pattern.md
+    - Вёрстка
+        - CSS для React - модули
+        - CSS для React - CSS in JS
+        - CSS для React - модули
+        - CSS для React - модули
+        -
+        - Sass - какие для вас главные преимущества
+          - https://github.com/Legmo/notes/blob/master/Pages/WebDeveloping/HtmlCssQuestions.md
+        - BEM
+    - GIT
+        - Rebase
+        - Squash
+        - GIT flow
+        - https://github.com/Legmo/notes/blob/master/Pages/_Other/GIT.md
+    - чистые функции
+
+
+- **Из личного опыта:**
     - Замыкания
     - Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, web API... SetInterval/Promises
-    - Асинхронность и однопоточность JS - что это значит и чем обусловлено. 
-    - **Как JS распределяет память, как парсится и выполняется код.** 
+    - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+    - **Как JS распределяет память, как парсится и выполняется код.**
     - Promises, Async/Await, атрибуты async и defer у тега script
     - Передача "по значению" и "по ссылке"
-    - **Лексическое всплытие** 
+    - **Лексическое всплытие**
     - **Алгоритмическая сложность**
     - **Теория нормализации данных** (применительно к проектированию Redux state)
     - Работа DOM браузера: "дорогие" операции. Relayout / repaint

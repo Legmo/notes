@@ -1,77 +1,5 @@
 <h1> Шпаргалка по JavaScript </h1>
 
-[//]: # (Новое в ES6-7-8-9-10-11-12)
-<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
-
-**Про обновления**
-- Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей языка переносятся в [черновик](https://tc39.github.io/ecma262), а затем публикуются в [спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
-- Разработчики JS-движков сами решают, какие предложения реализовать в первую очередь. Могут заранее добавить поддержку функций, которые ещё находятся в черновике, или отложить разработку функций, которые уже перенесены в спецификацию. Довольно часто в движке (браузер например) реализуется только часть стандарта. Текущее состояние поддержки различных возможностей JS можно проверить здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
-
-**ES 6**
-  - const
-  - let
-  - шаблонные строки
-  - параметры функции по умолчанию
-  - стрелочный функции
-  - ? map
-  - ? spred оператор
-  - Деструктурирующее присваивание
-  - Promises (обещания) -  объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка изображений и т. д.)
-
-**ES 7**
-  - block-scoping of variables and functions, 
-  - destructuring patterns (of variables), 
-  - proper tail calls, 
-  - exponentiation operator ** for numbers, 
-  - await, async keywords for asynchronous programming (as a preparation for ES2017), 
-  - Array.prototype.includes function. 
-  - The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python, F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
-
-**ES 8**
-  - Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects, 
-  - async / await constructions which use generators and promises, 
-  - additional features for concurrency and atomics.
-
-**ES 9**
-  - spread operator and rest parameters (...) for object literals, 
-  - asynchronous iteration, 
-  - Promise.prototype.finally and additions to RegExp.
-  - The spread operator allows for the easy copying of object properties
-
-**ES 10**
-  - Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort and Object.fromEntries.
-  - Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all subarray elements (up to the specified depth) are concatenated recursively. 
-  - Another notable change is that so-called catch binding became optional.
-
-**ES 11**
-  - In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the nullish coalescing operator, and the globalThis object.
-  - BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow. 
-  - The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined. This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
-    - `undefined ?? "string" // -> "string"`
-    - `null ?? "string" // -> "string"`
-    - `false ?? "string" // -> false `
-    - `NaN ?? "string" // -> NaN`
-  - Optional chaining makes it possible to access the nested properties of an object without having an AND check at each level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will be undefined.
-
-**ES 12 (2021)**
-  - replaceAll method for strings; 
-  - Promise.any, a promise combinator that short-circuits when an input value is fulfilled; 
-  - AggregateError, a new error type to represent multiple errors at once; 
-  - logical assignment operators (??=, &&=, ||=); 
-  - WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to manage registration and unregistration of cleanup operations performed when target objects are garbage collected; 
-  - separators for numeric literals (1_000); 
-  - Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort order.
-    <br/>
-
-  **Ссылки**
-  - [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
-  - [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
-  - [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
-  - [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
-
-
-<br></p>
-</details>
 
 [//]: # (Значения и ссылки)
 <details><summary><b>Значения и ссылки</b></summary><p>
@@ -307,7 +235,6 @@ var counter = makeCounter();
 
 <br></p>
 </details>
-
 
 [//]: # (Прототипы)
 <details><summary><b>Прототипы</b></summary><p>
@@ -688,134 +615,155 @@ rabbit.__proto__ = animal;
 
 [//]: # (Promises)
 <details><summary><b>Promises</b></summary><p>
-    
-  Способ организации асинхронного кода. Объект, который содержит своё состояние (ожидание, выполнен успешно, ошибка). Позволяет вызывать разные колбеки в зависимости от результата - одни для успеха, другие для ошибок. 
-  
-  Промисы можно объединять в длинные цепочки - это хорошая замена пирамиде вложенных колбеков. Т.е. мы делаем какую-то ассинхронную операцию, с результамаи её работы выполняем ещё какую-то асинхронную опрацию, её результаты передаём в следующую и т.д.
-  
-  Способ использования:
-   1. В основном коде пишем new Promise() и внутри запсукаем асинхронную функцию
-   1. Асинхронная функция создаёт объект promise и возвращает его.
-   1. В основном коде мы принимаем объект promise и навешиваем на него обработчики (одни - на успех, другие - на ошибку).
-   1. Когда код асинхронной функции завершается, он переводит promise в состояние fulfilled (с результатом) или rejected (с ошибкой). При этом автоматически вызываются соответствующие обработчики в основном коде.
-  
-  Пример
-  ```
-  var promise = new Promise(function(resolve, reject) {
+
+Способ организации асинхронного кода. Объект, который содержит своё состояние (ожидание, выполнен успешно, ошибка).
+Позволяет вызывать разные колбеки в зависимости от результата - одни для успеха, другие для ошибок.
+
+Промисы можно объединять в длинные цепочки - это хорошая замена пирамиде вложенных колбеков. Т.е. мы делаем какую-то
+ассинхронную операцию, с результамаи её работы выполняем ещё какую-то асинхронную опрацию, её результаты передаём в
+следующую и т.д.
+
+Способ использования:
+
+1. В основном коде пишем new Promise() и внутри запсукаем асинхронную функцию
+2. Асинхронная функция создаёт объект promise и возвращает его.
+3. В основном коде мы принимаем объект promise и навешиваем на него обработчики (одни - на успех, другие - на ошибку).
+4. Когда код асинхронной функции завершается, он переводит promise в состояние fulfilled (с результатом) или rejected (с
+   ошибкой). При этом автоматически вызываются соответствующие обработчики в основном коде.
+
+Пример
+
+```js
+  var promise = new Promise(function (resolve, reject) {
     // Эта функция будет вызвана автоматически, в ней можно делать любые асинхронные операции,
     // Когда они завершатся — нужно вызвать (resolve(результат) при успехе) или (reject(ошибка) при ошибке)
-    
-      setTimeout(() => {
+
+    setTimeout(() => {
         // переведёт промис в состояние fulfilled с результатом "result"
         resolve("result");
-      }, 1000);
-  })
-  
-  promise
+    }, 1000);
+})
+
+promise
     .then(
-      // функция-обработчик №1 - запустится при вызове resolve
-      result => console.log("Fulfilled: " + result), // result - аргумент resolve
-      
-      // функция-обработчик №2 - запустится при вызове reject
-      // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
-      error => console.log("Rejected: " + error), // error - аргумент reject
+        // функция-обработчик №1 - запустится при вызове resolve
+        result => console.log("Fulfilled: " + result), // result - аргумент resolve
+
+        // функция-обработчик №2 - запустится при вызове reject
+        // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
+        error => console.log("Rejected: " + error), // error - аргумент reject
     );
-  ```
-       
-  Состояния promises:
-    - вначале pending («ожидание»), 
-    - затем либо fulfilled («выполнено успешно») 
-    - либо rejected («выполнено с ошибкой»).
-    
-  На promise можно навешивать коллбэки двух типов:
-  - onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно».
-  - onRejected  – срабатывают, когда promise в состоянии «выполнен с ошибкой».
-  
-  Обработчики назначаются вызовом `then/catch`
-  - .then = универсальный метод для навешивания обработчиков:
-      - promise.then(onFulfilled, onRejected) //(удачно, неудачно)
-  - .catch = чтобы поставить обработчик только на ошибку
-      - вместо .then(null, onRejected) 
-      - можно  .catch(onRejected) – это то же самое.
-      
-   Метод .catch(onRejected) – всего лишь сокращённая запись .then(null, onRejected).   
-    
-  **Сhaining (чейнинг)**<br>
-  Возможность строить асинхронные цепочки из промисов<br>
-  Основная причина, из-за которой существуют и активно используются промисы.
-  
-  Например, мы хотим по очереди:
-  * Загрузить данные посетителя с сервера (асинхронно).
-  * Затем отправить запрос о нём на github (асинхронно).
-  * Когда это будет готово, вывести его github-аватар на экран (асинхронно).
-  * …И сделать код расширяемым, чтобы цепочку можно было легко продолжить.
-  ```
-    httpGet('/article/promise/user.json') //делаем запрос
-      .then(response => {
+```
+
+Состояния promises:
+
+- вначале pending («ожидание»),
+- затем либо fulfilled («выполнено успешно»)
+- либо rejected («выполнено с ошибкой»).
+
+На promise можно навешивать колбэки двух типов:
+
+- onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно».
+- onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой».
+
+Обработчики назначаются вызовом `then/catch`
+
+- `.then` = универсальный метод для навешивания обработчиков:
+    - `promise.then(onFulfilled, onRejected)` //(удачно, неудачно)
+- `.catch` = чтобы поставить обработчик только на ошибку
+    - вместо `.then(null, onRejected) `
+    - можно  `.catch(onRejected)` – это то же самое.
+
+Метод `.catch(onRejected)` – всего лишь сокращённая запись .then(null, onRejected).
+
+**Сhaining (чейнинг)**<br>
+Возможность строить асинхронные цепочки из промисов<br>
+Основная причина, из-за которой существуют и активно используются промисы.
+
+Например, мы хотим по очереди:
+
+* Загрузить данные посетителя с сервера (асинхронно).
+* Затем отправить запрос о нём на github (асинхронно).
+* Когда это будет готово, вывести его github-аватар на экран (асинхронно).
+* …И сделать код расширяемым, чтобы цепочку можно было легко продолжить.
+
+```js
+  httpGet('/article/promise/user.json') //делаем запрос
+    .then(response => {
         console.log(response);
         let user = JSON.parse(response);
         return user;
-      })
-      // 2. Получить информацию с github
-      .then(user => {
+    })
+    // 2. Получить информацию с github
+    .then(user => {
         console.log(user);
         let githubUser = httpGet(`https://api.github.com/users/${user.name}`)
         return githubUser;
-      })
-      // 3. Вывести картинку юзера
-      .then(githubUser => {
+    })
+    // 3. Вывести картинку юзера
+    .then(githubUser => {
         console.log(githubUser);
         githubUser = JSON.parse(githubUser);
         img.src = githubUser.avatar_url;
         document.body.appendChild(img);
-      });
-  ```
-  При чейнинге .then…then…then, в каждый следующий then переходит результат от предыдущего.<br> 
-  Если очередной then вернул промис, то далее по цепочке будет передан не сам этот промис, а его результат.
-  
-  Цепочки Promise работают напрямую через event loop и в общем случае могут содержать внутри достаточно большие и тяжелые вычисления. Разбивая их на атомарные операции, мы оставляем пространство для выполнения обработчиков пользовательских событий.  
- 
-  **Промисификация**
-  
-  Это когда берут асинхронный функционал и делают для него обёртку, возвращающую промис. Использование функционала, зачастую, становится удобнее.
-  
-  **Promise.resolve()**
-  Такой код
-  ```
+    });
+```
+
+При чейнинге .then…then…then, в каждый следующий then переходит результат от предыдущего.<br>
+Если очередной then вернул промис, то далее по цепочке будет передан не сам этот промис, а его результат.
+
+Цепочки Promise работают напрямую через event loop и в общем случае могут содержать внутри достаточно большие и тяжелые
+вычисления. Разбивая их на атомарные операции, мы оставляем пространство для выполнения обработчиков пользовательских
+событий.
+
+**Промисификация**<br>
+Это когда берут асинхронный функционал и делают для него обёртку, возвращающую промис. Использование функционала,
+зачастую, становится удобнее.
+
+**Promise.resolve()**<br>
+Такой код
+
+```
   new Promise(function (resolve, reject) {
-    resolve(someSynchronousValue);
+  resolve(someSynchronousValue);
   }).then( ... );
-  ```
-  
-  Можно записать так:
-  ```
+```
+
+Можно записать так:
+
+```js
   Promise.resolve(someSynchronousValue).then(/* ... */);
-  ```
-  
-  **Важное**
-  1.  внутри then всегда использовать **return** или выдавать ошибку при помощи **throw**.
-  1.  в конец цепочки промисов (.then(...).then(...)) всегда добавлять метод **catch()** (`.catch(console.log.bind(console))`)
-  1. всегда добавлять обработку ошибок ниже в виде catch(), и никогда не использовать для этой цели вторую функцию в методе then(). Исключение только одно — асинхронные тесты в Mocha, в случаях, когда я намеренно жду ошибку:
-  
-  Ссылки:
-  - [learn.javascript.ru](https://learn.javascript.ru/promise)
-  - [habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
-  - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-  - [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-  - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-  - [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
-  * [Ад обратных вызовов](http://callbackhell.ru/)
-  * [habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/
-  
+```
+
+**Важное**
+
+1. внутри then всегда использовать **return** или выдавать ошибку при помощи **throw**.
+2. в конец цепочки промисов (.then(...).then(...)) всегда добавлять метод **
+   catch()** (`.catch(console.log.bind(console))`)
+3. всегда добавлять обработку ошибок ниже в виде catch(), и никогда не использовать для этой цели вторую функцию в
+   методе then(). Исключение только одно — асинхронные тесты в Mocha, в случаях, когда я намеренно жду ошибку:
+
+Ссылки:
+
+- [learn.javascript.ru](https://learn.javascript.ru/promise)
+- [habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
+- [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
+- [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
+- [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+
+* [Ад обратных вызовов](http://callbackhell.ru/)
+* [habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/
+
 <br></p>
 </details>
 
 [//]: # (Async/Await)
 <details><summary><b>Async/Await</b></summary><p>
-  
-  Асинхронные функции на основе promises
-  
-  Асинхронные функции позволяют избавиться от так называемого «ада коллбэков» и улучшить внешний вид и читаемость кода.
+
+Асинхронные функции на основе promises
+
+Асинхронные функции позволяют избавиться от так называемого «ада коллбэков» и улучшить внешний вид и читаемость кода.
   
   Добавлены в ES8
   
@@ -2034,7 +1982,108 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ECMAScript 2019)
+[//]: # (Новое в ES6-7-8-9-10-11-12)
+<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
+
+**Про обновления**
+
+- Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей
+  языка переносятся в [черновик](https://tc39.github.io/ecma262), а затем публикуются
+  в [спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
+- Разработчики JS-движков сами решают, какие предложения реализовать в первую очередь. Могут заранее добавить поддержку
+  функций, которые ещё находятся в черновике, или отложить разработку функций, которые уже перенесены в спецификацию.
+  Довольно часто в движке (браузер например) реализуется только часть стандарта. Текущее состояние поддержки различных
+  возможностей JS можно проверить
+  здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
+
+**ES 6**
+
+- const
+- let
+- шаблонные строки
+- параметры функции по умолчанию
+- стрелочный функции
+- ? map
+- ? spred оператор
+- Деструктурирующее присваивание
+- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
+  изображений и т. д.)
+
+**ES 7**
+
+- block-scoping of variables and functions,
+- destructuring patterns (of variables),
+- proper tail calls,
+- exponentiation operator ** for numbers,
+- await, async keywords for asynchronous programming (as a preparation for ES2017),
+- Array.prototype.includes function.
+- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
+  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
+
+**ES 8**
+
+- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
+- async / await constructions which use generators and promises,
+- additional features for concurrency and atomics.
+
+**ES 9**
+
+- spread operator and rest parameters (...) for object literals,
+- asynchronous iteration,
+- Promise.prototype.finally and additions to RegExp.
+- The spread operator allows for the easy copying of object properties
+
+**ES 10**
+
+- Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
+  and Object.fromEntries.
+- Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the
+  same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
+  subarray elements (up to the specified depth) are concatenated recursively.
+- Another notable change is that so-called catch binding became optional.
+
+**ES 11**
+
+- In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the
+  nullish coalescing operator, and the globalThis object.
+- BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number
+  literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers
+  are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with
+  BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow.
+- The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined.
+  This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
+    - `undefined ?? "string" // -> "string"`
+    - `null ?? "string" // -> "string"`
+    - `false ?? "string" // -> false `
+    - `NaN ?? "string" // -> NaN`
+- Optional chaining makes it possible to access the nested properties of an object without having an AND check at each
+  level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will
+  be undefined.
+
+**ES 12 (2021)**
+
+- replaceAll method for strings;
+- Promise.any, a promise combinator that short-circuits when an input value is fulfilled;
+- AggregateError, a new error type to represent multiple errors at once;
+- logical assignment operators (??=, &&=, ||=);
+- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
+  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
+- separators for numeric literals (1_000);
+- Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort
+  order.
+  <br/>
+
+**Ссылки**
+
+- [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
+- [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
+- [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
+- [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
+
+<br></p>
+</details>
+
+[//]: # (ES6 ECMAScript 2019)
 <details><summary><b>ES10 (ECMAScript 2019)</b></summary><p>
 
 Выход ожидается летом 2019
@@ -2066,7 +2115,7 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ECMAScript 2018)
+[//]: # (ES7 ECMAScript 2018)
 <details><summary><b>ES9 (ECMAScript 2018)</b></summary><p>
 
 * <b>Разделяемая память (shared memory) и атомарные операции (atomics)</b> - касается ядра JS-движков. Позволяет писать
@@ -2100,7 +2149,7 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ES8 &#40;ECMAScript 2017&#41;)
+[//]: # (ES8 ECMAScript 2017)
 <details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
 
 - **Конструкция Async/Await** - асинхронные функции, работают на основе promise
@@ -2123,7 +2172,7 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ES7 &#40;ECMAScript 2016&#41;)
+[//]: # (ES7 ECMAScript 2016)
 <details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
 
 * <b>Метод Array.prototype.includes()</b> - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве
@@ -2138,7 +2187,7 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ES6 &#40;ECMAScript 2015&#41;)
+[//]: # (ES6 ECMAScript 2015)
 <details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
       
   * [Переменные: let и const](https://learn.javascript.ru/let-const)
@@ -2165,7 +2214,7 @@ console.dirxml(). Они могут перечислить свойства эл
 <br></p>
 </details>
 
-[//]: # (ES5 &#40;ECMAScript 2009&#41;)
+[//]: # (ES5 ECMAScript 2009)
 <details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
 
 Среди изменений:
