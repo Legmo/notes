@@ -4,6 +4,7 @@
 <details><summary><b>Повторять</b></summary><p>
 
 - JS
+  - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
   - [Замыкания](https://learn.javascript.ru/closure)
   - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
     и [ещё они же](https://learn.javascript.ru/arrow-functions)
@@ -117,6 +118,101 @@
       и height элемента приводит к изменению его геометрии и может привести к тому, что другие элементы на странице
       переместятся или изменят размер. Избегать анимации свойств элементов, которые вызывают изменение макета страницы
       или её перерисовку. Для большинства современных браузеров это означает ограничение анимациями opacity и transform.
+
+- GraphQL
+  - язык запросов для API -интерфейсов
+  - среда, в которой они выполняются.
+  - С помощью **GraphQL** можно получить данные из API и передать их в приложение (от сервера к клиенту).
+  - https://habr.com/ru/post/326986/
+  - https://ru.hexlet.io/blog/posts/chto-takoe-graphql-s-osnov-do-pervyh-zaprosov
+  - https://tproger.ru/translations/graphql-beginners-guide/
+  - https://medium.com/nuances-of-programming/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-graphql-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-41b5d50c14c
+- JS
+  - [ ] Event loop, микро и макро tasks
+    - [ ] https://learn.javascript.ru/event-loop
+    - [ ] https://learn.javascript.ru/microtask-queue
+  - [ ] Асинхронность
+    - [ ] https://habr.com/ru/post/439620/
+    - [ ] https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
+    - [ ] https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md
+  - [ ] Асинхронная итерация, цикл for-await-of
+    - [ ] https://learn.javascript.ru/async-iterators-generators
+    - [ ] https://learn.javascript.ru/async-await
+  - [ ] Bind, контекст, this
+    - [ ] https://habr.com/ru/company/ruvds/blog/455527/
+    - [ ] https://learn.javascript.ru/bind
+    - [ ] https://learn.javascript.ru/object-methods
+    - [ ] https://learn.javascript.ru/call-apply
+    - [ ] https://habr.com/ru/company/ruvds/blog/419371/
+  - [ ] [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS.
+    Предоставляетс Fetch API
+  - [ ] [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+  - [ ] [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+  - [ ] Веб-воркеры
+- React
+  - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+  - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
+  - [ ] Хуки
+    - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+    - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
+      Получи прямую ссылку"
+    - https://ru.reactjs.org/docs/hooks-state.html
+    - https://ru.reactjs.org/docs/hooks-effect.html
+    - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
+    - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
+    - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
+    - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
+    - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
+  - [ ] Методы жизненного цикла
+    - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
+    - componentShouldUpdate
+  - [ ] Оптимизация React
+  - [ ] Современные практики - 2020, 2021, 2022
+  - [ ] Классовые компоненты
+  - [ ] Ref
+  - [ ] [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+  - [ ] Child
+  - [ ] Connect и то как он прокидывает props
+  - [ ] Render props
+  - Читать документацию React (прочесть трижды)
+  - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
+  - https://it-shpora.pp.ua
+- TS
+  - смотреть видео про TS - https://www.youtube.com/playlist?list=PLNkWIWHIRwMEm1FgiLjHqSky27x5rXvQa
+  - прочитать и законспектировать базовые понятия
+  - [ ] типы (type)
+  - [ ] интерфейсы (interface)
+  - [ ] дженерики (generic)
+  - [ ] транспиляция
+  - [ ] наследование
+  - [ ] Основные отличия TS и JS
+
+  +
+
+  - [ ] в JS нет дженериков - что такое генерификация, как она работает
+  - [ ] как дженерики транспилируются в JS
+  - [ ] как реализовано наследование
+  - [ ] как реализована деструктуризация
+  - [ ] как реализован event loop
+  - [ ] как работает сборщик мусора
+  - [ ] 
+- JEST
+  - https://youtu.be/Kyc_Z_2b2Hc
+  - https://youtu.be/Kyc_Z_2b2Hc?t=1653 - как протестить APP
+  - https://habr.com/ru/company/timeweb/blog/670480/
+  - https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit
+  - https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934
+- [ ] Парадигмы программирования
+  - [ ] https://doka.guide/js/programming-paradigms/
+  - [ ] https://pikabu.ru/story/paradigmyi_programmirovaniya_7584307
+  - [ ] https://habr.com/ru/post/554474/
+- Советы по оптимизации рендеринга web-страниц
+- Вёрстка
+  - CSS для React - модули
+  - CSS для React - CSS in JS
+  - CSS для React - прочее
+  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+  - BEM
 
 <br></p>
 </details> 
