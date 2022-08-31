@@ -406,16 +406,17 @@ HTTP-кэш.
 <br>
 
 [//]: # (Single Responsibility Principle)
-<details>
-  <summary>Single Responsibility Principle (<b>Принцип единственной ответственности</b>)</summary>
+<details><summary>Single Responsibility Principle (<b>Принцип единственной ответственности</b>)</summary>
 
-    Каждый класс должен решать лишь одну задачу.
+Каждый класс должен решать лишь одну задачу.
 
 </details>
 
 [//]: # (Open-Closed Principle)
 <details><summary>Open-Closed Principle (<b>Принцип открытости-закрытости</b>).</summary>
+
 Программные сущности (классы, модули, функции) должны быть открыты для расширения, но не для модификации.
+
 </details>
 
 [//]: # (Liskov Substitution Principle )
