@@ -206,8 +206,8 @@
 <br></p>
 </details> 
 
-[//]: # (Вопросы на собеседовании React.js)
-<details><summary><b>Вопросы на собеседовании React.js</b></summary><p>
+[//]: # (React.js)
+<details><summary><b>React.js</b></summary><p>
 
 [Вопросы на собеседовании React.js](https://github.com/likezninjaz/react-ru-interview-questions)
 
@@ -236,8 +236,8 @@
 <br></p>
 </details> 
 
-[//]: # (Козлова О - React.js + Redux — interview questions)
-<details><summary><b>Козлова О - React.js + Redux — interview questions</b></summary><p>
+[//]: # (Козлова О - React.js + Redux)
+<details><summary><b>Козлова О - React.js + Redux</b></summary><p>
 
 [Козлова О - React.js + Redux — interview questions](https://medium.com/@olgakozlova/react-js-redux-interview-questions-1-e6d2f12f2d79)
 
@@ -257,7 +257,7 @@
 [//]: # (Козлова О - JS Interview Questions. Массивы)
 <details><summary><b>Козлова О - JS Interview Questions. Массивы</b></summary><p>
 
-[Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
+[Козлова О - JS. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
 
 - Какие способы создать массив вы знаете?
 - Какие особенности существуют у массивов в JavaScript по сравнению с массивами в других языках программирования — C,
@@ -289,7 +289,7 @@
 [//]: # (Козлова О - JS Interview Questions. Функции])
 <details><summary><b>Козлова О - JS Interview Questions. Функции</b></summary><p>
 
-[Козлова О - JS Interview Questions. Функции](https://medium.com/@olgakozlova/javascript-interview-questions-part-ii-functions-5bd513054382)
+[Козлова О - JS. Функции](https://medium.com/@olgakozlova/javascript-interview-questions-part-ii-functions-5bd513054382)
 
 - Какие способы создать функцию Вы знаете?
 - Какие способы вызвать функцию Вы знаете?
@@ -410,8 +410,8 @@
 <br></p>
 </details> 
 
-[//]: # (Пацианский М - Вопросы для собеседования javascript разработчика)
-<details><summary><b>Пацианский М - Вопросы для собеседования javascript разработчика</b></summary><p>
+[//]: # (Пацианский М - Вопросы для собеседования JS разработчика)
+<details><summary><b>Пацианский М - Вопросы для собеседования JS разработчика</b></summary><p>
 
 [Пацианский М - Вопросы для собеседования javascript разработчика](https://maxpfrontend.ru/vebinary/voprosy-dlya-sobesedovaniya-javascript-razrabotchika/)
 
