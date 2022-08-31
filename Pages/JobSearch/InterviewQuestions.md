@@ -254,8 +254,8 @@
 <br></p>
 </details> 
 
-[//]: # (Козлова О - JS Interview Questions. Массивы)
-<details><summary><b>Козлова О - JS Interview Questions. Массивы</b></summary><p>
+[//]: # (Козлова О - JS Массивы)
+<details><summary><b>Козлова О - JS. Массивы</b></summary><p>
 
 [Козлова О - JS. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
 
@@ -286,8 +286,8 @@
 <br></p>
 </details> 
 
-[//]: # (Козлова О - JS Interview Questions. Функции])
-<details><summary><b>Козлова О - JS Interview Questions. Функции</b></summary><p>
+[//]: # (Козлова О - JS. Функции])
+<details><summary><b>Козлова О - JS. Функции</b></summary><p>
 
 [Козлова О - JS. Функции](https://medium.com/@olgakozlova/javascript-interview-questions-part-ii-functions-5bd513054382)
 
