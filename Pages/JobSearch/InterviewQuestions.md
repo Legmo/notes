@@ -18,13 +18,18 @@
   - [Side-эффекты](/Pages/Programming/Programming.md)
   - [HOC](/Pages/JS/React.md)
   - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
+- Redux
+- TypeScript
+- [GIT](/Pages/_Other/GIT.md)
+  - Rebase
+  - Squash
+  - GIT flow
 - [REST API](/Pages/WebDeveloping/REST.md)
   - методы - out, post, get, delete...
   - Что можно отправлять
   - типа параметров и т.д.
   - Диапазоны http-кодов
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
-- TypeScript
 - [Тестирование](/Pages/Programming/Testing.md)
   - Зачем вообще тестировать?
   - TDD / BDD
@@ -55,39 +60,6 @@
   - протокол связи поверх
     TCP. Для обмена данными между браузером и сервером через постоянное соединение.
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
-- [MVC](/Pages/Programming/Programming.md)
-  - Общее
-  - Приложение к веб
-  - Приложение к React
-- [ООП - Основные понятия](/Pages/Programming/Programming.md)
-  - Класс
-  - Объект
-  - Свойства
-  - Методы
-  - Геттеры/сеттеры
-- [ООП - Базовые принципы](/Pages/Programming/Programming.md)
-  - **Наследование** - механизм описания новых классов на основе родительского.
-  - Абстракция
-  - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
-    классе данные и методы для работы с ними.
-  - Полиморфизм - возможность работать с несколькими типами так, будто это один и тот же тип. Cв-во системы,
-    позволяет использовать объекты с одинаковым интерфейсом, не зная о типе и внутр. стр-ре объекта.
-- [ООП - Паттерны. 23 шаблона](/Pages/Programming/Pattern.md)
-- [Принципы SOLID](/Pages/Programming/Programming.md)
-  - `Single Responsibility Principle` — Принцип единой ответственности
-  - `Open-Closed Principle` — Принцип открытости-закрытости
-  - `Liskov Substitution Principle` — Принцип подстановки Барбары Лисков
-  - `Interface Segregation Principle` — Принцип разделения интерфейса
-  - `Dependency Inversion Principle` — Принцип инверсии зависимостей
-- [Акронимы принципов программирования](/Pages/Programming/Programming.md)
-  - `DRY`,
-  - `KISS`,
-  - `YAGNI`,
-  - `SOLID`
-- [GIT](/Pages/_Other/GIT.md)
-  - Rebase
-  - Squash
-  - GIT flow
 - [Оптимизации web-страниц](/Pages/Programming/Programming.md) (ДОРАБОТАТЬ)
   - JS - эффективно использовать память
   - JS - избегать использования setTimeout() и setInterval() для обновления внешнего вида элементов страниц.
@@ -117,6 +89,49 @@
   - Разделение кода (code splitting) - ленивая загрузка, динамический импорт... Подгружать не самые важные вещи только
     когда они понадобятся
   - кэширование - на стороне сервера, на стороне клиента ( HTTP-заголовок Expires )
+- [MVC](/Pages/Programming/Programming.md)
+  - Общее
+  - Приложение к веб
+  - Приложение к React
+- [ООП - Основные понятия](/Pages/Programming/Programming.md)
+  - Класс
+  - Объект
+  - Свойства
+  - Методы
+  - Геттеры/сеттеры
+- [ООП - Базовые принципы](/Pages/Programming/Programming.md)
+  - **Наследование** - механизм описания новых классов на основе родительского.
+  - Абстракция
+  - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
+    классе данные и методы для работы с ними.
+  - Полиморфизм - возможность работать с несколькими типами так, будто это один и тот же тип. Cв-во системы,
+    позволяет использовать объекты с одинаковым интерфейсом, не зная о типе и внутр. стр-ре объекта.
+- [ООП - Паттерны. 23 шаблона](/Pages/Programming/Pattern.md)
+- [ООП - Принципы SOLID](/Pages/Programming/Programming.md)
+  - `Single Responsibility Principle` — Принцип единой ответственности
+  - `Open-Closed Principle` — Принцип открытости-закрытости
+  - `Liskov Substitution Principle` — Принцип подстановки Барбары Лисков
+  - `Interface Segregation Principle` — Принцип разделения интерфейса
+  - `Dependency Inversion Principle` — Принцип инверсии зависимостей
+- [Акронимы принципов программирования](/Pages/Programming/Programming.md)
+  - `DRY`,
+  - `KISS`,
+  - `YAGNI`,
+  - `SOLID`
+- [Парадигмы программирования](/Pages/Programming/Programming.md)
+  - Императивное
+    - ООП
+    - Процедурное
+  - Декларативное
+    - Функциональное
+    - Логическое
+  - Прочие
+    - Реактивное - ориентированное на потоки данных и распространение изменений. Можно реализовать в **ООП**, в **чистом
+      императивном** стиле и т.д. Естественнее всего реализуется в **функциональном**
+    - Структурное
+    - Модульное
+    - Обобщённое
+    - всякие экзотические - автоматное, аппликативное, аспект/агент/компонент-ориентированное.
 - [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
 
 - JS
@@ -169,6 +184,12 @@
   - Читать документацию React (прочесть трижды)
   - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
   - https://it-shpora.pp.ua
+  - Вёрстка
+    - CSS для React - модули
+    - CSS для React - CSS in JS
+    - CSS для React - прочее
+    - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+    - BEM
 - TS
   - смотреть видео про TS - https://www.youtube.com/playlist?list=PLNkWIWHIRwMEm1FgiLjHqSky27x5rXvQa
   - прочитать и законспектировать базовые понятия
@@ -187,34 +208,7 @@
   - [ ] как реализована деструктуризация
   - [ ] как реализован event loop
   - [ ] как работает сборщик мусора
-  - [ ] 
-- JEST
-  - https://youtu.be/Kyc_Z_2b2Hc
-  - https://youtu.be/Kyc_Z_2b2Hc?t=1653 - как протестить APP
-  - https://habr.com/ru/company/timeweb/blog/670480/
-  - https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit
-  - https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934
-- [Парадигмы программирования](/Pages/Programming/Programming.md)
-  - Императивное
-    - ООП
-    - Процедурное
-  - Декларативное
-    - Функциональное
-    - Логическое
-  - Прочие
-    - Реактивное - ориентированное на потоки данных и распространение изменений. Можно реализовать в **ООП**, в **чистом
-      императивном** стиле и т.д. Естественнее всего реализуется в **функциональном**
-    - Структурное
-    - Модульное
-    - Обобщённое
-    - всякие экзотические - автоматное, аппликативное, аспект/агент/компонент-ориентированное.
-
-- Вёрстка
-  - CSS для React - модули
-  - CSS для React - CSS in JS
-  - CSS для React - прочее
-  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
-  - BEM
+  - [ ]
 
 <br></p>
 </details> 
