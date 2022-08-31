@@ -23,6 +23,7 @@
   - Что можно отправлять
   - типа параметров и т.д.
   - Диапазоны http-кодов
+- [GraphQL](/Pages/WebDeveloping/GraphQL.md)
 - TypeScript
 - Jest и тестирование
 - [Чистые функции](/Pages/Programming/Programming.md)
@@ -119,14 +120,7 @@
       переместятся или изменят размер. Избегать анимации свойств элементов, которые вызывают изменение макета страницы
       или её перерисовку. Для большинства современных браузеров это означает ограничение анимациями opacity и transform.
 
-- GraphQL
-  - язык запросов для API -интерфейсов
-  - среда, в которой они выполняются.
-  - С помощью **GraphQL** можно получить данные из API и передать их в приложение (от сервера к клиенту).
-  - https://habr.com/ru/post/326986/
-  - https://ru.hexlet.io/blog/posts/chto-takoe-graphql-s-osnov-do-pervyh-zaprosov
-  - https://tproger.ru/translations/graphql-beginners-guide/
-  - https://medium.com/nuances-of-programming/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-graphql-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-41b5d50c14c
+
 - JS
   - [ ] Event loop, микро и макро tasks
     - [ ] https://learn.javascript.ru/event-loop
