@@ -704,6 +704,26 @@ function factory(bvalue: any) {   //Factory
 }
 ```
 
+**Композиция декораторов **
+
+Можно применять несколько декораторов
+
+```ts
+  //Вариант 1
+@decoratorOne @decoratorTwo
+class User1 {/*...*/
+}
+
+//Вариант 2
+@decoratorOne
+@decoratorTwo
+class User2 {/*...*/
+}
+```
+
+Выражение для каждого декоратора вычисляется сверху вниз.<br>
+Затем результаты вызываются снизу вверх.
+
 **Ссылки**
 
 - [Legmo - JS](/Pages/JS/JS.md)
@@ -727,6 +747,47 @@ function otherFunc(name: string): void {
 
 myFunc = otherFunc
 ```
+
+<br></p>
+</details>
+
+[//]: # (Утилиты  - Utility Types)
+<details><summary><b>Утилиты (Utility Types)</b></summary><p>
+
+Есть 16 типов утилит:
+
+- `Partial<Type>`
+- `Required<Type>` - тип все поля которого становятся обязательными
+- `Readonly<Type>` - тип все св-ва которого предназначены только для чтения
+- `Record<Keys, Type>`
+- `Pick<Type, Keys>`
+- `Omit<Type, Keys>`
+- `Exclude<UnionType, ExcludedMembers>`
+- `Extract<Type, Union>`
+- `NonNullable<Type>`
+- `Parameters<Type>`
+- `ConstructorParameters<Type>`
+- `ReturnType<Type>`
+- `InstanceType<Type>`
+- `ThisParameterType<Type>`
+- `OmitThisParameter<Type>`
+- `ThisType<Type>`
+
+```ts
+interface Props {
+  a?: number;
+  b?: string;
+};
+
+const obj1: Props = {a: 5} //Ok
+const obj2: Required<Props> = {a: 5} //Error. Не хвататет св-ва b.
+```
+
+**Ссылки**
+
+- [Оф. документация - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+- [WebDev - Утилиты (Utility Types)](https://youtu.be/Qf_WJGJf4yw)
+- [Habr - Язык программирования типов, скрытый в TypeScript. Utility Types](https://habr.com/ru/post/648805/)
 
 <br></p>
 </details>
