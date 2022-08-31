@@ -207,7 +207,7 @@
 </details> 
 
 [//]: # (Вопросы на собеседовании React.js)
-<details><summary><b>[Вопросы на собеседовании React.js](https://github.com/likezninjaz/react-ru-interview-questions)</b></summary><p>
+<details><summary><b>Вопросы на собеседовании React.js</b></summary><p>
 
 [Вопросы на собеседовании React.js](https://github.com/likezninjaz/react-ru-interview-questions)
 
@@ -237,7 +237,7 @@
 </details> 
 
 [//]: # (Козлова О - React.js + Redux — interview questions)
-<details><summary><b>[Козлова О - React.js + Redux — interview questions](https://medium.com/@olgakozlova/react-js-redux-interview-questions-1-e6d2f12f2d79)</b></summary><p>
+<details><summary><b>Козлова О - React.js + Redux — interview questions</b></summary><p>
 
 [Козлова О - React.js + Redux — interview questions](https://medium.com/@olgakozlova/react-js-redux-interview-questions-1-e6d2f12f2d79)
 
@@ -255,7 +255,7 @@
 </details> 
 
 [//]: # (Козлова О - JS Interview Questions. Массивы)
-<details><summary><b>[Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)</b></summary><p>
+<details><summary><b>Козлова О - JS Interview Questions. Массивы</b></summary><p>
 
 [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
 
@@ -287,7 +287,7 @@
 </details> 
 
 [//]: # (Козлова О - JS Interview Questions. Функции])
-<details><summary><b>[Козлова О - JS Interview Questions. Функции](https://medium.com/@olgakozlova/javascript-interview-questions-part-ii-functions-5bd513054382)</b></summary><p>
+<details><summary><b>Козлова О - JS Interview Questions. Функции</b></summary><p>
 
 [Козлова О - JS Interview Questions. Функции](https://medium.com/@olgakozlova/javascript-interview-questions-part-ii-functions-5bd513054382)
 
@@ -313,7 +313,7 @@
 </details> 
 
 [//]: # (Вопросы и ответы на собеседовании по React.js)
-<details><summary><b>[Вопросы и ответы на собеседовании по React.js](https://www.interviewhelper.org/ru/question/voprosy-i-otvety-na-sobesedovanii-po-react-js)</b></summary><p>
+<details><summary><b>Вопросы и ответы на собеседовании по React.js</b></summary><p>
 
 [Вопросы и ответы на собеседовании по React.js](https://www.interviewhelper.org/ru/question/voprosy-i-otvety-na-sobesedovanii-po-react-js)
 
@@ -342,7 +342,7 @@
 </details> 
 
 [//]: # (Вопросы про React на собеседовании)
-<details><summary><b>[Вопросы про React на собеседовании](https://www.kanby.ru/voprosyi-pro-react-na-sobesedovanii.html)</b></summary><p>
+<details><summary><b>Вопросы про React на собеседовании</b></summary><p>
 
 [Вопросы про React на собеседовании](https://www.kanby.ru/voprosyi-pro-react-na-sobesedovanii.html)
 
@@ -365,7 +365,7 @@
 </details> 
 
 [//]: # (Топ 15 вопросов о React.JS на собеседовании. Другой перевод)
-<details><summary><b>[Топ 15 вопросов о React.JS на собеседовании (другой перевод)](https://proglib.io/p/react-js-interview/)</b></summary><p>
+<details><summary><b>Топ 15 вопросов о React.JS на собеседовании (другой перевод)</b></summary><p>
 
 [Топ 15 вопросов о React.JS на собеседовании (другой перевод)](https://proglib.io/p/react-js-interview/)
 
@@ -388,7 +388,7 @@
 </details> 
 
 [//]: # (Вопросы на собеседование по React / Redux)
-<details><summary><b>[Вопросы на собеседование по React / Redux](https://webformyself.com/voprosy-na-sobesedovanie-po-react-redux/)</b></summary><p>
+<details><summary><b>Вопросы на собеседование по React / Redux</b></summary><p>
 
 [Вопросы на собеседование по React / Redux](https://webformyself.com/voprosy-na-sobesedovanie-po-react-redux/)
 
@@ -411,7 +411,7 @@
 </details> 
 
 [//]: # (Пацианский М - Вопросы для собеседования javascript разработчика)
-<details><summary><b>[Пацианский М - Вопросы для собеседования javascript разработчика](https://maxpfrontend.ru/vebinary/voprosy-dlya-sobesedovaniya-javascript-razrabotchika/)</b></summary><p>
+<details><summary><b>Пацианский М - Вопросы для собеседования javascript разработчика</b></summary><p>
 
 [Пацианский М - Вопросы для собеседования javascript разработчика](https://maxpfrontend.ru/vebinary/voprosy-dlya-sobesedovaniya-javascript-razrabotchika/)
 
@@ -465,6 +465,9 @@
 - node.js
 - promise
 
+<br></p>
+</details> 
+
 <h3>Ещё</h3>
 
 - [Козлова О - Вопросы из Яндекса](https://medium.com/@olgakozlova/%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-%D0%B8%D0%B7-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-895261c94e16)
@@ -477,8 +480,6 @@
 - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 1](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
 - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 2](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
 
-<br></p>
-</details> 
 
 [//]: # (Популярные задачки)
 <details><summary><b>Популярные задачки</b></summary><p>
