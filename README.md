@@ -35,6 +35,7 @@
 - [UX/UI](/Pages/_Other/UxUi.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
+- [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
 - [Программирование в целом](/Pages/Programming/Programming.md)

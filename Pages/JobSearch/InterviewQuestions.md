@@ -25,7 +25,21 @@
   - Диапазоны http-кодов
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
 - TypeScript
-- Jest и тестирование
+- [Тестирование](/Pages/Programming/Testing.md)
+  - Зачем вообще тестировать?
+  - TDD / BDD
+  - Jest - среда запуска тестов JavaScript, фреймворк
+  - React Testing Library - библиотека для тестирования React.
+  - Enzime - библиотека для тестирования React.
+  - Unit-тестирование
+  - Snapshot тестирование
+  - Компонентное/Модульное тестирование
+  - Тест на «запах дыма»
+  - Интеграционный тест
+  - Функциональный тест
+  - Сквозное тестирование
+  - Приемочный тест
+  - Тест производительности
 - [Чистые функции](/Pages/Programming/Programming.md)
 - [Термины](/Pages/Programming/Programming.md)
   - инкапсуляция
@@ -103,6 +117,7 @@
   - Разделение кода (code splitting) - ленивая загрузка, динамический импорт... Подгружать не самые важные вещи только
     когда они понадобятся
   - кэширование - на стороне сервера, на стороне клиента ( HTTP-заголовок Expires )
+- [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
 
 - JS
   - [ ] Event loop, микро и макро tasks
@@ -179,10 +194,21 @@
   - https://habr.com/ru/company/timeweb/blog/670480/
   - https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit
   - https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934
-- Парадигмы программирования
-  - https://doka.guide/js/programming-paradigms/
-  - https://pikabu.ru/story/paradigmyi_programmirovaniya_7584307
-  - https://habr.com/ru/post/554474/
+- [Парадигмы программирования](/Pages/Programming/Programming.md)
+  - Императивное
+    - ООП
+    - Процедурное
+  - Декларативное
+    - Функциональное
+    - Логическое
+  - Прочие
+    - Реактивное - ориентированное на потоки данных и распространение изменений. Можно реализовать в **ООП**, в **чистом
+      императивном** стиле и т.д. Естественнее всего реализуется в **функциональном**
+    - Структурное
+    - Модульное
+    - Обобщённое
+    - всякие экзотические - автоматное, аппликативное, аспект/агент/компонент-ориентированное.
+
 - Вёрстка
   - CSS для React - модули
   - CSS для React - CSS in JS
@@ -509,7 +535,6 @@
 - [Агапов Е - Вопросы по React для подготовки к собеседованию. Old. Версия 2 (180 вопросов, 2021 год)](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
 - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 1](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions.md)
 - [Агапов Е - Вопросы по React для подготовки к собеседованию. New. Версия 2](https://github.com/harryheman/my-js/blob/master/docs/other/js-questions2.md)
-
 
 <br>
 <br>
