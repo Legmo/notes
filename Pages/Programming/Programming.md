@@ -403,6 +403,8 @@ HTTP-кэш.
 [//]: # (ООП - Принципы SOLID)
 <details><summary><b>ООП - Принципы SOLID</b></summary>
 
+<br>
+
 [//]: # (Single Responsibility Principle)
 <details>
   <summary>S: Single Responsibility Principle (<b>Принцип единственной ответственности</b>)</summary>
