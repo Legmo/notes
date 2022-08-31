@@ -7,6 +7,8 @@
 - [Redux (for React)](/Pages/JS/Redux.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
+- [REST](/Pages/WebDeveloping/REST.md)
+- [GraphQL](/Pages/WebDeveloping/GraphQL.md)
 - [AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Ajax.md)
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
 - [GIT](/Pages/_Other/GIT.md)
@@ -31,7 +33,6 @@
 
 ## Общие вопросы ##
 - [UX/UI](/Pages/_Other/UxUi.md)
-- [REST](/Pages/WebDeveloping/REST.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
