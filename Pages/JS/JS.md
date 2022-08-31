@@ -966,11 +966,14 @@ promise
   Эта техника аккуратно инкапсулирует переменные и код, пряча их от глобального пространства имен, чтобы они не вступили в конфликт с другим кодом. Поэтому полифилы и плагины часто пишутся в виде самовыполняющихся функций.  
     
   **Ссылки**
-  - [Анонимные и самовыполняющиеся функции в JavaScript](https://webformyself.com/anonimnye-i-samovypolnyayushhiesya-funkcii-v-javascript/)
-  - [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
-  - [learn.javascript.ru - Функциональные выражения](https://learn.javascript.ru/function-declaration-expression)
-  - [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
-  - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
+
+- [Анонимные и самовыполняющиеся функции в JavaScript](https://webformyself.com/anonimnye-i-samovypolnyayushhiesya-funkcii-v-javascript/)
+- [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
+- [learn.javascript.ru - Функциональные выражения](https://learn.javascript.ru/function-declaration-expression)
+- [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
+- [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
+- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
+- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
         
 <br></p>
 </details>
