@@ -37,8 +37,9 @@
   - тротлинг,
   - мемоизация - reselect. Используется селектор с мемоизацией. Выполняем вычисления только если в соотв. части
     дерева state произошли изменения.
-- [WebSocket](https://learn.javascript.ru/websocket) и [ещё](/Pages/WebDeveloping/Ajax.md) - протокол связи поверх
-  TCP. Для обмена данными между браузером и сервером через постоянное соединение.
+- [WebSocket](https://learn.javascript.ru/websocket) и [ещё](/Pages/WebDeveloping/Ajax.md)
+  - протокол связи поверх
+    TCP. Для обмена данными между браузером и сервером через постоянное соединение.
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [MVC](/Pages/Programming/Programming.md)
   - Общее
