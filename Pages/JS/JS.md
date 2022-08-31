@@ -1207,20 +1207,29 @@ const [fruit, setFruit] = useState('банан');
 
 [//]: # (Декораторы)
 <details><summary><b>Декораторы</b></summary><p>
-  
-  Ссылки:
-  - [habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
-  - [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
-      
+
+Декораторы позволяют добавить метаданные классам и функциям.<br>
+Тем самым изменить их поведение без изменения их кода.
+
+По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
+
+**Ссылки**
+
+- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
+- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
+- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
+
   <br></p>
+
 </details>
 
 [//]: # (var = х)
 <details><summary><b>var = х</b></summary><p>
-  
-  Способ объявления переменной. Используем в обычных случаях
-  
-  Область видимости переменной var – функция.
+
+Способ объявления переменной. Используем в обычных случаях
+
+Область видимости переменной var – функция.
   
   var существуют и до объявления. Они равны undefined.
   

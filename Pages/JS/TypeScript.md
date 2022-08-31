@@ -668,7 +668,49 @@ const fullName = userName + ' Ivanov';
 [//]: # (Декораторы)
 <details><summary><b>Декораторы</b></summary><p>
 
-- https://metanit.com/web/typescript/6.1.php
+Декораторы позволяют добавить метаданные классам и функциям.<br>
+Тем самым изменить их поведение без изменения их кода.
+
+По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
+
+```ts
+//создаём декоратор класса
+const logClass = (constructor: Function) => {
+  console.log(constructor) // если декоратор класса вернет значение, то он заменит объявление класса с помощью предоставленного конструктора 
+};
+
+@logClass //применили декоратор к классу User
+class User {
+  //...
+}
+```
+
+**4 типа декораторов**
+
+- класса
+- свойства
+- метода
+- аксессора (геттеры/сеттеры)
+
+**Фабрика декораторов **
+
+Функция, которая возвращает выражение. Будет вызвана декоратором при выполнении программы.
+
+```ts
+function factory(bvalue: any) {   //Factory
+  return function (target: any) { //Decorator
+    console.log(target)
+  }
+}
+```
+
+**Ссылки**
+
+- [Legmo - JS](/Pages/JS/JS.md)
+- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
+- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
+- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
 
 <br></p>
 </details>
