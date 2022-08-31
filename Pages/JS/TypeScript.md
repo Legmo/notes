@@ -759,16 +759,17 @@ myFunc = otherFunc
 - `Partial<Type>`
 - `Required<Type>` - тип все поля которого становятся обязательными
 - `Readonly<Type>` - тип все св-ва которого предназначены только для чтения
-- `Record<Keys, Type>`
-- `Pick<Type, Keys>`
-- `Omit<Type, Keys>`
-- `Exclude<UnionType, ExcludedMembers>`
-- `Extract<Type, Union>`
-- `NonNullable<Type>`
+- `Record<Keys, Type>` - создаёт тип с набором свойств Keys (определяем) типа Types (определяем)
+- `Pick<Type, Keys>` - создаёт тип, выбирая свойств Keys из интерфейса Type
+- `Omit<Type, Keys>` - создаёт тип на основе интерфейса Type, удалив из него типы Keys
+- `Exclude<UnionType, ExcludedMembers>` - создаёт тип на основе списка типов UnionType, исключая из него все типы
+  ExcludedMembers
+- `Extract<Type, Union>` - конструирует тип, составляя в нём только переданные св-ва
+- `NonNullable<Type>` - выбрасывает из создаваемого типа все несуществующие типы (null и undefined)
 - `Parameters<Type>`
 - `ConstructorParameters<Type>`
-- `ReturnType<Type>`
-- `InstanceType<Type>`
+- `ReturnType<Type>` - создаёт тип, состоящий из возвращаемого функцией типа
+- `InstanceType<Type>` - создаёт тип, состоящий из типа экземпляра функции-конструктора
 - `ThisParameterType<Type>`
 - `OmitThisParameter<Type>`
 - `ThisType<Type>`
