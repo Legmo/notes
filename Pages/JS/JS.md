@@ -60,6 +60,7 @@
 **Ссылки**
 - [Schoolsw3 - JavaScript - Строгий режим](https://www.schoolsw3.com/js/js_strict.php)
 - [learn.javascript.ru - Строгий режим](https://learn.javascript.ru/strict-mode)
+- [learn.javascript.ru - Eval](https://learn.javascript.ru/eval)
 
 <br></p>
 </details>
