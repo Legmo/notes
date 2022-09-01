@@ -5,23 +5,26 @@
 
 - JS
   - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+  - Передача по значению / по ссылке
+  - Что является объектом в JS?
+  - Различия Undefined и Null
+  - Приведение типов
+  - Мутирующие / не мутирующие методы (особенной у массивов)
   - [Замыкания](https://learn.javascript.ru/closure)
-  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
-    и [ещё они же](https://learn.javascript.ru/arrow-functions)
+  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics) и [ещё они же](https://learn.javascript.ru/arrow-functions)
   - [Promise](https://learn.javascript.ru/async)
   - [Ver, Let, Const](https://learn.javascript.ru/var)
-  - [Рекурсия](https://learn.javascript.ru/recursion)
-    и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+  - [Рекурсия](https://learn.javascript.ru/recursion) и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
   - [Прототипы](https://learn.javascript.ru/prototypes)
   - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
 - React
   - [Side-эффекты](/Pages/Programming/Programming.md)
   - [HOC](/Pages/JS/React.md)
   - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
-- Redux
+- [Redux](/Pages/JS/Redux.md)
 - TypeScript
   - Основные отличия TS и JS
-  - ! Транспиляция
+  - Транспиляция
   - Утиная типизация
   - Типы
   - Объекты
@@ -32,8 +35,8 @@
   - Наследование (реализовано на классах)
   - Пространства имён, модули, barrel-файлы
   - Интерфейсы
-  - Дженерики. **Что такое генерификация? Как она работает? Как дженерики транспилируются в JS?**
-  - ! Декораторы - классов, свойств, методов, аксессоров (геттеров/сеттеров). Фабрика декортаоров
+  - ! Дженерики. **Что такое генерификация? Как она работает? Как дженерики транспилируются в JS?**
+  - ! Декораторы - классов, свойств, методов, аксессоров (геттеров/сеттеров). Фабрика декораторов
   - Типизация функций
   - Утилиты (Utility Types)
   - ! Деструктуризация - как реализована
@@ -154,31 +157,32 @@
 - [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
 
 - JS
-  - [ ] Event loop, микро и макро tasks
-    - [ ] https://learn.javascript.ru/event-loop
-    - [ ] https://learn.javascript.ru/microtask-queue
-  - [ ] Асинхронность
-    - [ ] https://habr.com/ru/post/439620/
-    - [ ] https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
-    - [ ] https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md
-  - [ ] Асинхронная итерация, цикл for-await-of
-    - [ ] https://learn.javascript.ru/async-iterators-generators
-    - [ ] https://learn.javascript.ru/async-await
-  - [ ] Bind, контекст, this
-    - [ ] https://habr.com/ru/company/ruvds/blog/455527/
-    - [ ] https://learn.javascript.ru/bind
-    - [ ] https://learn.javascript.ru/object-methods
-    - [ ] https://learn.javascript.ru/call-apply
-    - [ ] https://habr.com/ru/company/ruvds/blog/419371/
-  - [ ] [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS.
-    Предоставляетс Fetch API
-  - [ ] [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-  - [ ] [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
-  - [ ] Веб-воркеры
+  - Event loop, микро и макро tasks
+    - https://learn.javascript.ru/event-loop
+    - https://learn.javascript.ru/microtask-queue
+  - Веб-воркеры
+    - [Legmo - JS](/Pages/JS/JS.md)
+    - https://webdevblog.ru/javascript-web-workers-rukovodstvo-dlya-nachinajushhih/?ysclid=l7id6v4kl6484714219
+  - Асинхронность
+    - https://habr.com/ru/post/439620/
+    - https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
+    - https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md
+  - Асинхронная итерация, цикл for-await-of
+    - https://learn.javascript.ru/async-iterators-generators
+    - https://learn.javascript.ru/async-await
+  - Bind, контекст, this
+    - https://habr.com/ru/company/ruvds/blog/455527/
+    - https://learn.javascript.ru/bind
+    - https://learn.javascript.ru/object-methods
+    - https://learn.javascript.ru/call-apply
+    - https://habr.com/ru/company/ruvds/blog/419371/
+  - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется Fetch API
+  - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+  - [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
 - React
   - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
   - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
-  - [ ] Хуки
+  - Хуки
     - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
     - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
       Получи прямую ссылку"
@@ -189,17 +193,17 @@
     - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
     - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
     - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
-  - [ ] Методы жизненного цикла
+  - Методы жизненного цикла
     - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
     - componentShouldUpdate
-  - [ ] Оптимизация React
-  - [ ] Современные практики - 2020, 2021, 2022
-  - [ ] Классовые компоненты
-  - [ ] Ref
-  - [ ] [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
-  - [ ] Child
-  - [ ] Connect и то как он прокидывает props
-  - [ ] Render props
+  - Оптимизация React
+  - Современные практики - 2020, 2021, 2022
+  - Классовые компоненты
+  - Ref
+  - [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+  - Child
+  - Connect и то как он прокидывает props
+  - Render props
   - Читать документацию React (прочесть трижды)
   - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
   - https://it-shpora.pp.ua
@@ -209,25 +213,6 @@
     - CSS для React - прочее
     - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
     - BEM
-- TS
-  - смотреть видео про TS - https://www.youtube.com/playlist?list=PLNkWIWHIRwMEm1FgiLjHqSky27x5rXvQa
-  - прочитать и законспектировать базовые понятия
-  - [ ] типы (type)
-  - [ ] интерфейсы (interface)
-  - [ ] дженерики (generic)
-  - [ ] транспиляция
-  - [ ] наследование
-  - [ ] Основные отличия TS и JS
-
-  +
-
-  - [ ] в JS нет дженериков - что такое генерификация, как она работает
-  - [ ] как дженерики транспилируются в JS
-  - [ ] как реализовано наследование
-  - [ ] как реализована деструктуризация
-  - [ ] как реализован event loop
-  - [ ] как работает сборщик мусора
-  - [ ]
 
 <br></p>
 </details> 

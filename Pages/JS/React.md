@@ -1375,7 +1375,8 @@ PureComponent, т.к. метод connect() оборачивает ваш ком�
 
 - [Оф. документация](https://ru.react.js.org/docs/react-component.html)
 - [Mentanit.com - Жизненный цикл компонента](https://metanit.com/web/react/2.6.php)
-- [Habr - Понимание жизненного цикла React-компонента (2018)](https://habr.com/ru/post/358090/)
+- [Habr - Понимание жизненного цикла React-компонента (2018)](https://habr.com/ru/post/358090)
+- [WebDev - Методы жизненного цикла](https://youtu.be/O8f6aXqpGHw)
 
 <br></p>
 </details>
@@ -1994,6 +1995,8 @@ function Example() {
 - [IT-Kamasutra #84 - hook, useState, хуки](https://youtu.be/EbqQg0K4wbo)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Matanit.com - Хуки. Управление функциональными компонентами](https://metanit.com/web/react/6.1.php)
+- [WebDev - React видеокаст #2. Полное введение в хуки](https://youtu.be/X6j7Y7tp3_c)
+- [WebDev - React видеокаст #3. Релиз хуков](https://youtu.be/19EmLE2mZ1Q)
 
 <br></p>
 </details>
