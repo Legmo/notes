@@ -1,7 +1,7 @@
 <h1> Шпаргалка по JavaScript </h1>
 
-[//]: # (Ресурсы)
-<details><summary><b>Ресурсы</b></summary><p>
+[//]: # (Ресурсы по JS)
+<details><summary><b>Ресурсы по JS</b></summary><p>
 
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [doka.guide](https://doka.guide/js)
@@ -32,14 +32,314 @@
 - [proglib.io](https://proglib.io/search?q=Javascript)
 - [webformyself.com](https://webformyself.com/category/javascriptajax-2/javascriptajax/)
 
-  **Прочее**
-- [Hexlet - Бесплатный курс JS](https://ru.hexlet.io/courses/js-basics)
+**Прочее**
 
-* [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-* [Официальная спецификация - черновик и предложения (en)]((https://tc39.github.io/ecma262))
+- [Hexlet - Бесплатный курс JS](https://ru.hexlet.io/courses/js-basics)
+- [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+- [Официальная спецификация - черновик и предложения (en)](https://tc39.github.io/ecma262)
 
 <br></p>
 </details>
+
+## JS - история версий ##
+
+[//]: # (История версий ES)
+<details><summary><b>История версий ES</b></summary><p>
+
+JavaScript создавался как скриптовый язык для Netscape. Изначально разработкой занимались Брендан Эйх, Марк Андрессен и
+Билл Джой.<br>
+После чего он был отправлен в ECMA International для стандартизации (ECMA — это ассоциация, деятельность которой
+посвящена стандартизации информационных и коммуникационных технологий). Стандартизированная версия имеет название
+ECMAScript, описывается стандартом ECMA-262.
+
+ECMAScript — стандарт, а JavaScript — самая популярная реализация этого стандарта.</br>
+Среди других реализаций можно отметить SpiderMonkey, V8 и ActionScript.
+
+ECMAScript - стандарт, развивается и поддерживается
+ассоциацией [ECMA International](http://www.ecma-international.org/memento/index.html). Ecma International Technical
+Committee 39 (он же TC39) — комитет очень умных людей :) Задача TC39 - поддержка и обновление спецификации ECMAScript,
+после обсуждения и всеобщего согласия. Сюда относятся синтаксис языка, семантика, библиотеки и сопутствующие технологии,
+на которых основывается язык.
+
+С 2015 года принято решение обновлять язык ежегодно.<br>
+ES.Next - термин является динамическим и автоматически ссылается на новую версию ECMAScript.
+
+* ES1 - 1997
+* ES2 - 1998
+* ES3 - 1999
+* ES4 - не выпущена
+* ES5 - 2009
+* ES6 - 2015
+* ES7 - 2016
+* ES8 - 2017
+* ES9 - 2018
+
+**Ссылки**
+
+* [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
+* [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+* [Официальная спецификация - архив (en)](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
+* [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
+* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
+
+<br></p>
+</details>
+
+[//]: # (Новое в ES6-7-8-9-10-11-12)
+<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
+
+**Про обновления**
+
+- Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей
+  языка переносятся в [черновик](https://tc39.github.io/ecma262), а затем публикуются
+  в [спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
+- Разработчики JS-движков сами решают, какие предложения реализовать в первую очередь. Могут заранее добавить поддержку
+  функций, которые ещё находятся в черновике, или отложить разработку функций, которые уже перенесены в спецификацию.
+  Довольно часто в движке (браузер например) реализуется только часть стандарта. Текущее состояние поддержки различных
+  возможностей JS можно проверить
+  здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
+
+**ES 6**
+
+- const
+- let
+- шаблонные строки
+- параметры функции по умолчанию
+- стрелочный функции
+- ? map
+- ? spred оператор
+- Деструктурирующее присваивание
+- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
+  изображений и т. д.)
+
+**ES 7**
+
+- block-scoping of variables and functions,
+- destructuring patterns (of variables),
+- proper tail calls,
+- exponentiation operator ** for numbers,
+- await, async keywords for asynchronous programming (as a preparation for ES2017),
+- Array.prototype.includes function.
+- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
+  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
+
+**ES 8**
+
+- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
+- async / await constructions which use generators and promises,
+- additional features for concurrency and atomics.
+
+**ES 9**
+
+- spread operator and rest parameters (...) for object literals,
+- asynchronous iteration,
+- Promise.prototype.finally and additions to RegExp.
+- The spread operator allows for the easy copying of object properties
+
+**ES 10**
+
+- Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
+  and Object.fromEntries.
+- Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the
+  same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
+  subarray elements (up to the specified depth) are concatenated recursively.
+- Another notable change is that so-called catch binding became optional.
+
+**ES 11**
+
+- In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the
+  nullish coalescing operator, and the globalThis object.
+- BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number
+  literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers
+  are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with
+  BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow.
+- The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined.
+  This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
+  - `undefined ?? "string" // -> "string"`
+  - `null ?? "string" // -> "string"`
+  - `false ?? "string" // -> false `
+  - `NaN ?? "string" // -> NaN`
+- Optional chaining makes it possible to access the nested properties of an object without having an AND check at each
+  level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will
+  be undefined.
+
+**ES 12 (2021)**
+
+- replaceAll method for strings;
+- Promise.any, a promise combinator that short-circuits when an input value is fulfilled;
+- AggregateError, a new error type to represent multiple errors at once;
+- logical assignment operators (??=, &&=, ||=);
+- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
+  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
+- separators for numeric literals (1_000);
+- Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort
+  order.
+  <br/>
+
+**Ссылки**
+
+- [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
+- [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
+- [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
+- [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
+
+<br></p>
+</details>
+
+[//]: # (ES6 ECMAScript 2019)
+<details><summary><b>ES10 (ECMAScript 2019)</b></summary><p>
+
+Выход ожидается летом 2019
+
+Предварительные ожидания:
+
+- Изменения в классах JS - строковая декларация, приватные методы и поля, статические методы и поля.
+- **flat() и flatMap()** - позволяет рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е.
+  многомерный массив сделать одномерным.
+- **Object.fromEntries** - выполняет обратное Object.entries. Преобразует список пар ключ-значение в объект.
+- **Строковые методы trimStart() и trimEnd()** - удаление пробелов в начале/конце строки
+- **Примитив BigInt** - для целых чисел больших чем (2<sup>53</sup>  - 1).
+- **Optional Catch Binding** - теперь не обязательно иметь привязку переменной исключения к оператору catch.
+  - **JSON** - подкорректированы символы разделителя строк и абзацев
+  - **JSON.stringify** - представление кодов с помощью escape-последовательностей JSON
+  - **.toString()** - теперь возвращает точные фрагменты текста исходного кода, включая пробелы и комментарии.
+  - **Symbol.prototype.description** - свойство, возвращает необязательное описание объекта Symbol
+  - **Стандартизированный объект globalThis**
+  - **Динамический import()**
+- **import.meta**
+- **Строковый метод matchAll()**
+- **Стандартизированный Hashbang** для приложений с интерфейсом командной строки (CLI)
+
+**Ссылки**
+
+* [Что нового в JavaScript ES2019](https://m.habr.com/ru/post/439532/)
+* [Что нового в JavaScript 2019](https://medium.com/web-standards/es2019-417d8b406346)
+
+<br></p>
+</details>
+
+[//]: # (ES7 ECMAScript 2018)
+<details><summary><b>ES9 (ECMAScript 2018)</b></summary><p>
+
+* <b>Разделяемая память (shared memory) и атомарные операции (atomics)</b> - касается ядра JS-движков. Позволяет писать
+  высокопроизводительные параллельные приложения, дает возможность управлять памятью самостоятельно, не отдавая
+  выполнение всех аспектов этой задачи JS-движку.
+* <b>Оператора rest</b> - выглядит как три точки. Позволяет извлекать свойства объекта. Используется в левой части
+  выражения.
+* <b>Оператор spread</b> - тоже выглядит как три точки. Используется для создания новых объектов. Используется в правой
+  части выражения со знаком присваивания.
+* <b>Асинхронная итерация, цикл for-await-of</b> - позволяет создавать циклы, работающие с асинхронным кодом.
+  Добавляется новый оператор цикла вида <b>for-await-of</b>, который позволяет вызывать асинхронные функции,
+  возвращающие промисы (или обрабатывать массивы, содержащие промисы) в цикле.
+* <b>Метод finally()</b> — это новый метод объектов Promise. Позволяет выполнять функцию обратного вызова после
+  resolve() или reject(), чтобы корректно завершать операции (например, высвобождая ресурсы).
+* <b>Устранение ограничений тегированных шаблонных строк</b> - больше свободы, что писать в шаблонных строках.
+* <b>Регулярки. Флаг dotAll</b> - изменили настройки регулярок. Чтоб работать в новом формате - устанавливаем спец.
+  флаг.
+* <b>Регулярки. Захват именованных групп</b> - позволяет писать регулярные выражения с назначением имён (
+  идентификаторов) для групп. Облегчает работу с группами.
+* <b>Регулярки. Ретроспективная проверка</b> - позволяет узнать, существует ли некая строка сразу перед некоторой другой
+  строкой.
+* <b>Регулярки. Улучшена поддержка Unicode</b> - можно использовать спец. конструкцию для поиска символов не-латинских
+  языков(хинди, греческий...)
+
+**Ссылки**
+
+* [Официальная спецификация (en)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
+* [Что нового в ES2018 JavaScript](https://webformyself.com/chto-novogo-v-es2018-javascript/)
+
+<br></p>
+</details>
+
+[//]: # (ES8 ECMAScript 2017)
+<details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
+
+- **Конструкция Async/Await** - асинхронные функции, работают на основе promise
+- **Метод Object.values()** - возвращает все значения собственных свойств объекта, исключая любые значения в цепочке
+  прототипов.
+- **Меотд Object.entries()** - похож на метод Object.keys(), но вместо того, чтобы возвращать лишь ключи, он возвращает,
+  в виде массива, и ключи, и значения. Упрощает выполнение операций c объектами в циклах, или преобразование обычных
+  объектов в объекты типа Map.
+- **Методы дополнения строк до заданной длины** - String.prototype.padStart() и String.prototype.padEnd().
+- **Метод Object.getOwnPropertyDescriptors()** - возвращает все сведения (включая данные о геттерах и сеттерах) для всех
+  свойств заданного объекта. Позволяет создавать мелкие копии объектов и клонировать объекты, создавая новые объекты,
+  при этом копируя, помимо прочего, геттеры и сеттеры.
+- Теперь можно ставить **завершающие запятые** после последнего параметра функции
+
+**Ссылки**
+
+* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/8.0/index.html)
+* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
+
+<br></p>
+</details>
+
+[//]: # (ES7 ECMAScript 2016)
+<details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
+
+* <b>Метод Array.prototype.includes()</b> - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве
+  некий элемен. <br>
+* <b>Оператор возведения в степень</b> - **. Заменяет Math.pow().
+
+**Ссылки**
+
+* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/7.0/index.html)
+* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
+
+<br></p>
+</details>
+
+[//]: # (ES6 ECMAScript 2015)
+<details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
+
+* [Переменные: let и const](https://learn.javascript.ru/let-const)
+* [Деструктуризация](https://learn.javascript.ru/destructuring)
+* [Функции](https://learn.javascript.ru/es-function)
+* [Строки](https://learn.javascript.ru/es-string) - введены шаблоны, улучшена поддержка Unicode, добавлены методы
+* [Объекты и прототипы](https://learn.javascript.ru/es-object)
+* [Классы](https://learn.javascript.ru/es-class)
+* [Тип данных Symbol](https://learn.javascript.ru/symbol) - для создания уникальных идентификаторов
+* [Итераторы](https://learn.javascript.ru/iterator) - можно сделать "перебираемым любой" объект
+* [Set, Map, WeakSet и WeakMap](https://learn.javascript.ru/set-map) - новые типы коллекций
+* [Promise](https://learn.javascript.ru/promise) - способ организации асинхронного кода
+* [Генераторы](https://learn.javascript.ru/generator) - новый вид функций. Могут приостанавливать своё выполнение,
+  возвращать промежуточный результат и далее возобновлять выполнение позже.
+* [Модули](https://learn.javascript.ru/modules) - введён официальный стандрат поддержки модулей в JS
+* [Proxy](https://learn.javascript.ru/proxy) - особый объект, перехватывает обращения к другому объекту и, при
+  необходимости, модифицирует их.
+
+**Ссылки**
+
+* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/6.0/index.html)
+* [learn.js](https://learn.javascript.ru/es-modern)
+* [code.mu](http://code.mu/books/javascript/advanced/novovvedeniya-v-es6-dlya-novichkov.html)
+
+<br></p>
+</details>
+
+[//]: # (ES5 ECMAScript 2009)
+<details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
+
+Среди изменений:
+
+* поддержка строгого режима (strict mode);
+* аксессоры getters и setters;
+* возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;
+* многострочные строковые литералы;
+* поддержка JSON
+* и ещё очень много всего - 10 лет готовили...
+
+**Ссылки**
+
+* [Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)
+* [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
+* [ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)
+* [Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)
+
+<br></p>
+</details>
+
 
 [//]: # (Типы данных)
 <details><summary><b>Типы данных</b></summary><p>
@@ -2531,296 +2831,6 @@ console.dirxml(). Они могут перечислить свойства эл
   <br></p>
 </details>
 <br>
-
-## JS - история версий ##
-
-[//]: # (История версий ES)
-<details><summary><b>История версий ES</b></summary><p>
-    
-  JavaScript создавался как скриптовый язык для Netscape. Изначально разработкой занимались Брендан Эйх, Марк Андрессен и Билл Джой.<br>
-  После чего он был отправлен в ECMA International для стандартизации (ECMA — это ассоциация, деятельность которой посвящена стандартизации информационных и коммуникационных технологий). Стандартизированная версия имеет название ECMAScript, описывается стандартом ECMA-262.
-  
-  ECMAScript — стандарт, а JavaScript — самая популярная реализация этого стандарта.</br>
-  Среди других реализаций можно отметить SpiderMonkey, V8 и ActionScript.
-      
-  ECMAScript - стандарт, развивается и поддерживается ассоциацией [ECMA International](http://www.ecma-international.org/memento/index.html). Ecma International Technical Committee 39 (он же TC39) — комитет очень умных людей :) Задача TC39 - поддержка и обновление спецификации ECMAScript, после обсуждения и всеобщего согласия. Сюда относятся синтаксис языка, семантика, библиотеки и сопутствующие технологии, на которых основывается язык. 
-  
-  С 2015 года принято решение обновлять язык ежегодно.<br>
-  ES.Next - термин является динамическим и автоматически ссылается на новую версию ECMAScript. 
-      
-  * ES1 - 1997
-  * ES2 - 1998
-  * ES3 - 1999
-  * ES4 - не выпущена
-  * ES5 - 2009
-  * ES6 - 2015
-  * ES7 - 2016
-  * ES8 - 2017
-  * ES9 - 2018
-
-**Ссылки**
-
-* [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
-* [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-* [Официальная спецификация - архив (en)](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
-* [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
-* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-
-<br></p>
-</details>
-
-[//]: # (Новое в ES6-7-8-9-10-11-12)
-<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
-
-**Про обновления**
-
-- Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей
-  языка переносятся в [черновик](https://tc39.github.io/ecma262), а затем публикуются
-  в [спецификации](https://www.ecma-international.org/publications/standards/Ecma-262.htm).
-- Разработчики JS-движков сами решают, какие предложения реализовать в первую очередь. Могут заранее добавить поддержку
-  функций, которые ещё находятся в черновике, или отложить разработку функций, которые уже перенесены в спецификацию.
-  Довольно часто в движке (браузер например) реализуется только часть стандарта. Текущее состояние поддержки различных
-  возможностей JS можно проверить
-  здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
-
-**ES 6**
-
-- const
-- let
-- шаблонные строки
-- параметры функции по умолчанию
-- стрелочный функции
-- ? map
-- ? spred оператор
-- Деструктурирующее присваивание
-- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
-  изображений и т. д.)
-
-**ES 7**
-
-- block-scoping of variables and functions,
-- destructuring patterns (of variables),
-- proper tail calls,
-- exponentiation operator ** for numbers,
-- await, async keywords for asynchronous programming (as a preparation for ES2017),
-- Array.prototype.includes function.
-- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
-  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
-
-**ES 8**
-
-- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
-- async / await constructions which use generators and promises,
-- additional features for concurrency and atomics.
-
-**ES 9**
-
-- spread operator and rest parameters (...) for object literals,
-- asynchronous iteration,
-- Promise.prototype.finally and additions to RegExp.
-- The spread operator allows for the easy copying of object properties
-
-**ES 10**
-
-- Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
-  and Object.fromEntries.
-- Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the
-  same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
-  subarray elements (up to the specified depth) are concatenated recursively.
-- Another notable change is that so-called catch binding became optional.
-
-**ES 11**
-
-- In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the
-  nullish coalescing operator, and the globalThis object.
-- BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number
-  literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers
-  are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with
-  BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow.
-- The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined.
-  This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
-    - `undefined ?? "string" // -> "string"`
-    - `null ?? "string" // -> "string"`
-    - `false ?? "string" // -> false `
-    - `NaN ?? "string" // -> NaN`
-- Optional chaining makes it possible to access the nested properties of an object without having an AND check at each
-  level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will
-  be undefined.
-
-**ES 12 (2021)**
-
-- replaceAll method for strings;
-- Promise.any, a promise combinator that short-circuits when an input value is fulfilled;
-- AggregateError, a new error type to represent multiple errors at once;
-- logical assignment operators (??=, &&=, ||=);
-- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
-  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
-- separators for numeric literals (1_000);
-- Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort
-  order.
-  <br/>
-
-**Ссылки**
-
-- [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
-- [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
-- [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
-- [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
-
-<br></p>
-</details>
-
-[//]: # (ES6 ECMAScript 2019)
-<details><summary><b>ES10 (ECMAScript 2019)</b></summary><p>
-
-Выход ожидается летом 2019
-
-Предварительные ожидания:
-
-- Изменения в классах JS - строковая декларация, приватные методы и поля, статические методы и поля.
-- **flat() и flatMap()** - позволяет рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е.
-  многомерный массив сделать одномерным.
-- **Object.fromEntries** - выполняет обратное Object.entries. Преобразует список пар ключ-значение в объект.
-- **Строковые методы trimStart() и trimEnd()** - удаление пробелов в начале/конце строки
-- **Примитив BigInt** - для целых чисел больших чем (2<sup>53</sup>  - 1).
-- **Optional Catch Binding** - теперь не обязательно иметь привязку переменной исключения к оператору catch.
-  - **JSON** - подкорректированы символы разделителя строк и абзацев
-  - **JSON.stringify** - представление кодов с помощью escape-последовательностей JSON
-  - **.toString()** - теперь возвращает точные фрагменты текста исходного кода, включая пробелы и комментарии.
-  - **Symbol.prototype.description** - свойство, возвращает необязательное описание объекта Symbol
-  - **Стандартизированный объект globalThis**
-  - **Динамический import()**
-- **import.meta**
-- **Строковый метод matchAll()**
-- **Стандартизированный Hashbang** для приложений с интерфейсом командной строки (CLI)
-
-**Ссылки**
-
-* [Что нового в JavaScript ES2019](https://m.habr.com/ru/post/439532/)
-* [Что нового в JavaScript 2019](https://medium.com/web-standards/es2019-417d8b406346)
-
-<br></p>
-</details>
-
-[//]: # (ES7 ECMAScript 2018)
-<details><summary><b>ES9 (ECMAScript 2018)</b></summary><p>
-
-* <b>Разделяемая память (shared memory) и атомарные операции (atomics)</b> - касается ядра JS-движков. Позволяет писать
-  высокопроизводительные параллельные приложения, дает возможность управлять памятью самостоятельно, не отдавая
-  выполнение всех аспектов этой задачи JS-движку.
-* <b>Оператора rest</b> - выглядит как три точки. Позволяет извлекать свойства объекта. Используется в левой части
-  выражения.
-* <b>Оператор spread</b> - тоже выглядит как три точки. Используется для создания новых объектов. Используется в правой
-  части выражения со знаком присваивания.
-* <b>Асинхронная итерация, цикл for-await-of</b> - позволяет создавать циклы, работающие с асинхронным кодом.
-  Добавляется новый оператор цикла вида <b>for-await-of</b>, который позволяет вызывать асинхронные функции,
-  возвращающие промисы (или обрабатывать массивы, содержащие промисы) в цикле.
-* <b>Метод finally()</b> — это новый метод объектов Promise. Позволяет выполнять функцию обратного вызова после
-  resolve() или reject(), чтобы корректно завершать операции (например, высвобождая ресурсы).
-* <b>Устранение ограничений тегированных шаблонных строк</b> - больше свободы, что писать в шаблонных строках.
-* <b>Регулярки. Флаг dotAll</b> - изменили настройки регулярок. Чтоб работать в новом формате - устанавливаем спец.
-  флаг.
-* <b>Регулярки. Захват именованных групп</b> - позволяет писать регулярные выражения с назначением имён (
-  идентификаторов) для групп. Облегчает работу с группами.
-* <b>Регулярки. Ретроспективная проверка</b> - позволяет узнать, существует ли некая строка сразу перед некоторой другой
-  строкой.
-* <b>Регулярки. Улучшена поддержка Unicode</b> - можно использовать спец. конструкцию для поиска символов не-латинских
-  языков(хинди, греческий...)
-
-**Ссылки**
-
-* [Официальная спецификация (en)](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-* [Что нового в ES2018 JavaScript](https://webformyself.com/chto-novogo-v-es2018-javascript/)
-
-<br></p>
-</details>
-
-[//]: # (ES8 ECMAScript 2017)
-<details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
-
-- **Конструкция Async/Await** - асинхронные функции, работают на основе promise
-- **Метод Object.values()** - возвращает все значения собственных свойств объекта, исключая любые значения в цепочке
-  прототипов.
-- **Меотд Object.entries()** - похож на метод Object.keys(), но вместо того, чтобы возвращать лишь ключи, он возвращает,
-  в виде массива, и ключи, и значения. Упрощает выполнение операций c объектами в циклах, или преобразование обычных
-  объектов в объекты типа Map.
-- **Методы дополнения строк до заданной длины** - String.prototype.padStart() и String.prototype.padEnd().
-- **Метод Object.getOwnPropertyDescriptors()** - возвращает все сведения (включая данные о геттерах и сеттерах) для всех
-  свойств заданного объекта. Позволяет создавать мелкие копии объектов и клонировать объекты, создавая новые объекты,
-  при этом копируя, помимо прочего, геттеры и сеттеры.
-- Теперь можно ставить **завершающие запятые** после последнего параметра функции
-
-**Ссылки**
-
-* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/8.0/index.html)
-* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-
-<br></p>
-</details>
-
-[//]: # (ES7 ECMAScript 2016)
-<details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
-
-* <b>Метод Array.prototype.includes()</b> - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве
-  некий элемен. <br>
-* <b>Оператор возведения в степень</b> - **. Заменяет Math.pow().
-
-**Ссылки**
-
-* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/7.0/index.html)
-* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-
-<br></p>
-</details>
-
-[//]: # (ES6 ECMAScript 2015)
-<details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
-      
-  * [Переменные: let и const](https://learn.javascript.ru/let-const)
-  * [Деструктуризация](https://learn.javascript.ru/destructuring)
-  * [Функции](https://learn.javascript.ru/es-function)
-  * [Строки](https://learn.javascript.ru/es-string) - введены шаблоны, улучшена поддержка Unicode, добавлены методы
-  * [Объекты и прототипы](https://learn.javascript.ru/es-object)
-  * [Классы](https://learn.javascript.ru/es-class)
-  * [Тип данных Symbol](https://learn.javascript.ru/symbol) - для создания уникальных идентификаторов
-  * [Итераторы](https://learn.javascript.ru/iterator) - можно сделать "перебираемым любой" объект
-  * [Set, Map, WeakSet и WeakMap](https://learn.javascript.ru/set-map) - новые типы коллекций
-  * [Promise](https://learn.javascript.ru/promise) - способ организации асинхронного кода
-  * [Генераторы](https://learn.javascript.ru/generator) - новый вид функций. Могут приостанавливать своё выполнение, возвращать промежуточный результат и далее возобновлять выполнение позже.
-  * [Модули](https://learn.javascript.ru/modules) - введён официальный стандрат поддержки модулей в JS
-  * [Proxy](https://learn.javascript.ru/proxy) - особый объект, перехватывает обращения к другому объекту и, при
-    необходимости, модифицирует их.
-
-**Ссылки**
-
-* [Официальная спецификация (en)](https://www.ecma-international.org/ecma-262/6.0/index.html)
-* [learn.js](https://learn.javascript.ru/es-modern)
-* [code.mu](http://code.mu/books/javascript/advanced/novovvedeniya-v-es6-dlya-novichkov.html)
-
-<br></p>
-</details>
-
-[//]: # (ES5 ECMAScript 2009)
-<details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
-
-Среди изменений:
-
-* поддержка строгого режима (strict mode);
-* аксессоры getters и setters;
-* возможность использовать зарезервированные слова в качестве ключей свойств и ставить запятые в конце массива;
-* многострочные строковые литералы;
-* поддержка JSON
-* и ещё очень много всего - 10 лет готовили...
-
-**Ссылки**
-  * [Официальная спецификация (en)](http://ecma-international.org/ecma-262/5.1/)
-  * [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
-  * [ES5 руководство по JavaScript](https://habr.com/ru/post/281110/)
-  * [Перевод спецификации EcmaScript 5 с аннотациями](https://es5.javascript.ru/)
-  
-  <br></p>
-</details>
 
 [//]: # (Языки поверх JavaScript)
 <details><summary><b>Языки поверх JavaScript</b></summary><p>
