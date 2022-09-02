@@ -41,8 +41,8 @@
 <br></p>
 </details>
 
-[//]: # (Версии языка. Что нового)
-<details><summary><b>Версии языка. Что нового</b></summary><p>
+[//]: # (Версии JS. Что нового)
+<details><summary><b>Версии JS. Что нового</b></summary><p>
 
 [//]: # (История версий ES)
 <details><summary><b>История версий ES</b></summary><p>
