@@ -433,7 +433,7 @@ const value = obj.body?.a
 <br></p>
 </details>
 
-## Темы ##
+---
 
 [//]: # (Типы данных)
 <details><summary><b>Типы данных</b></summary><p>
@@ -2668,7 +2668,7 @@ console.log(commonError.name) // 'Error'
 
 </details>
 
-## JS - приёмы ##
+## Приёмы ##
 
 [//]: # (_переменная)
 <details><summary><b>_переменная</b></summary><p> 
