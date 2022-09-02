@@ -98,13 +98,15 @@ ES.Next - термин является динамическим и автома
 * [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
 * [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
 
+- [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
+- [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
+- [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
+
 <br></p>
 </details>
 
-[//]: # (Новое в ES6 - ES12)
-<details><summary><b>Новое в ES6 - ES12</b></summary><p>
-
-**ES 13 (june 2022)**
+[//]: # (ES13 2022)
+<details><summary><b>ES13 (june 2022)</b></summary><p>
 
 - Оператор `await` можно использовать вне функции (без `async`)
 - Методы поиска в массивах «с конца» - `findLast()` и `findLastIndex()`<br>
@@ -137,12 +139,18 @@ arr.slice(-2)[0]    // 3
     Статические методы могут обращаться к другим закрытым/общедоступным статическим членам класса с помощью `this`.
     Методы экземпляра могут получить к ним доступ с помощью this.constructor
   - Статический блок класса - `static`. Выполняются только один раз, при создании класса.
-  - **Ссылки**
-    - https://habr.com/ru/post/651161/
-    - https://www.c-sharpcorner.com/article/amazing-new-javascript-features-in-es13/
-    - https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
 
-**ES 12 (2021)**
+**Ссылки**
+
+- https://habr.com/ru/post/651161/
+- https://www.c-sharpcorner.com/article/amazing-new-javascript-features-in-es13/
+- https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+
+<br></p>
+</details>
+
+[//]: # (ES12 2021)
+<details><summary><b>ES12 (2021)</b></summary><p>
 
 - Логические операторы присваивания `&&=`, `||=`, `??=` — присвоить если...<br>
   - `user &&= 'A'` — `user && (user = 'A')`. Т.е. если user === true
@@ -167,9 +175,12 @@ arr.slice(-2)[0]    // 3
   `let num = 152000000` = `let num = 152_000_000`
 - `Array.prototype.sort` стал более точным, что уменьшило количество случаев, которые приводят к сортировке,
   определяемой реализацией.
-  <br/>
 
-- **ES 11 (2020)**
+<br></p>
+</details>
+
+[//]: # (ES11 2020)
+<details><summary><b>ES11 (2020)</b></summary><p>
 
 - `BigInt` примитив - работа с целыми числами произвольной длины (длинее чем 2^53).<br>
 
@@ -227,7 +238,11 @@ const obj = {body: {a: 1, b: 2}}
 const value = obj.body?.a
 ```
 
-**ES 10 (2019)**
+<br></p>
+</details>
+
+[//]: # (ES10 2019)
+<details><summary><b>ES10 (2019)</b></summary><p>
 
 - Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
   and Object.fromEntries.
@@ -235,59 +250,6 @@ const value = obj.body?.a
   same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
   subarray elements (up to the specified depth) are concatenated recursively.
 - Another notable change is that so-called catch binding became optional.
-
-**ES 9 (2018)**
-
-- spread operator and rest parameters (...) for object literals,
-- asynchronous iteration,
-- Promise.prototype.finally and additions to RegExp.
-- The spread operator allows for the easy copying of object properties
-
-**ES 8 (2017)**
-
-- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
-- async / await constructions which use generators and promises,
-- additional features for concurrency and atomics.
-
-**ES 7 (2016)**
-
-- block-scoping of variables and functions,
-- destructuring patterns (of variables),
-- proper tail calls,
-- exponentiation operator ** for numbers,
-- await, async keywords for asynchronous programming (as a preparation for ES2017),
-- Array.prototype.includes function.
-- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
-  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
-
-**ES 6 (2015)**
-
-- const
-- let
-- шаблонные строки
-- параметры функции по умолчанию
-- стрелочный функции
-- ? map
-- ? spred оператор
-- Деструктурирующее присваивание
-- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
-  изображений и т. д.)
-
-
-**Ссылки**
-
-- [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
-- [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript (2017)](https://tproger.ru/translations/wtf-is-ecmascript/)
-- [Wikipedia - ECMAScript(en)](https://en.wikipedia.org/wiki/ECMAScript#12th_Edition_%E2%80%93_ECMAScript_2021)
-- [Хабр - Чем отличаются JavaScript и ECMAScript?](https://habr.com/ru/company/nix/blog/342904/)
-
-<br></p>
-</details>
-
-[//]: # (ES6 ECMAScript 2019)
-<details><summary><b>ES10 (ECMAScript 2019)</b></summary><p>
-
-Выход ожидается летом 2019
 
 Предварительные ожидания:
 
@@ -316,8 +278,13 @@ const value = obj.body?.a
 <br></p>
 </details>
 
-[//]: # (ES7 ECMAScript 2018)
-<details><summary><b>ES9 (ECMAScript 2018)</b></summary><p>
+[//]: # (ES9 2018)
+<details><summary><b>ES9 (2018)</b></summary><p>
+
+- spread operator and rest parameters (...) for object literals,
+- asynchronous iteration,
+- Promise.prototype.finally and additions to RegExp.
+- The spread operator allows for the easy copying of object properties
 
 * <b>Разделяемая память (shared memory) и атомарные операции (atomics)</b> - касается ядра JS-движков. Позволяет писать
   высокопроизводительные параллельные приложения, дает возможность управлять памятью самостоятельно, не отдавая
@@ -350,8 +317,12 @@ const value = obj.body?.a
 <br></p>
 </details>
 
-[//]: # (ES8 ECMAScript 2017)
-<details><summary><b>ES8 (ECMAScript 2017)</b></summary><p>
+[//]: # (ES8 2017)
+<details><summary><b>ES8 (2017)</b></summary><p>
+
+- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
+- async / await constructions which use generators and promises,
+- additional features for concurrency and atomics.
 
 - **Конструкция Async/Await** - асинхронные функции, работают на основе promise
 - **Метод Object.values()** - возвращает все значения собственных свойств объекта, исключая любые значения в цепочке
@@ -373,8 +344,17 @@ const value = obj.body?.a
 <br></p>
 </details>
 
-[//]: # (ES7 ECMAScript 2016)
-<details><summary><b>ES7 (ECMAScript 2016)</b></summary><p>
+[//]: # (ES7  2016)
+<details><summary><b>ES7 (2016)</b></summary><p>
+
+- block-scoping of variables and functions,
+- destructuring patterns (of variables),
+- proper tail calls,
+- exponentiation operator ** for numbers,
+- await, async keywords for asynchronous programming (as a preparation for ES2017),
+- Array.prototype.includes function.
+- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
+  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
 
 * <b>Метод Array.prototype.includes()</b> - метод объектов типа Array, который позволяет выяснить, имеется ли в массиве
   некий элемен. <br>
@@ -388,8 +368,19 @@ const value = obj.body?.a
 <br></p>
 </details>
 
-[//]: # (ES6 ECMAScript 2015)
-<details><summary><b>ES6 (ECMAScript 2015)</b></summary><p>
+[//]: # (ES6 2015)
+<details><summary><b>ES6 (2015)</b></summary><p>
+
+- const
+- let
+- шаблонные строки
+- параметры функции по умолчанию
+- стрелочный функции
+- ? map
+- ? spred оператор
+- Деструктурирующее присваивание
+- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
+  изображений и т. д.)
 
 * [Переменные: let и const](https://learn.javascript.ru/let-const)
 * [Деструктуризация](https://learn.javascript.ru/destructuring)
@@ -413,11 +404,13 @@ const value = obj.body?.a
 * [learn.js](https://learn.javascript.ru/es-modern)
 * [code.mu](http://code.mu/books/javascript/advanced/novovvedeniya-v-es6-dlya-novichkov.html)
 
+- [Хабр - Обзор базовых возможностей ES6 (2016)](https://habr.com/ru/post/313526/)
+
 <br></p>
 </details>
 
-[//]: # (ES5 ECMAScript 2009)
-<details><summary><b>ES5 (ECMAScript 2009)</b></summary><p>
+[//]: # (ES5 2009)
+<details><summary><b>ES5 (2009)</b></summary><p>
 
 Среди изменений:
 
