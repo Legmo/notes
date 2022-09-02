@@ -41,7 +41,8 @@
 <br></p>
 </details>
 
-## JS - история версий ##
+[//]: # (Версии языка. Что нового)
+<details><summary><b>Версии языка. Что нового</b></summary><p>
 
 [//]: # (История версий ES)
 <details><summary><b>История версий ES</b></summary><p>
@@ -74,20 +75,6 @@ ES.Next - термин является динамическим и автома
 * ES8 - 2017
 * ES9 - 2018
 
-**Ссылки**
-
-* [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
-* [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-* [Официальная спецификация - архив (en)](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
-* [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
-* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-
-<br></p>
-</details>
-
-[//]: # (Новое в ES6-7-8-9-10-11-12)
-<details><summary><b>Новое в ES6-7-8-9-10-11-12</b></summary><p>
-
 **Про обновления**
 
 - Предложения о добавлении новых возможностей анализируются командой. Если одобряются — описания новых возможностей
@@ -99,53 +86,45 @@ ES.Next - термин является динамическим и автома
   возможностей JS можно проверить
   здесь: [https://kangax.github.io/compat-table/es6/](https://kangax.github.io/compat-table/es6/)
 
-**ES 6**
+**Ссылки**
 
-- const
-- let
-- шаблонные строки
-- параметры функции по умолчанию
-- стрелочный функции
-- ? map
-- ? spred оператор
-- Деструктурирующее присваивание
-- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
-  изображений и т. д.)
+* [ES6, ES8, ES2017: что такое ECMAScript и чем это отличается от JavaScript](https://tproger.ru/translations/wtf-is-ecmascript/)
+* [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+* [Официальная спецификация - архив (en)](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
+* [Разъяснения насчёт JavaScript, ECMA–262, TC39 и транскомпиляторов ECMAScript](https://www.frontender.info/javascript-ecma-262-tc39-and-ecmascript-transpilers-explained/)
+* [Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
 
-**ES 7**
+<br></p>
+</details>
 
-- block-scoping of variables and functions,
-- destructuring patterns (of variables),
-- proper tail calls,
-- exponentiation operator ** for numbers,
-- await, async keywords for asynchronous programming (as a preparation for ES2017),
-- Array.prototype.includes function.
-- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
-  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
+[//]: # (Новое в ES6 - ES12)
+<details><summary><b>Новое в ES6 - ES12</b></summary><p>
 
-**ES 8**
+**ES 12 (2021)**
 
-- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
-- async / await constructions which use generators and promises,
-- additional features for concurrency and atomics.
+- логические операторы присваивания `&&=`, `||=`, `??=` - присвоить если...<br>
+  - `user &&= 'A'` — `user && (user = 'A')`. Т.е. если user === true
+  - `user ||= 'A'` — `if(!user)(user = 'A')` Т.е. tckb user === false
+  - `user ??= 'A'` — `if(user === null || user === undefined)(user = 'A')` Т.е. если `user` === null или undefined
+- метод `replaceAll(A, B)` для строк - замена всех подстрок А на B;
+- метод `Promise.any` - принимает N промисов и возвращает первый успешно завершившийся<br>
+  (`Promise.any([promise1, promise2]).then(val => console.log(val)`);
+- объект `AggregateError` - новый тип ошибок. Представить N ошибок в виде одной комбинированной.<br>
+  Например для Promise.any(), когда все promises завершились в rejected
+- Приватные методы экземпляров классов и методы доступа к свойствам - использовать префикс `#`. <br>
+  Доступны только изнутри экземпляра класса.<br>
+  `class User { #generateAPIKey() {/**/} }`<br>
+  Приватные методы доступа к свойствам объектов — это приватные геттеры и сеттеры (`get #newPass(){}`
+  , `set #newPass(){}`).
+- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
+  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
+- разделители разрядов `1_000`. Для лучшей читаемости. Работает и с BigInt<br>
+  `let num = 152000000` = `let num = 152_000_000`
+- `Array.prototype.sort` стал более точным, что уменьшило количество случаев, которые приводят к сортировке,
+  определяемой реализацией.
+  <br/>
 
-**ES 9**
-
-- spread operator and rest parameters (...) for object literals,
-- asynchronous iteration,
-- Promise.prototype.finally and additions to RegExp.
-- The spread operator allows for the easy copying of object properties
-
-**ES 10**
-
-- Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
-  and Object.fromEntries.
-- Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the
-  same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
-  subarray elements (up to the specified depth) are concatenated recursively.
-- Another notable change is that so-called catch binding became optional.
-
-**ES 11**
+- **ES 11 (2020)**
 
 - In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the
   nullish coalescing operator, and the globalThis object.
@@ -163,18 +142,52 @@ ES.Next - термин является динамическим и автома
   level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will
   be undefined.
 
-**ES 12 (2021)**
+**ES 10 (2019)**
 
-- replaceAll method for strings;
-- Promise.any, a promise combinator that short-circuits when an input value is fulfilled;
-- AggregateError, a new error type to represent multiple errors at once;
-- logical assignment operators (??=, &&=, ||=);
-- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
-  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
-- separators for numeric literals (1_000);
-- Array.prototype.sort was made more precise, reducing the amount of cases that result in an implementation-defined sort
-  order.
-  <br/>
+- Added features include, but are not limited to, Array.prototype.flat, Array.prototype.flatMap, changes to Array.sort
+  and Object.fromEntries.
+- Array.sort is now guaranteed to be stable, meaning that elements with the same sorting precedence will appear in the
+  same order in the sorted array. Array.prototype.flat(depth=1) flattens an array to a specified depth, meaning that all
+  subarray elements (up to the specified depth) are concatenated recursively.
+- Another notable change is that so-called catch binding became optional.
+
+**ES 9 (2018)**
+
+- spread operator and rest parameters (...) for object literals,
+- asynchronous iteration,
+- Promise.prototype.finally and additions to RegExp.
+- The spread operator allows for the easy copying of object properties
+
+**ES 8 (2017)**
+
+- Object.values, Object.entries and Object.getOwnPropertyDescriptors functions for easy manipulation of Objects,
+- async / await constructions which use generators and promises,
+- additional features for concurrency and atomics.
+
+**ES 7 (2016)**
+
+- block-scoping of variables and functions,
+- destructuring patterns (of variables),
+- proper tail calls,
+- exponentiation operator ** for numbers,
+- await, async keywords for asynchronous programming (as a preparation for ES2017),
+- Array.prototype.includes function.
+- The exponentiation operator is equivalent to Math.pow, but provides a simpler syntax similar to languages like Python,
+  F#, Perl, and Ruby. async / await was hailed as an easier way to use promises and develop asynchronous code.
+
+**ES 6 (2015)**
+
+- const
+- let
+- шаблонные строки
+- параметры функции по умолчанию
+- стрелочный функции
+- ? map
+- ? spred оператор
+- Деструктурирующее присваивание
+- Promises (обещания) - объекты, которые помогают выполнять асинхронные операции (запрос API, обработка файлов, загрузка
+  изображений и т. д.)
+
 
 **Ссылки**
 
@@ -340,6 +353,8 @@ ES.Next - термин является динамическим и автома
 <br></p>
 </details>
 
+<br></p>
+</details>
 
 [//]: # (Типы данных)
 <details><summary><b>Типы данных</b></summary><p>
@@ -2560,6 +2575,8 @@ console.log(commonError.name) // 'Error'
   или `decodeURI()`
 - `EvalError` - ошибка в глобальной функции `eval()`
 - `nternalError (не стандарт)` - ошибка в движке JS. Не является стандартом, почти не используется.
+- `AggregateError` - представить несколько ошибок в виде одной комбинированной. Например, Promise.any(), когда все
+  promises завершились в rejected. ЕS12(2021)
 
 **Ссылки:**
 
