@@ -1,7 +1,7 @@
 <h1> Шпаргалка по JavaScript </h1>
 
 [//]: # (Ресурсы по JS)
-<details><summary><b>Ресурсы по JS</b></summary><p>
+<details><summary><h3>Ресурсы по JS</h3></summary><p>
 
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [doka.guide](https://doka.guide/js)
