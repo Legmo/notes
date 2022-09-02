@@ -5,16 +5,21 @@
 
 - JS
   - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-  - Передача по значению / по ссылке
+  - Типы в JS (string, number, object...)
+  - Приведение типов
   - Что является объектом в JS?
   - Различия Undefined и Null
-  - Приведение типов
+  - Передача по значению / по ссылке
   - Мутирующие / не мутирующие методы (особенной у массивов)
+  - Use strict
+  - Function Declaration / Function Expression (`function sayHi(){}` / `let sayHi = function(){}`)
   - [Замыкания](https://learn.javascript.ru/closure)
-  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics) и [ещё они же](https://learn.javascript.ru/arrow-functions)
+  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
+    и [ещё они же](https://learn.javascript.ru/arrow-functions)
   - [Promise](https://learn.javascript.ru/async)
   - [Ver, Let, Const](https://learn.javascript.ru/var)
-  - [Рекурсия](https://learn.javascript.ru/recursion) и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+  - [Рекурсия](https://learn.javascript.ru/recursion)
+    и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
   - [Прототипы](https://learn.javascript.ru/prototypes)
   - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
 - React
