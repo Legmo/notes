@@ -102,23 +102,25 @@ ES.Next - термин является динамическим и автома
 
 **ES 12 (2021)**
 
-- логические операторы присваивания `&&=`, `||=`, `??=` — присвоить если...<br>
+- Логические операторы присваивания `&&=`, `||=`, `??=` — присвоить если...<br>
   - `user &&= 'A'` — `user && (user = 'A')`. Т.е. если user === true
   - `user ||= 'A'` — `if(!user)(user = 'A')` Т.е. tckb user === false
   - `user ??= 'A'` — `if(user === null || user === undefined)(user = 'A')` Т.е. если `user` === null или undefined
-- метод `replaceAll(A, B)` для строк — замена всех подстрок А на B;
-- метод `Promise.any` — принимает N промисов и возвращает первый успешно завершившийся<br>
+- Метод `replaceAll(A, B)` для строк — замена всех подстрок А на B;
+- Метод `Promise.any` — принимает N промисов и возвращает первый успешно завершившийся<br>
   (`Promise.any([promise1, promise2]).then(val => console.log(val)`);
-- объект `AggregateError` — новый тип ошибок. <br>
+- Объект `AggregateError` — новый тип ошибок. <br>
   Представить N ошибок в виде одной комбинированной.<br>
   Например для Promise.any(), когда все promises завершились в rejected
-- Приватные методы экземпляров классов и методы доступа к свойствам - использовать префикс `#`. <br>
-  Доступны только изнутри экземпляра класса.<br>
-  `class User { #generateAPIKey() {/**/} }`<br>
-  Приватные методы доступа к свойствам объектов — это приватные геттеры и сеттеры (`get #newPass(){}`
-  , `set #newPass(){}`).
-- WeakRef, for referring to a target object without preserving it from garbage collection, and FinalizationRegistry, to
-  manage registration and unregistration of cleanup operations performed when target objects are garbage collected;
+- Приватные методы экземпляров классов и методы доступа к свойствам — префикс `#`. <br>
+  `#`-методы экземпляров классов доступны только изнутри экземпляра
+  класса (`class User { #generateAPIKey() {/**/} }`)<br>
+  `#`-методы доступа к свойствам объектов = приватные геттеры и сеттеры (`get #newPass(){}` и `set #newPass(){}`).
+- Сборщик мусора `WeakRef  API` — обращение к целевому объекту, которое позволяет корректно обработать его сборщиком
+  мусора
+- Сборщик мусора `FinalizationRegistry API` (финализатор) - управление регистрацией операций очистки, при обработке
+  объекта сборщиком мусора;<br>
+  Регистрируем callback-«финализатор», он запускается когда сборщик мусора уничтожает объект.
 - разделители разрядов `1_000`. Для лучшей читаемости. Работает и с BigInt<br>
   `let num = 152000000` = `let num = 152_000_000`
 - `Array.prototype.sort` стал более точным, что уменьшило количество случаев, которые приводят к сортировке,
@@ -127,18 +129,53 @@ ES.Next - термин является динамическим и автома
 
 - **ES 11 (2020)**
 
-- In addition to new functions, this version introduces a BigInt primitive type for arbitrary-sized integers, the
-  nullish coalescing operator, and the globalThis object.
-- BigInts are created either with the BigInt constructor or with the syntax 10n, where "n" is placed after the number
-  literal. BigInts allow the representation and manipulation of integers beyond Number.MAX_SAFE_INTEGER, while Numbers
-  are represented by a double-precision 64-bit IEEE 754 value. The built-in functions in Math are not compatible with
-  BigInts; for example, exponentiation of BigInts must be done with the ** operator instead of Math.pow.
-- The nullish coalescing operator, ??, returns its right-hand side operand when its left-hand side is null or undefined.
-  This contrasts with the || operator, which would return "string" for all "falsy" values, such as the ones below.
-  - `undefined ?? "string" // -> "string"`
-  - `null ?? "string" // -> "string"`
-  - `false ?? "string" // -> false `
-  - `NaN ?? "string" // -> NaN`
+- `BigInt` примитив - работа с целыми числами произвольной длины (длинее чем 2^53).<br>
+
+```js
+const bigint = 1234567890123456789012345678901234567890n;
+const sameBigint = BigInt("1234567890123456789012345678901234567890");
+const bigintFromNumber = BigInt(10); // то же самое, что и 10n
+```
+
+- `??` оператор нулевого слияния — `(if a === nul || a === undefined)(...)`<br>
+  `const foo = null ?? 'default string'`
+- объект `globalThis` - доступ к глобальному объекту. <br>
+  В Node.js это global, Worker это self, в браузере это window. Если приложение исполняется в N средах — писали условия.
+
+```js
+//Раньше
+let global = function () {
+  if (typeof self !== 'undefined') {
+    return self;
+  }
+  if (typeof window !== 'undefined') {
+    return window;
+  }
+  if (typeof global !== 'undefined') {
+    return global;
+  }
+  throw new Error('unable to locate global object');
+};
+//Теперь
+GlobalThis == this
+```
+
+- динамический импорт - можно импортировать модули в ввиде промиса
+
+```js
+import('module.js')
+        .then(module => {/**/
+        })
+        .catch(err => {/**/
+        });
+
+//Или так
+(async function () {
+  const module = await import('module.js')
+  /**/
+})();
+```
+
 - Optional chaining makes it possible to access the nested properties of an object without having an AND check at each
   level. An example is const zipcode = person?.address?.zipcode. If any of the properties are not present, zipcode will
   be undefined.
