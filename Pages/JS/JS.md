@@ -139,8 +139,8 @@
     const sameBigint = BigInt("1234567890123456789012345678901234567890");
     const bigintFromNumber = BigInt(10); // то же самое, что и 10n
     ```
-- Оператор опциональных цепочек `?` (Optional Chaining Operator) — при обращении к свойству объекта сразу проверяем,
-  существует ли оно.
+- Оператор опциональных цепочек `?` (Optional Chaining Operator)
+  - при обращении к свойству объекта сразу проверяем, существует ли оно.
   - ```js
     const obj = {body: {a: 1, b: 2}}
     const value = obj.body?.a
