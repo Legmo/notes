@@ -904,8 +904,8 @@ var fn = (
 <br></p>
 </details>
 
-[//]: # («Понимать замыкания» означает)
-<details><summary><b>«Понимать замыкания»</b> означает</summary><p>
+[//]: # (Механизм - кратко)
+<details><summary><b>Механизм - кратко</b></summary><p>
 
 - Все функции, блоки кода и скрипты имеют скрытый объект `LexicalEnvironmen`.
 - Все переменные и параметры функций = свойства объекта `LexicalEnvironmen`.
@@ -919,8 +919,8 @@ var fn = (
 <br></p>
 </details>
 
-[//]: # (Lexical Environment и [[Environment]])
-<details><summary><b>Lexical Environment и [[Environment]]</b></summary><p>
+[//]: # (Механизм - Lexical Environment и [[Environment]])
+<details><summary><b>Механизм - Lexical Environment и [[Environment]]</b></summary><p>
 
 - При запуске функции, в ней создаётся объект `LexicalEnvironmen`.
 - Его свойства - все переменные внутри функции, аргументы функции и вложенные функции.
@@ -961,8 +961,8 @@ var fn = (
 <br></p>
 </details>
 
-[//]: # (Scope)
-<details><summary><b>Scope (разбираться)</b></summary><p>
+[//]: # (Механизм - Scope)
+<details><summary><b>Механизм - Scope (разбираться)</b></summary><p>
 
 Разбираться: [pikabu - Замыкание в JS по-человечески](https://pikabu.ru/story/zamyikanie_v_js_pochelovecheski_9330642)
 
@@ -1004,8 +1004,8 @@ var fn = (
 <br></p>
 </details>
 
-[//]: # (Global object)
-<details><summary><b>Global object</b></summary><p>
+[//]: # (Механизм - Global object)
+<details><summary><b>Механизм - Global object</b></summary><p>
 
 `Global object` = частный случай объекта `LexicalEnvironment`
 Глобальные переменные и функции - те, которые не находятся внутри какой-то функции. На "верхнем уровне".
@@ -1013,6 +1013,8 @@ var fn = (
 В JS все глобальные переменные и функции = свойства объекта `global object`. <br>
 В браузере этот объект доступен под именем window. <br>
 Присваивая или читая глобальную переменную, мы, фактически, работаем со свойствами window.
+
+У глобального объекта ссылка на внешнее лекс. окружение (св-во `[[Environment]]`) == null.
 
 <br></p>
 </details>
@@ -1076,8 +1078,7 @@ alert(counter()); // 2
 - Пока в ES6 не ввели ключевое слово `let`, часто возникала проблема при создании замыканий внутри цикла.
   - Будьте внимательны с использованием var/let в циклах.
   - Либо используем let (` for (let i = 0; i < someVariable; i++){...}`),
-  - либо реализуем замыкание в отдельной функции снаружи цикла, а в цикле просто вызываем эут функцию при каждой
-    итерации.
+  - Либо реализуем замыкание в отдельной функции снаружи цикла, а в цикле вызываем эту функцию при каждой итерации.
   - Или сделать ещё один уровень вложенного замыкания.
     Подробнее: [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B2_%D1%86%D0%B8%D0%BA%D0%BB%D0%B5_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%87%D0%B0%D1%81%D1%82%D0%B0%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0)
     , [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
