@@ -861,6 +861,7 @@ var fn = (
 
 <br></p>
 </details>
+
 [//]: # (Механизм - кратко)
 <details><summary><b>Механизм - кратко</b></summary><p>
 
