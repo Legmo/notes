@@ -692,6 +692,7 @@ let user = {
 <details><summary><b>Замыкания</b></summary><p>
 
 - Функция, которая содержит ссылки на переменные из родительской области видимости.
+- Функция, которая запоминает свои внешние переменные и может получить к ним доступ.
 - Функция вместе со всеми внешними переменными, которые ей доступны.
 - Комбинация функции и лексического окружения, в котором она была объявлена.
 - Способность функции запоминать контекст (LexicalEnvironment), в которой она была создана.
@@ -880,17 +881,20 @@ console.log(res);
 [//]: # («Понимать замыкания» означает)
 <details><summary><b>«Понимать замыкания»</b> означает</summary><p>
 
-- Все переменные и параметры функций = свойства объекта `LexicalEnvironment`.
+- Все функции, блоки кода и скрипты имеют скрытый объект `LexicalEnvironmen`.
+- Все переменные и параметры функций = свойства объекта `LexicalEnvironmen`.
 - Каждый запуск функции создает новый такой объект. На верхнем уровне это «глобальный объект» (window в браузере).
-- При создании функция получает свойство `Scope`, оно ссылается на `LexicalEnvironment`, в котором функция была создана.
-- При вызове функции – она будет искать переменные внутри себя, а затем во внешних `LexicalEnvironment` (с места
-  своего «рождения» — оно записано в `Scope` в момент создания).
+- При создании функция также получает
+  - скрытый объект `LexicalEnvironmen` в котором хранит свои данные.
+  - скрытое свойство `[[Environment]]` — ссылается на `LexicalEnvironment`, в котором функция была создана.
+- При вызове функция будет искать переменные внутри своего `LexicalEnvironmen`, а затем во
+  внешних `LexicalEnvironment` (переходя по ним через св-ва `[[Environment]]`).
 
 <br></p>
 </details>
 
-[//]: # (Lexical Environment)
-<details><summary><b>Lexical Environment</b></summary><p>
+[//]: # (Lexical Environment и [[Environment]])
+<details><summary><b>Lexical Environment и [[Environment]]</b></summary><p>
 
 При запуске функции, в ней создаётся объект `LexicalEnvironmen`.<br>
 Его свойства - все переменные внутри функции, аргументы функции и вложенные функции.
@@ -899,11 +903,38 @@ console.log(res);
 
 Если переменная не найдена в `LexicalEnvironmen` функции – она будет искаться снаружи, через ссылку в свойстве `Scope`.
 
+**Уточнения**
+
+- Скрытый объект `LexicalEnvironmen` есть у функции, блока кода и скрипта.
+- Состоит из двух частей:
+  - Объект `Environment Record` — в нём как свойства хранятся все локальные переменные (а также некоторая другая
+    информация, такая как значение this).
+  - Ссылка на внешнее лексическое окружение — ссылка на внешнее лексическое окружение. Код снаружи от текущих фигурных
+    скобок. У глобального объекта == null. **Кажется это и есть скрытое свойство `[[Environment]]`**. Функция получает
+    его при «рождении».
+- Оно содержит
+- "Переменная" – это просто свойство специального внутреннего объекта `Environment Record`. «Получить или изменить
+  переменную», означает, «получить или изменить свойство этого объекта».
+- Если переменная не была найдена ни в одном внешнем окружении, это будет ошибкой в `strict mode`. Без `strict mode`,
+  для обратной совместимости, присваивание несуществующей переменной создаёт новую глобальную переменную с таким именем.
+- `Function Declaration`
+  - `function say(name){/*...*/}`
+  - полностью инициализируются не тогда, когда выполнение доходит до них (как let), а раньше, когда создаётся
+    лексическое окружение.
+  - поэтому мы можем вызвать функцию, объявленную через Function Declaration, до того, как она определена.
+
 <br></p>
 </details>
 
 [//]: # (Scope)
-<details><summary><b>Scope</b></summary><p>
+<details><summary><b>Scope (разбираться)</b></summary><p>
+
+Разбираться. Там вроде не `Scope`, а `[[Enviroment]]`<br>
+
+- [pikabu - Замыкание в JS по-человечески](https://pikabu.ru/story/zamyikanie_v_js_pochelovecheski_9330642)
+
+`Scope` = философское понятие, `LexicalEnvironmen` - его техническая реализация. Как-то так.
+Внутри `[[Enviroment]]` хранятся данные `Scope`, которые указывают на `LexicalEnvironmen`. Или что-то в этом духе.
 
 При создании функции в ней создаётся св-во `Scope` (*область видимости*).<br>
 В нём хранится ссылка на внешний объект `LexicalEnvironment`, в котором создана функция — глобальный объект (window) или
@@ -1000,17 +1031,37 @@ alert(counter()); // 2
   - Или сделать ещё один уровень вложенного замыкания.
     Подробнее: [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B2_%D1%86%D0%B8%D0%BA%D0%BB%D0%B5_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%87%D0%B0%D1%81%D1%82%D0%B0%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0)
     , [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
+- `IIFE` (immediately-invoked function expressions)
+  - В прошлом в JS не было лексического окружения на уровне блоков кода.
+  - Придумали функции, запускаемые сразу после объявления.
+  - Создаётся и немедленно вызывается Function Expression. Код выполняется сразу, и у него есть свои локальные
+    переменные.
+  - ```js
+    (function() {
+      let message = "Hello";
+      alert(message); // Hello
+    })();
+    ```
+  - Function Expression обёрнуто в скобки (function {...}), потому что, когда JavaScript встречает "function" в основном
+    потоке кода, он воспринимает это как начало Function Declaration. Но у Function Declaration должно быть имя, так что
+    такой код вызовет ошибку. Даже если мы скажем: «хорошо, давайте добавим имя», – это не сработает, потому что
+    JavaScript не позволяет вызывать Function Declaration немедленно. Так что скобки вокруг функции – это трюк, который
+    позволяет показать JavaScript, что функция была создана в контексте другого выражения, и, таким образом, это
+    функциональное выражение: ей не нужно имя и её можно вызвать немедленно.
+  - Кроме скобок, существуют и другие пути показать JavaScript, что мы имеем в виду Function Expression - стваить
+    вначале `+` или `!`, например
 
 <br></p>
 </details>
 
 **Ссылки**
 
-- [learn.javascript.ru](https://learn.javascript.ru/closures)
+- [learn.javascript.ru - Замыкания](https://learn.javascript.ru/closures)
 - [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures)
 - [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
 - [htmlacademy - Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
 - [Wikipedia](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
+- [pikabu - Замыкание в JS по-человечески](https://pikabu.ru/story/zamyikanie_v_js_pochelovecheski_9330642)
 - [Hexlet - Возврат функций из функций](https://ru.hexlet.io/courses/js-functions/lessons/return-function/theory_unit)
 - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
 - [proglib - Пора понять замыкания в JavaScript! Часть 1. Готовим фундамент](https://proglib.io/p/js-closures-1/)
