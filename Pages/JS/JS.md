@@ -497,8 +497,8 @@ ES5 (2009)<br>
 [//]: # (Значения и ссылки)
 <details><summary><b>Значения и ссылки</b></summary><p>
 
-Примитивы (boolean, string, numbers, bigInt, symbol, null, undefined) при присваивании переменных копируются целиком
-- `по значению`.
+Примитивы при присваивании переменных копируются целиком - `по значению`. Boolean, string, numbers, bigInt, symbol,
+null, undefined
 
 ```js
   var message = "Привет!";
