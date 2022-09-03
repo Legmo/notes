@@ -134,60 +134,53 @@
 <details><summary><b>ES11 (2020)</b></summary><p>
 
 - `BigInt` примитив - работа с целыми числами произвольной длины (длинее чем 2^53).<br>
-
-```js
-const bigint = 1234567890123456789012345678901234567890n;
-const sameBigint = BigInt("1234567890123456789012345678901234567890");
-const bigintFromNumber = BigInt(10); // то же самое, что и 10n
-```
-
+  - ```js
+    const bigint = 1234567890123456789012345678901234567890n;
+    const sameBigint = BigInt("1234567890123456789012345678901234567890");
+    const bigintFromNumber = BigInt(10); // то же самое, что и 10n
+    ```
+- Оператор опциональных цепочек `?` (Optional Chaining Operator) — при обращении к свойству объекта сразу проверяем,
+  существует ли оно.
+  - ```js
+    const obj = {body: {a: 1, b: 2}}
+    const value = obj.body?.a
+    ```
 - `??` оператор нулевого слияния — `(if a === nul || a === undefined)(...)`<br>
-  `const foo = null ?? 'default string'`
+  - `const foo = null ?? 'default string'`
 - объект `globalThis` - доступ к глобальному объекту. <br>
-  В Node.js это global, Worker это self, в браузере это window. Если приложение исполняется в N средах — писали условия.
-
-```js
-//Раньше
-let global = function () {
-  if (typeof self !== 'undefined') {
-    return self;
-  }
-  if (typeof window !== 'undefined') {
-    return window;
-  }
-  if (typeof global !== 'undefined') {
-    return global;
-  }
-  throw new Error('unable to locate global object');
-};
-//Теперь
-GlobalThis == this
-```
+  - В Node.js это global, Worker это self, в браузере это window. Если приложение исполняется в N средах — писали
+    условия.
+  - ```js
+    //Раньше
+    let global = function () {
+      if (typeof self !== 'undefined') {
+        return self;
+      }
+      if (typeof window !== 'undefined') {
+        return window;
+      }
+      if (typeof global !== 'undefined') {
+        return global;
+      }
+      throw new Error('unable to locate global object');
+    };
+    //Теперь
+    GlobalThis == this
+    ```
 - динамический импорт - можно импортировать модули в ввиде промиса
-```js
-import('module.js')
-        .then(module => {/**/
-        })
-        .catch(err => {/**/
-        });
-
-//Или так
-(async function () {
-  const module = await import('module.js')
-  /**/
-})();
-```
-
+  - ```js
+    import('module.js')
+      .then(module => {/**/})
+      .catch(err => {/**/});
+    //Или так
+    (async function () {
+      const module = await import('module.js')
+      /**/
+    })();
+    ```
 - комбинатор `Promise.allSettled()` — возвращает промис с массивом состояний промисов.<br>
   Условие выполнения данного промиса — выполнение всех исходных промисов. Все промисы должны быть завершены (с любым
   статусом).
-- Оператор опциональных цепочек `?` (Optional Chaining Operator) — при обращении к свойству объекта сразу проверяем,
-  существует ли оно.
-
-```js
-const obj = {body: {a: 1, b: 2}}
-const value = obj.body?.a
-```
 
 <br></p>
 </details>
