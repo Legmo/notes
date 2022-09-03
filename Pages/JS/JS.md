@@ -1001,6 +1001,9 @@ alert(counter()); // 2
     Подробнее: [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B2_%D1%86%D0%B8%D0%BA%D0%BB%D0%B5_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%87%D0%B0%D1%81%D1%82%D0%B0%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0)
     , [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
 
+<br></p>
+</details>
+
 **Ссылки**
 
 - [learn.javascript.ru](https://learn.javascript.ru/closures)
@@ -1012,9 +1015,6 @@ alert(counter()); // 2
 - [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
 - [proglib - Пора понять замыкания в JavaScript! Часть 1. Готовим фундамент](https://proglib.io/p/js-closures-1/)
 - [proglib - Пора понять замыкания в JavaScript! Часть 2. Переходим к делу](https://proglib.io/p/js-closures-2/)
-
-<br></p>
-</details>
 
 <br></p>
 </details>
