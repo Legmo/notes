@@ -1155,13 +1155,13 @@ rabbit.__proto__ = animal;
 <br>
 <br>
 
-<img src="/Assets/Img/js-schema-1.png" width="480" height="auto" title="Схема 1" alt="Схема 1" />
+<img src="/Assets/Img/js-schema-1.png" title="Схема 1" alt="Схема 1" />
 <br>
 
-<img src="/Assets/Img/js-schema-2.png" width="480" height="auto" title="Схема 2" alt="Схема 2" />
+<img src="/Assets/Img/js-schema-2-min.jpg" title="Схема 2" alt="Схема 2" />
 <br>
 
-<img src="/Assets/Img/js-schema-3.png" width = "480" height="auto" title="Схема 3" alt="Схема 3" />
+<img src="/Assets/Img/js-schema-3-min.jpg" title="Схема 1" alt="Схема 1" />
 <br>
 
 
@@ -1292,7 +1292,7 @@ Web API... Потому что все движки основываются на
 [//]: # (Асинхронность в JS todo: упростить)
 <details><summary><b>Асинхронность в JS</b></summary><p>
 
-<img src="/Assets/Img/js-schema-2.png" width="480" height="auto" title="Схема 2" alt="Схема 2" />
+<img src="/Assets/Img/js-schema-2-min.jpg" title="Схема 2" alt="Схема 2" />
 <br>
 
 **Однопоточность**
