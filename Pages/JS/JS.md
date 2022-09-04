@@ -1151,10 +1151,20 @@ rabbit.__proto__ = animal;
 [//]: # (Работа движка JS. Окружение todo: доработать)
 <details><summary><b>Работа движка JS. Окружение</b></summary><p>
 
-[//]: # (Парсер, интерпретатор, компилятор)
-<details><summary><b>Парсер, интерпретатор, компилятор</b></summary><p>
+<br>
+<br>
+<br>
 
 ![](https://hsto.org/r/w1560/webt/g-/tv/yx/g-tvyxlxy0e3kc0c_quq_r0d9uo.png)
+<br>
+
+![](/Assets/Img/js-schema-2.png)
+<br>
+
+![](/Assets/Img/js-schema-1.png)
+
+[//]: # (Парсер, интерпретатор, компилятор)
+<details><summary><b>Парсер, интерпретатор, компилятор</b></summary><p>
 
 Исходный код проходит через `парсер`.<br>
 В результате возникает внутреннее представление кода — `абстрактное синтаксическое дерево`.
@@ -1206,14 +1216,6 @@ Web API... Потому что все движки основываются на
 
 <br></p>
 </details>
-<br>
-<br>
-<br>
-
-![](/Assets/Img/js-schema-2.png)
-<br>
-
-![](/Assets/Img/js-schema-1.png)
 
 [//]: # (Стэк вызовов)
 <details><summary><b>Стэк вызовов</b></summary><p>
