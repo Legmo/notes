@@ -1307,6 +1307,7 @@ Web API...
 **Ссылки**
 
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+- [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
@@ -1315,6 +1316,8 @@ Web API...
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
+- https://habr.com/ru/post/439620/
+- https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
 
 <br></p>
 </details>
@@ -1423,6 +1426,7 @@ Web API...
 - [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
 - [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+- [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 - [learn.javascript.ru - Браузерное окружение, спецификации](https://learn.javascript.ru/browser-environment)
 - [habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
 - [habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
@@ -1435,6 +1439,8 @@ Web API...
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
+- https://habr.com/ru/post/439620/
+- https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
 
 <br></p>
 </details>   
@@ -1466,18 +1472,20 @@ JS - однопоточный язык.<br>
 
 - функция из очереди попадает в стэк
 - выполняется
-- стэк очищается
-- в стэк попадает следующая функция из очереди
+- стек очищается
+- в стек попадает следующая функция из очереди
+  <br>
 
-  Вариант немного сложнее:
-- функция 1 из очереди попадает в стэк
+Вариант немного сложнее:
+
+- функция 1 из очереди попадает в стек
 - внутри этой функции 1 находится вызов функции 2.
-- в стэк попадает функция 2
-- она вполняется и удаляется
+- в стек попадает функция 2
+- она выполняется и удаляется
 - результат её выполнения записывается в функцию 1
 - функция 1 выполняется
-- стэк очищается
-- в стэк попадает следующая функция из очереди
+- стек очищается
+- в стек попадает следующая функция из очереди
 
 <br></p>
 </details>
@@ -1518,6 +1526,11 @@ JS - однопоточный язык.<br>
 ответа, может выполняться код, не относящийся к запросу.
 
 Также функция setTimeout() - простейший способ продемонстрировать основы асинхронного поведения.
+
+- https://habr.com/ru/post/439620/
+- https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
+- [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+- [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 
 <br></p>
 </details>
@@ -1718,6 +1731,8 @@ Timeout
 
 - https://habr.com/ru/post/264993/
 - https://refaq.ru/voprosy/raznicza_mezhdu_mikrozadachej_i_makrozadachej_v_kontekste_czikla_sobytij
+- [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+- [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 
 <br></p>
 </details>
@@ -2203,11 +2218,10 @@ catch для обработки синхронных ошибок.
 - [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
 - [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
 - [learn.javascript.ru (en)](https://javascript.info/async-await)
+- [Асинхронные итераторы и генераторы]( https://learn.javascript.ru/async-iterators-generators)
 - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
 - [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-
 - [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
-
 - [Ад обратных вызовов](http://callbackhell.ru/)
 
 <br></p>

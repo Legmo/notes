@@ -12,16 +12,40 @@
   - Передача по значению / по ссылке
   - Мутирующие / не мутирующие методы (особенной у массивов)
   - Use strict
+  - Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, веб-воркеры, SetInterval/Promises, web
+    API...
+  - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+  - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
+  - [Цикл for-await-of](https://learn.javascript.ru/async-await)
+  - Как работает ключевое слово this?
+  - Как работают методы apply(), call() и bind()?
+  - Bind, контекст, this
+    - https://habr.com/ru/company/ruvds/blog/455527/
+    - https://learn.javascript.ru/bind
+    - https://learn.javascript.ru/object-methods
+    - https://learn.javascript.ru/call-apply
+    - https://habr.com/ru/company/ruvds/blog/419371/
+  - Атрибуты async и defer у тега script
+  - Лексическое всплытие
   - Function Declaration / Function Expression (`function sayHi(){}` / `let sayHi = function(){}`)
   - [Замыкания](https://learn.javascript.ru/closure)
   - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
     и [ещё они же](https://learn.javascript.ru/arrow-functions)
-  - [Promise](https://learn.javascript.ru/async)
+  - [Promise, Async/Await](https://learn.javascript.ru/async)
   - [Ver, Let, Const](https://learn.javascript.ru/var)
   - [Рекурсия](https://learn.javascript.ru/recursion)
     и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
   - [Прототипы](https://learn.javascript.ru/prototypes)
   - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
+  - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+  - [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+  - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
+    Fetch API
+  - XMLHttpRequest и как его отменить, современный вариант fetch
+  - Методы объектов и массивов
+  - Map, filter, reduce
+  - Ещё про нативный Javascript любят поговорить: как на нативном Javascript обратиться к элементам DOM-страницы? А к
+    конкретному? А по тегам?
 - React
   - [Side-эффекты](/Pages/Programming/Programming.md)
   - [HOC](/Pages/JS/React.md)
@@ -161,29 +185,17 @@
     - всякие экзотические - автоматное, аппликативное, аспект/агент/компонент-ориентированное.
 - [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
 
-- JS
-  - Event loop, микро и макро tasks
-    - https://learn.javascript.ru/event-loop
-    - https://learn.javascript.ru/microtask-queue
-  - Веб-воркеры
-    - [Legmo - JS](/Pages/JS/JS.md)
-    - https://webdevblog.ru/javascript-web-workers-rukovodstvo-dlya-nachinajushhih/?ysclid=l7id6v4kl6484714219
-  - Асинхронность
-    - https://habr.com/ru/post/439620/
-    - https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
-    - https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md
-  - Асинхронная итерация, цикл for-await-of
-    - https://learn.javascript.ru/async-iterators-generators
-    - https://learn.javascript.ru/async-await
-  - Bind, контекст, this
-    - https://habr.com/ru/company/ruvds/blog/455527/
-    - https://learn.javascript.ru/bind
-    - https://learn.javascript.ru/object-methods
-    - https://learn.javascript.ru/call-apply
-    - https://habr.com/ru/company/ruvds/blog/419371/
-  - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется Fetch API
-  - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-  - [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+- Алгоритмическая сложность
+- Теория нормализации данных (применительно к проектированию Redux state)
+  Работа DOM браузера: "дорогие" операции. Relayout / repaint
+- Работа DOM браузера: "дорогие" операции чтения (get.computer.style и т.д.)
+- Отслеживание изменений в фреймворке — центральный вопрос для современных фреймворков. Как фреймворк понимает, что
+  что-то изменилось и необходимо применить новые изменения к DOM?
+- прицнипы ООП (хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм)
+- Бинарное дерево
+- Пузырьковая фильтрация
+
+
 - React
   - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
   - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
@@ -226,7 +238,7 @@
 <details><summary><b>Из личного опыта</b></summary><p>
 
 - Замыкания
-- Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, web API... SetInterval/Promises
+- Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, веб-воркеры, SetInterval/Promises, web API...
 - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
 - **Как JS распределяет память, как парсится и выполняется код.**
 - Promises, Async/Await, атрибуты async и defer у тега script
@@ -252,6 +264,18 @@
 - Замыкания - например использование var/let в for()
 - Promise & setTimeout/setInterval - что раньше выполнится? Куча разных console.log, в каком порядке будут выводиться
 - Написать свою реализацию функции debounce
+- армия функций
+  - https://learn.javascript.ru/task/make-army
+  - https://learn.javascript.ru/let-const
+  - https://qna.habr.com/q/365769
+- написать функцию, add, чтобы вызов add(1)(2) вернул 3 (замыкания)
+- кофеварка (один раз написать самому, подсматривая в учебник обязательно)
+  - https://learn.javascript.ru/private-protected-properties-methods
+  - https://learn.javascript.ru/task/add-method-property-coffeemachine
+  - https://learn.javascript.ru/task/add-public-coffeemachine
+  - https://learn.javascript.ru/functional-inheritance
+  - https://learn.javascript.ru/getters-setters
+- как сделать debounce функцию
 - Предложить разные методы организации кэша для вычисления Фибоначчи (кэш ограничен 20 значениями, а поступить может
   хоть 10000 - как оптимизировать? часть кэша выделяем под хранение предыдущиз вычисленных значений. Рекурсия - самый
   дорогой вариант)
