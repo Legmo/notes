@@ -1160,8 +1160,11 @@ rabbit.__proto__ = animal;
 
 - v8 (Chrome, Edge, node.js)
 - SpiderMonkey (Mozilla)
-- Nitro (Safari)
-- Chakra для IE
+- JavaScriptCore (фреймворк WebKit, на нём работает Safari)
+- Hermes (для React Native, от Facebook)
+- JerryScript (суперлегкий движок, используемый для интернета вещей, весит менее 200 КБ - нужно мало памяти на уст-ве).
+- Chakra (IE)
+- Nitro (старые Safari)
 
 `Окружение / Среда` (JS Run-time Enviroment) — надстройка над движком. <br>
 
@@ -1188,10 +1191,12 @@ Web API...
 
 <img src="/Assets/Img/js-schema-1.png" title="Схема 1" alt="Схема 1" />
 
+Внутри движок устроен как конвейер: `парсер` -> `интерпретатор` -> `компилятор` -> `мащинный код`
+
 Исходный код проходит через `парсер`.<br>
 В результате возникает внутреннее представление кода — `абстрактное синтаксическое дерево`.
 
-Дальше работает `интерпретатор`. <br>
+Дальше работает `интерпретатор`. Их может быть несколько <br>
 Он построчно выполняет код программы.<br>
 Отдельные функции при исполнении преобразуются в `байт-код` — спец. код для вирутальной машины.<br>
 При этом копится статистика использования JS-функций. Если какая-то вызывается часто, её передают `компилятору` для
@@ -1298,6 +1303,8 @@ Web API...
 
 **Ссылки**
 
+- [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
+- [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
 - [learn.javascript.ru - Браузерное окружение, спецификации](https://learn.javascript.ru/browser-environment)
 - [habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
 - [habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
@@ -1560,18 +1567,22 @@ Web API...
    Пока обработчик клика мышью выполняется, срабатывает первый interval-callback. Он будет поставлен в очередь. Когда снова сработает interval, то он будет удален из очереди. Если бы все interval-callback'и попадали в очередь пока исполняется большой кусок кода, это бы привело к тому, что образовалась бы куча функций, ожидающих вызова без периодов задержек между окончанием их выполнения. Вместо этого браузеры стремятся ждать пока не останется ни одной функции в очереди прежде чем добавить в очередь еще один setInterval.
    
   **Ссылки**
-  * [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно. Рекомендую
-  * [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
-  * [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-  * [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
-  * [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
-  * [learn.javascript.ru (en)](https://javascript.info/async-await)
-  * [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
-  * [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
-  * [Стеки и очереди в JavaScript](http://shuvalov.info/2013/03/21/stack-and-queue/)
-  * [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-  * [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
-  * [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
+
+* [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
+  Рекомендую
+* [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
+* [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
+* [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+* [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+* [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+* [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
+* [learn.javascript.ru (en)](https://javascript.info/async-await)
+* [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
+* [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
+* [Стеки и очереди в JavaScript](http://shuvalov.info/2013/03/21/stack-and-queue/)
+* [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
+* [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+* [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
 * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
 * [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
 * [Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
