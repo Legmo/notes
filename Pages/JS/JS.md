@@ -1441,6 +1441,7 @@ Web API...
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
 - https://habr.com/ru/post/439620/
 - https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
+- https://doka.guide/js/async-in-js/
 
 <br></p>
 </details>   
@@ -1513,6 +1514,23 @@ JS однопоточный (выполняет один блок за раз), 
 Асинхронность позволяет пользовательскому интерфейсу веб-приложений нормально функционировать, реагировать на команды
 пользователя.<br>
 
+**Асинхронность с ипользованием коллбэков**
+
+Есть функция `A()`, которая делает долгую операцию (запрос по сети)
+Есть функция `B()`, которой надо работать с результатом `A()`.
+Просто написать в коде подряд `A(); B();` мы не можем - `B()` начнёт выполняться до того как `A()` получит данные.
+Вариант решения: в `A()` вторым параметром передадим `B()`, чтоб `A()` запустила его когда будет готова.
+
+```js 
+function A(B) {
+  /*Some long work*/
+  B();
+}
+```
+
+В функцию, которая выполняет какие-либо асинхронные операции, передаём аргумент callback — функцию, которая будет
+вызвана по завершению асинхронного действия.
+
 **Примеры асинхронности**<br>
 
 - функция `setTimeout()`
@@ -1531,6 +1549,7 @@ JS однопоточный (выполняет один блок за раз), 
 
 - https://habr.com/ru/post/439620/
 - https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
+- https://doka.guide/js/async-in-js/
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
 - [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 
@@ -1914,7 +1933,8 @@ JavaScript изначально появился в браузерах, и к н
 - [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
 - [Ад обратных вызовов](http://callbackhell.ru/)
 - [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
-  
+- https://doka.guide/js/async-in-js/
+
 <br></p>
 </details>   
 
