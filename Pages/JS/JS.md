@@ -1152,6 +1152,15 @@ rabbit.__proto__ = animal;
 <details><summary><b>Работа движка JS. Окружение</b></summary><p>
 
 ***
+В паре слов:
+
+- есть `окружение` и `движок`
+- в движке конвейер: `парсер` -> `абстрактное синтаксическое дерево` -> `интерпретатор` -> `компилятор`
+  -> `машинный код`
+- код попадает в `очередь`. Упомянуть `микро/макро задачи`, `web workers`
+- из очереди по одной задаче берётся в стэк (стр-ра данных в движке)
+- всё работает в бесконечном «событийном цикле» `event loop`: макрозадача 1 - все микрозадачи - отрисовка страницы (
+  рендер) - микрозадача 2
 
 [//]: # (Движок. Окружение / Среда)
 <details><summary><b>Движок. Окружение (Среда)</b></summary><p>
@@ -1287,6 +1296,14 @@ Web API...
 **Ссылки**
 
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+- [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
+  просто и понятно.
+  Рекомендую
+- [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
+- [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
+- [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
 
 <br></p>
 </details>
@@ -1340,7 +1357,8 @@ Web API...
 Чтобы создать асинхронный вызов, в `окружение` передается ссылка на функцию, которая выполнится позже (или не выполнится
 вовсе).
 
-Окружение получает код и само решает, в какой момент передать функцию в очередь вызовов (2).<br>
+Окружение получает код и само решает, в какой момент передать функцию в `очередь вызовов` (2, queue, «кью»).<br>
+По сути, очередь - это часть `стэка`
 В очереди вызовов нельзя отменять отдельные операции. Это делается в окружении (removeEventListener — в качестве
 примера).<br>
 
@@ -1348,8 +1366,6 @@ Web API...
 Выполнение происходит в том же порядке, в котором функции попали в очередь.<br>
 Функции из очереди добавляются в стек выполнения (выполняются) не раньше, чем стек вызовов закончит работу над текущей
 функцией.<br>
-
-окружение.
 
 <br></p>
 </details>
@@ -1400,6 +1416,14 @@ Web API...
 - [habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
 - [habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
 - [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+- [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
+  просто и понятно.
+  Рекомендую
+- [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
+- [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
+- [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
 
 <br></p>
 </details>   
@@ -1660,6 +1684,8 @@ Web API...
   **Ссылки**
 
 * [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
+* [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
+  просто и понятно.
   Рекомендую
 * [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
 * [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
@@ -1678,11 +1704,11 @@ Web API...
 * [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
 * [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
 * [Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
-  * [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
-  * [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
-  * [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
-  * [Ад обратных вызовов](http://callbackhell.ru/)
-  * [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
+* [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
+* [learnjavascript - Про события и ассинхронность](https://learn.javascript.ru/events-and-timing-depth)
+* [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
+* [Ад обратных вызовов](http://callbackhell.ru/)
+* [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
   
 <br></p>
 </details>   
