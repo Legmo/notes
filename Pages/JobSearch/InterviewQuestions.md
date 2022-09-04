@@ -542,4 +542,9 @@
 <br>
 <br>
 
+![](/Assets/Img/humor_js-interview-1.png)
+
+<br>
+<br>
+
 *[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
