@@ -2079,14 +2079,46 @@ promise
 
 Асинхронные функции позволяют избавиться от так называемого «ада коллбэков» и улучшить внешний вид и читаемость кода.
 
-Добавлены в
+Ключевое слово `async` сообщает JS-интерпретатору что эту функцию, нужно обрабатывать по-особому. <br>
+Когда система достигнет в этой функции ключевого слова `await` — она приостановится.<br>
+Она считает, что выражение после `await` возвращает промис — ожидает разрешения или отклонения этого промиса перед
+продолжением.
 
-Ключевое слово async сообщает JavaScript-интерпретатору о том, что функцию, объявленную с этим ключевым словом, нужно
-воспринимать по-особому. Систем приостанавливается, достигая ключевого слова await в этой функции. Она считает, что
-выражение после await возвращает промис и ожидает разрешения или отклонения этого промиса перед продолжением.
+**Пример**<br>
+`getAmount()` вызывает две асинхронные функции — `getUser()` и `getBankBalance()`.<br>
+Можно сделать это в промисе, но конструкция `async/await` позволяет решить эту задачу проще и элегантнее.
 
-В следующем примере функция getAmount() вызывает две асинхронные функции — getUser() и getBankBalance().<br>
-Сделать это можно и в промисе, но использование конструкции async/await позволяет решить эту задачу проще и элегантнее.
+```js
+function getUser(userId) {
+  return new Promise(resolve => {
+    resolve('Ivan')
+  })
+}
+
+function getBankBalance(user) {
+  return new Promise((resolve, rejected) => {
+    if (user == 'Ivan') {
+      resolve('$1,00')
+    } else {
+      rejected('unknown user')
+    }
+  })
+}
+
+// Раньше
+function getAmount(userId) {
+  getUser(userId)
+          .then(user => getBankBalance(user))
+          .then(money => console.log(money))
+}
+
+// Теперь, с Async/Await
+async function getAmount2(userId) {
+  let user = await getUser(userId);
+  let money = await getBankBalance(user);
+  console.log(money);
+}
+```
 
 [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
 
