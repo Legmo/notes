@@ -1155,13 +1155,15 @@ rabbit.__proto__ = animal;
 <br>
 <br>
 
-![](https://hsto.org/r/w1560/webt/g-/tv/yx/g-tvyxlxy0e3kc0c_quq_r0d9uo.png)
+<img src="/Assets/Img/js-schema-1.png" width="480" height="auto" title="Схема 1" alt="Схема 1" />
 <br>
 
-![](/Assets/Img/js-schema-2.png)
+<img src="/Assets/Img/js-schema-2.png" width="480" height="auto" title="Схема 2" alt="Схема 2" />
 <br>
 
-![](/Assets/Img/js-schema-1.png)
+<img src="/Assets/Img/js-schema-3.png" width = "480" height="auto" title="Схема 3" alt="Схема 3" />
+<br>
+
 
 [//]: # (Парсер, интерпретатор, компилятор)
 <details><summary><b>Парсер, интерпретатор, компилятор</b></summary><p>
