@@ -2837,8 +2837,10 @@ const [fruit, setFruit] = useState('банан');
 
 - [Legmo - Программирование](../Programming/Programming.md)
 - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
+- [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
 - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
 - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
+- [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
   <br></p>
 
