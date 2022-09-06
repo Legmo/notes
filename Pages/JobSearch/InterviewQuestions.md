@@ -262,13 +262,40 @@
 <details><summary><b>Популярные задачки</b></summary><p>
 
 - Замыкания - например использование var/let в for()
+- Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3
+  - ```js
+    //Стерлочная
+    const add = x => y => {
+      const z = x + y;
+      console.log(x + '+' + y + '=' + z);
+      return z;
+    };
+    const res = add(3)(6); // вернёт 9 и выведет в консоль 3+6=9
+    console.log(res);
+  ```
+  - ```js
+    //Обычная
+    function fA() {
+      var currentCount = 1;
+      function fB() { 
+        return currentCount++;
+      };
+      return fB;
+    }
+    var counter1 = fA();     
+    console.log(counter1()); // 1
+    console.log(counter1()); // 2
+    console.log(counter1()); // 3
+
+    // создаём другой счётчик, он будет независим от первого
+    var counter2 = fA();
+    console.log(counter2()); // 1
+  ```
 - Promise & setTimeout/setInterval - что раньше выполнится? Куча разных console.log, в каком порядке будут выводиться
-- Написать свою реализацию функции debounce
 - армия функций
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
   - https://qna.habr.com/q/365769
-- написать функцию, add, чтобы вызов add(1)(2) вернул 3 (замыкания)
 - кофеварка (один раз написать самому, подсматривая в учебник обязательно)
   - https://learn.javascript.ru/private-protected-properties-methods
   - https://learn.javascript.ru/task/add-method-property-coffeemachine
@@ -276,6 +303,13 @@
   - https://learn.javascript.ru/functional-inheritance
   - https://learn.javascript.ru/getters-setters
 - как сделать debounce функцию
+  - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
+  - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
+  - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
+  - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+- как сделать throttling функцию
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 - Предложить разные методы организации кэша для вычисления Фибоначчи (кэш ограничен 20 значениями, а поступить может
   хоть 10000 - как оптимизировать? часть кэша выделяем под хранение предыдущиз вычисленных значений. Рекурсия - самый
   дорогой вариант)
