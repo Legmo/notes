@@ -186,17 +186,39 @@ describe('ProductHeader', () => {
 - Набор тестов начинается с блока `describe` — глобальная функция Jest, принимает два параметра:
   - название набора тестов,
   - фактическая реализация.<br>
-
-
 - `it()` — каждый `it()` в наборе тестов соответствует тесту или спецификации.<br>
   - ```js
     it('failing test', () => {
        expect(false).toBeTruthy();
     })
    ```
+- `matchers` — сопоставители для сравнения значений. Используются для проверки равенства, сравнения двух чисел или строк
+  и проверки правильности выражений.
+  - Список популярных матчей в Jest:
+    - toBe();
+    - toBeNull()
+    - toBeDefined()
+    - toBeUndefined()
+    - toBeTruthy ()
+    - toBeFalsy()
+    - toBeGreaterThan()
+    - toBeLesserThan()
+    - toMatch()
+    - toContain()
+  - [Справочник](https://jestjs.io/docs/en/using-matchers)
+  - Пример:
+    - ```js
+      it('has a title class', () => {
+        const component = ReactTestUtils.renderIntoDocument(<ProductHeader/>);    
+        var node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'title');
+      })
+      ```
 
-- `expects` — ожидание Тест содержит одно или несколько ожиданий, которые проверяют состояние кода.<br>
+- `expects` — ожидание. Утверждение, которое либо возвращает `true` / `false`.
+  - Когда все утверждения в спецификации верны, говорят, что они прошли. В противном случае тест считается неудачным.
+  - Тест содержит одно или несколько ожиданий, которые проверяют состояние кода.<br>
   - `expects(true).toBeTruthy();`
+- Запуск набора тестов в «Create React APP» - `yarn test`
 
 <br></p>
 </details>
