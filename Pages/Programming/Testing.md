@@ -208,12 +208,10 @@ describe('ProductHeader', () => {
   - [Справочник](https://jestjs.io/docs/en/using-matchers)
   - Пример:
     - ```js
-      it('has a title class', () => {
-        const component = ReactTestUtils.renderIntoDocument(<ProductHeader/>);    
-        var node = ReactTestUtils.findRenderedDOMComponentWithClass(component, 'title');
-      })
+      test('two plus two is four', () => {
+        expect(2 + 2).toBe(4);
+      });
       ```
-
 - `expects` — ожидание. Утверждение, которое либо возвращает `true` / `false`.
   - Когда все утверждения в спецификации верны, говорят, что они прошли. В противном случае тест считается неудачным.
   - Тест содержит одно или несколько ожиданий, которые проверяют состояние кода.<br>
