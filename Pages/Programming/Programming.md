@@ -318,14 +318,14 @@ HTTP-кэш.
 
 **MVC для React & Redux**<br>
 
-- View = React компоненты без хуков и своего стейта.
 - Model = State. Состояние, хранящееся в Redux Store
+- View = React компоненты без хуков и своего стейта.
 - Controller = Redux (Reducer, Action)
 
 Другой вариант
 
-- View = React
 - Model = Redux
+- View = React
 - Controller = React-redux. Обёртка, которая принимает стейт, диспатчит ActionCreators и т. При условии, что никаких "
   умных" компонент со своим стейтом и т.д.
 
