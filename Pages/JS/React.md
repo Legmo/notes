@@ -2117,7 +2117,7 @@ function Example() {
 </details>
 
 **Ссылки**
-- https://habr.com/ru/company/simbirsoft/blog/652321/
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321)
 - [Оф. документация](https://ru.reactjs.org/docs/hooks-intro.html)
 - [Оф. документация - список хуков](https://ru.reactjs.org/docs/hooks-reference.html)
 - [Дэн Абрамов - Полное руководство по useEffect (!)](https://habr.com/ru/company/ruvds/blog/445276/)
