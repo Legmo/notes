@@ -195,7 +195,6 @@
 - Бинарное дерево
 - Пузырьковая фильтрация
 
-
 - React
   - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
   - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
@@ -296,6 +295,9 @@
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
   - https://qna.habr.com/q/365769
+- Рекурсия - числа Фибоначи. Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
+  - https://learn.javascript.ru/task/fibonacci-numbers
+  - можно решить через рекурсию и цикл for
 - кофеварка (один раз написать самому, подсматривая в учебник обязательно)
   - https://learn.javascript.ru/private-protected-properties-methods
   - https://learn.javascript.ru/task/add-method-property-coffeemachine
