@@ -166,6 +166,36 @@ Jest — это раннер на основе Node. Это означает, ч
 - [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
 - [Как протестировать React-приложения с помощью React Testing Library](https://www.internet-technologies.ru/articles/test-react-priloz-s-pom-react-testing-library.html)
 
+**Описание**
+
+- Набор тестов начинается с блока `describe` — глобальная функция Jest, принимает два параметра:
+  - название набора тестов,
+  - фактическая реализация.<br>
+
+```js
+describe('ProductHeader', () => {
+
+  it('passing test', () => {
+    expect(true).toBeTruthy();
+  })
+
+  it('failing test', () => {
+    expect(false).toBeTruthy();
+  })
+})
+```
+
+- `it()` — каждый `it()` в наборе тестов соответствует тесту или спецификации.<br>
+
+```js
+  it('failing test', () => {
+  expect(false).toBeTruthy();
+})
+```
+
+- `expects` — ожидание Тест содержит одно или несколько ожиданий, которые проверяют состояние кода.<br>
+  `expects(true).toBeTruthy();`
+
 <br></p>
 </details>
 
