@@ -2538,6 +2538,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Оф. документация - useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Hexlet - Хук useContext ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
@@ -2552,6 +2553,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 
 - [Оф. документация — useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
@@ -2570,6 +2572,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Оф. докуиентация - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
 - [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
@@ -2590,6 +2593,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
@@ -2599,11 +2603,20 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 
 [useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref) — взаимодействие с DOM-объектами, аналог Ref
 
+Хук `useRef` позволяет сохранить некоторый объект, который можно изменять и который хранится в течение всей жизни
+компонента.
+
+useRef возвращает изменяемый ref-объект, свойство .current которого инициализируется переданным аргументом (
+initialValue). Возвращённый объект будет сохраняться в течение всего времени жизни компонента.
+
 **Ссылки**
 
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Hexlet - Хук useRef](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
 - [Mentanit - useRef](https://metanit.com/web/react/6.4.php)
+- [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
+- [Hexlet - Хуки](https://ru.hexlet.io/courses/js-react-hooks)
+- [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
@@ -2731,27 +2744,6 @@ CSS-in-JS решать проблемы с производительность�
 
 <br></p>
 </details>
-
-[//]: # (useRef)
-<details><summary>useRef</summary><p>
-
-Хук `useRef` позволяет сохранить некоторый объект, который можно изменять и который хранится в течение всей жизни
-компонента.
-
-useRef возвращает изменяемый ref-объект, свойство .current которого инициализируется переданным аргументом (
-initialValue). Возвращённый объект будет сохраняться в течение всего времени жизни компонента.
-
-**Ссылки**
-
-- [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
-- [Mentanit - Хук useRef](https://metanit.com/web/react/6.4.php)
-- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Hexlet - Хук useRef](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
-- [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
-
-<br></p>
-</details>
-
 [//]: # (Пользовательские хуки)
 <details><summary>Пользовательские хуки</summary><p>
 
@@ -2775,6 +2767,7 @@ initialValue). Возвращённый объект будет сохранят
 - [IT-Kamasutra #84 - hook, useState, хуки](https://youtu.be/EbqQg0K4wbo)
 - [WebDev - React видеокаст #2. Полное введение в хуки](https://youtu.be/X6j7Y7tp3_c)
 - [WebDev - React видеокаст #3. Релиз хуков](https://youtu.be/19EmLE2mZ1Q)
+- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
 <br></p>
 </details>
