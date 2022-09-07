@@ -63,10 +63,10 @@
     - НОВЫЕ
     - `findLast()` и `findLastIndex()` — поиск в массивах «с конца
     - `at()` — обращаться к массивам с конца. И строкам тоже
-    - `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив.
+    - `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
+      массив сделать одномерным.
     -
     - [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
-  - Т.е. многомерный массив сделать одномерным.
     - 
     - Чаще всего спрашивают
       - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
@@ -115,6 +115,7 @@
   - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
   - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
   - Классы
+    - [Базовые вопросы](https://learn.javascript.ru/classes)
     - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
     - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
     - ...
