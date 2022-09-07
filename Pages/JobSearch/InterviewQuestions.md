@@ -254,6 +254,38 @@
 - Устройство Redux (store, createStore, state, reducer, actions, action creators, dispatch, provider, connect,
   middleware, mapDispatchToProps, mapStateToProps)
 
+- **ГК «Самолёт», React-frontend middle+** (август 2022)
+  - Общее
+    - что такое прогрессивный рендеринг, гидратация
+    - как искать ошибки (console.log, debugger, точки останова)
+    - какие JS/React библиотеки использую
+  - CSS
+    - методы позиционирования
+    - семантическая вёрстка
+  - JS
+    - загрузка скриптов — обычная, async и defer
+    - замыкания
+    - event loop, микро-макро таск
+    - Отличия Cookie, LocalStorage, sessionStorage — https://learn.javascript.ru/localstorage
+  - React
+    - что это такое
+    - различия функциональных/классовых компонент
+    - хуки
+      - какие есть
+      - как имитировать методы жизненного цикла
+      - useState
+      - useEffect, что даёт return
+      - useMemo / useCallback (что вернёт)
+    - отличия ReactRouter и ReactRouterDOM
+  - Задачки
+    - в каком порядке выведутся `console.log`
+      - обычный 1, setInterval, промис, then. обычный 2 => `1, 2, Promise, then, setInterval`
+      - [Legmo - JS. Разделы «Работа движка JS», «Асинхронность»]
+    - числа Фибоначчи
+      - решение через рекурсию
+      - решение через цикл for
+      - [learn.javascript.ru - Задачка «Числа Фибоначчи» с решением](https://learn.javascript.ru/task/fibonacci-numbers)
+
 <br></p>
 </details> 
 
