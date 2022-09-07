@@ -401,7 +401,7 @@
     // создаём другой счётчик, он будет независим от первого
     var counter2 = fA();
     console.log(counter2()); // 1
-  ```
+    ```
 - Promise & setTimeout/setInterval - что раньше выполнится? Куча разных console.log, в каком порядке будут выводиться
 - армия функций
   - https://learn.javascript.ru/task/make-army
