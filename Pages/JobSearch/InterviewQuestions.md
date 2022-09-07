@@ -50,6 +50,40 @@
   - [Side-эффекты](/Pages/Programming/Programming.md)
   - [HOC](/Pages/JS/React.md)
   - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
+  - [Хуки](/Pages/JS/React.md)
+  - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+  - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
+  - Хуки
+    - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+    - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
+      Получи прямую ссылку"
+    - https://ru.reactjs.org/docs/hooks-state.html
+    - https://ru.reactjs.org/docs/hooks-effect.html
+    - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
+    - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
+    - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
+    - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
+    - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
+  - Методы жизненного цикла
+    - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
+    - componentShouldUpdate
+  - Оптимизация React
+  - Современные практики - 2020, 2021, 2022
+  - Классовые компоненты
+  - Ref
+  - [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+  - Child
+  - Connect и то как он прокидывает props
+  - Render props
+  - Читать документацию React (прочесть трижды)
+  - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
+  - https://it-shpora.pp.ua
+  - Вёрстка
+    - CSS для React - модули
+    - CSS для React - CSS in JS
+    - CSS для React - прочее
+    - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+    - BEM
 - [Redux](/Pages/JS/Redux.md)
 - TypeScript
   - Основные отличия TS и JS
@@ -151,6 +185,7 @@
   - Методы
   - Геттеры/сеттеры
 - [ООП - Базовые принципы](/Pages/Programming/Programming.md)
+  - хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм
   - **Наследование** - механизм описания новых классов на основе родительского.
   - Абстракция
   - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
@@ -191,44 +226,9 @@
 - Работа DOM браузера: "дорогие" операции чтения (get.computer.style и т.д.)
 - Отслеживание изменений в фреймворке — центральный вопрос для современных фреймворков. Как фреймворк понимает, что
   что-то изменилось и необходимо применить новые изменения к DOM?
-- прицнипы ООП (хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм)
 - Бинарное дерево
 - Пузырьковая фильтрация
 
-- React
-  - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-  - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
-  - Хуки
-    - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-    - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
-      Получи прямую ссылку"
-    - https://ru.reactjs.org/docs/hooks-state.html
-    - https://ru.reactjs.org/docs/hooks-effect.html
-    - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
-    - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
-    - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
-    - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
-    - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
-  - Методы жизненного цикла
-    - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
-    - componentShouldUpdate
-  - Оптимизация React
-  - Современные практики - 2020, 2021, 2022
-  - Классовые компоненты
-  - Ref
-  - [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
-  - Child
-  - Connect и то как он прокидывает props
-  - Render props
-  - Читать документацию React (прочесть трижды)
-  - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
-  - https://it-shpora.pp.ua
-  - Вёрстка
-    - CSS для React - модули
-    - CSS для React - CSS in JS
-    - CSS для React - прочее
-    - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
-    - BEM
 
 <br></p>
 </details> 
@@ -412,6 +412,22 @@
 - Кода нужно использовать метод getDerivedStateFromProps(props, state)?
 - Что такое PropTypes и как их использовать?
 - Что такое stateless компоненты?
+
+<br></p>
+</details> 
+
+[//]: # (Вопросы для собеседования по хукам React)
+<details><summary><b>Вопросы для собеседования по хукам React</b></summary><p>
+
+[Вопросы для собеседования по хукам React](https://temofeev.ru/info/articles/voprosy-dlya-sobesedovaniya-po-khukam-react/)
+
+- Что такое хуки в React?
+- Будут ли хуки React работать внутри классовых компонентов?
+- Зачем были введены хуки в React?
+- Как работает хук useState? Какие аргументы принимает этот хук и что он возвращает?
+- Задача на использование useState
+- Задача на использование useState 2 — callback
+- Задача на использование useState 3 — слияние объектов в setSteat()
 
 <br></p>
 </details> 
