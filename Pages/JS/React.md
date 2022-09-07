@@ -3140,7 +3140,7 @@ HTMl с сервера.
 **Ссылки**
 
 - [Habr - Прогрессивный рендеринг для лучшей производительности веб-приложений](https://habr.com/ru/company/skillfactory/blog/540294/)
-- []()
+- [Habr - Что, черт возьми, такое гидратация и регидратация?](https://habr.com/ru/post/515100/)
 - [Серверный или клиентский рендеринг на вебе: что лучше использовать у себя в проекте и почему](https://tproger.ru/translations/rendering-on-the-web/)
 - [Как интегрировать серверный рендеринг в React-приложение, и зачем он вообще там нужен](https://highload.today/kak-integrirovat-servernyj-rendering-v-react-prilozhenie-i-zachem-on-voobshhe-tam-nuzhen/)
 - [Прогрессивный рендеринг для повышения производительности веб-приложений](https://webformyself.com/progressivnyj-rendering-dlya-povysheniya-proizvoditelnosti-veb-prilozhenij/)
