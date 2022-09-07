@@ -488,6 +488,10 @@ ES5 (2009)<br>
 - `false` = пустая строка, 0, null, NaN, undefined
 - `true` = все остальное
 
+**Ссылки**
+
+- [doka - Преобразование типов ](https://doka.guide/js/typecasting)
+
 <br></p>
 </details>
 

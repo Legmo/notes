@@ -5,29 +5,105 @@
 
 - JS
   - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+  - [Что нового в последних 3 версиях JX](../JS/JS.md)
+  - [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
+  - [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
+  - [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
+  - [Дестурктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+  - [Остаточные параметры и оператор расширения](https://learn.javascript.ru/rest-parameters-spread-operator)
+  - [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
   - Типы в JS (string, number, object...)
-  - Приведение типов
+  - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
+  - [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
   - Что является объектом в JS?
   - Различия Undefined и Null
   - Передача по значению / по ссылке
+  - Методы примитивов
+    - [Общие вопросы](https://learn.javascript.ru/primitives-methods)
+    - [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+    - [Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+    - [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B)
+    - [Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+    - [Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+  - Методы объектов
+    - keys() - возвращает ключи объекта.
+    - values() - возвращает значения объекта.
+    - create() - создать новый объект из существующего.
+    - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
+    - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
+    - assign() - копирование свойств объекта в другой объект.
+    - entries() - создает вложенный массив пар «ключ-значение» объекта
+    - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+      .
+    - ... там ещё много. Изучать
+    - что-то добавили в последние несколько лет
+    -
+    - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+  - Методы массивов
+    - push(...items) – добавляет элементы в конец,
+    - pop() – извлекает элемент из конца,
+    - shift() – извлекает элемент из начала,
+    - unshift(...items) – добавляет элементы в начало.
+    - [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+    - [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+    - [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+      старых
+    - [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+    - [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+      в массиве
+    - [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+    - [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+    - [map](https://learn.javascript.ru/array-methods#map) - преобразование
+    - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
+    - [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
+    - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+    - [reduce/reduceRight]()
+    - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+    -
+    - НОВЫЕ
+    - `findLast()` и `findLastIndex()` — поиск в массивах «с конца
+    - `at()` — обращаться к массивам с конца. И строкам тоже
+    - `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив.
+    -
+    - [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+  - Т.е. многомерный массив сделать одномерным.
+    - 
+    - Чаще всего спрашивают
+      - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
+      - Метод [filter](https://learn.javascript.ru/array-methods#filter)
+      - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
   - Мутирующие / не мутирующие методы (особенной у массивов)
-  - Use strict
-  - Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, веб-воркеры, SetInterval/Promises, web
-    API...
-  - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+  - [Use strict](https://learn.javascript.ru/strict-mode)
+  - [Работа JS-движка](../JS/JS.md)
+    - Event Loop,
+    - стэк,
+    - очередь задач,
+    - микро/макро задачи,
+    - веб-воркеры,
+    - SetInterval
+    - Promises,
+    - web API...
+    - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+  - [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
   - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
   - [Цикл for-await-of](https://learn.javascript.ru/async-await)
   - Как работает ключевое слово this?
-  - Как работают методы apply(), call() и bind()?
+    - https://learn.javascript.ru/object-methods
+    - https://learn.javascript.ru/bind
+    - https://learn.javascript.ru/call-apply-decorators
+    - https://learn.javascript.ru/arrow-functions
   - Bind, контекст, this
     - https://habr.com/ru/company/ruvds/blog/455527/
     - https://learn.javascript.ru/bind
     - https://learn.javascript.ru/object-methods
     - https://learn.javascript.ru/call-apply
     - https://habr.com/ru/company/ruvds/blog/419371/
-  - Атрибуты async и defer у тега script
-  - Лексическое всплытие
-  - Function Declaration / Function Expression (`function sayHi(){}` / `let sayHi = function(){}`)
+  - [Как работают метод bind()?](https://learn.javascript.ru/bind)
+  - [Как работают методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
+  - [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
+  - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+  - [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
+    / `let sayHi = function(){}`)
   - [Замыкания](https://learn.javascript.ru/closure)
   - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
     и [ещё они же](https://learn.javascript.ru/arrow-functions)
@@ -36,14 +112,17 @@
   - [Рекурсия](https://learn.javascript.ru/recursion)
     и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
   - [Прототипы](https://learn.javascript.ru/prototypes)
-  - [Декораторы в JS](https://learn.javascript.ru/call-apply-decorators)
+  - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
   - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-  - [Публичные поля классов JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+  - Классы
+    - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+    - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+    - ...
   - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
     Fetch API
-  - XMLHttpRequest и как его отменить, современный вариант fetch
-  - Методы объектов и массивов
-  - Map, filter, reduce
+  - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) и как его отменить. Современный аналог — fetch
+  - Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
+    , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
   - Ещё про нативный Javascript любят поговорить: как на нативном Javascript обратиться к элементам DOM-страницы? А к
     конкретному? А по тегам?
 - React
