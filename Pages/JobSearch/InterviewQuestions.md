@@ -3,188 +3,304 @@
 [//]: # (Повторять)
 <details><summary><b>Повторять</b></summary><p>
 
-- JS
-  - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-  - [Что нового в последних 3 версиях JX](../JS/JS.md)
-  - [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
-  - [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
-  - [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
-  - [Дестурктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-  - [Остаточные параметры и оператор расширения](https://learn.javascript.ru/rest-parameters-spread-operator)
-  - [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
-  - Типы в JS (string, number, object...)
-  - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
-  - [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
-  - Что является объектом в JS?
-  - Различия Undefined и Null
-  - Передача по значению / по ссылке
-  - Методы примитивов
-    - [Общие вопросы](https://learn.javascript.ru/primitives-methods)
-    - [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
-    - [Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
-    - [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B)
-    - [Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-    - [Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-  - Методы объектов
-    - keys() - возвращает ключи объекта.
-    - values() - возвращает значения объекта.
-    - create() - создать новый объект из существующего.
-    - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-    - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-    - assign() - копирование свойств объекта в другой объект.
-    - entries() - создает вложенный массив пар «ключ-значение» объекта
-    - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
-      .
-    - ... там ещё много. Изучать
-    - что-то добавили в последние несколько лет
-    -
-    - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-  - Методы массивов
-    - push(...items) – добавляет элементы в конец,
-    - pop() – извлекает элемент из конца,
-    - shift() – извлекает элемент из начала,
-    - unshift(...items) – добавляет элементы в начало.
-    - [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-    - [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
-    - [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-      старых
-    - [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-    - [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-      в массиве
-    - [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
-    - [filter](https://learn.javascript.ru/array-methods#filter) - поиск
-    - [map](https://learn.javascript.ru/array-methods#map) - преобразование
-    - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
-    - [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
-    - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-    - [reduce/reduceRight]()
-    - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-    -
-    - НОВЫЕ
-    - `findLast()` и `findLastIndex()` — поиск в массивах «с конца
-    - `at()` — обращаться к массивам с конца. И строкам тоже
-    - `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
-      массив сделать одномерным.
-    -
-    - [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
-    - 
-    - Чаще всего спрашивают
-      - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
-      - Метод [filter](https://learn.javascript.ru/array-methods#filter)
-      - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
-  - Мутирующие / не мутирующие методы (особенной у массивов)
-  - [Use strict](https://learn.javascript.ru/strict-mode)
-  - [Работа JS-движка](../JS/JS.md)
-    - Event Loop,
-    - стэк,
-    - очередь задач,
-    - микро/макро задачи,
-    - веб-воркеры,
-    - SetInterval
-    - Promises,
-    - web API...
-    - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
-  - [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
-  - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
-  - [Цикл for-await-of](https://learn.javascript.ru/async-await)
-  - Как работает ключевое слово this?
-    - https://learn.javascript.ru/object-methods
-    - https://learn.javascript.ru/bind
-    - https://learn.javascript.ru/call-apply-decorators
-    - https://learn.javascript.ru/arrow-functions
-  - Bind, контекст, this
-    - https://habr.com/ru/company/ruvds/blog/455527/
-    - https://learn.javascript.ru/bind
-    - https://learn.javascript.ru/object-methods
-    - https://learn.javascript.ru/call-apply
-    - https://habr.com/ru/company/ruvds/blog/419371/
-  - [Как работают метод bind()?](https://learn.javascript.ru/bind)
-  - [Как работают методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
-  - [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
-  - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-  - [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
-    / `let sayHi = function(){}`)
-  - [Замыкания](https://learn.javascript.ru/closure)
-  - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
-    и [ещё они же](https://learn.javascript.ru/arrow-functions)
-  - [Promise, Async/Await](https://learn.javascript.ru/async)
-  - [Ver, Let, Const](https://learn.javascript.ru/var)
-  - [Рекурсия](https://learn.javascript.ru/recursion)
-    и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
-  - [Прототипы](https://learn.javascript.ru/prototypes)
-  - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
-  - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-  - Классы
-    - [Базовые вопросы](https://learn.javascript.ru/classes)
-    - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-    - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
-    - ...
-  - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
-    Fetch API
-  - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) и как его отменить. Современный аналог — fetch
-  - Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
-    , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
-  - Ещё про нативный Javascript любят поговорить: как на нативном Javascript обратиться к элементам DOM-страницы? А к
-    конкретному? А по тегам?
-- React
-  - [Side-эффекты](/Pages/Programming/Programming.md)
-  - [HOC](/Pages/JS/React.md)
-  - [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
-  - [Хуки](/Pages/JS/React.md)
-  - [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-  - [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
-  - Хуки
-    - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-    - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
-      Получи прямую ссылку"
-    - https://ru.reactjs.org/docs/hooks-state.html
-    - https://ru.reactjs.org/docs/hooks-effect.html
-    - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
-    - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
-    - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
-    - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
-    - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
-  - Методы жизненного цикла
-    - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
-    - componentShouldUpdate
-  - Оптимизация React
-  - Современные практики - 2020, 2021, 2022
-  - Классовые компоненты
-  - Ref
-  - [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
-  - Child
-  - Connect и то как он прокидывает props
-  - Render props
-  - Читать документацию React (прочесть трижды)
-  - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
-  - https://it-shpora.pp.ua
-  - Вёрстка
-    - CSS для React - модули
-    - CSS для React - CSS in JS
-    - CSS для React - прочее
-    - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
-    - BEM
+***
+
+[//]: # (JS)
+<details><summary><b>JS</b></summary><p>
+
+- [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+- [Что нового в последних 3 версиях JX](../JS/JS.md)
+- [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
+- [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
+- [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
+- [Дестурктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+- [Остаточные параметры и оператор расширения](https://learn.javascript.ru/rest-parameters-spread-operator)
+- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+- Типы в JS (string, number, object...)
+- [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
+- [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
+- Что является объектом в JS?
+- Различия Undefined и Null
+- Передача по значению / по ссылке
+- Методы примитивов
+  - [Общие вопросы](https://learn.javascript.ru/primitives-methods)
+  - [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+  - [Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+  - [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B)
+  - [Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+  - [Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- Методы объектов
+  - keys() - возвращает ключи объекта.
+  - values() - возвращает значения объекта.
+  - create() - создать новый объект из существующего.
+  - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
+  - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
+  - assign() - копирование свойств объекта в другой объект.
+  - entries() - создает вложенный массив пар «ключ-значение» объекта
+  - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+    .
+  - ... там ещё много. Изучать
+  - что-то добавили в последние несколько лет
+  -
+  - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+- Методы массивов
+  - push(...items) – добавляет элементы в конец,
+  - pop() – извлекает элемент из конца,
+  - shift() – извлекает элемент из начала,
+  - unshift(...items) – добавляет элементы в начало.
+  - [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+  - [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+  - [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+    старых
+  - [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+  - [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+    в массиве
+  - [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+  - [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+  - [map](https://learn.javascript.ru/array-methods#map) - преобразование
+  - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
+  - [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
+  - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+  - [reduce/reduceRight]()
+  - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+  -
+  - НОВЫЕ
+  - `findLast()` и `findLastIndex()` — поиск в массивах «с конца
+  - `at()` — обращаться к массивам с конца. И строкам тоже
+  - `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
+    массив сделать одномерным.
+  -
+  - [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+  -
+  - Чаще всего спрашивают
+    - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
+    - Метод [filter](https://learn.javascript.ru/array-methods#filter)
+    - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+- Мутирующие / не мутирующие методы (особенной у массивов)
+- [Use strict](https://learn.javascript.ru/strict-mode)
+- [Работа JS-движка](../JS/JS.md)
+  - Event Loop,
+  - стэк,
+  - очередь задач,
+  - микро/макро задачи,
+  - веб-воркеры,
+  - SetInterval
+  - Promises,
+  - web API...
+  - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+- [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
+- [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
+- [Цикл for-await-of](https://learn.javascript.ru/async-await)
+- Как работает ключевое слово this?
+  - https://learn.javascript.ru/object-methods
+  - https://learn.javascript.ru/bind
+  - https://learn.javascript.ru/call-apply-decorators
+  - https://learn.javascript.ru/arrow-functions
+- Bind, контекст, this
+  - https://habr.com/ru/company/ruvds/blog/455527/
+  - https://learn.javascript.ru/bind
+  - https://learn.javascript.ru/object-methods
+  - https://learn.javascript.ru/call-apply
+  - https://habr.com/ru/company/ruvds/blog/419371/
+- [Как работают метод bind()?](https://learn.javascript.ru/bind)
+- [Как работают методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
+- [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
+- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+- [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
+  / `let sayHi = function(){}`)
+- [Замыкания](https://learn.javascript.ru/closure)
+- [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
+  и [ещё они же](https://learn.javascript.ru/arrow-functions)
+- [Promise, Async/Await](https://learn.javascript.ru/async)
+- [Ver, Let, Const](https://learn.javascript.ru/var)
+- [Рекурсия](https://learn.javascript.ru/recursion)
+  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+- [Прототипы](https://learn.javascript.ru/prototypes)
+- [Декораторы](https://learn.javascript.ru/call-apply-decorators)
+- [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+- Классы
+  - [Базовые вопросы](https://learn.javascript.ru/classes)
+  - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+  - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+  - ...
+- [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
+  Fetch API
+- [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) и как его отменить. Современный аналог — fetch
+- Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
+  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
+- Ещё про нативный Javascript любят поговорить: как на нативном Javascript обратиться к элементам DOM-страницы? А к
+  конкретному? А по тегам?
+
+<br></p>
+</details> 
+
+[//]: # (React)
+<details><summary><b>React</b></summary><p>
+
+- [Side-эффекты](/Pages/Programming/Programming.md)
+- [HOC](/Pages/JS/React.md)
+- [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
+- [Хуки](/Pages/JS/React.md)
+- [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+- [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
+- Хуки
+  - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+  - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
+    Получи прямую ссылку"
+  - https://ru.reactjs.org/docs/hooks-state.html
+  - https://ru.reactjs.org/docs/hooks-effect.html
+  - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
+  - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
+  - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
+  - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
+  - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
+- Методы жизненного цикла
+  - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
+  - componentShouldUpdate
+- Оптимизация React
+- Современные практики - 2020, 2021, 2022
+- Классовые компоненты
+- Ref
+- [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+- Child
+- Connect и то как он прокидывает props
+- Render props
+- Читать документацию React (прочесть трижды)
+- [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
+- https://it-shpora.pp.ua
+- Вёрстка
+  - CSS для React - модули
+  - CSS для React - CSS in JS
+  - CSS для React - прочее
+  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+  - BEM
+
+<br></p>
+</details> 
+
+[//]: # (Redux)
+<details><summary><b>Redux</b></summary><p>
+
 - [Redux](/Pages/JS/Redux.md)
-- TypeScript
-  - Основные отличия TS и JS
-  - Транспиляция
-  - Утиная типизация
-  - Типы
-  - Объекты
-  - Массивы
-  - Кортежи
-  - Enum
-  - Классы
-  - Наследование (реализовано на классах)
-  - Пространства имён, модули, barrel-файлы
-  - Интерфейсы
-  - ! Дженерики. **Что такое генерификация? Как она работает? Как дженерики транспилируются в JS?**
-  - ! Декораторы - классов, свойств, методов, аксессоров (геттеров/сеттеров). Фабрика декораторов
-  - Типизация функций
-  - Утилиты (Utility Types)
-  - ! Деструктуризация - как реализована
-  - ! Event loop - как реализован
-  - ! Сборщик мусора - как работает
+- Что такое Redux?
+- Зачем нужен?
+- Flux-архитектура
+- `State` (состояние) — объект хранящий актуальное состояние системы.
+- `Store` (хранилище) — объект, хранящий `state` и методы для работы с ним.
+- `Dispatch` (отправка) — один из методов `store`. Объединяет все методы для правки `state`.
+- `Actions` — объекты которые мы из UI (React) передаем в метод `dispatch()`.
+- `Type` и `Payload` — параметры объекта `action`
+- `ActionCreators()` — функции, создают объект `Action`. Принимают данные-payload нужные для правки `state`, и
+  возвращают объект `action` (с нужным type и payload).
+- `Reducers()` — функции внутри `dispatch()`. Отвечают за правку опр. части `state`. Принимают `action` и `state`,
+  возвращают новый `state`
+- `Thunk()` — функция, делает какой-то асинхронный код и умеет  `dispatch(actions)` . Нужна для асинхронных запросов.
+- `ThunkCreator()` — функция-обёртка `thunk()`. Нужна чтоб передать в `thunk()` данные-payload для правки `state` .
+- `Saga()` — альтернатива `thunk`. Тоже библиотека. Сложнее, более продвинутая
+- `Middleware()` — функция-обёртка `dispatch()`. Нужна чтоб выполнить асинхронный код между отправкой из UI
+  и `dispatch()`
+- `Selectors` - Функция, принимает весь стэйт целиком, достаёт и обрабатывает какие-то данные и передаёт их
+  в `mapStateToPros` (и дальше в UI). Архитектурный слой, занимается получением, комбинированием и преобразованием
+  данных.
+- `Reselect` - библиотека для оптимизации работы селекторов
+- `React-Redux` - что это, зачем?
+- `Redux Toolkit` - что это, зачем?
+- `Connect` - API react-redux, для создания компонентов-контейнеров, которые подключены к хранилищу Redux.
+- `mapStateToProps`
+- `mapDispatchToProps`
+- `Provider` - компонент из react-redux, оборачивается вокруг корневой компоненты (<App>). Позволяет передавать store
+  всем потомкам - теперь у connect() есть доступ к store
+- `Compose` - функция, предоставляется Redux. Объединить несколько последовательных вызовов функций. Полезно в ситуации
+  конвейера.
+- `Быстродействие и оптимизация Redux`
+- `AJAX и асинхронные операции`  - варианты реализации
+  - Запрос внутри actionCreator
+  - Middlewares
+  - Redux-thunk
+  - Redux saga
+  - Хуки
+
+<br></p>
+</details> 
+
+
+[//]: # (TypeScript)
+<details><summary><b>TypeScript</b></summary><p>
+
+- Основные отличия TS и JS
+- Транспиляция
+- Утиная типизация
+- Типы
+- Объекты
+- Массивы
+- Кортежи
+- Enum
+- Классы
+- Наследование (реализовано на классах)
+- Пространства имён, модули, barrel-файлы
+- Интерфейсы
+- ! Дженерики. **Что такое генерификация? Как она работает? Как дженерики транспилируются в JS?**
+- ! Декораторы - классов, свойств, методов, аксессоров (геттеров/сеттеров). Фабрика декораторов
+- Типизация функций
+- Утилиты (Utility Types)
+- ! Деструктуризация - как реализована
+- ! Event loop - как реализован
+- ! Сборщик мусора - как
+
+<br></p>
+</details> 
+
+[//]: # (ООП)
+<details><summary><b>ООП</b></summary><p>
+
+- [ООП - Основные понятия](/Pages/Programming/Programming.md)
+  - Класс
+  - Объект
+  - Свойства
+  - Методы
+  - Геттеры/сеттеры
+- [ООП - Базовые принципы](/Pages/Programming/Programming.md)
+  - хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм
+  - **Наследование** - механизм описания новых классов на основе родительского.
+  - Абстракция
+  - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
+    классе данные и методы для работы с ними.
+  - Полиморфизм - возможность работать с несколькими типами так, будто это один и тот же тип. Cв-во системы,
+    позволяет использовать объекты с одинаковым интерфейсом, не зная о типе и внутр. стр-ре объекта.
+- [ООП - Паттерны. 23 шаблона](/Pages/Programming/Pattern.md)
+- [ООП - Принципы SOLID](/Pages/Programming/Programming.md)
+  - `Single Responsibility Principle` — Принцип единой ответственности
+  - `Open-Closed Principle` — Принцип открытости-закрытости
+  - `Liskov Substitution Principle` — Принцип подстановки Барбары Лисков
+  - `Interface Segregation Principle` — Принцип разделения интерфейса
+  - `Dependency Inversion Principle` — Принцип инверсии зависимостей
+
+<br></p>
+</details> 
+
+[//]: # (Тестирование)
+<details><summary><b>Тестирование</b></summary><p>
+
+- [Тестирование](/Pages/Programming/Testing.md)
+- Зачем вообще тестировать?
+- TDD / BDD
+- Jest - среда запуска тестов JavaScript, фреймворк
+- React Testing Library - библиотека для тестирования React.
+- Enzime - библиотека для тестирования React.
+- Unit-тестирование
+- Snapshot тестирование
+- Компонентное/Модульное тестирование
+- Тест на «запах дыма»
+- Интеграционный тест
+- Функциональный тест
+- Сквозное тестирование
+- Приемочный тест
+- Тест производительности
+-
+
+<br></p>
+</details> 
+
 - [GIT](/Pages/_Other/GIT.md)
   - Rebase
   - Squash
@@ -195,21 +311,6 @@
   - типа параметров и т.д.
   - Диапазоны http-кодов
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
-- [Тестирование](/Pages/Programming/Testing.md)
-  - Зачем вообще тестировать?
-  - TDD / BDD
-  - Jest - среда запуска тестов JavaScript, фреймворк
-  - React Testing Library - библиотека для тестирования React.
-  - Enzime - библиотека для тестирования React.
-  - Unit-тестирование
-  - Snapshot тестирование
-  - Компонентное/Модульное тестирование
-  - Тест на «запах дыма»
-  - Интеграционный тест
-  - Функциональный тест
-  - Сквозное тестирование
-  - Приемочный тест
-  - Тест производительности
 - [Чистые функции](/Pages/Programming/Programming.md)
 - [Термины](/Pages/Programming/Programming.md)
   - инкапсуляция
@@ -257,29 +358,7 @@
 - [MVC](/Pages/Programming/Programming.md)
   - Общее
   - Приложение к веб
-  - Приложение к React
-- [ООП - Основные понятия](/Pages/Programming/Programming.md)
-  - Класс
-  - Объект
-  - Свойства
-  - Методы
-  - Геттеры/сеттеры
-- [ООП - Базовые принципы](/Pages/Programming/Programming.md)
-  - хороший эффект производит знание трех слов: инкапсуляция, наследование, полиморфизм
-  - **Наследование** - механизм описания новых классов на основе родительского.
-  - Абстракция
-  - Инкапсуляция - ограничение доступа к данным и возможностям их изменения. Св-во системы, позволяет объединить в
-    классе данные и методы для работы с ними.
-  - Полиморфизм - возможность работать с несколькими типами так, будто это один и тот же тип. Cв-во системы,
-    позволяет использовать объекты с одинаковым интерфейсом, не зная о типе и внутр. стр-ре объекта.
-- [ООП - Паттерны. 23 шаблона](/Pages/Programming/Pattern.md)
-- [ООП - Принципы SOLID](/Pages/Programming/Programming.md)
-  - `Single Responsibility Principle` — Принцип единой ответственности
-  - `Open-Closed Principle` — Принцип открытости-закрытости
-  - `Liskov Substitution Principle` — Принцип подстановки Барбары Лисков
-  - `Interface Segregation Principle` — Принцип разделения интерфейса
-  - `Dependency Inversion Principle` — Принцип инверсии зависимостей
-- [Акронимы принципов программирования](/Pages/Programming/Programming.md)
+  - Приложение к React- [Акронимы принципов программирования](/Pages/Programming/Programming.md)
   - `DRY`,
   - `KISS`,
   - `YAGNI`,
@@ -298,8 +377,7 @@
     - Модульное
     - Обобщённое
     - всякие экзотические - автоматное, аппликативное, аспект/агент/компонент-ориентированное.
-- [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
-
+- [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
 - Алгоритмическая сложность
 - Теория нормализации данных (применительно к проектированию Redux state)
   Работа DOM браузера: "дорогие" операции. Relayout / repaint
@@ -308,7 +386,6 @@
   что-то изменилось и необходимо применить новые изменения к DOM?
 - Бинарное дерево
 - Пузырьковая фильтрация
-
 
 <br></p>
 </details> 
