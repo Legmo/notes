@@ -2217,11 +2217,9 @@ React содержит около 15 [встроенных хуков](https://r
 Определяем состояние компонента + получаем возможность его менять.<br>
 В одном компоненте можно вызвать несколько useState() — получим несколько отдельных state. <br>
 Изменение каждого будет вызывать ререндер компонента.
-
 ```js
 const [state, setState] = useState(initialState);
 ```
-
 
 **Хук useState()**
 
@@ -2305,10 +2303,96 @@ const [state, setState] = useState(initialState);
     например двойное нажатие кнопки). Это предотвращает логические ошибки.
 - Идентичность функции setState стабильна и не изменяется при повторных рендерах => её можно безопасно не включать в
   списки зависимостей хуков useEffect и useCallback.
+  <br>
+  <br>
+
+**Пример использования хука состояния (useState)**
+
+  ```javascript
+  import React, {useState} from 'react';
+
+function Example() {
+  // Объявление новой переменной состояния «count»
+  const [count, setCount] = useState(0);
+
+  return (
+          <div>
+            <p>Вы кликнули {count} раз(а)</p>
+            <button onClick={() => setCount(count + 1)}>
+              Нажми на меня
+            </button>
+          </div>
+  );
+}
+  ```
+
+Вызов useState вернёт пару значений: текущее состояние и функцию, обновляющую состояние.<br>
+Поэтому мы пишем const [count, setCount] = useState().<br>
+Это похоже на this.state.count и this.setState в классах, с той лишь разницей, что сейчас мы принимаем их сразу в
+паре.<br>
+
+В классовой компоненте это выглядело бы так:
+
+  ```javascript
+    class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+            <div>
+              <p>Вы кликнули {this.state.count} раз(а)</p>
+              <button onClick={() => this.setState({count: this.state.count + 1})}>
+                Нажми на меня
+              </button>
+            </div>
+    );
+  }
+}
+  ```  
+
+Чтоб прочитать state из хука мы используем переменную, которую ранее объявили<br>
+Например:
+
+```javascript
+  <p>Вы кликнули {count} раз(а)</p>
+```
+
+В классовой компоненте это было бы так:
+
+```javascript
+  <p>Вы кликнули {this.state.count} раз(а)</p>
+```
+
+Чтобы обновить state:
+
+```javascript
+  <button onClick={() => setCount(count + 1)}>
+  Нажми на меня
+</button>
+```
+
+В классовой компоненте это было бы так:
+
+```javascript
+    <button onClick={() => this.setState({count: this.state.count + 1})}>
+  Нажми на меня
+</button>
+```
+
+В отличие от this.setState в классах, обновление переменной состояния всегда замещает её значение, а не осуществляет
+слияние.
 
 **Ссылки**
 
+- [Вопросы для собеседования по хукам React - useState](https://temofeev.ru/info/articles/voprosy-dlya-sobesedovaniya-po-khukam-react/)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Hexlet - Хук useState](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-state/theory_unit)
+- [Оф. документация - Использование хука состояния](https://ru.reactjs.org/docs/hooks-state.html)
 - [Оф. документация - Хук useState](https://ru.reactjs.org/docs/hooks-reference.html#usestate)
 - [Mentanit - UseState](https://metanit.com/web/react/6.2.php)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 1: работа с состоянием](https://habr.com/ru/company/otus/blog/667706/)
@@ -2434,10 +2518,26 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 **Ссылки**
 
 - [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
-- [Mentanit - Хук useRef](https://metanit.com/web/react/6.4.php)
-- [Hexlet - Хук useRef ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Mentanit - Хук useEffect](https://metanit.com/web/react/6.3.php)
+- [Hexlet - Хук useEffect](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-effect/theory_unit)
 - [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 2: useEffect и useLayoutEffect](https://habr.com/ru/company/otus/blog/668700/)
+
+<br></p>
+</details>
+
+[//]: # (useContext)
+<details><summary>useContext</summary><p>
+
+[useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext) — работа с контекстом (обмен данными между
+компонентами без прокидывания props)
+
+**Ссылки**
+
+- [Оф. документация - useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext)
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Hexlet - Хук useContext ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit)
 
 <br></p>
 </details>
@@ -2445,11 +2545,13 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useReducer)
 <details><summary>useReducer</summary><p>
 
-
+[useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer) — аналог reducer в Redux. Можно вынести
+данные из компонента
 
 **Ссылки**
 
-- []()
+- [Оф. документация — useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer)
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 
 <br></p>
 </details>
@@ -2457,11 +2559,17 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useCallback)
 <details><summary>useCallback</summary><p>
 
+[useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback) — мемоизация/кэширование функции.
 
+Возвращает экземпляр функции. Перезапускается только если изменилась зависимость.
+
+Полезно когда надо прокидывать колбэки в дочерний компонент — позволяет избежать лишнего ре-рендера
 
 **Ссылки**
 
-- []()
+- [Оф. докуиентация - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
+- [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
+- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
 
 <br></p>
 </details>
@@ -2469,11 +2577,18 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useMemo)
 <details><summary>useMemo</summary><p>
 
+[useMemo](https://ru.reactjs.org/docs/hooks-reference.html#usememo) — мемоизация/кэширование результатов работы
+функции. Возвращает результат функции. Перезапускается только если изменилась зависимость.
 
+Также можно предотвращать лишние повторные рендеры. Замена `PureComponent` и `shouldComponentUpdate`.
+
+Также смотри HOC `React.memo`
 
 **Ссылки**
 
-- []()
+- [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
 
 <br></p>
@@ -2482,11 +2597,13 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useRef)
 <details><summary>useRef</summary><p>
 
-
+[useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref) — взаимодействие с DOM-объектами, аналог Ref
 
 **Ссылки**
 
-- []()
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Hexlet - Хук useRef](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
+- [Mentanit - useRef](https://metanit.com/web/react/6.4.php)
 
 <br></p>
 </details>
@@ -2494,11 +2611,14 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useImperativeHandle)
 <details><summary>useImperativeHandle</summary><p>
 
+[useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle) — передавать данные от
+дочернего компонента родительскому (значение, state или функцию)
 
+Организовать двунаправленный поток данных и логики (обычно в React используется однонаправленный поток)
 
 **Ссылки**
 
-- []()
+- [оф. документация - useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle)
 
 <br></p>
 </details>
@@ -2506,11 +2626,17 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useDebugValue )
 <details><summary>useDebugValue</summary><p>
 
+[useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue) — позволяет добавлять хукам метки
+отладки,
+которые выводятся в React DevTools.
 
+Полезно для отладки пользовательских хуков.
+
+Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue)
 
 <br></p>
 </details>
@@ -2518,11 +2644,19 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useDeferredValue)
 <details><summary>useDeferredValue</summary><p>
 
+[useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue) — аналог debouncing /
+throttling. Позволяет отложить повторный рендеринг несрочной части дерева.
 
+- Например, показать пользователю старые данные, пока подгружаются новые.
+- Похож на `debouncing`, но имеет несколько преимуществ по сравнению с ним.
+- Фиксированной задержки по времени нет, поэтому React попытается выполнить отложенный рендеринг сразу после того,
+  как первый рендер отобразится на экране.
+- Отложенный рендеринг может быть прерван и не будет блокировать ввод данных пользователем.
+- Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue)
 
 <br></p>
 </details>
@@ -2530,11 +2664,17 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useTransition)
 <details><summary>useTransition</summary><p>
 
+[useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition) — помечать некоторые обновления
+состояния как несрочные
 
+- Другие обновления состояния по умолчанию считаются срочными. React позволит срочным обновлениям состояния (
+  например, обновлению ввода текста) прерывать несрочные обновления состояния (например, отображение списка
+  результатов поиска).
+- Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition)
 
 <br></p>
 </details>
@@ -2542,11 +2682,16 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useId)
 <details><summary>useId</summary><p>
 
+[useId](https://ru.reactjs.org/docs/hooks-reference.html#useid) — создание уникальных ID как на клиенте, так и на
+сервере, избегая hydration несоответствий.
 
+- Наиболее полезно для библиотек компонентов, интегрирующихся с API, для которых требуются уникальные ID.
+- Особенно актуально в React 18 т.к. новый рендер сервера доставляет HTML не по порядку.
+- Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useId](https://ru.reactjs.org/docs/hooks-reference.html#useid)
 
 <br></p>
 </details>
@@ -2554,11 +2699,16 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useSyncExternalStore)
 <details><summary>useSyncExternalStore</summary><p>
 
+[useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore) — позволяет внешним
+хранилищам поддерживать параллельное чтение. Заставляет обновления в хранилище быть синхронными.
 
+- Устраняет необходимость в useEffect при реализации подписок на внешние источники данных
+- Рекомендуется для любой библиотеки, которая интегрируется со сторонним состоянием по отношению к React.
+- Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
 
 <br></p>
 </details>
@@ -2566,11 +2716,18 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 [//]: # (useInsertionEffect )
 <details><summary>useState</summary><p>
 
+[useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect) — позволяет библиотекам
+CSS-in-JS решать проблемы с производительностью при внедрении стилей во время рендеринга.
 
+- Если вы не планируете создавать библиотеку CSS-in-JS, мы не ожидаем, что вы когда-либо будете это использовать.
+- Запустится после изменения DOM, но до того, как эффекты лейаута узнают об этом.
+- Особенно актуален в React 18, поскольку React уступает браузеру во время одновременного рендеринга, давая ему
+  возможность пересчитать лейаут.
+- Введён в React 18 (2022)
 
 **Ссылки**
 
-- []()
+- [Оф. документация - useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect)
 
 <br></p>
 </details>
@@ -2588,7 +2745,8 @@ initialValue). Возвращённый объект будет сохранят
 
 - [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
 - [Mentanit - Хук useRef](https://metanit.com/web/react/6.4.php)
-- [Hexlet - Хук useRef ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
+- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+- [Hexlet - Хук useRef](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-ref/theory_unit)
 - [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
 
 <br></p>
@@ -2603,94 +2761,6 @@ initialValue). Возвращённый объект будет сохранят
 
 - [Оф. документация](https://ru.reactjs.org/docs/hooks-custom.html)
 - [Hexlet - React hooks](https://ru.hexlet.io/courses/js-react-hooks)
-
-<br></p>
-</details>
-
-[//]: # (Пример хука состояния useState)
-<details><summary>Пример хука состояния (useState)</summary><p>
-
-  ```javascript
-  import React, {useState} from 'react';
-
-function Example() {
-  // Объявление новой переменной состояния «count»
-  const [count, setCount] = useState(0);
-
-    return (
-      <div>
-        <p>Вы кликнули {count} раз(а)</p>
-        <button onClick={() => setCount(count + 1)}>
-          Нажми на меня
-        </button>
-      </div>
-    );
-  }
-  ```
-
-Вызов useState вернёт пару значений: текущее состояние и функцию, обновляющую состояние.<br>
-Поэтому мы пишем const [count, setCount] = useState().<br>
-Это похоже на this.state.count и this.setState в классах, с той лишь разницей, что сейчас мы принимаем их сразу в
-паре.<br>
-
-В классовой компоненте это выглядело бы так:
-  ```javascript
-    class Example extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          count: 0
-        };
-      }
-
-      render() {
-        return (
-          <div>
-              <p>Вы кликнули {this.state.count} раз(а)</p>
-              <button onClick={() => this.setState({count: this.state.count + 1})}>
-                  Нажми на меня
-              </button>
-          </div>
-        );
-      }
-}
-  ```  
-
-Чтоб прочитать state из хука мы используем переменную, которую ранее объявили<br>
-Например:
-
-```javascript
-  <p>Вы кликнули {count} раз(а)</p>
-```
-
-В классовой компоненте это было бы так:
-
-```javascript
-  <p>Вы кликнули {this.state.count} раз(а)</p>
-```
-
-Чтобы обновить state:<br>
-
-```javascript
-  <button onClick={() => setCount(count + 1)}>
-    Нажми на меня
-</button>
-```
-
-В классовой компоненте это было бы так:
-
-```javascript
-    <button onClick={() => this.setState({count: this.state.count + 1})}>
-    Нажми на меня
-</button>
-```
-
-В отличие от this.setState в классах, обновление переменной состояния всегда замещает её значение, а не осуществляет
-слияние.
-
-**Ссылки**
-
-- https://ru.reactjs.org/docs/hooks-state.html
 
 <br></p>
 </details>
