@@ -1682,7 +1682,7 @@ EventLopp берёт первый Элемент из очереди и пере
 коде ниже promise
 
 ```js
- setTimeout(function timeout() {
+setTimeout(function timeout() {
   console.log('Timeout');
 }, 0);
 
