@@ -9,7 +9,9 @@
 <details><summary><b>JS</b></summary><p>
 
 - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-- [Что нового в последних 3 версиях JX](../JS/JS.md)
+- [Legmo - JS](../JS/JS.md)
+
+- [Что нового в последних 3 версиях JS](../JS/JS.md)
 - [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
 - [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
 - [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
@@ -137,15 +139,17 @@
 [//]: # (React)
 <details><summary><b>React</b></summary><p>
 
+- [Legmo - React](/Pages/JS/React.md)
+
 - [Side-эффекты](/Pages/Programming/Programming.md)
 - [HOC](/Pages/JS/React.md)
-- [Reselect](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
+- [Reselect (YouTube)](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
 - [Хуки](/Pages/JS/React.md)
-- [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-- [IT-Kamasutra - 100](https://youtu.be/0AohM_oOjBc)
+- [WebDev - #9 Фрагменты и стили (Fragments & CSS) (YouTube)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+- [IT-Kamasutra - 100 (YouTube)](https://youtu.be/0AohM_oOjBc)
 - Хуки
-  - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-  - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
+  - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки) (YouTube)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
+  - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз) (YouTube)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
     Получи прямую ссылку"
   - https://ru.reactjs.org/docs/hooks-state.html
   - https://ru.reactjs.org/docs/hooks-effect.html
@@ -155,7 +159,7 @@
   - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
   - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
 - Методы жизненного цикла
-  - [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
+  - [WebDev - #11 Методы жизненного цикла (Lifecycle methods) (YouTube)](https://youtu.be/O8f6aXqpGHw)
   - componentShouldUpdate
 - Оптимизация React
 - Современные практики - 2020, 2021, 2022
@@ -181,7 +185,7 @@
 [//]: # (Redux)
 <details><summary><b>Redux</b></summary><p>
 
-- [Redux](/Pages/JS/Redux.md)
+- [Legmo - Redux](/Pages/JS/Redux.md)
 - Что такое Redux?
 - Зачем нужен?
 - Flux-архитектура
@@ -227,6 +231,7 @@
 [//]: # (TypeScript)
 <details><summary><b>TypeScript</b></summary><p>
 
+- [Legmo - TypeScript](/Pages/JS/TypeScript.md) (ДОРАБОТАТЬ)
 - Основные отличия TS и JS
 - Транспиляция
 - Утиная типизация
@@ -281,7 +286,7 @@
 [//]: # (Тестирование)
 <details><summary><b>Тестирование</b></summary><p>
 
-- [Тестирование](/Pages/Programming/Testing.md)
+- [Legmo - Тестирование](/Pages/Programming/Testing.md)
 - Зачем вообще тестировать?
 - TDD / BDD
 - Jest - среда запуска тестов JavaScript, фреймворк
@@ -304,7 +309,7 @@
 [//]: # (Оптимизации web-страниц)
 <details><summary><b>Оптимизации web-страниц</b></summary><p>
 
-- [Оптимизации web-страниц](/Pages/Programming/Programming.md) (ДОРАБОТАТЬ)
+- [Legmo - Оптимизации web-страниц](/Pages/Programming/Programming.md) (ДОРАБОТАТЬ)
 - JS - эффективно использовать память
 - JS - избегать использования setTimeout() и setInterval() для обновления внешнего вида элементов страниц.
 - JS - переносить длительные вычисления в [`веб-воркеры`](/Pages/WebDeveloping/Browser.md).
