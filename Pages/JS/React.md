@@ -3223,6 +3223,22 @@ React-Router - набор компонентов определяющих на �
 - Модуль npm + специальная разметка в корневом компоненте
 - Переключение компонентов на странице, в зависимости от адреса в адресной строке.
 
+**Отличия React-router, React-router-dom и React-router-native****
+
+- React-router - базовая библиотека, необходимая для работы React-router-dom и React-router-native
+- React-router-dom и React-router-native ставятся поверх неё. Все функции использовать тольько из них, никогда не
+  использовать напрямую React-router
+- React-router-dom - для роутинга в веб-разработке
+- React-router-native - для роутинга в разработке под мобильные
+
++
+
+- https://stackoverflow.com/questions/42684809/react-router-vs-react-router-dom-when-to-use-one-or-the-other
+- https://reactdev.ru/libs/react-router/?ysclid=l7v9mkltgi451956102#match
+- https://habr.com/ru/post/329996/?ysclid=l7v9rl06yb497534719
+- https://metanit.com/web/react/4.1.php?ysclid=l7v9ssxl69809229348
+- https://www.npmjs.com/package/react-router
+
 **Ссылки**
 
 - [IT-Kamasutra #19 - React-router-dom](https://youtu.be/5X5ZLWdAnt4)

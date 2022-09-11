@@ -73,6 +73,7 @@
     массив сделать одномерным.
   -
   - [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+  - [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
   -
   - Чаще всего спрашивают
     - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование

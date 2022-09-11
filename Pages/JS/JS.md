@@ -689,6 +689,19 @@ let user = {
 <br></p>
 </details>
 
+[//]: # (Методы примитивов)
+<details><summary><b>Методы примитивов</b></summary><p>
+
+- [Общие вопросы](https://learn.javascript.ru/primitives-methods)
+- [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+- [Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+- [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B)
+- [Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+- [Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+
+<br></p>
+</details>
+
 [//]: # (Замыкания)
 <details><summary><b>Замыкания</b></summary><p>
 
@@ -1678,8 +1691,11 @@ EventLopp берёт первый Элемент из очереди и пере
 - потом выполнится задача рендера (это маркозадача, по приоритету ниже микрозадач. **Вроде бы**)
 - потом из очереди макрозадач выполнятся макрозадачи (setTimeout 0, setInterval и т.д.)
 
-Единственное, кажется, в некоторых случаях Promise можно вызваться раньше, чем обычный console.log(), который объявлен в
-коде ниже promise
+Обработчики промисов .then/.catch/.finally всегда асинхронны.<br>
+Даже если промис выполняется сразу (не содержит в себе асинхронной задачи), код в строках ниже .then/.catch/.finally
+будет запущен до этих обработчиков.<br>
+Когда промис выполнен, его обработчики .then/catch/finally попадают в очередь. Они пока не выполняются. Движок
+JavaScript берёт задачу из очереди и выполняет её, когда он освободится от выполнения текущего кода.
 
 ```js
 setTimeout(function timeout() {
@@ -2788,28 +2804,86 @@ Web Workers не имеют доступа к DOM, поэтому основно
         
   - Объект - структура, пригодная для хранения любых данных. В других языках программирования такую структуру данных также называют «словарь» и «хэш».
 
-  - В JS объекты также используются как элементы ООП, это немного отдельно. 
-  
+  - В JS объекты также используются как элементы ООП, это немного отдельно.
+
   - Массив - это разновидность объекта. Обладает дополнительными свойствами и ограничениями
 
-  - Массивы обычно используются для хранения _упорядоченных_ коллекций данных, например – списка товаров на странице, студентов в группе и т.п. Предлагает дополнительные методы для удобного манипулирования такой коллекцией. Элементы в массиве должны идти подряд, иначе теряется большая часть преимуществ этой структуры.
+  - Массивы обычно используются для хранения _упорядоченных_ коллекций данных, например – списка товаров на странице,
+    студентов в группе и т.п. Предлагает дополнительные методы для удобного манипулирования такой коллекцией. Элементы в
+    массиве должны идти подряд, иначе теряется большая часть преимуществ этой структуры.
 
-  - Квадратные скобки также позволяют обратиться к свойству объекта, имя которого может быть результатом выражения. Например, имя свойства может храниться в переменной:
-         let key = "likes birds";
-         // то же самое, что и user["likes birds"] = true;
-         user[key] = true;
+  - Квадратные скобки также позволяют обратиться к свойству объекта, имя которого может быть результатом выражения.
+    Например, имя свойства может храниться в переменной:
+    let key = "likes birds";
+    // то же самое, что и user["likes birds"] = true;
+    user[key] = true;
   - Оператор in для проверки существования свойства в объекте
     - "key" in object
     - Если key без кавычек - это не имя свойства, а ссылка на переменную, в которой это имя лежит
-    
-  Ссылки:
-  - [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
-  - [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
-  - [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
-  - [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
-  - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
-  - [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
-      
+
+Мутирующие / не мутирующие методы (особенной у массивов) - выписать/пометить, заучить
+
+**Методы объектов**
+
+- keys() - возвращает ключи объекта.
+- values() - возвращает значения объекта.
+- create() - создать новый объект из существующего.
+- freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
+- seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
+- assign() - копирование свойств объекта в другой объект.
+- entries() - создает вложенный массив пар «ключ-значение» объекта
+- getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+-
+- ... там ещё много. Изучать
+- что-то добавили в последние несколько лет
+-
+- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+
+**Методы массивов**
+
+- push(...items) – добавляет элементы в конец,
+- pop() – извлекает элемент из конца,
+- shift() – извлекает элемент из начала,
+- unshift(...items) – добавляет элементы в начало.
+- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+  старых
+- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+  в массиве
+- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
+- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
+- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+- [reduce/reduceRight]()
+- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+  - 
+- НОВЫЕ
+- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
+- `at()` — обращаться к массивам с конца. И строкам тоже
+- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
+  массив сделать одномерным.
+-
+- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+  - 
+- Чаще всего спрашивают
+  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
+  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
+  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+
+Ссылки:
+
+- [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
+- [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+- [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
+- [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
+- [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
+- [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
+
 <br></p>
 </details>
 
