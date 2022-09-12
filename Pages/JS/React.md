@@ -2985,7 +2985,37 @@ tabindex = tabIndex
 Classnames немного популярнее, и более функциональна (читай документацию)<br>
 CLSX полегче и побыстрее (потому что функциональность меньше)
 
-Ссылки:
+**Classnames**
+
+- https://www.npmjs.com/package/classnames
+- объединять имена css-классов, чтоб просто писать через запятую, без конструкций типа ’&{styleName1} + ', ' +
+  &{stylenmae2
+- динамический css - писать простые условия в именах css-классов. Если props = true, то ставь класс
+- ```js
+   classNames('foo', 'bar'); // => 'foo bar'
+   classNames('foo', { bar: true }); // => 'foo bar'
+   classNames({ 'foo-bar': true }); // => 'foo-bar'
+   classNames({ 'foo-bar': false }); // => ''
+   classNames({ foo: true }, { bar: true }); // => 'foo bar'
+   classNames({ foo: true, bar: true }); // => 'foo bar'
+
+   // lots of arguments of various types
+   classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
+
+   // other falsy values are just ignored
+   classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
+
+   //Arrays
+   var arr = ['b', { c: true, d: false }];
+   classNames('a', arr); // => 'a b c'
+
+   //Dynamic class names
+   let buttonType = 'primary';
+   classNames({ [`btn-${buttonType}`]: true });
+   ```
+
+**Ссылки**
+
 - [classnames](https://www.npmjs.com/package/classnames)
 - [clsx](https://www.npmjs.com/package/clsx)
 - [npmtrends](https://npmtrends.com/classnames-vs-clsx)
@@ -3086,7 +3116,23 @@ isIE и т.д., которые обрабатывают «особенности
 занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее
 загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
 
+**Особенности**
+
+- Css in JS - использование компонент. Стиль становится частью компонента
+- динамический css
+- Вся мощь JS - у нас обычная функция, которая вернёт строку со стилями. Модем делать все что можно в функции
+- Lazy loading - стили подгружаются вместе с компонентом. Через это решается вопрос с critical css - компонент первый
+  загрузился, и стили уже загрузились с ним. Именно стили для него.
+- Стили формируются на этапе runtime.
+- Коллизии имён - имена стилей уникальны, не надо об этом беспокоится. Имена классов формируются автоматически, они
+  уникальны
+- Dead css - т.к. стили хранятся в компоненте, не бывает что компонент уже удален, а стили от него остались
+- Объединение не по технологиям (отдельные файлы html, JS, css), а по бищнес-залачам (кнопка, модальное окно).
+  Архитектурно более правильно - абстракция с точки зрения бизнес-функции
+- Работает в runtime - браузер парсит josh строку компонента и засовывает в css в header. Это быстро
+
 **Ссылки**
+
 - [Официальный сайт проекта (en)](https://www.styled-components.com)
 - [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
 - [Habr - Styled Components — идеальная стилизация React-приложения (2021)](https://habr.com/ru/post/591381/)
