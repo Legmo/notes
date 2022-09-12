@@ -435,9 +435,10 @@
   Обмен данными браузер-сервер через постоянное соединение.
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
-- Отслеживание изменений в фреймворке
-  - центральный вопрос для современных фреймворков.
-  - как фреймворк понимает, что что-то изменилось и необходимо применить новые изменения к DOM?
+- Отслеживание изменений в фреймворке - как он понимает, что нечто изменилось и надо применить изменения к DOM?
+  - [Medium - Как создать реактивный фреймворк на JavaScript](https://medium.com/@monochromer/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA-%D0%BD%D0%B0-javascript-cfa34c63fd52)
+  - [MutationObserver](../WebDeveloping/Browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API
+    браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
 
 <br></p>
 </details> 
@@ -549,13 +550,18 @@
     console.log(counter2()); // 1
     ```
 - Promise & setTimeout/setInterval - что раньше выполнится? Куча разных console.log, в каком порядке будут выводиться
-- армия функций
+- Армия функций
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
   - https://qna.habr.com/q/365769
 - Рекурсия - числа Фибоначи. Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
   - https://learn.javascript.ru/task/fibonacci-numbers
-  - можно решить через рекурсию и цикл for
+  - Вариант 1 - через рекурсию
+  - Вариант 2 - через рекурсию + мемомизацию (чтоб по несколько раз не высчитывать одно и то же значение)
+  - Вариант 3 - через цикл for (любая рекурсия может быть сведена к циклу)
+    - начнёт с 1 и 2, затем из них получит fib(3) как их сумму, затем fib(4)как сумму предыдущих значений, затем fib(5)
+      и так далее, до финального результата. На каждом шаге нам нужно помнить только значения двух предыдущих чисел
+      последовательности.
 - кофеварка (один раз написать самому, подсматривая в учебник обязательно)
   - https://learn.javascript.ru/private-protected-properties-methods
   - https://learn.javascript.ru/task/add-method-property-coffeemachine
