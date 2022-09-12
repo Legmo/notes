@@ -3212,7 +3212,6 @@ event.stopImmediatePropagation().
 <br></p>
 </details>
 
-
 [//]: # (Хранение данных в браузере: Cookie, socalStorage, sessionStorage)
 <details><summary><b>Хранение данных в браузере: Cookie, socalStorage, sessionStorage)</b></summary><p>
 
