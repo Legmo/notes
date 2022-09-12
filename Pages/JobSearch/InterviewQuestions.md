@@ -431,8 +431,8 @@
   - [Алгоритмическая сложность](https://tproger.ru/translations/algorithms-and-data-structures)
   - [Сортировки. Пузырьковая сортировка/фильтрация](https://tproger.ru/translations/sorting-for-beginners)
   - [Бинарное дерево](https://tproger.ru/translations/binary-search-tree-for-beginners)
-- [WebSocket](https://learn.javascript.ru/websocket) и [ещё](/Pages/WebDeveloping/Ajax.md)
-  - протокол связи поверх TCP. Для обмена данными между браузером и сервером через постоянное соединение.
+- [WebSocket](/Pages/WebDeveloping/Ajax.md) и [ещё](https://learn.javascript.ru/websocket) - протокол связи поверх TCP.
+  Обмен данными браузер-сервер через постоянное соединение.
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
 - Отслеживание изменений в фреймворке
