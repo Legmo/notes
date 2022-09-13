@@ -1,17 +1,5 @@
 <h1>Работа браузера и смежные вопросы</h1>
 
-[//]: # (Работа движка браузера)
-<details><summary><b>Работа движка браузера</b></summary><p>
-
-**Ссылки**
-
-- [Как работает JS: движки рендеринга веб-страниц и советы по оптимизации их производительности](https://habr.com/ru/company/ruvds/blog/351802/)
-- [Как работает браузер](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
-- [Mozilla Firefox - документация по инструментам разработчика Firefox](https://developer.mozilla.org/ru/docs/Tools)
-
-<br></p>
-</details>   
-
 [//]: # (WebAssembly)
 <details><summary><b>WebAssembly</b></summary><p>
 
@@ -522,11 +510,10 @@ JS-фреймворков. Современные фреймворки дают 
 - [Как работает JS: системы хранения данных](https://habr.com/ru/company/ruvds/blog/415505/)
 
 <br></p>
-</details>   
+</details>
 
-
-[//]: # (Оптимизация работы браузера)
-<details><summary><b>Оптимизация работы браузера</b></summary><p>
+[//]: # (Работа браузера. Оптимизация)
+<details><summary><b>Работа браузера. Оптимизация</b></summary><p>
 
 - "дорогие" операции. `Relayout` / `repaint`
 - "дорогие" операции чтения (getComputedStyle() и т.д.)
@@ -661,6 +648,18 @@ JS-фреймворков. Современные фреймворки дают 
 <br></p>
 </details>   
 
+
+[//]: # (Работа движка браузера)
+<details><summary><b>Работа движка браузера</b></summary><p>
+
+**Ссылки**
+
+- [Как работает JS: движки рендеринга веб-страниц и советы по оптимизации их производительности](https://habr.com/ru/company/ruvds/blog/351802/)
+- [Как работает браузер](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
+- [Mozilla Firefox - документация по инструментам разработчика Firefox](https://developer.mozilla.org/ru/docs/Tools)
+
+<br></p>
+</details>   
 
 
 
