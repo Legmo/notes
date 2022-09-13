@@ -398,7 +398,7 @@
 
 - [Legmo - Browser](../WebDeveloping/Browser.md)
 - WebAssembly
-- Web Worker API, веб воркеры
+- Web Worker API, веб воркеры - отдельные потоки браузера, для вычислений JS без блокировки event loop
 - Service Worker API
 - Веб push-уведомления (Push API и Notifications API)
 - MutationObserver API - отслеживание изменений в DOM
