@@ -393,7 +393,54 @@
 <br></p>
 </details> 
 
+[//]: # (Работа браузера и смежные вопросы)
+<details><summary><b>Работа браузера и смежные вопросы</b></summary><p>
+
+- [Legmo - Browser](../WebDeveloping/Browser.md)
+- WebAssembly
+- Web Worker API, веб воркеры
+- Service Worker API
+- Веб push-уведомления (Push API и Notifications API)
+- MutationObserver API - отслеживание изменений в DOM
+- WebSocket
+- SSE API (Server-Sent events)
+- WebRTC и механизмы P2P-коммуникаций
+- Shadow DOM
+- Web-компоненты, пользовательские элементы (Custom Elements)
+- Системы хранения данных (LocalStorage, SessionStorage, Cookie...)
+
+<br></p>
+</details> 
+
+[//]: # (Интернет-технологии - AJAX, JSON, CORS и т.д.)
+<details><summary><b>Интернет-технологии - AJAX, JSON, CORS и т.д.</b></summary><p>
+
+- [Legmo - Browser](../WebDeveloping/Technologies.md)
+- Порт
+- TCP/IP
+- HTTP
+- HTTP/2
+- HTTPS
+- JSON (Javascript Object Notation)
+- AJAX (Asynchronous JavaScript and XML)
+- DHTML (Dynamic HTML)
+- JSONP (JSON with Padding - JSON с набивкой)
+- JSONPP (Parameterized JSON with padding — параметризованный JSONP)
+- CORS
+- COMET
+- WebSocket - [learnjs](https://learn.javascript.ru/websocket) - протокол связи поверх TCP. Обмен данными браузер-сервер
+  через постоянное соединение.
+- SSE API (Server-Sent events)
+- Server Push
+- XMLHttpRequest (XHR)
+- Fetch
+- Документация API при помощи RAML
+
+<br></p>
+</details> 
+
 **Прочие вопросы**
+
 - [Чистые функции](/Pages/Programming/Programming.md)
 - [Термины](/Pages/Programming/Programming.md)
   - инкапсуляция
@@ -425,15 +472,11 @@
   - `YAGNI`,
   - `SOLID`
 - [Парадигмы программирования](/Pages/Programming/Programming.md)
-
 - Алгоритмы
   - читать в целом
   - [Алгоритмическая сложность](https://tproger.ru/translations/algorithms-and-data-structures)
   - [Сортировки. Пузырьковая сортировка/фильтрация](https://tproger.ru/translations/sorting-for-beginners)
   - [Бинарное дерево](https://tproger.ru/translations/binary-search-tree-for-beginners)
-- [WebSocket](/Pages/WebDeveloping/Technologies.md) и [ещё](https://learn.javascript.ru/websocket) - протокол связи
-  поверх TCP.
-  Обмен данными браузер-сервер через постоянное соединение.
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
 - Отслеживание изменений в фреймворке - как он понимает, что нечто изменилось и надо применить изменения к DOM?
@@ -550,49 +593,49 @@
     var counter2 = fA();
     console.log(counter2()); // 1
     ```
-  - Замыкания, this - написать декратор для кэширования
-    - [learn.javascript.ru - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
-    - ```js
-      let worker = {
-        //Вариант 1 -  без func.call(this, x) 
-        // здесь может быть страшно тяжёлая задача для процессора
-        // alert(`Called with ${x}`);
-        // return x;
+- Замыкания, this - написать декратор для кэширования
+  - [learn.javascript.ru - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
+  - ```js
+    let worker = {
+      //Вариант 1 -  без func.call(this, x) 
+      // здесь может быть страшно тяжёлая задача для процессора
+      // alert(`Called with ${x}`);
+      // return x;
     
-        //Вариант с использование метода объекта - для демонатрации func.call(this, x) 
-        someMethod() {
-          return 1;
-        },
-        slow(x) {
-          // здесь может быть страшно тяжёлая задача для процессора
-          alert("Called with " + x);
-          return x * this.someMethod();
-        }
-      };
-  
-      function cachingDecorator(func) {
-        let cache = new Map();
-        return function(x) {
-          if (cache.has(x)) { // если кеш содержит такой x,
-            return cache.get(x); // читаем из него результат
-          }
-
-          // иначе, вызываем функцию
-          //Вариант 1 - без привязки this
-          // let result = func(x); // вариант 
-      
-          //Вариант 2 - с привязкой this
-          let result = func.call(this, x); // .call() позволяет вызывать функцию, явно устанавливая this.
-          cache.set(x, result); //кешируем (запоминаем) результат
-          return result;
-        };
+      //Вариант с использование метода объекта - для демонатрации func.call(this, x) 
+      someMethod() {
+        return 1;
+      },
+      slow(x) {
+        // здесь может быть страшно тяжёлая задача для процессора
+        alert("Called with " + x);
+        return x * this.someMethod();
       }
+    };
   
-      worker.slow = cachingDecorator(worker.slow); // добавляем к функции обёртку-декоратор, делаем её кеширующей
+    function cachingDecorator(func) {
+      let cache = new Map();
+      return function(x) {
+        if (cache.has(x)) { // если кеш содержит такой x,
+          return cache.get(x); // читаем из него результат
+        }
+
+        // иначе, вызываем функцию
+        //Вариант 1 - без привязки this
+        // let result = func(x); // вариант 
+      
+        //Вариант 2 - с привязкой this
+        let result = func.call(this, x); // .call() позволяет вызывать функцию, явно устанавливая this.
+        cache.set(x, result); //кешируем (запоминаем) результат
+        return result;
+      };
+    }
   
-      alert( worker.slow(2) ); // работает
-      alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
-      ```
+    worker.slow = cachingDecorator(worker.slow); // добавляем к функции обёртку-декоратор, делаем её кеширующей
+  
+    alert( worker.slow(2) ); // работает
+    alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
+    ```
 - Работа движка, ассинхронность — в аком порядке выведутся console.log()?
   - дано несколько разных console.log - обычные, promise + .then(), setTimeout/setInterval
 - Армия функций
@@ -630,6 +673,21 @@
     alert( pow(2, 3) ); // 8
     ```
 - Рекурсия - факториал.
+  - Число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1
+  - [learn.javascript.ru - Рекурсия](https://learn.javascript.ru/recursion#dva-sposoba-myshleniya]
+  - ```js
+    function fact(n) {
+      if(n == 1) {
+        return 1
+      }
+      else {
+        return n * fact(n - 1);
+      }
+    }
+    alert( fact(4) ); // 24
+    ```
+- Рекурсия - вывод односвязного списка
+  - [learn.javascript.ru - Вывод односвязного списка. Ркурсия, цикл](https://learn.javascript.ru/task/output-single-linked-list)
 - Кофеварка
   - один раз написать самому (подсматривая в учебник)
   - https://learn.javascript.ru/private-protected-properties-methods
@@ -675,7 +733,7 @@
 - Полистать свои публичные проекты на GitHub — чтоб ответить на вопросы по своему коду
 - Подготовить открытые вкладки — подглядывать на собеседовании (Legmo notes, learnjs, mdm, reactjs.org, свои резюме,
   вакансия)
-- Открыть редактор с JS кодом — набирать-проверять код
+- Открыть редактор с JS кодом — набирать-проверять код. Например [plnkr.co](https://plnkr.co/edit/jXj1QgBx0iPp8IAh)
 - Подготовить свои достижения/неудачи
 - Можно поискать в сети — как проходит собеседование в жут компании. Что спрашивают. Какие задачки задают.
 - Если дали тестовое задание — поискать его на GitHub, вероятно кто-то уже делал и выкладывал код своего решения.

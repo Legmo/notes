@@ -1,4 +1,4 @@
-<h1>Технологии Интернет - AJAX, JSON, CORS и т.д.</h1>
+<h1>Интернет-технологии - AJAX, JSON, CORS и т.д.</h1>
 
 [//]: # (Порт)
 <details><summary><b>Порт</b></summary><p>
