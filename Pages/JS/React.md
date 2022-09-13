@@ -403,8 +403,10 @@ node.js-выражений require во фронтенде (это позвол�
 
 **Ссылки**
 
-- [habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
-- [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+- [Habr - Как работает React: подробное руководство](https://habr.com/ru/company/timeweb/blog/586972/)
+- [Habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
+- [Habr - Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
+- [Medium - Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
 - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 
 <br></p>
@@ -736,7 +738,8 @@ React.js ведет запись жизненного цикла компоне�
 - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
 - [learnjavascript - про обычный DOM](https://learn.javascript.ru/browser-environment)
-- [Как работает Virtual DOM?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+- [Medium - Как работает Virtual DOM?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+- [Habr - Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
 - [IT-Kamasutra #86 - Virtual DOM](https://youtu.be/rsW9_UtF4jk)
 
   <br></p>

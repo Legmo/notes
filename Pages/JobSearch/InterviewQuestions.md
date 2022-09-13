@@ -10,16 +10,49 @@
 
 - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 - [Legmo - JS](../JS/JS.md)
-
+-
 - [Что нового в последних 3 версиях JS](../JS/JS.md)
-- [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
-- [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
-- [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
-- [Дестурктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-- [Остаточные параметры и оператор расширения](https://learn.javascript.ru/rest-parameters-spread-operator)
-- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+- [Работа JS-движка](../JS/JS.md)
+  - Event Loop,
+  - стэк,
+  - очередь задач,
+  - микро/макро задачи,
+  - веб-воркеры,
+  - SetInterval
+  - Promises,
+  - web API...
+  - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
+  - В каком порядке будут выводиться console.log, Promise
+- [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
+-
+- [Use strict](https://learn.javascript.ru/strict-mode)
+- [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
+- [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
+  / `let sayHi = function(){}`)
+- [Замыкания](https://learn.javascript.ru/closure)
+- [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
+  и [ещё они же](https://learn.javascript.ru/arrow-functions)
+- Ключевое слово this
+  - https://learn.javascript.ru/object-methods
+  - https://learn.javascript.ru/arrow-functions
+  - [Habr - Что записано в this? Закулисье JavaScript-объектов](https://habr.com/ru/company/ruvds/blog/455527/)
+  - [Habr - Ключевое слово this в JavaScript для начинающих](https://habr.com/ru/company/ruvds/blog/419371/)
+- [Метод bind()](https://learn.javascript.ru/bind)
+- [Методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
+- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+- Контекст выполнения
+  - [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
+- [Рекурсия](https://learn.javascript.ru/recursion)
+  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+- [Promise, Async/Await](https://learn.javascript.ru/async)
+- [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
+  Fetch API
+- [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
+- Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
+  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
+-
+- [Ver, Let, Const](https://learn.javascript.ru/var)
 - Типы в JS (string, number, object...)
-- [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
 - [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
 - Что является объектом в JS?
 - Различия Undefined и Null
@@ -45,6 +78,7 @@
   - что-то добавили в последние несколько лет
   -
   - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+  - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
 - Методы массивов
   - push(...items) – добавляет элементы в конец,
   - pop() – извлекает элемент из конца,
@@ -80,59 +114,26 @@
     - Метод [filter](https://learn.javascript.ru/array-methods#filter)
     - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
 - Мутирующие / не мутирующие методы (особенной у массивов)
-- [Use strict](https://learn.javascript.ru/strict-mode)
-- [Работа JS-движка](../JS/JS.md)
-  - Event Loop,
-  - стэк,
-  - очередь задач,
-  - микро/макро задачи,
-  - веб-воркеры,
-  - SetInterval
-  - Promises,
-  - web API...
-  - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
-- [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
+-
 - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
-- [Цикл for-await-of](https://learn.javascript.ru/async-await)
-- Как работает ключевое слово this?
-  - https://learn.javascript.ru/object-methods
-  - https://learn.javascript.ru/bind
-  - https://learn.javascript.ru/call-apply-decorators
-  - https://learn.javascript.ru/arrow-functions
-- Bind, контекст, this
-  - https://habr.com/ru/company/ruvds/blog/455527/
-  - https://learn.javascript.ru/bind
-  - https://learn.javascript.ru/object-methods
-  - https://learn.javascript.ru/call-apply
-  - https://habr.com/ru/company/ruvds/blog/419371/
-- [Как работают метод bind()?](https://learn.javascript.ru/bind)
-- [Как работают методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
-- [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
-- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-- [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
-  / `let sayHi = function(){}`)
-- [Замыкания](https://learn.javascript.ru/closure)
-- [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
-  и [ещё они же](https://learn.javascript.ru/arrow-functions)
-- [Promise, Async/Await](https://learn.javascript.ru/async)
-- [Ver, Let, Const](https://learn.javascript.ru/var)
-- [Рекурсия](https://learn.javascript.ru/recursion)
-  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
-- [Прототипы](https://learn.javascript.ru/prototypes)
-- [Декораторы](https://learn.javascript.ru/call-apply-decorators)
+- [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
+- [Логические операторы присваивания(`&&=`, `||=`, `??=`)]()
+- [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
 - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+- [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
+- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+- [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
+- [Цикл for-await-of](https://learn.javascript.ru/async-await)
+- [Декораторы](https://learn.javascript.ru/call-apply-decorators)
+- [Прототипы](https://learn.javascript.ru/prototypes)
 - Классы
   - [Базовые вопросы](https://learn.javascript.ru/classes)
   - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
   - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
   - ...
-- [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
-  Fetch API
-- [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) и как его отменить. Современный аналог — fetch
-- Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
-  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
-- Ещё про нативный Javascript любят поговорить: как на нативном Javascript обратиться к элементам DOM-страницы? А к
-  конкретному? А по тегам?
+- Как профилировать и отлаживать js (кроме console.log)
+- Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
+-
 
 <br></p>
 </details> 
@@ -141,44 +142,88 @@
 <details><summary><b>React</b></summary><p>
 
 - [Legmo - React](/Pages/JS/React.md)
-
+-
+- Как работает React
+  - [Habr - Как работает React: подробное руководство](https://habr.com/ru/company/timeweb/blog/586972/)
+  - [Habr - Как работает React: подробное руководство](https://habr.com/ru/company/timeweb/blog/586972/)
+  - [habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
+  - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+- Как в React обрабатываются события?
+- Virtual DOM
+  - [Medium - Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+  - [Habr - Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
+  - [Оф. документация - Виртуальный DOM и детали его реализации в React](https://ru.reactjs.org/docs/faq-internals.html)
+  - [Как работает Virtual DOM ?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+  - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+  - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
+  - [learnjavascript - про обычный DOM](https://learn.javascript.ru/browser-environment)
+  - [Medium - Как работает Virtual DOM?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
+  - [Habr - Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
+  - [IT-Kamasutra #86 - Virtual DOM](https://youtu.be/rsW9_UtF4jk)
+- Классовые и функциональные компоненты.
+- Компоненты с состоянием и stateless
+- Контролируемы и не контролируемые компоненты (controlled/uncontrolled)
+- Context
+- Хуки
+  - [Legmo - Хуки](/Pages/JS/React.md)
+  - Хук useState - [reactjs.org](https://ru.reactjs.org/docs/hooks-state.html)
+  - Хук useEffect - [reactjs.org](https://ru.reactjs.org/docs/hooks-effect.html)
+  - [Habr - React hooks, как не выстрелить себе в ноги. Часть 1: useState](https://habr.com/ru/company/otus/blog/667706/)
+  - [Habr - React hooks, как не выстрелить себе в ноги. Часть 2: useEffect и useLayoutEffect](https://habr.com/ru/company/otus/blog/668700/)
+  - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: useMemo](https://habr.com/ru/company/otus/blog/669962/)
 - [Side-эффекты](/Pages/Programming/Programming.md)
 - [HOC](/Pages/JS/React.md)
 - [Reselect (YouTube)](https://youtu.be/_jyrQh0ZdTA) - библиотека для создания мемоизированных селекторов
-- [Хуки](/Pages/JS/React.md)
 - [WebDev - #9 Фрагменты и стили (Fragments & CSS) (YouTube)](https://youtu.be/Z0S4wcyzLZc)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FZ0S4wcyzLZc&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
 - [IT-Kamasutra - 100 (YouTube)](https://youtu.be/0AohM_oOjBc)
-- Хуки
-  - [WebDev - #2 React Hooks A Complete Introduction (Полное введение в Хуки) (YouTube)](https://youtu.be/X6j7Y7tp3_c)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2FX6j7Y7tp3_c&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "Получи прямую ссылку")
-  - [WebDev - #3 React 16.8 Hooks RELEASE! (Реакт Хуки. Официальный релиз) (YouTube)](https://youtu.be/19EmLE2mZ1Q)[](http://savefrom.net/?url=https%3A%2F%2Fyoutu.be%2F19EmLE2mZ1Q&utm_source=ff&utm_medium=extensions&utm_campaign=link_modifier "
-    Получи прямую ссылку"
-  - https://ru.reactjs.org/docs/hooks-state.html
-  - https://ru.reactjs.org/docs/hooks-effect.html
-  - [Должен ли я использовать connect или хуки для react redux и который имеет лучшую производительность?](https://translated.turbopages.org/proxy_u/en-ru.ru.b0899dbb-62fa5bee-806cf6a7-74722d776562/https/stackoverflow.com/questions/66527982/should-i-use-connect-or-hooks-for-react-redux-and-which-has-better-performance)
-  - [От Редакса к хукам?](https://bespoyasov.ru/blog/you-might-not-need-redux-now/)
-  - [Стоит ли использовать Redux с React Hooks](https://amorgunov.com/posts/2020-04-12-use-redux-with-react-hooks/)
-  - [Смогут ли React-хуки заменить Redux](https://css-live.ru/articles/smogut-li-react-xuki-zamenit-redux.html)
-  - [useEffect(fn, []) это не новый componentDidMount()](https://stasonmars.ru/javascript/useeffect-eto-ne-novyi-componentdidmount/)
 - Методы жизненного цикла
-  - [WebDev - #11 Методы жизненного цикла (Lifecycle methods) (YouTube)](https://youtu.be/O8f6aXqpGHw)
+  - какие есть, зачем добавлены, как работают
   - componentShouldUpdate
-- Оптимизация React
-- Современные практики - 2020, 2021, 2022
-- Классовые компоненты
-- Ref
-- [HOC](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
-- Child
+  - [WebDev - #11 Методы жизненного цикла (Lifecycle methods) (YouTube)](https://youtu.be/O8f6aXqpGHw)
+- Ref - [Legmo notes](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+- HOC - [Legmo notes](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
 - Connect и то как он прокидывает props
+- Порталы в React - [Оф. документация](https://ru.reactjs.org/docs/portals.html)
+- Строгий режим в React.js - [Оф. документация](https://ru.reactjs.org/docs/strict-mode.html)
+- Как сделать условный рендер в React.js
+  - [7 способов реализации условного рендеринга в React](https://russianblogs.com/article/8615661123/)
+  - [Оф. документация](https://ru.react.js.org/docs/conditional-rendering.html)
+- Метод getDerivedStateFromProps(props, state)
+  - [Оф. документация](https://ru.react.js.org/docs/react-component.html?#static-getderivedstatefromprops).
+  - Срабатывает перед каждым рендером/ререндером. Для редких случаев когда состояние зависит от изменений в свойствах со
+    временем.
+- Разница между createElement и cloneElement
+  - [Оф. документация - createElement](https://ru.reactjs.org/docs/react-api.html#createelement)
+  - [Оф. документация - cloneElement](https://ru.reactjs.org/docs/react-api.html#cloneelement)
+  - [stackoverflow.com - React createElement vs cloneElement](https://stackoverflow.com/questions/35616029/react-createelement-vs-cloneelement)
+- [WebDev - #9 Фрагменты и стили (Fragments & CSS)](https://youtu.be/Z0S4wcyzLZc)
+- [WebDev - #11 Методы жизненного цикла (Lifecycle methods)](https://youtu.be/O8f6aXqpGHw)
+- HOC - [Legmo notes]](https://github.com/Legmo/notes/blob/master/Pages/JS/React.md)
+- Child
+  - Что такое потомки?
+  - [Погружаемся в работу с children на React (2020)](https://stasonmars.ru/javascript/pogruzhaemsya-v-raboty-s-children-na-react/)
+  - [Оф. документация](https://ru.reactjs.org/docs/react-api.html#reactchildrenmap)
 - Render props
-- Читать документацию React (прочесть трижды)
-- [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
-- https://it-shpora.pp.ua
-- Вёрстка
-  - CSS для React - модули
-  - CSS для React - CSS in JS
-  - CSS для React - прочее
-  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+  - [Оф. документация](https://ru.reactjs.org/docs/render-props.html)
+  - [Разбираемся с Render Props на примере](https://habr.com/ru/post/418863/)
+- React DevTools - [статья на Habr (2021)](https://habr.com/ru/post/595607/)
+- React Reconciliation - [Статья](https://kramarenko.com.ua/post/what_is_reconciliation)
+- Современные практики - 2020, 2021, 2022
+  - Статья про [лучшие практики React 2021](https://habr.com/ru/company/otus/blog/546534/)
+- Оптимизация React
+  - Как уменьшить количество ререндера компонентов?
+  - [«Запашки» кода React-компонентов ](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html#jsx-returns)
+  - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
+- Вёрстка для React
+  - CSS модули
+  - CSS in JS
+  - Styled components
   - BEM
+  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+- Источники
+  - [Оф. документация React](https://ru.reactjs.org/docs/hello-world.html) (прочесть трижды)
+  - [Legmo - React](/Pages/JS/React.md)
+  - https://it-shpora.pp.ua
 
 <br></p>
 </details> 
@@ -225,6 +270,9 @@
   - Redux-thunk
   - Redux saga
   - Хуки
+-
+- Connect и то как он прокидывает props
+- Как бы вы отключили хранилище Redux, чтобы оно не принимало никаких изменений в состоянии?
 
 <br></p>
 </details> 
@@ -483,6 +531,8 @@
   - [Medium - Как создать реактивный фреймворк на JavaScript](https://medium.com/@monochromer/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA-%D0%BD%D0%B0-javascript-cfa34c63fd52)
   - [MutationObserver](../WebDeveloping/Browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API
     браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
+- Что такое CORS - [Habr](https://habr.com/ru/company/macloud/blog/553826/)
+- Css селекторы - [MDN](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors)
 
 <br></p>
 </details> 
