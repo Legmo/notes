@@ -9,7 +9,7 @@
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
 - [REST](/Pages/WebDeveloping/REST.md)
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
-- [Технологии Интернет - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Technologies.md)
+- [Интернет-технологии — AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Technologies.md)
 - [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
 - [GIT](/Pages/_Other/GIT.md)
 - [Bootstrap 4 & SASS](/Pages/WebDeveloping/HtmlCssQuestions.md)
