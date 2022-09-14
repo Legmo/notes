@@ -290,6 +290,10 @@
 <details><summary><b>TypeScript</b></summary><p>
 
 - [Legmo - TypeScript](/Pages/JS/TypeScript.md) (ДОРАБОТАТЬ)
+- Очень любят спрашивать
+  - какие типы есть
+  - дженерики
+-
 - Основные отличия TS и JS
 - Транспиляция
 - Утиная типизация
@@ -770,20 +774,88 @@
     alert( worker.slow(2) ); // работает
     alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
     ```
-- Работа движка, ассинхронность — в аком порядке выведутся console.log()?
+- Работа движка, ассинхронность — в каком порядке выведутся console.log()?
   - дано несколько разных console.log - обычные, promise + .then(), setTimeout/setInterval
+  - ```js
+    console.log('start');  // Выполянется как обычный синхронный код
+  
+    setTimeout(function(){
+      console.log('timeout 5');
+    }, 5 );
+    
+    setTimeout(function(){
+      console.log('timeout 0');
+    }, 0 );
+  
+    const promise = new Promise(function(resolve, reject) {
+      console.log('promise');  // Выполянется как обычный синхронный код
+      resolve(true);
+    });
+
+    promise
+    .then(
+      function(){console.log('then 1');}  // Очередь микрозадач
+    )
+    .then(
+      function(){console.log('then 2');}  // Очередь микрозадач
+    );
+    
+    console.log('end ');  // Выполянется как обычный синхронный код
+    
+    //start
+    //promise
+    //end
+    //then 1 - then/catch всегда после обычных задач (это microtasks)
+    //then 2
+    //timeout 0 - timeout/interval выполняются в самом конце, после
+    //timeout 5
+    ```
 - Армия функций
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
   - https://qna.habr.com/q/365769
 - Рекурсия - числа Фибоначи. Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
   - https://learn.javascript.ru/task/fibonacci-numbers
+  - https://ilyachalov.livejournal.com/162627.html
   - Вариант 1 - через рекурсию
+    - ```js
+      function test(n) {
+        if (n <= 1) { return n }
+        else {
+          return  test(n - 1) + test(n - 2);
+        }
+        alert( test(3) ); // 2
+      }
+      ```
   - Вариант 2 - через рекурсию + мемомизацию (чтоб по несколько раз не высчитывать одно и то же значение)
   - Вариант 3 - через цикл for (любая рекурсия может быть сведена к циклу)
     - начнёт с 1 и 2, затем из них получит fib(3) как их сумму, затем fib(4)как сумму предыдущих значений, затем fib(5)
       и так далее, до финального результата. На каждом шаге нам нужно помнить только значения двух предыдущих чисел
       последовательности.
+    - ```js
+      function test(n) {
+        let prev = 1;
+        let cur = 1;
+        for (let i = 3; i <= n; i++) {
+          let temp = prev + cur;
+          prev = cur;
+          cur = temp;
+        }
+        return cur;
+      }
+      ```
+  - Вариант 4 - через цикл for + деструктурирующее присваивание
+    - ```js
+      function fib(n) {
+        let cur = 1, prev = 1;
+        for (let i = 3; i <= n; i++) {
+          // cur = актуальное значение. Сумма «актуального» числа из пред. итерации и «предыдущего» числа из пред. итерации 
+          // prev = предыдущее значение
+          [cur, prev] = [cur + prev, cur]; 
+        }
+        return cur;
+      }
+      ```
 - Рекурсия - возведение в степень.
   - ```js
     //через рекурсию
