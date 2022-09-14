@@ -404,8 +404,8 @@
 <br></p>
 </details> 
 
-[//]: # (Оптимизация работы браузера)
-<details><summary><b>Оптимизация работы браузера</b></summary><p>
+[//]: # (Оптимизация работы браузера. Critical rendering path)
+<details><summary><b>Оптимизация работы браузера. Critical rendering path</b></summary><p>
 
 - [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser.md)
 - "Дорогие" операции работы с DOM. `Relayout` / `Repaint`
