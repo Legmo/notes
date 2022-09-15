@@ -1986,9 +1986,6 @@ React передаёт новые props, которые можно сравни�
 <br></p>
 </details>
 
-<br>
-</details>
-
 **I. Другие API (есть у каждого компонента)**<br>
   - setState()
   - forceUpdate()
@@ -2062,6 +2059,9 @@ React.js ведет запись жизненного цикла компоне�
 - [https://learn-reactjs.ru/reference/react-component](https://learn-reactjs.ru/reference/react-component)
 - [Основные концепции React.js, о которых стоит знать](https://proglib.io/p/react-js-concepts/)
 - [YouTube - React 16.3 news (субтитры) ](https://www.youtube.com/watch?v=XqFCMObsyKk)
+
+<br></p>
+</details>
 
 <br></p>
 </details>
