@@ -1950,7 +1950,7 @@ JavaScript изначально появился в браузерах, и к н
 <img src="/Assets/Img/js-schema-2-min.jpg" title="Схема 2" alt="Схема 2" />
 <br>
 
-<img src="/Assets/Img/js-schema-3-min.jpg" title="Схема 1" alt="Схема 1" />
+<img src="/Assets/Img/js-schema-3-min.jpg" title="Схема 3" alt="Схема 3" />
 
 <br></p>
 </details>
@@ -2825,7 +2825,6 @@ Function Expression – объявление функции в контекст�
 
 <br></p>
 </details>   
-
 
 [//]: # ("Call" & "apply" todo: доработать)
 <details><summary><b>"Call" & "apply"</b></summary><p>

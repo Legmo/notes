@@ -1684,6 +1684,20 @@ HOC часто называют с префиксом «with» — `withRedirect
 <br></p>
 </details>
 
+[//]: # (Картинки)
+<details><summary><b>Картинки</b></summary><p>
+
+<img src="/Assets/Img/architecture-react-1.jpg" title="Схема 1" alt="Схема 1" />
+<br>
+
+<img src="/Assets/Img/architecture-react-2.jpg" title="Схема 2" alt="Схема 2" />
+<br>
+
+<img src="/Assets/Img/architecture-react-3.jpg" title="Схема 3" alt="Схема 3" />
+
+<br></p>
+</details>
+
 ---
 **1. Монтирование** - когда экземпляр компонента создаётся и монтируется в DOM
 
