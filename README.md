@@ -26,6 +26,7 @@
 - [Про самоорганизацию](/Pages/SelfOrgainzation/SelfOrganization.md)
 - [Как учиться?](/Pages/SelfOrgainzation/Learning.md)
 - [Как повысить уровень жизненной энергии?](/Pages/SelfOrgainzation/Energy.md)
+- [Как стать junior-разработчиком?](/Pages/SelfOrgainzation/GradationJunior.md)
 
 ## Drupal ##
 - [Drupal - список компетенций](/Pages/Drupal/CompetenciesList.md)
