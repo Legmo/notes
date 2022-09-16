@@ -1004,6 +1004,13 @@
 - Если дали тестовое задание — поискать его на GitHub, вероятно кто-то уже делал и выкладывал код своего решения.
 - Полистать код тестовых заданий, которые делал для других компаний
 - Пересмотреть [IT-Kamasutra #100 - Теория ReactJS + Redux за 90 минут](https://youtu.be/0AohM_oOjBc)
+- Можно потренироваться в live coding
+  - [leetcode.com](http://leetcode.com/)
+  - [hackerrank.com](https://www.hackerrank.com/)
+  - [codewars.com](https://www.codewars.com/)
+  - [codingame.com](https://www.codingame.com)
+  - [coderbyte.com](https://coderbyte.com/)
+  - [Топ 8 лучших ресурсов для практики программирования в 2018](https://habr.com/ru/post/414009/)
 
 <br></p>
 </details> 

@@ -1,6 +1,6 @@
 <h1>Junior-разработчик</h1>
 
-[//]: # (Как стать juinor. Тезисы)
+[//]: # (Кто такой junior)
 <details><summary><h3>Кто такой junior</h3></summary><p>
 
 **Один из вариантов описания**
@@ -50,10 +50,6 @@
 
 
 **Ссылки**
-
-- []()
-- []()
-- []()
 - [ITKamasutra - Как стать программистом! 3 бесплатных крутых шага! (JavaScript, Front-end)](https://youtu.be/hFOZYaVHD6A)
 - [ITKamasutra - Как стать программистом за 1 год с нуля даже домохозяйке](https://youtu.be/S7xq9x8i47k)
 - [ITKamasutra - Как стать программистом за 1 месяц? Никак?](https://www.youtube.com/watch?v=__B3kJ8YhSw)
@@ -62,7 +58,7 @@
 - [ITKamasutra - Бесплатный курс (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
 - [MetaLamp - Как мы сделали бесплатную программу обучения веб-разработке и трудоустроили 60 выпускников ](https://vc.ru/hr/304764-kak-my-sdelali-besplatnuyu-programmu-obucheniya-veb-razrabotke-i-trudoustroili-60-vypusknikov)
 - [MetaLamp - Бесплатный курс](https://www.metalamp.io/education)
-- [MetaLamp - Roadmap. Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
+- [MetaLamp - Roadmap. Frontend & Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
 - [MetaLamp - Roadmap. Frontend (GitHub)](https://github.com/fullstack-development/developers-roadmap/tree/master/frontend)
 
 <br>
