@@ -57,6 +57,14 @@
 - Что является объектом в JS?
 - Различия Undefined и Null
 - Передача по значению / по ссылке
+- Копирование объектов обычное
+  - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
+  - Object.assign
+- Клонирование объектов глубокое
+  - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
+  - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+  - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
+  - lodash.cloneDeep(obj)
 - Методы примитивов
   - [Общие вопросы](https://learn.javascript.ru/primitives-methods)
   - [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
