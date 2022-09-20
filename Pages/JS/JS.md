@@ -2604,41 +2604,51 @@ Await отлично работает в сочетании с `Promise.all`, е
 <details><summary><b>Примеры использования</b></summary><p>
 
 - ```js
-  //Вариант с .then
-  // Запрашиваем user.json
+  //A. Вариант с .then
+  // 1. Запрашиваем с сервера JSON с данными пользователя
   fetch('/src/user.json')
-        // Загружаем данные в формате json
+        // 2. Загружаем данные в формате json
         .then(response => response.json())
-        // Делаем запрос к GitHub
+        
+        // 3. Запрашиваем информацию об этом пользователе с GitHub
         .then(user => fetch(`https://api.github.com/users/${user.name}`))
-        // Загружаем ответ в формате json
+
+        // 4. Загружаем ответ в формате json
         .then(response => response.json())
-        // Показываем аватар (githubUser.avatar_url) в течение 3 секунд (возможно, с анимацией)
+
+        // 5. Показываем аватар (githubUser.avatar_url) в течение 3 секунд
         .then(githubUser => new Promise(function (resolve, reject) {
           let img = document.createElement('img');
           img.src = githubUser.avatar_url;
           img.className = "promise-avatar-example";
           document.body.append(img);
 
+          // ждём 3 секунды и затем скрываем аватар
           setTimeout(() => {
             img.remove();
             resolve(githubUser); // (**)
           }, 3000);
         }))
+
+        // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
         .then(githubUser => alert(`Закончили показ ${githubUser.name}`));
 
-  //Тот же вариант с .async
+  //B. Тот же вариант с .async
   async function showAvatar() {
 
-    // запрашиваем JSON с данными пользователя
+    // 1. Запрашиваем с сервера JSON с данными пользователя
     let response = await fetch('/src/user.json');
+  
+    // 2. Загружаем данные в формате json
     let user = await response.json();
   
-    // запрашиваем информацию об этом пользователе из github
+    // 3. Запрашиваем информацию об этом пользователе с GitHub
     let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+  
+    // 4. Загружаем ответ в формате json
     let githubUser = await githubResponse.json();
   
-    // отображаем аватар пользователя
+    // 5. Показываем аватар (githubUser.avatar_url)
     let img = document.createElement('img');
     img.src = githubUser.avatar_url;
     img.className = "promise-avatar-example";
@@ -2646,12 +2656,11 @@ Await отлично работает в сочетании с `Promise.all`, е
   
     // ждём 3 секунды и затем скрываем аватар
     await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-  
     img.remove();
 
+    // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
     return githubUser;
   }
-
   showAvatar();
   ````
 
