@@ -2521,27 +2521,27 @@ async function fillArray() {
 
 **Asynс-функция всегда возвращает промис**
 
-```js
-async function f() {
-  return 1;
-}
-
-f().then(alert); // 1
-
-//Можно и явно вернуть промис, результат будет одинаковым
-async function f() {
-  return Promise.resolve(1);
-}
-
-f().then(alert); // 1
-```
+- ```js
+  async function f() {
+    return 1;
+  }
+  
+  f().then(alert); // 1
+  
+  //Можно и явно вернуть промис, результат будет одинаковым
+  async function f() {
+    return Promise.resolve(1);
+  }
+  
+  f().then(alert); // 1
+  ```
 
 **Пример использования**
 
-```js
-//Вариант с .then
-// Запрашиваем user.json
-fetch('/src/user.json')
+- ```js
+  //Вариант с .then
+  // Запрашиваем user.json
+  fetch('/src/user.json')
         // Загружаем данные в формате json
         .then(response => response.json())
         // Делаем запрос к GitHub
@@ -2562,67 +2562,68 @@ fetch('/src/user.json')
         }))
         .then(githubUser => alert(`Закончили показ ${githubUser.name}`));
 
-//Тот же вариант с .async
-async function showAvatar() {
+  //Тот же вариант с .async
+  async function showAvatar() {
 
-  // запрашиваем JSON с данными пользователя
-  let response = await fetch('/src/user.json');
-  let user = await response.json();
+    // запрашиваем JSON с данными пользователя
+    let response = await fetch('/src/user.json');
+    let user = await response.json();
+  
+    // запрашиваем информацию об этом пользователе из github
+    let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+    let githubUser = await githubResponse.json();
+  
+    // отображаем аватар пользователя
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+  
+    // ждём 3 секунды и затем скрываем аватар
+    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+  
+    img.remove();
 
-  // запрашиваем информацию об этом пользователе из github
-  let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
-  let githubUser = await githubResponse.json();
+    return githubUser;
+  }
 
-  // отображаем аватар пользователя
-  let img = document.createElement('img');
-  img.src = githubUser.avatar_url;
-  img.className = "promise-avatar-example";
-  document.body.append(img);
-
-  // ждём 3 секунды и затем скрываем аватар
-  await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-
-  img.remove();
-
-  return githubUser;
-}
-
-showAvatar();
-````
+  showAvatar();
+  ````
 
 ***
-Функция `getAmount()` вызывает две асинхронные функции — `getUser()` и `getBankBalance()`.<br>
-Можно сделать это через `.then`, но конструкция `async/await` позволяет решить эту задачу проще и элегантнее.
 
-```js
-function getUser(userId) {
-  return new Promise(resolve => resolve('Ivan'))
-}
+- Функция `getAmount()` вызывает две асинхронные функции — `getUser()` и `getBankBalance()`.<br>
+  Можно сделать это через `.then`, но конструкция `async/await` позволяет решить эту задачу проще и элегантнее.
 
-function getBankBalance(user) {
-  return new Promise((resolve, rejected) => {
-    if (user == 'Ivan') {
-      resolve('$1,00')
-    } else {
-      rejected('unknown user')
-    }
-  })
-}
-
-// Раньше, с .then
-function getAmount(userId) {
-  getUser(userId)
-          .then(user => getBankBalance(user))
-          .then(money => console.log(money))
-}
-
-// Теперь, с Async/Await
-async function getAmount2(userId) {
-  let user = await getUser(userId);
-  let money = await getBankBalance(user);
-  console.log(money);
-}
-```
+- ```js
+  function getUser(userId) {
+    return new Promise(resolve => resolve('Ivan'))
+  }
+  
+  function getBankBalance(user) {
+    return new Promise((resolve, rejected) => {
+      if (user == 'Ivan') {
+        resolve('$1,00')
+      } else {
+        rejected('unknown user')
+      }
+    })
+  }
+  
+  // Раньше, с .then
+  function getAmount(userId) {
+    getUser(userId)
+            .then(user => getBankBalance(user))
+            .then(money => console.log(money))
+  }
+  
+  // Теперь, с Async/Await
+  async function getAmount2(userId) {
+    let user = await getUser(userId);
+    let money = await getBankBalance(user);
+    console.log(money);
+  }
+  ```
 
 Подробнее этот пример рассмотрен
 здесь: [Habr - Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
