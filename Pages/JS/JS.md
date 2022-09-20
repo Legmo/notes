@@ -2029,15 +2029,14 @@ rabbit.__proto__ = animal;
   setTimeout(() => resolve(result), 1000); // переведёт промис в состояние fulfilled с результатом "result", через 1 сек
 })
 
-promise
-        .then(
-                // функция-обработчик №1 - запустится при вызове resolve
-                result => console.log("Fulfilled: " + result), // result - аргумент resolve
+promise.then(
+        // функция-обработчик №1 - запустится при вызове resolve
+        result => console.log("Fulfilled: " + result), // result - аргумент resolve
 
-                // функция-обработчик №2 - запустится при вызове reject
-                // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
-                error => console.log("Rejected: " + error), // error - аргумент reject
-        );
+        // функция-обработчик №2 - запустится при вызове reject
+        // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
+        error => console.log("Rejected: " + error), // error - аргумент reject
+);
 ```
 
 ```js
