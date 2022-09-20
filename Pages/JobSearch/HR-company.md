@@ -214,7 +214,7 @@
 **Разное**
 - [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
 - [Робот Вера - ИИ для посика сотрудников](https://robotvera.com/static/newrobot/index.html)
-- [habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
+- [Habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
 
 **Unsorted**
 - CareerBuilder 

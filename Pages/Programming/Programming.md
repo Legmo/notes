@@ -234,7 +234,7 @@ function withdraw(account, amount) {
 Микропаттерн оптимизации функции — позволяет добавить дополнительное поведение функции, не изменяя ее.
 
 **Ссылки**
-* [habr - Декораторы](https://habr.com/ru/post/60957/)
+* [Habr - Декораторы](https://habr.com/ru/post/60957/)
 * [learn JS - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
 
 <br></p>
@@ -267,7 +267,7 @@ debounce.<br>
 
 Ссылки:
 
-* [habr - Декораторы](https://habr.com/ru/post/60957/)
+* [Habr - Декораторы](https://habr.com/ru/post/60957/)
 * [Для чего нужна функция debounce и как она работает](http://gdrw.ru/reviews/tech/debounce-function-in-javascript)
 * [learn.javascript.ru - реализация на js](https://learn.javascript.ru/task/debounce)
 * [7 важных функций JavaScript](https://getinstance.info/articles/javascript/essential-javascript-functions/)
@@ -289,7 +289,7 @@ debounce.<br>
 
 Ссылки:
 
-* [habr - Декораторы](https://habr.com/ru/post/60957/)
+* [Habr - Декораторы](https://habr.com/ru/post/60957/)
 * [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
 <br></p>
@@ -441,12 +441,13 @@ HTTP-кэш.
 - [Шаблоны проектирования](Pattern.md)
 
 **Ссылки**
+
 - [code.mu - на пальцах](http://code.mu/books/javascript/oop/)
 - [code.mu - тоже на пальцах](http://code.mu/books/php/oop/osnovy-raboty-s-objektno-orientirovannym-programmirovaniem-v-php-1.html)
-- [habr - на пальцах 1](https://habr.com/ru/post/87205/)
-- [habr - на пальцах 2](https://habr.com/ru/post/87119/)
+- [Habr - на пальцах 1](https://habr.com/ru/post/87205/)
+- [Habr - на пальцах 2](https://habr.com/ru/post/87119/)
 - [Что такое ООП в паре слов](https://javarush.ru/groups/posts/1966-principih-obhhektno-orientirovannogo-programmirovanija)
-- [habr - Понимание ООП в JS](https://habr.com/ru/company/enterra/blog/153365/)
+- [Habr - Понимание ООП в JS](https://habr.com/ru/company/enterra/blog/153365/)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
 - [Википедия - парадигмы программирования](https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%B0%D0%B4%D0%B8%D0%B3%D0%BC%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 - [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
@@ -660,7 +661,7 @@ HTTP-кэш.
     - должен взаимодействовать только с известными ему модулями «друзьями», не взаимодействовать с незнакомцами.
     - обращаться только к непосредственным «друзьям».
       **Ссылки**
-    - [habr](https://habr.com/ru/post/319652/)
+    - [Habr](https://habr.com/ru/post/319652/)
     - [wikipedia](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%94%D0%B5%D0%BC%D0%B5%D1%82%D1%80%D1%8B)
 - **GRASP** (general responsibility assignment software patterns) — общие шаблоны распределения ответственностей
     - Ответственность должна быть назначена тому, кто владеет максимумом необходимой информации для исполнения.

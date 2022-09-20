@@ -226,8 +226,8 @@ React назван так потому, что реагирует на изме�
 
 **Ссылки**
 
-- [habr - Реактивность в JavaScript: простой и понятный пример](https://habr.com/ru/company/ruvds/blog/418633/)
-- [habr - Основы реактивного программирования с использованием RxJS](https://habr.com/ru/post/438642/)
+- [Habr - Реактивность в JavaScript: простой и понятный пример](https://habr.com/ru/company/ruvds/blog/418633/)
+- [Habr - Основы реактивного программирования с использованием RxJS](https://habr.com/ru/post/438642/)
 - [Code.mu - Реактивность объектов в React](https://www.code.mu/ru/javascript/framework/react/book/prime/structures/objects/)
 - [Основные концепции React.js, о которых стоит знать](https://proglib.io/p/react-js-concepts)
 
@@ -905,7 +905,7 @@ function NumberList(props) {
 
 - [Оф. документация - Списки и ключи](https://ru.react.js.org/docs/lists-and-keys.html)
 - [Оф. документация - Согласование](https://ru.reactjs.org/docs/reconciliation.html#recursing-on-children)
-- [habr - подробная статья](https://habr.com/ru/company/hh/blog/352150/)
+- [Habr - подробная статья](https://habr.com/ru/company/hh/blog/352150/)
 - [YouTube - Отображение массивов, смысл аттрибута key](https://www.youtube.com/watch?v=tn9HyYRVZ9A)
 
 <br></p>
@@ -1049,7 +1049,7 @@ Ref отличный способ доступа к DOM элементам, но
 - [IT Kamasutra - лучший курс видео. Большой](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
 - [http://code.mu - курс. Должен быть неплох](http://code.mu/books/advanced/javascript/react/)
 - [learn.javascript.ru - вводный курс видео. Короткий](https://learn.javascript.ru/screencast/react)
-- [habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
+- [Habr- Учебный курс по React, (28 частей)](https://habr.com/ru/company/ruvds/blog/432636/)
 - [monsterlessons.com - вводные уроки. Видео + текст. Примерно 2017](https://monsterlessons.com/project/series/react-dlya-nachinayushih)
 - [какой-то курc](https://habr.com/ru/company/ruvds/blog/432636/)
 - [ещё курc](https://vk.com/@489914144)
@@ -1235,7 +1235,7 @@ React-приложения к хранилищу Redux. Это позволяе�
 - [Презентационный компонент и контейнер в React](https://medium.com/@kanby/%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82-%D0%B8-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80-%D0%B2-react-f0e118480809)
 - [Stateful и Функциональные stateless компоненты в React](https://code.tutsplus.com/ru/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 
 <br></p>
 </details>
@@ -1261,7 +1261,7 @@ React-приложения к хранилищу Redux. Это позволяе�
 
 - [Stateful и Функциональные stateless компоненты в React](https://code.tutsplus.com/ru/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 
 <br></p>
 </details>
@@ -1406,7 +1406,7 @@ Set State перестраивает весь виртуальный DOM ком�
 
 - [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (!)](https://habr.com/ru/company/ruvds/blog/444348/)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 
 <br></p>
 </details>
@@ -1440,7 +1440,7 @@ React делает упор на контролируемых компонент
 
 - [Контролируемые и неконтролируемые компоненты в React ](https://dev-gang.ru/article/kontroliruemye-i-nekontroliruemye-komponenty-v-react-lo65aat2do/?ysclid=l7pi9fcywn122899507)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 
 <br></p>
 </details>
@@ -1574,12 +1574,12 @@ PureComponent, т.к. метод connect() оборачивает ваш ком�
 **Ссылки**
 
 - [Оф. документация - React.PureComponent](https://ru.reactjs.org/docs/react-api.html#reactpurecomponent)
-- [habr - Разбор: как и зачем применять PureComponent в React](https://habr.com/ru/company/redmadrobot/blog/318222/)
+- [Habr - Разбор: как и зачем применять PureComponent в React](https://habr.com/ru/company/redmadrobot/blog/318222/)
 - [PureComponent и Components](https://medium.com/frontend-notes/purecomponent-%D0%B8-components-5c15cf206ba7)
 - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - [YouTube - Какие props портят производительность](https://www.youtube.com/watch?v=zSDOxWhPG_U)
 - [totser](https://toster.ru/q/384870)
-- [habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
+- [Habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
 - [IT-Kamasutra #87 - shouldComponentUpdate, PureComponent, memo ](https://youtu.be/YEqCI9NMoLI)
 
 <br></p>
@@ -1655,7 +1655,7 @@ HOC часто называют с префиксом «with» — `withRedirect
 - [YouTube - IT Kamasutra 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
 - [YouTube - IT Kamasutra 70](https://www.youtube.com/watch?v=tf4E6tw8ZVw)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 - [Разбираемся с Render Props и HOC в React](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
 - [Путь Самурая 2.0 - #15. Hooks, оно нам надо?](https://youtu.be/UR7YwFevxb4)
 
@@ -1672,7 +1672,7 @@ HOC часто называют с префиксом «with» — `withRedirect
 
 - [Разбираемся с Render Props и HOC в React](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
 - [По поводу паттернов в React](https://medium.com/@abraztsov/%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD%D1%8B-%D0%B2-react-e5092c06f019)
-- [habr - Паттерны React](https://habr.com/ru/post/309422/)
+- [Habr - Паттерны React](https://habr.com/ru/post/309422/)
 
   <br></p>
 
@@ -3321,8 +3321,8 @@ isIE и т.д., которые обрабатывают «особенности
   как обычно
 
   **Ссылки**
-- [habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
-- [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+- [Habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
+- [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
 - [You-Tube - IT-Kamasutra 14. Уроки React JS (css-модули, css-modules)](https://youtu.be/bQ3UPYFHyJ0)
 
   <br></p>
@@ -3374,11 +3374,11 @@ isIE и т.д., которые обрабатывают «особенности
 - [Официальный сайт проекта (en)](https://www.styled-components.com)
 - [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
 - [Habr - Styled Components — идеальная стилизация React-приложения (2021)](https://habr.com/ru/post/591381/)
-- [habr - Знакомство с Styled components](https://habr.com/ru/company/digital-ecosystems/blog/321804/)
-- [habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
-- [habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
-- [habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
-- [habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
+- [Habr - Знакомство с Styled components](https://habr.com/ru/company/digital-ecosystems/blog/321804/)
+- [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+- [Habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
+- [Habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
+- [Habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
 - [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
 - [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
 - [Как использовать стилизованные компоненты в React](https://webformyself.com/kak-ispolzovat-stilizovannye-komponenty-v-react/)
@@ -3824,7 +3824,7 @@ Route и NavLink = два независимых элемента.
 
 **Ссылки**
 
-- [habr - Использование Typescript с React – руководство для новичков](https://habr.com/ru/company/otus/blog/456124/)
+- [Habr - Использование Typescript с React – руководство для новичков](https://habr.com/ru/company/otus/blog/456124/)
 
 <br></p>
 </details>
@@ -3898,8 +3898,8 @@ PropTypes и defaultProps это статичные свойства. Объяв
 многие разработчики).
 
 **Ссылки:**
--[habr](https://habr.com/ru/post/319358/)
--[habr](https://habr.com/ru/post/326304)
+-[Habr](https://habr.com/ru/post/319358/)
+-[Habr](https://habr.com/ru/post/326304)
 
 <br></p>
 </details>
@@ -3980,7 +3980,7 @@ PropTypes - это базовая проверяльщик типов, кото�
 
 - [Википедия - модульное тестирование](https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
 - [Оф. документация - инструменты тестирования (en)](https://ru.reactjs.org/community/testing.html)
-- [habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
+- [Habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
 - [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
 - [Habr - React: тестируем компоненты с помощью Jest и Testing Library (2022)](https://habr.com/ru/company/timeweb/blog/670480/)
 - [Hexlet - Тестирование JSReact (платный доступ)](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
@@ -4165,11 +4165,11 @@ HTMl с сервера.
 **Ссылки**
 
 - [Гайд по оптимизации веб- приложений в 2017](https://medium.com/@abraztsov/%D0%B3%D0%B0%D0%B9%D0%B4-%D0%BF%D0%BE-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-5684280a445d)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/455505/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/442650/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/343888/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
-- [habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
+- [Habr - ](https://habr.com/ru/company/ruvds/blog/455505/)
+- [Habr - ](https://habr.com/ru/company/ruvds/blog/442650/)
+- [Habr - ](https://habr.com/ru/company/ruvds/blog/343888/)
+- [Habr - ](https://habr.com/ru/company/ruvds/blog/426053/)
+- [Habr - ](https://habr.com/ru/company/ruvds/blog/340034/)
 - [CSSSR - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - [Habr - Оптимизация производительности в React](https://habr.com/ru/post/319536/)
 - [Habr - Несколько способов оптимизировать React-Redux приложение](https://habr.com/ru/post/490526/)

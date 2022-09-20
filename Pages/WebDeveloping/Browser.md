@@ -472,9 +472,9 @@ wasm в нашем распоряжении оказываются бинарн�
 
 **Ссылки:**
 
-- [habr - Знакомство с WebAssembly](https://m.habr.com/ru/post/342180/)
-- [habr - Как работает JS: особенности и сфера применения WebAssembly](https://habr.com/ru/company/ruvds/blog/343568/)
-- [habr - WebAssembly: начало новой эры](https://m.habr.com/ru/post/261205/)
+- [Habr - Знакомство с WebAssembly](https://m.habr.com/ru/post/342180/)
+- [Habr - Как работает JS: особенности и сфера применения WebAssembly](https://habr.com/ru/company/ruvds/blog/343568/)
+- [Habr - WebAssembly: начало новой эры](https://m.habr.com/ru/post/261205/)
 - [Почему WebAssembly значительно изменит веб](https://apptractor.ru/info/articles/pochemu-webassembly-znachitelno-izmenyaet-veb.html)
 - [Введение в WebAssembly: как устроена технология и почему она важна](https://tproger.ru/translations/introduction-to-webassembly/)
 - [Википедия - WebAssembly](https://ru.wikipedia.org/wiki/WebAssembly)
@@ -580,13 +580,13 @@ Service worker это скрипт, который выполняется бра
 
 **Ссылки**
 
-- [habr - Как работает JS: сервис-воркеры](https://habr.com/ru/company/ruvds/blog/349858/)
+- [Habr - Как работает JS: сервис-воркеры](https://habr.com/ru/company/ruvds/blog/349858/)
 - [MDN ru](https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API)
 - [MDN en](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 - [Service Workers: an Introduction (en)](https://developers.google.com/web/fundamentals/primers/service-workers/)
-- [habr - Service Workers. Инструкция по применению](https://habr.com/ru/company/2gis/blog/345552/)
-- [habr - ]()
-- [habr - Подводные камни Service Workers](https://habr.com/ru/post/351194/)
+- [Habr - Service Workers. Инструкция по применению](https://habr.com/ru/company/2gis/blog/345552/)
+- [Habr - ]()
+- [Habr - Подводные камни Service Workers](https://habr.com/ru/post/351194/)
 - [Введение в Service Worker'ы](https://getinstance.info/articles/javascript/introduction-to-service-workers/)
 
 <br></p>
@@ -634,7 +634,7 @@ HTTP/2 вводит технологию Server Push, которая позво�
 **Ссылки**
 
 - [Как работает JS: веб-воркеры и пять сценариев их использования](https://habr.com/ru/company/ruvds/blog/348424/)
-- [habr - HTTP/2 Server Push не так прост, как я думал](https://habr.com/ru/company/badoo/blog/331216/)
+- [Habr - HTTP/2 Server Push не так прост, как я думал](https://habr.com/ru/company/badoo/blog/331216/)
 
 <br></p>
 </details>   

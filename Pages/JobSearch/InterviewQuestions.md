@@ -155,7 +155,7 @@
 - Как работает React
   - [Habr - Как работает React: подробное руководство](https://habr.com/ru/company/timeweb/blog/586972/)
   - [Habr - Как работает React: подробное руководство](https://habr.com/ru/company/timeweb/blog/586972/)
-  - [habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
+  - [Habr - Объясняем современный JavaScript динозавру](https://habr.com/ru/company/mailru/blog/340922/)
   - [csssr - Основы производительности React-приложений](https://blog.csssr.ru/2016/12/07/react-perfomance)
 - Как в React обрабатываются события?
 - Virtual DOM

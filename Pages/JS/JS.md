@@ -27,7 +27,7 @@
 
 **Есть отдельные статьи**
 
-- [habr.com](https://habr.com/ru/search/?q=javascript)
+- [Habr.com](https://habr.com/ru/search/?q=javascript)
 - [medium.com](https://medium.com/)
 - [proglib.io](https://proglib.io/search?q=Javascript)
 - [webformyself.com](https://webformyself.com/category/javascriptajax-2/javascriptajax/)
@@ -585,7 +585,7 @@ Web API...
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
   Рекомендую
-- [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
@@ -701,14 +701,14 @@ Web API...
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
 - [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
 - [learn.javascript.ru - Браузерное окружение, спецификации](https://learn.javascript.ru/browser-environment)
-- [habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
-- [habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
-- [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
+- [Habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
+- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
   Рекомендую
-- [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
@@ -1220,9 +1220,9 @@ JavaScript изначально появился в браузерах, и к н
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
 - [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
 - [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
-- [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
-- [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-- [habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+- [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+- [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
 - [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
 - [learn.javascript.ru (en)](https://javascript.info/async-await)
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
@@ -1231,8 +1231,8 @@ JavaScript изначально появился в браузерах, и к н
 - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
-- [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
 - [Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
 - [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
 - [learnjavascript - Про события и асинхронность](https://learn.javascript.ru/events-and-timing-depth)
@@ -1351,7 +1351,7 @@ var test = func; //И `test` и `func` указывают на одну и ту 
 - [learn.javascript.ru](https://learn.javascript.ru/object-reference)
 - [TOП-12 JavaScript-концепций: от ссылок до асинхронных операций](https://proglib.io/p/js-concepts/)
 - [Передача параметров по значению и по ссылке](https://metanit.com/web/javascript/3.7.php)
-- [habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
+- [Habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
 
 <br></p>
 </details>
@@ -1914,7 +1914,7 @@ alert(counter()); // 2
   - Либо реализуем замыкание в отдельной функции снаружи цикла, а в цикле вызываем эту функцию при каждой итерации.
   - Или сделать ещё один уровень вложенного замыкания.
     Подробнее: [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B2_%D1%86%D0%B8%D0%BA%D0%BB%D0%B5_%D0%BE%D1%87%D0%B5%D0%BD%D1%8C_%D1%87%D0%B0%D1%81%D1%82%D0%B0%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0)
-    , [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
+    , [Habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
 - «Замкнутые» данных сохраняются в не в «стеке» а в «куче»
   - Это структура в памяти JS-движка.
   - Стек — стопка тарелок. Положил сверху, взял сверху. LIFO (Last In, First Out)
@@ -1929,7 +1929,7 @@ alert(counter()); // 2
 
 - [learn.javascript.ru - Замыкания](https://learn.javascript.ru/closures)
 - [MDN - Замыкания](https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures)
-- [habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
+- [Habr - Замыкания в JavaScript](https://habr.com/ru/post/38642/)
 - [htmlacademy - Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
 - [Wikipedia](https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
 - [pikabu - Замыкание в JS по-человечески](https://pikabu.ru/story/zamyikanie_v_js_pochelovecheski_9330642)
@@ -2024,9 +2024,9 @@ rabbit.__proto__ = animal;
 4. Когда код асинхронной функции завершается, он переводит promise в состояние `fulfilled(результат)`
    или `rejected(ошибка)`. При этом автоматически вызываются соответствующие обработчики в основном коде.
 
+**Свойства объекта `promise`**
 
-**Свойства объекта `promise`** (возвращается конструктором `new Promise`)
-
+- возвращается конструктором `new Promise`
 - `state` («состояние»)
   - вначале `pending` («ожидание»),
   - затем либо `fulfilled` («выполнено успешно») gри вызове resolve
@@ -2037,8 +2037,9 @@ rabbit.__proto__ = animal;
   - при вызове `reject(error)` меняется на `error`
     <br>
 
-**Обработчики промиса** назначаются вызовом `then`/`catch`/`finally`
+**Обработчики промиса**
 
+- назначаются вызовом `then`/`catch`/`finally`
 - `.then` = универсальный метод для навешивания обработчиков-колбэков:
   - `promise.then(onFulfilled, onRejected)` //первый сработает если промис завершился удачно, второй сработает при
     неудаче
@@ -2093,7 +2094,31 @@ rabbit.__proto__ = animal;
       ```
     <br>
 
-**Примеры**
+**Синтаксис `Promise.resolve().then()`**
+
+Бывает что асинхронного кода нет, но нужен промис, чтобы построить цепочку.<br>
+
+```js
+//Пример цепочки после успешного завершения
+const promise = new Promise((resolve) => resolve());
+// promise.then ...
+
+//Пример цепочки после неудчаного завершения
+const promise = new Promise((resolve, reject) => reject());
+// promise.catch ...
+````
+
+Для этих задач есть спец. синтаксис, с ним код становится чище:
+
+```js
+const promise1 = Promise.resolve();
+// promise1.then
+
+const promise2 = Promise.reject();
+// promise2.catch ...
+````  
+
+**Примеры кода**
 
 - ```js
   //Создаём объект-промис
@@ -2147,6 +2172,25 @@ rabbit.__proto__ = animal;
   }).then(function (result) {
     //some work
   });
+  ```
+
+- ```js
+  //когда асинхронного кода нет, но нужен промис, чтобы построить цепочку
+  //Сразу переводим промис в состояние resolve (c данными value) и передаём данные в then.
+ 
+  //Для этого есть спец. синтаксис 
+  Promise.resolve(value)
+  .then(result => console.log(value));
+  
+  //То же самое что
+  new Promise(resolve => resolve(value))
+  .then(result => console.log(value));
+  
+  //То же самое что
+  new Promise(function (resolve) {
+    resolve(value);
+  })
+  .then(result => console.log(value));
   ```
 
 - ```js
@@ -2233,24 +2277,54 @@ rabbit.__proto__ = animal;
 [//]: # (Промисификация)
 <details><summary><b>Промисификация</b></summary><p>
 
-Это когда берут асинхронный функционал и делают для него обёртку, возвращающую промис.<br>
-Использование функционала, зачастую, становится удобнее.
+Это когда берут асинхронную функцию на коллбеках и делают для неё обёртку, возвращающую промис.<br>
+Использование становится удобнее.<br>
+Часто используется для сторонних библиотек и legasy-кода, которые написан на колбеках. А хочется работать с ними через
+промисы.
 
-**Promise.resolve()**<br>
 Такой код
 
 ```js
-  new Promise(function (resolve, reject) {
-  resolve(someSynchronousValue);
-})
-        .then( /* ... */);
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(null, script);
+  script.onerror = () => callback(new Error(`Ошибка загрузки скрипта ${src}`));
+
+  document.head.append(script);
+}
+
+// использование:
+// loadScript('path/script.js', (err, script) => {...})
 ```
 
 Можно записать так:
 
 ```js
-  Promise.resolve(someSynchronousValue).then(/* ... */);
+let loadScriptPromise = function (src) {
+  return new Promise((resolve, reject) => {
+    loadScript(src, (err, script) => {
+      if (err) reject(err)
+      else resolve(script);
+    });
+  })
+}
+
+// использование:
+// loadScriptPromise('path/script.js').then(...)
 ```
+
+Теперь loadScriptPromise хорошо вписывается в код, основанный на промисах.<br>
+loadScriptPromise передаёт всю работу исходной функции loadScript, предоставляя ей колбэк, по вызову которого происходит
+resolve/reject промиса.
+
+Чтобы автоматизировать создание таких обёрток можно использовать функцию-помошник — принимает функцию для промисификации
+f и возвращает функцию-обёртку.<br>
+Есть готовые модули с гибкой настройкой промисификации, например
+
+- [es6-promisify](https://github.com/digitaldesignlabs/es6-promisify)
+- встроенная функция `util.promisify` в Node.js.
 
 <br></p>
 </details>
@@ -2296,22 +2370,6 @@ rabbit.__proto__ = animal;
     - Этот метод используют для совместимости: когда ожидается, что функция возвратит именно промис.
   - Promise.reject(error) создаёт и возвращает промис, завершённый с ошибкой error.
 
-**Promise.resolve()**<br>
-Такой код
-
-```js
-  new Promise(function (resolve, reject) {
-  resolve(someSynchronousValue);
-})
-        .then( /* ... */);
-```
-
-Можно записать так:
-
-```js
-  Promise.resolve(someSynchronousValue).then(/* ... */);
-```
-
 <br></p>
 </details>
 
@@ -2341,14 +2399,15 @@ rabbit.__proto__ = animal;
 **Ссылки**
 
 - [learn.javascript.ru](https://learn.javascript.ru/promise-basics)
-- [habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
+- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
 - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-- [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Познаем промисы на основе Ecmascript спецификации. Знакомство](https://habr.com/ru/post/478938/)
 - [MDN - Промисы](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [MDN - Использование промисов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Using_promises)
-
-- [habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/)
+- [Hexlet - new Promise (JS: Асинхронное программирование)](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/new-promise/theory_unit)
+- [Habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/)
 - [Ад обратных вызовов](http://callbackhell.ru/)
 
 <br></p>
@@ -2484,13 +2543,13 @@ catch для обработки синхронных ошибок.
 
 **Ссылки**
 
-- [habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
-- [habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+- [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+- [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
 - [learn.javascript.ru (en)](https://javascript.info/async-await)
 - [Асинхронные итераторы и генераторы]( https://learn.javascript.ru/async-iterators-generators)
 - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-- [habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
 - [Ад обратных вызовов](http://callbackhell.ru/)
 
 <br></p>
@@ -2912,9 +2971,9 @@ Function Expression – объявление функции в контекст�
 
 Ссылки:
 
-- [habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
+- [Habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
 - [hexlet](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
-- [habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
 - [Ад обратных вызовов](http://callbackhell.ru/)
 
 <br></p>
@@ -3019,7 +3078,7 @@ Function Expression – объявление функции в контекст�
 Ссылки:
 
 - [learn.javascript.ru](https://learn.javascript.ru/call-apply-decorators)
-- [habr](https://habr.com/ru/post/199456/)
+- [Habr](https://habr.com/ru/post/199456/)
 
 <br></p>
 </details>   
@@ -3048,8 +3107,8 @@ Function Expression – объявление функции в контекст�
   
 **Ссылки**
   - [learn.javascript.ru](https://learn.javascript.ru/bind)
-  - [code.mu](http://code.mu/javascript/context/bind.html) 
-  - [habr](https://habr.com/ru/post/199456/) 
+  - [code.mu](http://code.mu/javascript/context/bind.html)
+  - [Habr](https://habr.com/ru/post/199456/)
   - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
   
 <br></p>
@@ -3175,7 +3234,7 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
 - [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
 - [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
-- [habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
+- [Habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
 - [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
 - [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
 
@@ -3261,7 +3320,7 @@ const [fruit, setFruit] = useState('банан');
 
 Ссылки:
 
-* [habr - Декораторы](https://habr.com/ru/post/60957/)
+* [Habr - Декораторы](https://habr.com/ru/post/60957/)
 * [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
 <br></p>
@@ -3297,7 +3356,7 @@ var существуют и до объявления. Они равны undefin
 
 - [learn.javascript.ru](https://learn.javascript.ru/variables)
 - [learn.javascript.ru](https://learn.javascript.ru/let-const)
-- [habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
 
 <br><p>
 </details>
@@ -3406,8 +3465,8 @@ let видна только после объявления. До тех пор 
   
   Ссылки:
 
-- [habr](https://habr.com/ru/company/ruvds/blog/359060/)
-  
+- [Habr](https://habr.com/ru/company/ruvds/blog/359060/)
+
   <br></p>
 </details>
 
@@ -3850,8 +3909,8 @@ task.somethingData = 10;
 
 **Ссылки**
 
-- [habr](https://habr.com/ru/post/309318/)
-- [habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
+- [Habr](https://habr.com/ru/post/309318/)
+- [Habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
 
 <br></p>
 </details>
@@ -4051,12 +4110,13 @@ console.dirxml(). Они могут перечислить свойства эл
   - console.timeStamp - выводит текущий timestamp с текстом, который был передан в name.
   
   **Ссылки:**
-  - [habr - Используем console на полную](https://habr.com/ru/post/114483/)
-  - [habr - FireBug* Console API](https://habr.com/ru/post/188066/)
-  - [learn.javascript.ru - строки-шаблоны](https://learn.javascript.ru/es-string)
-  - [MDN - console.dir](https://developer.mozilla.org/ru/docs/Web/API/console/dir)
-  - [MDN - console.trace](https://habr.com/ru/post/141042/)
-  - [Про console.table (en)](http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
+
+- [Habr - Используем console на полную](https://habr.com/ru/post/114483/)
+- [Habr - FireBug* Console API](https://habr.com/ru/post/188066/)
+- [learn.javascript.ru - строки-шаблоны](https://learn.javascript.ru/es-string)
+- [MDN - console.dir](https://developer.mozilla.org/ru/docs/Web/API/console/dir)
+- [MDN - console.trace](https://habr.com/ru/post/141042/)
+- [Про console.table (en)](http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/)
     
   <br></p>
 </details>
@@ -4153,14 +4213,15 @@ console.dirxml(). Они могут перечислить свойства эл
   - [JSHint ](http://www.jshint.com/) - вариант JSLint с б*о*льшим количеством настроек
 
   **Ссылки**
-  - [learnjavascript - Как писать неподдерживаемый код?](https://learn.javascript.ru/write-unmain-code)
-  - [learnjavascript - Советы по стилю кода](https://learn.javascript.ru/coding-style)
-  - [habr - Рекомендации по написанию чистого кода на JavaScript](https://habr.com/ru/company/ruvds/blog/454520/)
-  - [habr - JavaScript: путь к ясности кода](https://habr.com/ru/company/ruvds/blog/342404/)
-  - [habr - 7 рекомендаций по оформлению кода на JavaScript](https://habr.com/ru/company/ruvds/blog/418631/)
-  - [habr - Как писать чистый и красивый код](https://habr.com/ru/company/ruvds/blog/347610/)
-  - [habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
-  - [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
+
+- [learnjavascript - Как писать неподдерживаемый код?](https://learn.javascript.ru/write-unmain-code)
+- [learnjavascript - Советы по стилю кода](https://learn.javascript.ru/coding-style)
+- [Habr - Рекомендации по написанию чистого кода на JavaScript](https://habr.com/ru/company/ruvds/blog/454520/)
+- [Habr - JavaScript: путь к ясности кода](https://habr.com/ru/company/ruvds/blog/342404/)
+- [Habr - 7 рекомендаций по оформлению кода на JavaScript](https://habr.com/ru/company/ruvds/blog/418631/)
+- [Habr - Как писать чистый и красивый код](https://habr.com/ru/company/ruvds/blog/347610/)
+- [Habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
+- [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
   
   <br></p>
 </details>

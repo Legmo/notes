@@ -611,7 +611,7 @@ HTTP/2 вводит технологию Server Push, которая позво�
 **Ссылки**
 
 - [Legmo - Работа браузера](/Pages/WebDeveloping/Browser.md)
-- [habr - HTTP/2 Server Push не так прост, как я думал](https://habr.com/ru/company/badoo/blog/331216/)
+- [Habr - HTTP/2 Server Push не так прост, как я думал](https://habr.com/ru/company/badoo/blog/331216/)
 
 <br></p>
 </details> 
@@ -672,7 +672,7 @@ XMLHttpRequest.
 
 **Ссылки**
 
-- [habr - Пишем документацию API при помощи RAML](https://habr.com/ru/company/selectel/blog/265337/)
+- [Habr - Пишем документацию API при помощи RAML](https://habr.com/ru/company/selectel/blog/265337/)
 
 <br></p>
 </details>
