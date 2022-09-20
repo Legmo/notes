@@ -2030,7 +2030,8 @@ rabbit.__proto__ = animal;
 Т.е. мы делаем какую-то асинхронную операцию, с результатами её работы выполняем ещё какую-то асинхронную операцию, её
 результаты передаём в следующую и т.д.
 
-**Способ использования. Описание 1**
+[//]: # (Способ использования. Описание 1)
+<details><summary><b>Способ использования. Описание 1</b></summary><p>
 
 - создаём специальный объект-промис (через конструктор new Promise()),
 - в этом объекте находится функция-исполнитель и у неё два коллбека — resolve/rejected (функция завершилась
@@ -2046,7 +2047,11 @@ rabbit.__proto__ = animal;
 - обработчики .then/.catch тоже возвращает объект-промис - можно строить длинные цепочки
 - в конце цепочки обработчиков (один или несколько .then) обязательно ставить catch/finally
 
-**Способ использования. Описание 2**
+<br></p>
+</details>
+
+[//]: # (Способ использования. Описание 2)
+<details><summary><b>Способ использования. Описание 2</b></summary><p>
 
 1. В основном коде пишем `new Promise()` и внутри запускаем асинхронную функцию
 2. Асинхронная функция создаёт объект `promise` и возвращает его.
@@ -2054,7 +2059,11 @@ rabbit.__proto__ = animal;
 4. Когда код асинхронной функции завершается, он переводит promise в состояние `fulfilled(результат)`
    или `rejected(ошибка)`. При этом автоматически вызываются соответствующие обработчики в основном коде.
 
-**Свойства объекта `promise`**
+<br></p>
+</details>
+
+[//]: # (Свойства объекта "promise")
+<details><summary><b>Свойства объекта `promise`</b></summary><p>
 
 - возвращается конструктором `new Promise`
 - `state` («состояние»)
@@ -2067,7 +2076,11 @@ rabbit.__proto__ = animal;
   - при вызове `reject(error)` меняется на `error`
     <br>
 
-**Обработчики промиса**
+<br></p>
+</details>
+
+[//]: # (Обработчики промиса)
+<details><summary><b>Обработчики промиса</b></summary><p>
 
 - назначаются вызовом `then`/`catch`/`finally`
 - `.then` = универсальный метод для навешивания обработчиков-колбэков:
@@ -2124,137 +2137,36 @@ rabbit.__proto__ = animal;
       ```
     <br>
 
-**Синтаксис `Promise.resolve().then()`**
+<br></p>
+</details>
 
-Бывает что асинхронного кода нет, но нужен промис, чтобы построить цепочку.<br>
+[//]: # (Синтаксис "Promise.resolve")
+<details><summary><b>Синтаксис `Promise.resolve().then()`*</b></summary><p>
 
-```js
-//Пример цепочки после успешного завершения
-const promise = new Promise((resolve) => resolve());
-// promise.then ...
-
-//Пример цепочки после неудчаного завершения
-const promise = new Promise((resolve, reject) => reject());
-// promise.catch ...
-````
-
-Для этих задач есть спец. синтаксис, с ним код становится чище:
-
-```js
-const promise1 = Promise.resolve();
-// promise1.then
-
-const promise2 = Promise.reject();
-// promise2.catch ...
-````  
-
-**Примеры кода**
+- Бывает что асинхронного кода нет, но нужен промис, чтобы построить цепочку.<br>
 
 - ```js
-  //Создаём объект-промис
-  let promise = new Promise(function (resolve, reject) {
-    // Эта функция будет вызвана автоматически, в ней можно делать любые асинхронные операции,
-    // Когда они завершатся — нужно вызвать resolve(результат) при успехе или reject(ошибка) при ошибке
-    setTimeout(() => resolve(result), 1000); // переведёт промис в состояние fulfilled с результатом "result", через 1 сек
-  })
+  //Пример цепочки после успешного завершения
+  const promise = new Promise((resolve) => resolve());
+  // promise.then ...
   
-  //Навешиваем обработчик с двумя вариантами реакции - на успех и ошибку
-  promise
-        .then(
-                // функция-обработчик №1 - запустится при вызове resolve
-                result => console.log("Fulfilled: " + result), // result - аргумент resolve
+  //Пример цепочки после неудчаного завершения
+  const promise = new Promise((resolve, reject) => reject());
+  // promise.catch ...
+  ````
 
-                // функция-обработчик №2 - запустится при вызове reject
-                // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
-                error => console.log("Rejected: " + error), // error - аргумент reject
-        );
-  ```
+- Для этих задач есть спец. синтаксис, с ним код становится чище:
 
 - ```js
-  //Промис в функции
-  const loadImg = url => {
-    return new Promise((resolve, reject) => {
-      const getSomething = new XMLHttpRequest();
-      getSomething.open("GET", url);
-
-      getSomething.onload = () => resolve(xhr.responseText); //передаем в resolve ответ
-      getSomething.onerror = () => reject(xhr.statusText); //переадем в reject текст ошибки
-
-      getSomething.send();
-    });
-  }
-
-  loadImg(url)
-        .then(
-                function (result) {
-                  //some work
-                },
-                function (err) {
-                  console.log(err);
-                }
-        );
-  ```
-
-- ```js
-  //Вызов промиса без объявления переменной
-  new Promise((resolve, reject) => {
-    setTimeout(() => resolve(1), 1000);
-  }).then(function (result) {
-    //some work
-  });
-  ```
-
-- ```js
-  //когда асинхронного кода нет, но нужен промис, чтобы построить цепочку
-  //Сразу переводим промис в состояние resolve (c данными value) и передаём данные в then.
- 
-  //Для этого есть спец. синтаксис 
-  Promise.resolve(value)
-  .then(result => console.log(value));
+  const promise1 = Promise.resolve();
+  // promise1.then
   
-  //То же самое что
-  new Promise(resolve => resolve(value))
-  .then(result => console.log(value));
-  
-  //То же самое что
-  new Promise(function (resolve) {
-    resolve(value);
-  })
-  .then(result => console.log(value));
-  ```
+  const promise2 = Promise.reject();
+  // promise2.catch ...
+  ````  
 
-- ```js
-  //Возвращение промиса из .then - построение цепочки асинхронных действий
-  new Promise((resolve, reject) => {
-    setTimeout(() => resolve(1), 1000);
-  }).then(function (result) {
-    alert(result); // 1
-  
-    return new Promise((resolve, reject) => { // then возвращает новый промис
-      setTimeout(() => resolve(result * 2), 1000);
-    });
-  }).then(function(result) { // (**)
-    alert(result); // 2
-  });
-  ```
-  <br>
-
-**Заметки**
-
-- насколько я понял, использование стрелочной функции ничего не меняет. Во всяком случае
-  в `.then(script => loadScript("/article/promise-chaining/two.js"))`.
-- Функции-коллбеки `resolve(value)` и `reject(error)` принимают только один аргумент: value или error. Или ни одного.
-  Все дополнительные аргументы будут проигнорированы.
-- В `reject(error)` можно передать любой аргумент. Но рекомендуется использовать объект `Error` (или унаследованный от
-  него).
-- внутри `then` всегда использовать `return` или выдавать ошибку при помощи `throw`.
-- в конец цепочки промисов `.then(...).then(...)` всегда добавлять метод `catch()`: .catch(console.log.bind(console))
-- всегда добавлять обработку ошибок ниже в виде `catch()`,
-  - Никогда не использовать для этой цели вторую функцию в методе `then()`
-  - Исключение только одно — асинхронные тесты в Mocha, в случаях, когда я намеренно жду ошибку:
-- Как правило, все асинхронные действия должны возвращать промис.
-  - Позволяет планировать после него какие-то дополнительные действия по завершении асинхронной части.
-  - Даже если эта возможность не нужна прямо сейчас, она может понадобиться в будущем.
+<br></p>
+</details>
 
 [//]: # (Сhaining - чейнинг)
 <details><summary><b>Сhaining (чейнинг)</b></summary><p>
@@ -2271,17 +2183,17 @@ const promise2 = Promise.reject();
 
 ```js
   httpGet('/article/promise/user.json') //делаем запрос
-    .then(response => {
-        console.log(response);
-        let user = JSON.parse(response);
-        return user;
-    })
-    // 2. Получить информацию с github
-    .then(user => {
-        console.log(user);
-        let githubUser = httpGet(`https://api.github.com/users/${user.name}`)
-      return githubUser;
-    })
+        .then(response => {
+          console.log(response);
+          let user = JSON.parse(response);
+          return user;
+        })
+        // 2. Получить информацию с github
+        .then(user => {
+          console.log(user);
+          let githubUser = httpGet(`https://api.github.com/users/${user.name}`)
+          return githubUser;
+        })
         // 3. Вывести картинку юзера
         .then(githubUser => {
           console.log(githubUser);
@@ -2427,6 +2339,122 @@ f и возвращает функцию-обёртку.<br>
   - метод `Promise.any` — принимает n промисов и возвращает первый успешно завершившийся.
   - объект `AggregateError` — новый тип ошибок. Представить n ошибок в виде одной комбинированной. Например для
     Promise.any(), если все promises завершились в rejected
+
+<br></p>
+</details>
+
+[//]: # (Заметки)
+<details><summary><b>Заметки</b></summary><p>
+
+- насколько я понял, использование стрелочной функции ничего не меняет. Во всяком случае
+  в `.then(script => loadScript("/article/promise-chaining/two.js"))`.
+- Функции-коллбеки `resolve(value)` и `reject(error)` принимают только один аргумент: value или error. Или ни одного.
+  Все дополнительные аргументы будут проигнорированы.
+- В `reject(error)` можно передать любой аргумент. Но рекомендуется использовать объект `Error` (или унаследованный от
+  него).
+- внутри `then` всегда использовать `return` или выдавать ошибку при помощи `throw`.
+- в конец цепочки промисов `.then(...).then(...)` всегда добавлять метод `catch()`: .catch(console.log.bind(console))
+- всегда добавлять обработку ошибок ниже в виде `catch()`,
+  - Никогда не использовать для этой цели вторую функцию в методе `then()`
+  - Исключение только одно — асинхронные тесты в Mocha, в случаях, когда я намеренно жду ошибку:
+- Как правило, все асинхронные действия должны возвращать промис.
+  - Позволяет планировать после него какие-то дополнительные действия по завершении асинхронной части.
+  - Даже если эта возможность не нужна прямо сейчас, она может понадобиться в будущем.
+
+<br></p>
+</details>
+
+[//]: # (Примеры кода)
+<details><summary><b>Примеры кода</b></summary><p>
+
+- ```js
+  //Создаём объект-промис
+  let promise = new Promise(function (resolve, reject) {
+    // Эта функция будет вызвана автоматически, в ней можно делать любые асинхронные операции,
+    // Когда они завершатся — нужно вызвать resolve(результат) при успехе или reject(ошибка) при ошибке
+    setTimeout(() => resolve(result), 1000); // переведёт промис в состояние fulfilled с результатом "result", через 1 сек
+  })
+  
+  //Навешиваем обработчик с двумя вариантами реакции - на успех и ошибку
+  promise
+        .then(
+                // функция-обработчик №1 - запустится при вызове resolve
+                result => console.log("Fulfilled: " + result), // result - аргумент resolve
+
+                // функция-обработчик №2 - запустится при вызове reject
+                // сработала бы, если б в SetTimeout вместо resolve("result") был вызов reject("error")
+                error => console.log("Rejected: " + error), // error - аргумент reject
+        );
+  ```
+
+- ```js
+  //Промис в функции
+  const loadImg = url => {
+    return new Promise((resolve, reject) => {
+      const getSomething = new XMLHttpRequest();
+      getSomething.open("GET", url);
+
+      getSomething.onload = () => resolve(xhr.responseText); //передаем в resolve ответ
+      getSomething.onerror = () => reject(xhr.statusText); //переадем в reject текст ошибки
+
+      getSomething.send();
+    });
+  }
+
+  loadImg(url)
+        .then(
+                function (result) {
+                  //some work
+                },
+                function (err) {
+                  console.log(err);
+                }
+        );
+  ```
+
+- ```js
+  //Вызов промиса без объявления переменной
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve(1), 1000);
+  }).then(function (result) {
+    //some work
+  });
+  ```
+
+- ```js
+  //когда асинхронного кода нет, но нужен промис, чтобы построить цепочку
+  //Сразу переводим промис в состояние resolve (c данными value) и передаём данные в then.
+ 
+  //Для этого есть спец. синтаксис 
+  Promise.resolve(value)
+  .then(result => console.log(value));
+  
+  //То же самое что
+  new Promise(resolve => resolve(value))
+  .then(result => console.log(value));
+  
+  //То же самое что
+  new Promise(function (resolve) {
+    resolve(value);
+  })
+  .then(result => console.log(value));
+  ```
+
+- ```js
+  //Возвращение промиса из .then - построение цепочки асинхронных действий
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve(1), 1000);
+  }).then(function (result) {
+    alert(result); // 1
+  
+    return new Promise((resolve, reject) => { // then возвращает новый промис
+      setTimeout(() => resolve(result * 2), 1000);
+    });
+  }).then(function(result) { // (**)
+    alert(result); // 2
+  });
+  ```
+  <br>
 
 <br></p>
 </details>
