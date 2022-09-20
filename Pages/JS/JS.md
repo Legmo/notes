@@ -1989,8 +1989,8 @@ rabbit.__proto__ = animal;
 <br></p>
 </details>
 
-[//]: # (Promises, Промисы)
-<details><summary><b>Promises</b></summary><p>
+[//]: # (Промисы, Promises )
+<details><summary><b>Промисы (Promises)</b></summary><p>
 
 Способ организации асинхронного кода.<br>
 Объект, который содержит своё состояние (ожидание, выполнен успешно, ошибка).<br>
