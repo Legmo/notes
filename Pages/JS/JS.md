@@ -3635,8 +3635,9 @@ Web Workers не имеют доступа к DOM, поэтому основно
 </details>
 
 [//]: # (Методы массивов)
-<a name="arrayMethods"></a>
-<details><summary><b>Методы массивов</b></summary><p>
+
+[//]: # (<a name="arrayMethods">&nbsp;</a>)
+<details id="arrayMethods"><summary><b>Методы массивов</b></summary><p>
 
 **Основные**
 
