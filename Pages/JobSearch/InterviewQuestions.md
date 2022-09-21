@@ -13,14 +13,8 @@
 -
 - [Что нового в последних 3 версиях JS](../JS/JS.md)
 - [Работа JS-движка](../JS/JS.md)
-  - Event Loop
-  - стэк
-  - очередь задач
-  - микро/макро задачи
-  - SetInterval
-  - promises, обработчики промисов (then, catch, finally)
-  - веб-воркеры
-  - web API...
+  - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
+    промисов (then, catch, finally), async/await, веб-воркеры,
   - асинхронность и однопоточность JS - что это значит и чем обусловлено
   - В каком порядке будут выводиться console.log, Promise
 - [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
@@ -32,11 +26,8 @@
 - [Замыкания](https://learn.javascript.ru/closure)
 - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
   и [ещё они же](https://learn.javascript.ru/arrow-functions)
-- Ключевое слово this
-  - https://learn.javascript.ru/object-methods
-  - https://learn.javascript.ru/arrow-functions
-  - [Habr - Что записано в this? Закулисье JavaScript-объектов](https://habr.com/ru/company/ruvds/blog/455527/)
-  - [Habr - Ключевое слово this в JavaScript для начинающих](https://habr.com/ru/company/ruvds/blog/419371/)
+- [Ключевое слово this](../JS/JS.md#this)
+
 - [Метод bind()](https://learn.javascript.ru/bind)
 - [Методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
 - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)

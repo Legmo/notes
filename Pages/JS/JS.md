@@ -3373,7 +3373,7 @@ Function Expression – объявление функции в контекст�
 </details>
 
 [//]: # (Ключевое слово this)
-<details><summary><b>Ключевое слово `this`</b></summary><p>
+<details id="this"><summary><b>Ключевое слово `this`</b></summary><p>
 
 `this` — текущий контекст исполнения функции.<br>
 Ссылка на некий объект, к свойствам которого можно получить доступ внутри вызова функции. <br>
@@ -3445,6 +3445,7 @@ Function Expression – объявление функции в контекст�
 **Ссылки**
 
 - [learn.javascript.ru - Методы объекта, "this"](https://learn.javascript.ru/object-methods)
+- [learn.javascript.ru - Стрелочные функции](https://learn.javascript.ru/arrow-functions)
 - [Habr - Ключевое слово this в JavaScript для начинающих](https://habr.com/ru/company/ruvds/blog/419371/)
 - [О ключевом слове «this» языка JavaScript: особенности использования с пояснениями](https://tproger.ru/translations/javascript-this-keyword/)
 - [MDN - this](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this)
