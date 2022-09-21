@@ -1064,7 +1064,11 @@ console.log('End');
 Интерпретатор JS будет ждать, пока промис справа от `await` не выполнится.<br>
 После чего оно вернёт его результат, и выполнение кода продолжится.
 
+Ключевое слово `await` говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами
+асинхронной функции.
+
 Вроде это должно работать как обычный `.then`
+
 - Это просто «синтаксический сахар» для получения результата промиса, аналог `promise.then`.
 - Хотя await и заставляет JavaScript дожидаться выполнения промиса, это не отнимает ресурсов процессора.
 - Пока промис не выполнится, JS-движок может заниматься другими задачами: выполнять прочие скрипты, обрабатывать события
@@ -2093,7 +2097,119 @@ rabbit.__proto__ = animal;
     неудаче
   - `promise.then(onFulfilled)` //сработает если промис завершился удачно, при неудаче ничего не произойдёт
   - `promise.then(null, onFulfilled)` //сработает если промис завершился неудачно, при удаче ничего не произойдёт
-- `.catch` = чтобы поставить обработчик только на ошибку
+  - Внутри .then обязательно должна быть функция.
+    - Всё кроме функции интерпретируется как then(null) и в следующий по цепочке обработчик «проваливается» результат
+      предыдущего.
+    - ```js
+      //Вариант с ошибкой
+      Promise.resolve('foo')
+      .then(Promise.resolve('bar')) //нет функции => вернёт null
+      .then(function (result) {
+        console.log(result); //'foo' - «провалился» из первой строки
+      });
+      
+      //То же самое
+      Promise.resolve('foo')
+      .then(null) 
+      .then(function (result) {
+        console.log(result); //'foo' - «провалился» из первой строки
+      });
+      
+      //Вариант с другой ошибкой
+      Promise.resolve('foo')
+      .then(() => {Promise.resolve('bar');}) //в then функция, но она не делает return — вренёт undefined
+      .then(result => {
+        console.log(result); //'undefined'
+      });
+      
+      //Вариант без ошибки 1
+      Promise.resolve('foo')
+      .then(() => {return Promise.resolve('bar');}) //функция + return результатов работы Promise
+      .then(result => {
+        console.log(result); //'bar'
+      });
+            
+      //Вариант без ошибки 2
+      Promise.resolve('foo')
+      .then(someFunc()) //функция выполнится
+      .then(result => {
+        console.log(result); //Если в someFunc() есть return - выведутся отправленные ей данные. Иначе undefined.
+      });
+      ```
+  - Если хочешь передать данные в следующий обработчик - должен быть `return`
+    - Если в обработчике нет `return` — обработчик возвращает undefined
+    - ```js
+      //Вариант с ошибкой
+      Promise.resolve('foo')
+      .then(() => {Promise.resolve('bar');}) //Не делает return — вренёт undefined
+      .then(result => {
+        console.log(result); //'undefined'
+      });
+      
+      //Вариант без ошибки
+      Promise.resolve('foo')
+      .then(() => {return Promise.resolve('bar');}) //Есть return результатов работы Promise
+      .then(result => {
+        console.log(result); //'bar'
+      });
+      ```
+  - Можем сделать три вещи
+    - Вернуть (return) другой промис
+      - в `return` пишем другой промис, когда он выполнится - его результат попадёт в следующий обработчик
+      - если я просто вызову другой промис (без return) - промис выполнится. Но в следующий обработчик придёт именно то,
+        что объявлено в return (или `undefined`, если return нет). Т.е. промис выполнится и НЕ передаст свои результаты
+        дальше по цепочке обработчиков.
+      - ```js
+        getUserByName('Ivan')
+        .then(function (user) {
+          // Функция getUserAccountById возвращает promise, результат которого попадет в следующий then
+          return getUserAccountById(user.id);
+        })
+        .then(function (userAccount) {
+          // Я знаю все о пользователе!
+        });
+        ```
+    - Вернуть (return) обычное синхронное значение (или undefined)
+      - ```js
+        getUserByName('Ivan')
+        .then(function (user) {
+          if (inMemoryCache[user.id]) {
+            // Данные этого пользователя уже есть в обычном синхронном коде, возвращаем сразу
+            return inMemoryCache[user.id];
+          }
+          // Про этого пока не знаем, вернем промис запроса
+          return getUserAccountById(user.id);
+        })
+        .then(function (userAccount) {
+          // Я знаю все о пользователе!
+        });
+        ```
+    - Выдать (throw) синхронную ошибку
+      - ```js
+        getUserByName('Ivan')
+        .then(function (user) {
+          if (user.isLoggedOut()) {
+            // Пользователь вышел — выдаем ошибку!
+            throw new Error('user logged out!');
+          }
+          if (inMemoryCache[user.id]) {
+            // Данные этого пользователя уже есть в обычном синхронном коде, возвращаем сразу
+            return inMemoryCache[user.id];
+          }
+          // Про этого пока не знаем, вернем промис запроса
+          return getUserAccountById(user.id);
+        })
+        .then(function (userAccount) {
+          // Я знаю все о пользователе!
+        })
+        .catch(function (err) {
+          // Упс, ошибка, но мы к ней готовы!
+        });
+        ```
+        - catch() получит синхронную ошибку, если пользователь не авторизован, или асинхронную, если любой из промисов
+          выше перейдет в состояние rejected. Функции в catch без разницы, была ошибка синхронной или асинхронной.
+- `.catch` = чтобы поставить обработчик только на ошибку.
+  - это синтаксический сахар для `.then(null, onFulfilled)`, просто более короткий способ записать его.
   - `.catch(onRejected)` – сработает только при неудачном завершении промиса
   - `.catch(onRejected)` = сокращённая запись `.then(null, onRejected).`
   - Если промис завершается с ошибкой, то управление переходит в ближайший `.catch` ниже по коду. `.catch` не
@@ -2323,6 +2439,30 @@ f и возвращает функцию-обёртку.<br>
 <br></p>
 </details>
 
+[//]: # (Асинхронные итераторы, for-await-of. ForEach, for и while)
+<details><summary><b>Асинхронные итераторы, for-await-of. ForEach, for и while</b></summary><p>
+
+Надо относиться очень аккуратно к использованию `forEach`, `for` и `while` в промисах.
+Скорее всего нужен `Promise.all()` или что-то в этом духе.
+
+Просто использовать цикл for или метод forEach с асинхронными операциями мы не можем. И цикл for и метод forEach ожидают
+синхронный код.<br>
+Однако мы можем использовать for await...of, который появился в ES2018, для обхода асинхронных итерируемых сущностей.
+
+Подробнее:
+
+- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/vk/blog/269465/)
+
+Есть ещё асинхронные итераторы (используется цикл for-await-of) - объединяют возможности итераторов и операторов async и
+await.
+
+- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+- [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+- [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
+
+<br></p>
+</details>
+
 [//]: # (Что нового)
 <details><summary><b>Что нового</b></summary><p>
 
@@ -2348,9 +2488,14 @@ f и возвращает функцию-обёртку.<br>
 [//]: # (Заметки)
 <details><summary><b>Заметки</b></summary><p>
 
-- насколько я понял, использование стрелочной функции ничего не меняет. Во всяком случае
-  в `.then(script => loadScript("/article/promise-chaining/two.js"))`.
-- Функции-коллбеки `resolve(value)` и `reject(error)` принимают только один аргумент: value или error. Или ни одного.
+- Как правило, все асинхронные действия должны возвращать промис.
+  - Позволяет планировать после него какие-то дополнительные действия по завершении асинхронной части.
+  - Даже если эта возможность не нужна прямо сейчас, она может понадобиться в будущем.
+- Можно работать с промиса в обычных функциях, можно в
+  стрелочных `.then(script => loadScript("/article/promise-chaining/two.js"))`.
+- Функция-executor в промисе должна вызвать либо `resolve(value)`, либо `reject(error)`. Если кроме этого она возвращает
+  значение (т.е. делает какой-то return) - оно буде проигнорировано.
+- Функции-колбэки `resolve(value)` и `reject(error)` принимают только один аргумент: value или error. Или ни одного.
   Все дополнительные аргументы будут проигнорированы.
 - В `reject(error)` можно передать любой аргумент. Но рекомендуется использовать объект `Error` (или унаследованный от
   него).
@@ -2359,9 +2504,6 @@ f и возвращает функцию-обёртку.<br>
 - всегда добавлять обработку ошибок ниже в виде `catch()`,
   - Никогда не использовать для этой цели вторую функцию в методе `then()`
   - Исключение только одно — асинхронные тесты в Mocha, в случаях, когда я намеренно жду ошибку:
-- Как правило, все асинхронные действия должны возвращать промис.
-  - Позволяет планировать после него какие-то дополнительные действия по завершении асинхронной части.
-  - Даже если эта возможность не нужна прямо сейчас, она может понадобиться в будущем.
 
 <br></p>
 </details>
@@ -2464,17 +2606,18 @@ f и возвращает функцию-обёртку.<br>
 
 **Ссылки**
 
-- [learn.javascript.ru](https://learn.javascript.ru/promise-basics)
-- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
-- [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
-- [Habr - Познаем промисы на основе Ecmascript спецификации. Знакомство](https://habr.com/ru/post/478938/)
+- [learn.javascript.ru - Промисы](https://learn.javascript.ru/promise-basics)
 - [MDN - Промисы](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [MDN - Использование промисов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Using_promises)
+- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/mailru/blog/269465/)
+- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
 - [Hexlet - new Promise (JS: Асинхронное программирование)](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/new-promise/theory_unit)
 - [Habr - Промисы в ES6: паттерны и анти-паттерны](https://m.habr.com/ru/company/ruvds/blog/339414/)
+- [Habr - Познаем промисы на основе Ecmascript спецификации. Знакомство](https://habr.com/ru/post/478938/)
+- [Medium - Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
 - [Ад обратных вызовов](http://callbackhell.ru/)
+- [WebDev - ES6 #13 Промисы (YouTube)](https://youtu.be/XD1MKx7eIuQ)
 
 <br></p>
 </details>
@@ -2499,15 +2642,11 @@ f и возвращает функцию-обёртку.<br>
 
 - Если промис завершается с ошибкой, будет сгенерировано исключение, как если бы на этом месте находилось `throw`.
 - Иначе вернётся результат промиса — то, что возвращает асинхронная функция справа от слова await.
-
-Await отлично работает в сочетании с `Promise.all`, если необходимо выполнить несколько задач параллельно.
-
-`Promise.all` — запустить N промисов параллельно и дождаться, пока все они выполнятся.
-
-- Если любой из промисов завершится с ошибкой, то промис, возвращённый Promise.all, немедленно завершается с этой
-  ошибкой. При этом остальные результаты игнорируются.
+- Ключевое слово await говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами
+  асинхронной функции.
   <br>
   <br>
+
 
 [//]: # (Преимущества)
 <details><summary><b>Преимущества</b></summary><p>
@@ -2528,8 +2667,8 @@ Await отлично работает в сочетании с `Promise.all`, е
   механизмов — выражением `try / catch`.
 - Также cтек ошибки, возвращённый из цепочки промисов, не содержит сведений о точном месте, в котором произошла ошибка.
   В В отличие от `async / await` этой проблемы нет
-  <br></p>
 
+<br></p>
 </details>
 
 [//]: # (Про отладку)
@@ -2557,9 +2696,14 @@ Await отлично работает в сочетании с `Promise.all`, е
   - Пока промис не выполнится, JS-движок может заниматься другими задачами: выполнять прочие скрипты, обрабатывать
     события и т.п.
 
-- Слово `await` сообщает что
-  - мы должны дождаться выполнения асинхронной функции
-  - не помещать ее в event loop, а выполнить прямо здесь.
+Ключевое слово `await` говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами
+асинхронной функции.
+
+Слово `await` сообщает что
+
+- мы должны дождаться выполнения асинхронной функции
+- не помещать ее в event loop, а выполнить прямо здесь.
+
 
 - ```js
   // Мы дожидаемся выполнения асинхронной функции getData(), 
@@ -2600,8 +2744,77 @@ Await отлично работает в сочетании с `Promise.all`, е
 <br></p>
 </details>
 
+[//]: # (Async и Promise.all)
+<details><summary><b>Async и Promise.all</b></summary><p>
+
+Await отлично работает в сочетании с `Promise.all`, если необходимо выполнить несколько задач параллельно.
+
+`Promise.all` — запустить N промисов параллельно и дождаться, пока все они выполнятся.<br>
+Если любой из промисов завершится с ошибкой, то промис, возвращённый Promise.all, немедленно завершается с этой
+ошибкой. При этом остальные результаты игнорируются.
+
+<br></p>
+</details>
+
+[//]: # (Асинхронные итераторы, for-await-of. ForEach, for и while)
+<details><summary><b>Асинхронные итераторы, for-await-of. ForEach, for и while</b></summary><p>
+
+Надо относиться очень аккуратно к использованию `forEach`, `for` и `while` в промисах.
+Скорее всего нужен `Promise.all()` или что-то в этом духе.
+
+Просто использовать цикл for или метод forEach с асинхронными операциями мы не можем. И цикл for и метод forEach ожидают
+синхронный код.<br>
+Однако мы можем использовать for await...of, который появился в ES2018, для обхода асинхронных итерируемых сущностей.
+
+Подробнее:
+
+- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/vk/blog/269465/)
+
+Есть ещё асинхронные итераторы (используется цикл for-await-of) - объединяют возможности итераторов и операторов async и
+await.
+
+- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+- [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+- [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
+
+<br></p>
+</details>
+
 [//]: # (Примеры использования)
 <details><summary><b>Примеры использования</b></summary><p>
+
+- ```js
+  //Использование со стрелочной функцией
+  const foo = async() => {console.log(await getData())};
+  foo();
+  ````
+
+- ```js
+  //Отлавливание ошибок
+  const foo = async() => {
+    try {
+        console.log(await getData())
+    } catch(err) {
+        console.error(err)    
+    }
+  };
+  foo();
+  ````
+
+- ```js
+  //Пример с then
+  
+
+  //Он же с async/await
+  const foo = async() => {
+    try {
+        console.log(await getData())
+    } catch(err) {
+        console.error(err)    
+    }
+  };
+  foo();
+  ````
 
 - ```js
   //A. Вариант с .then
@@ -2715,14 +2928,22 @@ Await отлично работает в сочетании с `Promise.all`, е
 
 **Ссылки**
 
+- [learn.javascript.ru - Async/await](https://learn.javascript.ru/async-await)
+- [MDN - Async/await](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Promises)
 - [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
 - [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-- [learn.javascript.ru (en)](https://javascript.info/async-await)
-- [Асинхронные итераторы и генераторы]( https://learn.javascript.ru/async-iterators-generators)
-  [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://stasonmars.ru/javascript/polnoe-ponimanie-syncronnogo-i-asyncronnogo-javascript-s-async-await/)
 - [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
 - [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Habr - Поймут даже дети: простое объяснение async/await и промисов в JavaScript](https://habr.com/ru/post/474726/?ysclid=l8aawlijry104453440)
+- [Habr - Разница между асинхронной функцией и функцией, возвращающей промис](https://habr.com/ru/post/475260/)
+- [Дока - Асинхронность в JS ](https://doka.guide/js/async-in-js/?ysclid=l8abi9sfsv463636739)
+  [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://stasonmars.ru/javascript/polnoe-ponimanie-syncronnogo-i-asyncronnogo-javascript-s-async-await/)
 - [Ад обратных вызовов](http://callbackhell.ru/)
+- [WebDev - ES6 #14 Async/Await (YouTube)](https://youtu.be/b17RVAqp5QA)
+
+- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+- [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+- [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
 
 <br></p>
 </details>

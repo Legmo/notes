@@ -1,24 +1,25 @@
 # Заметки о web-разработке #
 
 ## Технологии ##
+- [Вопросы для собеседования frontend (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
 - [JavaScript](/Pages/JS/JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
 - [React JS](/Pages/JS/React.md)
 - [Redux (for React)](/Pages/JS/Redux.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
-- [REST](/Pages/WebDeveloping/REST.md)
+- [Интернет-технологии (AJAX, JSON, CORS...)](/Pages/WebDeveloping/Technologies.md)
+- [REST, HTTP](/Pages/WebDeveloping/REST.md)
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
-- [Интернет-технологии — AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Technologies.md)
-- [Вопросы-ответы для собеседования frontend-разработчика (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
 - [GIT](/Pages/_Other/GIT.md)
 - [Bootstrap 4 & SASS](/Pages/WebDeveloping/HtmlCssQuestions.md)
 - [Консоли, терминалы и оболочки](/Pages/_Other/Console.md)
 - [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
 
 ## Поиск работы ##
-- [Где искать работу?](/Pages/JobSearch/HR-company.md)
+
 - [Как проходить собеседования?](/Pages/JobSearch/Interview.md)
+- [Где искать работу?](/Pages/JobSearch/HR-company.md)
 - [Как понять чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
 - [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
 
@@ -36,7 +37,7 @@
 - [UX/UI](/Pages/_Other/UxUi.md)
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
-- [Continuous Integration (CI), Continuous Delivery (CD), Continuous Deployment (CD)](/Pages/Programming/CI-CD.md)
+- [CI-CD](/Pages/Programming/CI-CD.md)
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
 - [Программирование в целом](/Pages/Programming/Programming.md)

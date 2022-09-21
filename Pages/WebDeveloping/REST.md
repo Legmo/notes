@@ -1,4 +1,4 @@
-<h1>REST (REpresentational State Transfer)</h1>
+<h1>REST (REpresentational State Transfer), HTTP</h1>
 
 Aрхитектурный стиль, принципы обеспечения стандартов между компьютерными системами в сети.<br>
 Облегчает системам обмен данными.

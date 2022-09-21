@@ -132,7 +132,7 @@
 - [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
 - [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
-- [Цикл for-await-of](https://learn.javascript.ru/async-await)
+- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
 - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
 - [Прототипы](https://learn.javascript.ru/prototypes)
 - Классы
