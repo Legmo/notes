@@ -10,13 +10,14 @@
 
 - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 - [Legmo - JS](../JS/JS.md)
+- [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
 -
 - [Что нового в последних 3 версиях JS](../JS/JS.md)
 - [Работа JS-движка](../JS/JS.md)
-  - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
-    промисов (then, catch, finally), async/await, веб-воркеры,
-  - асинхронность и однопоточность JS - что это значит и чем обусловлено
-  - В каком порядке будут выводиться console.log, Promise
+    - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
+      промисов (then, catch, finally), async/await, веб-воркеры,
+    - асинхронность и однопоточность JS - что это значит и чем обусловлено
+    - В каком порядке будут выводиться console.log, Promise
 - [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
 -
 - [Use strict](https://learn.javascript.ru/strict-mode)
@@ -26,41 +27,38 @@
 - [Замыкания](https://learn.javascript.ru/closure)
 - [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
   и [ещё они же](https://learn.javascript.ru/arrow-functions)
+- [Контекст выполнения](../JS/JS.md#this)
 - [Ключевое слово this](../JS/JS.md#this)
-
 - [Метод bind()](https://learn.javascript.ru/bind)
 - [Методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
-- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-- [Контекст выполнения](../JS/JS.md#asynchronyContext)
-- [Рекурсия](https://learn.javascript.ru/recursion)
-  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+-
 - [Promise, Async/Await](https://learn.javascript.ru/async)
+- [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
+- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
 - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
   Fetch API
 - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
-- Структуры [Map и Set](https://learn.javascript.ru/map-set)
-  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
 -
-- [Ver, Let, Const](https://learn.javascript.ru/var)
-- Типы в JS (string, number, object...)
-- [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
 - Что является объектом в JS?
-- Различия Undefined и Null
 - Передача по значению / по ссылке
-- Копирование объектов обычное
-  - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
-  - Object.assign
-- Клонирование объектов глубокое
-  - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-  - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-  - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-  - lodash.cloneDeep(obj)
-- [Методы примитивов](../JS/JS.md#primitiveMethods)
 - [Методы объектов](../JS/JS.md#objectMethods)
 - [Методы массивов](../JS/JS.md#arrayMethods)
-  - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+    - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
 - Мутирующие методы массивов
-- [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
+- Копирование объектов обычное
+    - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
+    - Object.assign
+- Клонирование объектов глубокое
+    - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
+    - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+    - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
+    - lodash.cloneDeep(obj)
+-
+- Типы в JS (string, number, object...)
+- [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
+- Различия Undefined и Null
+- [Методы примитивов](../JS/JS.md#primitiveMethods)
+- [Ver, Let, Const](https://learn.javascript.ru/var)
 - [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
 - [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
 - [Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
@@ -69,14 +67,19 @@
 - [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
 - [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
-- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
+-
+- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+- [Рекурсия](https://learn.javascript.ru/recursion)
+  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+- Структуры [Map и Set](https://learn.javascript.ru/map-set)
+  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
 - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
 - [Прототипы](https://learn.javascript.ru/prototypes)
 - Классы
-  - [Базовые вопросы](https://learn.javascript.ru/classes)
-  - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-  - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
-  - ...
+    - [Базовые вопросы](https://learn.javascript.ru/classes)
+    - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+    - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+    - ...
 - Как профилировать и отлаживать js (кроме console.log)
 - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
 -
