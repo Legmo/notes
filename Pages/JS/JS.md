@@ -3759,31 +3759,61 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [setprototypeof](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
   - Устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
 - [fromEntries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) -
-- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) -
+  преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
+- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) - проверять
+  является ли св-во прямым свойством объекта, даже если его значение null или undefined. В отличие от оператора `in` -
+  не проверяет это свойство в цепочке прототипов объекта.
 - [hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-  -
+  - проверять содержит ли объект указанное неунаследованно) свойство, или метод.
 - [isPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
-  -
+  - проверяет существует ли указанный объект в цепочке прототипов другого объекта
 - [propertyIsEnumerable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
-  -
+  - является ли указанное свойство перечисляемым. Перечисляемые - все свойства, которые добавляются к объекту, являются
+    перечисляемыми по умолчанию. Встроенные свойства не перечисляется.
 - [setPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
-  -
-- [toLocaleString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
-  -
-- [toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) -
-- [valueOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) -
+  - позволяет установить или изменить прототип указанному объекту.Создаваемый объект наследует свойства от прототипа.
+- [toLocaleString](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
+  - возвращает строку, представляющую объект. Предназначен для переопределения унаследованными объектами в целях
+    поддержки зависимости от локали.
+- [toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) -
+  возвращает строку, представляющую объект.
+- [valueOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) - для
+  преобразования объекта в примитивное значение.
 
 **Устаревшие**
 
-- __defineGetter__ - вместо него
-- __defineSetter__ - вместо него
-- __lookupGetter__ - вместо него
-- __lookupSetter__ - вместо него
-- __proto__ - вместо него
+- [__
+  defineGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__)
+  - привязывает свойство объекта к функции, вызываемой каждый раз при поиске этого свойства. Вместо
+  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+- [__
+  defineSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__)
+  - привязывает свойство объекта к функции, вызываемой каждый раз при попытке установить значение этого свойства. Вместо
+  него рекомендуется
+  использовать `(синтаксис инициализатора объекта (new Object(), Object.create() или литеральную нотацию)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer)`
+  или `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+  .
+- [__
+  lookupGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__)
+  - возвращает функцию, привязанную к геттеру указанного свойства. Вместо
+  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+  и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+  .
+- [__
+  lookupSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__)
+  - возвращает функцию, привязанную к сеттеру указанного свойства. Вместо
+  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+  и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+  .
+- [__proto__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) - является
+  свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта (
+  являющийся объектом или null), через который осуществлялся доступ. Вместо него `Object.getPrototypeOf`
+  /`Object.setPrototypeOf`.
 
 **Новые**
+
 - `hasOwn()` — ES13 (2022). проверяет: принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
-- что добавили в последние несколько лет
+- `fromEntries` — ES10 (2019). преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
 
 **Про мутирование объектов**
 
@@ -3800,6 +3830,7 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
 - [8 методов объектов в JavaScript (2018)](https://www.8host.com/blog/metody-obektov-v-javascript/)
 - [40 методов JavaScript, которые вы должны знать](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
 
 <br><p>
 </details>
