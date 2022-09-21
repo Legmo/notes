@@ -31,8 +31,7 @@
 - [Метод bind()](https://learn.javascript.ru/bind)
 - [Методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
 - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-- Контекст выполнения
-  - [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
+- [Контекст выполнения](../JS/JS.md#asynchronyContext)
 - [Рекурсия](https://learn.javascript.ru/recursion)
   и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
 - [Promise, Async/Await](https://learn.javascript.ru/async)

@@ -720,7 +720,7 @@ Web API...
 </details>   
 
 [//]: # (Асинхронность в JS todo: упростить)
-<details><summary><b>Асинхронность в JS</b></summary><p>
+<details id="asynchrony"><summary><b>Асинхронность в JS</b></summary><p>
 
 ***
 
@@ -854,7 +854,7 @@ Web API и JS движок работают независимо. Web API реш
 </details>
 
 [//]: # (Контекст выполнения функции)
-<details><summary><b>Контекст выполнения функции</b></summary><p>
+<details id="asynchronyContext"><summary><b>Контекст выполнения функции</b></summary><p>
 
 У каждого вызова функции есть свой «контекст выполнения» (execution context).
 
