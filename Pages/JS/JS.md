@@ -3634,6 +3634,74 @@ Web Workers не имеют доступа к DOM, поэтому основно
 <br></p>
 </details>
 
+[//]: # (Методы массивов)
+<a name="arrayMethods"></a>
+<details><summary><b>Методы массивов</b></summary><p>
+
+**Основные**
+
+- [push(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в конец,
+- [pop()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из конца,
+- [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
+- [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
+- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы. **Мутирующий!**
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+  старых
+- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+  в массиве
+- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте». **Мутирующий!**
+- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.  **Мутирующий!**
+- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+- [reduce/reduceRight]()
+- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+
+**Новые**
+
+- [findLast()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
+  и [findLastIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
+  — поиск в массивах «с конца
+- [at()](https://learn.javascript.ru/array#poluchenie-poslednih-elementov-pri-pomoschi-at) — обращаться к массивам с
+  конца. И строкам тоже
+- [flat()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript)
+  и [flatMap()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript) —
+  рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный массив сделать одномерным.
+  - [flat)()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) на MDN
+  - [flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap) на MDN
+
+**Чаще всего спрашивают**
+
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование
+- [filter](https://learn.javascript.ru/array-methods#filter)
+- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+
+**Мутирующие методы**
+
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
+- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
+- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+
+**Шпаргалки**
+
+- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+
+**Ссылки**
+
+- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+
+
+- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+
+<br><p>
+</details>
+
+
 [//]: # (Деструктуризация массивов)
 <details><summary><b>Деструктуризация массивов</b></summary><p>
 
