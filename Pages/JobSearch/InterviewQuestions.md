@@ -66,32 +66,13 @@
   - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
   - lodash.cloneDeep(obj)
 - Методы примитивов
-  - [Общие вопросы](https://learn.javascript.ru/primitives-methods)
-  - [String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
-  - [Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
-  - [BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B)
-  - [Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-  - [Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+  - [Legmo notes](../JS/JS.md#primitiveMethods)
 - Методы объектов
-  - keys() - возвращает ключи объекта.
-  - values() - возвращает значения объекта.
-  - create() - создать новый объект из существующего.
-  - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-  - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-  - assign() - копирование свойств объекта в другой объект.
-  - entries() - создает вложенный массив пар «ключ-значение» объекта
-  - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
-    .
-  - ... там ещё много. Изучать
-  - что-то добавили в последние несколько лет
-  -
-  - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-  - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
+  - [Legmo notes](../JS/JS.md#objectMethods)
 - Методы массивов
   - [Legmo notes](../JS/JS.md#arrayMethods)
   - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- Мутирующие / не мутирующие методы (особенной у массивов)
--
+- Мутирующие методы массивов
 - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
 - [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
 - [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
