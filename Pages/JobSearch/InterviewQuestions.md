@@ -48,7 +48,7 @@
 - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
   Fetch API
 - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
-- Стуркутры [Map и Set](https://learn.javascript.ru/map-set)
+- Структуры [Map и Set](https://learn.javascript.ru/map-set)
   , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
 -
 - [Ver, Let, Const](https://learn.javascript.ru/var)
@@ -65,12 +65,9 @@
   - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
   - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
   - lodash.cloneDeep(obj)
-- Методы примитивов
-  - [Legmo notes](../JS/JS.md#primitiveMethods)
-- Методы объектов
-  - [Legmo notes](../JS/JS.md#objectMethods)
-- Методы массивов
-  - [Legmo notes](../JS/JS.md#arrayMethods)
+- [Методы примитивов](../JS/JS.md#primitiveMethods)
+- [Методы объектов](../JS/JS.md#objectMethods)
+- [Методы массивов](../JS/JS.md#arrayMethods)
   - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
 - Мутирующие методы массивов
 - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
