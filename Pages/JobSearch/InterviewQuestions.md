@@ -40,50 +40,55 @@
   Fetch API
 - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
 -
-- Что является объектом в JS?
-- [Передача по значению / по ссылке](o../JS/JS.md#bjectReference)
+- [Что является объектом в JS?](../JS/JS.mdwhatIsObject#)
+- [Передача по значению / по ссылке](../JS/JS.md#bjectReference)
 - [Методы объектов](../JS/JS.md#objectMethods)
 - [Методы массивов](../JS/JS.md#arrayMethods)
   - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
 - [Мутирующие методы массивов](../JS/JS.md#arrayMethods) - sort, reverse, splice
-- Копирование объектов обычное
-  - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
-  - Object.assign
-- Клонирование объектов глубокое
-  - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-  - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-  - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-  - lodash.cloneDeep(obj)
+- [Копирование объектов](../JS/JS.md#objectCopy)
+  - обычное
+    - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
+    - Object.assign
+  - глубокое
+    - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
+    - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+    - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
+    - lodash.cloneDeep(obj)
 -
 - [Типы в JS (string, number, object...)](../JS/JS.md#types)
 - [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
 - [Различия Undefined и Null](../JS/JS.md#types)
 - [Методы примитивов](../JS/JS.md#primitiveMethods)
-- [Ver, Let, Const](https://learn.javascript.ru/var)
+- [Ver, Let, Const](../JS/JS.md#variables)
 - [Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
 - [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
-- [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
-- [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+- [Опциональная цепочка `?.`](../JS/JS.md#optionalChaining)
+- [Деструктурирующее присваивание](../JS/JS.md#destruct)
 - [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
 - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
 - [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 -
-- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+- [Лексическое всплытие](../JS/JS.md#eventHoisting)
 - [Рекурсия](https://learn.javascript.ru/recursion)
   и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
-- Коллекции [Map и Set](https://learn.javascript.ru/map-set)
-  , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
-- [Декораторы](https://learn.javascript.ru/call-apply-decorators)
-- [Прототипы](https://learn.javascript.ru/prototypes)
-- Классы
-  - [Базовые вопросы](https://learn.javascript.ru/classes)
-  - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-  - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+- [Коллекции Map и Set, WeakMap и WeakSet](../JS/JS.md#collections)
+- [Декораторы](../JS/JS.md#decorators)
+- [Декоратор Debounce](../JS/JS.md#debounce)
+- [Декоратор Throttling](../JS/JS.md#throttling)
+- [Прототипы](../JS/JS.md#prototype)
+- [Классы](../JS/JS.md#classes)
+  - [Базовые вопросы (learn.javascript.ru)](https://learn.javascript.ru/classes)
+  - [Ключевые слова extends и super (tproger)](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+  - [Публичные поля классов (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
   - ...
 - [Аттрибуты свойств (Флаги, дескрипторы, методы доступа)](../JS/JS.md#propertiesAttributes)
 - Как профилировать и отлаживать js (кроме console.log)
 - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
 -
+- [Циклы](../JS/JS.md#cycles)
+- [Перебор структур данных. Методы «keys», «values», «entries»](../JS/JS.md#keysValuesEntries)
+- [Перебираемые/итерируемые объекты ](../JS/JS.md#iterable)
 
 <br></p>
 </details> 
