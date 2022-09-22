@@ -1653,30 +1653,8 @@ let user = {
 - если применить к числу эти методы — `(5).toFixed(3)`
 - если вызвать на числе конструктор new Number() — `let num = new Number(100) // typeof num === object`
 
-[//]: # (Boolean)
-<details><summary><b>Boolean</b></summary><p>
-
-- `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
-  - ```js
-    let a = new Boolean(true);
-    console.log( a ); // [Boolean: true]
-    console.log( typeof a ); // object
-    
-    let a2 = a.valueOf();
-    console.log( a2 );  // true
-    console.log( typeof a2 ); // boolean
-    ```
-- `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
-- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
-
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-
-<br></p>
-</details>
-
-[//]: # (String)
-<details><summary><b>String</b></summary><p>
+[//]: # (Меотды String)
+<details><summary><b>Меотды String</b></summary><p>
 
 - `repeat()` — создать строку путем многократного повторения другой строки
 - `indexOf()` — поиск подстроки в строке. Вернёт индекс первого вхождения подстроки
@@ -1722,8 +1700,8 @@ let user = {
 <br></p>
 </details>
 
-[//]: # (Number)
-<details><summary><b>Number</b></summary><p>
+[//]: # (Меотды Number)
+<details><summary><b>Меотды Number</b></summary><p>
 
 - `Number.isNaN()` — проверить значение на NaN
 - `Number.isFinite()` — true это число, false если специальное значение или нечисловой тип
@@ -1748,8 +1726,30 @@ let user = {
 <br></p>
 </details>
 
-[//]: # (BigInt)
-<details><summary><b>BigInt</b></summary><p>
+[//]: # (Меотды Boolean)
+<details><summary><b>Меотды Boolean</b></summary><p>
+
+- `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
+  - ```js
+    let a = new Boolean(true);
+    console.log( a ); // [Boolean: true]
+    console.log( typeof a ); // object
+    
+    let a2 = a.valueOf();
+    console.log( a2 );  // true
+    console.log( typeof a2 ); // boolean
+    ```
+- `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
+- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
+
+- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
+- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+
+<br></p>
+</details>
+
+[//]: # (Меотды BigInt)
+<details><summary><b>Меотды BigInt</b></summary><p>
 
 - `asIntN()` — оборачивает BigInt в пределах от -2width-1 до 2width-1-1
 - `asUintN()` — оборачивает a BigInt в пределах от 0 до 2width-1
@@ -1764,8 +1764,8 @@ let user = {
 <br></p>
 </details>
 
-[//]: # (Symbol)
-<details><summary><b>Symbol</b></summary><p>
+[//]: # (Меотды Symbol)
+<details><summary><b>Меотды Symbol</b></summary><p>
 
 - `for(key)` — ищет существующие символы по заданному ключу и возвращает его (если нашёл). Иначе создаёт новый символ
   для данного ключа в глобальном реестре символов.
@@ -1795,6 +1795,7 @@ let user = {
 <br></p>
 </details>
 
+**Ссылки**
 - [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
 -
 - [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
