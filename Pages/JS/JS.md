@@ -3,15 +3,16 @@
 [//]: # (Ресурсы по JS)
 <details><summary><h3>Ресурсы по JS</h3></summary><p>
 
+- [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
+- [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
+
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [doka.guide](https://doka.guide/js)
 - [metanit.com](https://metanit.com/web/javascript/)
 - [Schoolsw3](https://www.schoolsw3.com/js)
 - [ITchief](https://itchief.ru/javascript/)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
-- [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
-- [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
 - [code.mu - Учебник JS: основной](https://code.mu/ru/javascript/book/prime/)
 - [code.mu - Учебник JS: высший](https://code.mu/ru/javascript/book/supreme/)
 - [code.mu - Учебник JS: ООП](https://code.mu/ru/javascript/book/oop/)
@@ -1462,7 +1463,7 @@ var test = func; //И `test` и `func` указывают на одну и ту 
 <br></p>
 </details>
 
-[//]: # (Symbol todo: проработать)
+[//]: # (Symbol todo: упростить)
 <details id="symbol"><summary><b>Symbol</b></summary><p>
 
 ES6 (2015)
@@ -1639,6 +1640,8 @@ let user = {
 
 [//]: # (Методы примитивов)
 <details id="primitiveMethods"><summary><b>Методы примитивов</b></summary><p>
+
+  ***
 
 Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
 Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
