@@ -19,7 +19,7 @@
     промисов (then, catch, finally), async/await, веб-воркеры,
   - асинхронность и однопоточность JS - что это значит и чем обусловлено
   - В каком порядке будут выводиться console.log, Promise
-- [Сборщик мусора (learn.javascript.ru)](https://learn.javascript.ru/garbage-collection)
+- [Сборщик мусора](../JS/JS.md#garbageCollection)
 -
 - [Use strict](../JS/JS.md#useStrict)
 - [Атрибуты async и defer у тега script](../JS/JS.md#asyncDefer)
@@ -34,11 +34,10 @@
 -
 - [Promise](../JS/JS.md#promise)
 - [Async/Await](../JS/JS.md#promiseAsync)
-- [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
-- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
-- [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
-  Fetch API
-- [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
+- [Асинхронная итерация](../JS/JS.md#asyncIteratorsGenerators)
+- [Цикл for-await-of](../JS/JS.md#cycleForAwaitOf)
+- [Fetch](../JS/JS.md#fetch) - метод реализации асинхронных запросов в нативном JS. Предоставляется Fetch API
+- [XMLHttpRequest](../JS/JS.md#xmlHttpRequest) - его современный аналог — fetch
 -
 - [Что является объектом в JS?](../JS/JS.mdwhatIsObject#)
 - [Передача по значению / по ссылке](../JS/JS.md#bjectReference)
@@ -46,32 +45,23 @@
 - [Методы массивов](../JS/JS.md#arrayMethods)
   - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
 - [Мутирующие методы массивов](../JS/JS.md#arrayMethods) - sort, reverse, splice
-- [Копирование объектов](../JS/JS.md#objectCopy)
-  - обычное
-    - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
-    - Object.assign
-  - глубокое
-    - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-    - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-    - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-    - lodash.cloneDeep(obj)
+- [Копирование объектов](../JS/JS.md#objectCopy) - обычное, глубокое
 -
 - [Типы в JS (string, number, object...)](../JS/JS.md#types)
-- [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
+- [Приведение типов](../JS/JS.md#typesTransformation)
 - [Различия Undefined и Null](../JS/JS.md#types)
 - [Методы примитивов](../JS/JS.md#primitiveMethods)
 - [Ver, Let, Const](../JS/JS.md#variables)
-- [Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
-- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
+- [Оператор нулевого слияния (`??`)](../JS/JS.md#nullishСoalescing)
+- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](../JS/JS.md#logicalAssignment)
 - [Опциональная цепочка `?.`](../JS/JS.md#optionalChaining)
 - [Деструктурирующее присваивание](../JS/JS.md#destruct)
-- [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
-- [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
-- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+- [Остаточные параметры и оператор расширения / spread (...)](../JS/JS.md#spread)
+- [Шаблонные строки (шаблонные литералы). Теговые шаблоны](../JS/JS.md#tmpLiterals)
+- [Параметры функции по умолчанию](../JS/JS.md#functDefParam)
 -
 - [Лексическое всплытие](../JS/JS.md#eventHoisting)
-- [Рекурсия](https://learn.javascript.ru/recursion)
-  и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
+- [Рекурсия](../Programming/Programming.md#recursion)
 - [Коллекции Map и Set, WeakMap и WeakSet](../JS/JS.md#collections)
 - [Декораторы](../JS/JS.md#decorators)
 - [Декоратор Debounce](../JS/JS.md#debounce)
@@ -88,7 +78,21 @@
 -
 - [Циклы](../JS/JS.md#cycles)
 - [Перебор структур данных. Методы «keys», «values», «entries»](../JS/JS.md#keysValuesEntries)
-- [Перебираемые/итерируемые объекты ](../JS/JS.md#iterable)
+- [Перебираемые/итерируемые объекты](../JS/JS.md#iterable)
+- [Преобразование объектов в примитивы](../JS/JS.md#objectToPrimitive)
+- [Symbol](../JS/JS.md#symbol)
+- [Callback](../JS/JS.md#callback)
+- [Cамовыполняющиеся функции. Модули](../JS/JS.md#modules)
+- [Обработчики событий, events handlers](../JS/JS.md#eventsHandlers)
+- [Web-workers](../JS/JS.md#webWorkers)
+- [Proxy-объекты](../JS/JS.md#proxyObjects)
+- [Функции-генераторы](../JS/JS.md#funcGenerators)
+- [Итераторы](../JS/JS.md#iterators)
+- [Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../JS/JS.md#dataStorage)
+- [Утечки памяти в JS](../JS/JS.md#memoryLeak)
+- [Объект Error](../JS/JS.md#errorsObject)
+- [Чистота кода](../JS/JS.md#codeCleaning)
+- [Языки поверх JavaScript](../JS/JS.md#metaLanguages)
 
 <br></p>
 </details> 
@@ -511,16 +515,16 @@
 - Замыкания
 - Работа JS-движка - Event Loop, стэк, очередь задач, микро/макро задачи, веб-воркеры, SetInterval/Promises, web API...
 - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
-- **Как JS распределяет память, как парсится и выполняется код.**
+- Как JS распределяет память, как парсится и выполняется код.
 - Promises, Async/Await, атрибуты async и defer у тега script
 - Передача "по значению" и "по ссылке"
-- **Лексическое всплытие**
-- **Алгоритмическая сложность**
-- **Теория нормализации данных** (применительно к проектированию Redux state)
+- Лексическое всплытие
+- Алгоритмическая сложность
+- Теория нормализации данных (применительно к проектированию Redux state)
 - Работа DOM браузера: "дорогие" операции. Relayout / repaint
 - Работа DOM браузера: "дорогие" операции чтения (get.computer.style и т.д.)
-- Отслеживание изменений в фреймворке — центральный вопрос для современных фреймворков. Как фреймворк понимает, что
-  что-то изменилось и необходимо применить новые изменения к DOM?
+- Отслеживание изменений в фреймворке. Как фреймворк понимает, что что-то изменилось и необходимо применить новые
+  изменения к DOM?
 - Методы жизненного цикла компонента React - не просто заучить, а понимать с какой целью они были добавлены.
 - Основные понятия React.
 - Устройство Redux (store, createStore, state, reducer, actions, action creators, dispatch, provider, connect,
@@ -632,7 +636,7 @@
   - Типы данных в JS, что даёт typeof
   - Массивы - это объекты?
   - Что такое область видимости
-  - Какие ест способы объявить переменную, чем они отличаются
+  - Какие есть способы объявить переменную, чем они отличаются
   - Что такое блок кода
   - Наследование, прототипы
   - Можно ли как-то поменять прототип
@@ -714,7 +718,7 @@
 [//]: # (Популярные задачки)
 <details><summary><b>Популярные задачки</b></summary><p>
 
-- Замыкания - например использование var/let в for()
+ч- Замыкания - например использование var/let в for()
 - Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3
   - ```js
     //Стерлочная

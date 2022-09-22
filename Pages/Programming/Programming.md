@@ -1,7 +1,7 @@
 <h1>Общие вопросы программирования</h1>
 
 [//]: # (Рекурсия)
-<details><summary><b>Рекурсия</b></summary><p>
+<details id="recursion"><summary><b>Рекурсия</b></summary><p>
 
 Рекурсия – это термин/приём в программировании, означающий вызов функцией самой себя. Рекурсивные функции могут быть
 использованы для элегантного решения определённых задач.
@@ -70,6 +70,7 @@ alert(fib(7)); // 13
 - [learn.javascript.ru - Рекурсия и стек](https://learn.javascript.ru/recursion)
 - [Habr - Превращаем рекурсию в цикл](https://habr.com/ru/post/533034/)
 - [learn.javascript.ru - Задачка на числа Фибоначчи](https://learn.javascript.ru/task/fibonacci-numbers)
+- [code.tutsplus.com - Рекурсия в JavaScript](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
 
 <br></p>
 </details>
