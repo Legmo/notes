@@ -5800,6 +5800,10 @@ function removeImage() {
 
 </details>
 
+
+<br>
+<br>
+
 [//]: # (Fetch todo: пусто)
 <details id="fetch"><summary><b>Fetch</b></summary><p>
 
@@ -5922,6 +5926,9 @@ Fetch API
 
 <br></p>
 </details>
+
+<br>
+<br>
 
 ## Приёмы ##
 
