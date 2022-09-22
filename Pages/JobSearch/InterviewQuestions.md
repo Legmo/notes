@@ -11,28 +11,29 @@
 - [Повторное введение в JS](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 - [Legmo - JS](../JS/JS.md)
 - [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
+- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
 -
-- [Что нового в последних 3 версиях JS](../JS/JS.md)
-- [Работа JS-движка](../JS/JS.md)
-    - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
-      промисов (then, catch, finally), async/await, веб-воркеры,
-    - асинхронность и однопоточность JS - что это значит и чем обусловлено
-    - В каком порядке будут выводиться console.log, Promise
-- [Сборщик мусора](https://learn.javascript.ru/garbage-collection)
+- [Что нового в последних 3 версиях JS](../JS/JS.md#new)
+- [Работа JS-движка](../JS/JS.md#engine)
+  - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
+    промисов (then, catch, finally), async/await, веб-воркеры,
+  - асинхронность и однопоточность JS - что это значит и чем обусловлено
+  - В каком порядке будут выводиться console.log, Promise
+- [Сборщик мусора (learn.javascript.ru)](https://learn.javascript.ru/garbage-collection)
 -
-- [Use strict](https://learn.javascript.ru/strict-mode)
-- [Атрибуты async и defer у тега script](https://learn.javascript.ru/script-async-defer)
-- [Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions) (`function sayHi(){}`
-  / `let sayHi = function(){}`)
-- [Замыкания](https://learn.javascript.ru/closure)
-- [Стрелочные функции](https://learn.javascript.ru/arrow-functions-basics)
-  и [ещё они же](https://learn.javascript.ru/arrow-functions)
+- [Use strict](../JS/JS.md#useStrict)
+- [Атрибуты async и defer у тега script](../JS/JS.md#asyncDefer)
+- [Function Declaration / Function Expression](../JS/JS.md#funcDeclaration) — `function sayHi(){}`
+  / `let sayHi = function(){}`
+- [Замыкания](../JS/JS.md#closures)
+- [Стрелочные функции](../JS/JS.md#arrowFunc)
 - [Контекст выполнения](../JS/JS.md#this)
 - [Ключевое слово this](../JS/JS.md#this)
-- [Метод bind()](https://learn.javascript.ru/bind)
-- [Методы apply() и call()](https://learn.javascript.ru/call-apply-decorators)
+- [Метод bind()](../JS/JS.md#bind)
+- [Методы apply() и call()](../JS/JS.md#callApply)
 -
-- [Promise, Async/Await](https://learn.javascript.ru/async)
+- [Promise](../JS/JS.md#promise)
+- [Async/Await](../JS/JS.md#promiseAsync)
 - [Асинхронная итерация](https://learn.javascript.ru/async-iterators-generators)
 - [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
 - [Fetch](https://learn.javascript.ru/network) - метод реализации асинхронных запросов в нативном JS. Предоставляется
@@ -40,46 +41,46 @@
 - [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) (Его современный аналог — fetch)
 -
 - Что является объектом в JS?
-- Передача по значению / по ссылке
+- [Передача по значению / по ссылке](o../JS/JS.md#bjectReference)
 - [Методы объектов](../JS/JS.md#objectMethods)
 - [Методы массивов](../JS/JS.md#arrayMethods)
-    - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- Мутирующие методы массивов
+  - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+- [Мутирующие методы массивов](../JS/JS.md#arrayMethods) - sort, reverse, splice
 - Копирование объектов обычное
-    - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
-    - Object.assign
+  - цикл `for (let key in user) { newObj[key] = oldObj[key] }`
+  - Object.assign
 - Клонирование объектов глубокое
-    - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-    - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-    - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-    - lodash.cloneDeep(obj)
+  - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
+  - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+  - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
+  - lodash.cloneDeep(obj)
 -
-- Типы в JS (string, number, object...)
+- [Типы в JS (string, number, object...)](../JS/JS.md#types)
 - [Приведение типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
-- Различия Undefined и Null
+- [Различия Undefined и Null](../JS/JS.md#types)
 - [Методы примитивов](../JS/JS.md#primitiveMethods)
 - [Ver, Let, Const](https://learn.javascript.ru/var)
-- [Оператор нулевого слияния (??)](https://learn.javascript.ru/nullish-coalescing-operator)
-- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
 - [Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
+- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
 - [Опциональная цепочка `?.`](https://learn.javascript.ru/optional-chaining)
 - [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
 - [Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
-- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
+- [Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 -
 - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
 - [Рекурсия](https://learn.javascript.ru/recursion)
   и [ещё](https://code.tutsplus.com/ru/tutorials/understanding-recursion-with-javascript--cms-30346)
-- Структуры [Map и Set](https://learn.javascript.ru/map-set)
+- Коллекции [Map и Set](https://learn.javascript.ru/map-set)
   , [WeakMap и WeakSet](https://learn.javascript.ru/weakmap-weakset)
 - [Декораторы](https://learn.javascript.ru/call-apply-decorators)
 - [Прототипы](https://learn.javascript.ru/prototypes)
 - Классы
-    - [Базовые вопросы](https://learn.javascript.ru/classes)
-    - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-    - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
-    - ...
+  - [Базовые вопросы](https://learn.javascript.ru/classes)
+  - [Ключевые слова extends и super](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+  - [Публичные поля классов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+  - ...
+- [Аттрибуты свойств (Флаги, дескрипторы, методы доступа)](../JS/JS.md#propertiesAttributes)
 - Как профилировать и отлаживать js (кроме console.log)
 - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
 -
