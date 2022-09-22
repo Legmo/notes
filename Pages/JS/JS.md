@@ -1646,7 +1646,7 @@ let user = {
 Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
 Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
 
-`null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
+Примитивы `null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
 
 Когда создаётся объект-обёртка (на примере Number):
 
@@ -1796,15 +1796,16 @@ let user = {
 </details>
 
 **Ссылки**
+
 - [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
--
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
 -
 - [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
 - [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
 - [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
 - [Metanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
+-
+- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
 -
 - [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
 - [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
@@ -1819,6 +1820,10 @@ let user = {
 
 [//]: # (Замыкания)
 <details id="closures"><summary><b>Замыкания</b></summary><p>
+
+  ***
+
+**Определения**
 
 - Функция, которая содержит ссылки на переменные из родительской области видимости.
 - Функция, которая запоминает свои внешние переменные и может получить к ним доступ.
