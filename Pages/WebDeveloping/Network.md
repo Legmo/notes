@@ -462,7 +462,7 @@ SSE-потоков (отправка данных клиенту по иници
 </details>
 
 [//]: # (REST)
-<details><summary><h3>REST (REpresentational State Transfer)</h3></summary><p>
+<details><summary><b>REST (REpresentational State Transfer)</b></summary><p>
 
   ***
 
