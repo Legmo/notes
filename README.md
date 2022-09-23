@@ -1,14 +1,14 @@
 # Заметки о web-разработке #
 
 ## Технологии ##
-- [Вопросы для собеседования frontend (JS, React)](/Pages/JobSearch/InterviewQuestions.md)
+- [Вопросы для собеседования frontend](/Pages/JobSearch/InterviewQuestions.md)
 - [JavaScript](/Pages/JS/JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
 - [React JS](/Pages/JS/React.md)
 - [Redux (for React)](/Pages/JS/Redux.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [Работа браузера](/Pages/WebDeveloping/Browser.md)
-- [Интернет-технологии (AJAX, JSON, CORS...)](/Pages/WebDeveloping/Technologies.md)
+- [Интернет-технологии (AJAX, JSON, CORS...)](/Pages/WebDeveloping/Network.md)
 - [REST, HTTP](/Pages/WebDeveloping/REST.md)
 - [GraphQL](/Pages/WebDeveloping/GraphQL.md)
 - [GIT](/Pages/_Other/GIT.md)

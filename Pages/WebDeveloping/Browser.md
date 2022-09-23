@@ -712,7 +712,7 @@ SSE API (Server-Sent events) - ещё более продвинутая техн
 
 **Ссылки**
 
-- [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Technologies.md)
+- [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Network.md)
 - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p>
@@ -729,7 +729,7 @@ SSE API (Server-Sent events) - ещё более продвинутая техн
 
 **Ссылки**
 
-- [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Technologies.md)
+- [Legmo - AJAX, JSON, CORS и т.д.](/Pages/WebDeveloping/Network.md)
 - [Как работает JS: WebSocket и HTTP/2+SSE. Что выбрать?](https://habr.com/ru/company/ruvds/blog/342346/)
 
 <br></p>

@@ -434,7 +434,7 @@
 [//]: # (Интернет-технологии - AJAX, JSON, CORS и т.д.)
 <details><summary><b>Интернет-технологии - AJAX, JSON, CORS и т.д.</b></summary><p>
 
-- [Legmo - Browser](../WebDeveloping/Technologies.md)
+- [Legmo - Browser](../WebDeveloping/Network.md)
 - Порт
 - TCP/IP
 - HTTP
