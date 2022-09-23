@@ -491,11 +491,7 @@
   - `YAGNI`,
   - `SOLID`
 - [Парадигмы программирования](/Pages/Programming/Programming.md)
-- Алгоритмы
-  - читать в целом
-  - [Алгоритмическая сложность](https://tproger.ru/translations/algorithms-and-data-structures)
-  - [Сортировки. Пузырьковая сортировка/фильтрация](https://tproger.ru/translations/sorting-for-beginners)
-  - [Бинарное дерево](https://tproger.ru/translations/binary-search-tree-for-beginners)
+- [Алгоритмы](../Programming/Algorithms.md) - ИЗУЧАТЬ!
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
 - Отслеживание изменений в фреймворке - как он понимает, что нечто изменилось и надо применить изменения к DOM?

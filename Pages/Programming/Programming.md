@@ -687,7 +687,6 @@ HTTP-кэш.
 <br></p>
 </details>
 
-
 [//]: # (Domain Driven Design, DDD)
 <details><summary><b>Domain Driven Design, DDD</b></summary><p>
 
