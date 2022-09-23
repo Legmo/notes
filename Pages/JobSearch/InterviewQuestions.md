@@ -475,7 +475,7 @@
   - Rebase
   - Squash
   - GIT flow
-- [REST API](/Pages/WebDeveloping/REST.md)
+- [REST API](/Pages/WebDeveloping/Network.md)
   - методы - out, post, get, delete...
   - Что можно отправлять
   - типа параметров и т.д.
@@ -498,7 +498,7 @@
   - [Medium - Как создать реактивный фреймворк на JavaScript](https://medium.com/@monochromer/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA-%D0%BD%D0%B0-javascript-cfa34c63fd52)
   - [MutationObserver](../WebDeveloping/Browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API
     браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
-- Что такое CORS - [Habr](https://habr.com/ru/company/macloud/blog/553826/)
+- [Что такое CORS](../WebDeveloping/Network.md#CORS)
 - Css селекторы - [MDN](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors)
 - [Domain Driven Design, DDD](/Pages/Programming/Programming.md)
 
@@ -707,6 +707,23 @@
     - useContext() - Context API обеспечивает передачу переменных в дерево компонентов, без их непосредственной передачи
       в props данных компонентов.
   - Как выполнить код на этапе между изменением state и render'ом?
+
+- **«IT-One»** Frontend developer (сентябрь 2022)
+  - Задачка на JS
+    - есть массив однотипных объектов, у каждого есть свойства value, order, expired. 
+    - надо написать функцию которая 
+      - исключить объекты с expired=true, 
+      - оставшиеся отсортировать по значению order (предполагалось использовать метод sort), 
+      - потом взять значения свойства value, 
+      - сделать каждому значению reverse, 
+      - записать всё это в строку, 
+      - при этом ни один символ в строке не должен повторяться дважды (предпологалось использовать коллекцию Set)
+  - TypeScript
+    - что такое Utility Types
+    - Utility Types Recod, Pick...
+  - Задачка на TypeScript
+    - типизировать функцию 
+      - должна была получиться конструкция типа `<V extends Record <string,>, T extends keyof V>(obj:V, data:T) => number`
 
 <br></p>
 </details> 

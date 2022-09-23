@@ -1033,7 +1033,7 @@ JSONP-запрос (строго говоря — запрос, соответс
 </details> 
 
 [//]: # (CORS todo: доработать)
-<details><summary><b>CORS</b></summary><p>
+<details id="CORS"><summary><b>CORS</b></summary><p>
 
 Кросс-доменные запросы. Разрешаем кросс-доменный AJAX (если сервер согласен его принять)
 
@@ -1082,6 +1082,7 @@ JSONP-запрос (строго говоря — запрос, соответс
 - [Гришаев - Руководство по кросс-доменным запросам CORS (2016)](https://grishaev.me/cors/)
 - [Wikipedia - CORS](https://ru.wikipedia.org/wiki/Cross-origin_resource_sharing)
 - [MDN - CORS](https://developer.mozilla.org/ru/docs/Web/HTTP/CORS)
+- [Habr - CORS для чайников: история возникновения, как устроен и оптимальные методы работы](https://habr.com/ru/company/macloud/blog/553826/)
 
 <br></p>
 </details> 
