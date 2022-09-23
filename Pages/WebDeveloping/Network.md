@@ -17,7 +17,7 @@
 <br></p>
 </details> 
 
-[//]: # (URL, URI, URN)
+[//]: # (URL, URI, URN todo: дополнять)
 <details><summary><b>URL, URI, URN</b></summary><p>
 
 `URI` (унифицированный идентификатор ресурс) — строка символов, для идентификации ресурса **по его адресу или по его
@@ -37,7 +37,6 @@ URL состоит из:
 
 <br></p>
 </details> 
-
 
 [//]: # (TCP/IP todo: дополнять)
 <details><summary><b>Модель TCP/IP</b></summary><p>
@@ -398,8 +397,8 @@ SSE-потоков (отправка данных клиенту по иници
 
 **Ссылки**
 
+- [Все, что нужно знать о HTTP/2](https://sebweo.com/ru/vse-chto-nuzhno-znat-o-http-2/)
 - [Wikipedia](https://ru.wikipedia.org/wiki/HTTP/2)
-- https://sebweo.com/ru/vse-chto-nuzhno-znat-o-http-2/
 
 <br></p>
 </details>   
@@ -422,7 +421,7 @@ SSE-потоков (отправка данных клиенту по иници
 
 **Ссылки**
 
-- https://habr.com/ru/post/215117/
+- [Habr - Простым языком об HTTP](https://habr.com/ru/post/215117/)
 
 <br></p>
 </details> 
