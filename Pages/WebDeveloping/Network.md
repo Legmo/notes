@@ -523,22 +523,22 @@ SSE-потоков (отправка данных клиенту по иници
 
 **Основные группы кодов состояний**
 
-- **1xx** - Information
+- `1xx` - Information
 - 100 - Continue
-- **2xx** - Success
+- `2xx` - Success
 - 200 - OK
 - 201 - Created
 - 202 - Accepted
 - 204 - No Content
-- **3xx** - Redirect
+- `3xx` - Redirect
 - 301 - Moved Permanently
 - 307 - Temporary Redirect
-- **4xx** - Client Error
+- `4xx` - Client Error
 - 400 - Bad Request
 - 401 - Unauthorized
 - 403 - Forbidden
 - 404 - Not Found
-- **5xx** - Server Error
+- `5xx` - Server Error
 - 500 - Internal Server Error
 - 501 - Not Implemented
 - 502 - Bad Gateway
