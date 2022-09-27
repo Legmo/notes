@@ -3042,7 +3042,7 @@ await.
 <br></p>
 </details>
 
-[//]: # (Примеры использования)
+[//]: # (Примеры кода)
 <details><summary><b>Примеры использования</b></summary><p>
 
 - ```js
@@ -3065,17 +3065,50 @@ await.
 
 - ```js
   //Пример с then
-  
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve('some result'), 1000);
+      // setTimeout(() => reject(new Error('some error')), 1000);
+  }).then(result => {
+    console.log(result)  
+  }).catch(err => {
+     console.error(err)    
+  });
 
-  //Он же с async/await
+  //Он же с async/await, с обработкой ошибок в try...catch
   const foo = async() => {
     try {
-        console.log(await getData())
+      const result = await new Promise((resolve, reject) => {
+        setTimeout(() => resolve('some result'), 1000);
+        // setTimeout(() => reject(new Error('some error')), 1000);
+      });  
+      console.log(result);
     } catch(err) {
-        console.error(err)    
+      console.error(err);
     }
   };
   foo();
+
+  //Он же с async/await, без обработки ошибок
+  const foo = async() => {
+    const result = await new Promise(resolve => {
+      setTimeout(() => resolve('some result'), 1000);
+    });
+    console.log(result);
+  };
+  foo();
+
+  //Он же с async/await, с обычной обработкой ошибок 
+  const foo = async() => {
+    const result = await new Promise((resolve, reject) => {
+      setTimeout(() => resolve('some result'), 1000);
+      // setTimeout(() => reject(new Error('some error')), 1000);
+    });
+    console.log(result);
+  };
+  foo().catch(err => {
+      //Эта часть сработает только если промис вёрнет ошибку, иначе игнорируется  
+      console.error(err);
+    });
   ````
 
 - ```js
@@ -4498,7 +4531,7 @@ const [fruit, setFruit] = useState('банан');
 
 Алгоритм преобразований к примитивам следующий:
 
-1. Сначала вызывается метод obj[Symbol.toPrimitive](hint) , если он существует.
+1. Сначала вызывается метод `obj[Symbol.toPrimitive](hint)` , если он существует.
 2. Иначе, если хинт равен "string" происходит попытка вызвать obj.toString() , затем obj.valueOf() , смотря что
    есть.
 3. Иначе, если хинт равен "number" или "default" происходит попытка вызвать obj.valueOf() , затем obj.toString() ,

@@ -2583,6 +2583,10 @@ useEffect(didUpdate);
 Если надо выполнить до рендера (например, изменение DOM) — для этих типов эффектов используй хук `useLayoutEffect`.
 
 `useLayoutEffect` предотвращает лишнее обновление компонента.
+
+Используйте `useLayoutEffect` для чтения макета из DOM и синхронного повторного рендеринга. <br>
+Обновления, запланированные внутри `useLayoutEffect`, будут полностью применены синхронно перед тем, как браузер получит шанс осуществить отрисовку.
+Предпочитайте стандартный `useEffect`, когда это возможно, чтобы избежать блокировки визуальных обновлений.
 <br>
 <br>
 
@@ -2623,7 +2627,8 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 
 **Ссылки**
 
-- [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
+- [Оф. документация - Хук useEffect](https://ru.reactjs.org/docs/hooks-reference.html#useeffect)
+- [Оф. документация - Хук useLayoutEffect](https://ru.reactjs.org/docs/hooks-reference.html#uselayouteffect)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Mentanit - Хук useEffect](https://metanit.com/web/react/6.3.php)
 - [Hexlet - Хук useEffect](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-effect/theory_unit)

@@ -717,16 +717,82 @@
       - потом взять значения свойства value, 
       - сделать каждому значению reverse, 
       - записать всё это в строку, 
-      - при этом ни один символ в строке не должен повторяться дважды (предпологалось использовать коллекцию Set)
+      - при этом ни один символ в строке не должен повторяться дважды (предполагалось использовать коллекцию Set)
+    - ```js
+      // Написать функцию, либо последовательность операций, которая вернёт результат следующих условий:
+      // результате есть строка из сконкатенированных value элементов коллекции, расположенных в обратном порядке
+      // реузльтат не содержит одинаковых букв, если буква уже добавлена в строку, она более не добавляется
+      // результат собирается только из непросроченных записей (т.е. из тех, у которых expired: false)
+      // результат конкатенируется в порядке возрастания order
+      
+      const input = [
+        {value: 'qweq', order: 4, expired: false},
+        {value: 'asdq', order: 2, expired: true},
+        {value: 'jkri', order: 1, expired: false},
+        {value: 'oiod', order: 3, expired: false},
+      ];
+      ```  
   - Задачка на JS
     - console.log
     - в частности, в `Promise(resolve => {setTimeout(()=>{resolve()}}).then()` — resolve() прерывает очередь макрозадач, и отрабатывают все then. Как-то так
+    - ```js
+      /*
+      setTimeout(()=>{
+        console.log('timeOut');
+      }, 0)
+      
+      console.log(1);
+      
+      new Promise(resolve => {
+        console.log("Promise")
+        setTimeout(()=>{
+          console.log('777');
+          resolve()         // обратить внимание на этот момент! После него всё идёт немного иначе. Кажется сразу следом отработают then
+        }, 0)
+      })
+      .then(() => {
+        console.log("then1")
+      })
+      .then(() => {
+        console.log("then2")
+      })
+            
+      console.log(4);
+      
+      setTimeout(()=>{
+        console.log('timeOuts');
+      }, 0)
+      */
+      ```
   - TypeScript
     - что такое Utility Types
     - Utility Types Recod, Pick...
   - Задачка на TypeScript
     - типизировать функцию 
       - должна была получиться конструкция типа `<V extends Record <string,>, T extends keyof V>(obj:V, data:T) => number`
+    - ```js
+      /* 
+       Есть объект X (произвольный) и функция getProperty, которая на вход принимает произвольный объект 
+       и строковое значение свойств
+       необходимо при помощи TypeScript допилить функцию getProperty таким образомю чтобы на этапе написания кода 
+       в строке getProperty(X, 'm') компилятор выдавал ошибку «Argument of type '"m"' is not assignable to parameter of type '"a"' | '"b"' | '"c"' | '"d"'»
+      */
+      
+      const X = {a:1, b: 2, c: 3, d:4}
+      
+      let getProperty = function(obj, key){
+        return obj[key]
+      }
+      
+      //getProperty(X,a)
+      //getProperty(X,m) 
+      
+      // Должно получиться что-то вроде: 
+      // let getProperty:<V extends Record<string, >, T extends keyof V> = function(obj: V, data: T) => number;
+      ```  
+
+- ****  React middle frontend developer (сентябрь 2022)
+- 
 
 <br></p>
 </details> 
@@ -734,7 +800,7 @@
 [//]: # (Популярные задачки)
 <details><summary><b>Популярные задачки</b></summary><p>
 
-ч- Замыкания - например использование var/let в for()
+- Замыкания - например использование var/let в for()
 - Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3
   - ```js
     //Стерлочная
@@ -843,6 +909,36 @@
     //timeout 0 - timeout/interval выполняются в самом конце, после
     //timeout 5
     ```
+  - ```js
+    /*
+    setTimeout(()=>{
+      console.log('timeOut');
+    }, 0)
+    
+    console.log(1);
+    
+    new Promise(resolve => {
+      console.log("Promise")
+      setTimeout(()=>{
+        console.log('777');
+        resolve()         // обратить внимание на этот момент! После него всё идёт немного иначе. Кажется сразу следом отработают then
+      }, 0)
+    })
+    .then(() => {
+      console.log("then1")
+    })
+    .then(() => {
+      console.log("then2")
+    })
+          
+    console.log(4);
+    
+    setTimeout(()=>{
+      console.log('timeOuts');
+    }, 0)
+    */
+    ```
+    
 - Армия функций
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
