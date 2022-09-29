@@ -1,5 +1,6 @@
-# Качество кода - линтеры и т.д. #
+<h1> Качество кода - линтеры и т.д. </h1>
 
+[//]: # (Я использую)
 <details><summary><b>Я использую</b></summary><p>
 
 - Для работы с React JS в PhpStorm использую
@@ -10,9 +11,10 @@
     - [JSHint](https://jshint.com/) - не разобрался как отключить некоторые ошибки. Например, не умеет воспринимать стрелочные функции в классовых компонентах React JS, даже в режиме ES6. Пишет "Class properties must be methods". Возможно сейчас ситуация улучшилась, но пока не актуально
     - [TSLint](https://palantir.github.io/tslint/) — поддержка прекращена в 2019. Переходите на ESLint
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (ESLint)
 <details><summary><b>ESLint</b></summary><p>
 
 - Линтер — это помощник по части «здоровья» кода. Вы определяете список правил и в дальнейшем, при настроенном плагине в вашем редакторе, он как Microsoft Word «проферка орфографии» проверяет все, что вы написали. Например, определили переменную, но нигде не используете? Сработает правило: no-unused-vars (долой неиспользуемые переменные) и переменная будет подчеркнута.
@@ -38,7 +40,8 @@
 **Установка / Настройка**
 - поддержка JSHint включена в PhpStrom по-умолчанию, никаких доп. плагинов к самому PhpStrom ставить не надо
 - устанавливаю ESLint локально в проекте 
-  - кажется, нужно только если не использую `Create React APP`
+  - Ставить только если НЕ использую `Create React APP`
+  - В `Create React APP` включен по-умолчанию
   - `yarn add eslint eslint-plugin-react eslint-plugin-jsx-a11y --dev`
 - рекомендуют поставить эти плагины
   - `yarn add eslint-plugin-prettier eslint-config-prettier babel-eslint --dev`
@@ -68,6 +71,12 @@
       - Его пришлось убрать и перевести в режим `Automatic search`. Плюс убрать все конфиг файлы ESLint из папок верхних уровней (`D:\Work\_Localsites`, `D:\Work\` и т.д.). После этого PhpStorm "увидел" конфиг файл в проекте
   - чтобы получать предупреждения об ошибках в синтаксисе JSX - открыть раздел настроек `Editor | Inspections`
     - включаю инспектор синтаксиса `React JSX` в `JavaScript and TypeScript | General node`.
+- проверяю что ESLint работает
+  - берём какое-то правило, например `quotes` и нарушаем его в коде
+  - у меня в файле конфигурации ESLint (`.eslintrc.json`) стоит настройка: кавычки должны быть одинарными, и это помечается как Warning
+  - ставлю в коде двойные - появляется сообщение инспектора, warning
+  - теперь проверим, что это срабатывает правило именно из моего файла конфигурации ESLint (`.eslintrc.json`) — для правила "quotes" меняю в нём "warn" на "error"
+  - если всё ок, то у меня в коде сообщение инспектора для двойных кавычек должно измениться с warning на error
 - в файле `package.json` (корень проекта) дописываю команды в секцию "scripts"
   - например:
   ```
@@ -207,10 +216,10 @@
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
 
+<br></p>
+</details>
 
-<br></p></details>
-
-
+[//]: # (Prettier / Prettier miscellaneous)
 <details><summary><b>Prettier / Prettier miscellaneous</b></summary><p>
 
 - это помощник по части оформления кода. Можно писать с пробелами перед именем свойства, кавычками, запятыми в последней строке и т.д. — Prettier, настроенный на сохранение или на пре-коммит хук «перетрясет» ваши файлы и оформит их в соответствии с настройками, которых у него минимум. Это сделано специально, ибо чем меньше настроек, тем меньше конфигураций.
@@ -257,9 +266,10 @@
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (Husky, lint-staged и Git хуки)
 <details><summary><b>Husky, lint-staged и Git хуки</b></summary><p>
 
 - [Git хуки](https://git-scm.com/book/ru/v2/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git-%D0%A5%D1%83%D0%BA%D0%B8-%D0%B2-Git) — это скрипты, которые Git вызывает при определённых событиях: commit, push, recieve. С помощью них, мы можем запускать линтинг кода при создании коммита, чтобы в пул реквесты попадало меньше ошибок. 
@@ -300,8 +310,10 @@
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
 
-<br></p></details>
+<br></p>
+</details>
 
+[//]: # (JSHint)
 <details><summary><b>JSHint</b></summary><p>
 
 **Установка / Настройка**
@@ -339,9 +351,10 @@
 }
 ```
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (Конфигурационные файлы, .editorconfig)
 <details><summary><b>Конфигурационные файлы, .editorconfig</b></summary><p>
 
 - Разные члены вашей команды могут использовать разные редакторы. Принуждать их использовать какой-то один редактор ни к чему. Однако для того, чтобы все пользовались едиными настройками, касающимися, например, отступов или символов перевода строки, мы и применяем файл .editorconfig. Он помогает поддерживать единый набор правил в неоднородных командах.
@@ -350,13 +363,20 @@
 **Ссылки**
 - [Хабр - Prettier, ESLint, Husky, Lint-Staged и EditorConfig: инструменты для написания аккуратного кода (2018)](https://habr.com/ru/company/ruvds/blog/428173/)
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (Прочие ссылки)
 <details><summary><b>Прочие ссылки</b></summary><p>
 - [Hexlet - Руководство Eslint + Prettier](https://ru.hexlet.io/blog/posts/rukovodstvo-eslint-prettier)
 - [Хабр - Prettier, ESLint, Husky, Lint-Staged и EditorConfig: инструменты для написания аккуратного кода (2018)](https://habr.com/ru/company/ruvds/blog/428173/)
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
 
-<br></p></details>
+<br></p>
+</details>
+
+<br>
+<br>
+
+*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
