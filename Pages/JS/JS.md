@@ -4293,7 +4293,7 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте». **Мутирующий!**
 - [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.  **Мутирующий!**
 - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight]()
+- [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
 - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
 
 **Новые**
@@ -4311,15 +4311,44 @@ Web Workers не имеют доступа к DOM, поэтому основно
 
 **Чаще всего спрашивают**
 
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование
-- [filter](https://learn.javascript.ru/array-methods#filter)
-- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Каждый элемент исходного массива обрабатываем в функции, преобразуем и результат записываем в новый массив.
+  - `const result = numbers.map(n => n*2)`
+  - Вернёт массив, со всеми элементами массива numbers, умноженными на 2.
+- [filter](https://learn.javascript.ru/array-methods#filter) - Каждый элемент исходного массива обрабатываем в функции. Функция вернёт true/false => если true, то результат пишем в новый массив.
+  - `const result = numbers.filter(n => n > 3)` 
+  - Вернёт массив, со всеми элементами массива numbers, которые > 3.
+- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright) - перебрать массив и вычислить одно значение. Каждый элемент исходного массива обрабатываем в функции, на выходе получаем одно значение
+  - `const sum = numbers.reduce((acc, n) => acc + n, 0)` 
+  - Вернёт сумму всех элементов массива numbers (acc). 0 = значение acc на первом шаге
 
 **Мутирующие методы**
 
 - [(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
 - [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
 - [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+
+**Методы `map`/`filter`/`reduce` вместо циклов `for` и `forEach`**
+
+Пришли в JS из функционального программирования. <br>
+Используя эти три метода, вы избегаете циклов `for` и `forEach` в большинстве ситуаций. Вместо них можно использовать совокупность `map`, `filter` и `reduce`.<br>
+Подробнее: [tproger.ru — Шпаргалка по современному JS](https://tproger.ru/translations/javascript-cheatsheet/#arrmthdsmapfltrrdc)
+```js
+//Посчитать сумму оценок студентов с результатом 10 и выше
+const students = [
+  { name: "Nick", grade: 10 },
+  { name: "John", grade: 15 },
+  { name: "Julia", grade: 19 },
+  { name: "Nathalie", grade: 9 },
+];
+
+const aboveTenSum = students
+  .map(student => student.grade) // формируем массив оценок
+  .filter(grade => grade >= 10) // отбираем оценки выше 10
+  .reduce((prev, next) => prev + next, 0); // суммируем каждую оценку выше 10
+
+console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie игнорируется, поскольку её оценка ниже 10
+```
+
 
 **Шпаргалки**
 
@@ -4338,7 +4367,62 @@ Web Workers не имеют доступа к DOM, поэтому основно
 [//]: # (Деструктуризация массивов)
 <details id="destruct"><summary><b>Деструктуризация массивов</b></summary><p>
 
+`Деструктурирование` — создание новых переменных путём извлечения данных из объектов и массивов.
+
+**Пример для объекта**
+```js
+const person = {
+  age: 35,
+  firstName: "Nick",
+  lastName: "Anderson",
+  sex: "M"
+}
+
+const { age, firstName: first, city = "Paris" } = person; // деструктурирование
+
+console.log(age) // 35 — создана переменная age, которая равна person.age
+console.log(first) // "Nick" — создана переменная first, значение которой соответствует person.firstName
+console.log(firstName) // ReferenceError — person.firstName существует, но новая переменная называется first
+console.log(city) // Paris — создана переменная city, а поскольку person.city не определена, city равна заданному по умолчанию значению "Paris".
+```
+
+**Пример для функций**
+```js
+const person = {
+  age: 35,
+  firstName: "Nick",
+  lastName: "Anderson",
+  sex: "M"
+}
+
+//Без деструктуризации
+function joinFirstLastName(person) {
+  const firstName = person.firstName;
+  const lastName = person.lastName;
+  return firstName + '-' + lastName;
+}
+
+//С деструктуризацией
+function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
+  return firstName + '-' + lastName;
+}
+
+joinFirstLastName(person); // Nick-Anderson
+```
+
+**Пример для массива**
+```js
+const myArray = ["a", "b", "c"];
+const [x, y] = myArray; // деструктуризация
+
+console.log(x) // "a"
+console.log(y) // "b"
+```
+
+**Пример для хука React**
+```js
 const [fruit, setFruit] = useState('банан');
+```
 
 Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)».
 Он означает, что мы создаём две новые переменные, fruit и setFruit.
@@ -4626,7 +4710,7 @@ const a = 1
   Способ объявления переменной. Используем если будем переопределять значение переменной. Видна в блоке
 - [«Поднятие (всплытие) переменных» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var#%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85) — особенность поведения var. Переменная становится доступной до того, как она объявлена. 
   - Объявление переменных (как и любые другие объявления) обрабатываются до выполнения кода => в каком бы месте кода мы не объявили переменную, это равнозначно тому, что переменную объявили в самом начале кода. 
-  - Формально работает для всех переменных, но реально обращаться к `let` и `const` можно только после присвоения, до тех по выдаёт ошибку [ReferenceError](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError). Этот эффект называется [«Временные мёртвые зоны» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D0%B7%D0%BE%D0%BD%D1%8B_%D0%B8_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_let) — если в блоке кода я пытаюсь использовать переменную до того, как она объявлена. Формально она существует (см выше «Поднятие переменных»), но обращаться к ней нельзя (в отличии от `var`). 
+    - Формально работает для всех переменных, но реально обращаться к `let` и `const` можно только после присвоения, до тех по выдаёт ошибку [ReferenceError](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError). Этот эффект называется [«Временные мёртвые зоны» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D0%B7%D0%BE%D0%BD%D1%8B_%D0%B8_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_let) — если в блоке кода я пытаюсь использовать переменную до того, как она объявлена. Формально она существует (см выше «Поднятие переменных»), но обращаться к ней нельзя (в отличии от `var`). 
   - См. также [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#varconstlet)
 
 **Let**
@@ -5929,7 +6013,15 @@ Fetch API
 [//]: # (Параметры функции по умолчанию todo:пусто)
 <details id="functDefParam"><summary><b>Параметры функции по умолчанию**</b></summary><p>
 
-
+```js
+function myFunc(x = 10) {
+  return x;
+}
+console.log(myFunc()) // 10 — не задано значение, поэтому значение x по умолчанию присвоено x в функции myFunc
+console.log(myFunc(5)) // 5 — значение задано, поэтому x=5 в функции myFunc
+console.log(myFunc(undefined)) // 10 — задано значение undefined, поэтому по умолчанию равно x
+console.log(myFunc(null)) // null — величина задана
+```
 
 Ссылки:
 
