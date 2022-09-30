@@ -6046,7 +6046,51 @@ const name = 'Федя'
 // Привет Федя!
 ```
 
-Ссылки:
+**Вложенные шаблоны**
+
+Когда внутрь шаблонной строки помещаем ещё одну, обернув ей в `${ }`.
+```js
+const classes = `header 
+  ${ isLargeScreen()  ? ''  : `icon-${item.isCollapsed ? 'expander' : 'collapser'}` 
+}`;
+````
+
+**Теговые шаблоны**
+
+Функция, которая позволяет разбирать шаблонную строку.. 
+
+Первый аргумент этой функции — массив из кусочков строк, которые разделены выражениями `${}`.<br> 
+Остальные параметры — значения выражений, которые подставляются в шаблонную строку.<br> 
+Вызов функции производится не с использованием круглых скобок `funcName(data)`, а с помощью слитного написания шаблонной строки ```js funcName`data` ```.
+
+Подробнее: [MDN -  Шаблонные строки. Теговые шаблоны](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals#%D1%82%D0%B5%D0%B3%D0%BE%D0%B2%D1%8B%D0%B5_%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B)
+
+```js
+var person = 'Mike';
+var age = 28;
+
+//Теговый шаблон
+function myTag(strings, personExp, ageExp) {
+  var str0 = strings[0]; // "That "
+  var str1 = strings[1]; // " is a "
+  // Технически, в конце итогового выражения (в нашем примере) есть ещё одна строка, но она пустая (""), так что пропустим её.
+  // var str2 = strings[2];
+  var ageStr;
+  
+  if (ageExp > 99){
+    ageStr = 'centenarian';
+  } else {
+    ageStr = 'youngster';
+  }
+  
+  return `${str0}${personExp}${str1}${ageStr}`; // Мы даже можем вернуть строку, построенную другим шаблонным литералом
+}
+
+var output = myTag`That ${ person } is a ${ age }`;
+console.log(output); // That Mike is a youngster
+```
+
+**Ссылки**
 
 - [MDN - Шаблонные строки](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals)
 - [Doka - Шаблонные строки](https://doka.guide/js/template-strings/)
