@@ -8,11 +8,11 @@
 - [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
 
 - [learn.javascript.ru](https://learn.javascript.ru)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 - [doka.guide](https://doka.guide/js)
 - [metanit.com](https://metanit.com/web/javascript/)
 - [Schoolsw3](https://www.schoolsw3.com/js)
 - [ITchief](https://itchief.ru/javascript/)
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 - [code.mu - Учебник JS: основной](https://code.mu/ru/javascript/book/prime/)
 - [code.mu - Учебник JS: высший](https://code.mu/ru/javascript/book/supreme/)
 - [code.mu - Учебник JS: ООП](https://code.mu/ru/javascript/book/oop/)
@@ -4605,7 +4605,6 @@ const [fruit, setFruit] = useState('банан');
 [//]: # (Переменные var, let и const)
 <details id="variables"><summary><b>Переменные var, let и const</b></summary><p>
 
-
 Не надо объявлять переменные без указания директивы (например var или let).
 
 ```js
@@ -4621,14 +4620,18 @@ const a = 1
 **Var**
 
 - Устаревший способ объявления переменной.
-- Область видимости переменной var – функция.
-- var существуют и до объявления. Они равны undefined.
+- Область видимости переменной `var` – функция.
+- `var` существуют и до объявления. Они равны `undefined`.
 - При использовании в цикле у нас будет одна var на все итерации цикла. Не создаётся заново в каждой итерации.
   Способ объявления переменной. Используем если будем переопределять значение переменной. Видна в блоке
+- [«Поднятие (всплытие) переменных» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var#%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85) — особенность поведения var. Переменная становится доступной до того, как она объявлена. 
+  - Объявление переменных (как и любые другие объявления) обрабатываются до выполнения кода => в каком бы месте кода мы не объявили переменную, это равнозначно тому, что переменную объявили в самом начале кода. 
+  - Формально работает для всех переменных, но реально обращаться к `let` и `const` можно только после присвоения, до тех по выдаёт ошибку [ReferenceError](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError). Этот эффект называется [«Временные мёртвые зоны» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D0%B7%D0%BE%D0%BD%D1%8B_%D0%B8_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_let) — если в блоке кода я пытаюсь использовать переменную до того, как она объявлена. Формально она существует (см выше «Поднятие переменных»), но обращаться к ней нельзя (в отличии от `var`). 
+  - См. также [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#varconstlet)
 
 **Let**
 
-- Область видимости переменной let – блок {...}, в котором объявлена.<br>
+- Область видимости переменной `let` – блок {...}, в котором объявлена.<br>
 - Это, в частности, влияет на объявления внутри if, while или for.
 - let видна только после объявления. До тех пор их просто нет.
 - При использовании в цикле, для каждой итерации создаётся своя переменная.

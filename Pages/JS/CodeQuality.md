@@ -195,16 +195,16 @@
 
 **Заметки**
 - любое правило можно отключить для куска кода
-  - // eslint-disable-line no-unused-vars
-  - /* eslint react/jsx-one-expression-per-line: "off" */
+  - `// eslint-disable-line no-unused-vars`
+  - `/* eslint react/jsx-one-expression-per-line: "off" */`
   - https://eslint.org/docs/user-guide/configuring.html#configuring-rules
   - https://eslint.org/docs/user-guide/configuring.html#disabling-rules-with-inline-comments
-- любое правило можно "отключить" вообще - "semi": "off"
+- любое правило можно "отключить" вообще - `"semi": "off"`
 - любому правилу можно перевести в другой статус:
-    - сделать предупреждением - "semi": "warn"
-    - сделать ошибкой - "semi": "error"
+    - сделать предупреждением - `"semi": "warn"`
+    - сделать ошибкой - `"semi": "error"`
 - Не работают правила линтера или форматирование отличается от ожидаемого.
-  - Возможно, это следствие наличия в проекте других конфигурационных файлов. Они имеют разный приоритет исполнения. Например, файл .editorconfig имеет высший приоритет, чем .eslintrc., поэтому линтер будет выставлять настройки с его помощью.
+  - Возможно, это следствие наличия в проекте других конфигурационных файлов. Они имеют разный приоритет исполнения. Например, файл `.editorconfig `имеет высший приоритет, чем `.eslintrc`, поэтому линтер будет выставлять настройки с его помощью.
 <br>
 <br>
 
@@ -215,6 +215,33 @@
 - [Хабр - Prettier, ESLint, Husky, Lint-Staged и EditorConfig: инструменты для написания аккуратного кода (2018)](https://habr.com/ru/company/ruvds/blog/428173/)
 - [Хабр - Переносим Angular проект на ESLint, с Prettier, Husky и lint-staged (2020)](https://habr.com/ru/post/501830/)
 - [Настройка ESLint, Prettier, pre-commit hook (create-react-app, visual studio code)](https://maxpfrontend.ru/vebinary/nastroyka-eslint-prettier-pre-commit-hook-create-react-app-visual-studio-code/)
+
+<br></p>
+</details>
+
+[//]: # (TSLint)
+<details><summary><b>TypeScript Linting</b></summary><p>
+
+Раньше был линтер [TSLint](https://palantir.github.io/tslint/) — поддержка прекращена в 2019. Переходите на ESLint.
+
+Есть [TypeScript ESLint](https://typescript-eslint.io/) — надо разбираться
+
+**Инструкция**
+- Как использовать ESLint для проверки TypeScript
+- Не уверен, что это правильный ход, но я делаю так
+- ставлю плагин `@typescript-eslint`
+- прописываю его в файле настроек ESLint (`.eslintrc.json`), секция `"plugins"`
+- в файле настроек ESLint (`.eslintrc.json`), в секции `"rules": {}` завожу секцию `@typescript-eslint/ИМЯ_ПРАВИЛА:[ настройки]`
+  - ==ПРИМЕР С ОТСТУПОМ НЕ СТОИТ ИСПОЛЬЗОВАТЬ!== — он ведёт к ошибкам. См. https://github.com/typescript-eslint/typescript-eslint/issues/1824. Использую для таких случаев Prettier либо настройки IDE
+  - например: `"@typescript-eslint/indent": ["warn","tab"]`
+  - пример описания для этого правила https://typescript-eslint.io/rules/indent
+
+
+**Ссылки**
+- [TypeScript ESLint](https://typescript-eslint.io/)
+- [eslint.org - Configuration Files](https://eslint.org/docs/latest/user-guide/configuring/configuration-files)
+- [Medium - Настройка ESLint в проекте React Typescript](https://andrebnassis.medium.com/setting-eslint-on-a-react-typescript-project-2021-1190a43ffba)
+- [TSLint](https://palantir.github.io/tslint/) — поддержка прекращена в 2019. Переходите на ESLint
 
 <br></p>
 </details>
@@ -231,7 +258,6 @@
 **Установка / Настройка**
 - Устанавливаю Prettier локально в проект (даже если использую Create React APP)
   - `yarn add --dev --exact prettier`
-  - или `yarn add prettier-miscellaneous --dev`
 - Также рекомендуют поставить эти плагины
   - `yarn add eslint-plugin-prettier eslint-config-prettier babel-eslint --dev`
 - В настройках `PhpStorm / Plugins` включаю плагин `Prettier`
@@ -280,27 +306,34 @@
 **Установка / Настройка**
 - Важно! В версии husky 6 и выше нужно использовать файлы настроек в .husky (вместо packge.json)
 - Устанавливаю Husky и lint-staged локально в проект (даже если использую Create React APP)
-    - `npm install husky --save-dev`
-    - Включаю Git hooks
-      - `npx husky install` 
-    - В `packge.json` добавляю секцию
-        ```
-      "scripts": {
-         ...
-        "prepare": "husky install"
-      }
-        ```
-    - В `.husky/pre-commit` дописываю внизу файла комманды, которые должны выполняться перед коммитом:
+  - `yarn add --dev husky` или `npm install husky --save-dev`
+  - Включаю Git hooks
+    - `npx husky install` 
+  - В `packge.json` добавляю секцию
       ```
+    "scripts": {
+       ...
+      "prepare": "husky install"
+    }
+      ```
+  - В папке `.husky` создаём файл `pre-commit` (прямо в этой папке, и прямо так - без расширения).
+    - содержимое файла:
+    - ```
       #!/usr/bin/env sh
       . "$(dirname -- "$0")/_/husky.sh"
-  
-      eslint --fix
-      prettier -u -w .
-      npm run build
-      git add
       ```
-- получается, перед каждым коммитом будет вызываться ESLint в режиме `--fix`
+  - В `.husky/pre-commit` дописываю внизу файла команды, которые должны выполняться перед коммитом:
+    ```
+    eslint --fix
+    prettier -u -w .
+    npm run build
+    git add
+    ```
+- получается, перед каждым коммитом будет 
+  - вызываться `ESLint` в режиме `--fix`
+  - отрабатывать `prettier` в режиме `--write` (перезапишет файлы, т.е. исправит в них ошибки по правилам указанным в файле конфигурации `.prettierrc.json`) и `--ignore-unknown` (будет игнорировать неизвестные файлы)
+  - выполняться `npm run build`
+  - и только потом совершаться `git add`
 
 **Ссылки**
 - [Husky official GitHub](https://github.com/typicode/husky)
