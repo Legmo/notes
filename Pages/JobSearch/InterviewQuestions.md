@@ -791,8 +791,14 @@
       // let getProperty:<V extends Record<string, >, T extends keyof V> = function(obj: V, data: T) => number;
       ```  
 
-- ****  React middle frontend developer (сентябрь 2022)
-- 
+- **Orion**  React middle frontend developer (сентябрь 2022)
+  - Вопрос от рекуртёра на скрининге
+    1. Назови основные метрики производительности, на которые стоит обращать внимание, при разработке веб-приложения.
+    2. Назови основные заголовки, отвечающие за кэширования веб-приложения.
+    3. Что такое таски и микротаски?
+    4. Зачем нужен Virtual DOM?
+    5. Назови отличия useEffect от useLayoutEffect.
+
 
 <br></p>
 </details> 

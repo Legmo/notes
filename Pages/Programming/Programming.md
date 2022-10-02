@@ -328,6 +328,58 @@ HTTP-кэш.
 <br></p>
 </details>
 
+[//]: # (Анаморфизмы и катаморфизмы)
+<details id="iterators"><summary><b>Анаморфизмы и катаморфизмы</b></summary><p>
+
+**Анаморфизмы**
+
+Функции, с помощью которых объекты разворачиваются в более сложные структуры, содержащие объекты того же типа.
+```js
+// Преобразование целого числа в ряд чисел:
+function downToOne(n) {
+  const list = [];
+
+  for (let i = n; i > 0; --i) {
+    list.push(i);
+  }
+
+  return list;
+}
+
+downToOne(5) // [ 5, 4, 3, 2, 1 ]
+```
+<br>
+<br>
+
+**Катаморфизмы**
+
+Противоположность анаморфизмов: сворачивают объекты с более сложной структурой в простые.
+
+```js
+// Преобразование ряда чисел в одно
+function product(list) {
+  let product = 1;
+
+  for (const n of list) {
+    product = product * n;
+  }
+
+  return product;
+}
+
+product(downToOne(5)) // 120
+```
+
+<br>
+<br>
+
+Ссылки:
+
+- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#amrphcatmrph)
+
+<br></p>
+</details>
+
 [//]: # (MVC для web)
 <details><summary><b>MVC для web</b></summary><p>
 

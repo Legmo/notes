@@ -4849,6 +4849,17 @@ const a = 1
 
 Появились в ES6.
 
+Пример
+```js
+function * downToOne(n) {
+  for (let i = n; i > 0; --i) {
+    yield i;
+  }
+}
+
+[...downToOne(5)] // [ 5, 4, 3, 2, 1 ]
+```
+
 Ссылки:
 
 - [learn.javascript.ru](https://learn.javascript.ru/generator)
@@ -4926,8 +4937,6 @@ product(downToOne(5)) // 120
 
 <br></p>
 </details>
-
-
 
 [//]: # (Лексическое всплытие)
 <details id="eventHoisting"><summary><b>Лексическое всплытие</b></summary><p>
