@@ -380,7 +380,6 @@ product(downToOne(5)) // 120
 <br></p>
 </details>
 
-
 [//]: # (Профилирование)
 <details><summary><b>Мемоизация</b></summary><p>
 
@@ -407,7 +406,6 @@ product(downToOne(5)) // 120
 
 <br></p>
 </details>
-
 
 [//]: # (MVC для web)
 <details><summary><b>MVC для web</b></summary><p>
@@ -801,7 +799,6 @@ DDD не связан с технологиями. Это про архитек�
 
 <br></p>
 </details>
-
 
 <br>
 <br>

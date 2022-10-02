@@ -329,7 +329,7 @@
 [//]: # (Оптимизации web-страниц)
 <details><summary><b>Оптимизации web-страниц</b></summary><p>
 
-- [Legmo - Оптимизации web-страниц](/Pages/Programming/Programming.md) (ДОРАБОТАТЬ)
+- [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser#optimization.md)
 - JS - эффективно использовать память
 - JS - избегать использования setTimeout() и setInterval() для обновления внешнего вида элементов страниц.
 - JS - переносить длительные вычисления в [`веб-воркеры`](/Pages/WebDeveloping/Browser.md).
@@ -365,7 +365,7 @@
 [//]: # (Оптимизация работы браузера. Critical rendering path)
 <details><summary><b>Оптимизация работы браузера. Critical rendering path</b></summary><p>
 
-- [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser.md)
+- [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser#optimization.md)
 - "Дорогие" операции работы с DOM. `Relayout` / `Repaint`
 - "Дорогие" операции чтения (getComputedStyle() и т.д.)
 - Схема работы:
