@@ -1,5 +1,6 @@
-# NodeJS #
- 
+<h1> NodeJS </h1>
+
+[//]: # (NodeJS)
 <details><summary><b>NodeJS</b></summary><p>
 
   - Node.js — это среда выполнения языка JavaScript. Просто другой способ выполнять код на вашем компьютере. Если вы хотите, чтобы платформа была HTTP-сервером, вам придётся написать HTTP-сервер (с помощью встроенных библиотек).
@@ -16,9 +17,10 @@
   - [Manuel Kiessling - Node.js для начинающих (2013)](http://spmbt.github.io/NodeBeginnersBook-ru/)
   - [Кантор - Скринкаст по Node.JS (YouTube, 2021)](https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg)
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (NPM - Node Packet Manager)
 <details><summary><b>NPM (Node Packet Manager)</b></summary><p>
 
   - Менеджер пакетов (инструмент Command Line Interface), входящий в состав Node.js + онлайн-репозиторий для публикации проектов Node.js с открытым исходным кодом.
@@ -33,9 +35,10 @@
   - [npm trends - Compare NPM package downloads](https://www.npmtrends.com)
   - [Cheat Sheet: npm vs Yarn Commands](https://www.digitalocean.com/community/tutorials/nodejs-npm-yarn-cheatsheet)
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (Yarn)
 <details><summary><b>Yarn</b></summary><p>
 
   - менеджер пакетов, альтернатива npm. Разработан в Facebook чтобы избавится от недостатков npm.
@@ -52,9 +55,10 @@
     - [npm vs Yarn — какой менеджер пакетов стоит использовать ?](https://ua-blog.com/npm-vs-yarn-%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2-%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB/)
 - [Cheat Sheet: npm vs Yarn Commands](https://www.digitalocean.com/community/tutorials/nodejs-npm-yarn-cheatsheet)
 
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (NPX)
 <details><summary><b>NPX</b></summary><p>
 
   - Инструмент Command Line Interface для упрощения установки и управления зависимостями, размещенными в реестре npm
@@ -69,9 +73,10 @@
   **Ссылки**
   -[hexlet - JS: Настройка окружения. NPX](https://ru.hexlet.io/courses/js-setup-environment/lessons/npx/theory_unit)
   
-<br></p></details>
+<br></p>
+</details>
 
-
+[//]: # (NVM)
 <details><summary><b>NVM (Node Version Manager)</b></summary><p>
 
   - Менеджер версий Node.js, управляет версиями node.js и npm
@@ -79,7 +84,18 @@
   - Полезно когда нужно испытать какой-нибудь код на старой версии Node.js.
   - С появлением NPX уже не так актуален
 
-<br></p></details>
+<br></p>
+</details>
+
+[//]: # (ASDF)
+<details><summary><b>ASDF</b></summary><p>
+
+  - Универсальный менеджер версий чего угодно. Надстройка над всеми другими менеджерами - nvm, yarn, pyenv, rvm, rustup, gvm...
+  - Работает под Linux / MacOS. Windows - только под Windows SL
+  - Написан на bash 
+
+<br></p>
+</details>
 
 
 
