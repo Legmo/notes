@@ -4080,13 +4080,13 @@ Web Workers не имеют доступа к DOM, поэтому основно
 
 **Реализация метода `toString`**
 - Возвращает список элементов, разделённых запятыми.
-  - alert( [] + 1 ); // "1"
-  - alert( [1] + 1 ); // "11"
-  - alert( [1,2] + 1 ); // "1,21"
+  - `alert( [] + 1 )` // "1"
+  - `alert( [1] + 1 )` // "11"
+  - `alert( [1,2] + 1 )` // "1,21"
 - Быть аккуратно с бинарным "+" - произведет сложение строк!
-  - alert( "" + 1 ); // "1"
-  - alert( "1" + 1 ); // "11"
-  - alert( "1,2" + 1 ); // "1,21"
+  - `alert( "" + 1 )` // "1"
+  - `alert( "1" + 1 )` // "11"
+  - `alert( "1,2" + 1 )` // "1,21"
     <br>
     <br>
 
@@ -4101,8 +4101,6 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - выписать/пометить, заучить
   <br>
   <br>
-
-
 
 **Псевдомассивы**
 - объекты, у которых есть индексы и свойство length, т. е., они выглядят как массивы.
@@ -4127,88 +4125,6 @@ Web Workers не имеют доступа к DOM, поэтому основно
     запятой
     <br>
     <br>
-
-
-**Методы массивов**
-- Методы массивов
-  - Push/pop
-    - Работают заметно быстрее чем shift/unshift
-    - push - добавляет элемент в конец массива
-    - pop - удаляет последний элемент из массива и возвращает его
-  - Shift/unshift
-    - Unshift - добавляет элемент в начало
-    - Shift - удаляет первый элемент и возвращает его
-  -
-  - Добавления/удаления элементов:
-    - push (...items) – добавляет элементы в конец,
-    - pop() – извлекает элемент с конца,
-    - shift() – извлекает элемент с начала,
-    - unshift(...items) – добавляет элементы в начало.
-    - splice(pos, deleteCount, ...items) – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
-    - slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
-    - concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если
-      какой-то из items является массивом, тогда берутся его элементы.
-  - Поиска среди элементов:
-    - indexOf/lastIndexOf(item, pos) – ищет item , начиная с позиции pos , и
-    - возвращает его индекс или -1 , если ничего не найдено.
-    - includes(value) – возвращает true , если в массиве имеется элемент value , в
-    - противном случае false .
-    - find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все
-    - значения, при прохождении которых через функцию возвращается true .
-    - findIndex похож на find , но возвращает индекс вместо значения.
-  - Перебора элементов:
-    - forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
-  - Преобразования массива:
-    - map(func) – создаёт новый массив из результатов вызова func для каждогоэлемента.
-    - sort(func) – сортирует массив «на месте», а потом возвращает его.
-    - reverse() – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
-    - split/join – преобразует строку в массив и обратно.
-    - reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и
-      передавая промежуточный результат между вызовами.
-  - Дополнительно:
-    - Array.isArray(arr) проверяет, является ли arr массивом.
-  -
-  - Есть другие методы, используются реже
-  - Добавить свежие методы 2017-2022
-  - Мутирующие - изменяют исходный массив
-    - sort
-    - reverse
-    - splice
-
-- push(...items) – добавляет элементы в конец,
-- pop() – извлекает элемент из конца,
-- shift() – извлекает элемент из начала,
-- unshift(...items) – добавляет элементы в начало.
-- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
-- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-  старых
-- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-  в массиве
-- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
-- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование
-- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
-- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
-- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight]()
-- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-  - 
-- НОВЫЕ
-- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
-- `at()` — обращаться к массивам с конца. И строкам тоже
-- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
-  массив сделать одномерным.
--
-- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-  - 
-- Чаще всего спрашивают
-  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
-  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
-  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
-
 
 Ссылки:
 
@@ -4319,6 +4235,90 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 
 - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
 - [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+
+
+
+<details><summary><b>UNSORTED</b></summary><p>
+- Методы массивов
+  - Push/pop
+    - Работают заметно быстрее чем shift/unshift
+    - push - добавляет элемент в конец массива
+    - pop - удаляет последний элемент из массива и возвращает его
+  - Shift/unshift
+    - Unshift - добавляет элемент в начало
+    - Shift - удаляет первый элемент и возвращает его
+  -
+  - Добавления/удаления элементов:
+    - push (...items) – добавляет элементы в конец,
+    - pop() – извлекает элемент с конца,
+    - shift() – извлекает элемент с начала,
+    - unshift(...items) – добавляет элементы в начало.
+    - splice(pos, deleteCount, ...items) – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
+    - slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
+    - concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если
+      какой-то из items является массивом, тогда берутся его элементы.
+  - Поиска среди элементов:
+    - indexOf/lastIndexOf(item, pos) – ищет item , начиная с позиции pos , и
+    - возвращает его индекс или -1 , если ничего не найдено.
+    - includes(value) – возвращает true , если в массиве имеется элемент value , в
+    - противном случае false .
+    - find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все
+    - значения, при прохождении которых через функцию возвращается true .
+    - findIndex похож на find , но возвращает индекс вместо значения.
+  - Перебора элементов:
+    - forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
+  - Преобразования массива:
+    - map(func) – создаёт новый массив из результатов вызова func для каждогоэлемента.
+    - sort(func) – сортирует массив «на месте», а потом возвращает его.
+    - reverse() – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
+    - split/join – преобразует строку в массив и обратно.
+    - reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и
+      передавая промежуточный результат между вызовами.
+  - Дополнительно:
+    - Array.isArray(arr) проверяет, является ли arr массивом.
+  -
+  - Есть другие методы, используются реже
+  - Добавить свежие методы 2017-2022
+  - Мутирующие - изменяют исходный массив
+    - sort
+    - reverse
+    - splice
+
+- push(...items) – добавляет элементы в конец,
+- pop() – извлекает элемент из конца,
+- shift() – извлекает элемент из начала,
+- unshift(...items) – добавляет элементы в начало.
+- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+  старых
+- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+  в массиве
+- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
+- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
+- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+- [reduce/reduceRight]()
+- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+  - 
+- НОВЫЕ
+- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
+- `at()` — обращаться к массивам с конца. И строкам тоже
+- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
+  массив сделать одномерным.
+-
+- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+  - 
+- Чаще всего спрашивают
+  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
+  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
+  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+    <br><p>
+</details>
 
 **Ссылки**
 
