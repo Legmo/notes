@@ -709,10 +709,12 @@ Web API...
 - [Habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
 - [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+- [Habr - Устройство движка JavaScript](https://habr.com/ru/sandbox/135800/)
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
   Рекомендую
 - [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+- [tproger.ru - Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
 - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
