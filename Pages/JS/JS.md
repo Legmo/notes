@@ -2308,12 +2308,12 @@ rabbit.__proto__ = animal;
 
 Если мы ищем свойство или метод в rabbit, а оно отсутствует, JavaScript автоматически берёт его из animal.
 
-Современные же методы работы с прототипами (нужно использовать вместо `__proto__`):
+Современные методы работы с прототипами (вместо `__proto__`):
 
+- `Object.setPrototypeOf(obj, proto)` – устанавливает свойство `[[Prototype]]` объекта obj как proto.
+- `Object.getPrototypeOf(obj)` – возвращает свойство `[[Prototype]]` объекта obj.
 - `Object.create(proto, [descriptors])` – создаёт пустой объект со свойством `[[Prototype]]`, указанным как proto, и
   необязательными дескрипторами свойств descriptors.
-- `Object.getPrototypeOf(obj)` – возвращает свойство `[[Prototype]]` объекта obj.
-- `Object.setPrototypeOf(obj, proto)` – устанавливает свойство `[[Prototype]]` объекта obj как proto.
 
 Можно строить длинные цепочки прототипов
 
