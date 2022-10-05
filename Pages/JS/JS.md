@@ -1356,7 +1356,6 @@ ES5 (2009)<br>
 **TypeOf**
 - typeof `null` — `object` (хотя реальный тип 'null')
 - typeof `function` — `function` (хотя реальный тип 'object')
-- typeof `({key: value})` — `object` (typeof любого инлайн-объекта = объект)
 
 **Преобразование логическое**
 
