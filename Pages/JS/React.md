@@ -4108,6 +4108,88 @@ Webpack сталкивается с таким синтаксисом, он ав
 <br></p>
 </details>
 
+[//]: # (Порталы)
+<details><summary><h3>Порталы</h3></summary><p>
+
+Способ отображения дочерних компонентов в узел DOM вне DOM-иерархии родительского компонента.<br>
+Если надо, чтобы дочерние компоненты визуально вырывались из родительского контейнера. 
+
+Примеры:
+- Модальные окна
+- Всплывающие подсказки
+- Загрузчики
+- ...
+
+Т.е. у меня компонент, который выводит что-то внутри `body.div#root.div#component`
+```
+<html>
+  <body>
+    <div id="root">
+      <div id="component">Компонент здесь</div>
+    </div>
+  </body>
+</html>
+```
+а я хочу вывести из него модальное окно, которое будет отображаться в `body`
+```
+<html>
+  <body>
+    <div id="root">
+      <div id="component">Компонент здесь</div>
+    </div>
+    <div id="modal">Модальное окно</div>
+  </body>
+</html>
+```
+
+Синтаксис:
+```jsx 
+ReactDOM.createPortal(child, container)
+```
+```jsx 
+return ReactDOM.createPortal(
+  <div className="modal">
+    <span>{message}</span>
+    <button onClick={onClose}>Close</button>
+  </div>,
+  document.body
+);
+```
+```jsx 
+const Modal =({ message, isOpen, onClose, children })=> {
+  if (!isOpen) return null;
+  
+  return ReactDOM.createPortal(
+    <div className="modal">
+      <span>{message}</span>
+      <button onClick={onClose}>Close</button>
+    </div>,
+    document.body
+  );
+}
+
+function Component() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="component">
+      <button onClick={() => setOpen(true)}>Open Modal</button>
+      <Modal 
+       message="Hello World!" 
+       isOpen={open} 
+       onClose={() => setOpen(false)}
+      />
+    </div>
+  )
+}
+```
+
+**Ссылки**
+- [Оф. документация - Порталы](https://habr.com/ru/post/309422/)
+- [Medium - Понятие о порталах в React с примерами использования](https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D0%B8%D0%B5-%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D0%B0%D1%85-%D0%B2-react-%D1%81-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-9184c95a54d7)
+
+<br></p>
+</details>
 
 [//]: # (Параллельный рендер в React. Concurrent rendering)
 <details><summary><h3>Параллельный рендер в React (Concurrent rendering)</h3></summary><p>

@@ -1421,7 +1421,8 @@ alert( sum.toFixed(2) ); // 0.30
 **Ссылки**
 
 - [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
-- [doka - Преобразование типов ](https://doka.guide/js/typecasting)
+- [doka - Типы ](https://doka.guide/js/typecasting)
+- [doka - Типы. Преобразование типов ](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
 
 <br></p>
 </details>
