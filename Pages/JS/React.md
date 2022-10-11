@@ -4120,24 +4120,15 @@ Webpack сталкивается с таким синтаксисом, он ав
 - Загрузчики
 - ...
 
-Т.е. у меня компонент, который выводит что-то внутри `body.div#root.div#component`
+Т.е. у меня компонент, который выводит что-то внутри `body.div#root.div#component`.<br>
+А я хочу вывести из него модальное окно, которое будет отображаться в `body`
 ```
 <html>
   <body>
     <div id="root">
       <div id="component">Компонент здесь</div>
     </div>
-  </body>
-</html>
-```
-а я хочу вывести из него модальное окно, которое будет отображаться в `body`
-```
-<html>
-  <body>
-    <div id="root">
-      <div id="component">Компонент здесь</div>
-    </div>
-    <div id="modal">Модальное окно</div>
+    <div id="modal">Модальное окно должно быть здесь</div>
   </body>
 </html>
 ```
@@ -4185,7 +4176,7 @@ function Component() {
 ```
 
 **Ссылки**
-- [Оф. документация - Порталы](https://habr.com/ru/post/309422/)
+- [Оф. документация - Порталы](https://ru.reactjs.org/docs/portals.html)
 - [Medium - Понятие о порталах в React с примерами использования](https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D0%B8%D0%B5-%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D0%B0%D1%85-%D0%B2-react-%D1%81-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-9184c95a54d7)
 
 <br></p>
