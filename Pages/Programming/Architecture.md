@@ -54,6 +54,7 @@
 - [Doka - Что такое код-ревью](https://doka.guide/tools/code-review/)
 - [Doka - Что такое технический долг](https://doka.guide/js/technical-debt/)
 - [Legmo Notes - Паттерны проектирования](./Pattern.md)
+- [Legmo Notes - Микросервисная архитектура](../WebDeveloping/Microservices.md)
 - [Беспоясов А - Чистая архитектура во фронтенде](https://bespoyasov.ru/blog/clean-architecture-on-frontend/)
 - [Habr - «Откуда ноги растут» или что предшествует программированию?](https://habr.com/ru/company/otus/blog/493898/)
 - [Hexlet - Курс «JS: Архитектура фронтенда»](https://ru.hexlet.io/courses/js-frontend-architecture)
