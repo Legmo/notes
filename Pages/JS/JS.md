@@ -4581,47 +4581,34 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br><p>
 </details>
 
-[//]: # (Копирование объектов todo: доработать!)
-<details id="objectCopy"><summary><b>Копирование объектов*</b></summary><p>
+[//]: # (Копирование объектов)
+<details id="objectCopy"><summary><b>Копирование объектов</b></summary><p>
 
-- создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя
-  их (`for ... in`)
-- метод `Object.assign`
-- Глубокое клонирование
-  - рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-  - JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-  - WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-  - lodash.cloneDeep(obj)
+**Поверхностное копирование**
+  - Spread оператор (...)
+  - цикл («наивное» копирование)
+    - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
+    - пример `for (let key in user) {newObj[key] = oldObj[key]}`
+    - проблемы
+      - меняется метод `Object.prototype`,
+      - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
+      - копирует только перечисляемые свойства
+  - object.assign
+    - работает для поверхностного копирования циклических объектов
+    - можно использовать для копирования методов
+<br>
+<br>
 
-**Копирование обычное**
-
-- цикл `for (let key in user) { newObj[key] = oldObj[key] }`
-- Object.assign
-
-**Копирование глубокое**
-
-- рекурсивный цикл `for (let key in user) {newObj[key] = oldObj[key];}`
-- JSON-хак `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-- WebAPI structuredClone `const myDeepCopy = structuredClone(myOriginal);`
-- lodash.cloneDeep(obj)
-
-**Способы копировать объект**
-- «наивное» копирование
-  - пишем цикл и копируем
-  - проблемы
-    - меняется метод `Object.prototype`,
-    - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
-    - копирует только перечисляемые свойства
-    - копия поверхностная
-- Spread оператор (...)
-  - поверхностная копи
-- object.assign
-  - делает поверхностную копию
-- JSON.parse(JSON.stringify(object));
-  - глубокое копирование
-  - этот метод нельзя использовать для копирования методов объекта, которые были написаны пользователем вручную
+**Глубокое копирование**
+  - цикл рекурсивный
+  - JSON.parse(JSON.stringify(object));
+    - нельзя использовать для копирования методов объекта (вообще всех функций)
+    - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
+    - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+  - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) 
+    - пример `const myDeepCopy = structuredClone(myOriginal);`
+  - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
 - Подробнее: [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
-
 
 <br><p>
 </details>
