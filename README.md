@@ -19,7 +19,7 @@
 
 - [Как проходить собеседования?](/Pages/JobSearch/Interview.md)
 - [Где искать работу?](/Pages/JobSearch/HR-company.md)
-- [Как проводить собеседования?](/Pages/JobSearch/Interview.md)
+- [Как проводить собеседования?](/Pages/JobSearch/HowToInterview.md)
 - [Как понять чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
 - [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
 
