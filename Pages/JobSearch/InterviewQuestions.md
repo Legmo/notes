@@ -970,12 +970,10 @@
   - ```js
     //Стерлочная
     const add = x => y => {
-      const z = x + y;
-      console.log(x + '+' + y + '=' + z);
-      return z;
+      return x + y;
     };
-    const res = add(3)(6); // вернёт 9 и выведет в консоль 3+6=9
-    console.log(res);
+    const res = add(3)(6);
+    console.log(res);  // вернёт 9
     ```
   - ```js
     //Обычная
