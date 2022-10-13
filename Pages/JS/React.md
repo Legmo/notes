@@ -592,6 +592,7 @@ development server, линтерами и всеми чудесами. Уста�
 **Ссылки**
 
 - [Оф. документация - Компоненты и пропсы](https://ru.reactjs.org/docs/components-and-props.html)
+- [ReactJS: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
 
 <br></p>
 </details>
@@ -664,6 +665,7 @@ development server, линтерами и всеми чудесами. Уста�
 - [оф. документация - Состояние и жизненный цикл](https://ru.reactjs.org/docs/state-and-lifecycle.html)
 - [Mentanit - Состояние. Управление компонентами-классами. State](https://metanit.com/web/react/2.4.php)
 - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
+- [ReactJS: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
 
 <br></p>
 </details>
@@ -680,8 +682,8 @@ React.js создает для DOM-события обертку в виде с�
 <br></p>
 </details>
 
-[//]: # (Virtual DOM todo: доработать)
-<details><summary><b>Virtual DOM</b></summary><p>
+[//]: # (Virtual DOM. Fiber todo: доработать)
+<details><summary><b>Virtual DOM. Fiber</b></summary><p>
 
 Это дерево React элементов на JavaScript.
 
@@ -779,6 +781,7 @@ React.js ведет запись жизненного цикла компоне�
 - [Medium - Как работает Virtual DOM?](https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9)
 - [Habr - Немного о том, как работает виртуальный DOM в React](https://habr.com/ru/company/macloud/blog/558682/)
 - [IT-Kamasutra #86 - Virtual DOM](https://youtu.be/rsW9_UtF4jk)
+- [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
 
   <br></p>
 
@@ -2724,6 +2727,8 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
 - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
+- [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
+- [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
 
 <br></p>
 </details>
@@ -2745,6 +2750,8 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
 - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
+- [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
+- [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
 
 <br></p>
 </details>
@@ -4334,6 +4341,7 @@ HTMl с сервера.
 - [Прогрессивный рендеринг для повышения производительности веб-приложений](https://webformyself.com/progressivnyj-rendering-dlya-povysheniya-proizvoditelnosti-veb-prilozhenij/)
 - [Wikipedia - Hydration (web development)](https://en.wikipedia.org/wiki/Hydration_(web_development))
 - [Оф. документация — метод `hydrate()`](https://ru.reactjs.org/docs/react-dom.html#hydrate)
+- [Видео - Server Side Rendering с использованием NextJS (ru, «Andersen»)](https://nextcloud.andersenlab.dev/index.php/s/xgi2n8HGprmbaNK)
 
 <br></p>
 </details>

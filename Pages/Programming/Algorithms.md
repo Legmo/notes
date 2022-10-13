@@ -143,6 +143,7 @@ Big O – это мера эффективности «в худшем случ�
 - [Алгоритмическая сложность](https://tproger.ru/translations/algorithms-and-data-structures)
 - [Сортировки. Пузырьковая сортировка/фильтрация](https://tproger.ru/translations/sorting-for-beginners)
 - [Бинарное дерево](https://tproger.ru/translations/binary-search-tree-for-beginners)
+- [Wikipedia - Дональд Кнут «Искусство программирования»](https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 
 <br></p>
 </details>

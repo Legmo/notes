@@ -38,6 +38,7 @@
 - [Методологии разработки](/Pages/Programming/Methodology.md)
 - [Тестирование](/Pages/Programming/Testing.md)
 - [CI-CD](/Pages/Programming/CI-CD.md)
+- [ООП](/Pages/Programming/OOP.md)
 - [Архитектура фронтенда](/Pages/Programming/Architecture.md)
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)

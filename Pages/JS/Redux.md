@@ -535,6 +535,7 @@ mapStateToProps() объявляется с двумя параметрами, �
 - [It-Kamasutra - React JS - mapStateToProps (reselect часть 3)](https://youtu.be/nDh92Vnf3_k)
 <br></p>
 - [GitHub - Reselect](https://github.com/reduxjs/reselect)
+- [Reselect - библиотека селекторов для Redux](https://github.com/devSchacht/translations/blob/master/articles/reselect-selector-library-for-redux/readme.md)
 
 </details>
 
@@ -960,6 +961,8 @@ byIdallIdsподход и, который мы использовали для �
 
 - [Оф. документация React-redux (en)](https://react-redux.js.org/)
 - [Оф. документация React-redux (ru)](https://rajdee.gitbooks.io/redux-in-russian/content/)
+- [Оф. документация React-redux (ru, v2 - GitHub)](https://github.com/rajdee/redux-in-russian)
+- [Оф. документация Redux Devtools (ru)](https://github.com/reduxjs/redux-devtools)
 - [Изучаем Redux на примере создания мини-Redux](https://medium.com/devschacht/jakob-lind-learn-redux-by-coding-a-mini-redux-d1a58e830514)
 - [Создаем свой собственный Redux, часть 2: функция connect](https://medium.com/devschacht/jakob-lind-code-your-own-redux-part-2-the-connect-function-d941dc247c58)
 - [Build Yourself a Redux (en)](https://zapier.com/engineering/how-to-build-redux/)

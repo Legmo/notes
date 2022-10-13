@@ -573,7 +573,7 @@ HTTP/2 вводит технологию Server Push, которая позво�
   SSL-соединения.
 
 **Ссылки**
-
+- [Методы HTTP-запроса](https://devanych.ru/technologies/metody-http-zaprosa)
 - [Habr - Простым языком об HTTP](https://habr.com/ru/post/215117/)
 
 <br></p>

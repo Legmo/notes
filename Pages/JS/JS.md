@@ -10,6 +10,7 @@
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 - [doka.guide](https://doka.guide/js)
+- [O'Reilly - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru)
 - [metanit.com](https://metanit.com/web/javascript/)
 - [Schoolsw3](https://www.schoolsw3.com/js)
 - [ITchief](https://itchief.ru/javascript/)
@@ -703,24 +704,25 @@ Web API...
 - [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
 - [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
-- [learn.javascript.ru -Микрозадачи](https://learn.javascript.ru/microtask-queue)
+- [learn.javascript.ru - Микрозадачи](https://learn.javascript.ru/microtask-queue)
 - [learn.javascript.ru - Браузерное окружение, спецификации](https://learn.javascript.ru/browser-environment)
 - [Habr - Как работает JS (19 статей)](https://habr.com/ru/company/ruvds/blog/337042/)
 - [Habr - Знакомство с WebAssembly](https://habr.com/ru/post/342180/)
 - [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+- [MDN - EventLoop](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
 - [Habr - Устройство движка JavaScript](https://habr.com/ru/sandbox/135800/)
-- [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
-  просто и понятно.
-  Рекомендую
+- [YouTube - Филипп Робертс: Что за чертовщина такая event loop?](https://youtu.be/8aGhZQkoFbQ) - Очень
+  просто и понятно. Рекомендую
 - [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
 - [tproger.ru - Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
 - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
 - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
-- [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
-- https://habr.com/ru/post/439620/
-- https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing
-- https://doka.guide/js/async-in-js/
+- [Hexlet - Event loop](https://ru.hexlet.io/courses/js_async/lessons/event_loop/theory_unit)
+- [alishoff - Как работает JS](https://alishoff.com/blog/184)
+- [Habr - Разбираемся с асинхронностью в JavaScript [Перевод статьи Sukhjinder Arora]](https://habr.com/ru/post/439620/)
+- [MDN - Введение в асинхронный JavaScript](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Introducing)
+- [Doka - Асинхронность в JS](https://doka.guide/js/async-in-js/)
+- [dev-gang.ru - Как работает JavaScript: под капотом движка V8](https://dev-gang.ru/article/kak-rabotaet-javascript-pod-kapotom-dvizhka-v-5ew7muxdnq/)
 
 <br></p>
 </details>   
@@ -1455,20 +1457,7 @@ var test = func; //И `test` и `func` указывают на одну и ту 
 ``` 
 
 **Способы копировать объект**
-- «наивное» копирование
-  - пишем цикл и копируем
-  - проблемы
-    - меняется метод `Object.prototype`,
-    - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
-    - копирует только перечисляемые свойства
-    - копия поверхностная
-- Spread оператор (...)
-  - поверхностная копи
-- object.assign
-  - делает поверхностную копию
-- JSON.parse(JSON.stringify(object));
-  - глубокое копирование
-  - этот метод нельзя использовать для копирования методов объекта, которые были написаны пользователем вручную
+- СМ ниже
 - Подробнее: [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
 
 
@@ -1478,6 +1467,61 @@ var test = func; //И `test` и `func` указывают на одну и ту 
 - [TOП-12 JavaScript-концепций: от ссылок до асинхронных операций](https://proglib.io/p/js-concepts/)
 - [Передача параметров по значению и по ссылке](https://metanit.com/web/javascript/3.7.php)
 - [Habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
+
+<br></p>
+</details>
+
+[//]: # (Приведение типов todo: доработать)
+<details id="objectReference"><summary><b>Приведение типов*</b></summary><p>
+
+```
+true + false
+12 / "6"
+"number" + 15 + 3
+15 + 3 + "number"
+[1] > null
+"foo" + + "bar"
+'true' == true
+false == 'false'
+null == ''
+!!"false" == !!"true"
+[‘x’] == ‘x’
+[] + null + 1
+[1,2,3] == [1,2,3]
+{}+[]+{}+[1]
+!+[]+[]+![]
+new Date(0) - 0
+new Date(0) + 0
+```
+
+Ответ
+```
+true + false             // 1
+12 / "6"                 // 2
+"number" + 15 + 3        // 'number153'
+15 + 3 + "number"        // '18number'
+[1] > null               // true
+"foo" + + "bar"          // 'fooNaN'
+'true' == true           // false
+false == 'false'         // false
+null == ''               // false
+!!"false" == !!"true"    // true
+['x'] == 'x'             // true 
+[] + null + 1            // 'null1'
+[1,2,3] == [1,2,3]       // false
+{}+[]+{}+[1]             // '0[object Object]1'
+!+[]+[]+![]              // 'truefalse'
+new Date(0) - 0          // 0
+new Date(0) + 0          // 'Thu Jan 01 1970 02:00:00(EET)0'
+```
+
+**Ссылки**
+
+- [Doka - Преобразование типов](https://doka.guide/js/typecasting/#preobrazovanie-tipov)
+- [learn.javascript.ru - Преобразование типов](https://learn.javascript.ru/type-conversions)
+- [Medium - Преобразование типов в JavaScript](https://medium.com/@sergeybulavyk/%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2-%D0%B2-javascript-35a15ddfc333)
+- [proglib.io - 5+5=? Преобразование значений в строку или число в JavaScript](https://proglib.io/p/5-5-preobrazovanie-znacheniy-v-stroku-ili-chislo-v-javascript-2022-05-15)
+- [Habr - Неявное преобразование типов в JavaScript](https://habr.com/ru/company/ruvds/blog/347866/)
 
 <br></p>
 </details>
@@ -3284,6 +3328,7 @@ close();
 - [MDN - Объект Window](https://developer.mozilla.org/ru/docs/Web/API/Window)
 - [MDN - Стандартные встроенные объекты](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
 - [Объект window в JavaScript](https://info-master.su/programming/web/js/window-object.php)
+- [Habr - Глобальные объекты и места их обитания (2016)](https://habr.com/ru/company/playrix/blog/316416/?ysclid=l8xvbyp6ji236101828)
 
 <br></p>
 </details>
@@ -4608,8 +4653,10 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
   - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) 
     - пример `const myDeepCopy = structuredClone(myOriginal);`
   - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
-- Подробнее: [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
 
+**Ссылки**
+  - [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
+  - [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
 <br><p>
 </details>
 
