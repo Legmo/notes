@@ -780,8 +780,7 @@
 - Задачка на JS
   - console.log
   - в частности, в `Promise(resolve => {setTimeout(()=>{resolve()}}).then()` — resolve() прерывает очередь макрозадач, и отрабатывают все then. Как-то так
-  - ```js
-    /*
+  - ```
     setTimeout(()=>{
       console.log('timeOut');
     }, 0)
@@ -807,7 +806,8 @@
     setTimeout(()=>{
       console.log('timeOuts');
     }, 0)
-    */
+    
+    // 1, Promise, 4, timeOut, 777, (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOuts
     ```
 - TypeScript
   - что такое Utility Types
