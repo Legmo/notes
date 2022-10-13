@@ -1072,14 +1072,13 @@
     //timeout 0 - timeout/interval выполняются в самом конце, после
     //timeout 5
     ```
-  - ```js
-    /*
+  - ```
     setTimeout(()=>{
       console.log('timeOut');
     }, 0)
-    
+      
     console.log(1);
-    
+      
     new Promise(resolve => {
       console.log("Promise")
       setTimeout(()=>{
@@ -1093,13 +1092,14 @@
     .then(() => {
       console.log("then2")
     })
-          
+            
     console.log(4);
-    
+      
     setTimeout(()=>{
       console.log('timeOuts');
     }, 0)
-    */
+    
+    // 1, Promise, 4, timeOut, 777, (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOuts
     ```
 - Армия функций
   - https://learn.javascript.ru/task/make-army
