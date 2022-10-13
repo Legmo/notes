@@ -1150,14 +1150,15 @@
 - Рекурсия - возведение в степень.
   - ```js
     //через рекурсию
-    function test(x, n) {
+    function pow(x, n) {
       if (n == 1) {
         return x;
       } else {
-        return x * test(x, n - 1);
+        return x * pow(x, n - 1);
       }
     }
-    alert( test
+    alert(pow());
+    ```
   - ```js
     //итеартивно, цикл for
     function pow(x, n) {
