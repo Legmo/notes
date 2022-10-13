@@ -1072,7 +1072,7 @@
     //timeout 0 - timeout/interval выполняются в самом конце, после
     //timeout 5
     ```
-  - ```
+  - ```js
     setTimeout(()=>{
       console.log('timeOut');
     }, 0)
