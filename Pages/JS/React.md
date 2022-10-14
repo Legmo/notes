@@ -4754,6 +4754,8 @@ https://www.youtube.com/watch?v=NhT5nMvve4Q
 - [9 принципов, которые должен знать новичок в React.js](https://medium.com/@apolyntsev/9-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D0%BE%D0%B2-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BE%D0%BA-%D0%B2-react-js-454e964062b)
 - [Почему не надо сохранять props в state](https://riptutorial.com/ru/reactjs/example/15854/%D0%BE%D0%B1%D1%89%D0%B8%D0%B9-%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%82%D1%82%D0%B5%D1%80%D0%BD)
 - [Как не надо писать React: неправильные шаблоны и проблемы в React](https://webformyself.com/kak-ne-nado-pisat-react-nepravilnye-shablony-i-problemy-v-react/)
+- [Яндекс - Разработка фичи: как эффективно пройти путь от идеи до реализации](https://academy.yandex.ru/journal/razrabotka-fichi-kak-effektivno-projti-put-ot-idei-do-realizacii)
+- [Medium - Проволочки при проектировании структуры React приложения](https://medium.com/@vladimirmorulus/%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B-react-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-609f80105e2c)
 
 <br></p>
 </details>
