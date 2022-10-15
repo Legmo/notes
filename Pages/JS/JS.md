@@ -1983,9 +1983,11 @@ alert(counter()); // 2
 Хочу прочитать свойство в object, а оно отсутствует — JS берёт его из прототипа.<br> 
 Такой механизм — «прототипное наследование». Это одна из основных особенностей языка JS.<br>
 Такие свойства — «прототипно унаследованные».
+<br>
+<br>
 
-[//]: # (Свойства `__proto__`, `[[Prototype]]`, `prototype`)
-<details><summary><b>Свойства `__proto__`, `[[Prototype]]`, `prototype`</b></summary><p>
+[//]: # (Свойства [[Prototype]], prototype, __proto__)
+<details><summary><b>Свойства [[Prototype]], prototype, __proto__</b></summary><p>
 
 В JS есть понятие `внутренний слот объекта` - обозначены как имя в квадратных скобках `[[SlotName]]`<br>
 Туда интерпретатор сохраняет некоторые приватные данные объекта для работы с ним.
@@ -2014,8 +2016,8 @@ alert(counter()); // 2
 <br></p>
 </details>
 
-[//]: # (Пример использования `__proto__`)
-<details><summary><b>Пример использования `__proto__`</b></summary><p>
+[//]: # (Пример использования __proto__)
+<details><summary><b>Пример использования __proto__</b></summary><p>
 
 ```js
 let animal = {
@@ -2033,8 +2035,8 @@ rabbit.__proto__ = animal;
 <br></p>
 </details>
 
-[//]: # (Свойство `constructor`)
-<details><summary><b>Свойство `constructor`</b></summary><p>
+[//]: # (Свойство constructor)
+<details><summary><b>Свойство constructor</b></summary><p>
 
 Указывает на функцию-конструктор, с помощью которой создавался объект.<br>
 Ссылка на функцию, с помощью которой был создан объект.<br>
