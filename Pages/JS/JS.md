@@ -2170,7 +2170,6 @@ var rabbit2 = new rabbit.constructor("Крольчиха");
 <br></p>
 </details>
 
-
 [//]: # (Конструктор)
 <details id="constructor"><summary><b>Конструктор</b></summary><p>
 
@@ -4526,6 +4525,8 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 - RegExp
 - все структуры которые создаются с ключевым словом `new`: Map, Set, WeakMap, WeakSet...
 
+см. раздел «[Что является объектом](#whatIsObject)»
+
 <br></p>
 </details>
 
@@ -4542,6 +4543,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Объекты хранятся и копируются «по ссылке)
 <details><summary><b>Объекты хранятся и копируются «по ссылке»</b></summary><p>
 
 - Переменная хранит не сам объект, а его «адрес в памяти», другими словами «ссылку» на него.
@@ -4675,13 +4677,17 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 
 **Классы**<br>
 Для создания сложных объектов есть и более «продвинутый» синтаксис чем конструктор – классы.
+см. раздел «[Классы](#classes)»
 <br>
 <br>
 
-**Способы копировать объект**<br>
-см. ниже раздел «[Копирование объектов](#objectCopy)»
-<br>
-<br>
+**Другие темы**
+- [Методы объектов](#objectMethods)
+- [Копирование объектов](#objectCopy)
+- [Перебор свойств объектов](#objectEnumeration)
+- [Преобразование объектов в примитивы](#objectToPrimitive)
+- [Преобразование объектов в примитивы](#propertiesAttributes)
+- [Перебор структур данных. Методы «keys», «values», «entries»](#keysValuesEntries)
 
 **Ссылки**
 
@@ -4892,7 +4898,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 </details>
 
 [//]: # (Перебор свойств объектов)
-<details id="objectCopy"><summary><b>Перебор свойств объектов</b></summary><p>
+<details id="objectEnumeration"><summary><b>Перебор свойств объектов</b></summary><p>
 
 Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.<br>
 А затем, пройтись по преобразованному массиву привычными методами.
