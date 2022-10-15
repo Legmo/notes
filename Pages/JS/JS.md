@@ -4515,6 +4515,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br>
 <br>
 
+[//]: # (Разные виды объектов)
 <details><summary><b>Разные виды объектов</b></summary><p>
 
 - «простой объект» («plain object») или просто Object
@@ -4528,6 +4529,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Св-ва в объекте упорядочены спец. образом)
 <details><summary><b>Св-ва в объекте упорядочены спец. образом</b></summary><p>
 
 - св-ва с целочисленными ключами сортируются по возрастанию
@@ -4553,6 +4555,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Создание объекта)
 <details><summary><b>Создание объекта</b></summary><p>
 
 - Конструктор объекта - `const user = new Object({name: 'Ivan'});`
@@ -4561,6 +4564,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Доступ к свойству через [])
 <details><summary><b>Доступ к свойству через []</b></summary><p>
 
 - Если имя св-ва = n слов (`['key name']`)
@@ -4570,6 +4574,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Трансформация объектов)
 <details><summary><b>Трансформация объектов</b></summary><p>
 
 - У объектов нет множества методов, которые есть в массивах, например map, filter и других.
@@ -4581,6 +4586,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Оператор in)
 <details><summary><b>Оператор in</b></summary><p>
 
 - Проверка существования св-ва в объекте.
@@ -4592,6 +4598,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Цикл `for ... in`)
 <details><summary><b>Цикл `for ... in`</b></summary><p>
 
 - перебор всех св-в объекта
@@ -4607,6 +4614,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Способы создания метода объекта)
 <details><summary><b>Способы создания метода объекта</b></summary><p>
 
 - Отдельно создали функцию, потом присвоили её св-ву объекта
@@ -4615,23 +4623,24 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 - В самом объекте пишем
   ```js
   // У этих объектов одинаковые методы
-      user = { 
-            sayHi: function() { 
-              alert("Привет"); 
-            }
-      }; 
-  //
+  user = { 
+    sayHi: function() { 
+      alert("Привет"); 
+    }
+  }; 
+
   // сокращённая запись
   user = {
-  sayHi() {  
-  alert("Привет");
-  }
+    sayHi() {  
+      alert("Привет");
+    }
   };
   ```
 
 <br></p>
 </details>
 
+[//]: # (Ключевое слово `this`)
 <details><summary><b>Ключевое слово `this`</b></summary><p>
 
 - Ключевое слово для доступа из метода объекта к другой информации в этом объекте
@@ -4654,6 +4663,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 <br></p>
 </details>
 
+[//]: # (Функция конструктор объектов и оператор `new)
 <details><summary><b>Функция конструктор объектов и оператор `new`</b></summary><p>
 
 - Чтобы создавать много однотипных функций по шаблону
