@@ -70,7 +70,6 @@
 <br></p>
 </details>
 
-
 [//]: # (MV* для web todo: дополнить)
 <details><summary><b>MV* для web *</b></summary><p>
 
@@ -156,6 +155,7 @@
 - [MVC для веб: проще некуда](https://habr.com/ru/post/181772/)
 - [Habr - Честный MVC на React + Redux (2016)](https://habr.com/ru/company/developersoft/blog/305812/)
 - [Doka - Архитектурный паттерн MVC ](https://doka.guide/js/architecture-mvc/)
+- [Medium - Прощай, Redux (2018)](https://medium.com/devschacht/jack-scott-goodbye-redux-4f11cc3c6af5)
 
 <br></p>
 </details>
@@ -220,7 +220,6 @@ DDD не связан с технологиями. Это про архитек�
 
 <br></p>
 </details>
-
 
 
 **Ссылки**

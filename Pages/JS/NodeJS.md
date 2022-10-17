@@ -12,6 +12,7 @@
   **Ссылки**
   - [Node.js - Official site](https://nodejs.org/en/)
   - [Node.js - Официальная документация на русском](https://nodejs.org/ru/docs/)
+  - [Дока - Что такое Node.js](https://doka.guide/tools/nodejs/)
   - [Хабр - Руководство по Node.js (10 частей)](https://habr.com/ru/company/ruvds/blog/422893/)
   - [metanit.com - Руководство по Node.js](https://metanit.com/web/nodejs/)
   - [Manuel Kiessling - Node.js для начинающих (2013)](http://spmbt.github.io/NodeBeginnersBook-ru/)
@@ -97,6 +98,13 @@
 <br></p>
 </details>
 
+
+**Ссылки**
+- [Дока - Что такое Node.js](https://doka.guide/tools/nodejs/)
+- [Дока - Системы сборки](https://doka.guide/tools/bundlers/)
+- [Дока - Что такое Webpack](https://doka.guide/tools/webpack/#otslezhivanie-izmeneniy-v-proekte)
+- [Дока - Виды веб-приложений ](https://doka.guide/js/web-app-types/)
+- [Дока - Версии языка, транспайлеры, бандлеры](https://doka.guide/js/language-versions/)
 
 
   <br> 

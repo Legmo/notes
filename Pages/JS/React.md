@@ -1060,6 +1060,7 @@ Ref отличный способ доступа к DOM элементам, но
 - [Максим Пацианский](https://maxpfrontend.ru/)
 - [npm trends - сравнение популярности React, Angular & Vue](https://www.npmtrends.com/react-vs-@angular/core-vs-vue)
 - [google trends - сравнение популярности React, Angular & Vue](https://trends.google.ru/trends/explore?geo=RU&q=react,angular,vue)
+- [Medium - Прощай, Redux (2018)](https://medium.com/devschacht/jack-scott-goodbye-redux-4f11cc3c6af5)
 
 <br></p>
 </details>
@@ -3092,6 +3093,45 @@ Consumer работает немного похоже как функция conn
 <br></p>
 </details>
 
+[//]: # (React.memo)
+<details><summary><h3>React.memo</h3></summary><p>
+
+HOC для пропуска повторных рендеров.<br>
+Использует мемоизацию (кэширование)
+
+Мемоизация — хранение результатов дорогостоящих вызовов функций и возврата кэшированного результата вычислений при повторном использовании тех же входных данных.
+
+Если обернуть компонента в React.memo — React будет использовать последнюю отрисованную версию этого компонента (если props не изменились).
+
+React.memo затрагивает только изменения пропсов.<br>
+Если функциональный компонент обёрнут в React.memo и использует useState, useReducer или useContext, он будет повторно рендериться при изменении состояния или контекста.
+
+В идеале мемоизированные компоненты должны быть чистыми.<br> 
+Рекомендуется добавлять в такой компонент только те свойства, которые редко меняются.
+
+По умолчанию он поверхностно сравнивает вложенные объекты в объекте props. Если вы хотите контролировать сравнение, вы можете передать свою функцию сравнения в качестве второго аргумента.
+
+Этот метод предназначен только для оптимизации производительности. Не полагайтесь на него, чтобы «предотвратить» рендер, так как это может привести к ошибкам.
+
+**Пример**
+```js
+const Component = React.memo(function Component(props) {
+  return (
+    <p>Text</p>
+  )
+});
+```
+
+
+
+**Ссылки**
+
+- [Оф. документация — React.memo](https://ru.reactjs.org/docs/react-api.html#reactmemo)
+- [Medium — Что такое React.memo и как он работает](https://medium.com/nuances-of-programming/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-react-memo-%D0%B8-%D0%BA%D0%B0%D0%BA-%D0%BE%D0%BD-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-d18cb0eabb4e)
+
+<br></p>
+</details>
+
 [//]: # (JSX)
 <details><summary><h3>JSX</h3></summary><p>
 
@@ -4376,6 +4416,7 @@ HTMl с сервера.
 - [Wikipedia - Hydration (web development)](https://en.wikipedia.org/wiki/Hydration_(web_development))
 - [Оф. документация — метод `hydrate()`](https://ru.reactjs.org/docs/react-dom.html#hydrate)
 - [Видео - Server Side Rendering с использованием NextJS (ru, «Andersen»)](https://nextcloud.andersenlab.dev/index.php/s/xgi2n8HGprmbaNK)
+- [Дока - Виды веб-приложений ](https://doka.guide/js/web-app-types/)
 
 <br></p>
 </details>

@@ -831,14 +831,16 @@ const obj2: Required<Props> = {a: 5} //Error. Не хвататет св-ва b.
 - [TypeScript и React с использованием create-react-app: пошаговое руководство по настройке вашего первого приложения](https://dev-gang.ru/article/typescript-i-react-s-ispolzovaniem-create-react-app-poshagovoe-rukovodstvo-po-nastroike-vashego-pervogo-prilozhenija/)
 - [Справочник TypeScript for React & Redux (piotrwitek)](https://github.com/piotrwitek/react-redux-typescript-guide)
 - [Habr - Статическая и динамическая типизация (2016)](https://habr.com/ru/post/308484/?ysclid=l75ndzru2v460218152)
--
+- 
   +
 - [tproger - Вводный курс по TypeScript](https://tproger.ru/translations/course-on-typescript/)
 - [Medium - TypeScript: основы](https://medium.com/nuances-of-programming/typescript-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-728e88888723)
 - [VC - Крупный гайд по TypeScript](https://vc.ru/dev/423888-krupnyy-gayd-po-typescript)
+- [Дока - Версии языка, транспайлеры, бандлеры](https://doka.guide/js/language-versions/)
 
   <br></p>
 </details>
+
 <br>
 <br>
 
