@@ -1063,13 +1063,22 @@
     //console.log(intersect(a,b)); //[1,9,10]
     ```
   - Решение
-    ```js
-    const a = [1, 10, 2, 6, 9, -32];
-    const b = [-7, 1, 9, 8, 0, 1, 10];
-    const intersect = (a,b) => {
-      
-    }
-    //console.log(intersect(a,b)); //[1,9,10]
+    ```ja
+	  const a = [1, 10, 2, 6, 9, -32];
+	  const b = [-7, 1, 9, 8, 0, 1, 10];
+    
+	  const intersect = (a, b) => {  
+	    let bCopy = [...b];  
+	    let result = new Set;  
+	    
+	    a.map((itemA, index) => {
+	  	bCopy.forEach(itemB => {
+	  		(itemA === itemB) && result.add(itemA); 
+	      })  
+	    })  
+	    return Array.from(result);}  
+	    
+	  console.log(intersect(a, b)); //[1,9,10]
     ```
 
 <br></p>
