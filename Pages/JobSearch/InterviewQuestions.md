@@ -773,7 +773,6 @@
     в props данных компонентов.
 - Как выполнить код на этапе между изменением state и render'ом?
 
-
 <br></p>
 </details> 
 
@@ -841,7 +840,8 @@
 - Задачка на TypeScript
   - типизировать функцию 
     - должна была получиться конструкция типа `<V extends Record <string,>, T extends keyof V>(obj:V, data:T) => number`
-  - ```js
+  - Задачка
+    ```js
     /* 
      Есть объект X (произвольный) и функция getProperty, которая на вход принимает произвольный объект 
      и строковое значение свойств
@@ -1007,10 +1007,70 @@
 - Из каких методов жизненного цикла делать запрос на сервер
 
 Задачки:
-- console.log
-- написать функцию - принимает строку и число Х. Вырезает из строки Х знаков '!', и возвращает строку-результат. Решил через map. Можно было через filter, но так тоже ок.
+- в каком порядке выведутся console.log
+- Обработка строки (вырезать N восклицательных знаков)
+  - Задача
+    - Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков
+    ```js
+      const removeExclamations = (str, count) => {};
+      console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
+    ```
+  - Решение
+    - Решил через `map`. Можно было через `filter`, но так тоже ок.
+    ```js
+    const removeExclamations = (str, count) => {
+        let strArray = str.split('');
+        let result = '';
+        strArray.map(symbol =>{
+            if((symbol === '!') && (count > 0)) {
+               count--;
+               return;  
+            }
+            else {
+                result = result + symbol;
+            }
+        });
+        return result;
+    };
+    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
+    ```
 - написать React-компонент, который по нажатию кнопки создаёт новый инпут. Все значения валидируются формой validate. Если форма невалидна — кнопка «Сохранить» disabled. 
-- ещё была задачка - написать функцию находящую пересечение двух массивов чисел. Но её пропустили - сказали что вроде знания у меня есть.
+  - Задача
+    - Добавление любого колчиестваи input'ов по кнопке
+    - Валидация введённого во все инпуты значения с помощью функции validate
+    - Если форма не валидна - кнопка "Сохранить должна быть "disabled"
+  - Решение
+    ```tsx
+    type PropTypes = {}
+    const addInput = () => {
+      let [setCount, count] = useState();
+      return (
+        <div>
+          
+        </div>
+      )
+    }
+    ```
+- ещё была задачка - написать функцию находящую пересечение двух массивов чисел. 
+  - Но её пропустили - сказали что вроде знания у меня есть.
+  - Задача
+    ```js
+    const a = [1, 10, 2, 6, 9, -32];
+    const b = [-7, 1, 9, 8, 0, 1, 10];
+    const intersect = (a,b) => {
+      //your code here
+    }
+    //console.log(intersect(a,b)); //[1,9,10]
+    ```
+  - Решение
+    ```js
+    const a = [1, 10, 2, 6, 9, -32];
+    const b = [-7, 1, 9, 8, 0, 1, 10];
+    const intersect = (a,b) => {
+      
+    }
+    //console.log(intersect(a,b)); //[1,9,10]
+    ```
 
 <br></p>
 </details> 
@@ -1021,7 +1081,93 @@
 [//]: # (Популярные задачки)
 <details><summary><b>Популярные задачки</b></summary><p>
 
-- Замыкания - например использование `var`/`let` в `for()`
+- Замыкания - например использование `var`/`let` в `for()`- Работа движка, ассинхронность — в каком порядке выведутся console.log()?
+  - дано несколько разных console.log - обычные, promise + .then(), setTimeout/setInterval
+  - ```js
+    console.log('start');  // Выполянется как обычный синхронный код
+  
+    setTimeout(function(){
+      console.log('timeout 5');
+    }, 5 );
+    
+    setTimeout(function(){
+      console.log('timeout 0');
+    }, 0 );
+  
+    const promise = new Promise(function(resolve, reject) {
+      console.log('promise');  // Выполянется как обычный синхронный код
+      resolve(true);
+    });
+
+    promise
+    .then(
+      function(){console.log('then 1');}  // Очередь микрозадач
+    )
+    .then(
+      function(){console.log('then 2');}  // Очередь микрозадач
+    );
+    
+    console.log('end ');  // Выполянется как обычный синхронный код
+    
+    //start, promise, end
+    //then 1 - then/catch всегда после обычных задач (это microtasks)
+    //then 2
+    //timeout 0 - timeout/interval выполняются в самом конце, после
+    //timeout 5
+    ```
+  - ```js
+    setTimeout(()=>{
+      console.log('timeOut');
+    }, 0)
+      
+    console.log(1);
+      
+    new Promise(resolve => {
+      console.log("Promise")
+      setTimeout(()=>{
+        console.log('777');
+        resolve()         // Внимание! Дальше всё идёт иначе — промис разрешился, макротаск прервался. Следом отработают then
+      }, 0)
+    })
+    .then(() => {
+      console.log("then1")
+    })
+    .then(() => {
+      console.log("then2")
+    })
+            
+    console.log(4);
+      
+    setTimeout(()=>{
+      console.log('timeOuts');
+    }, 0)
+    
+    // 1, Promise, 4, timeOut, 777, (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOuts
+    ```
+  - ```js
+    var a = 5;
+    
+    setTimeout(function timeout(){
+      console.log(a);
+      a = 10;
+    }, 0)
+      
+    var p = new Promise(function(resolve, reject){
+      console.log(a);
+      a = 25;
+      resolve();
+    })
+    
+    p.then(function(){
+      a = 15;
+      console.log(a)
+    })   
+    
+    console.log(a);
+
+    
+    // 5, 25, 15, 15
+    ```
 - Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3
   - ```js
     //Стерлочная
@@ -1049,7 +1195,7 @@
     var counter2 = fA();
     console.log(counter2()); // 1
     ```
-- Замыкания, this - написать декратор для кэширования
+- Замыкания, this - написать декоратор для кэширования
   - [learn.javascript.ru - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
   - ```js
     let worker = {
@@ -1091,71 +1237,6 @@
   
     alert( worker.slow(2) ); // работает
     alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
-    ```
-- Работа движка, ассинхронность — в каком порядке выведутся console.log()?
-  - дано несколько разных console.log - обычные, promise + .then(), setTimeout/setInterval
-  - ```js
-    console.log('start');  // Выполянется как обычный синхронный код
-  
-    setTimeout(function(){
-      console.log('timeout 5');
-    }, 5 );
-    
-    setTimeout(function(){
-      console.log('timeout 0');
-    }, 0 );
-  
-    const promise = new Promise(function(resolve, reject) {
-      console.log('promise');  // Выполянется как обычный синхронный код
-      resolve(true);
-    });
-
-    promise
-    .then(
-      function(){console.log('then 1');}  // Очередь микрозадач
-    )
-    .then(
-      function(){console.log('then 2');}  // Очередь микрозадач
-    );
-    
-    console.log('end ');  // Выполянется как обычный синхронный код
-    
-    //start
-    //promise
-    //end
-    //then 1 - then/catch всегда после обычных задач (это microtasks)
-    //then 2
-    //timeout 0 - timeout/interval выполняются в самом конце, после
-    //timeout 5
-    ```
-  - ```js
-    setTimeout(()=>{
-      console.log('timeOut');
-    }, 0)
-      
-    console.log(1);
-      
-    new Promise(resolve => {
-      console.log("Promise")
-      setTimeout(()=>{
-        console.log('777');
-        resolve()         // обратить внимание на этот момент! После него всё идёт немного иначе. Кажется сразу следом отработают then
-      }, 0)
-    })
-    .then(() => {
-      console.log("then1")
-    })
-    .then(() => {
-      console.log("then2")
-    })
-            
-    console.log(4);
-      
-    setTimeout(()=>{
-      console.log('timeOuts');
-    }, 0)
-    
-    // 1, Promise, 4, timeOut, 777, (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOuts
     ```
 - Армия функций
   - https://learn.javascript.ru/task/make-army
@@ -1215,17 +1296,17 @@
     }
     alert(pow());
     ```
-  - ```js
-    //итеартивно, цикл for
-    function pow(x, n) {
-      let result = 1;
-      for (let i = 0; i < n; i++) {
-        result *= x; // умножаем result на x n раз в цикле
+    - ```js
+      //итеартивно, цикл for
+      function pow(x, n) {
+        let result = 1;
+        for (let i = 0; i < n; i++) {
+          result *= x; // умножаем result на x n раз в цикле
+        }
+        return result;
       }
-      return result;
-    }
-    alert( pow(2, 3) ); // 8
-    ```
+      alert( pow(2, 3) ); // 8
+      ```
 - Рекурсия - факториал.
   - Число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1
   - [learn.javascript.ru - Рекурсия](https://learn.javascript.ru/recursion#dva-sposoba-myshleniya]
@@ -1271,6 +1352,372 @@
   - если мы быстро нажмем несколько раз на кнопку (прям моментально) — какие значения выведет `console.log`?
   - выведет 1,2,3... - при каждом клике меняется счётчик в useState(), его значение хранится в замыкании с `setTimeout`
   - когда таймер «дотикает» — он выведет в консоль значения счётчика из замыкания
+- Обработка строки (вырезать N восклицательных знаков)
+  - Задача
+    - Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков
+    ```js
+    const removeExclamations = (str, count) => {};
+    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
+    ```
+  - Решение
+    - Решил через `map`. Можно было через `filter`, но так тоже ок.
+    ```js
+    const removeExclamations = (str, count) => {
+        let strArray = str.split('');
+        let result = '';
+        strArray.map(symbol =>{
+            if((symbol === '!') && (count > 0)) {
+               count--;
+               return;  
+            }
+            else {
+                result = result + symbol;
+            }
+        });
+        return result;
+    };
+    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
+    ```
+- Найти пересечение двух массивов чисел
+  - Задача
+    ```js
+    const a = [1, 10, 2, 6, 9, -32];
+    const b = [-7, 1, 9, 8, 0, 1, 10];
+    const intersect = (a,b) => {
+      //your code here
+    }
+    //console.log(intersect(a,b)); //[1,9,10]
+    ```
+  - Решение
+    ```js
+    const a = [1, 10, 2, 6, 9, -32];
+    const b = [-7, 1, 9, 8, 0, 1, 10];
+    
+    const intersect = (a, b) => {
+      let bCopy = [...b];
+      let result = new Set;
+
+      a.map((itemA, index) => {
+        bCopy.forEach(itemB => {
+          (itemA === itemB) && result.add(itemA); 
+        })
+      })
+
+      return Array.from(result);
+    }
+
+    console.log(intersect(a,b)); //[1,9,10]
+    ```
+- написать React-компонент, который по нажатию кнопки создаёт новый инпут. Все значения валидируются формой validate. Если форма невалидна — кнопка «Сохранить» disabled.
+  - Задача
+    - Добавление любого количества input'ов по кнопке
+    - Валидация введённого во все инпуты значения с помощью функции validate
+    - Если форма не валидна - кнопка "Сохранить должна быть "disabled"
+  - Решение
+    ```tsx
+    type PropTypes = {}
+    const addInput = () => {
+      let [setCount, count] = useState();
+      return (
+        <div>
+        
+        </div>
+      )
+    }
+    ```
+
+- Планирование вызовов через вложенные SetTimeout()
+  - https://learn.javascript.ru/settimeout-setinterval#vlozhennyy-settimeout
+  ```js
+  let delay = 500;
+  const getData = () => {
+    console.log('getData')
+      return false
+  };
+    
+  let timerID = setTimeout(function work(){
+        
+      if (!getData()) {
+          console.log('if')
+          delay= delay*2
+      }
+    
+      timerID = setTimeout(work, delay);
+    
+  }, delay)
+    
+  timer();
+  ```
+
+- Промис с запросом данных (5 попыток)
+  Написать функцию getData, которая запрашивает данные по url и
+  в случае неуспешного запроса, повторяет его еще 5 раз
+  в случае неудачи возвращает ошибку “Заданный URL недоступен”
+  Как делаем запрос (fetch или что-то ещё - не важно)
+  ```js
+  function getData() { }
+     
+  getData('https://example.com')
+    .then(console.log)
+    .catch(console.error)
+  ``` 
+  - Решение 2
+    ```
+    const getData = str  => {return new Promise(
+      (resolve, reject) => {
+        console.log('getData start')
+  
+        let getResult = (str) => {
+          //console.log('getResult', str);
+          const numb = +(Math.random() * 10). toFixed(4);
+          return numb;
+        }
+        let result = getResult('STEP '+ 1);
+        let count = 1;
+  
+        for(; count<6; count++) {
+          console.log(count);
+          console.log('result', result);
+  
+          if (result > 9) {
+            console.log('Finish')
+            resolve('YES!!!');
+            break
+          }
+          else {
+            result = getResult('STEP '+ (count+1));
+          }
+        }
+  
+        if(count === 6) {
+          reject('Noooo')
+        }
+  
+      }
+    )}
+  
+    getData('AAA')
+    .then(result => console.log(result))
+    .catch(err => console.error(err));
+  
+    ```
+  - Решение 1
+    ```js
+      function getData(str) { 
+        console.log('getData start')
+      
+        let getResult = (str) => {
+          //console.log('getResult', str);
+          const numb = +(Math.random() * 10). toFixed(4);
+          return numb;
+        }
+        let result = getResult('STEP '+ 1);
+      
+        for(let i=1; i<6; i++) {
+          console.log('st-',i);
+          console.log('result', result);
+      
+          if (result > 5) {
+            console.log('Finish')
+            return true;
+          }
+          else {
+            result = getResult('STEP '+ (i+1));
+          }
+        }
+      }
+    ```
+
+- Синхронная функция пытается сгенерировать случайное число > X (5 попыток)
+  Написать синхронную функцию
+  Внутри функции генерируем случайное число
+  Если число больше 0,5 - возвращаем его
+  Если число меньше 0,5 - вызываем снова. И так 5 раз
+  Если 5 раз неудача - выводим console.log
+
+  - ВАРИАНТ через рекурсию
+    ```js
+    function getNumberRec(count=5) {
+      const randomNumber = Math.random();
+      
+      console.log('count', count);
+      console.log('randomNumber', randomNumber);
+      if (randomNumber > 0.9) {
+        return(randomNumber);
+      } 
+      else {
+          count--;
+          if(count > 0) {
+            getNumberRec(count);
+          }
+      }
+    }
+    getNumberRec();
+    ```
+  - ВАРИАНТ через for
+    ```js
+      function getNumber() {
+        let randomNumber = Math.random();
+          if(randomNumber > 0.7) {
+            console.log('randomNumber', randomNumber);
+            console.log('Finish');
+          } else {
+            for(let i=0; i<6; i++) {
+              console.log('randomNumber', randomNumber);
+              randomNumber = Math.random();
+            }
+          }
+      }
+      getNumber();
+    ```
+  - ВАРИАНТ через while
+      ```js
+      function getNumber() {
+        let randomNumber = Math.random();
+        let counter = 5;
+        
+        while(counter > 0) {
+          console.log(`Step ${counter} randomNumber = ${randomNumber}`);
+          if (randomNumber > 1) {
+            console.log('randomNumber', randomNumber);
+            return randomNumber;
+          }
+          else {
+            randomNumber = Math.random();
+            counter --;
+          }
+        }
+      }
+      ```
+
+- Сортировка массива положительных и отрицательных чисел по их квадратам.
+  - Отсортировать исходный массив положительных и отрицательных чисел по их квадратам.
+  - Использовать алгоритм не требующий много памяти
+  - Решение 1 («в лоб»)
+  ```js
+  let orig = [-1,3,1,7,-5,2];
+  console.log(original)
+  let abs = orig.map(item => Math.abs(item))
+  let final = abs.sort((a, b) => (a*a) - (b*b) );
+  console.log(final)
+  ```
+
+- Получить строку из массива объектов, по опр. алгоритму
+  - Условия
+    -   есть массив однотипных объектов, у каждого есть свойства value, order, expired.
+    -   надо написать функцию которая
+      -   исключить объекты с expired=true,
+      -   оставшиеся отсортировать по значению order (предполагалось использовать метод sort),
+      -   потом взять значения свойства value,
+      -   сделать каждому значению reverse,
+      -   записать всё это в строку,
+      -   при этом ни один символ в строке не должен повторяться дважды
+  1. Решение «в лоб»
+     ```js
+     const input = [
+       {value: 'qweq', order: 4, expired: false},
+       {value: 'asdq', order: 2, expired: true},
+       {value: 'jkri', order: 1, expired: false},
+       {value: 'oiod', order: 3, expired: false},
+     ];
+
+     console.log('start: ', input)
+
+     let actual = input.filter(obj => !obj.expired)
+
+     console.log('actual: ', actual)
+
+     const temp = actual;
+     let sorted = temp.sort((a,b) => a.order-b.order)
+
+     console.log('sorted 1: ', sorted)
+
+     let reversed = sorted.map(obj => {
+       let objCopy = {...obj};
+       console.log(objCopy.value);
+       objCopy.value = objCopy.value.split("").reverse().join("");
+       console.log(objCopy.value);
+       return objCopy;
+     })
+     console.log('reversed: ', reversed)
+
+     let output = sorted.reduce((result, current) => {
+         let valArray = current.value.split("");
+         let finalStr = ''
+         valArray.forEach((item, index, array) =>{
+         console.log('result', result, 'item: ', item)
+             if(!result.includes(item) && !finalStr.includes(item)) {
+                 finalStr = finalStr + item;
+             }
+         })
+         return result + finalStr;
+     }, '' );
+
+     console.log('output: ', output)
+     ```
+  2. Решение «в лоб» через SET
+     ```js
+     const input = [
+       {value: 'qweq', order: 4, expired: false},
+       {value: 'asdq', order: 2, expired: true},
+       {value: 'jkri', order: 1, expired: false},
+       {value: 'oiod', order: 3, expired: false},
+     ];
+
+     let actual = input.filter(obj => !obj.expired)
+
+     const temp = actual;
+     let sorted = temp.sort((a,b) => a.order-b.order)
+
+     let reversed = sorted.map(obj => {
+       let objCopy = {...obj};
+       console.log(objCopy.value);
+       objCopy.value = objCopy.value.split("").reverse().join("");
+       console.log(objCopy.value);
+       return objCopy;
+     })
+
+     let output = new Set(); 
+
+     sorted.map(obj => {
+       let valArray = obj.value.split("");
+
+       valArray.map(symb => {
+         output.add(symb)
+       })
+     }, '' );
+
+
+     output = [...output].join('')
+     ```
+  3. Оптимизация
+     ```js
+     const input = [
+       {value: 'qweq', order: 4, expired: false},
+       {value: 'Asdq', order: 2, expired: true},
+       {value: 'jkri', order: 1, expired: false},
+       {value: 'oiod', order: 3, expired: false},
+     ];
+
+     const temp = [...actual];
+     let set = new Set(); 
+
+     let actual = temp.filter(obj => !obj.expired)
+     let sorted = actual.sort((a,b) => a.order-b.order)
+
+     sorted.map(obj => {
+       let valArray = obj.value.split("").reverse();
+     valArray.map(symb => set.add(symb));
+
+     })
+
+     let output = [...set].join('');
+
+     console.log('output:', output); //irkjdoqew
+
+     ```
+
+
 
 <br></p>
 </details> 
