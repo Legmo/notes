@@ -148,7 +148,10 @@
 - View = React
 - Controller = React-redux. Обёртка, которая принимает стейт, диспатчит ActionCreators и т. При условии, что никаких "
   умных" компонент со своим стейтом и т.д.
+<br>
+<br>
 
+**Картинки**
 
 <img src="/Assets/Img/architecture-mv-1.jpg" title="Схема 1" alt="Схема 1" />
 
