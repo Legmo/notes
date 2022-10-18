@@ -221,6 +221,26 @@ DDD не связан с технологиями. Это про архитек�
 <br></p>
 </details>
 
+[//]: # (Redux Duсks)
+<details><summary><b>Redux Duсks</b></summary><p>
+
+См [Legmo Notes - React. Ducks](../JS/React.md#ducks)
+
+<br></p>
+</details>
+
+[//]: # (Функциональная архитектура)
+<details><summary><b>Функциональная архитектура</b></summary><p>
+
+Примерно так: до начала работы с кодом анализируем будущий продукт
+
+- [Шерер П - Функциональная архитектура цифровых продуктов. Часть 1](https://sherer-pro.turbopages.org/sherer.pro/s/blog/funkcionalnaja-arhitektura-cifrovyh-produktov-chast-1/)
+- [Шерер П - Функциональная архитектура цифровых продуктов. Часть 2](https://sherer-pro.turbopages.org/sherer.pro/s/blog/funkcionalnaja-arhitektura-cifrovyh-produktov-chast-2/)
+- [Шерер П - Функциональная архитектура цифровых продуктов. Часть 3](https://sherer-pro.turbopages.org/sherer.pro/s/blog/funkcionalnaya-arxitektura-cifrovyx-produktov-chast-3/?last_related=1&turbo_feed_type=full)
+
+<br></p>
+</details>
+
 
 **Ссылки**
 
@@ -236,6 +256,9 @@ DDD не связан с технологиями. Это про архитек�
 - [Hexlet - Курс «JS: Архитектура фронтенда»](https://ru.hexlet.io/courses/js-frontend-architecture)
 - [Legmo Notes - Паттерны проектирования](./Pattern.md)
 - [Legmo Notes - Микросервисная архитектура](../WebDeveloping/Microservices.md)
+- 
+- [Habr - Масштабирование Redux-приложения с помощью ducks (2020)](https://habr.com/ru/company/otus/blog/492638/?ysclid=l6sz05stk7523793176)
+- [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
 - 
 - [Habr - Как два программиста хлеб пекли (2012)](https://habr.com/ru/post/153225/)
 - [Doka - Что такое код-ревью](https://doka.guide/tools/code-review/)

@@ -3972,13 +3972,37 @@ Route и NavLink = два независимых элемента.
 <br></p>
 </details>
 
-[//]: # (Ducks. todo: осмыслять)
-<details><summary><h3>Ducks</h3></summary><p>
+[//]: # (Архитектура React-приложения. Ducks. todo: дополнять)
+<details id="ducks"><summary><h3>Архитектура React-приложения. Ducks</h3></summary><p>
+
+Метод организации Redux-кода в приложении.
+
+Общий принципы:
+- стараемся «не размазывать» Redux-логику по проекту. 
+  - ActionTypes, actions, reduce...
+  - Всё что можно храним в папке компонента/фичи. 
+  - Обычно сохраняем в одном общем файле. 
+- чтобы вся функциональность имеющая отношение к фиче хранился в папке фичи. Не надо прыгать по куче файлов и папок — ускоряет работу, облегчает поиск.
+- чтобы можно было взять папку с фичей из одного проекта и перенести в другой. Останется только чуть-чуть подправить структуру store, всё остальное перенесётся в папке
+
+ActionTypes, actions, reduce объединяются в изолированный модуль, который является автономным.<br> 
+И даже может быть легко упакован в библиотеку.
+
+Модуль
+- Должен `export default` функцию с названием `reducer()`
+- Должен `export` свои `action creators` как функции
+- Должен иметь `action types` в форме `npm-module-or-app/reducer/ACTION_TYPE` (это, скорее всего, про названия `action types`)
+- Может экспортировать свои `action types` как UPPER_SNAKE_CASE, если внешний редьюсер должен их прослушивать или если это опубликованная повторно используемая библиотека.
+
+То же самое рекомендуется для {actionType, action, reducer} пакеты, которые применяются как повторно используемые библиотеки Redux.
 
 **Ссылки**
 
+- [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
 - [Habr - Масштабирование Redux-приложения с помощью ducks (2020)](https://habr.com/ru/company/otus/blog/492638/?ysclid=l6sz05stk7523793176)
 - [Habr - Как организовать большое React-приложение и сделать его масштабируемым (2017)](https://habr.com/ru/company/nix/blog/329060/)
+- [IT-Kamasutra - 90. Redux-ducks рефакторинг (YouTube)](https://youtu.be/JtbSOJKRJAI)
+- [Medium - Проволочки при проектировании структуры React приложения](https://medium.com/@vladimirmorulus/%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B8-%D0%BF%D1%80%D0%B8-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B-react-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-609f80105e2c)
 
 <br></p>
 </details>
