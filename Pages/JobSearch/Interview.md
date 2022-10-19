@@ -944,6 +944,7 @@
 - Переписка - correspondence
 - Общение - communication
 - Митинг - meeting (невероятно!)
+- Команда - team
 - Спокойно - calmly
 - Срочно - urgently
 - Опыт - experience
