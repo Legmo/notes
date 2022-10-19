@@ -787,7 +787,7 @@ myFunc = otherFunc
 - `Required<Type>` - тип все поля которого становятся обязательными
 - `Readonly<Type>` - тип все св-ва которого предназначены только для чтения
 - `Record<Keys, Type>` - создаёт тип с набором свойств Keys (определяем) типа Types (определяем)
-- `Pick<Type, Keys>` - создаёт тип, выбирая свойств Keys из интерфейса Type
+- `Pick<Type, Keys>` - создаёт тип на основе интерфейса Type, оставив в нём только свойств Keys. Фильтрация
 - `Omit<Type, Keys>` - создаёт тип на основе интерфейса Type, удалив из него типы Keys
 - `Exclude<UnionType, ExcludedMembers>` - создаёт тип на основе списка типов UnionType, исключая из него все типы
   ExcludedMembers
