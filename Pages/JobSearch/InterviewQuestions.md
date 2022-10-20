@@ -1040,16 +1040,124 @@
     - Валидация введённого во все инпуты значения с помощью функции validate
     - Если форма не валидна - кнопка "Сохранить должна быть "disabled"
   - Решение
-    ```tsx
-    type PropTypes = {}
-    const addInput = () => {
-      let [setCount, count] = useState();
-      return (
-        <div>
-          
-        </div>
-      )
-    }
+    ```
+    import { useState, useEffect, useRef } from "react";
+
+	const App:PropTypes = () => {
+	  let [fieldsetCount, setFieldsetCount] = useState(0);
+	  let [fields, setFields] = useState<any>({});
+	  let [formStatus, setFormStatus] = useState(false);
+	  const itemsRef = useRef<HTMLInputElement>();
+
+	  const range = (count:number) => {
+	    if(count > 0) {
+	      return Array(count).fill(count)
+	    } else {
+	      return [];
+	    }
+	  };
+
+	  const submitForm = (e: React.FormEvent<HTMLInputElement>) => {
+	    e.preventDefault();
+	    // some submit logic will be here
+	    console.log('submit')
+	    return true
+	  }
+
+	  const isInputValid = (value:string) => {
+	    // some validation logic will be here
+        let result = true;
+	    console.log(`validation of ${value} is ${result}`)
+	    return result;
+	  };
+
+	  const isFormValid = () => {
+	    if(fieldsetCount > 0) {
+	      for (let key in fields) {
+	        if (!fields[key].isValid) {
+	          setFormStatus(false);
+	          return false
+	        }
+	      }
+	      setFormStatus(true);
+	      return true
+	    }
+	  };
+
+	  const addFieldset = () => {
+	    const name = fieldsetCount + 1;
+	    setFieldsetCount(count => count + 1)
+
+	    setFields({
+	      ...fields,
+	      [name]: {
+	        isValid: false,
+	      },
+	    })
+	  }
+
+	  const handleInputChange = (e:any) => {
+	    const name = e.target.name;
+	    const value = e.target.value;
+	    const currentField = itemsRef.current[name];
+	    if(isInputValid(value)) {
+	      setFields({
+	        ...fields,
+	        [name]: {
+	          isValid: true,
+	        },
+	      })
+	      currentField.classList.add("valid");
+	    } 
+        else {
+	      setFields({
+	        ...fields,
+	        [name]: {
+	          isValid: false,
+	        },
+	      })
+	      currentField.classList.add("invalid");
+	    }
+	  }
+
+	  const FieldsetsGroup = range(fieldsetCount).map((field, index) => {
+	     const fieldName = index+1;
+	     return <fieldset key={fieldName}>
+	      <input 
+	        type="text" 
+	        name={fieldName} 
+	        ref={el => (itemsRef.current[fieldName] = el)}
+	        onChange={e => handleInputChange(e)}
+	      />
+	    </fieldset>
+	  });
+	  
+	  useEffect(() => isFormValid());
+
+	  const ButtonSubmit = <button 
+	    type="submit" 
+	    onClick={submitForm}
+	    disabled={!formStatus}
+	  >
+	    Submit
+	  </button>;
+
+
+	  const ButtonAddField = <button onClick={() => addFieldset()}>
+	    Add intput ({fieldsetCount})
+	  </button>
+
+
+	  return (
+	    <>
+	      <form className="App" onSubmit={submitForm}>
+	        {FieldsetsGroup}
+	        {ButtonSubmit}
+	      </form>
+	      {ButtonAddField}
+	    </>
+	  );
+	}
     ```
 - Написать функцию находящую пересечение двух массивов чисел. 
   - Эту задачку пропустили - сказали что вроде знания у меня есть.
@@ -1423,18 +1531,125 @@
     - Валидация введённого во все инпуты значения с помощью функции validate
     - Если форма не валидна - кнопка "Сохранить должна быть "disabled"
   - Решение
-    ```tsx
-    type PropTypes = {}
-    const addInput = () => {
-      let [setCount, count] = useState();
-      return (
-        <div>
-        
-        </div>
-      )
-    }
     ```
+    import { useState, useEffect, useRef } from "react";
 
+	const App:PropTypes = () => {
+	  let [fieldsetCount, setFieldsetCount] = useState(0);
+	  let [fields, setFields] = useState<any>({});
+	  let [formStatus, setFormStatus] = useState(false);
+	  const itemsRef = useRef<HTMLInputElement>();
+
+	  const range = (count:number) => {
+	    if(count > 0) {
+	      return Array(count).fill(count)
+	    } else {
+	      return [];
+	    }
+	  };
+
+	  const submitForm = (e: React.FormEvent<HTMLInputElement>) => {
+	    e.preventDefault();
+	    // some submit logic will be here
+	    console.log('submit')
+	    return true
+	  }
+
+	  const isInputValid = (value:string) => {
+	    // some validation logic will be here
+        let result = true;
+	    console.log(`validation of ${value} is ${result}`)
+	    return result;
+	  };
+
+	  const isFormValid = () => {
+	    if(fieldsetCount > 0) {
+	      for (let key in fields) {
+	        if (!fields[key].isValid) {
+	          setFormStatus(false);
+	          return false
+	        }
+	      }
+	      setFormStatus(true);
+	      return true
+	    }
+	  };
+
+	  const addFieldset = () => {
+	    const name = fieldsetCount + 1;
+	    setFieldsetCount(count => count + 1)
+
+	    setFields({
+	      ...fields,
+	      [name]: {
+	        isValid: false,
+	      },
+	    })
+	  }
+
+	  const handleInputChange = (e:any) => {
+	    const name = e.target.name;
+	    const value = e.target.value;
+	    const currentField = itemsRef.current[name];
+	    if(isInputValid(value)) {
+	      setFields({
+	        ...fields,
+	        [name]: {
+	          isValid: true,
+	        },
+	      })
+	      currentField.classList.add("valid");
+	    } 
+        else {
+	      setFields({
+	        ...fields,
+	        [name]: {
+	          isValid: false,
+	        },
+	      })
+	      currentField.classList.add("invalid");
+	    }
+	  }
+
+	  const FieldsetsGroup = range(fieldsetCount).map((field, index) => {
+	     const fieldName = index+1;
+	     return <fieldset key={fieldName}>
+	      <input 
+	        type="text" 
+	        name={fieldName} 
+	        ref={el => (itemsRef.current[fieldName] = el)}
+	        onChange={e => handleInputChange(e)}
+	      />
+	    </fieldset>
+	  });
+	  
+	  useEffect(() => isFormValid());
+
+	  const ButtonSubmit = <button 
+	    type="submit" 
+	    onClick={submitForm}
+	    disabled={!formStatus}
+	  >
+	    Submit
+	  </button>;
+
+
+	  const ButtonAddField = <button onClick={() => addFieldset()}>
+	    Add intput ({fieldsetCount})
+	  </button>
+
+
+	  return (
+	    <>
+	      <form className="App" onSubmit={submitForm}>
+	        {FieldsetsGroup}
+	        {ButtonSubmit}
+	      </form>
+	      {ButtonAddField}
+	    </>
+	  );
+	}
+    ```
 - Планирование вызовов через вложенные SetTimeout()
   - https://learn.javascript.ru/settimeout-setinterval#vlozhennyy-settimeout
   ```js
