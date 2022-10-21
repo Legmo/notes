@@ -40,6 +40,7 @@
 - [Тестирование](/Pages/Programming/Testing.md)
 - [CI-CD](/Pages/Programming/CI-CD.md)
 - [ООП](/Pages/Programming/OOP.md)
+- [Алгоритмы](/Pages/Programming/Algorithms.md)
 - [Архитектура фронтенда](/Pages/Programming/Architecture.md)
 - [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
