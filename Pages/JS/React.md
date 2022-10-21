@@ -3088,7 +3088,8 @@ CSS-in-JS решать проблемы с производительность�
 <br></p>
 </details>
 
-***
+<br>
+<br>
 
 [//]: # (forceUpdate API)
 <details><summary><b>forceUpdate() API</b></summary><p>

@@ -6745,7 +6745,6 @@ console.log('%c Some text', 'color: green')
 
 </details>
 
-
 <br>
 <br>
 
