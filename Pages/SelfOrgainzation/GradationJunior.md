@@ -1,7 +1,7 @@
 <h1>Junior-разработчик</h1>
 
 [//]: # (Кто такой junior)
-<details><summary><h3>Кто такой junior</h3></summary><p>
+<details><summary><h3>Кто такой junior-разработчик?</h3></summary><p>
 
 **Один из вариантов описания**
 
