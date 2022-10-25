@@ -50,12 +50,13 @@
 
 
 **Ссылки**
-- [ITKamasutra - Как стать программистом! 3 бесплатных крутых шага! (JavaScript, Front-end)](https://youtu.be/hFOZYaVHD6A)
-- [ITKamasutra - Как стать программистом за 1 год с нуля даже домохозяйке](https://youtu.be/S7xq9x8i47k)
-- [ITKamasutra - Как стать программистом за 1 месяц? Никак?](https://www.youtube.com/watch?v=__B3kJ8YhSw)
-- [ITKamasutra - Не учи английский, чтобы стать программистом](https://youtu.be/VMv4LXzlj9I)
-- [ITKamasutra - Не спешите ПЛАТНО переучиваться на программиста](https://youtu.be/IY1m5fOlC-E)
-- [ITKamasutra - Бесплатный курс (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+- [IT-Kamasutra - Как стать программистом! 3 бесплатных крутых шага! JavaScript, Front-end (YouTube)](https://youtu.be/hFOZYaVHD6A)
+- [IT-Kamasutra - Как стать программистом за 1 год с нуля даже домохозяйке (YouTube)](https://youtu.be/S7xq9x8i47k)
+- [IT-Kamasutra - Как стать программистом за 1 месяц? Никак? (YouTube)](https://www.youtube.com/watch?v=__B3kJ8YhSw)
+- [IT-Kamasutra - Не учи английский, чтобы стать программистом (YouTube)](https://youtu.be/VMv4LXzlj9I)
+- [IT-Kamasutra - Не спешите ПЛАТНО переучиваться на программиста (YouTube)](https://youtu.be/IY1m5fOlC-E)
+- [IT-Kamasutra - Бесплатный курс (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+- [IT-Kamasutra - Как пройти испытательный срок? (YouTube)](https://youtu.be/U62-XQRpFT4)
 - [MetaLamp - Как мы сделали бесплатную программу обучения веб-разработке и трудоустроили 60 выпускников ](https://vc.ru/hr/304764-kak-my-sdelali-besplatnuyu-programmu-obucheniya-veb-razrabotke-i-trudoustroili-60-vypusknikov)
 - [MetaLamp - Бесплатный курс](https://www.metalamp.io/education)
 - [MetaLamp - Roadmap. Frontend & Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
