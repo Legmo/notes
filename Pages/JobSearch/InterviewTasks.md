@@ -505,61 +505,32 @@ console.log('output:', output); //irkjdoqew
 [//]: # (Обработка строки — вырезать N восклицательных знаков)
 <details id="task-4"><summary><b>Обработка строки — вырезать N восклицательных знаков</b></summary><p>
 
-- Задача
-  - Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков
-  ```js
-    const removeExclamations = (str, count) => {};
-    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
-  ```
-- Решение
-  - Решил через `map`. Можно было через `filter`, но так тоже ок.
-  ```js
-  const removeExclamations = (str, count) => {
-      let strArray = str.split('');
-      let result = '';
-      strArray.map(symbol =>{
-          if((symbol === '!') && (count > 0)) {
-             count--;
-             return;  
-          }
-          else {
-              result = result + symbol;
-          }
-      });
-      return result;
-  };
+**Задача**
+- Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков
+```js
+  const removeExclamations = (str, count) => {};
   console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
-  ```
+```
 
-
-Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков  
-```js  
-const removeExclamations = (str, count) => {};
-console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!  
-```  
-
-Решение  
-
-Решил через `map`. Можно было через `filter`, но так тоже ок.  
-```js  
-  const removeExclamations = (str, count) => {  
-      let strArray = str.split('');
-      let result = '';
+**Решение**
+- Решил через `map`. Можно было через `filter`, но так тоже ок.
+```js
+const removeExclamations = (str, count) => {
+    let strArray = str.split('');
+    let result = '';
     strArray.map(symbol =>{
         if((symbol === '!') && (count > 0)) {
-            count--;
-            return;
-        }  
-          else {
+           count--;
+           return;  
+        }
+        else {
             result = result + symbol;
         }
     });
     return result;
 };
-console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!    
+console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
 ```
-
-
 
 <br></p>
 </details> 
@@ -569,62 +540,34 @@ console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
 
 Написать функцию находящую пересечение двух массивов чисел.
   
-  - Задача
-    ```js
-    const a = [1, 10, 2, 6, 9, -32];
-    const b = [-7, 1, 9, 8, 0, 1, 10];
-    const intersect = (a,b) => {
-      //your code here
-    }
-    //console.log(intersect(a,b)); //[1,9,10]
-    ```
-  - Решение
-    ```ja
-      const a = [1, 10, 2, 6, 9, -32];
-      const b = [-7, 1, 9, 8, 0, 1, 10];
-    
-      const intersect = (a, b) => {  
-        let bCopy = [...b];  
-        let result = new Set;  
-	    
-        a.map((itemA, index) => {
-          bCopy.forEach(itemB => {
-              (itemA === itemB) && result.add(itemA); 
-          })  
-        })  
-        return Array.from(result);}  
-	    
-      console.log(intersect(a, b)); //[1,9,10]
-    ```
+**Задача**
+```js
+const a = [1, 10, 2, 6, 9, -32];
+const b = [-7, 1, 9, 8, 0, 1, 10];
+const intersect = (a,b) => {
+//your code here
+}
+//console.log(intersect(a,b)); //[1,9,10]
+```
 
-Задача
-```js  
-  const a = [1, 10, 2, 6, 9, -32];  
-  const b = [-7, 1, 9, 8, 0, 1, 10];    
-      
-  const intersect = (a,b) => { /*your code here*/ };
-      
-  console.log(intersect(a,b)); //[1,9,10]    
-  ```  
+**Решение**
+```js
+const a = [1, 10, 2, 6, 9, -32];
+const b = [-7, 1, 9, 8, 0, 1, 10];
+
+const intersect = (a, b) => {  
+  let bCopy = [...b];  
+  let result = new Set;  
   
-Решение
-```js  
-  const a = [1, 10, 2, 6, 9, -32];  
-  const b = [-7, 1, 9, 8, 0, 1, 10];  
-        
-  const intersect = (a, b) => {  
-    let bCopy = [...b];  
-    let result = new Set;  
-        
-    a.map(itemA => {
-      bCopy.forEach(itemB => {
-          (itemA === itemB) && result.add(itemA); 
-      })  
+  a.map((itemA, index) => {
+    bCopy.forEach(itemB => {
+        (itemA === itemB) && result.add(itemA); 
     })  
-    return Array.from(result);}  
-        
-  console.log(intersect(a, b)); //[1,9,10]
-  ```
+  })  
+  return Array.from(result);}  
+  
+console.log(intersect(a, b)); //[1,9,10]
+```
 
 <br></p>
 </details> 
@@ -657,7 +600,7 @@ console.log(final)
 - Если форма не валидна - кнопка «Сохранить» должна быть `disabled`
 
 **Решение**
-```
+```tsx
 import { useState, useEffect, useRef } from "react";
 
 const App:PropTypes = () => {
@@ -756,127 +699,6 @@ const App:PropTypes = () => {
     onClick={submitForm}
     disabled={!formStatus}
   >
-    Submit
-  </button>;
-
-
-  const ButtonAddField = <button onClick={() => addFieldset()}>
-    Add intput ({fieldsetCount})
-  </button>
-
-
-  return (
-    <>
-      <form className="App" onSubmit={submitForm}>
-        {FieldsetsGroup}
-        {ButtonSubmit}
-      </form>
-      {ButtonAddField}
-    </>
-  );
-}
-```
-
-Решение
-```
-import { useState, useEffect, useRef } from "react";
-
-const App:PropTypes = () => {
-  let [fieldsetCount, setFieldsetCount] = useState(0);
-  let [fields, setFields] = useState<any>({});
-  let [formStatus, setFormStatus] = useState(false);
-  const itemsRef = useRef<HTMLInputElement>();
-
-  const range = (count:number) => {
-    if(count > 0) {
-      return Array(count).fill(count)
-    } else {
-      return [];
-    }
-  };
-
-  const submitForm = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    // some submit logic will be here
-    console.log('submit')
-    return true
-  }
-
-  const isInputValid = (value:string) => {
-    // some validation logic will be here
-    let result = true;
-    console.log(`validation of ${value} is ${result}`)
-    return result;
-  };
-
-  const isFormValid = () => {
-    if(fieldsetCount > 0) {
-      for (let key in fields) {
-        if (!fields[key].isValid) {
-          setFormStatus(false);
-          return false
-        }
-      }
-      setFormStatus(true);
-      return true
-    }
-  };
-
-  const addFieldset = () => {
-    const name = fieldsetCount + 1;
-    setFieldsetCount(count => count + 1)
-
-    setFields({
-      ...fields,
-      [name]: {
-        isValid: false,
-      },
-    })
-  }
-
-  const handleInputChange = (e:any) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    const currentField = itemsRef.current[name];
-    if(isInputValid(value)) {
-      setFields({
-        ...fields,
-        [name]: {
-          isValid: true,
-        },
-      })
-      currentField.classList.add("valid");
-    } 
-    else {
-      setFields({
-        ...fields,
-        [name]: {
-          isValid: false,
-        },
-      })
-      currentField.classList.add("invalid");
-    }
-  }
-
-  const FieldsetsGroup = range(fieldsetCount).map((field, index) => {
-     const fieldName = index+1;
-     return <fieldset key={fieldName}>
-      <input 
-        type="text" 
-        name={fieldName} 
-        ref={el => (itemsRef.current[fieldName] = el)}
-        onChange={e => handleInputChange(e)}
-      />
-    </fieldset>
-  });
-    
-  useEffect(() => isFormValid());
-
-  const ButtonSubmit = <button 
-    type="submit" 
-    onClick={submitForm}
-    disabled={!formStatus}
-    >
     Submit
   </button>;
 
