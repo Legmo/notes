@@ -5,7 +5,10 @@
 
 - [codingame.com](https://www.codingame.com)
 - [codewars.com](https://www.codewars.com)
-- [leetcode.com](http://leetcode.com/),
+- [leetcode.com](http://leetcode.com/)
+- [hackerrank.com](https://www.hackerrank.com/)
+- [coderbyte.com](https://coderbyte.com/)
+- [Топ 8 лучших ресурсов для практики программирования в 2018](https://habr.com/ru/post/414009/)
 
 <br></p>
 </details> 
