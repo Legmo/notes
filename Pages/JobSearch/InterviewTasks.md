@@ -959,7 +959,7 @@ function getNumber() {
 <br></p>
 </details> 
 
-[//]: # (TypeScript. Типизировать функцию)
+[//]: # (TypeScript. Типизировать функцию *)
 <details id="task-11"><summary><b>TypeScript. Типизировать функцию *</b></summary><p>
 
 **Задачка**
@@ -987,8 +987,12 @@ let getProperty = function(obj, key){
 <br></p>
 </details> 
 
-[//]: # (React. Console.log внутри setTimeout внутри UseEffect)
-<details id="task-12"><summary><b>React. Console.log внутри setTimeout внутри UseEffect()</b></summary><p>
+[//]: # (React. Console.log внутри setTimeout внутри UseEffect *)
+<details id="task-12"><summary><b>React. Console.log внутри setTimeout внутри UseEffect() *</b></summary><p>
+
+- в `return ()` компонента есть кнопка. При клике она увеличивает счётчик в `useState()`
+- есть `useEffect()`, в нём `setTimeout`, в нём `console.log`, который выводит значения счётчика
+- если мы быстро нажмем несколько раз на кнопку (прям моментально) — какие значения выведет `console.log`?
 
 **Задача**
 ```jsx
@@ -1025,12 +1029,15 @@ ReactDOM.render(<Example />, rootElement);
 - При каждом клике useEffect создаёт замыкание и запоминает своё значение useState. 
 - Когда таймер отработает — он возьмёт значение из замыкания
 - Как-то так
+- +
+- выведет 1,2,3... - при каждом клике меняется счётчик в useState(), его значение хранится в замыкании с `setTimeout`
+- когда таймер «дотикает» — он выведет в консоль значения счётчика из замыкания
 
 <br></p>
 </details>
 
-[//]: # (Алгоритмы. Есть линейный график из множества точек, предложить алгоритм его построения.)
-<details id="task-12"><summary><b>Алгоритмы. Есть линейный график из множества точек, предложить алгоритм его построения. </b></summary><p>
+[//]: # (Алгоритмы. Есть линейный график из множества точек, предложить алгоритм его построения *)
+<details id="task-12"><summary><b>Алгоритмы. Есть линейный график из множества точек, предложить алгоритм его построения * </b></summary><p>
 
 - К сожалению картинка графика не сохранилась, опишу «на пальцах» 
 - График состоит из множества близко расположенных точек
@@ -1054,128 +1061,172 @@ ReactDOM.render(<Example />, rootElement);
 
 **Популярные задачки**
 
-- Замыкания - например использование `var`/`let` в `for()`
+[//]: # (Использование var/let в «for»)
+<details><summary><b>Использование var/let в «for()»</b></summary><p>
 
-- Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3
-  - ```js
-    //Стерлочная
-    const add = x => y => {
-      return x + y;
-    };
-    const res = add(3)(6);
-    console.log(res);  // вернёт 9
-    ```
-  - ```js
-    //Обычная
-    function fA() {
-      var currentCount = 1;
-      function fB() { 
-        return currentCount++;
-      };
-      return fB;
+Использование `var`/`let` в `for()`.<br>
+Могут дать в связке с «замыканиями» или другими задачами.
+
+<br></p>
+</details> 
+
+[//]: # (Замыкания - написать функцию, add, чтобы вызов add_1_2_ вернул 3)
+<details><summary><b>Замыкания - написать функцию, add, чтобы вызов add(1)(2) вернул 3</b></summary><p>
+
+```js
+//Стерлочная
+const add = x => y => {
+  return x + y;
+};
+const res = add(3)(6);
+console.log(res);  // вернёт 9
+```
+
+```js
+//Обычная
+function fA() {
+  var currentCount = 1;
+  function fB() { 
+    return currentCount++;
+  };
+  return fB;
+}
+var counter1 = fA();     
+console.log(counter1()); // 1
+console.log(counter1()); // 2
+console.log(counter1()); // 3
+
+// создаём другой счётчик, он будет независим от первого
+var counter2 = fA();
+console.log(counter2()); // 1
+```
+
+<br></p>
+</details> 
+
+[//]: # (Замыкания, this - написать декоратор для кэширования)
+<details><summary><b>Замыкания, this - написать декоратор для кэширования</b></summary><p>
+
+```js
+let worker = {
+  //Вариант 1 -  без func.call(this, x) 
+  // здесь может быть страшно тяжёлая задача для процессора
+  // alert(`Called with ${x}`);
+  // return x;
+
+  //Вариант с использование метода объекта - для демонатрации func.call(this, x) 
+  someMethod() {
+    return 1;
+  },
+  slow(x) {
+    // здесь может быть страшно тяжёлая задача для процессора
+    alert("Called with " + x);
+    return x * this.someMethod();
+  }
+};
+
+function cachingDecorator(func) {
+  let cache = new Map();
+  return function(x) {
+    if (cache.has(x)) { // если кеш содержит такой x,
+      return cache.get(x); // читаем из него результат
     }
-    var counter1 = fA();     
-    console.log(counter1()); // 1
-    console.log(counter1()); // 2
-    console.log(counter1()); // 3
 
-    // создаём другой счётчик, он будет независим от первого
-    var counter2 = fA();
-    console.log(counter2()); // 1
-    ```
-
-- Замыкания, this - написать декоратор для кэширования
-  - [learn.javascript.ru - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
-  - ```js
-    let worker = {
-      //Вариант 1 -  без func.call(this, x) 
-      // здесь может быть страшно тяжёлая задача для процессора
-      // alert(`Called with ${x}`);
-      // return x;
-    
-      //Вариант с использование метода объекта - для демонатрации func.call(this, x) 
-      someMethod() {
-        return 1;
-      },
-      slow(x) {
-        // здесь может быть страшно тяжёлая задача для процессора
-        alert("Called with " + x);
-        return x * this.someMethod();
-      }
-    };
+    // иначе, вызываем функцию
+    //Вариант 1 - без привязки this
+    // let result = func(x); // вариант 
   
-    function cachingDecorator(func) {
-      let cache = new Map();
-      return function(x) {
-        if (cache.has(x)) { // если кеш содержит такой x,
-          return cache.get(x); // читаем из него результат
-        }
+    //Вариант 2 - с привязкой this
+    let result = func.call(this, x); // .call() позволяет вызывать функцию, явно устанавливая this.
+    cache.set(x, result); //кешируем (запоминаем) результат
+    return result;
+  };
+}
 
-        // иначе, вызываем функцию
-        //Вариант 1 - без привязки this
-        // let result = func(x); // вариант 
-      
-        //Вариант 2 - с привязкой this
-        let result = func.call(this, x); // .call() позволяет вызывать функцию, явно устанавливая this.
-        cache.set(x, result); //кешируем (запоминаем) результат
-        return result;
-      };
-    }
-  
-    worker.slow = cachingDecorator(worker.slow); // добавляем к функции обёртку-декоратор, делаем её кеширующей
-  
-    alert( worker.slow(2) ); // работает
-    alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
-    ```
+worker.slow = cachingDecorator(worker.slow); // добавляем к функции обёртку-декоратор, делаем её кеширующей
 
-- Армия функций
+alert( worker.slow(2) ); // работает
+alert( worker.slow(2) ); // работает, не вызывая первоначальную функцию (кешируется)
+```
+
+- [learn.javascript.ru - Декораторы и переадресация вызова, call/apply](https://learn.javascript.ru/call-apply-decorators)
+
+<br></p>
+</details> 
+
+[//]: # (Армия функций *)
+<details><summary><b>Армия функций *</b></summary><p>
+
   - https://learn.javascript.ru/task/make-army
   - https://learn.javascript.ru/let-const
   - https://qna.habr.com/q/365769
 
-- Рекурсия - возведение в степень.
-  - ```js
-    //через рекурсию
-    function pow(x, n) {
-      if (n == 1) {
-        return x;
-      } else {
-        return x * pow(x, n - 1);
-      }
-    }
-    alert(pow());
-    ```
-    - ```js
-      //итеартивно, цикл for
-      function pow(x, n) {
-        let result = 1;
-        for (let i = 0; i < n; i++) {
-          result *= x; // умножаем result на x n раз в цикле
-        }
-        return result;
-      }
-      alert( pow(2, 3) ); // 8
-      ```
+<br></p>
+</details> 
 
-- Рекурсия - факториал.
-  - Число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1
-  - [learn.javascript.ru - Рекурсия](https://learn.javascript.ru/recursion#dva-sposoba-myshleniya]
-  - ```js
-    function fact(n) {
-      if(n == 1) {
-        return 1
-      }
-      else {
-        return n * fact(n - 1);
-      }
-    }
-    alert( fact(4) ); // 24
-    ```
+[//]: # (Рекурсия - возведение в степень)
+<details><summary><b>Рекурсия - возведение в степень</b></summary><p>
 
-- Рекурсия - вывод односвязного списка
-  - [learn.javascript.ru - Вывод односвязного списка. Ркурсия, цикл](https://learn.javascript.ru/task/output-single-linked-list)
+```js
+//через рекурсию
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+alert(pow());
+```
 
-- Кофеварка
+```js
+//итеартивно, цикл for
+function pow(x, n) {
+  let result = 1;
+  for (let i = 0; i < n; i++) {
+    result *= x; // умножаем result на x n раз в цикле
+  }
+  return result;
+}
+alert( pow(2, 3) ); // 8
+```
+
+<br></p>
+</details> 
+
+[//]: # (Рекурсия - поиск факториала)
+<details><summary><b>Рекурсия - посик факториала</b></summary><p>
+
+- Число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1
+
+```js
+function fact(n) {
+  if(n == 1) {
+    return 1
+  }
+  else {
+    return n * fact(n - 1);
+  }
+}
+alert( fact(4) ); // 24
+```
+
+- [learn.javascript.ru - Рекурсия](https://learn.javascript.ru/recursion#dva-sposoba-myshleniya]v
+
+<br></p>
+</details> 
+
+[//]: # (Рекурсия - вывод односвязного списка *)
+<details><summary><b>Рекурсия - вывод односвязного списка *</b></summary><p>
+
+- [learn.javascript.ru - Вывод односвязного списка. Рекурсия, цикл](https://learn.javascript.ru/task/output-single-linked-list)
+
+<br></p>
+</details> 
+
+[//]: # (Кофеварка *)
+<details><summary><b>Кофеварка *</b></summary><p>
+
   - один раз написать самому (подсматривая в учебник)
   - https://learn.javascript.ru/private-protected-properties-methods
   - https://learn.javascript.ru/task/add-method-property-coffeemachine
@@ -1183,585 +1234,88 @@ ReactDOM.render(<Example />, rootElement);
   - https://learn.javascript.ru/functional-inheritance
   - https://learn.javascript.ru/getters-setters
 
-- Сделать debounce функцию
-  - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
-  - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
-  - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
-  - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
-  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+<br></p>
+</details> 
 
-- Сделать throttling функцию
-  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+[//]: # (Написать debounce функцию *)
+<details><summary><b>Написать debounce функцию *</b></summary><p>
 
-- Предложить разные методы организации кэша для вычисления Фибоначчи
-  - кэш ограничен 20 значениями, а поступить может хоть 10000 - как оптимизировать?
-  - часть кэша выделяем под хранение предыдущих вычисленных значений (мемоизация).
-  - Рекурсия - самый дорогой вариант вычисления Фибоначчи
+- [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
+- [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
+- [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
+- [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
+- [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
-- Нормализация данных для проектирования стэйта.
-  - Например: в качестве ответа сервера получаем очень большой неупорядоченный массив - как с ним работать?
-  - Решение: дробление по принципу связи. Точно не помню, надо повторять, но вроде идея такая - создаём отдельный массив
-    для одних сущностей (задачи, например) и отдельный для других (пользователи) и устанавливаем между ними связи.
+<br></p>
+</details> 
 
-- Вызов `console.log` из `setTimeout` внутри хука `useEffect()`
-  - в `return ()` компонента есть кнопка. При клике она увеличивает счётчик в `useState()`
-  - есть `useEffect()`, в нём `setTimeout`, в нём `console.log`, который выводит значения счётчика
-  - если мы быстро нажмем несколько раз на кнопку (прям моментально) — какие значения выведет `console.log`?
-  - выведет 1,2,3... - при каждом клике меняется счётчик в useState(), его значение хранится в замыкании с `setTimeout`
-  - когда таймер «дотикает» — он выведет в консоль значения счётчика из замыкания
+[//]: # (Написать throttling функцию *)
+<details><summary><b>Написать throttling функцию *</b></summary><p>
 
-- Обработка строки (вырезать N восклицательных знаков)
-  - Задача
-    - Напишите функцию, которая принимает строку и удаляет из неё N восклицательных знаков
-    ```js
-    const removeExclamations = (str, count) => {};
-    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
-    ```
-  - Решение
-    - Решил через `map`. Можно было через `filter`, но так тоже ок.
-    ```js
-    const removeExclamations = (str, count) => {
-        let strArray = str.split('');
-        let result = '';
-        strArray.map(symbol =>{
-            if((symbol === '!') && (count > 0)) {
-               count--;
-               return;  
-            }
-            else {
-                result = result + symbol;
-            }
-        });
-        return result;
-    };
-    console.log(removeExclamations('!!!Hello, !!world!', 5)) //Hello, world!
-    ```
+- [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
-- Найти пересечение двух массивов чисел
-  - Задача
-    ```js
-    const a = [1, 10, 2, 6, 9, -32];
-    const b = [-7, 1, 9, 8, 0, 1, 10];
-    const intersect = (a,b) => {
-      //your code here
+<br></p>
+</details> 
+
+[//]: # (Написать декоратор для кэширования *)
+<details><summary><b>Написать декоратор для кэширования *</b></summary><p>
+
+- https://learn.javascript.ru/call-apply-decorators#tasks
+
+<br></p>
+</details> 
+
+[//]: # (Предложить разные методы организации кэша для вычисления Фибоначчи *)
+<details><summary><b>Предложить разные методы организации кэша для вычисления Фибоначчи *</b></summary><p>
+
+- кэш ограничен 20 значениями, а поступить может хоть 10000 - как оптимизировать?
+- часть кэша выделяем под хранение предыдущих вычисленных значений (мемоизация).
+- Рекурсия - самый дорогой вариант вычисления Фибоначчи
+
+<br></p>
+</details> 
+
+[//]: # (Нормализация данных для проектирования стэйта React)
+<details><summary><b>Нормализация данных для проектирования стэйта React</b></summary><p>
+
+- Например: в качестве ответа сервера получаем очень большой неупорядоченный массив - как с ним работать?
+- Решение: дробление по принципу связи. Точно не помню, надо повторять, но вроде идея такая - создаём отдельный массив
+  для одних сущностей (задачи, например) и отдельный для других (пользователи) и устанавливаем между ними связи.
+
+<br></p>
+</details> 
+
+[//]: # (Планирование вызовов через вложенные SetTimeout)
+<details><summary><b>Планирование вызовов через вложенные SetTimeout()</b></summary><p>
+
+```js
+let delay = 500;
+const getData = () => {
+  console.log('getData')
+    return false
+};
+  
+let timerID = setTimeout(function work(){
+      
+    if (!getData()) {
+        console.log('if')
+        delay= delay*2
     }
-    //console.log(intersect(a,b)); //[1,9,10]
-    ```
-  - Решение
-    ```js
-    const a = [1, 10, 2, 6, 9, -32];
-    const b = [-7, 1, 9, 8, 0, 1, 10];
-    
-    const intersect = (a, b) => {
-      let bCopy = [...b];
-      let result = new Set;
-
-      a.map((itemA, index) => {
-        bCopy.forEach(itemB => {
-          (itemA === itemB) && result.add(itemA); 
-        })
-      })
-
-      return Array.from(result);
-    }
-
-    console.log(intersect(a,b)); //[1,9,10]
-    ```
-
-- написать React-компонент, который по нажатию кнопки создаёт новый инпут. Все значения валидируются формой validate. Если форма невалидна — кнопка «Сохранить» disabled.
-  - Задача
-    - Добавление любого количества input'ов по кнопке
-    - Валидация введённого во все инпуты значения с помощью функции validate
-    - Если форма не валидна - кнопка "Сохранить должна быть "disabled"
-  - Решение
-    ```
-    import { useState, useEffect, useRef } from "react";
-
-    const App:PropTypes = () => {
-      let [fieldsetCount, setFieldsetCount] = useState(0);
-      let [fields, setFields] = useState<any>({});
-      let [formStatus, setFormStatus] = useState(false);
-      const itemsRef = useRef<HTMLInputElement>();
-
-      const range = (count:number) => {
-        if(count > 0) {
-          return Array(count).fill(count)
-        } else {
-          return [];
-        }
-      };
-
-      const submitForm = (e: React.FormEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        // some submit logic will be here
-        console.log('submit')
-        return true
-      }
-
-      const isInputValid = (value:string) => {
-        // some validation logic will be here
-        let result = true;
-        console.log(`validation of ${value} is ${result}`)
-        return result;
-      };
-
-      const isFormValid = () => {
-        if(fieldsetCount > 0) {
-          for (let key in fields) {
-            if (!fields[key].isValid) {
-              setFormStatus(false);
-              return false
-            }
-          }
-          setFormStatus(true);
-          return true
-        }
-      };
-
-      const addFieldset = () => {
-        const name = fieldsetCount + 1;
-        setFieldsetCount(count => count + 1)
-
-        setFields({
-          ...fields,
-          [name]: {
-            isValid: false,
-          },
-        })
-      }
-
-      const handleInputChange = (e:any) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        const currentField = itemsRef.current[name];
-        if(isInputValid(value)) {
-          setFields({
-            ...fields,
-            [name]: {
-              isValid: true,
-            },
-          })
-          currentField.classList.add("valid");
-        } 
-        else {
-          setFields({
-            ...fields,
-            [name]: {
-              isValid: false,
-            },
-          })
-          currentField.classList.add("invalid");
-        }
-      }
-
-      const FieldsetsGroup = range(fieldsetCount).map((field, index) => {
-         const fieldName = index+1;
-         return <fieldset key={fieldName}>
-          <input 
-            type="text" 
-            name={fieldName} 
-            ref={el => (itemsRef.current[fieldName] = el)}
-            onChange={e => handleInputChange(e)}
-          />
-        </fieldset>
-      });
-	  
-      useEffect(() => isFormValid());
-
-      const ButtonSubmit = <button 
-        type="submit" 
-        onClick={submitForm}
-        disabled={!formStatus}
-	  >
-        Submit
-      </button>;
-
-
-      const ButtonAddField = <button onClick={() => addFieldset()}>
-        Add intput ({fieldsetCount})
-      </button>
-
-
-      return (
-        <>
-          <form className="App" onSubmit={submitForm}>
-            {FieldsetsGroup}
-            {ButtonSubmit}
-          </form>
-          {ButtonAddField}
-        </>
-      );
-    }
-    ```
-
-- Планирование вызовов через вложенные SetTimeout()
-  - https://learn.javascript.ru/settimeout-setinterval#vlozhennyy-settimeout
-  ```js
-  let delay = 500;
-  const getData = () => {
-    console.log('getData')
-      return false
-  };
-    
-  let timerID = setTimeout(function work(){
-        
-      if (!getData()) {
-          console.log('if')
-          delay= delay*2
-      }
-    
-      timerID = setTimeout(work, delay);
-    
-  }, delay)
-    
-  timer();
-  ```
-
-- Промис с запросом данных (5 попыток)
-  Написать функцию getData, которая запрашивает данные по url и
-  в случае неуспешного запроса, повторяет его еще 5 раз
-  в случае неудачи возвращает ошибку “Заданный URL недоступен”
-  Как делаем запрос (fetch или что-то ещё - не важно)
-  ```js
-  function getData() { }
-     
-  getData('https://example.com')
-    .then(console.log)
-    .catch(console.error)
-  ``` 
-  - Решение 2
-    ```
-    const getData = str  => {return new Promise(
-      (resolve, reject) => {
-        console.log('getData start')
   
-        let getResult = (str) => {
-          //console.log('getResult', str);
-          const numb = +(Math.random() * 10). toFixed(4);
-          return numb;
-        }
-        let result = getResult('STEP '+ 1);
-        let count = 1;
+    timerID = setTimeout(work, delay);
   
-        for(; count<6; count++) {
-          console.log(count);
-          console.log('result', result);
+}, delay)
   
-          if (result > 9) {
-            console.log('Finish')
-            resolve('YES!!!');
-            break
-          }
-          else {
-            result = getResult('STEP '+ (count+1));
-          }
-        }
-  
-        if(count === 6) {
-          reject('Noooo')
-        }
-  
-      }
-    )}
-  
-    getData('AAA')
-    .then(result => console.log(result))
-    .catch(err => console.error(err));
-  
-    ```
-  - Решение 1
-    ```js
-      function getData(str) { 
-        console.log('getData start')
-      
-        let getResult = (str) => {
-          //console.log('getResult', str);
-          const numb = +(Math.random() * 10). toFixed(4);
-          return numb;
-        }
-        let result = getResult('STEP '+ 1);
-      
-        for(let i=1; i<6; i++) {
-          console.log('st-',i);
-          console.log('result', result);
-      
-          if (result > 5) {
-            console.log('Finish')
-            return true;
-          }
-          else {
-            result = getResult('STEP '+ (i+1));
-          }
-        }
-      }
-    ```
+timer();
+```
 
-- Синхронная функция пытается сгенерировать случайное число > X (5 попыток)
-  Написать синхронную функцию
-  Внутри функции генерируем случайное число
-  Если число больше 0,5 - возвращаем его
-  Если число меньше 0,5 - вызываем снова. И так 5 раз
-  Если 5 раз неудача - выводим console.log
+- https://learn.javascript.ru/settimeout-setinterval#vlozhennyy-settimeout
 
-  - ВАРИАНТ через рекурсию
-    ```js
-    function getNumberRec(count=5) {
-      const randomNumber = Math.random();
-      
-      console.log('count', count);
-      console.log('randomNumber', randomNumber);
-      if (randomNumber > 0.9) {
-        return(randomNumber);
-      } 
-      else {
-          count--;
-          if(count > 0) {
-            getNumberRec(count);
-          }
-      }
-    }
-    getNumberRec();
-    ```
-  - ВАРИАНТ через for
-    ```js
-      function getNumber() {
-        let randomNumber = Math.random();
-          if(randomNumber > 0.7) {
-            console.log('randomNumber', randomNumber);
-            console.log('Finish');
-          } else {
-            for(let i=0; i<6; i++) {
-              console.log('randomNumber', randomNumber);
-              randomNumber = Math.random();
-            }
-          }
-      }
-      getNumber();
-    ```
-  - ВАРИАНТ через while
-      ```js
-      function getNumber() {
-        let randomNumber = Math.random();
-        let counter = 5;
-        
-        while(counter > 0) {
-          console.log(`Step ${counter} randomNumber = ${randomNumber}`);
-          if (randomNumber > 1) {
-            console.log('randomNumber', randomNumber);
-            return randomNumber;
-          }
-          else {
-            randomNumber = Math.random();
-            counter --;
-          }
-        }
-      }
-      ```
-
-- Сортировка массива положительных и отрицательных чисел по их квадратам.
-  - Отсортировать исходный массив положительных и отрицательных чисел по их квадратам.
-  - Использовать алгоритм не требующий много памяти
-  - Решение 1 («в лоб»)
-  ```js
-  let orig = [-1,3,1,7,-5,2];
-  console.log(original)
-  let abs = orig.map(item => Math.abs(item))
-  let final = abs.sort((a, b) => (a*a) - (b*b) );
-  console.log(final)
-  ```
-
-- Получить строку из массива объектов, по опр. алгоритму
-  - Условия
-    -   есть массив однотипных объектов, у каждого есть свойства value, order, expired.
-    -   надо написать функцию которая
-      -   исключить объекты с expired=true,
-      -   оставшиеся отсортировать по значению order (предполагалось использовать метод sort),
-      -   потом взять значения свойства value,
-      -   сделать каждому значению reverse,
-      -   записать всё это в строку,
-      -   при этом ни один символ в строке не должен повторяться дважды
-  1. Решение «в лоб»
-     ```js
-     const input = [
-       {value: 'qweq', order: 4, expired: false},
-       {value: 'asdq', order: 2, expired: true},
-       {value: 'jkri', order: 1, expired: false},
-       {value: 'oiod', order: 3, expired: false},
-     ];
-
-     console.log('start: ', input)
-
-     let actual = input.filter(obj => !obj.expired)
-
-     console.log('actual: ', actual)
-
-     const temp = actual;
-     let sorted = temp.sort((a,b) => a.order-b.order)
-
-     console.log('sorted 1: ', sorted)
-
-     let reversed = sorted.map(obj => {
-       let objCopy = {...obj};
-       console.log(objCopy.value);
-       objCopy.value = objCopy.value.split("").reverse().join("");
-       console.log(objCopy.value);
-       return objCopy;
-     })
-     console.log('reversed: ', reversed)
-
-     let output = sorted.reduce((result, current) => {
-         let valArray = current.value.split("");
-         let finalStr = ''
-         valArray.forEach((item, index, array) =>{
-         console.log('result', result, 'item: ', item)
-             if(!result.includes(item) && !finalStr.includes(item)) {
-                 finalStr = finalStr + item;
-             }
-         })
-         return result + finalStr;
-     }, '' );
-
-     console.log('output: ', output)
-     ```
-  2. Решение «в лоб» через SET
-     ```js
-     const input = [
-       {value: 'qweq', order: 4, expired: false},
-       {value: 'asdq', order: 2, expired: true},
-       {value: 'jkri', order: 1, expired: false},
-       {value: 'oiod', order: 3, expired: false},
-     ];
-
-     let actual = input.filter(obj => !obj.expired)
-
-     const temp = actual;
-     let sorted = temp.sort((a,b) => a.order-b.order)
-
-     let reversed = sorted.map(obj => {
-       let objCopy = {...obj};
-       console.log(objCopy.value);
-       objCopy.value = objCopy.value.split("").reverse().join("");
-       console.log(objCopy.value);
-       return objCopy;
-     })
-
-     let output = new Set(); 
-
-     sorted.map(obj => {
-       let valArray = obj.value.split("");
-
-       valArray.map(symb => {
-         output.add(symb)
-       })
-     }, '' );
+<br></p>
+</details> 
 
 
-     output = [...output].join('')
-     ```
-  3. Оптимизация
-     ```js
-     const input = [
-       {value: 'qweq', order: 4, expired: false},
-       {value: 'Asdq', order: 2, expired: true},
-       {value: 'jkri', order: 1, expired: false},
-       {value: 'oiod', order: 3, expired: false},
-     ];
 
-     const temp = [...actual];
-     let set = new Set(); 
-
-     let actual = temp.filter(obj => !obj.expired)
-     let sorted = actual.sort((a,b) => a.order-b.order)
-
-     sorted.map(obj => {
-       let valArray = obj.value.split("").reverse();
-     valArray.map(symb => set.add(symb));
-
-     })
-
-     let output = [...set].join('');
-
-     console.log('output:', output); //irkjdoqew
-
-     ```
-
-- Планирование вызовов через вложенные SetTimeout()
-  - https://learn.javascript.ru/settimeout-setinterval#vlozhennyy-settimeout
-  ```js
-  let delay = 500;
-  const getData = () => false;
-    
-  let timerID = setTimeout(function work(){
-        
-      if (!getData()) {        
-          console.log('error')
-          delay= delay*2
-      }
-    
-      timerID = setTimeout(work, delay);
-    
-  }, delay)
-    
-  ```
-
-- Написать функцию `add`, чтобы вызов `add(1)(2)` вернул 3
-    - Стрелочная
-    ```js
-    const add = a => (b => {
-      console.log(a+b)
-    });
-  
-    add(1)(2)
-    ```
-    - Обычная 
-    ```js
-    function add(a) { 
-      return function two(b){
-        console.log(a+b)
-      }
-    };
-  
-    add(1)(2)
-    ```
-
-- Написать декоратор для кэширования
-    - https://learn.javascript.ru/call-apply-decorators#tasks
-
-- Армия функций
-    - [https://learn.javascript.ru/task/make-army](https://learn.javascript.ru/task/make-army)
-    - [https://learn.javascript.ru/let-const](https://learn.javascript.ru/let-const)
-    - [https://qna.habr.com/q/365769](https://qna.habr.com/q/365769)
-
-- Написать функцию возведения в степень
-    - через рекурсию
-    - циклом
-
-- Написать функцию поиска факториала - Число, умноженное на "себя минус один", затем на "себя минус два", и так далее до 1
-    - через рекурсию
-    - циклом
-
-- Рекурсия - вывод односвязного списка
-    - [learn.javascript.ru - Вывод односвязного списка. Ркурсия, цикл](https://learn.javascript.ru/task/output-single-linked-list)
-
-- Кофеварка
-    - один раз написать самому (подсматривая в учебник)
-    - [https://learn.javascript.ru/private-protected-properties-methods](https://learn.javascript.ru/private-protected-properties-methods)
-    - [https://learn.javascript.ru/task/add-method-property-coffeemachine](https://learn.javascript.ru/task/add-method-property-coffeemachine)
-    - [https://learn.javascript.ru/task/add-public-coffeemachine](https://learn.javascript.ru/task/add-public-coffeemachine)
-    - [https://learn.javascript.ru/functional-inheritance](https://learn.javascript.ru/functional-inheritance)
-    - [https://learn.javascript.ru/getters-setters](https://learn.javascript.ru/getters-setters)
-
-- Сделать debounce функцию
-      
-    - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
-    - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
-    - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
-    - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
-    - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
-
-- Сделать throttling функцию
-      
-    - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)  
 
 <br>
 <br>
