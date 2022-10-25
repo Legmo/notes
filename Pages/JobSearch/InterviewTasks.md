@@ -52,6 +52,8 @@
 [//]: # (Из личного опыта)
 <details><summary><b>Из личного опыта</b></summary><p>
 
+***
+
 [//]: # (В каком порядке выведутся «console.log»)
 <details id="task-1"><summary><b>В каком порядке выведутся «console.log»</b></summary><p>
 
@@ -1219,6 +1221,7 @@ ReactDOM.render(<Example />, rootElement);
 <br></p>
 </details> 
 
+***
 
 <br></p>
 </details> 
