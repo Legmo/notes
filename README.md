@@ -2,6 +2,7 @@
 
 ## Технологии ##
 - [Вопросы для собеседования frontend](/Pages/JobSearch/InterviewQuestions.md)
+- [Задачки для собеседования frontend](/Pages/JobSearch/InterviewTasks.md)
 - [JavaScript](/Pages/JS/JS.md)
 - [TypeScript](/Pages/JS/TypeScript.md)
 - [React JS](/Pages/JS/React.md)

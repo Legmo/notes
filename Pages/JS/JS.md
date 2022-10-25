@@ -1107,8 +1107,8 @@ console.log('End');
 
 **Ссылки**
 
-- https://habr.com/ru/post/264993/
-- https://refaq.ru/voprosy/raznicza_mezhdu_mikrozadachej_i_makrozadachej_v_kontekste_czikla_sobytij
+- [Habr - Задачи, микрозадачи, очереди и планы](https://habr.com/ru/post/264993/)
+- [stackoverflow.com - Разница между микрозадачей и макрозадачей в контексте цикла событий (En)](https://stackoverflow.com/questions/25915634/difference-between-microtask-and-macrotask-within-an-event%20-loop-context)
 - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
 - [learn.javascript.ru - Микрозадачи](https://learn.javascript.ru/microtask-queue)
 
@@ -1264,6 +1264,7 @@ JavaScript изначально появился в браузерах, и к н
 
 **Ссылки**
 
+- [Legmo notes — Задачки для собеседования frontend. Console.log](InterviewTasks.md#task-1)
 - [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
