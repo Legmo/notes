@@ -1051,7 +1051,6 @@ ReactDOM.render(<Example />, rootElement);
 <br></p>
 </details> 
 <br>
-<br>
 
 **Популярные задачки**
 
