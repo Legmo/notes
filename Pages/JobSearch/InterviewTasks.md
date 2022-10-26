@@ -1413,21 +1413,58 @@ const mergeIntervals = (arr) => {
   if(arr.length > 0) {
     const arrCopy = arr.map( item => [...item]);
     let result = [];
-    arrCopy.foreach(item => {
-      //сравниваем каждый интервал с каждым. Sort?
-      // проверки
-      //    - что там именно числа
-      //    - числа ровно два
-      //    - нет отрицательных
-      //    - сначала идёт меньшее, потом большее (или равное?)
-      //    - typeScript?
-      //1 - интервалы равны
-      //2 - интервалы не пересекаются
-      //3 - интервалы пересекаются
-      //    - A[0] >= B[0]
-      //    - A[1] <= B[1]
+    /*result = [
+      ...result,
+      arrCopy.filter((item, index, array) => {
+          
+          let isFirstValuesIntersect = (item[0] >= ); 
+          let isLastValuesIntersect = (item[1] <= )
+          return (isFirstValuesIntersect && isLastValuesIntersect);
+      })
+    ]*/
+    
+    /*
+    arrCopy.sort((a,b) => { 
+      let isFirstValuesIntersect = (a[0] >= b[0]);
+      let isLastValuesIntersect = (a[1] <= b[1]);
+
+      if (isFirstValuesIntersect && isLastValuesIntersect) {
+        result = [
+          ...result,
+          a,
+          b,
+        ]
+      }
+      return 0;
+    });
+    */
+
+    //Проверки (typeScript?)
+    //- в исходном массиве два значения, это числа и они не отрицательные
+    //- сначала идёт меньшее число, потом большее (или равное?)
+    
+    arrCopy.forEach(intervalAB => {
+      if( result.length > 0) {
+        let [a,b] = intervalAB;
+        let item = result[0];
+
+        // if ((b < item[0]) || (a > item[1]) {
+        //  result.push([a,b]);
+        // }
+        
+        if (item[0] > a) {
+          item[0] = a;
+        }
+        if (item[1] < b) {
+          item[1] = b
+        }
+      }
+      else {
+        result.push(intervalAB)
+      }
     });
 
+    console.log('result', result);
     return result;
   }
 };
@@ -1435,6 +1472,12 @@ const mergeIntervals = (arr) => {
 mergeIntervals([[4, 8], [3, 5], [7, 12], [1, 2]]); // => [[3, 12], [1, 2]]
 mergeIntervals([[3, 4], [1, 2], [4, 5], [2, 3]]); // => [[1, 5]]
 ```
+
+**Идеи**
+- использовать `arrCopy.sort()` — вызывается для каждого элемента. в функции ставить проверку, если ок — записываем в result
+- использовать `arrCopy.filter()`
+- использовать `Array.prototype.every()` — прерывается после первого false
+
 
 <br></p>
 </details> 

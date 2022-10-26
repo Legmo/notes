@@ -4437,7 +4437,7 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
 - [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
 - [splice](https://learn.javascript.ru/array-methods#splice)* - добавлять, удалять и заменять элементы. **Мутирующий!**
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него эл-ты с опр. индексами
 - [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
   старых
 - [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
@@ -4445,12 +4445,13 @@ Web Workers не имеют доступа к DOM, поэтому основно
   в массиве
 - [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск первого совпадения
 - [filter](https://learn.javascript.ru/array-methods#filter) - поиск всех совпадений. Вернёт новый массив.
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив. Сколько элементов 
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив с таким же кол-вом элементов
 - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn)* - сортировка «на месте». **Мутирующий!**
 - [reverse](https://learn.javascript.ru/array-methods#reverse)* - смена порядка элементов на обратный.  **Мутирующий!**
 - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
 - [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
 - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+- [Array.prototype.every](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
 <br>
 <br>
 
