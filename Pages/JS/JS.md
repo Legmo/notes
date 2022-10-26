@@ -3770,8 +3770,10 @@ JS-приложений, даже весьма хитроумных и слож�
 
 Ссылки:
 
+- [learn.javascript.ru - Колбэки](https://learn.javascript.ru/callbacks)
 - [Habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
-- [hexlet](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
+- [Habr - Коллбэк в JavaScript… Что за зверь?](https://habr.com/ru/company/ruvds/blog/330880/)
+- [Hexlet - Что такое callback-функция в JavaScript?](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
 - [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
 - [Ад обратных вызовов](http://callbackhell.ru/)
 

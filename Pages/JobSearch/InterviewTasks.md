@@ -1326,7 +1326,121 @@ timer();
 
 ***
 
-20 штук. Скоро выложу
+[//]: # (Написать ф-цию asyncAuth, которая вернет результат выполнения ф-ции auth, в которой коллбек с ошибкой и данными)
+<details><summary><b>Написать asyncAuth(), которая вернет результат выполнения auth (коллбек(ошибка, данные)))</b></summary><p>
+
+**Задача**
+- Есть функция `auth()`, она принимает коллбек, который принимает аргументами ошибку и какие-то данные.
+- Написать функцию `asyncAuth()`, которая вернет результат выполнения функции `auth()`.  
+
+<br>
+<br>
+
+**Решение 1 - «В лоб»**
+```js
+const errorData = new Error('Some error');
+const succesData = 'Some data';
+
+const someCallback = (error, data) => {
+  if(true) {
+    return data;
+  }
+  return error;
+};
+
+const auth = (callback) => {
+    return callback();
+};
+
+const asyncAuth = (func) => {
+  console.log(func());
+};
+
+asyncAuth(() => auth(() => someCallback(errorData, succesData)));
+```
+
+**Решение 2 - Промис**
+```js
+const errorData = new Error('Some error');
+const succesData = 'Some data';
+
+const someCallback = (error, data) => {
+  if(true) {
+    return data;
+  }
+  return error;
+};
+
+const auth = (callback) => {
+    return callback();
+};
+
+const asyncAuth = (func) => {
+  return new Promise((resolve,reject) => {
+    if(typeof(func()) === 'string') {
+      resolve(func());
+    }
+    reject(func());
+  });
+};
+
+const promise =  asyncAuth(() => auth(() => someCallback(errorData, succesData)));
+
+promise.then (
+  data => console.log(data),
+  error => console.log(error)
+);
+```
+
+<br></p>
+</details> 
+
+[//]: # (Объединить пересекающиеся интервалы)
+<details><summary><b>Объединить пересекающиеся интервалы</b></summary><p>
+
+**Задача**
+- Дана последовательность интервалов.
+- Надо объединить те, которые имеют пересечения.
+```js
+mergeIntervals([[4, 8], [3, 5], [7, 12], [1, 2]]) // => [[3, 12], [1, 2]]
+mergeIntervals([[3, 4], [1, 2], [4, 5], [2, 3]]) // => [[1, 5]]
+```
+
+**Решение**
+```js
+
+const mergeIntervals = (arr) => {
+  if(arr.length > 0) {
+    const arrCopy = arr.map( item => [...item]);
+    let result = [];
+    arrCopy.foreach(item => {
+      //сравниваем каждый интервал с каждым. Sort?
+      // проверки
+      //    - что там именно числа
+      //    - числа ровно два
+      //    - нет отрицательных
+      //    - сначала идёт меньшее, потом большее (или равное?)
+      //    - typeScript?
+      //1 - интервалы равны
+      //2 - интервалы не пересекаются
+      //3 - интервалы пересекаются
+      //    - A[0] >= B[0]
+      //    - A[1] <= B[1]
+    });
+
+    return result;
+  }
+};
+
+mergeIntervals([[4, 8], [3, 5], [7, 12], [1, 2]]); // => [[3, 12], [1, 2]]
+mergeIntervals([[3, 4], [1, 2], [4, 5], [2, 3]]); // => [[1, 5]]
+```
+
+<br></p>
+</details> 
+
+
+***
 
 <br></p>
 </details> 
