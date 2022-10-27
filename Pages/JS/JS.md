@@ -4451,7 +4451,9 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
 - [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
 - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-- [Array.prototype.every](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
+- [every(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
+- [some(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
+- join
 <br>
 <br>
 
@@ -4540,7 +4542,54 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
   <br>
   <br>
 
+<details><summary><b>Список с MDN</b></summary><p>
+
+- [Array.prototype\[@@iterator\]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
+- [Array.prototype.at()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
+- [Array.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+- [Array.prototype.copyWithin()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
+- [Array.prototype.entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
+- [Array.prototype.every()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+- [Array.prototype.fill()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+- [Array.prototype.filter()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Array.prototype.find()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [Array.prototype.findIndex()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+- [Array.prototype.flat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+- [Array.prototype.flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+- [Array.prototype.forEach()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+- [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [Array.prototype.group()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group)
+- [Array.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [Array.prototype.join()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [Array.prototype.keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
+- [Array.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+- [Array.prototype.map()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array.of()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
+- [Array.prototype.pop()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+- [Array.prototype.push()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- [Array.prototype.reduce()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+- [Array.prototype.reduceRight()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
+- [Array.prototype.reverse()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+- [Array.prototype.shift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+- [Array.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+- [Array.prototype.some()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+- [Array.prototype.sort()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- [Array.prototype.splice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- [Array.prototype.toLocaleString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)
+- [Array.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
+- [Array.prototype.unshift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+- [Array.prototype.values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
+
+<br><p>
+</details>
+
+
 <details><summary><b>UNSORTED</b></summary><p>
+
+
+
 
 - Push/pop
   - Работают заметно быстрее чем shift/unshift

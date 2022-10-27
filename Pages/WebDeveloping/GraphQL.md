@@ -210,7 +210,7 @@ Post: {
 
 **Ссылки**
 
-- [Habr - Что же такое этот GraphQL? (2017)](https://habr.com/ru/post/326986/)
+- [Habr - Что же такое этот GraphQL? (2017)](https://habr.com(https://developer.mozilla.org/ru/post/326986/)
 - [Hexlet - Что такое GraphQL: с основ до первых запросов](https://ru.hexlet.io/blog/posts/chto-takoe-graphql-s-osnov-do-pervyh-zaprosov)
 - [Руководство по языку запросов GraphQL для начинающих](https://tproger.ru/translations/graphql-beginners-guide/)
 
@@ -218,3 +218,7 @@ Post: {
 <br>
 
 *[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
+
+
+
+

@@ -1408,123 +1408,38 @@ mergeIntervals([[3, 4], [1, 2], [4, 5], [2, 3]]) // => [[1, 5]]
 
 **Решение**
 ```js
-
 const mergeIntervals = (arr) => {
   if(arr.length > 0) {
     const arrCopy = arr.map( item => [...item]);
     let result = [];
-    /*result = [
-      ...result,
-      arrCopy.filter((item, index, array) => {
-          
-          let isFirstValuesIntersect = (item[0] >= ); 
-          let isLastValuesIntersect = (item[1] <= )
-          return (isFirstValuesIntersect && isLastValuesIntersect);
-      })
-    ]*/
+    let isResultChanged = false;
+    let isAIncludesB = ([a,b], [c,d]) => {return (a < c) && (b > d)};
+    let isABIntersect = ([a,b], [c,d]) => {return ((b >= c) && (b <= d)) || ((a >= c) && (a <= d))};
 
-   /* let final = arrCopy.reduce((sum, current) => {
-        sum + current
-    }, []);*/
-    
-    arrCopy.sort(([a,b], [c,d]) => { 
-        //todo: вместо sort надо использовать другой алгоритм - чтоб сравнивал каждый с каждым
-      // плюс, надо всё заколцевать (см. ниже)
-        
-        
-      // ДРУГОЙ ПОДХОД
-      // - не дописываем в другой массив, а модифицируем этот - sort, reudce
-      // - гоняем проверку каждого с каждым по кругу, пока не останутся только нужные не пересекающиеся интервалы
-      // - если пересекаются - объединяем, берём меньшее значени дня начала и большее для конца
-      //Алгоритм
-      //- проверяем что пересекаются/содержатся дрйг в друге. 
-      //    - если да - - выбираем какое из первых чисел меньше, какое из последних больше редуцируем массив, оставляя вместо двух старых один новый элеменет.  Может просто удалять + замяенять? Splice? Или отсавлять дырки, а потом подчистить?
-      //    - если нет - переходим к следующей паре
-      // - Как понять что не надо проходить финальный массив ещё одной проверкой?
-      //   - если length финального массива > 1 прогоняем ещё раз
-      //   - при первом изменении в массиве переключаем какую-то переменную в true
-      //   - если было хоть одно изменение - переменная останется в true
-      //    - пока переменная === true - првоерка будет запускаться заново
-      //    - если проверка прошла без изменеий - переменную ставим в false
-      //    - если перемененная === felse  или   length финального массива <= 1 — заврешаем
-      // b содержит a — ((a > c) && (b < d))
-      // a содержит b — ((a < c) && (b > d))
-      // a пересекается с началом b (b0 < a1 < b1)
-      // a пересекается с концом b (b0 < a0 < b1)
-
-      let isAIncludesB = ([a,b], [c,d]) => {return (a < c) && (b > d)};
-      let isBIncludesA = ([a,b], [c,d]) => {return (a > c) && (b < d)};
-      let isABIntersect = ([a,b], [c,d]) => {return ((c < b) && (b < d)) || ((c < a) && (a < d))};
-
-      console.log(
-         a, b, ',', c, d, '—',
-        ((c < b) && (b < d)),
-        ((c < a) && (a < d)),
-        '—',  (((c < b) && (b < d)) || ((c < a) && (a < d)))
-      )
-
-      if (isAIncludesB([a,b], [c,d]) || isBIncludesA([a,b], [c,d]) || isABIntersect([a,b], [c,d])) {
-        let x =  Math.min(a, c);
-        let y =  Math.max(b, d);
-        result.push([x,y]);
-          // выбираем какое из первых чисел меньше,
-          // какое из последних больше 
-          // редуцируем массив, оставляя вместо двух старых один новый элеменет
-          // Может просто удалять + замяенять? Splice? Или отсавлять дырки, а потом подчистить?
-      } else {
-          
-      }
-
-      
-      
-/*      if ( (a <= d) (b >= c) ) {
-      
-      }*/
-      return 0;
-    });
-    
-    //Проверки (typeScript?)
-    //- в исходном массиве два значения, это числа и они не отрицательные
-    //- сначала идёт меньшее число, потом большее (или равное?)
-    
     arrCopy.forEach(intervalAB => {
       if( result.length > 0) {
-        let [a,b] = intervalAB;
-        
+        result.forEach((item,index) => {
+          let [a,b] = intervalAB;
+          let [c,d] = item;
 
-        
-        result.forEach(item => {
+          console.log(
+            `(${a}-${b}), ${c}-${d} —`,
+            isAIncludesB([a,b], [c,d]),
+            isAIncludesB([c,d], [a,b]),
+            isABIntersect([a,b], [c,d]),
+            '—',  (isAIncludesB([a,b], [c,d]) || isAIncludesB([c,d], [a,b]) || isABIntersect([a,b], [c,d]))
+          )
 
-          //првоерять что элементы result не стали одинаковыми...
-            
-          //todo
-          // если не совпало с этим item - перейди к следующему
-          // если не совпало и item кончились - добавляем новый item
-          // если совпало 
-          //    - правим item и прерываем цикл
-          //    - проверяем что элементы item не пересеклись
-          // 
-          // ДРУГОЙ ПОДХОД
-          // - не дописываем в другой массив, а модифицируем этот - sort, reudce
-          // - гоняем проверку каждого с каждым по кругу, пока не останутся только нужные не пересекающиеся интервалы
-          
-          
-          if ((b < item[0]) || (a > item[1])){
-           result.push(intervalAB);
+          if (isAIncludesB([a,b], [c,d]) || isAIncludesB([c,d], [a,b]) || isABIntersect([a,b], [c,d])) {
+            let x =  Math.min(a, c);
+            let y =  Math.max(b, d);
+            result[index]=([x,y]);
+            isResultChanged = true;
           }
           else {
-            if (a < item[0]) {
-              item[0] = a;
-            }
-            if (b > item[1]) {
-              item[1] = b
-            }
-          // todo
-          // Если один массив полностью попадает в другой — это считается пересечением? 
-          // Или надо обрабатывать отдельно? 
+            console.log('Else')
+            result.push(intervalAB)
           }
-          
-
         })
       }
       else {
@@ -1532,8 +1447,14 @@ const mergeIntervals = (arr) => {
       }
     });
 
-    console.log('result', result);
-    return result;
+
+    if((result.length > 1) && (isResultChanged)) {
+      mergeIntervals(result)
+    } else {
+      console.log('result', result);
+      return result;
+    }
+
   }
 };
 
