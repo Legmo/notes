@@ -221,4 +221,58 @@ Post: {
 
 
 
+```js
+const mergeIntervals = (arr) => {
+  if(arr.length > 0) {
+    const arrCopy = arr.map( item => [...item]);
+    let result = [];
+    let isResultChanged = false;
+    let isAIncludesB = ([a,b], [c,d]) => {return (a < c) && (b > d)};
+    let isABIntersect = ([a,b], [c,d]) => {return ((b >= c) && (b <= d)) || ((a >= c) && (a <= d))};
 
+    arrCopy.forEach(intervalAB => {
+      if( result.length > 0) {
+          
+        for(let index = 0; index < result.length; index++) {
+          let [a,b] = intervalAB;
+          let [c,d] = result[index];
+
+          console.log(
+            `(${a}-${b}), ${c}-${d} —`,
+            isAIncludesB([a,b], [c,d]),
+            isAIncludesB([c,d], [a,b]),
+            isABIntersect([a,b], [c,d]),
+            '—',  (isAIncludesB([a,b], [c,d]) || isAIncludesB([c,d], [a,b]) || isABIntersect([a,b], [c,d]))
+          )
+
+          if (isAIncludesB([a,b], [c,d]) || isAIncludesB([c,d], [a,b]) || isABIntersect([a,b], [c,d])) {
+            let x =  Math.min(a, c);
+            let y =  Math.max(b, d);
+            result[index]=([x,y]);
+            isResultChanged = true;
+            break
+          }
+          else {
+            console.log('Else')
+            result.push(intervalAB)
+          }
+        }
+      }
+      else {
+        result.push(intervalAB)
+      }
+    });
+
+
+    if((result.length > 1) && (isResultChanged)) {
+      mergeIntervals(result)
+    } else {
+      console.log('result', result);
+      return result;
+    }
+  }
+};
+
+mergeIntervals([[4, 8], [3, 5], [7, 12], [1, 2]]); // => [[3, 12], [1, 2]]
+mergeIntervals([[3, 4], [1, 2], [4, 5], [2, 3]]); // => [[1, 5]]
+```
