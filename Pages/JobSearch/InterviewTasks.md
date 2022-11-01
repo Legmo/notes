@@ -1536,17 +1536,30 @@ getEquals([1,2,2,3], [2,2,2,2]); //[2, 2]
 **Решение**
 ```js
 const getEquals = (a, b) => {
-    /* создаём Set
-        проходим по массиву a [map, filter, for, foreach...], сравнивая каждый а элемент с каждыйм элементом b
-        или просто проверям на incleudes
-        если элементы совпали — присваиваем этот элемент в Set 
-     */
+  const copyA = [...a];
+  const copyB = [...b];
+  const result = [];
   
+  copyA.map((itemA, indexA) => {
+    copyB.forEach((itemB, indexB) => {
+      if (itemA === itemB) {
+        copyB.splice(indexB,1);
+        copyA.splice(indexA,1);
+        result.push(itemA);
+      }
+    })
+  })
+  return result;
 };
 
-getEquals([1,2,2,3], [2,3,5]); //[2, 3]  
-getEquals([1,2,2,3], [2,2,2,2]); //[2, 2]
+console.log(getEquals([1,2,2,3], [2,3,5])); //[2, 3]  
+console.log(getEquals([1,2,2,3], [2,2,2,2])); //[2, 2]
 ```
+
+**Доработка**
+- Вместо двух переборов попробовать sort? reduce?
+- find и findIndex - поиск первого совпадения
+- filter - поиск всех совпадений. Вернёт новый массив.
 
 <br></p>
 </details> 

@@ -58,7 +58,7 @@
 - [Деструктурирующее присваивание](../JS/JS.md#destruct)
 - [Остаточные параметры и оператор расширения / spread (...)](../JS/JS.md#spread)
 - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](../JS/JS.md#tmpLiterals)
-- [Параметры функции по умолчанию](../JS/JS.md#functDefParam)
+- [Параметры функции по умолчанию](../JS/JS.md#funcDefParam)
 -
 - [Лексическое всплытие](../JS/JS.md#eventHoisting)
 - [Рекурсия](../Programming/Programming.md#recursion)
