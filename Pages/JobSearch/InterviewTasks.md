@@ -115,7 +115,6 @@ setTimeout(function timeout() {
   console.log('setTimeout');
 }, 0);
 
-//В стэке отрабатывает resolve, и отправляет .then в очередь микрозадач
 Promise.resolve().then(function () {
   console.log('Promise 1');
 }).then(function () {
