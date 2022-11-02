@@ -128,7 +128,7 @@ console.log('End');
 
 ```js
 setTimeout(()=>{
-  console.log('timeOut');
+  console.log('timeOut 1');
 }, 0)
   
 console.log(1);
@@ -136,8 +136,8 @@ console.log(1);
 new Promise(resolve => {
   console.log("Promise")
   setTimeout(()=>{
-    console.log('777');
-    resolve()         // обратить внимание на этот момент! После него всё идёт немного иначе. Кажется сразу следом отработают then. resolve() прерывает очередь макрозадач, и отрабатывают все then. Как-то так
+    console.log('timeOut 2');
+    resolve()         // обратить внимание! После этого момента всё идёт немного иначе.Следом сразу отработают then. — т.к. resolve() прерывает очередь макрозадач, и отрабатывают все then
   }, 0)
 })
 .then(() => {
@@ -150,10 +150,10 @@ new Promise(resolve => {
 console.log(4);
   
 setTimeout(()=>{
-  console.log('timeOuts');
+  console.log('timeOut 3');
 }, 0)
 
-// 1, Promise, 4, timeOut, 777, (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOuts
+// 1, Promise, 4, timeOut 1, timeOut 2 (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOut 3
 ```
 
 ```js
@@ -571,7 +571,7 @@ console.log(intersect(a, b)); //[1,9,10]
 <br></p>
 </details> 
 
-[//]: # (Сортировка массива чисел по их квадрата)
+[//]: # (Сортировка массива чисел по их квадратам)
 <details id="task-6"><summary><b>Сортировка массива чисел по их квадратам *</b></summary><p>
 
 - Отсортировать исходный массив положительных и отрицательных чисел по их квадратам. 
