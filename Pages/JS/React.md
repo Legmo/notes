@@ -2988,6 +2988,9 @@ const App = () => {
 <br></p>
 </details>
 
+<br>
+<br>
+
 [//]: # (useImperativeHandle)
 <details><summary><b>useImperativeHandle</b></summary><p>
 
@@ -3094,7 +3097,7 @@ throttling. Позволяет отложить повторный рендер�
 </details>
 
 [//]: # (useInsertionEffect )
-<details><summary><b>useState</b></summary><p>
+<details><summary><b>useInsertionEffect</b></summary><p>
 
 [useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect) — позволяет библиотекам
 CSS-in-JS решать проблемы с производительностью при внедрении стилей во время рендеринга.
@@ -3136,6 +3139,8 @@ CSS-in-JS решать проблемы с производительность�
 - [WebDev - React видеокаст #2. Полное введение в хуки](https://youtu.be/X6j7Y7tp3_c)
 - [WebDev - React видеокаст #3. Релиз хуков](https://youtu.be/19EmLE2mZ1Q)
 - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
+
+---
 
 <br></p>
 </details>
