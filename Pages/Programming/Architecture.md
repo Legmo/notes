@@ -103,6 +103,8 @@
 [//]: # (MV* для web todo: дополнить)
 <details><summary><b>MV* для web *</b></summary><p>
 
+***
+
 `Model-View-Controller` (Модель-Вид-Контроллер)<br>
 Конструкционный шаблон, архитектурный паттерн, концепция. 1979 г<br>
 Описывает способ построения структуры приложения, сферы ответственности и взаимодействие каждой из частей в этой
@@ -237,9 +239,13 @@ MVVM удобно использовать вместо классическог
 <br></p>
 </details>
 
-**Картинки**
+[//]: # (Картинки)
+<details><summary><b>Картинки</b></summary><p>
 
 <img src="/Assets/Img/architecture-mv-1.jpg" title="Схема 1" alt="Схема 1" />
+
+<br></p>
+</details>
 
 **Ссылки**
 
@@ -248,6 +254,8 @@ MVVM удобно использовать вместо классическог
 - [Habr - Честный MVC на React + Redux (2016)](https://habr.com/ru/company/developersoft/blog/305812/)
 - [Doka - Архитектурный паттерн MVC ](https://doka.guide/js/architecture-mvc/)
 - [Medium - Прощай, Redux (2018)](https://medium.com/devschacht/jack-scott-goodbye-redux-4f11cc3c6af5)
+
+***
 
 <br></p>
 </details>
