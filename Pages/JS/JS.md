@@ -4217,6 +4217,69 @@ Web Workers не имеют доступа к DOM, поэтому основно
 - [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
 - [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
 
+[//]: # (Стандратные методыс MDN)
+<details><summary><b>Стандартные методы с MDN</b></summary><p>
+
+<summary>Методы</summary>
+
+- [String.prototype[@@iterator]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
+- [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
+- [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+- [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
+- [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+- [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+- [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
+- [String.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+- [String.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+- [String.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
+- [String.prototype.localeCompare()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+- [String.prototype.match()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [String.prototype.matchAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
+- [String.prototype.normalize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
+- [String.prototype.padEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+- [String.prototype.padStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+- [String.raw()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/raw)
+- [String.prototype.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+- [String.prototype.replace()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [String.prototype.replaceAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+- [String.prototype.search()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/search)
+- [String.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [String.prototype.split()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [String.prototype.startsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+- [String.prototype.toLocaleUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+- [String.prototype.toLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [String.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
+- [String.prototype.toUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [String.prototype.trim()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+- [String.prototype.trimEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
+- [String.prototype.trimStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
+- [String.prototype.valueOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
+-
+- [String.prototype.anchor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/anchor) — Deprecated
+- [String.prototype.big()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/big) — Deprecated
+- [String.prototype.blink()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/blink) — Deprecated
+- [String.prototype.bold()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/bold) — Deprecated
+- [String.prototype.fixed()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fixed) — Deprecated
+- [String.prototype.fontcolor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor) — Deprecated
+- [String.prototype.fontsize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize) — Deprecated
+- [String.prototype.italics()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/italics) — Deprecated
+- [String.prototype.link()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/link) — Deprecated
+- [String.prototype.small()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/small) — Deprecated
+- [String.prototype.strike()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/strike) — Deprecated
+- [String.prototype.sub()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sub) — Deprecated
+- [String.prototype.substr()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr) — Deprecated
+- [String.prototype.substring()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [String.prototype.sup()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sup) — Deprecated
+
+
+
+<br></p>
+</details>
+
+
 <br></p>
 </details>
 

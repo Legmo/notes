@@ -2346,6 +2346,10 @@ React содержит около 15 [встроенных хуков](https://r
 И в дальнейшем для вычисления нового состояния будет использовано неправильное мемоизированное состояние.
 
 `Связный список` — базовая динамическая структура данных в информатике, состоящая из узлов, содержащих данные и ссылки («связки») на следующий и/или предыдущий узел списка. Принципиальным преимуществом перед массивом является структурная гибкость: порядок элементов связного списка может не совпадать с порядком расположения элементов данных в памяти компьютера, а порядок обхода списка всегда явно задаётся его внутренними связями.
+
+**Ссылки**
+- [Habr - Заметка о том, как работают хуки в React](https://habr.com/ru/post/553104/)
+
 <br>
 <br>
 
@@ -2863,6 +2867,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Оф. докуиентация - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
 - [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
 - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
 - [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
@@ -2904,6 +2909,7 @@ function useEffect(effect: EffectCallback, deps?: DependencyList): void;
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
 - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
 - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
 - [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
