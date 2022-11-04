@@ -4473,7 +4473,9 @@ HTMl с сервера.
 - [Wikipedia - Hydration (web development)](https://en.wikipedia.org/wiki/Hydration_(web_development))
 - [Оф. документация — метод `hydrate()`](https://ru.reactjs.org/docs/react-dom.html#hydrate)
 - [Видео - Server Side Rendering с использованием NextJS (ru, «Andersen»)](https://nextcloud.andersenlab.dev/index.php/s/xgi2n8HGprmbaNK)
-- [Дока - Виды веб-приложений ](https://doka.guide/js/web-app-types/)
+- [Дока - Виды веб-приложений](https://doka.guide/js/web-app-types/)
+- [IT-Kamasutra — FullStack Web архитектура - Server Side Rendering - 01](https://youtu.be/rn-fJ-m8WOY)
+- [IT-Kamasutra — FullStack Web архитектура - Server Side Rendering сегодня - 02,](https://youtu.be/7knzkScHzJg)
 
 <br></p>
 </details>
