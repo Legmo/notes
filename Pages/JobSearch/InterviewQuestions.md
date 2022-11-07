@@ -1054,7 +1054,7 @@ ReactDOM.render(<Example />, rootElement);
 <br></p>
 </details> 
 
-[//]: # («Raiffeisen», Frontend developer React middle)
+[//]: # («Интеллектуальные решения», Frontend developer React middle)
 <details><summary><b>«Интеллектуальные решения», Фронтенд разработчик (ноябрь 2022)</b></summary><p>
 
 - от 150 000 до 250 000 руб. на руки
@@ -1097,6 +1097,31 @@ ReactDOM.render(<Example />, rootElement);
   - не придумал вариант с ключом объекта => можно проверять символ по ключу
   - не придумал вариант с str.length !== Set.size
   - Подробнее: [Legmo notes — Задачки для собеседования frontend](InterviewTasks.md#task-15)
+
+<br></p>
+</details> 
+
+[//]: # («Kamaz» цифровая платформа, Frontend developer React middle)
+<details><summary><b>«Kamaz» цифровая платформа, Фронтенд разработчик (ноябрь 2022)</b></summary><p>
+
+Собеседование без кодинга, теоретические вопросы — ~30 минут
+
+Вопросы:
+- Есть ли знания Node.JS? Желание изучить?
+- Как организовать архитектуру приложения. Например, надо делить код между несколькими историями
+- Как работает движок JS «под капотом» (event loop и т.д.)?
+- Что такое WebWorkers API?
+- Что такое Service Worker API?
+- Как работает рендер браузера?
+- Как оптимизировать рендер React-компонента?
+- Что такое React.Memo? Отличия от useMemo?
+- Какие ещё хуки используются для оптимизации работы React?
+- Как я реализовал бы сложную форму на React? Formik, или custom hooks + MobX.
+- TypeScript — нужен ли на проекте?
+- TypeScript — какими возможностями пользуюсь?
+- Различия между `any` и `unknow` в TS
+- Настройки использования TypeScript в проекте — включаю ли поддержку `any`?
+- Настройки использования TypeScript в проекте — включаю ли `strict node check` — не позволяет присваивать занчение `undefined`
 
 <br></p>
 </details> 
