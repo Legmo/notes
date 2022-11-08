@@ -22,12 +22,12 @@
   * Rebase
   * Squash
   * GIT flow
-* [REST API](../webdeveloping/network.md)
+* [REST API](../network/network.md)
   * методы - out, post, get, delete...
   * Что можно отправлять
   * типа параметров и т.д.
   * Диапазоны http-кодов
-* [GraphQL](../webdeveloping/graphql.md)
+* [GraphQL](../network/graphql.md)
 * [MVC](../programming/programming.md)
   * Общее
   * Приложение к веб
@@ -39,12 +39,12 @@
   * `SOLID`
 * [Парадигмы программирования](../programming/programming.md)
 * [Алгоритмы](../programming/algorithms.md) - ИЗУЧАТЬ!
-* [Микросервисная архитектура](../webdeveloping/microservices.md)
+* [Микросервисная архитектура](../network/microservices.md)
 * [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](../programming/ci-cd.md)
 * Отслеживание изменений в фреймворке - как он понимает, что нечто изменилось и надо применить изменения к DOM?
   * [Medium - Как создать реактивный фреймворк на JavaScript](https://medium.com/@monochromer/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA-%D0%BD%D0%B0-javascript-cfa34c63fd52)
-  * [MutationObserver](../webdeveloping/browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
-* [Что такое CORS](../webdeveloping/network.md#CORS)
+  * [MutationObserver](../network/browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
+* [Что такое CORS](../network/network.md#CORS)
 * Css селекторы - [MDN](https://developer.mozilla.org/ru/docs/Web/CSS/CSS\_Selectors)
 * [Domain Driven Design, DDD](../programming/programming.md)
 

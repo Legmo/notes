@@ -2438,7 +2438,7 @@ product(downToOne(5)) // 120
 
 <summary><strong>Хранение данных в браузере: Cookie, socalStorage, sessionStorage*</strong></summary>
 
-см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../webdeveloping/network.md#dataStorage)
+см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../network/network.md#dataStorage)
 
 **Ссылки:**
 
