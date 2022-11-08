@@ -13,6 +13,6 @@ PS: конструктивная обратная связь приветств�
 
 **АКТУАЛЬНАЯ ВЕРСИЯ ПРОЕКТА ЗДЕСЬ: [legmo.gitbook.io/it-raven](https://legmo.gitbook.io/it-raven)**
 - [GitBook](https://legmo.gitbook.io/it-raven) — для чтения
-- [GitHub](https://github.com/Legmo/notes) - для внесения правок
+- [GitHub](https://github.com/Legmo/notes) — для внесения правок
 
 [_Legmo, 2019-2022_](https://github.com/Legmo/notes/)
