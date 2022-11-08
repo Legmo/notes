@@ -66,7 +66,7 @@
   - Плагин в IDE PhpStorm. Позволяет прямо в IDE запускать команды для терминала
   - По-умолчанию терминалом для PhpStorm является стандартный терминал windows cmd.exe.
   - Можно изменить настройки на использование другого терминала File/Settings/Tools/Terminal
-  - У меня стоит настройка "C:\Program Files\Git\bin\sh.exe" --login -i" + какая папка открывается при запуске (D:\Work\_Localsites\legmo_notes)
+  - У меня стоит настройка `C:\Program Files\Git\bin\sh.exe" --login -i` + какая папка открывается при запуске (D:\Work\_Localsites\legmo_notes)
 
   **Ссылки**
   - [Git bash в PhpStorm для Windows](https://isaevdimka.ru/paper/all/git-bash-phpstorm-for-the-windows/)
