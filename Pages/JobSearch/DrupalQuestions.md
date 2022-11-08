@@ -1,6 +1,6 @@
 # Заметки для интервью Drupal-frontend #
 
-См. также [Legmo notes - Как проводить собеседования?](../JobSearch/HowToInterview.md)
+См. также [Legmo notes - Как проводить собеседования?](HowToInterview.md)
 
 # Повторить #
 

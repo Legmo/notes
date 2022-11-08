@@ -17,7 +17,7 @@
   вручную отправляя запросы на сервер GraphQL.
 
 Позволяет получать данные из API и передавать от сервера клиенту.<br>
-Альтернатива [REST API](/Pages/WebDeveloping/REST.md).
+Альтернатива [REST API](/Pages/Network/REST.md).
 
 **Некоторые преимущества**
 
@@ -112,7 +112,7 @@ mutation createUser{
 
 **Подписки (subscription)**<br>
 С помощью этого типа операций клиент слушает изменения в БД в режиме реального времени.<br>
-Под капотом подписки используют [websokets](/Pages/WebDeveloping/Browser.md).
+Под капотом подписки используют [websokets](/Pages/Network/Browser.md).
 
 ```
 subscription listenLikes {

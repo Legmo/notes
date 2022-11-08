@@ -178,7 +178,7 @@
   - CSS in JS
   - Styled components
   - BEM
-  - [Sass - какие для вас главные преимущества](/Pages/WebDeveloping/HtmlCssQuestions.md)
+  - [Sass - какие для вас главные преимущества](/Pages/JobSearch/HtmlCssQuestions.md)
 - Источники
   - [Оф. документация React](https://ru.reactjs.org/docs/hello-world.html) (прочесть трижды)
   - [Legmo - React](/Pages/JS/React.md)
@@ -329,10 +329,10 @@
 [//]: # (Оптимизации web-страниц)
 <details><summary><b>Оптимизации web-страниц</b></summary><p>
 
-- [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser#optimization.md)
+- [Legmo - Browser. Оптимизация работы браузера](../Network/Browser#optimization.md)
 - JS - эффективно использовать память
 - JS - избегать использования setTimeout() и setInterval() для обновления внешнего вида элементов страниц.
-- JS - переносить длительные вычисления в [`веб-воркеры`](/Pages/WebDeveloping/Browser.md).
+- JS - переносить длительные вычисления в [`веб-воркеры`](/Pages/Network/Browser.md).
 - JS - для изменений в DOM использовать микро-задачи, разбитые на N кадров.
 - CSS - уменьшить сложность CSS селекторов.
 - CSS - Уменьшите число элементов, для которых вычисляем стили. Лучше менять стиль N элементов, а не всю стр.
@@ -365,7 +365,7 @@
 [//]: # (Оптимизация работы браузера. Critical rendering path)
 <details><summary><b>Оптимизация работы браузера. Critical rendering path</b></summary><p>
 
-- [Legmo - Browser. Оптимизация работы браузера](../WebDeveloping/Browser#optimization.md)
+- [Legmo - Browser. Оптимизация работы браузера](../Network/Browser#optimization.md)
 - "Дорогие" операции работы с DOM. `Relayout` / `Repaint`
 - "Дорогие" операции чтения (getComputedStyle() и т.д.)
 - Схема работы:
@@ -415,7 +415,7 @@
 [//]: # (Работа браузера и смежные вопросы)
 <details><summary><b>Работа браузера и смежные вопросы</b></summary><p>
 
-- [Legmo - Browser](../WebDeveloping/Browser.md)
+- [Legmo - Browser](../Network/Browser.md)
 - WebAssembly
 - Web Worker API, веб воркеры - отдельные потоки браузера, для вычислений JS без блокировки event loop
 - Service Worker API
@@ -434,7 +434,7 @@
 [//]: # (Интернет-технологии - AJAX, JSON, CORS и т.д.)
 <details><summary><b>Интернет-технологии - AJAX, JSON, CORS и т.д.</b></summary><p>
 
-- [Legmo - Browser](../WebDeveloping/Network.md)
+- [Legmo - Browser](../Network/Network.md)
 - Порт
 - TCP/IP
 - HTTP
@@ -475,12 +475,12 @@
   - Rebase
   - Squash
   - GIT flow
-- [REST API](/Pages/WebDeveloping/Network.md)
+- [REST API](/Pages/Network/Network.md)
   - методы - out, post, get, delete...
   - Что можно отправлять
   - типа параметров и т.д.
   - Диапазоны http-кодов
-- [GraphQL](/Pages/WebDeveloping/GraphQL.md)
+- [GraphQL](/Pages/Network/GraphQL.md)
 - [MVC](/Pages/Programming/Programming.md)
   - Общее
   - Приложение к веб
@@ -492,13 +492,13 @@
   - `SOLID`
 - [Парадигмы программирования](/Pages/Programming/Programming.md)
 - [Алгоритмы](../Programming/Algorithms.md) - ИЗУЧАТЬ!
-- [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
+- [Микросервисная архитектура](/Pages/Network/Microservices.md)
 - [СI/CD - Continuous Integration, Continuous Delivery, Continuous Deployment](/Pages/Programming/CI-CD.md)
 - Отслеживание изменений в фреймворке - как он понимает, что нечто изменилось и надо применить изменения к DOM?
   - [Medium - Как создать реактивный фреймворк на JavaScript](https://medium.com/@monochromer/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA-%D0%BD%D0%B0-javascript-cfa34c63fd52)
-  - [MutationObserver](../WebDeveloping/Browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API
+  - [MutationObserver](../Network/Browser.md) и [ещё](https://learn.javascript.ru/mutation-observer) - API
     браузера. Спец. объект, наблюдает за DOM-элементом, запускает колбэк в случае изменений.
-- [Что такое CORS](../WebDeveloping/Network.md#CORS)
+- [Что такое CORS](../Network/Network.md#CORS)
 - Css селекторы - [MDN](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors)
 - [Domain Driven Design, DDD](/Pages/Programming/Programming.md)
 

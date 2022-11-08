@@ -5571,7 +5571,7 @@ event.stopImmediatePropagation().
 [//]: # (Хранение данных в браузере: Cookie, socalStorage, sessionStorage todo: доработать)
 <details id="dataStorage"><summary><b>Хранение данных в браузере: Cookie, socalStorage, sessionStorage*</b></summary><p>
 
-см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../WebDeveloping/Network.md#dataStorage)
+см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../Network/Network.md#dataStorage)
 
 **Ссылки:**
 
