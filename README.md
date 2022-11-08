@@ -1,4 +1,4 @@
-# Заметки о web-разработке #
+# IT-Raven. Заметки о web-разработке #
 
 ## JS+ ##
 - [JavaScript](/Pages/JS/JS.md)
