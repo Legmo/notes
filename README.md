@@ -9,6 +9,8 @@
 
 PS: конструктивная обратная связь приветствуется.
 
+***
+
 **АКТУАЛЬНАЯ ВЕРСИЯ ПРОЕКТА ЗДЕСЬ: [legmo.gitbook.io/it-raven](https://legmo.gitbook.io/it-raven)**
 - [GitBook](https://legmo.gitbook.io/it-raven) — для чтения
 - [GitHub](https://github.com/Legmo/notes) - для внесения правок
