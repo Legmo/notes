@@ -592,7 +592,7 @@ function Component() {
 
 * Обычно в `index.js` оборачивают весь компонент приложения в `<React.StrictMode> </React.StrictMode>`:
   * ```jsx
-    import React from "react";
+    import React from "_GitBook/js/react";
     import ReactDOM from "react-dom";
 
     ReactDOM.render(
