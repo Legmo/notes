@@ -14,16 +14,15 @@
 - [Микросервисная архитектура](/Pages/Network/Microservices.md)
 - [GraphQL](/Pages/Network/GraphQL.md)
 
-
 ## Программирование ##
-- [Методологии разработки](/Pages/Programming/Methodology.md)
+- [Программирование в целом](/Pages/Programming/Programming.md)
 - [Архитектура фронтенда](/Pages/Programming/Architecture.md)
+- [Методологии разработки](/Pages/Programming/Methodology.md)
+- [Алгоритмы](/Pages/Programming/Algorithms.md)
 - [Тестирование](/Pages/Programming/Testing.md)
 - [CI-CD](/Pages/Programming/CI-CD.md)
 - [ООП](/Pages/Programming/OOP.md)
-- [Алгоритмы](/Pages/Programming/Algorithms.md)
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
-- [Программирование в целом](/Pages/Programming/Programming.md)
 
 ## Поиск работы ##
 
