@@ -9,10 +9,13 @@
 
 PS: конструктивная обратная связь приветствуется.
 
-***
+[//]: # (***)
 
-**АКТУАЛЬНАЯ ВЕРСИЯ ПРОЕКТА ЗДЕСЬ: [legmo.gitbook.io/it-raven](https://legmo.gitbook.io/it-raven)**
-- [GitBook](https://legmo.gitbook.io/it-raven) — для чтения и вообще использования
-- [GitHub](https://github.com/Legmo/notes) — для внесения правок и обсуждений
+[//]: # ()
+[//]: # (**АКТУАЛЬНАЯ ВЕРСИЯ ПРОЕКТА ЗДЕСЬ: [legmo.gitbook.io/it-raven]&#40;https://legmo.gitbook.io/it-raven&#41;**)
+
+[//]: # (- [GitBook]&#40;https://legmo.gitbook.io/it-raven&#41; — для чтения и вообще использования)
+
+[//]: # (- [GitHub]&#40;https://github.com/Legmo/notes&#41; — для внесения правок и обсуждений)
 
 [_Legmo, 2019-2022_](https://github.com/Legmo/notes/)
