@@ -1,66 +1,71 @@
-# Заметки о web-разработке #
+# О проекте
 
-## Технологии ##
-- [Вопросы для собеседования frontend](/Pages/JobSearch/InterviewQuestions.md)
-- [Задачки для собеседования frontend](/Pages/JobSearch/InterviewTasks.md)
-- [JavaScript](/Pages/JS/JS.md)
-- [TypeScript](/Pages/JS/TypeScript.md)
-- [React JS](/Pages/JS/React.md)
-- [Redux](/Pages/JS/Redux.md)
-- [NodeJS](/Pages/JS/NodeJS.md)
-- [Работа браузера](/Pages/WebDeveloping/Browser.md)
-- [Работа сети (HTTP, REST, AJAX, JSON, CORS...)](/Pages/WebDeveloping/Network.md)
-- [GraphQL](/Pages/WebDeveloping/GraphQL.md)
-- [GIT](/Pages/_Other/GIT.md)
-- [Bootstrap 4 & SASS](/Pages/WebDeveloping/HtmlCssQuestions.md)
-- [Консоли, терминалы и оболочки](/Pages/_Other/Console.md)
-- [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
+## Технологии
 
-## Поиск работы ##
+* [Вопросы для собеседования frontend](jobsearch/interviewquestions.md)
+* [Задачки для собеседования frontend](jobsearch/interviewtasks.md)
+* [JavaScript](js/js.md)
+* [TypeScript](js/typescript.md)
+* [React JS](js/react.md)
+* [Redux](js/redux.md)
+* [NodeJS](js/nodejs.md)
+* [Работа браузера](webdeveloping/browser.md)
+* [Работа сети (HTTP, REST, AJAX, JSON, CORS...)](webdeveloping/network.md)
+* [GraphQL](webdeveloping/graphql.md)
+* [GIT](broken-reference)
+* [Bootstrap 4 & SASS](jobsearch/htmlcssquestions.md)
+* [Консоли, терминалы и оболочки](broken-reference)
+* [Качество кода - линтеры и т.д.](js/codequality.md)
 
-- [Как проходить собеседования?](/Pages/JobSearch/Interview.md)
-- [Где искать работу?](/Pages/JobSearch/HR-company.md)
-- [Как проводить собеседования?](/Pages/JobSearch/HowToInterview.md)
-- [Как понять чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
-- [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
+## Поиск работы
 
-## Саморазвитие ##
-- [Про самоорганизацию](/Pages/SelfOrgainzation/SelfOrganization.md)
-- [Как учиться?](/Pages/SelfOrgainzation/Learning.md)
-- [Как повысить уровень жизненной энергии?](/Pages/SelfOrgainzation/Energy.md)
-- [Как стать junior-разработчиком?](/Pages/SelfOrgainzation/GradationJunior.md)
-- [Как стать middle-разработчиком?](/Pages/SelfOrgainzation/GradationMiddle.md)
-- [Про эмоциональное выгорание](/Pages/SelfOrgainzation/Burnout.md)
+* [Как проходить собеседования?](jobsearch/interview.md)
+* [Где искать работу?](jobsearch/hr-company.md)
+* [Как проводить собеседования?](jobsearch/howtointerview.md)
+* [Как понять чем я хочу заниматься?](jobsearch/destination.md)
+* [Общение с иностранными работодателями. Особенности менталитета](broken-reference)
 
-## Drupal ##
-- [Drupal - список компетенций](/Pages/Drupal/CompetenciesList.md)
-- [Drupal - вопросы для собеседования frontend-разработчика](/Pages/Drupal/DrupalQuestions.md)
+## Саморазвитие
 
-## Общие вопросы ##
-- [UX/UI](/Pages/_Other/UxUi.md)
-- [Методологии разработки](/Pages/Programming/Methodology.md)
-- [Тестирование](/Pages/Programming/Testing.md)
-- [CI-CD](/Pages/Programming/CI-CD.md)
-- [ООП](/Pages/Programming/OOP.md)
-- [Алгоритмы](/Pages/Programming/Algorithms.md)
-- [Архитектура фронтенда](/Pages/Programming/Architecture.md)
-- [Микросервисная архитектура](/Pages/WebDeveloping/Microservices.md)
-- [Паттерны проектирования](/Pages/Programming/Pattern.md)
-- [Программирование в целом](/Pages/Programming/Programming.md)
+* [Про самоорганизацию](selforgainzation/selforganization.md)
+* [Как учиться?](selforgainzation/learning.md)
+* [Как повысить уровень жизненной энергии?](selforgainzation/energy.md)
+* [Как стать junior-разработчиком?](selforgainzation/gradationjunior.md)
+* [Как стать middle-разработчиком?](selforgainzation/gradationmiddle.md)
+* [Про эмоциональное выгорание](selforgainzation/burnout.md)
 
-<br>
+## Drupal
 
-## О проекте ##
-  1) Это **база знаний**, а не блог — данные регулярно обновляются/меняются/дополняются. Через пару дней содержимое страницы может кардинально отличаться от того, что было раньше.
-  1) Тут **могут содержаться ошибки**. Это личные заметки, а не техническая документация. Проверяйте информацию, прежде чем использовать in real-life. Для этого я привожу ссылки на источники "по теме".
-  1) База создана **для личного использования**. Поможет кому-то ещё - хорошо.
-  1) База **в стадии активного наполнения**. Много опечаток, данные постоянно обновляются-дополняются и т.д. 
+* [Drupal - список компетенций](broken-reference)
+* [Drupal - вопросы для собеседования frontend-разработчика](jobsearch/drupalquestions.md)
 
-Со временем будет ещё лучше :smiling_imp: 
+## Общие вопросы
 
-PS: конструктивная обратная связь приветствуется.
-<br>
-<br>
+* [UX/UI](broken-reference)
+* [Методологии разработки](programming/methodology.md)
+* [Тестирование](programming/testing.md)
+* [CI-CD](programming/ci-cd.md)
+* [ООП](programming/oop.md)
+* [Алгоритмы](programming/algorithms.md)
+* [Архитектура фронтенда](programming/architecture.md)
+* [Микросервисная архитектура](webdeveloping/microservices.md)
+* [Паттерны проектирования](programming/pattern.md)
+* [Программирование в целом](programming/programming.md)
 
-*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
+\
 
+
+## О проекте
+
+1. Это **база знаний**, а не блог — данные регулярно обновляются/меняются/дополняются. Через пару дней содержимое страницы может кардинально отличаться от того, что было раньше.
+2. Тут **могут содержаться ошибки**. Это личные заметки, а не техническая документация. Проверяйте информацию, прежде чем использовать in real-life. Для этого я привожу ссылки на источники "по теме".
+3. База создана **для личного использования**. Поможет кому-то ещё - хорошо.
+4. База **в стадии активного наполнения**. Много опечаток, данные постоянно обновляются-дополняются и т.д.
+
+Со временем будет ещё лучше :smiling\_imp:
+
+PS: конструктивная обратная связь приветствуется.\
+\
+
+
+[_Legmo, 2019-2022_](https://github.com/Legmo/notes/)
