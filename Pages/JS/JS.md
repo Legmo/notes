@@ -1264,7 +1264,7 @@ JavaScript изначально появился в браузерах, и к н
 
 **Ссылки**
 
-- [Legmo notes — Задачки для собеседования frontend. Console.log](InterviewTasks.md#task-1)
+- [Legmo notes — Задачки для собеседования frontend. Console.log](../JobSearch/InterviewTasks.md#task-1)
 - [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
 - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
   просто и понятно.
@@ -1368,6 +1368,9 @@ ES5 (2009)<br>
 **TypeOf**
 - typeof `null` — `object` (хотя реальный тип 'null')
 - typeof `function` — `function` (хотя реальный тип 'object')
+- typeof `NAN` — `number`
+- typeof `new Number(123)` — `object`
+- typeof `[1,2]` — `Object` (все массивы = объекты)
 
 **Преобразование логическое**
 
