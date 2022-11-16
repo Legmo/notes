@@ -564,7 +564,6 @@ product(downToOne(5)) // 120
 <br></p>
 </details>
 
-
 [//]: # («Запахи» кода)
 <details><summary><b>«Запахи» кода</b></summary><p>
 
@@ -574,7 +573,6 @@ product(downToOne(5)) // 120
 
 <br></p>
 </details>
-
 
 **Прочие ссылки**
 - [Doka - Что такое код-ревью](https://doka.guide/tools/code-review/)
