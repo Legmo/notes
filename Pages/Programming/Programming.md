@@ -568,15 +568,18 @@ product(downToOne(5)) // 120
 [//]: # («Запахи» кода)
 <details><summary><b>«Запахи» кода</b></summary><p>
 
+- [Усачёв М — «Запашки» кода React-компонентов](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html)
+- [Wikipedia — Code smell](https://en.wikipedia.org/wiki/Code_smell)
+- [Wikipedia — Design smell“](https://en.wikipedia.org/wiki/Design_smell)
+
+<br></p>
+</details>
+
 
 **Прочие ссылки**
 - [Doka - Что такое код-ревью](https://doka.guide/tools/code-review/)
 - [Doka - Что такое технический долг](https://doka.guide/js/technical-debt/)
 - [Wikipedia - Дональд Кнут «Искусство программирования»](https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
-
-- [Усачёв М — «Запашки» кода React-компонентов](https://css-live.ru/javascript/zapashki-koda-react-komponentov.html)
-- [Wikipedia — Code smell](https://en.wikipedia.org/wiki/Code_smell)
-- [Wikipedia — Design smell“](https://en.wikipedia.org/wiki/Design_smell)
 
 <br>
 <br>
