@@ -7,6 +7,7 @@
 - [Redux](/Pages/JS/Redux.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
+- [Swagger](Pages/JS/Swagger.md)
 
 ## Сеть ##
 - [Работа браузера](/Pages/Network/Browser.md)
