@@ -7,7 +7,6 @@
 - [Redux](/Pages/JS/Redux.md)
 - [NodeJS](/Pages/JS/NodeJS.md)
 - [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
-- [Swagger](Pages/JS/Swagger.md)
 
 ## Сеть ##
 - [Работа браузера](/Pages/Network/Browser.md)
@@ -43,10 +42,12 @@
 - [Как стать junior-разработчиком?](/Pages/SelfOrgainzation/GradationJunior.md)
 - [Как стать middle-разработчиком?](/Pages/SelfOrgainzation/GradationMiddle.md)
 - [Про эмоциональное выгорание](/Pages/SelfOrgainzation/Burnout.md)
+- [Организация работы команды](/Pages/_Other/TeamManagement.md)
 
 ## Прочее ##
 - [GIT](/Pages/_Other/GIT.md)
 - [UX/UI](/Pages/_Other/UxUi.md)
+- [Swagger](Pages/_Other/Swagger.md)
 - [Консоли, терминалы и оболочки](/Pages/_Other/Console.md)
 - [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
 - [Список компетенций Drupal 7](/Pages/_Other/DrupalCompetenciesList.md)

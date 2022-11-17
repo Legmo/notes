@@ -705,11 +705,11 @@ Service worker это скрипт, который выполняется бра
 **Ссылки**
 
 - [Habr - Как работает JS: сервис-воркеры](https://habr.com/ru/company/ruvds/blog/349858/)
+- [Habr - Визуализация работы сервис-воркеров (2020)](https://habr.com/ru/post/491840/)
 - [MDN ru](https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API)
 - [MDN en](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 - [Service Workers: an Introduction (en)](https://developers.google.com/web/fundamentals/primers/service-workers/)
 - [Habr - Service Workers. Инструкция по применению](https://habr.com/ru/company/2gis/blog/345552/)
-- [Habr - ]()
 - [Habr - Подводные камни Service Workers](https://habr.com/ru/post/351194/)
 - [Введение в Service Worker'ы](https://getinstance.info/articles/javascript/introduction-to-service-workers/)
 
