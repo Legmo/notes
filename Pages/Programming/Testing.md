@@ -307,7 +307,8 @@ React Testing Library является подмножеством семейст
 - [Что такое TDD и BDD на пальцах, и что должен знать о них фронтендер](https://medium.com/@lucyhackwrench/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-tdd-%D0%B8-bdd-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BB%D1%8C%D1%86%D0%B0%D1%85-%D0%B8-%D1%87%D1%82%D0%BE-%D0%B4%D0%BE%D0%BB%D0%B6%D0%B5%D0%BD-%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D0%BE-%D0%BD%D0%B8%D1%85-%D1%84%D1%80%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D0%B4%D0%B5%D1%80-701a10e06bb9)
 - [IT-ликбез из тачилы. TDD - Разработка посредством тестирования](https://youtu.be/LGgMD_Evz_M)
 - [IT-Kamasutra #89 - Тесты, jest, tdd, тестируем reducer - React JS](https://youtu.be/fJlx8B9cU7w)
-- [https://learn.javascript.ru/testing-mocha - Автоматическое тестирование c использованием фреймворка Mocha](https://learn.javascript.ru/testing-mocha)
+- [learn.javascript.ru - Автоматическое тестирование c использованием фреймворка Mocha](https://learn.javascript.ru/testing-mocha)
+- [Habr — Как тестировать современный фронтенд (2022)](https://habr.com/ru/company/samokat_tech/blog/704342/)
 
 <br></p>
 </details>
