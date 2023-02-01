@@ -3121,6 +3121,8 @@ const App = () => {
 
 **Ссылки**
 
+- [Habr - React hooks, как не выстрелить себе в ноги. Часть 4](https://habr.com/ru/company/otus/blog/677208/)
+- [Habr - React hooks, как не выстрелить себе в ноги. Разбираемся с замыканиями. Совместное использование хуков](https://habr.com/ru/company/otus/blog/699434/)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
 - [Mentanit - useRef](https://metanit.com/web/react/6.4.php)
 - [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
@@ -3273,6 +3275,7 @@ CSS-in-JS решать проблемы с производительность�
 
 **Ссылки**
 
+- [Habr - React hooks, как не выстрелить себе в ноги. Разбираемся с замыканиями. Совместное использование хуков](https://habr.com/ru/company/otus/blog/699434/)
 - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321)
 - [Matanit.com - Хуки. Управление функциональными компонентами](https://metanit.com/web/react/6.1.php)
 - [Оф. документация](https://ru.reactjs.org/docs/hooks-intro.html)
