@@ -198,7 +198,17 @@
         ```
     - `@include` - подключение миксина
     - `@extend` - можно наследовать наборы свойств CSS от одного селектора другому.
-      - ```%message-shared { border: 1px solid #ccc; padding: 10px; color: #333; } .success { @extend %message-shared; border-color: green; }```
+      - ```
+        %message-shared { 
+          border: 1px solid #ccc; 
+          padding: 10px; 
+          color: #333; 
+        } 
+        .success { 
+          @extend %message-shared; 
+          border-color: green; 
+        }
+        ```
     - математические операции — сложение, вычитание, умножение, деление, остаток...
     - логические операторы — например, цвет кнопки меняется в зависимости от её ширины
 - Ваше отношение к `Bootstrap` и подходу к темизации через навешивание классов
