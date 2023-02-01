@@ -34,6 +34,7 @@
 - [Как понять чем я хочу заниматься?](/Pages/JobSearch/Destination.md)
 - [Вопросы для собеседования. Вёрстка (frontend)](/Pages/JobSearch/HtmlCssQuestions.md)
 - [Вопросы для собеседования (Drupal frontend)](/Pages/JobSearch/DrupalQuestions.md)
+- [Вопросы для собеседования (дизайнер UX/UI)](/Pages/_Other/UxUi.md)
 
 ## Саморазвитие ##
 - [Про самоорганизацию](/Pages/SelfOrgainzation/SelfOrganization.md)
