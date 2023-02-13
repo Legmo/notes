@@ -57,6 +57,7 @@
 - [Habr — Джастин Танни](https://habr.com/ru/company/ruvds/blog/682150/)
 - [Habr — От взлома Firefox до подготовки к Апокалипсису. Как польский хакер Михал Залевски попал в «Матрицу»](https://habr.com/ru/company/ruvds/blog/695386/)
 - [Habr — Величайшие программисты XXI века. Марк Руссинович и его 65 системных утилит](https://habr.com/ru/company/ruvds/blog/710268/)
+- [Habr — Фабрис Беллар: портрет сверхпродуктивного программиста](https://habr.com/ru/post/119455/)
 - [Habr — Кто есть кто в open source — ч. 1: биографии гиков](https://habr.com/ru/company/cloud_mts/blog/448754/)
 - [Habr — Кто есть кто в open source — ч. 2: биографии гиков](https://habr.com/ru/company/cloud_mts/blog/449748/)
 
