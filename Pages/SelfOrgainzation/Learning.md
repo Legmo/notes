@@ -201,7 +201,7 @@
     <br></p>
 </details>
 
-
+[//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>  
 
 - [Процесс изучения](https://rakh.im/learning/)

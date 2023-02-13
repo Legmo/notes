@@ -15,7 +15,6 @@
 <br></p>
 </details>
 
-
 [//]: # (Как стать juinor. Тезисы)
 <details><summary><h3>Как стать juinor-разработчиком. Тезисы</h3></summary><p>
 
@@ -48,6 +47,21 @@
 <br></p>
 </details>
 
+[//]: # (Биографии известных программистов)
+<details><summary><h3>Биографии известных программистов. «Как вы дошли до жизни такой?»</h3></summary><p>
+
+- [Habr — Джефф Дин из компании Google — это Чак Норрис нашего времени](https://habr.com/ru/post/192604/)
+- [Habr — Величайшие программисты 21 века. Джон-Движок Кармак](https://habr.com/ru/company/ruvds/blog/701556/)
+- [Habr — Жизнь выдающихся программистов. Джей Фриман (saurik)](https://habr.com/ru/company/ruvds/blog/688716/)
+- [Habr — Джастин Танни](https://habr.com/ru/company/ruvds/blog/682150/)
+- [Habr — От взлома Firefox до подготовки к Апокалипсису. Как польский хакер Михал Залевски попал в «Матрицу»](https://habr.com/ru/company/ruvds/blog/695386/)
+- [Habr — Линус Торвальдс. Могучий финн](https://habr.com/ru/post/58059/)
+- [Habr — Кто есть кто в open source — ч. 1: биографии гиков](https://habr.com/ru/company/cloud_mts/blog/448754/)
+- [Habr — Кто есть кто в open source — ч. 2: биографии гиков](https://habr.com/ru/company/cloud_mts/blog/449748/)
+
+<br></p>
+</details>
+
 
 **Ссылки**
 - [IT-Kamasutra - Как стать программистом! 3 бесплатных крутых шага! JavaScript, Front-end (YouTube)](https://youtu.be/hFOZYaVHD6A)
@@ -57,6 +71,7 @@
 - [IT-Kamasutra - Не спешите ПЛАТНО переучиваться на программиста (YouTube)](https://youtu.be/IY1m5fOlC-E)
 - [IT-Kamasutra - Бесплатный курс (YouTube)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
 - [IT-Kamasutra - Как пройти испытательный срок? (YouTube)](https://youtu.be/U62-XQRpFT4)
+- [Habr - Как стать джуном, которого берут на работу (frontend-разработка)](https://habr.com/ru/post/716368/)
 - [MetaLamp - Как мы сделали бесплатную программу обучения веб-разработке и трудоустроили 60 выпускников ](https://vc.ru/hr/304764-kak-my-sdelali-besplatnuyu-programmu-obucheniya-veb-razrabotke-i-trudoustroili-60-vypusknikov)
 - [MetaLamp - Бесплатный курс](https://www.metalamp.io/education)
 - [MetaLamp - Roadmap. Frontend & Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
