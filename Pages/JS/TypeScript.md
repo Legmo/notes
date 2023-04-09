@@ -25,6 +25,53 @@
 <br></p>
 </details>
 
+
+[//]: # (Новинки 2020-2022)
+<details><summary><b>Новинки 2020-2022</b></summary><p>
+
+- Утилиты типов / Utility types
+- Условные типы / Conditional types
+- Вывод типов с помощью условных типов
+- Необязательные и прочие (rest) элементы кортежа
+- Абстрактные классы / Abstract classes
+- Сигнатуры конструктора / Construct signatures
+- Утилита типа ConstructorParameters
+- Типы вариативных кортежей / Variadic tuple types
+- Помеченные элементы кортежа / Labeled tuple elements
+- Вывод типа свойства класса из конструктора
+- Поддержка тега deprecated JSDoc
+- Типы шаблонных литералов / Template literal types
+- Рекурсивные условные типы
+- Поддержка тега see JSDoc
+- explainFiles
+- Явное определение неиспользуемых переменных
+- Разделение типов аксессоров
+- override
+- Статические сигнатуры доступа по индексу / Static index signatures
+- Поддержка тега link JSDoc
+- exactOptionalPropertyTypes
+- Утилита типа Awaited
+- Модификатор type в именованном импорте
+- Утверждения const / const assertions
+- Автозавершение методов классов
+- Улучшение вывода типов при доступе по индексу
+- Флаг CLI --generateTrace
+- Поддержка модулей ES в Node.js
+- Поле type файла package.json
+- Выражения инстанцирования / Instantiation expressions
+- extends и infer
+- Опциональные аннотации вариативности для параметров типов
+- Кастомизация разрешения модулей
+- Переход к определению источника / Go to source definition
+- Оператор satisfies
+- В редакторе кода появились команды "Удалить неиспользуемые импорты" (Remove unused imports) и "Сортировать импорты" (Sort imports), облегчающие управления импортами.
+
+**Ссылки**
+- [Habr - Возможности JavaScript и TypeScript последних лет. Часть 2](https://habr.com/ru/companies/timeweb/articles/723332/)
+
+<br></p>
+</details>
+
 [//]: # (Отличия от JS)
 <details><summary><b>Отличия от JS</b></summary><p>
 

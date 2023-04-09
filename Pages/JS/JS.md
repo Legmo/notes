@@ -49,49 +49,40 @@
 [//]: # (Версии JS. Что нового)
 <details id="new"><summary><h3>Версии JS. Что нового</h3></summary><p>
 
-[//]: # (ES13 2022)
-<details><summary><b>ES13 (june 2022)</b></summary><p>
+[//]: # (Новинки 2020-2022)
+<details><summary><b>Новинки 2020-2022</b></summary><p>
 
-- Методы `findLast()` и `findLastIndex()` — поиск в массивах «с конца». <br>
-  - `findLast()` — возвращает значение последнего элемента в массиве, который удовлетворяет функции тестирования
-  - `findLastIndex()` — возвращает индекс последнего элемента в массиве, который удовлетворяет функции тестирования
-- Метод `at()` для массивов — обращаться к массивам с конца. И строкам тоже
-  - ```js
-    const arr = [1, 2, 3, 4]
-    arr.at(-2) // 3
-  
-    const str = "1234"
-    str.at(-2) // '3'
-    ```
-  - ```js
-    //Раньше было так
-    const arr = [1, 2, 3, 4]
-    arr[arr.length - 2] // 3
-    arr.slice(-2)[0]    // 3
-    ```
-- Свойство `cause` у объекта `Error` — причина ошибки.<br>
-  - Позволяет указать какая ошибка спровоцировала другую ошибку.
-- Оператор `await` можно использовать вне функции (без `async`).<br>
-  - Полезно для загрузки модулей динамически или условно?
-- Индексы совпадения регулярных выражений
-- Метод `Object.hasOwn()` — проверяет: принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
-- Для классов
-  - Объявления полей классов
-    - Можно напрямую инициализировать значение свойства по умолчанию,
-  - Приватные методы и поля класса - добавляем символ~~~~ `#`<br>
-    - Недоступны снаружи класса.
-  - Проверка существования приватных полей в классе - `in`
-  - Статические поля класса и статические приватные методы - `static`<br>
-    - Статические методы могут обращаться к другим закрытым/общедоступным статическим членам класса с помощью `this`.
-    - Методы экземпляра могут получить к ним доступ с помощью `this.constructor`
-  - Статический блок класса - `static`.
-    - Выполняются только один раз, при создании класса.
+- Теггированые шаблонные литералы / Tagged template literals
+- Символы / Symbols
+- Оператор опциональной последовательности / Optional chaining (?.)
+- Оператор нулевого слияния / Nullish coalescing operator (??)
+- import()
+- String.matchAll()
+- Promise.allSettled()
+- BigInt
+- globalThis
+- import.meta
+- export * as… from '...'
+- String.replaceAll()
+- Promise.any()
+- Оператор присваивания нулевого слияния / Nullish coalescing assignment (??=)
+- Оператор присваивания логического И / Logical and assignment (&&=)
+- Оператор присваивания логического ИЛИ / Logical or assignment (||=)
+- WeakRef
+- Разделители числовых литералов / Numeric literal separators
+- await верхнего уровня / Top level await
+- #private
+- Статические члены класса / Static class members
+- Статические блоки инициализации / Static initialization blocks
+- Утверждение импорта / Import assertion (пока доступно только в V8)
+- Индексы совпадений регулярного выражения / RegExp match indices
+- Негативная индексация / Negative indexing
+- Object.hasOwn()
+- Причина ошибки / Error cause
 
 **Ссылки**
 
-- [Habr - 4 важных нововведения в ES2022](https://habr.com/ru/post/651161/)
-- https://www.c-sharpcorner.com/article/amazing-new-javascript-features-in-es13/
-- https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+- [Habr - Возможности JavaScript и TypeScript последних лет. Часть 1](https://habr.com/ru/companies/timeweb/articles/722450/)
 
 <br></p>
 </details>
