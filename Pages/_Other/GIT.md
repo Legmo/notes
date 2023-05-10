@@ -92,6 +92,7 @@
 - [atlassian.com - Изучите Git с помощью Bitbucket Cloud ](https://www.atlassian.com/ru/git/tutorials/learn-git-with-bitbucket-cloud)
 - [atlassian.com - Рабочий процесс Gitflow Workflow ](https://www.atlassian.com/ru/git/tutorials/comparing-workflows/gitflow-workflow)
 - [atlassian.com - Магистральная разработка (Trunk based development)](https://www.atlassian.com/ru/continuous-delivery/continuous-integration/trunk-based-development)
+- [Чёрт побери, Git!?!](https://dangitgit.com/ru)
 
 <br>
 <br>
