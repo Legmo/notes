@@ -7,3 +7,4 @@
 - [Дорофеев М — «Джедайские техники. Как воспитать свою обезьяну, опустошить инбокс и сберечь мыслетопливо»](http://links.mnogosdelal.ru/book)
 - [Дорофеев М — «Путь джедая. Поиск собственной методики продуктивности»](http://links.mnogosdelal.ru/JediWay)
 - [Дорофеев М — Официальный сайт](https://mnogosdelal.ru/)
+- [Habr — Оценка задач в Story Points](https://habr.com/ru/articles/489500/)
