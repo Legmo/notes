@@ -12,7 +12,7 @@
   **Ссылки**
   - [Node.js - Official site](https://nodejs.org/en/)
   - [Node.js - Официальная документация на русском](https://nodejs.org/ru/docs/)
-  - [Дока - Что такое Node.js](https://doka.guide/tools/nodejs/)
+    - [Дока - Что такое Node.js](https://doka.guide/tools/nodejs/)
   - [Хабр - Руководство по Node.js (10 частей)](https://habr.com/ru/company/ruvds/blog/422893/)
   - [metanit.com - Руководство по Node.js](https://metanit.com/web/nodejs/)
   - [Manuel Kiessling - Node.js для начинающих (2013)](http://spmbt.github.io/NodeBeginnersBook-ru/)
@@ -94,7 +94,12 @@
   - Универсальный менеджер версий чего угодно. Надстройка над всеми другими менеджерами - nvm, yarn, pyenv, rvm, rustup, gvm...
   - Работает под Linux / MacOS. Windows - только под Windows SL
   - Написан на bash 
+  - Удобно, например, когда работаешь с разными языками. Не надо использовать отдельный пакетный менеджер для Phyton, отдельный для JS/Nodejs...
+  - Кроме того, через asdf можно управлять версиями различных утилит и сервисов
 
+**Ссылки**
+- [ASDF - Official site](https://asdf-vm.com/)
+- [Упарвление версиями чего угодно при помощи asdf](https://semakin.dev/2020/05/asdf/)
 <br></p>
 </details>
 

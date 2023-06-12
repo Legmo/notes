@@ -13,6 +13,7 @@
 - [Работа сети (HTTP, REST, AJAX, JSON, CORS...)](/Pages/Network/Network.md)
 - [Микросервисная архитектура](/Pages/Network/Microservices.md)
 - [GraphQL](/Pages/Network/GraphQL.md)
+- [Nginx](/Pages/Network/Nginx.md)
 
 ## Программирование ##
 - [Программирование в целом](/Pages/Programming/Programming.md)
