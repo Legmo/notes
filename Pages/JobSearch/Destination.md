@@ -48,6 +48,7 @@
 - [youtube. Стив Джобс - Как понять, что ты хочешь действительно (лекция в стэнфордском университете, 2005)](https://www.youtube.com/watch?v=rd-0d8lhstc)
 - [youtube. IT-Kamasutra - Как стать программистом! 3 бесплатных крутых шага! (JavaScript, Front-end)](https://youtu.be/hFOZYaVHD6A)
 - [youtube. IT-Kamasutra - Как стать программистом за 1 месяц? Никак?](https://www.youtube.com/watch?v=__B3kJ8YhSw)
+- [youtube. IT-INCUBATOR PODCAST c CEO AgileFluent — Как искать работу в США и Европе программисту? (2023)](https://youtu.be/WxOMlbW0hH8)
 
 <br></p>
 </details>
