@@ -6,12 +6,12 @@
 - [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 - [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
 - [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
-
+- 
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
 - [Kyle Simpson - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru) (есть 2-е издание, 2022 г.)
 - [doka.guide](https://doka.guide/js)
-
+- 
 - [metanit.com](https://metanit.com/web/javascript/)
 - [Schoolsw3](https://www.schoolsw3.com/js)
 - [ITchief](https://itchief.ru/javascript/)
