@@ -7720,7 +7720,7 @@ task.somethingData = 10;
 <br>
 <br>
 
-## Приёмы и соглашения##
+## Приёмы и соглашения ##
 
 [//]: # (_переменная)
 <details><summary><b>_переменная</b></summary><p> 
@@ -8108,6 +8108,8 @@ console.log('%c Some text', 'color: green')
 
 <br> 
 <br>
+
+## Источники ##
 
 [//]: # (Ресурсы по JS)
 <details><summary><h3>Ресурсы по JS</h3></summary><p>
