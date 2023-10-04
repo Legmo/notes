@@ -847,16 +847,16 @@ Web API...
 [//]: # (Однопоточность)
 - <details><summary><b>Однопоточность</b></summary><p>
 
-  - JS - однопоточный язык.
+  - **JS - однопоточный язык.
   - Только один блок кода может запускаться за раз. Делает одну задачу в один момент времени.
   - С DOM-деревом работают в одном потоке, чтобы гарантировать целостность и непротиворечивость данных. Представьте себе -
-  два параллельных потока пытаются наперегонки поменять один и тот же узел в DOM... Плохая идея.
+  дв**а параллельных потока пытаются наперегонки поменять один и тот же узел в DOM... Плохая идея.
 
 <br></p>
 </details>
 
 [//]: # (Синхронность)
-<details><summary><b>Синхронность</b></summary><p>
+- <details><summary><b>Синхронность</b></summary><p>
 
 Что означает синхронность?<br>
 Например: есть 2 строки кода. Первая идет за второй.<br>
@@ -865,27 +865,27 @@ Web API...
 Схема такая:
 
 - функция из очереди попадает в стэк
-- выполняется
-- стек очищается
-- в стек попадает следующая функция из очереди
-  <br>
+  - выполняется
+  - стек очищается
+  - в стек попадает следующая функция из очереди
+    <br>
 
 Вариант немного сложнее:
 
 - функция 1 из очереди попадает в стек
-- внутри этой функции 1 находится вызов функции 2.
-- в стек попадает функция 2
-- она выполняется и удаляется
-- результат её выполнения записывается в функцию 1
-- функция 1 выполняется
-- стек очищается
-- в стек попадает следующая функция из очереди
+  - внутри этой функции 1 находится вызов функции 2.
+  - в стек попадает функция 2
+  - она выполняется и удаляется
+  - результат её выполнения записывается в функцию 1
+  - функция 1 выполняется
+  - стек очищается
+  - в стек попадает следующая функция из очереди
 
 <br></p>
 </details>
 
 [//]: # (Асинхронность)
-<details><summary><b>Асинхронность</b></summary><p>
+- <details><summary><b>Асинхронность</b></summary><p>
 
 `Асинхронность` — модель поведения<br>
 Есть две строчки кода, первая за второй. Первая строка это инструкция, для которой нужно время. <br>
@@ -946,7 +946,7 @@ function A(B) {
 </details>
 
 [//]: # (JS движок и Web API)
-<details><summary><b>JS движок и Web API</b></summary><p>
+- <details><summary><b>JS движок и Web API</b></summary><p>
 
 Асинхронные функции — не часть JavaScript-движков. Вызов setTimeout на чистом V8 приводит к ошибке, так как в V8 нет
 такой функции. Асинхронные операции выполняются не в движке, а в окружении. Например, в Web API браузера.
@@ -969,7 +969,7 @@ Web API и JS движок работают независимо. Web API реш
 </details>
 
 [//]: # (Контекст выполнения функции)
-<details id="asynchronyContext"><summary><b>Контекст выполнения функции</b></summary><p>
+- <details id="asynchronyContext"><summary><b>Контекст выполнения функции</b></summary><p>
 
 У каждого вызова функции есть свой «контекст выполнения» (execution context).
 
@@ -989,7 +989,7 @@ Web API и JS движок работают независимо. Web API реш
 </details>
 
 [//]: # (Очередь - queue)
-<details><summary><b>Очередь (queue)</b></summary><p>
+- <details><summary><b>Очередь (queue)</b></summary><p>
 
 
 Очередь — структура данных. Доступа к элементам организован по принципу FIFO (First In — First Out) «первый пришёл —
@@ -1002,7 +1002,7 @@ Web API и JS движок работают независимо. Web API реш
 </details>
 
 [//]: # (Стэк - stack)
-<details><summary><b>Стэк (stack)</b></summary><p>
+- <details><summary><b>Стэк (stack)</b></summary><p>
 
 Стек (анг. стопка) — структура данных (кусок памяти + опр правила работы с ним), представляющая из себя список
 элементов. Подобен стопке тарелок - последняя поступившая кладётся сверху, и должна быть обработана, прежде чем начнётся
@@ -1036,7 +1036,7 @@ Web API и JS движок работают независимо. Web API реш
 </details>
 
 [//]: # (Event Loop. Web API)
-<details><summary><b>Event Loop. Web API</b></summary><p>
+- <details><summary><b>Event Loop. Web API</b></summary><p>
 
 Event Loop (Или цикл обработки событий) и Web API
 
@@ -1059,7 +1059,7 @@ EventLopp берёт первый Элемент из очереди и пере
 </details>
 
 [//]: # (Микро и макро-задачи. Microtask и macrotask)
-<details><summary><b>Микро и макро-задачи (microtask и macrotask)</b></summary><p>
+- <details><summary><b>Микро и макро-задачи (microtask и macrotask)</b></summary><p>
 
 [//]: # (todo: дополнить. Постоянно спрашивают на собеседованиях!)
 
@@ -1237,7 +1237,7 @@ console.log('End');
 </details>
 
 [//]: # (Куча - heap)
-<details><summary><b>Куча (heap)</b></summary><p>
+- <details><summary><b>Куча (heap)</b></summary><p>
 
 Динамически распределяемая память. Часть JS-движка. Также как и стэк
 
@@ -1245,7 +1245,7 @@ console.log('End');
 </details>
 
 [//]: # (Web API's)
-<details><summary><b>Web API's</b></summary><p>
+- <details><summary><b>Web API's</b></summary><p>
 
 Расширения браузера. Не входят в состав движка JS.<br>
 Но, в движке есть возможность взаимодействовать с этими API.<br>
@@ -1255,7 +1255,7 @@ console.log('End');
 </details>
 
 [//]: # (setTimeout with callback 0 )
-<details><summary><b>setTimeout(callback(), 0)</b></summary><p>
+- <details><summary><b>setTimeout(callback(), 0)</b></summary><p>
 
 Позволяет запланировать что-то сразу после выполнения основного кода<br>
 Выполнить что-то как только стэк очистится. Т.е. в текущем потоке кода этот колбэк не запускается, и код идёт так, будто
@@ -1286,7 +1286,7 @@ console.log('3')
 </details>
 
 [//]: # (setInterval)
-<details><summary><b>setInterval()</b></summary><p>
+- <details><summary><b>setInterval()</b></summary><p>
 
 Предположим, мы кликнули мышью и в процессе этого ещё запустили `setInterval`.
 
@@ -1303,7 +1303,7 @@ console.log('3')
 </details>
 
 [//]: # (Browser events)
-<details><summary><b>Browser events</b></summary><p>
+- <details><summary><b>Browser events</b></summary><p>
 
 Какие же события происходят в браузере? <br>
 Их великое множество: клики мышкой; скроллинг; ввод с клавиатуры; загрузка скриптов; CSS анимации; и тд.
@@ -1316,7 +1316,7 @@ console.log('3')
 </details>
 
 [//]: # (Unsorted)
-<details><summary><b>Unsorted</b></summary><p>
+- <details><summary><b>Unsorted</b></summary><p>
 
 Движок браузера выполняет JavaScript в одном потоке. Он не может поставить обработку события на паузу, переключиться на
 другое событие, а после — возобновить выполнение первого. Все события обрабатываются последовательно и каждое — до
@@ -1372,7 +1372,7 @@ JavaScript изначально появился в браузерах, и к н
 </details>
 
 [//]: # (Картинки)
-<details><summary><b>Картинки</b></summary><p>
+- <details><summary><b>Картинки</b></summary><p>
 
 <img src="/Assets/Img/js-schema-1.png" title="Схема 1" alt="Схема 1" />
 <br>
@@ -1385,36 +1385,36 @@ JavaScript изначально появился в браузерах, и к н
 <br></p>
 </details>
 
-**Ссылки**
+- **Ссылки**
 
-- [Legmo notes — Задачки для собеседования frontend. Console.log](../JobSearch/InterviewTasks.md#task-1)
-- [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
-- [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
-  просто и понятно.
-  Рекомендую
-- [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
-- [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
-- [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
-- [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
-- [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-- [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
-- [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
-- [learn.javascript.ru (en)](https://javascript.info/async-await)
-- [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
-- [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
-- [Стеки и очереди в JavaScript](http://shuvalov.info/2013/03/21/stack-and-queue/)
-- [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
-- [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
-- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
-- [Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
-- [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
-- [learnjavascript - Про события и асинхронность](https://learn.javascript.ru/events-and-timing-depth)
-- [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
-- [Ад обратных вызовов](http://callbackhell.ru/)
-- [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
-- https://doka.guide/js/async-in-js/
+  - [Legmo notes — Задачки для собеседования frontend. Console.log](../JobSearch/InterviewTasks.md#task-1)
+  - [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
+  - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
+    просто и понятно.
+    Рекомендую
+  - [learn.javascript.ru - Событийный цикл (event-loop)](https://learn.javascript.ru/event-loop)
+  - [Medium - Движки JavaScript. Часть 1: парсинг](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-%D0%BF%D0%B0%D1%80%D1%81%D0%B8%D0%BD%D0%B3-754a8d60df23)
+  - [Medium - Движки JavaScript. Часть 2: генерация кода и базовые оптимизации](https://medium.com/nuances-of-programming/%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8-javascript-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-fb66fd238769)
+  - [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+  - [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+  - [Habr - Знай свой инструмент: Event Loop](https://habr.com/ru/post/336498/)
+  - [learnjavascript - Управление памятью в JavaScript](https://learn.javascript.ru/memory-management)
+  - [learn.javascript.ru (en)](https://javascript.info/async-await)
+  - [JavaScript event loop в картинках . Часть 1](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-1-a19e4d99f242)
+  - [JavaScript event loop в картинках . Часть 2](https://medium.com/@pavelbely/javascript-event-loop-%D0%B2-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D1%85-%D1%87%D0%B0%D1%81%D1%82%D1%8C-2-f98693f6a1d8)
+  - [Стеки и очереди в JavaScript](http://shuvalov.info/2013/03/21/stack-and-queue/)
+  - [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
+  - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop)
+  - [Hexlet](https://ru.hexlet.io/courses/js-asynchronous-programming/lessons/event-loop/theory_unit)
+  - [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+  - [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://habr.com/ru/company/ruvds/blog/340508/)
+  - [Как эмулировать многопоточность в JavaScript](https://tproger.ru/translations/js-engine-macrotasks-microtasks/)
+  - [pythontutor - как работает JS код](http://pythontutor.com/javascript.html#mode=display)
+  - [learnjavascript - Про события и асинхронность](https://learn.javascript.ru/events-and-timing-depth)
+  - [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
+  - [Ад обратных вызовов](http://callbackhell.ru/)
+  - [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
+  - https://doka.guide/js/async-in-js/
 
 <br></p>
 </details>   
