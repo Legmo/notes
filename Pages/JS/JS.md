@@ -1477,6 +1477,303 @@ JavaScript изначально появился в браузерах, и к н
 <br></p>
 </details>
 
+[//]: # (Утечки памяти в JS todo: доработать)
+<details id="memoryLeak"><summary><b>Утечки памяти в JS*</b></summary><p>
+
+В двух словах, утечки памяти можно определить как фрагменты памяти, которые больше не нужны приложению, но по какой-то
+причине не возвращённые операционной системе или в пул свободной памяти.
+
+Языки программирования используют разные способы управления памятью. Однако, проблема точного определения того,
+используется ли на самом деле некий участок памяти или нет, как уже было сказано, неразрешима. Другими словами, только
+разработчик знает, можно или нет вернуть операционной системе некую область памяти.
+
+[//]: # (1. Глобальные переменные - неявное объявление)
+<details><summary><b>1. Глобальные переменные - неявное объявление</b></summary><p>
+
+Пример:
+
+```js
+function foo(arg) {
+  bar = "скрытая глобальная переменная"; // это то же: window.bar = "явно объявленная глобальная переменная";
+}
+```    
+
+Решение: добавляйте 'use strict'; в начало JavaScript-файлов
+
+<br><p>
+</details>
+
+[//]: # (2. Глобальные переменные - явно объявленные, не вычищенные &#40;кэши и т.д.&#41;)
+<details><summary><b>2. Глобальные переменные - явно объявленные, не вычищенные (кэши и т.д.)</b></summary><p>
+
+Это касается глобальных переменных, использующихся для временного хранения и обработки больших блоков данных. Если вам
+нужна глобальная переменная, чтобы записать в неё большое количество информации, убедитесь, что в конце работы с данными
+её значение будет установлено в null или переопределено.
+
+Примером увеличенного расхода памяти, связанным с глобальными переменными, являются кэши — объекты, которые сохраняют
+повторно используемые данные. Для эффективной работы их следует ограничивать по размеру. Если кэш увеличивается без
+ограничений, он может привести к высокому расходу памяти, поскольку его содержимое не может быть очищено сборщиком
+мусора.
+
+\*\*\*
+
+В JS используется интересный подход к работе с необъявленными переменными. Обращение к такой переменной создаёт новую
+переменную в глобальном объекте. В случае с браузерами, глобальным объектом является window. <br>
+Рассмотрим такую конструкцию:
+
+```js
+function foo(arg) {
+  bar = "some text";
+}
+
+//Она эквивалентна следующему коду:
+function foo(arg) {
+  window.bar = "some text";
+}
+```
+
+Если переменную bar планируется использовать только внутри области видимости функции foo, и при её объявлении забыли о
+ключевом слове var, будет случайно создана глобальная переменная.
+
+В этом примере утечка памяти, выделенной под простую строку, большого вреда не принесёт, но всё может быть гораздо хуже.
+
+Другая ситуация, в которой может появиться случайно созданная глобальная переменная, может возникнуть при неправильной
+работе с ключевым словом this:
+
+```js
+function foo() {
+  this.var1 = "potential accidental global";
+}
+
+// Функция вызывается сама по себе, при этом this указывает на глобальный объект (window),
+// this не равно undefined, или, как при вызове конструктора, не указывает на новый объект
+foo();
+```
+
+Для того, чтобы избежать подобных ошибок, можно добавить оператор "use strict"; в начало JS-файла. Это включит так
+называемый строгий режим, в котором запрещено создание глобальных переменных вышеописанными способами. Подробнее о
+строгом режиме можно почитать здесь.
+
+Даже если говорить о вполне безобидных глобальных переменных, созданных осознанно, во многих программах их слишком
+много. Они, по определению, не подвергаются сборке мусора (если только в такую переменную не записать null или какое-то
+другое значение). В частности, стоит обратить пристальное внимание на глобальные переменные, которые используются для
+временного хранения и обработки больших объёмов данных. Если вы вынуждены использовать глобальную переменную для
+хранения большого объёма данных, не забудьте записать в неё null или что-то другое, нужное для дальнейшей работы, после
+того, как она сыграет свою роль в обработке большого объёма данных.
+
+<br><p>
+</details>
+
+[//]: # (3. Таймеры или забытые коллбэки)
+<details><summary><b>3. Таймеры или забытые коллбэки</b></summary><p>
+
+Пример:
+
+```js
+var someResource = getData();
+setInterval(function () {
+  var node = document.getElementById('Node');
+  if (node) {
+    // Сделаем что-нибудь с node и someResource.
+    node.innerHTML = JSON.stringify(someResource);
+  }
+  ;
+}, 1000);
+```
+
+В JS-программах использование функции setInterval — обычное явление.
+
+Большинство библиотек, которые дают возможность работать с обозревателями и другими механизмами, принимающими коллбэки,
+заботятся о том, чтобы сделать недоступными ссылки на эти коллбэки после того, как экземпляры объектов, которым они
+переданы, становятся недоступными. Однако, в случае с setInterval весьма распространён следующий шаблон:
+
+```js
+var serverData = loadData();
+setInterval(function () {
+  var renderer = document.getElementById('renderer');
+  if (renderer) {
+    renderer.innerHTML = JSON.stringify(serverData);
+  }
+}, 5000); //Это будет вызываться примерно каждые 5 секунд.
+```
+
+В этом примере показано, что может происходить с таймерами, которые создают ссылки на узлы DOM или на данные, которые в
+определённый момент больше не нужны.
+
+Объект, представленный переменной renderer, может быть, в будущем, удалён, что сделает весь блок кода внутри обработчика
+события срабатывания таймера ненужным. Однако, обработчик нельзя уничтожить, освободив занимаемую им память, так как
+таймер всё ещё активен. Таймер, для очистки памяти, надо остановить. Если сам таймер не может быть подвергнут операции
+сборки мусора, это будет касаться и зависимых от него объектов. Это означает, что память, занятую переменной serverData,
+которая, надо полагать, хранит немалый объём данных, так же нельзя очистить.
+
+В случае с обозревателями, важно использовать явные команды для их удаления после того, как они больше не нужны (или
+после того, как окажутся недоступными связанные объекты).
+
+Раньше это было особенно важно, так как определённые браузеры (старый добрый IE6, например) были неспособны нормально
+обрабатывать циклические ссылки. В наши дни большинство браузеров уничтожают обработчики обозревателей после того, как
+объекты обозревателей оказываются недоступными, даже если прослушиватели событий не были явным образом удалены. Однако,
+рекомендуется явно удалять эти обозреватели до уничтожения объекта. Например:
+
+```js
+var element = document.getElementById('launch-button');
+var counter = 0;
+
+function onClick(event) {
+  counter++;
+  element.innerHtml = 'text ' + counter;
+}
+
+element.addEventListener('click', onClick);
+// Сделать что-нибудь
+element.removeEventListener('click', onClick);
+element.parentNode.removeChild(element);
+// Теперь, когда элемент выходит за пределы области видимости,
+// память, занятая обоими элементами и обработчиком onClick будет освобождена даже в старых браузерах,
+// которые не способны нормально обрабатывать ситуации с циклическими ссылками.
+```
+
+В наши дни браузеры (в том числе Internet Explorer и Microsoft Edge) используют современные алгоритмы сборки мусора,
+которые выявляют циклические ссылки и работают с соответствующими объектами правильно. Другими словами, сейчас нет
+острой необходимости в использовании метода removeEventListener перед тем, как узел будет сделан недоступным.
+
+Фреймворки и библиотеки, такие, как jQuery, удаляют прослушиватели перед уничтожением узлов (при использовании для
+выполнения этой операции собственных API). Всё это поддерживается внутренними механизмами библиотек, которые, кроме
+того, контролируют отсутствие утечек памяти даже если код работает в не самых благополучных браузерах, таких как уже
+упомянутый выше IE 6.
+
+<br><p>
+</details>
+
+[//]: # (4. Забытые обработчики событий)
+<details><summary><b>4. Забытые обработчики событий</b></summary><p>
+   Обработчики следует удалять, когда они становятся не нужны, или ассоциированные с ними объекты становятся
+   недоступны.<br>
+   В прошлом это было критично, так как некоторые браузеры (Internet Explorer 6) не умели грамотно обрабатывать
+   циклические ссылки.
+
+Большинство современных браузеров удаляет обработчики событий, как только объекты становятся недостижимы. <br>
+Однако по-прежнему правилом хорошего тона остаётся явное удаление обработчиков событий перед удалением самого
+объекта.<br>
+Рекомендуется явно удалять обработчики событий (removeEventListener) до удаления DOM-узлов или обнулять ссылки внутри
+обработчиков.
+
+<br><p>
+</details>
+
+[//]: # (5. Замыкания)
+<details><summary><b>5. Замыкания</b></summary><p>
+
+Одна из важных и широко используемых возможностей JavaScript — замыкания. Это — внутренняя функция, у которой есть
+доступ к переменным, объявленным во внешней по отношению к ней функции. Особенности реализации среды выполнения
+JavaScript делают возможной утечку памяти в следующем сценарии:
+
+```js
+var theThing = null;
+var replaceThing = function () {
+  var originalThing = theThing;
+  var unused = function () {
+    if (originalThing) // ссылка на originalThing
+      console.log("hi");
+  };
+  theThing = {
+    longStr: new Array(1000000).join('*'),
+    someMethod: function () {
+      console.log("message");
+    }
+  };
+};
+setInterval(replaceThing, 1000);
+```
+
+Самое важное в этом фрагменте кода то, что каждый раз при вызове replaceThing, в theThing записывается ссылка на новый
+объект, который содержит большой массив и новое замыкание (someMethod). В то же время, переменная unused хранит
+замыкание, которое имеет ссылку на originalThing (она ссылается на то, на что ссылалась переменная theThing из
+предыдущего вызова replaceThing). Во всём этом уже можно запутаться, не так ли? Самое важное тут то, что когда создаётся
+область видимости для замыканий, которые находятся в одной и той же родительской области видимости, эта область
+видимости используется ими совместно.
+
+В данном случае в области видимости, созданной для замыкания someMethod, имеется также и переменная unused. Эта
+переменная ссылается на originalThing. Несмотря на то, что unused не используется, someMethod может быть вызван через
+theThing за пределами области видимости replaceThing (то есть — из глобальной области видимости). И, так как someMethod
+и unused находятся в одной и той же области видимости, ссылка на originalThing, записанная в unused, приводит к тому,
+что эта переменная оказывается активной (это — общая для двух замыканий область видимости). Это не даёт нормально
+работать сборщику мусора.
+
+Если вышеприведённый фрагмент кода некоторое время поработает, можно заметить постоянное увеличение потребления им
+памяти. При запуске сборщика мусора память не освобождается. В целом оказывается, что создаётся связанный список
+замыканий (корень которого представлен переменной theThing), и каждая из областей видимости этих замыканий имеет
+непрямую ссылку на большой массив, что приводит к значительной утечке памяти.
+
+Эту проблему обнаружила команда Meteor, у них есть отличная статья, в которой всё это подробно описано.
+
+<br><p>
+</details>
+
+[//]: # (6. Ссылки на элементы, удалённые из DOM)
+<details><summary><b>6. Ссылки на элементы, удалённые из DOM</b></summary><p>
+
+Ссылки на объекты DOM за пределами дерева DOM
+
+Иногда может оказаться полезным хранить ссылки на узлы DOM в неких структурах данных. Например, предположим, что нужно
+быстро обновить содержимое нескольких строк в таблице. В подобной ситуации имеет смысл сохранить ссылки на эти строки в
+словаре или в массиве. В подобных ситуациях система хранит две ссылки на элемент DOM: одну из них в дереве DOM, вторую —
+в словаре. Если настанет время, когда разработчик решит удалить эти строки, нужно позаботиться об обеих ссылках.
+
+```js
+var elements = {
+  button: document.getElementById('button'),
+  image: document.getElementById('image')
+};
+
+function doStuff() {
+  image.src = 'http://example.com/image_name.png';
+}
+
+function removeImage() {
+  // Изображение является прямым потомком элемента body.
+  document.body.removeChild(document.getElementById('image'));
+  // В данный момент у нас есть ссылка на #button в
+  // глобальном объекте elements. Другими словами, элемент button
+  // всё ещё хранится в памяти, она не может быть очищена сборщиком мусора.
+}
+```
+
+Есть ещё одно соображение, которое нужно принимать во внимание при создании ссылок на внутренние элементы дерева DOM или
+на его концевые вершины.
+
+Предположим, мы храним ссылку на конкретную ячейку таблицы (тег <td>) в JS-коде. Через некоторое время решено убрать
+таблицу из DOM, но сохранить ссылку на эту ячейку. Чисто интуитивно можно предположить, что сборщик мусора освободит всю
+память, выделенную под таблицу, за исключением памяти, выделенной под ячейку, на которую у нас есть ссылка В реальности
+же всё не так. Ячейка является узлом-потомком таблицы. Потомки хранят ссылки на родительские объекты. Таким образом,
+наличие ссылки на ячейку таблицы в коде приводит к тому, что в памяти остаётся вся таблица. Учитывайте эту особенность,
+храня ссылки на элементы DOM в программах.
+
+<br><p>
+</details>
+
+[//]: # (Как оптимизировать JS-часть сайта?)
+<details><summary><b>Как оптимизировать JS-часть сайта?</b></summary><p>
+
+- Проверьте зависимости проекта. Избавьтесь от всего ненужного.
+- Разделите код на небольшие фрагменты вместо того, чтобы складывать его в один большой файл.
+- Откладывайте, в тех ситуациях, когда это возможно, загрузку JS-скриптов. При обработке текущего маршрута пользователю
+  можно выдавать только тот код, который необходим для нормальной работы, и ничего лишнего.
+- Используйте инструменты разработчика и средства вроде DeviceTiming для того, чтобы находить узкие места своих
+  проектов.
+- Используйте средства вроде Optimize.js для того, чтобы помочь парсерам определиться с тем, какие фрагменты кода им
+  нужно обработать как можно скорее.
+
+<br></p>
+</details>
+
+**Ссылки**
+
+- [Habr](https://habr.com/ru/post/309318/)
+- [Habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
+
+<br></p>
+</details>
+
 ---
 
 [//]: # (Use strict)
@@ -1542,6 +1839,69 @@ ES5 (2009)<br>
 
 <br></p>
 </details>
+
+[//]: # (Атрибуты async и defer тега script)
+<details id="asyncDefer"><summary><b>Атрибуты async и defer тега script</b></summary><p>
+
+Аттрибуты тэга `<script>`. Влияют на то, когда будет загружаться и выполняться этот скрипт. Будет ли заблокирован
+парсинг HTML на время загрузки/выполнения или нет.
+
+`Async` — указает браузеру, что скрипт может быть выполнен асинхронно. <br>
+Скрипт скачивается асинхронно (параллельно с формированием документа). Как только скрипт загружен - он запускается,
+парсер на это время будет приостановлен. Атрибут доступен только для файлов, подключающихся внешне.
+
+`Defer` (анг откладывать) - указывает браузеру, что скрипт должен быть выполнен после того, как HTML-документ будет
+полностью разобран. <br>
+Скрипт скачивается асинхронно (параллельно с формированием документа). И после получения - скрипт не запускается сразу,
+а ждёт, пока документ будет полностью сформирован.
+<br>
+<br>
+
+**Где расположен элемент `<script>` ?**
+
+Асинхронное и отложенное выполнения наиболее важны, когда элемент `<script>` не находится в самом конце документа.<br>
+HTML-документы парсятся по порядку, с открытия `<html>` до его закрытия. <br>
+Если внешний JS-файл размещается непосредственно перед закрывающим тегом `</body>`, то использование `async` и `defer`
+становится менее уместным — парсер к тому времени уже разберёт большую часть документа, и JS-файлы уже не будут
+оказывать воздействие на
+него.
+<br>
+<br>
+
+**Async - скрипт самодостаточен**
+
+Для файлов, которые не зависят от других файлов и/или не имеют никаких зависимостей, атрибут async будет наиболее
+полезен. Поскольку нам не важно, когда файл будет исполнен, асинхронная загрузка — наиболее подходящий вариант.
+<br>
+<br>
+
+**Defer - скрипт полагается на полностью разобранный DOM**
+
+Во многих случаях файл скрипта содержит функции, взаимодействующие с DOM. Или, возможно, существует зависимость от
+другого файла на странице. В таких случаях DOM должен быть полностью разобран, прежде чем скрипт будет выполнен. Как
+правило, такой файл помещается в низ страницы, чтобы убедиться, что для его работы всё было разобрано. Однако, в
+ситуации, когда по каким-либо причинам файл должен быть размещён в другом месте — атрибут defer может быть полезен.
+<br>
+<br>
+
+**Синхронный inline - скрипт небольшой и зависим**
+
+Если скрипт является относительно небольшим и/или зависит от других файлов, то, возможно, стоит определить его
+инлайново. Несмотря на то, что встроенный код блокирует разбор HTML-документа, он не должен сильно помешать, если его
+размер небольшой. Кроме того, если он зависит от других файлов, может понадобиться незначительная блокировка.
+<br>
+<br>
+
+**Ссылки**
+
+- [learn.javascript.ru - Внешние скрипты, порядок исполнения](https://learn.javascript.ru/external-script)
+- [Асинхронный JavaScript против отложенного](https://habr.com/ru/post/323790/)
+- [Разница между async и defer у тега script](https://wp-kama.ru/id_12151/raznitsa-async-defer.html)
+- [Атрибут defer](http://htmlbook.ru/html/script/defer)
+
+<br></p>
+</details>   
+
 
 [//]: # (Типы данных)
 <details id="types"><summary><b>Типы данных</b></summary><p>
@@ -1693,6 +2053,84 @@ var test = func; //И `test` и `func` указывают на одну и ту 
 - [Habr - Функции в Javascript: ссылки и вызовы](https://habr.com/ru/sandbox/18362/)
 
 <br></p>
+</details>
+
+
+[//]: # (Переменные var, let и const)
+<details id="variables"><summary><b>Переменные var, let и const</b></summary><p>
+
+Не надо объявлять переменные без указания директивы (например var или let).
+
+```js
+//Т.е. так писать не стоит
+a = 1
+
+//Надо так
+var a = 1
+let a = 1
+const a = 1
+```
+
+**Var**
+
+- Устаревший способ объявления переменной.
+- Область видимости переменной `var` – функция.
+- `var` существуют и до объявления. Они равны `undefined`.
+- При использовании в цикле у нас будет одна var на все итерации цикла. Не создаётся заново в каждой итерации.
+  Способ объявления переменной. Используем если будем переопределять значение переменной. Видна в блоке
+- [«Поднятие (всплытие) переменных» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var#%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85) — особенность поведения var. Переменная становится доступной до того, как она объявлена.
+  - Объявление переменных (как и любые другие объявления) обрабатываются до выполнения кода => в каком бы месте кода мы не объявили переменную, это равнозначно тому, что переменную объявили в самом начале кода.
+    - Формально работает для всех переменных, но реально обращаться к `let` и `const` можно только после присвоения, до тех по выдаёт ошибку [ReferenceError](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError). Этот эффект называется [«Временные мёртвые зоны» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D0%B7%D0%BE%D0%BD%D1%8B_%D0%B8_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_let) — если в блоке кода я пытаюсь использовать переменную до того, как она объявлена. Формально она существует (см выше «Поднятие переменных»), но обращаться к ней нельзя (в отличии от `var`).
+  - См. также [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#varconstlet)
+
+**Let**
+
+- Область видимости переменной `let` – блок {...}, в котором объявлена.<br>
+- Это, в частности, влияет на объявления внутри if, while или for.
+- let видна только после объявления. До тех пор их просто нет.
+- При использовании в цикле, для каждой итерации создаётся своя переменная.
+- Введена в язык в ES6 (ES-2015)
+
+**Const**
+
+- Способ объявления переменной. Используем для констант
+- Объявление const задаёт константу, то есть переменную, которую нельзя менять. При попытке изменения выдаст ошибку.
+- Eсли в константу присвоен объект, то от изменения защищена сама константа, но не свойства внутри неё.
+- В остальном - аналогичная let.
+- Функции обычно лучше создавать через const.
+- Вообще хороший вариант объявления чего-то, что мы не собираемся менять.
+- В случае использования const современные JavaScript-движки могут выполнить ряд дополнительных оптимизаций.
+- Введена в язык в ES6 (ES-2015)
+  <br>
+  <br>
+
+**Константы и `const`**
+
+Константы, которые жёстко заданы всегда, во время всей программы, обычно пишутся в верхнем регистре. <br>
+Например: const ORANGE = "#ffa500".
+
+Большинство переменных – константы в другом смысле: они не меняются после присвоения. <br>
+Но при разных запусках функции это значение может быть разным. <br>
+Для таких переменных можно использовать const и обычные строчные буквы в имени.
+
+Использование `const` вместо `var` / `let` не говорит о том, что значение является константой или что оно иммутабельно (
+неизменяемо). Ключевое слово `const` просто указывает компилятору следить за тем, что переменной больше не будет
+присвоено никаких других значений.
+
+**Правила именования переменных (договоренности)**
+
+- `Name`  = функция-конструктор (http://learn.javascript.ru/constructor-new) / или класс
+- `NAME`  = константа (http://learn.javascript.ru/variables , http://learn.javascript.ru/let-const)
+- `_name` = приватные методы и свойства (http://theory.phphtml.net/books/javascript/oop/)
+
+**Ссылки**
+
+- [learn.javascript.ru - Переменные](https://learn.javascript.ru/variables)
+- [learn.javascript.ru - Устаревшее ключевое слово "var"](https://learn.javascript.ru/var)
+- [learn.javascript.ru - Переменные: let и const](https://learn.javascript.ru/let-const)
+- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+
+<br><p>
 </details>
 
 [//]: # (Приведение типов todo: доработать)
@@ -2197,6 +2635,2331 @@ alert(counter()); // 2
 <br></p>
 </details>
 
+[//]: # (Методы примитивов)
+<details id="primitiveMethods"><summary><b>Методы примитивов</b></summary><p>
+
+  ***
+
+Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
+Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
+
+Примитивы `null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
+
+Когда создаётся объект-обёртка (на примере Number):
+
+- если применить к числу эти методы — `(5).toFixed(3)`
+- если вызвать на числе конструктор new Number() — `let num = new Number(100) // typeof num === object`
+
+[//]: # (Меотды String)
+<details><summary><b>Меотды String</b></summary><p>
+
+- `repeat()` — создать строку путем многократного повторения другой строки
+- `indexOf()` — поиск подстроки в строке. Вернёт индекс первого вхождения подстроки
+- `lastIndexOf()` — поиск подстроки в строке. Вернёт индекс последнего вхождения подстроки
+- `includes()` — содержит ли строка опр. подстроку.
+- `search()`— содержит ли строка указанное значение или регулярное выражение. Возвращает индекс начала совпадения.
+- `substr()` — извлекает часть строки указанной длины. Устаревший метод
+- `substring()` — извлекает символы из строки между двумя указанными индексами.
+- `slice()` — извлекает часть строки и возвращает новую строку. Почти идентичен `substring()`, но немного «глупее»
+- `toLowerCase()` — перевод символов в нижний регистр
+- `toUpperCase()` — перевод символов в верхний регистр
+- `charAt()` — получить определенный символ в строке по индексу
+- `charCodeAt()` — получить определенный символ в строке по индексу
+- `trim()` — удаление начальных и концевых пробелов в стоке
+- `trimStart()` — удаляет пробел с начала строки
+- `trimEnd()` — удаляет пробел с конца строки
+- `trimLeft()` — удаляет пробел с левой части строки
+- `trimRight()` — удаляет пробел с правой части строки
+- `concat()` — объединяет две и более строк. Возвращает одну объединённую.
+- `replace()` — заменяет первое вхождение одной подстроки на другую (заменяет только первое вхождение подстроки)
+- `replaceAll()` — позволяет заменить все вхождения подстроки:
+- `split()` — разбивает строку на массив подстрок по опр. разделителю
+- `startsWith()` — возвращает true, если строка начинается с определенной подстроки.
+- `endsWith()` — возвращает true, если строка оканчивается на определенную подстроку.
+- `padStart()` — растянуть строку на N символов и заполнить строку слева.
+- `padEnd()` — растянуть строку на N символов и заполнить строку справа.
+- `join()` — Склеить массив строк в одну. **Метод массива!**
+-
+- `String.fromCharCode()` — Возвращает строку, созданную из указанной последовательности значений Юникода.
+- `String.fromCodePoint()` — Возвращает строку, созданную из указанной последовательности кодовых точек Юникода.
+- `String.raw()` — Возвращает строку, созданную из сырой шаблонной строки.
+- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
+-
+- Свойства
+  - length указывает на длину строки
+  - arity, caller, constructor, length, name
+-
+- `'Hello'.split('')` — преобразовать строку в массив символов
+- `Array.from('Hello')` — преобразовать строку в массив символов
+- `[...'Hello']` — преобразовать строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
+-
+- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
+- [Mentanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
+- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
+- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+
+[//]: # (Стандратные методыс MDN)
+<details><summary><b>Стандартные методы с MDN</b></summary><p>
+
+<summary>Методы</summary>
+
+- [String.prototype[@@iterator]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
+- [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
+- [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+- [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
+- [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+- [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+- [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
+- [String.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+- [String.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+- [String.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
+- [String.prototype.localeCompare()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+- [String.prototype.match()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [String.prototype.matchAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
+- [String.prototype.normalize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
+- [String.prototype.padEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+- [String.prototype.padStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+- [String.raw()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/raw)
+- [String.prototype.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+- [String.prototype.replace()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [String.prototype.replaceAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+- [String.prototype.search()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/search)
+- [String.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [String.prototype.split()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [String.prototype.startsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+- [String.prototype.toLocaleUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+- [String.prototype.toLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [String.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
+- [String.prototype.toUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [String.prototype.trim()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+- [String.prototype.trimEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
+- [String.prototype.trimStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
+- [String.prototype.valueOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
+-
+- [String.prototype.anchor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/anchor) — Deprecated
+- [String.prototype.big()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/big) — Deprecated
+- [String.prototype.blink()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/blink) — Deprecated
+- [String.prototype.bold()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/bold) — Deprecated
+- [String.prototype.fixed()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fixed) — Deprecated
+- [String.prototype.fontcolor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor) — Deprecated
+- [String.prototype.fontsize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize) — Deprecated
+- [String.prototype.italics()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/italics) — Deprecated
+- [String.prototype.link()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/link) — Deprecated
+- [String.prototype.small()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/small) — Deprecated
+- [String.prototype.strike()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/strike) — Deprecated
+- [String.prototype.sub()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sub) — Deprecated
+- [String.prototype.substr()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr) — Deprecated
+- [String.prototype.substring()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [String.prototype.sup()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sup) — Deprecated
+
+
+
+<br></p>
+</details>
+
+
+<br></p>
+</details>
+
+[//]: # (Меотды Number)
+<details><summary><b>Меотды Number</b></summary><p>
+
+- `Number.isNaN()` — проверить значение на NaN
+- `Number.isFinite()` — true это число, false если специальное значение или нечисловой тип
+- `toString()` — преобразует число в строку в указанной системе счисления.
+- `toFixed()` — преобразует число в строку с указанным количеством знаков после запятой. Округляет. Возвращает строку.
+- `toLocaleString()` — преобразует число в строку, учитывая локаль пользователя
+-
+- Если надо вызвать методы на целом числе `5`:
+  - `(5).toFixed(3)`
+  - `5..toFixed(3)`
+-
+- Обёртка хранит полезные константы:
+  - `Number.MAX_SAFE_INTEGER` — максимально возможное целое значение числового типа, 253-1.
+  - `Number.MIN_SAFE_INTEGER` — минимально возможное целое значение числового типа, -253-1.
+  - `Number.MAX_VALUE` — максимально большое число, представимое с помощью числового типа.
+    - Больше, чем Number.MAX_SAFE_INTEGER, из-за особенностей хранения чисел с плавающей точкой.
+  - `Number.MIN_VALUE` — минимальное положительное число, представимое с помощью числового типа.
+-
+- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
+- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+
+<br></p>
+</details>
+
+[//]: # (Меотды Boolean)
+<details><summary><b>Меотды Boolean</b></summary><p>
+
+- `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
+  - ```js
+    let a = new Boolean(true);
+    console.log( a ); // [Boolean: true]
+    console.log( typeof a ); // object
+    
+    let a2 = a.valueOf();
+    console.log( a2 );  // true
+    console.log( typeof a2 ); // boolean
+    ```
+- `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
+- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
+
+- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
+- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+
+<br></p>
+</details>
+
+[//]: # (Меотды BigInt)
+<details><summary><b>Меотды BigInt</b></summary><p>
+
+- `asIntN()` — оборачивает BigInt в пределах от -2width-1 до 2width-1-1
+- `asUintN()` — оборачивает a BigInt в пределах от 0 до 2width-1
+- `toLocaleString()` — возвращает строку с языкозависимым представлением числа. Переопределяет метод
+  Object.prototype.toLocaleString().
+- `toString()` — возвращает строку, представляющую указанный объект по указанному основанию системы счисления.
+  Переопределяет метод Object.prototype.toString().
+- `valueOf()` — возвращает примитивное значение указанного объекта. Переопределяет метод Object.prototype.valueOf().
+
+- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
+
+<br></p>
+</details>
+
+[//]: # (Меотды Symbol)
+<details><summary><b>Меотды Symbol</b></summary><p>
+
+- `for(key)` — ищет существующие символы по заданному ключу и возвращает его (если нашёл). Иначе создаёт новый символ
+  для данного ключа в глобальном реестре символов.
+- `keyFor(sym)` — получает по разделяемому символу его ключ из глобального реестра символов.
+- `toString()` — Возвращает описание символа в виде строки.
+- `valueOf()` — Возвращает примитивное значение символьного объекта.
+
+Свойства
+
+- `asyncIterator` — возвращает асинхронный итератор по умолчанию.
+- `hasInstance` — определяет, распознает ли объект конструктора объект как свой инстанс.
+- `isConcatSpreadable` — указывает, должен ли быть объект сплющен до элементов массива.
+- `iterator` — возвращает итератор по умолчанию.
+- `match` — сравнивает со строкой.
+- `matchAll` — возвращает итератор, который выдает совпадения регулярного выражения со строкой.
+- `replace` — заменяет совпадающие подстроки строки.
+- `search` — возвращает индекс в строке, который соответствует регулярному выражению.
+- `split` — разделяет строку по индексам, которые соответствуют регулярному выражению.
+- `species` — создает производные объекты.
+- `toPrimitive` — преобразует объект в примитивное значение.
+- `toStringTag` — возвращает описание объекта по умолчанию.
+- `description` — возвращает описание объекта в виде строки.
+
+- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
+- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
+
+<br></p>
+</details>
+
+**Ссылки**
+
+- [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
+-
+- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
+- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
+- [Metanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
+-
+- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
+-
+- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
+-
+- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
+-
+- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
+- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
+
+<br></p>
+</details>
+
+[//]: # (Массивы)
+<details><summary><b>Массивы</b></summary><p>
+
+Структура для работы с **упорядоченными** наборами данных.<br>
+Особый тип объектов, с дополнительными свойствами и ограничениями.
+<br>
+<br>
+
+**Не использовать как объект**
+- Элементы в массиве должны идти подряд, иначе теряется большая часть преимуществ этой структуры.
+- Добавление нечислового свойства: `arr.test = 5`
+- Создание «дыр»: добавление `arr[0]`, затем `arr[1000]` (между ними ничего нет).
+- Заполнение массива в обратном порядке: `arr[1000]` , `arr[999]` и т.д.
+  <br>
+  <br>
+
+**Многомерные массивы**
+- Массивы, которые содержат массивы
+  <br>
+  <br>
+
+**Псевдомассивы**
+- Объекты, у которых есть индексы и свойство length, т. е., они выглядят как массивы.
+  <br>
+  <br>
+
+**Объявление массива**
+- `let arr = [5, 27, "a"]`
+- `let arr = new Array(5, 27, "a")` - если вызвать с одним аргументом-числом - создаст массив без элементов, но заданной длины (length)
+  <br>
+  <br>
+
+**Свойство `.lenght`**
+- Наибольший цифровой индекс +1 (т.к. нумерация с нуля)
+- Можно сказать, это общее число элементов в массиве - если он заполнен без дырок
+- Если уменьшить `length` - укоротим массив, удалим элементы с конца
+  <br>
+  <br>
+
+**Перебор массива**
+- `For` - Перебор по индексам
+- `For of` - выводит значения элементов, но не сообщает их индекс
+- `For in`
+  - метод объектов. Плохая идея
+  - Выполняет перебор всех свойств объекта, а не только цифровых
+  - В 10-100 раз медленнее, т.к. оптимизирован под обычные объекты
+- +
+- `forEach(func)` – вызывает func для каждого элемента. Ничего не возвращает.
+- Методы преобразования - `map`, `sort` и т.д.
+  <br>
+  <br>
+
+**Оператор `in`**
+- проверка существования элемента в объекте (в т.ч. массиве)
+- принимает индекс элемента
+- возвращает `true`/`false` — элемент с таким индексом существует / нет
+  <br>
+  <br>
+
+**Реализация метода `toString` для массивов**
+- Вернёт список элементов, разделённых запятыми.
+  - `alert(['a', 17, 'c']);` // a,17,c
+- Быть аккуратно с бинарным "+" - произведет сложение строк!
+  - `alert( "" + 1 )` // "1"
+  - `alert( "1" + 1 )` // "11"
+- `alert( "1,2" + 1 )` // "1,21"
+  <br>
+  <br>
+
+**Мутирующие / не мутирующие методы**
+- [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
+  - `arr.sort(/*функция сортировки*/)`
+- [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
+- [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+  <br>
+  <br>
+
+**Ссылки**
+
+- [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
+- [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+- [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
+- [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
+- [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
+
+<br></p>
+</details>
+
+[//]: # (Методы массивов)
+<details id="arrayMethods"><summary><b>Методы массивов</b></summary><p>
+
+**Основные**
+
+- [push(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в конец,
+- [pop()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из конца,
+- [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
+- [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
+- [splice](https://learn.javascript.ru/array-methods#splice)* - добавлять, удалять и заменять элементы. **Мутирующий!**
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него эл-ты с опр. индексами
+- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+  старых
+- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+  в массиве
+- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск первого совпадения
+- [filter](https://learn.javascript.ru/array-methods#filter) - поиск всех совпадений. Вернёт новый массив.
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив с таким же кол-вом элементов
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn)* - сортировка «на месте». **Мутирующий!**
+- [reverse](https://learn.javascript.ru/array-methods#reverse)* - смена порядка элементов на обратный.  **Мутирующий!**
+- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+- [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
+- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+- [every(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
+- [some(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
+- join
+  <br>
+  <br>
+
+**Новые**
+
+- [findLast()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
+  и [findLastIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
+  — поиск в массивах «с конца
+- [at()](https://learn.javascript.ru/array#poluchenie-poslednih-elementov-pri-pomoschi-at) — обращаться к массивам с
+  конца. И строкам тоже
+- [flat()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript)
+  и [flatMap()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript) —
+  рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный массив сделать одномерным.
+  - [flat)()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) на MDN
+  - [flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap) на MDN
+    <br>
+    <br>
+
+**Чаще всего спрашивают**
+
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Каждый элемент исходного массива обрабатываем в функции, преобразуем и результат записываем в новый массив.
+  - `const result = numbers.map(n => n*2)`
+  - Вернёт массив, со всеми элементами массива numbers, умноженными на 2.
+  - Если не надо возвращать массив — используй `for`/`forEach`.
+    - ```js
+      let myArray = [1, 2, 3, 4, 5];
+      for (let i = 0; i <= myArray.length - 1; i++) {
+        console.log(myArray[i]);
+      }
+      ```
+    - ```js
+      let myArray = [1, 2, 3, 4, 5];
+      for (let item of myArray) {
+        //Не предоставляет доступа к индексу текущего элемента, только к его значению
+        console.log( item );
+      }
+      ```
+- [filter](https://learn.javascript.ru/array-methods#filter) - Каждый элемент исходного массива обрабатываем в функции. Функция вернёт true/false => если true, то результат пишем в новый массив.
+  - `const result = numbers.filter(n => n > 3)`
+  - Вернёт массив, со всеми элементами массива numbers, которые > 3.
+- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright) - перебрать массив и вычислить одно значение. Каждый элемент исходного массива обрабатываем в функции, на выходе получаем одно значение
+  - `const sum = numbers.reduce((acc, n) => acc + n, 0)`
+  - Вернёт сумму всех элементов массива numbers (acc). 0 = значение acc на первом шаге
+    <br>
+    <br>
+
+**Мутирующие методы**
+
+- [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
+- [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
+- [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+  <br>
+  <br>
+
+**Прочее**
+- - `Array.from()` — преобразовать перебираемый объект в массив (например строку в массив символов)
+
+**Методы `map`/`filter`/`reduce` вместо циклов `for` и `forEach`**
+
+Пришли в JS из функционального программирования. <br>
+Используя эти три метода, вы избегаете циклов `for` и `forEach` в большинстве ситуаций. Вместо них можно использовать совокупность `map`, `filter` и `reduce`.<br>
+Подробнее: [tproger.ru — Шпаргалка по современному JS](https://tproger.ru/translations/javascript-cheatsheet/#arrmthdsmapfltrrdc)
+```js
+//Посчитать сумму оценок студентов с результатом 10 и выше
+const students = [
+  { name: "Nick", grade: 10 },
+  { name: "John", grade: 15 },
+  { name: "Julia", grade: 19 },
+  { name: "Nathalie", grade: 9 },
+];
+
+const aboveTenSum = students
+  .map(student => student.grade) // формируем массив оценок
+  .filter(grade => grade >= 10) // отбираем оценки выше 10
+  .reduce((prev, next) => prev + next, 0); // суммируем каждую оценку выше 10
+
+console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie игнорируется, поскольку её оценка ниже 10
+```
+<br>
+<br>
+
+**Шпаргалки**
+
+- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+  <br>
+  <br>
+
+<details><summary><b>Список с MDN</b></summary><p>
+
+- [Array.prototype\[@@iterator\]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
+- [Array.prototype.at()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
+- [Array.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+- [Array.prototype.copyWithin()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
+- [Array.prototype.entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
+- [Array.prototype.every()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+- [Array.prototype.fill()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+- [Array.prototype.filter()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Array.prototype.find()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [Array.prototype.findIndex()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+- [Array.prototype.flat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+- [Array.prototype.flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+- [Array.prototype.forEach()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+- [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [Array.prototype.group()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group)
+- [Array.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+- [Array.prototype.join()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [Array.prototype.keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
+- [Array.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+- [Array.prototype.map()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array.of()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
+- [Array.prototype.pop()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+- [Array.prototype.push()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+- [Array.prototype.reduce()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+- [Array.prototype.reduceRight()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
+- [Array.prototype.reverse()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+- [Array.prototype.shift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+- [Array.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+- [Array.prototype.some()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+- [Array.prototype.sort()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- [Array.prototype.splice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+- [Array.prototype.toLocaleString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)
+- [Array.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
+- [Array.prototype.unshift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+- [Array.prototype.values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
+
+<br><p>
+</details>
+
+
+<details><summary><b>UNSORTED</b></summary><p>
+
+
+
+
+- Push/pop
+  - Работают заметно быстрее чем shift/unshift
+  - push - добавляет элемент в конец массива
+  - pop - удаляет последний элемент из массива и возвращает его
+- Shift/unshift
+  - Unshift - добавляет элемент в начало
+  - Shift - удаляет первый элемент и возвращает его
+-
+- Добавления/удаления элементов:
+  - push (...items) – добавляет элементы в конец,
+  - pop() – извлекает элемент с конца,
+  - shift() – извлекает элемент с начала,
+  - unshift(...items) – добавляет элементы в начало.
+  - splice(pos, deleteCount, ...items) – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
+  - slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
+  - concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если
+    какой-то из items является массивом, тогда берутся его элементы.
+-
+- Поиска среди элементов:
+  - indexOf/lastIndexOf(item, pos) – ищет item , начиная с позиции pos , и
+  - возвращает его индекс или -1 , если ничего не найдено.
+  - includes(value) – возвращает true , если в массиве имеется элемент value , в
+  - противном случае false .
+  - find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все
+  - значения, при прохождении которых через функцию возвращается true .
+  - findIndex похож на find , но возвращает индекс вместо значения.
+-
+- Перебора элементов:
+  - forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
+-
+- Преобразования массива:
+  - map(func) – создаёт новый массив из результатов вызова func для каждогоэлемента.
+  - sort(func) – сортирует массив «на месте», а потом возвращает его.
+  - reverse() – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
+  - split/join – преобразует строку в массив и обратно.
+  - reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и
+    передавая промежуточный результат между вызовами.
+-
+- Дополнительно:
+  - Array.isArray(arr) проверяет, является ли arr массивом.
+-
+- Есть другие методы, используются реже
+- Добавить свежие методы 2017-2022
+-
+- Мутирующие - изменяют исходный массив
+  - sort
+  - reverse
+  - splice
+-
+- push(...items) – добавляет элементы в конец,
+- pop() – извлекает элемент из конца,
+- shift() – извлекает элемент из начала,
+- unshift(...items) – добавляет элементы в начало.
+- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
+- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+  старых
+- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+  в массиве
+- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
+- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
+- [map](https://learn.javascript.ru/array-methods#map) - преобразование
+- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
+- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
+- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+- [reduce/reduceRight]()
+- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+  - 
+- НОВЫЕ
+- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
+- `at()` — обращаться к массивам с конца. И строкам тоже
+- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
+  массив сделать одномерным.
+-
+- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+  - 
+- Чаще всего спрашивают
+  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
+  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
+  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
+    <br><p>
+</details>
+<br>
+<br>
+
+**Ссылки**
+
+- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+
+<br><p>
+</details>
+
+[//]: # (Объекты)
+<details id="objects"><summary><b>Объекты</b></summary><p>
+
+***
+
+- Структура для хранения данных в формате «ключ - значение».
+- В других языках программирования такую структуру данных также называют «словарь» и «хэш».
+- В JS объекты также используются как элементы ООП, это немного отдельно.
+- Массив - это разновидность объекта. Обладает дополнительными свойствами и ограничениями
+- Квадратные скобки также позволяют обратиться к свойству объекта, имя которого может быть результатом выражения.<br>
+  Например, имя свойства может храниться в переменной:
+  ```js
+  let key = "likes birds";
+  // то же самое, что и user["likes birds"] = true;
+  user[key] = true;
+  ```
+- {Ключ/имя/идентификатор свойства: значение свойства}
+  <br>
+  <br>
+
+[//]: # (Разные виды объектов)
+<details><summary><b>Разные виды объектов</b></summary><p>
+
+- «простой объект» («plain object») или просто Object
+- массивы
+- функции
+- Date
+- Error
+- RegExp
+- все структуры которые создаются с ключевым словом `new`: Map, Set, WeakMap, WeakSet...
+
+см. раздел «[Что является объектом](#whatIsObject)»
+
+<br></p>
+</details>
+
+[//]: # (Св-ва в объекте упорядочены спец. образом)
+<details><summary><b>Св-ва в объекте упорядочены спец. образом</b></summary><p>
+
+- св-ва с целочисленными ключами сортируются по возрастанию
+- остальные располагаются в порядке создания.
+- «целочисленное свойство» означает строку, которая может быть преобразована в целое число и обратно без изменений.
+- То есть, "49" – это целочисленное имя свойства, потому что если его преобразовать в целое число, а затем обратно в
+  строку, то оно не изменится.
+- А вот свойства "+49" или "1.2" таковыми не являются
+
+<br></p>
+</details>
+
+[//]: # (Объекты хранятся и копируются «по ссылке)
+<details><summary><b>Объекты хранятся и копируются «по ссылке»</b></summary><p>
+
+- Переменная хранит не сам объект, а его «адрес в памяти», другими словами «ссылку» на него.
+- Когда переменная объекта копируется – копируется ссылка, сам же объект не дублируется.
+- Два объекта равны только в том случае, если это один и тот же объект.
+  - Операторы `==` и `===` для объектов работают одинаково.
+  - две переменные ссылаются на один и тот же объект, поэтому они равны друг другу
+  - два разных объекта не равны, хотя оба пусты...
+  - Для сравнений вроде `obj1 > obj2` или для сравнения с примитивом `obj == 5` объекты преобразуются в примитивы.
+
+<br></p>
+</details>
+
+[//]: # (Создание объекта)
+<details><summary><b>Создание объекта</b></summary><p>
+
+- Конструктор объекта - `const user = new Object({name: 'Ivan'});`
+- Литеральная нотация - `let user = {name: 'Ivan'}`
+
+<br></p>
+</details>
+
+[//]: # (Доступ к свойству через [])
+<details><summary><b>Доступ к свойству через []</b></summary><p>
+
+- Если имя св-ва = n слов (`['key name']`)
+- Если имя св-ва = результат выражения. Например хранится в переменой (`[variable]`),  (`[variable + 'SomeText']`)
+- Если имя св-ва = вычисляемое свойство. Имя будет выдано другой переменной/функцией по результатам ее работы
+
+<br></p>
+</details>
+
+[//]: # (Трансформация объектов)
+<details><summary><b>Трансформация объектов</b></summary><p>
+
+- У объектов нет множества методов, которые есть в массивах, например map, filter и других.
+- Если нужен аналог - можно использовать метод `Object.entries` с последующим вызовом `Object.fromEntries` :
+  1. Вызов `Object.entries(obj)` возвращает массив пар ключ/значение для obj .
+  2. На нём вызываем методы массива, например, `map` .
+  3. Используем `Object.fromEntries(array)` на результате, чтобы преобразовать его обратно в объект.
+
+<br></p>
+</details>
+
+[//]: # (Оператор in)
+<details><summary><b>Оператор in</b></summary><p>
+
+- Проверка существования св-ва в объекте.
+- Если св-ва нет - вернёт undefined
+- Позволяет отследить когда свойство есть, но его значение = undefined
+- `alert( "age" in user );` // true если user.age существует. "age" в кавычках — это имя свойства объекта user
+- `variable_with_key_name in user` // variable_with_key_name без кавычек - это не имя свойства, а ссылка на переменную, в которой это имя лежит
+
+<br></p>
+</details>
+
+[//]: # (Цикл `for ... in`)
+<details><summary><b>Цикл `for ... in`</b></summary><p>
+
+- перебор всех св-в объекта
+- ```js
+    for (key in object) { 
+      // выполнится для каждого св-ва объекта
+    }
+    for (let key in object) { 
+      // ... 
+    }
+  ```
+
+<br></p>
+</details>
+
+[//]: # (Способы создания метода объекта)
+<details><summary><b>Способы создания метода объекта</b></summary><p>
+
+- Отдельно создали функцию, потом присвоили её св-ву объекта
+- Добавляем методу св-во и после = сразу пишем функцию
+- В самом объекте сразу пишем свойства, а после пишем функцию
+- В самом объекте пишем
+  ```js
+  // У этих объектов одинаковые методы
+  user = { 
+    sayHi: function() { 
+      alert("Привет"); 
+    }
+  }; 
+
+  // сокращённая запись
+  user = {
+    sayHi() {  
+      alert("Привет");
+    }
+  };
+  ```
+
+<br></p>
+</details>
+
+[//]: # (Ключевое слово `this`)
+<details><summary><b>Ключевое слово `this`</b></summary><p>
+
+- Ключевое слово для доступа из метода объекта к другой информации в этом объекте
+- Значение this - объект перед точкой
+- Не является фиксированным. Его значение вычисляется в момент
+- Вызов функции без объекта:
+  - В "use strict"
+    - this == undefined
+    - в таком коде значением this будет являться undefined . Если мы попытаемся получить доступ к name , используя this.name – это вызовет ошибку.
+  - В нестрогом режиме значением this в таком случае будет глобальный объект (window для браузера).
+  - Обычно подобный вызов является ошибкой программирования. Если внутри функции используется this, тогда ожидается, что она будет вызываться в контексте какого-либо объекта.
+- У  стрелочных функций нет «this»
+  - Его значение берётся снаружи - из внешней «нормальной» функции. Т.е
+- Методы могут ссылаться на объект через this .
+- Значение this определяется во время исполнения кода.
+- При объявлении любой функции в ней можно использовать this , но этот this не имеет значения до тех пор, пока функция не будет вызвана.
+- Эта функция может быть скопирована между объектами (из одного объекта в другой).
+- Когда функция вызывается синтаксисом «метода» – object.method() , значением this во время вызова является объект перед точкой.
+
+<br></p>
+</details>
+
+[//]: # (Функция конструктор объектов и оператор `new)
+<details><summary><b>Функция конструктор объектов и оператор `new`</b></summary><p>
+
+- Чтобы создавать много однотипных функций по шаблону
+- Это обычные функции.
+- Технически любая функция может быть использована как конструктор. То есть, каждая функция может быть вызвана при помощи оператора new, и выполнится алгоритм создания нового объекта из конструктора (см. [Конструктор](#constructor) )
+
+<br></p>
+</details>
+
+**Классы**<br>
+Для создания сложных объектов есть и более «продвинутый» синтаксис чем конструктор – классы.
+см. раздел «[Классы](#classes)»
+<br>
+<br>
+
+**Другие темы**
+- [Методы объектов](#objectMethods)
+- [Копирование объектов](#objectCopy)
+- [Перебор свойств объектов](#objectEnumeration)
+- [Преобразование объектов в примитивы](#objectToPrimitive)
+- [Аттрибуты свойств. Флаги, дескрипторы, методы доступа](#propertiesAttributes)
+- [Перебор структур данных. Методы «keys», «values», «entries»](#keysValuesEntries)
+
+**Ссылки**
+
+- [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
+- [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
+- [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
+- [Habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
+- [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
+- [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
+
+<br></p>
+</details>
+
+[//]: # (Методы объектов todo: упростить)
+<details id="objectMethods"><summary><b>Методы объектов*</b></summary><p>
+
+**Методы конструктора Object**
+
+- [assign()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) - копирование
+  свойств объекта в другой объект.
+  - При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
+- [create()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create) - создать
+  новый объект из существующего.
+- [keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - возвращает
+  массив ключей объекта (имена всех **собственных** перечислимых свойств объекта).
+- [values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/values) -
+  возвращает значения объекта.
+- [freeze](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) - «замораживает»
+  объект. Другой код не сможет удалить или изменить никакое свойство.
+- [seal](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/seal) - предотвращает
+  добавление новых свойств, но позволяет изменять существующие.
+- [entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) - создает
+  вложенный массив пар «ключ-значение» объекта
+- [defineProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+  - Добавляет к объекту именованное свойство, описываемое переданным дескриптором.
+- [defineProperties](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
+  - Добавляет к объекту именованные свойства, описываемые переданными дескрипторами.
+- [getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)
+  - Возвращает дескриптор свойства для именованного свойства объекта.
+- [getOwnPropertyDescriptors](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
+  - возвращает все собственные дескрипторы свойств данного объекта.
+- [getOwnPropertyNames](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
+  - Возвращает массив, содержащий имена всех переданных объекту <strong>собственных</strong> перечисляемых и
+    неперечисляемых свойств.
+- [getOwnPropertySymbols](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
+  - Возвращает массив всех символьных свойств, найденных непосредственно в переданном объекте.
+- [getPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
+  - получение внутреннего скрытого свойства [[Prototype]] объекта (оно также доступно через свойство `__proto__`)
+- [is](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is) - Определяет, являются
+  ли два значения различимыми (то есть, одинаковыми)
+- [isExtensible](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible) -
+  Определяет, разрешено ли расширение объекта.
+- [isFrozen](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen) -
+  Определяет, был ли объект заморожен.
+- [isSealed](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) -
+  Определяет, является ли объект запечатанным (sealed).
+- `observe()` — асинхронно наблюдает за изменениями в объекте.
+- [preventExtensions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)
+  - Предотвращает любое расширение объекта.
+- [setprototypeof](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
+  - устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
+- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) -
+  преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
+- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) -
+  проверять является ли св-во прямым свойством объекта, даже если его значение null или undefined. В отличие от
+  оператора `in` -
+  не проверяет это свойство в цепочке прототипов объекта.
+- [hasOwnProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+  - проверять содержит ли объект указанное неунаследованно) свойство, или метод.
+- [isPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf) -
+  проверяет существует ли указанный объект в цепочке прототипов другого объекта
+- [propertyIsEnumerable](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
+  - является ли указанное свойство перечисляемым. Перечисляемые - все свойства, которые добавляются к объекту, являются
+    перечисляемыми по умолчанию. Встроенные свойства не перечисляется.
+- [setPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
+  - позволяет установить или изменить прототип указанному объекту.Создаваемый объект наследует свойства от прототипа.
+- [toLocaleString](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
+  - возвращает строку, представляющую объект. Предназначен для переопределения унаследованными объектами в целях
+    поддержки зависимости от локали.
+- [toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) -
+  возвращает строку, представляющую объект.
+- [valueOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) - для
+  преобразования объекта в примитивное значение.
+
+**Устаревшие**
+
+- [__
+  defineGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__)
+  - привязывает свойство объекта к функции, вызываемой каждый раз при поиске этого свойства. Вместо
+    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+- [__
+  defineSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__)
+  - привязывает свойство объекта к функции, вызываемой каждый раз при попытке установить значение этого свойства. Вместо
+    него рекомендуется
+    использовать `(синтаксис инициализатора объекта (new Object(), Object.create() или литеральную нотацию)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer)`
+    или `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+- [__
+  lookupGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__)
+  - возвращает функцию, привязанную к геттеру указанного свойства. Вместо
+    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+    и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+- [__
+  lookupSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__)
+  - возвращает функцию, привязанную к сеттеру указанного свойства. Вместо
+    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+    и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+- [__proto__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) - является
+  свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта (
+  являющийся объектом или null), через который осуществлялся доступ. Вместо него `Object.getPrototypeOf`
+  /`Object.setPrototypeOf`
+  /`[Object.create(proto, [descriptors])]((https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create)) `
+  .
+
+**Новые**
+
+- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) — ES13 (
+  2022). проверяет: принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
+- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) —
+  ES10 (2019). преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
+
+**Про мутирование объектов**
+
+- При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
+- Object.freeze предотвращает непосредственное изменение свойств объекта.
+
+<details><summary><b>UNSORTED</b></summary><p>
+
+- Базовые
+  - delete user.age - удаление свойства
+  -
+  - keys() - возвращает ключи объекта.
+  - values() - возвращает значения объекта.
+  - entries() - создает вложенный массив пар «ключ-значение» объекта
+  -
+  - assign() - копирование свойств объекта в другой объект.
+  - create() - создать новый объект из существующего.
+  -
+  - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
+  - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
+  - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+    .
+  - ... там ещё много. Изучать
+  - что-то добавили в последние несколько лет
+
+- keys() - возвращает ключи объекта.
+- values() - возвращает значения объекта.
+- create() - создать новый объект из существующего.
+- freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
+- seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
+- assign() - копирование свойств объекта в другой объект.
+- entries() - создает вложенный массив пар «ключ-значение» объекта
+- getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+-
+- ... там ещё много. Изучать
+- что-то добавили в последние несколько лет
+-
+- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+  <br><p>
+</details>
+
+**Шпаргалки**
+
+- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+
+**Ссылки**
+
+- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+- [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
+- [8 методов объектов в JavaScript (2018)](https://www.8host.com/blog/metody-obektov-v-javascript/)
+- [40 методов JavaScript, которые вы должны знать](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+
+<br><p>
+</details>
+
+[//]: # (Копирование объектов)
+<details id="objectCopy"><summary><b>Копирование объектов</b></summary><p>
+
+**Поверхностное копирование**
+- Spread оператор (...)
+  -   - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
+- цикл («наивное» копирование)
+  - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
+  - пример `for (let key in user) {newObj[key] = oldObj[key]}`
+  - проблемы
+    - меняется метод `Object.prototype`,
+    - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
+    - копирует только перечисляемые свойства
+- object.assign
+  - работает для поверхностного копирования циклических объектов
+  - можно использовать для копирования методов
+    <br>
+    <br>
+
+**Глубокое копирование**
+- цикл рекурсивный
+- JSON.parse(JSON.stringify(object));
+  - нельзя использовать для копирования методов объекта (вообще всех функций)
+  - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
+  - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+- [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
+  - пример `const myDeepCopy = structuredClone(myOriginal);`
+- [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
+
+**Ссылки**
+- [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
+- [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
+  <br><p>
+</details>
+
+[//]: # (Перебор свойств объектов)
+<details id="objectEnumeration"><summary><b>Перебор свойств объектов</b></summary><p>
+
+Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.<br>
+А затем, пройтись по преобразованному массиву привычными методами.
+
+После преобразования объекта в массив (с ключами `Object.keys`, значениями `Object.values` или `Object.entries`) — можно работать с ними дальше в цикле, как с обычным массивом.
+
+- цикл `for..in`
+  - проходит не только по собственным, но и по унаследованным свойствам объекта — итерация происходит с учетом свойств в цепочке Prototype
+  - Приходится проверять, принадлежит ли свойство этому объекту
+  - Если унаследованные свойства не нужны, их можно отфильтровать встроенным методом `obj.hasOwnProperty(key)` — вернёт `true`, если у obj есть собственное, не унаследованное, свойство с именем key.
+  - Наследованное свойствj отображается в цикле. только есkи оно перечислимо. То есть у него внутренний флаг `enumerable` стоит `true`.
+- Метод `Object.keys`
+  - принимает объект в качестве аргумента
+  - возвращает массив с заданными ключами объекта.
+  - свойства и из цепочки прототипов не учитываются.
+  - Итерируя метод `Object.keys` с методом `forEach`, мы получаем доступ к паре ключ-значение объекта.
+- Метод `Object.values`
+  - принимает объект в качестве аргумента
+  - возвращает массив с заданными значениями объекта.
+  - свойства и из цепочки прототипов не учитываются.
+  - получаем доступ только к значениям объекта.
+- `Object.entries`
+  - принимает объект в качестве аргумента
+  - возвращает массив массивов, каждый является парой `[key, value]` данного объекта
+  - свойства и из цепочки прототипов не учитываются.
+  - Так как Object.entries возвращает массив массивов, то мы деструктурируем массив в его ключ и свойство.
+  - При переборе полученного массива удобнее всего будет воспользоваться деструктуризацией, присвоив переменной текущий ключ и значение.
+  - ```js
+    const entries = Object.entries(fruits)
+    for (const [fruit, count] of entries) {
+    console.log(`Всего: ${count} ${fruit}s`)
+    }
+    // Всего: 28 apples
+    // Всего: 17 oranges
+    // Всего: 54 pears
+    ```
+- Метод `Object getOwnPropertyNames`
+  - принимает объект в качестве аргумента
+  - возвращает массив строк, соответствующих перечисляемым и неперечисляемым свойствам, найденным непосредственно в объекте.
+
+<br>
+<br>
+
+**Ссылки**
+- [Как перебрать свойства объекта в JavaScript](https://frontend-stuff.com/blog/how-to-loop-through-object-in-javascript/)
+- [Перебор элементов объекта в JavaScript](https://badtry.net/pieriebor-eliemientov-obiekta-v-javascript/)
+- [learn.javascript.ru - Объекты. Цикл "for..in"](https://learn.javascript.ru/object#forin)
+- [Перебор свойств](https://www.wm-school.ru/js/js_object-for-in.php)
+  <br><p>
+</details>
+
+[//]: # (Преобразование объектов в примитивы todo: доработать)
+<details id="objectToPrimitive"><summary><b>Преобразование объектов в примитивы*</b></summary><p>
+
+Вызывается автоматически многими встроенными функциями и операторами, которые ожидают примитив в качестве аргумента.
+
+Существует всего 3 типа преобразований (хинтов):
+
+- "string" (для alert и других операций, которым нужна строка)
+- "number" (для математических операций)
+- "default" (для некоторых операций)
+
+В спецификации явно указано, какой хинт должен использовать каждый оператор. И существует совсем немного операторов,
+которые не знают, что ожидать, и используют хинт со значением "default" . Обычно для встроенных объектов хинт "default"
+обрабатывается так же, как "number" . Таким образом, последние два очень часто объединяют вместе.
+
+Алгоритм преобразований к примитивам следующий:
+
+1. Сначала вызывается метод `obj[Symbol.toPrimitive](hint)` , если он существует.
+2. Иначе, если хинт равен "string" происходит попытка вызвать obj.toString() , затем obj.valueOf() , смотря что
+   есть.
+3. Иначе, если хинт равен "number" или "default" происходит попытка вызвать obj.valueOf() , затем obj.toString() ,
+   смотря что есть.
+
+На практике довольно часто достаточно реализовать только obj.toString() как «универсальный» метод для всех типов
+преобразований, возвращающий «читаемое» представление объекта, достаточное для логирования или отладки.
+
+**Ссылки:**
+
+- [learn.javascript.ru - Преобразование объектов в примитивы](https://learn.javascript.ru/object-toprimitive)
+
+<br><p>
+</details>
+
+[//]: # (Циклы todo: дополнить)
+<details id="cycles"><summary><b>Циклы*</b></summary><p>
+
+- `while` — многократное выполнение одних и тех же инструкций, пока истинно некоторое условие («под капотом» у него генератор)
+- `do... while` — вначале выполняется, потом проверяет условие. Точно выполнится один раз
+- `for` — часто используется если известно точное количество повторений. «Цикл со счётчиком». («под капотом» у него `while`)
+- `for ... in` — перебор свойств объекта
+- `for ... of` — перебор по массиву. Итерируемые объекты
+- `for await of` — получение данных с помощью асинхронных итераторов. Перебор в цикле данных, поступающих асинхронно.
+  Например: загружаем что-то по частям из сети.
+
+**Ссылки:**
+
+- [learn.javascript.ru - Циклы while и for](https://learn.javascript.ru/while-for)
+- [Дока - Циклы](https://doka.guide/js/loop/)
+- [MDN - Циклы и итерации](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Loops_and_iteration)
+- [Metanit - Циклы](https://metanit.com/web/javascript/2.7.php)
+- [Metanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+- [itchief.ru - Циклы в JavaScript](https://itchief.ru/javascript/loops)
+
+<br><p>
+</details>
+
+[//]: # (Цикл for-await-of todo: пусто)
+<details id="cycleForAwaitOf"><summary><b>Цикл for-await-of**</b></summary><p>
+
+
+
+Ссылки:
+
+- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
+
+<br></p>
+</details>
+
+[//]: # (Switch ... case todo: дополнить)
+<details id="cycles"><summary><b>Switch ... case*</b></summary><p>
+
+Конструкция `switch` заменяет собой сразу несколько `if`.<br>
+Более наглядный способ сравнить выражение сразу с несколькими вариантами.
+
+``` 
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+```
+
+**Ссылки**
+- [learn.javascript.ru - Конструкция "switch"](https://learn.javascript.ru/switch)
+
+<br><p>
+</details>
+
+[//]: # (Логические операторы. Логические выражения. Truthy/Falsy todo: дополнить)
+<details id="logicalAssignment"><summary><b>Логические операторы. Логические выражения. Truthy/Falsy*</b></summary><p>
+
+**Логические операторы**
+- `&&` — и (and)
+- `||` — или (or)
+- `!` — не (not)
+- `??` — оператор нулевого слияния. Проверка на `null`/`undefined`.
+  - если первый аргумент !=== `null`/`undefined` вернёт его, иначе второй.
+  - `result = a ?? b,`
+  - `result = (a !== null && a !== undefined) ? a : b;`
+  - быстрый способ выбрать первое «определённое» значение из списка. Используется для присвоения переменным значений по умолчанию:
+    <br>
+    <br>
+
+**Логические выражения**
+
+Значения, похожие на правду и на ложь. <br>
+Примеры логических выражений
+- проверка значения оператора `if` — `if (myVar) {}`
+- после логического оператора `!` — `!0`
+- с конструктором объектов логических значений — `new Boolean(0)`
+- в трёхкомпонентном сравнении — `myVar ? "truthy" : "falsy"`
+
+Значению присваивается `false`, если оно равно:
+- `false`;
+- `0`;
+- `" "` (пустая строка);
+- `null`;
+- `undefined`;
+- `NaN`.
+  <br>
+  <br>
+
+Быть аккуратным при сравнении с объектами и массивами<br>
+Значения объекта (которые должны стать истинными) не считаются логическими, но конвертируются в примитивный тип данных. <br>
+При сравнении объекта с логическим значением, например [] == true, он преобразуется в [].toString() == true:
+
+**Ссылки**
+- [learn.javascript.ru - Логические операторы](https://learn.javascript.ru/logical-operators)
+- [learn.javascript.ru - Оператор нулевого слияния](https://learn.javascript.ru/nullish-coalescing-operator)
+- [Дока - Логические операторы](https://doka.guide/js/logic-operators/)
+- [tproger.ru - Шпаргалка по современному JavaScript. Truthy/Falsy](https://tproger.ru/translations/javascript-cheatsheet/#trthfls)
+
+<br></p>
+</details>
+
+[//]: # (Логические операторы присваивания «&&=», «||=», «??=» todo:пусто)
+<details id="logicalAssignment"><summary><b>Логические операторы присваивания `&&=`, `||=`, `??=`**</b></summary><p>
+
+
+
+Ссылки:
+
+- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
+
+<br></p>
+</details>
+
+[//]: # (Опциональная цепочка «?.»  todo: доработать)
+<details id="optionalChaining"><summary><b>Опциональная цепочка `?.`*</b></summary><p>
+
+- Не оператор, а синтаксическая конструкция
+- Безопасный способ доступа к свойствам вложенных объектов, даже если какое-либо из промежуточных свойств не существует.
+- Позволяет без возникновения ошибок обратиться к вложенным свойствам.
+- Проверяет левую часть выражения на равенство `null`/`undefined`, и продолжает дальнейшее вычисление, только если это
+  не так.
+- Переменная перед ?. должна быть объявлена. Если переменной `user` вообще нет, то `user?.anything` приведёт к ошибке
+
+Три формы синтаксиса:
+
+1. `obj?.prop` – возвращает `obj.prop`, если существует `obj`, и `undefined` в противном случае.
+2. `obj?.[prop]` – возвращает `obj[prop]`, если существует `obj`, и `undefined` в противном случае.
+3. `obj.method?.()` – вызывает `obj.method()`, если существует `obj.method`, в противном случае возвращает `undefined`
+
+**Используется в сокращённых вычислениях**
+
+- немедленно останавливает вычисление, если левой части не существует.
+- таким образом, последующие вызовы функций или операции не будут выполнены.
+
+**Вызовы `?.()` и `?.[]`**
+
+Используется для вызова потенциально несуществующей функции. <br>
+В следующем примере не у всех пользователей есть метод `admin`
+
+```js
+let userAdmin = {
+  admin() {
+    alert("Я админ");
+  }
+};
+
+let userGuest = {};
+userAdmin.admin?.(); // Я админ
+userGuest.admin?.(); // ничего не произойдет (такого метода нет)
+```
+
+**delete**
+
+Кроме этого, `?.` можно совместно использовать
+с `delete`:  `delete user?.name; // Удалить user.name, если пользователь существует`
+
+**Не злоупотребляйте опциональной цепочкой**
+
+Нам следует использовать ?. только там, где нормально, что чего-то не существует.
+
+К примеру, если, в соответствии с логикой нашего кода, объект user должен существовать, но address является
+необязательным, то нам следует писать user.address?.street, но не user?.address?.street.
+
+В этом случае, если вдруг user окажется undefined, мы увидим программную ошибку по этому поводу и исправим её. В
+противном случае, если слишком часто использовать ?., ошибки могут замалчиваться там, где это неуместно, и их будет
+сложнее отлаживать.
+
+**Ссылки:**
+
+- [learn.javascript.ru — Опциональная цепочка '?.'](https://learn.javascript.ru/optional-chaining)
+
+<br><p>
+</details>
+
+[//]: # (Оператор нулевого слияния «??» todo:дополнить)
+<details id="nullishCoalescing"><summary><b>Оператор нулевого слияния (`??`)*</b></summary><p>
+
+Быстрый способ выбрать первое «определённое» значение из списка.<br>
+Используется для присвоения переменным значений по умолчанию:
+`// будет height=100, если переменная height равна null или undefined
+height = height ?? 100;`
+
+Если переписать выражение `result = a ?? b`, используя уже знакомые нам операторы:<br>
+`result = (a !== null && a !== undefined) ? a : b;`
+
+Оператор `??` имеет очень низкий приоритет, лишь немного выше, чем у `?` и `=,` поэтому при использовании его в выражении, скорее всего, потребуются скобки.
+
+Запрещено использовать вместе с `||` или `&&` без явно указанного приоритета, то есть без скобок.
+```js
+let x = 1 && 2 ?? 3; // Синтаксическая ошибка
+let x = (1 && 2) ?? 3; // Работает без ошибок
+```
+
+Ссылки:
+
+- [learn.javascript.ru - Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
+
+<br></p>
+</details>
+
+[//]: # (Деструктуризация)
+<details id="destruct"><summary><b>Деструктуризация</b></summary><p>
+
+`Деструктурирование` — создание новых переменных путём извлечения данных из объектов и массивов.
+
+- Специальный синтаксис, который позволяет «распаковать» массивы или объекты в кучу переменных,
+- Зачем
+  - иногда удобнее работать не с элементами объекта/массива, а с отдельными переменными.
+  - передаём объекты/массивы в функцию — ей может понадобиться не объект/массив целиком, а элементы по  
+    отдельности
+- Также прекрасно работает со сложными функциями, которые имеют много параметров, значений по умолчанию и так далее.
+- Ничего не делает с исходным массивом/объектом, только копирует. Просто более короткий вариант записи
+- Пропускайте элементы, используя запятые
+- Работает с любым перебираемым объектом с правой стороны - Set и т.д.
+- Присваивайте чему угодно с левой стороны - например свойствам объекта
+
+**Пример для объекта**
+```js
+const person = {
+  age: 35,
+  firstName: "Nick",
+  lastName: "Anderson",
+  sex: "M"
+}
+
+const { age, firstName: first, city = "Paris" } = person; // деструктурирование
+
+console.log(age) // 35 — создана переменная age, которая равна person.age
+console.log(first) // "Nick" — создана переменная first, значение которой соответствует person.firstName
+console.log(firstName) // ReferenceError — person.firstName существует, но новая переменная называется first
+console.log(city) // Paris — создана переменная city, а поскольку person.city не определена, city равна заданному по умолчанию значению "Paris".
+```
+
+**Пример для функций**
+```js
+const person = {
+  age: 35,
+  firstName: "Nick",
+  lastName: "Anderson",
+  sex: "M"
+}
+
+//Без деструктуризации
+function joinFirstLastName(person) {
+  const firstName = person.firstName;
+  const lastName = person.lastName;
+  return firstName + '-' + lastName;
+}
+
+//С деструктуризацией
+function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
+  return firstName + '-' + lastName;
+}
+
+joinFirstLastName(person); // Nick-Anderson
+```
+
+**Пример для массива**
+```js
+const myArray = ["a", "b", "c"];
+const [x, y] = myArray; // деструктуризация
+
+console.log(x) // "a"
+console.log(y) // "b"
+```
+
+**Пример для хука React**
+```js
+const [fruit, setFruit] = useState('банан');
+```
+
+Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)».
+Он означает, что мы создаём две новые переменные, fruit и setFruit.
+Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
+
+Это равносильно такому коду:
+
+  ```
+    var fruitStateVariable = useState('банан'); // Возвращает пару значений
+    var fruit = fruitStateVariable[0]; // Извлекаем первое значение
+    var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
+  ```
+
+Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух
+элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+
+**Ссылки:**
+
+- [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
+- [learn.javascript.ru - Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+- [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
+- [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
+- [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
+- [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
+- [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
+- [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/blog/444348/)
+
+<br></p>
+</details>
+
+[//]: # (Остаточные параметры и оператор расширения. Spread / Rest «...» todo:доработать?)
+<details id="spread"><summary><b>Остаточные параметры и оператор расширения. Spread / Rest «...»*</b></summary><p>
+
+`Остаточные параметры` (Rest) — специальный синтаксис функции. Позволяет представлять неограниченное множество аргументов в виде массива.<br>
+Обозначается  `...`<br>
+Остаточные параметры должны располагаться в конце<br>
+Были введены в ES6 для уменьшения количества шаблонного кода.
+
+Если последний именованный аргумент функции имеет префикс `...`, он автоматически становится массивом с элементами от 0 до theArgs.length-1 в соответствии с актуальным количеством аргументов, переданных в функцию.
+
+Если `...` располагается в конце списка аргументов функции, то это «остаточные параметры». Он собирает остальные неуказанные аргументы и делает из них массив.<br>
+Иначе — это «оператор расширения»
+
+```js
+function showName(firstName, lastName, ...titles) {} //собери оставшиеся параметры функции и положи их в массив titles
+```
+
+**«arguments»**
+
+Раньше вместо этого использовался псевдомассив `arguments`.<br>
+Отличия остаточных параметров от объекта `arguments`:
+- остаточные параметры включают только те, которым не задано отдельное имя, в то время как объект arguments содержит все аргументы, передаваемые в функцию;
+- "arguments" не поддерживал методы массивов, например `map`. Остаточные параметры являются экземпляром Array — поддерживают методы sort, map, forEach или pop...
+- стрелочные функции не имеют "arguments". Но поддерживают остаточные параметры
+- объект arguments имеет дополнительную функциональность, специфичную только для него (например, свойство callee).
+  <br>
+  <br>
+
+**Деструктуризация остаточных параметров**
+
+Остаточные параметры могут быть деструктурированы (только массивы). <br>
+Т.е. их данные могут быть заданы как отдельные значения
+```js
+function f(...[a, b, c]) {
+  return a + b + c;
+}
+```
+<br>
+<br>
+
+**Оператор расширения. Spread**
+
+Извлекает элементы из массива (итерируемого объекта).
+
+Если `...` располагается в конце списка аргументов функции, то это «остаточные параметры». Он собирает остальные неуказанные аргументы и делает из них массив.<br>
+Иначе — это «оператор расширения»
+
+Зачем используется:
+- «разобрать» массив на отдельные переменные `func(...arr)`
+- объединить несколько массивов или «влить» данные одного массива в другой `let newArray = [...arr1, ...arr2, 1]`
+- «влить» данные итерируемого объекта (массив и т .д.) в объект `let objClone = { ...obj };`
+  - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
+- превратить строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
+  <br>
+  <br>
+
+**Итерируемый/перебираемый объект**
+
+Все, что можно перебрать с помощью цикла `for..of`.<br>
+- массив
+- строка
+- Map
+- Set
+- TypedArray
+- Generator
+- объект, у которого есть метод `Symbol.iterator` — специальный встроенный Symbol, созданный как раз для этого.
+
+Не путать с `псевдомассивом` — это объект, у которого есть индексы и свойство length (т.е. он выглядит как массив)
+
+[Подробнее](#iterable)
+[learn.javascript.ru — Перебираемые объекты](https://learn.javascript.ru/iterable)
+<br>
+<br>
+
+**Ссылки**
+
+- [learn.javascript.ru - Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
+- [MDN - Остаточные параметры (rest parameters)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters)
+- [Doka - Объект arguments](https://doka.guide/js/function-arguments-object/)
+
+<br></p>
+</details>
+
+[//]: # (Шаблонные строки/литералы. Теговые шаблоны)
+<details id="tmpLiterals"><summary><b>Шаблонные строки / литералы. Теговые шаблоны</b></summary><p>
+
+Синтаксис для работы со строками. <br>
+Позволяет использовать выражения JS внутри строк (тип данных `string`).<br>
+Обозначается так: ```js `текст строки ${выражение JS, например переменная} ещё текст строки` ```
+
+Может быть многострочной, все переносы строк в ней будут сохранены.<br>
+Будут сохранены все пробелы и табуляции в начале строк.
+
+Внутри шаблонной строки любой нестроковый результат в js-выражении (объект, переменная и т.д) будет приведён к строке.
+
+**Зачем**
+- меньше возни с экранированием кавычек в строках (хотя символ `\`` всё равно надо экранировать, конечно)
+- можно делать переносы строк без спецсимовла `\n`
+- будут сохранены все пробелы и табуляции в начале строк
+- `строковая интерполяция` — можно выводить значения JS-выражений прямо в строку (при помощи конструкции ` ${}`). Раньше нужно было использовать конкатенацию через оператор `+` (`'строка 1' + someVariable + 'строка 2'`)
+
+**Пример**
+```js
+`однострочная строка`
+
+`строка на
+несколько строчек,
+можно сколько угодно`
+
+`Дважды два равно ${2 * 2}`
+// Дважды два равно 4
+
+const name = 'Федя'
+`Привет ${name}!`
+// Привет Федя!
+```
+
+**Вложенные шаблоны**
+
+Когда внутрь шаблонной строки помещаем ещё одну, обернув ей в `${ }`.
+```js
+const classes = `header 
+  ${ isLargeScreen()  ? ''  : `icon-${item.isCollapsed ? 'expander' : 'collapser'}` 
+}`;
+````
+
+**Теговые шаблоны**
+
+Функция, которая позволяет разбирать шаблонную строку..
+
+Первый аргумент этой функции — массив из кусочков строк, которые разделены выражениями `${}`.<br>
+Остальные параметры — значения выражений, которые подставляются в шаблонную строку.<br>
+Вызов функции производится не с использованием круглых скобок `funcName(data)`, а с помощью слитного написания шаблонной строки ```js funcName`data` ```.
+
+В массиве из строк в конце находится кусочек в виде пустой строки. <br>
+Это нужно, чтобы количество элементов в массиве строк всегда было на один больше, чем количество подставляемых значений. <br>
+Если бы в конце была бы ещё строка, то последним элементом была бы именно она.
+
+Теговому шаблону необязательно возвращать строку — это обычная функция (вернуть можно что угодно, либо вообще ничего).
+
+Можно создавать вспомогательные функции, например оборачивать параметры в html.
+
+```js
+var person = 'Mike';
+var age = 28;
+
+//Теговый шаблон
+function myTag(strings, personExp, ageExp) {
+  var str0 = strings[0]; // "That "
+  var str1 = strings[1]; // " is a "
+  // Технически, в конце итогового выражения (в нашем примере) есть ещё одна строка, но она пустая (""), так что пропустим её.
+  // var str2 = strings[2];
+  var ageStr;
+  
+  if (ageExp > 99){
+    ageStr = 'centenarian';
+  } else {
+    ageStr = 'youngster';
+  }
+  
+  return `${str0}${personExp}${str1}${ageStr}`; // Мы даже можем вернуть строку, построенную другим шаблонным литералом
+}
+
+var output = myTag`That ${ person } is a ${ age }`;
+console.log(output); // That Mike is a youngster
+```
+
+**Ссылки**
+
+- [MDN - Шаблонные строки](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals)
+- [Doka - Шаблонные строки](https://doka.guide/js/template-strings/)
+- [tproger.ru - Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
+
+<br></p>
+</details>
+
+[//]: # (Параметры функции по умолчанию todo:доработать)
+<details id="funcDefParam"><summary><b>Параметры функции по умолчанию*</b></summary><p>
+
+```js
+function myFunc(x = 10) {
+  return x;
+}
+console.log(myFunc()) // 10 — не задано значение, поэтому значение x по умолчанию присвоено x в функции myFunc
+console.log(myFunc(5)) // 5 — значение задано, поэтому x=5 в функции myFunc
+console.log(myFunc(undefined)) // 10 — задано значение undefined, поэтому по умолчанию равно x
+console.log(myFunc(null)) // null — величина задана
+```
+
+Ссылки:
+
+- [tproger.ru - Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+
+<br></p>
+</details>
+
+
+<br>
+<br>
+
+
+
+[//]: # (Function Declaration, Function Expression)
+<details id="funcDeclaration"><summary><b>Function Declaration, Function Expression</b></summary><p>
+
+`Function Declaration` – функция, объявленная в основном потоке кода.
+
+- `function sayHi() {...}`
+- создаются интерпретатором до выполнения кода. Поэтому их можно вызвать в коде до объявления. Т.е. вверху вызов
+  функции, а ниже - её код
+
+`Function Expression` – функции, объявленная в контексте какого-то выражения (например присваивания).
+
+- `var f = function sayHi() {...}`
+- создаются интерпретатором в процессе выполнения выражения, в котором созданы. В данном случае – функция будет создана
+  при операции присваивания var f = function...
+- анонимные функции - частный случай Function Expression
+
+В результате инициализации, к началу выполнения кода:
+
+- Функции, объявленные как Function Declaration, создаются полностью и готовы к использованию.
+- Переменные объявлены, но равны undefined. Присваивания выполнятся позже, когда выполнение дойдет до них.
+
+**Ссылки**
+
+- [learn.javascript.ru - Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions)
+
+<br></p>
+</details>
+
+[//]: # (Стрелочные функции)
+<details id="arrowFunc"><summary><b>Стрелочные функции</b></summary><p>
+
+Специальный синтаксис создания функций.
+Появились в ES6.
+
+**Особенности**
+
+- Не имеют своего `this`. Внутри стрелочных функций тот же `this`, что и снаружи. Удобно в обработчиках событий и
+  коллбэках.
+- Не имеют своего `arguments`. Используются аргументы внешней «обычной» функции.
+
+**Отличия от bind**
+
+- `.bind(this)` создаёт «связанную версию» функции.
+- Стрелка => ничего не привязывает. У функции просто нет this. При получении значения this – оно, как обычная
+  переменная, берётся из внешнего лексического окружения.
+
+**Можно ли сделать `.bind` стрелочной функции?**
+
+- нет. У стрелочных функций нет `this`, он всегда будет определяться как контекст, в котором был определен.
+- Если требуется привязка this — надо использовать обычную функцию.
+- Ошибки не будет, просто не сработает (скорее всего)
+
+**Ссылки**
+
+- [learn.javascript.ru - Стрелочные функции, основы](https://learn.javascript.ru/arrow-functions-basics)
+- [learn.javascript.ru - Повторяем стрелочные функции](https://learn.javascript.ru/arrow-functions)
+- [learn.javascript.ru](https://learn.javascript.ru/es-function)
+
+<br></p>
+</details>
+
+[//]: # (Ключевое слово this. Контекст выполнения)
+<details id="this"><summary><b>Ключевое слово `this`. Контекст выполнения</b></summary><p>
+
+`this` — текущий контекст исполнения функции.<br>
+Ссылка на некий объект, к свойствам которого можно получить доступ внутри вызова функции. <br>
+Т.е. это ссылка на какой-то внешний объект, у которого я беру свойства или методы. На какой объект указывает эта ссылка
+— зависит от того как я вызываю функцию. Вызывая одну и ту же функцию разными способами я могу получать разные
+значения `this`
+
+Методы могут ссылаться на объект (в котором они вызваны) через `this`.
+
+Значение `this` определяется во время исполнения кода.
+
+- При объявлении любой функции в ней можно использовать this, но этот this не имеет значения до тех пор, пока функция не
+  будет вызвана.
+- Функция может быть скопирована между объектами (из одного объекта в другой).
+- Когда функция вызывается синтаксисом «метода» – object.method(), значением this во время вызова является object.
+  Т.е. `this` = слово слева от точки :)
+
+**4 варианта вызова функции в JS**
+
+- Обычный вызов функцию:
+  - `say('Hello!')`
+  - в **use strict** — значение `this` ===  `undefined`.
+  - без **use strict** — значение `this` === `глобальный объект`
+  - даже если функция вложена в другую функцию - ничего не меняется. Undefined или глобальный объект.
+    - Контекст внутренней функции зависит только от вызова, а не от контекста внешней функции. Пример вызвал метод
+      объекта, в нём this === объект, всё ок. Вызвал в этом методе функцию, а вне обратился к this - и тут уже this ===
+      undefined/глобальный объект.
+    - Чтобы получить ожидаемый this, модифицируйте контекст внутренней функции при помощи непрямого вызова (.call() /
+      .apply()) или создайте связанную функцию через .bind()
+- Функция является методом объекта
+  - `user.say('Hello!'),`
+  - this === объект
+  - this определяется в момент вызова функции. Если записать метод объекта в переменную и вызвать её без указания
+    объекта — теряем привязку к объекту. Нужен `bind`
+- Вызов функциии-конструктора
+  - `new User()`
+  - `this` === свежесозданному объекту, созданному конструктором.
+  - конструктор — это функция для создания однотипных объектов.
+  - конструкторы вызывают с помощью ключевого слова `new`
+  - начиная с ECMAScript 6, JS позволяет определять конструкторы ключевым словом `class`
+- Непрямой вызов функции (через `call()` или `apply()`)
+  - `say.call(undefined, 'Hello!')`, `say.apply(undefined, 'Hello!')`
+  - Оба позволяют настроить контекст снаружи явным образом — первым аргументом принимают `this`.
+- Ещё есть метод `bind`
+  - `say('Hello!').bind(admin)`,
+  - позволяет связывать контекст выполнения с функцией — «заранее и точно» определить, каким будет значение `this`
+
+**Стрелочные функции и `this`**
+
+У стрелочных функций нет `this`.<br>
+Когда внутри стрелочной функции обращаются к `this`, то его значение берётся извне. Связываются с ближайшим по иерархии
+контекстом, в котором они определены.<br>
+Удобно, когда нужно передать в стрелочную функцию, например, родительский контекст без использования `bind()`<br>
+При использовании обычной функции внутри контекст бы потерялся, и чтобы добиться того же результата, нам бы пришлось
+использовать `call()`, `apply()` или `bind()`
+<br>
+<br>
+
+**Контекст выполнения**
+У каждого вызова функции есть свой «контекст выполнения» (execution context).
+
+Контекст выполнения – это служебная информация, которая соответствует текущему запуску функции. Она включает в себя
+локальные переменные функции и конкретное место в коде, на котором находится интерпретатор.
+
+При любом вложенном вызове JavaScript запоминает текущий контекст выполнения в специальной внутренней структуре данных –
+«стеке контекстов».
+<br>
+<br>
+
+**Отличия .bind, call() и apply()**
+- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
+- `call` - вызов функции с подменой контекста (`this`) внутри функции.
+- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
+
+**Ссылки**
+
+- [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
+
+**Также смотри темы**
+
+- Замыкания - Lexical Environment и [[Environment]]
+- Стрелочные функции
+- "Call" & "apply"
+- Bind
+- Глобальный объект
+- Use strict
+- Объекты, прототипы
+- Модули
+- Callback
+
+**Ссылки**
+
+- [learn.javascript.ru - Методы объекта, "this"](https://learn.javascript.ru/object-methods)
+- [learn.javascript.ru - Стрелочные функции](https://learn.javascript.ru/arrow-functions)
+- [О ключевом слове «this» языка JavaScript: особенности использования с пояснениями](https://tproger.ru/translations/javascript-this-keyword/)
+- [MDN - this](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this)
+- [Дока - this: контекст выполнения функций](https://doka.guide/js/function-context/)
+- [Habr - Что записано в this? Закулисье JavaScript-объектов](https://habr.com/ru/company/ruvds/blog/455527/)
+- [Habr - Ключевое слово this в JavaScript для начинающих](https://habr.com/ru/company/ruvds/blog/419371/)
+- [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
+
+<br></p>
+</details>   
+
+[//]: # (Bind)
+<details id="#bind"><summary><b>Bind</b></summary><p> 
+
+Метод. Позволяет привязать контекст к функции. Важно при callback
+
+Метод bind() создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this
+предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в
+привязанную функцию аргументами при её вызове.
+
+При вызове callback может нарушиться контекст вызова this.<br>
+Т.е. отвалиться привязка this к родительскому объекту.
+
+```js
+    <App
+        addQuote={store.addQuote} //нет скобок после addQuote - функция не выполянется здесь, а передаётся на выполение
+/>
+```
+
+Не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо, от своего имени.
+
+В таком случае, при создании callback надо сделать привязку контекста - bind
+
+```js 
+    <App
+        addQuote={store.addQuote.bind(store)}
+/>
+```
+
+**Отличия .bind, call() и apply()**
+- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
+- `call` - вызов функции с подменой контекста (`this`) внутри функции.
+- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
+
+**Ссылки**
+
+- [learn.javascript.ru - bind](https://learn.javascript.ru/bind)
+- [code.mu - dind](http://code.mu/javascript/context/bind.html)
+- [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
+- [MDN - Function.prototype.bind()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+<br></p>
+</details>
+
+[//]: # ("Call" & "apply" todo: доработать)
+<details id="callApply"><summary><b>"Call" & "apply"*</b></summary><p>
+
+Методы для явного указания `this` функций
+
+Мы сами устанавливаем контекст, в котором выполняется функция. <br>
+Когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым
+аргументом в `call()/apply`
+
+- `call` — позволяет вызывать функцию, явно устанавливая `this`. Вызывает func с данным контекстом и аргументами. Можно
+  заимствовать методы.
+- `apply` — более мощный метод. Если нам неизвестно, с каким количеством аргументов понадобится вызвать функцию.
+  Вызывает func, передавая context как this и псевдомассив args как список аргументов.
+  <br>
+  <br>
+
+**Отличия .bind, call() и apply()**
+- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
+- `call` - вызов функции с подменой контекста (`this`) внутри функции.
+- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
+  <br>
+  <br>
+
+**Про коллбек (разбираться)**
+
+Функции `call()` и `apply()` - один из способов вызова callback-функции.<br>
+Здесь мы сами устанавливаем контекст, в котором выполняется функция. <br>
+Т.е. когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в `call()`/`apply()`.
+<br>
+<br>
+
+**Ссылки**
+
+- [learn.javascript.ru](https://learn.javascript.ru/call-apply-decorators)
+- [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
+
+<br></p>
+</details>   
+
+[//]: # (Глобальный объект)
+<details id="#gloablObject"><summary><b>Глобальный объект</b></summary><p> 
+
+Предоставляет переменные и функции, доступные в любом месте программы. <br>
+По умолчанию это те, что встроены в язык или среду исполнения. Но можно добавлять и свои.<br>
+Включает в себя как встроенные объекты (например, `Array`) так и характерные для окружения свойства (например, `window.innerHeight` – высота окна браузера).
+
+В браузере он называется window, в Node.js — global, в другой среде исполнения может называться иначе.<br>
+В 2020 г. в JS добавили стандартное имя для глобального объекта `globalThis` — должно поддерживаться в любом окружении..
+
+Ко всем свойствам глобального объекта можно обращаться напрямую:
+```js
+alert("Привет");
+// это то же самое, что и
+window.alert("Привет");
+```
+Для того, чтобы код был проще и в будущем его легче было поддерживать, следует обращаться к свойствам глобального объекта напрямую, как window.x.
+
+
+В браузере глобальные функции и переменные, объявленные с помощью var (не let/const!), становятся свойствами глобального объекта:
+```js
+var gVar = 5;
+alert(window.gVar); // 5 (становится свойством глобального объекта)
+```
+
+Не рекомендуется использовать глобальные переменные. Следует применять их как можно реже. Дизайн кода, при котором функция получает входные параметры и выдаёт определённый результат, чище, надёжнее и удобнее для тестирования, чем когда используются внешние, а тем более глобальные переменные. Следует хранить значения в глобальном объекте, только если они действительно глобальны для нашего проекта. И стараться свести их количество к минимуму.
+
+\*\*\*
+
+Объект Window - это ключевой объект в клиентском JavaScript. Через него доступны все остальные объекты. Например, любой объект Window содержит свойство document, ссылающееся на связанный с окном объект Document, и свойство location, ссылающееся на связанный с окном объект Location.
+
+И когда мы пишем, например:  `document.write('Строка')`, то мы можем себе позволить это только потому, что браузер понимает такую сокращённую запись. А полная запись вообще-то должна выглядеть так: `window.document.write('Строка');`
+
+То есть объект Window - это глобальный объект в начале цепочки областей видимости, и все клиентские объекты в JavaScript доступны как свойства других объектов. Это значит, что имеется иерархия JavaScript-объектов, в корне которой находится объект Window.
+
+Кроме того, внутри window находится объект document, через который мы будем работать с содержимым страницы в следующих уроках.
+
+Объект window задает глобальный контекст выполнения. window хранит внутри себя все остальные глобально доступные свойства и объекты. Каждый раз, когда мы вызываем глобальные функции, такие как alert() или console.log(), браузер ищет их в объекте window. То есть в действительности происходит вызов window.alert(). То же самое относится и ко всем остальным функциям используемым напрямую, без импортов:
+```js
+console.log('hey');
+// window.console.log('hey');
+
+Math.abs(5);
+// window.Math.abs(5);
+
+// Можно даже так
+close();
+// вместо window.close()
+
+```
+
+**«Глобальные объекты» (или стандартные встроенные объекты)**
+
+Термин «глобальные объекты» (или стандартные встроенные объекты) здесь не следует путать с самим глобальным объектом.<br>
+Далее в главе под этим обозначением понимаются объекты в глобальном пространстве имён (но только, если не используется строгий режим ECMAScript 5! В противном случае они возвращают undefined). <br>
+Сам же глобальный объект в глобальном пространстве имён доступен через оператор `this`. <br>
+На самом деле, глобальное пространство имён состоит из свойств глобального объекта (в том числе включая унаследованные свойства, если они есть).<br>
+[Подробнее - MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
+
+
+**Ссылки**
+
+- [learn.javascript.ru - Глобальный объект](https://learn.javascript.ru/global-object)
+- [Hexlet - Глобальный объект Window](https://ru.hexlet.io/courses/js-dom/lessons/window/theory_unit)
+- [MDN - Объект Window](https://developer.mozilla.org/ru/docs/Web/API/Window)
+- [MDN - Стандартные встроенные объекты](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
+- [Объект window в JavaScript](https://info-master.su/programming/web/js/window-object.php)
+- [Habr - Глобальные объекты и места их обитания (2016)](https://habr.com/ru/company/playrix/blog/316416/?ysclid=l8xvbyp6ji236101828)
+
+<br></p>
+</details>
+
+[//]: # (Callback todo: упростить)
+<details id="callback"><summary><b>Callback*</b></summary><p>
+
+Функция, которая должна быть выполнена после того, как другая функция завершила выполнение (отсюда и название: callback
+– функция обратного вызова).
+
+Сами не вызываем функцию. Отдаём её как аругмент в другую функции, и та вызывает, когда сочтёт нужным.
+
+Чуть сложнее: В JavaScript функции – это объекты. Поэтому функции могут принимать другие функции в качестве аргументов,
+а также функции могут возвращать функции в качестве результата. Функции, которые это умеют, называются функциями высшего
+порядка. А любая функция, которая передается как аргумент, называется callback-функцией.
+
+Пример:
+``<button onClik={function}>txt</button>``<br>
+Когда произойдёт событие onClick, кнопка вызовет эту функцию.
+Нет скобок после function - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего
+имени
+
+Неправильно:
+``<button onClik={function()}>txt</button>``<br>
+Здесь функция не передаётся, а сразу вызывается.
+<br>
+<br>
+
+<b>Зачем?</b>
+
+JS - событийно-ориентированный язык. Если функция не отвечает немедленно (например выполянет AJAX-запрос или Timeout) -
+JS не будет останавливать работу, ожидая ответа. Он продолжит выполнение других функций, одновременно ожидая ответа от
+нашей функции. Вывод: нельзя просто вызывать функции в нужном порядке и надеяться, что они в обязательно выполнятся в
+том же порядке.<br>
+
+Пример:
+
+  ```
+    function first(){
+      // Как будто бы запрос к API
+      setTimeout( function(){
+        console.log(1);
+      }, 500 );
+    }
+    function second(){
+      console.log(2);
+    }
+    first();
+    second();
+    
+    //Выдаст ответ:
+    // 2
+    // 1
+  ```
+
+Коллбэки позволяют нам быть уверенными в том, что определенный код не начнет исполнение до того момента, пока другой код
+не завершит исполнение.
+<br>
+<br>
+
+**Коллбэки и контекст**
+
+При вызове callback может нарушиться контекст вызова `this`. Т.е. отвалиться привязка `this` к родительскому объекту.
+
+  ```
+  <App
+      addQuote={store.addQuote}
+    />
+  ```
+
+В таком случае, при создании callback надо сделать привязку контекста - `.bind`
+
+  ```
+    <App
+      addQuote={store.addQuote.bind(store)} 
+    />
+  ```
+
+Функции `call()` и `apply()` - ещё один способ вызова callback-функции.<br>
+Здесь мы сами устанавливаем контекст, в котором выполняется функция.<br>
+Т.е. когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в `call()`/`apply()`. (см. ниже)
+
+Пример:
+
+  ```js
+  function showFullName(){alert(`что-нибудь`)}
+  
+  var user = {...}
+  
+  function_name.call(user); // вызываем колбек и в качестве контекста this передаём ему user
+
+  ```
+
+  ***
+
+Коллбэки являются самым распространённым средством выражения и выполнения асинхронных действий в программах на
+JavaScript. Более того, коллбэк является наиболее фундаментальным асинхронным шаблоном языка. Бесчисленное множество
+JS-приложений, даже весьма хитроумных и сложных, основано исключительно на коллбэках.
+
+  ***
+Обратные вызовы — фундаментальная часть JavaScript (поскольку являются просто функциями), и вы должны научиться читать и
+писать их прежде, чем переходить к более продвинутым функциям языка, так как все они зависят от понимания обратных
+вызовов. Если вы пока не можете написать удобный для поддержки код обратных вызовов, то продолжайте работать над этим.
+
+Ссылки:
+
+- [learn.javascript.ru - Колбэки](https://learn.javascript.ru/callbacks)
+- [Habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
+- [Habr - Коллбэк в JavaScript… Что за зверь?](https://habr.com/ru/company/ruvds/blog/330880/)
+- [Hexlet - Что такое callback-функция в JavaScript?](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
+- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+- [Ад обратных вызовов](http://callbackhell.ru/)
+
+<br></p>
+</details>
+
+[//]: # (Cамовыполняющиеся функции. Модули todo: доработать)
+<details id="modules"><summary><b>Самовыполняющиеся функции. Модули</b> ( function(){} )()*</summary><p>
+
+**Анонимные функции и функциональыне выражения**
+
+Анонимная функция — функция, которая объявляются в месте использования и не получаtт уникального имени.
+
+Есть «Function Expression» (функциональное выражение) - синтаксис объявления функций:
+
+```  
+var f = function(параметры) {
+  // тело функции
+};
+```  
+
+Функциональное выражение, которое не записывается в переменную, называют анонимной функцией.
+
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+);
+```
+
+Важное отличие Function Expression (и анонимных функций, в частности) - они должны объявляться до их вызова.<br>
+Такая функция создается в момент ее запуска в скрипте, а не во время парсинга. Поэтому в коде её надо прописать до её
+вызова.
+
+```
+//Плохо:
+sayHi("Вася");
+var sayHi = function(name) {
+  alert( "Привет, " + name );
+}
+
+//Хорошо:
+var sayHi = function(name) {
+  alert( "Привет, " + name );
+}
+sayHi("Вася");
+```
+
+См. также Function Expression
+
+Анонимные функции короче, их легче писать. Это удобно (если не надо ссылаться на них в коде). Например в обработчиках.
+
+**Про самовыполняющиеся функции**<br>
+В определенной записи анонимные функции могут вызывать сами себя.
+
+```
+(function() {
+  // код выполняется автоматически
+})();
+```
+
+Эффект создается пустыми скобками в конце функции.
+
+Главная фишка этого приёма – изоляция области видимости функции.<br>
+Переменная, объявленная внутри функции, может быть вызвана только внутри этой функции. В остальном коде данная
+переменная не видна. Поэтому переменная внутри самовыполняющейся функции замыкается внутри этой функции. Такую
+переменную нельзя случайно вызвать из внешнего кода или переписать.
+
+Эта техника аккуратно инкапсулирует переменные и код, пряча их от глобального пространства имен, чтобы они не вступили в
+конфликт с другим кодом. Поэтому полифилы и плагины часто пишутся в виде самовыполняющихся функций.
+
+**Ссылки**
+
+- [Анонимные и самовыполняющиеся функции в JavaScript](https://webformyself.com/anonimnye-i-samovypolnyayushhiesya-funkcii-v-javascript/)
+- [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
+- [learn.javascript.ru - Функциональные выражения](https://learn.javascript.ru/function-declaration-expression)
+- [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
+- [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
+- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
+- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
+
+<br></p>
+</details>
+
+[//]: # (Модули todo: упростить)
+<details><summary><b>Модули*</b></summary><p>
+
+ES6 (2015)
+
+**Определения**
+
+- переиспользуемая часть кода, содержащая в себе детали реализации и предоставляющая открытое API (позволяет легко
+  загрузить её и использовать в другом коде).
+- Модуль – это просто файл. Один скрипт – один модуль. Модули могут загружать друг друга и использовать
+  директивы `export` и `import`, чтобы обмениваться функциональностью, вызывать функции одного модуля из другого.
+
+**Почему потребовались модули**
+
+- коллизия имён - два разных скрипта могут объявлять одинаковые названия функций и переменных. И затирать друг-друга
+- Поддержка большой кодовой базы - в присложении сотнис криптов. Если каждый подключать вручную с помощью
+  тэга `<script>` — управлять этим трудно.
+
+**Модульность решает задачи**
+
+- обеспечение поддержки изоляции кода
+- определение зависимостей между модулями и легкое управление ими
+- доставка кода в среду выполнения.
+
+**Основные возможности модуле**
+
+- Всегда «use strict»
+- Своя область видимости переменных - переменные и функции, объявленные в модуле, не видны в других скриптах.
+- Код в модуле выполняется только один раз при импорте - если один и тот же модуль используется в нескольких местах, то
+  его код выполнится только один раз, после чего экспортируемая функциональность передаётся всем импортёрам.
+
+**script type="module"**
+
+Надо явно сказать браузеру, что скрипт является модулем - атрибутом `<script type="module">`.<br>
+Модули не работают локально — только через HTTP(s).
+
+**Особенности в браузере**
+
+- Отложенное (deferred) выполнение по умолчанию.
+  - загрузка внешних модулей (например `<script type="module" src="...">`) не блокирует обработку HTML.
+  - модули ожидают полной загрузки HTML документа, и только затем выполняются
+    - Поэтому модули всегда видят полностью загруженную HTML-страницу, включая элементы под ними.
+    - Поэтому вначале выполнятся обычные скрипты, потом модули. Даже если модули объявлены выше по коду
+  - сохраняется относительный порядок скриптов: скрипты, которые идут раньше в документе, выполняются раньше.
+- Для модулей атрибут `async` работает во встроенных скриптах (а не только на внешних). Скрипты с ним запускаются сразу
+  по готовности, не ждут других скриптов или HTML-документа. Полезно, когда модуль ни с чем не связан, например для
+  счётчиков, рекламы, обработчиков событий.
+- Для загрузки внешних модулей с другого источника, он должен ставить заголовки CORS.
+- Дублирующиеся внешние скрипты игнорируются - внешние скрипты с одинаковым атрибутом src запускаются только один раз
+
+**Глобальные переменные**
+
+Переменные объявленные в модулях - видны только в них (надо экспортировать/импортировать). <br>
+Если нам нужно сделать глобальную переменную уровня всей страницы, можно явно присвоить её объекту window, тогда
+получить значение переменной можно обратившись к window.user. Но это должно быть исключением, требующим веской причины.
+
+**Циклические зависимости**
+При вложенности модулей друг в друга может возникнуть циклическая зависимость:
+
+```
+ModuleA -> ModuleB -> ModuleC -> ModuleD -> ModuleA
+//если упростить
+ModuleA <-> ModuleD
+```
+
+ES-модули нативно умеют работать с циклическими зависимостями и корректно их обрабатывать.<br>
+Циклические зависимости не всегда могут быть источником явных ошибок и исключений, но могут стать причиной некорректного
+поведения кода, которое трудно будет отловить.<br>
+Есть несколько хаков, как можно обходить циклические зависимости для некоторые ситуаций, но лучше просто не допускать их
+возниковения.
+
+**Прочее**
+
+- `this` на верхнем уровне модуля = undefined. В не-модульных скриптах `this` – глобальный объект (window, например)
+
+- Объект `import.meta` содержит информацию о текущем модуле.
+
+```js
+<script type="module">
+  alert(import.meta.url); // ссылка на html страницу для встроенного скрипта. Содержимое зависит от окружения. В
+  браузере содержит ссылку на скрипт или ссылку на текущую веб-страницу, если модуль встроен в HTML
+</script>
+```
+
+- В браузере import должен содержать относительный или абсолютный путь к модулю. Модули без пути называются «голыми» (
+  bare). Они не разрешены в import.
+
+```js
+import {sayHi} from 'sayHi'; // Ошибка, "голый" модуль
+// путь должен быть, например './sayHi.js' или абсолютный
+```
+
+**Import / export**
+
+- `export let user = 'Ivan';` — экспорт до объявления
+- `export {user, sayHi};` — экспорт отдельно от объявления
+- `import {user, sayHi} from './say.js'`
+- `import * as say from './say.js`
+- `import {sayHi as hi} from './say.js'`
+- `export {sayHi as hi};`
+- Default
+  - `export default class User {}` — экспорт по-умолчанию
+  - `export {sayHi as default}` — тоже экспорт по-умолчанию
+  - `import User from './user.js'` — импорт по-умолчанию
+  - `import {default as User, sayHi} from './user.js'`  - импорт по-умолчанию + обычный в одной строке
+  - `import * as user from './user.js'` `let User = user.default;` — импортировали всё (и default, и обычное), потом
+    обратились к default-экспорту (User)
+- Реэкспорт
+  - `export {default as User} from './user.js'` — реэкспорт
+  - `export {default as User}` — реэкспорт default-экспорта (`export User from './user.js'` не сработает).
+  - `export * from './user.js'` — реэкспортирует только именованные экспорты, исключая default-экспорт
+
+**Динамический импорт**
+
+Выражение `import(module)` загружает модуль и возвращает промис, результатом которого становится объект модуля,
+содержащий все его экспорты.
+
+```
+let modulePath = prompt("Какой модуль загружать?");
+
+import(modulePath)
+  .then(obj => <объект модуля>)
+  .catch(err => <ошибка загрузки, например если нет такого модуля>)
+```
+
+Использовать его мы можем динамически в любом месте кода.<br>
+Или если внутри асинхронной функции, то можно `let module = await import(modulePath)`.
+
+В "статическом" импорте нельзя:
+
+- Задавать путь к модулю чем-то кроме строки. Вызов функции нельзя<br>
+
+```
+import ... from getModuleName(); // Ошибка, должна быть строка
+```
+
+- делать импорт в зависимости от условий или в процессе выполнения
+
+```
+if(...) {
+  import ...; // Ошибка, запрещено
+}
+
+{
+  import ...; // Ошибка, мы не можем ставить импорт в блок
+}
+```
+
+**Старые реализации модулей**
+
+ДО ES6 были реализации модулей сторонними библиотеками:
+
+- AMD – одна из самых старых модульных систем, изначально реализована библиотекой require.js.
+- CommonJS – модульная система, созданная для сервера Node.js.
+- UMD – ещё одна модульная система, предлагается как универсальная, совместима с AMD и CommonJS.
+
+**Ссылки**
+
+- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
+- [Mentanit - Модули в JS](https://metanit.com/web/javascript/19.1.php)
+- [Habr - Модули](https://habr.com/ru/company/domclick/blog/532084/)
+- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
+- [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
+- [Habr - Эволюция модульного JavaScript (2017)](https://habr.com/ru/company/yandex/blog/192874/)
+- [Habr - Путь JavaScript модуля (2013)](https://habr.com/ru/post/181536/)
+
+<br></p>
+</details>
+
+[//]: # (Обработчики событий, events handlers todo: дополнить)
+<details id="eventsHandlers"><summary><b>Обработчики событий*</b> (events handlers)</summary><p>
+
+Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
+
+Когда такой блок кода определяют для запуска в ответ на некое событие, говорят "мы регистрируем обработчик событий".
+Иногда обработчики называют прослушивателями событий (event listeners). Термины часто взаимозаменяемы, но вообще: _
+прослушиватель_ слушает событие, а _обработчик_ — это код, который запускается в ответ на событие.
+
+Ссылки:
+
+- [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
+- [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
+- [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
+      
+<br></p>
+</details>
+
+[//]: # (Лексическое всплытие)
+<details id="eventHoisting"><summary><b>Лексическое всплытие</b></summary><p>
+
+Организация процесса обработки события (например клика по div), при котором вначале срабатывают обработчики на целевом
+объекте (сам div), потом на его родителе, потом выше...
+
+Отсюда различия между event.target (куда кликнули) и this (где сейчас включился обработчик).
+
+Всплытие можно искуственно прервать (не желательно без чёткой необходимости) - event.stopPropagation() и
+event.stopImmediatePropagation().
+
+Обратный процесс называетя Погружение - вообще-то вначале идёт погружение и только потом всплытие.
+
+Бывают особые случаи - например событие focus не всплывает и др.
+
+**Ссылки:**
+
+- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
+- [learn.javascript.ru - Всплытие и перехват](https://learn.javascript.ru/event-bubbling)
+
+<br></p>
+</details>
+
 [//]: # (Прототипы todo: доработать)
 <details id="prototype"><summary><b>Прототипы*</b></summary><p>
 
@@ -2205,16 +4968,16 @@ alert(counter()); // 2
 В JS объекты имеют скрытое «свойство» `[[Prototype]]` (внутренний слот объекта).<br>
 Оно либо равно `null`, либо ссылается на другой объект. Этот объект называется «прототип».
 
-Хочу прочитать свойство в object, а оно отсутствует — JS ищет его в прототипе.<br> 
+Хочу прочитать свойство в object, а оно отсутствует — JS ищет его в прототипе.<br>
 Такой механизм — «прототипное наследование». Это одна из основных особенностей языка JS.<br>
 Такие свойства — «прототипно унаследованные».
 
 Каждый объект имеет внутреннюю ссылку на другой объект, называемый его прототипом.<br>
-У объекта-прототипа также есть свой собственный прототип и так далее до тех пор, пока цепочка не завершится объектом, у которого свойство `prototype` равно `null`.<br> 
+У объекта-прототипа также есть свой собственный прототип и так далее до тех пор, пока цепочка не завершится объектом, у которого свойство `prototype` равно `null`.<br>
 По определению, `null` не имеет прототипа и является завершающим звеном в цепочке прототипов.
 
 Прототипную модель наследования иногда относят к недостаткам JS, но она мощнее классической. <br>
-Поверх неё можно предельно просто реализовать классическое наследование.<br> 
+Поверх неё можно предельно просто реализовать классическое наследование.<br>
 А вот попытки совершить обратное вынудят вас попотеть.
 <br>
 <br>
@@ -2230,19 +4993,19 @@ alert(counter()); // 2
   - зачем классу нужен `prototype` — чтобы созданные от него объекты могли наследовать методы и свойства
   - `[[Prototype]]` содержит ссылку на свойство `prototype` (т.е. на объект X.prototype)
   - ИТОГО
-    - у всех функций (в том числе у всех классов) есть свойство `prototype`. Его нет только у стрелочных функций (у них нет this). 
+    - у всех функций (в том числе у всех классов) есть свойство `prototype`. Его нет только у стрелочных функций (у них нет this).
     - это свойство = объект. Или, другими словами, ссылается на объект. У каждой конкретной функции этот объект свой.
     - когда мы в JS создаем объект — мы всегда создаём его при помощи какого-то класса (функции-конструктора, `new X()`)
-    - у созданного объекта всегда есть свойство `__proto__` 
+    - у созданного объекта всегда есть свойство `__proto__`
     - свойства `__proto__` которое под капотом работает с внутренним слотом `[[Prototype]]`
-    - `__proto__`/`[[Prototype]]` ссылается на класс при помощи которого мы объект создали. Точнее — на объект содержащийся в его свойстве `prototype` (X.prototype). 
+    - `__proto__`/`[[Prototype]]` ссылается на класс при помощи которого мы объект создали. Точнее — на объект содержащийся в его свойстве `prototype` (X.prototype).
       <br>
       <br>
 
 [//]: # (Внутренний слот)
 <details><summary><b>Внутренний слот</b></summary><p>
 
-В JS есть понятие `внутренний слот объекта` - туда интерпретатор сохраняет некоторые приватные данные объекта для работы с ним.<br> 
+В JS есть понятие `внутренний слот объекта` - туда интерпретатор сохраняет некоторые приватные данные объекта для работы с ним.<br>
 Обозначается как `[[SlotName]]` (так же обозначаются `внутренние методы`).
 
 Внутренний слот не является свойством объекта и не наследуются.
@@ -2256,11 +5019,11 @@ alert(counter()); // 2
 [//]: # (Свойства [[Prototype]], prototype, __proto__)
 <details><summary><b>Свойства [[Prototype]], prototype, __proto__</b></summary><p>
 
-- `[[Prototype]]` — внутренний слот объекта (похоже на скрытое свойство объекта). 
+- `[[Prototype]]` — внутренний слот объекта (похоже на скрытое свойство объекта).
   - Указывает на следующий прототип в цепочке (`null` если это последний прототип).
-  - Его нельзя менять напрямую, предназначен для работы самого движка => появились методы для работы с ним. 
-<br>
-<br>
+  - Его нельзя менять напрямую, предназначен для работы самого движка => появились методы для работы с ним.
+    <br>
+    <br>
 
 - `prototype` — свойство объекта
   - У объектов
@@ -2278,25 +5041,25 @@ alert(counter()); // 2
     - В `prototype` можно записать что угодно. Но работать будет только если в него записан объект.
     - В `prototype` находится объект с одним свойством: `constructor: Rabbit`
   - У функций
-    - При объявлении функции, у нее создается свойство `prototype` — чтобы ее можно было использовать как конструктор, 
-    - Свойство `prototype` функции не имеет отношения к прототипу самой функции, а задает прототипы для дочерних объектов. 
+    - При объявлении функции, у нее создается свойство `prototype` — чтобы ее можно было использовать как конструктор,
+    - Свойство `prototype` функции не имеет отношения к прототипу самой функции, а задает прототипы для дочерних объектов.
     - По умолчанию ссылается на функцию-конструктор (т.е. на саму эту фукнцию?)
     - Это позволяет реализовывать наследование и добавлять новые методы
     - Используя это свойство можно добавлять прототипу методы и свойства `Car.prototype.saloon = (this.saloon = 'great')`
-<br>
-<br>
+      <br>
+      <br>
 
-- `__proto__` — свойство объекта. 
+- `__proto__` — свойство объекта.
   - Есть у всех объектов (кроме «простейших объектов» специально созданных через `Object.create(null)`)
   - Геттер/сеттер для `[[Prototype]]`
-  - `__proto__` возвращает прототип, а прототип практически 
+  - `__proto__` возвращает прототип, а прототип практически
   - Устаревший метод — сейчас используют `Object.getPrototypeOf(obj)` и `Object.setPrototypeOf(obj, proto)`
   - Находится не в самом объекте, а в св-ве `Object.prototype`
-  - Унаследовано от `Object.prototype` => когда в цепочке прототипов пропадает ссылка на `Object.prototype` (например `foo.__proto__ = null`) __proto__ перестает работать с прототипом. 
-    - у нас есть объекты `A` и `B`. 
+  - Унаследовано от `Object.prototype` => когда в цепочке прототипов пропадает ссылка на `Object.prototype` (например `foo.__proto__ = null`) __proto__ перестает работать с прототипом.
+    - у нас есть объекты `A` и `B`.
     - установим — `B.__proto__ = A;`
     - уберем связь между `A` и `Object.prototype` — `A.__proto__ = null`
-    - Связь с `Object.prototype` разорвана у `A` и `__proto__` возвращает undefined даже у дочернего объекта `B`, 
+    - Связь с `Object.prototype` разорвана у `A` и `__proto__` возвращает undefined даже у дочернего объекта `B`,
 
 
 
@@ -2375,7 +5138,7 @@ var rabbit2 = new rabbit.constructor("Крольчиха");
   - `const foo = Object.create(myPrototype)`
   - метод Object.create позволяет создать объект, которому будут делегированы свойства и методы другого объекта
 - если нет поддержки Object.create, но есть __proto__
-  - `const foo = { __proto__: myPrototype }`  
+  - `const foo = { __proto__: myPrototype }`
 - если нет поддержки Object.create и нет поддержки __proto__
   - ```js
     const f = function () {}
@@ -2413,7 +5176,7 @@ var rabbit2 = new rabbit.constructor("Крольчиха");
 - ключевое слово new создает пустой объект,
 - ключевое слово new создает в этом объекте скрытую системную ссылку `__proto__` — она связывает этот объект с его прототипом.
 - функция-конструктор заполняет пустой объект свойствами
-<br></p>
+  <br></p>
 </details>
 
 [//]: # (Конструктор Object и его методы)
@@ -2483,7 +5246,7 @@ Object является прототипом для всех объектов, �
 [//]: # (Конструктор)
 <details id="constructor"><summary><b>Конструктор</b></summary><p>
 
-`Конструктор` — специальная функция, задача которой заполнить пустой объект свойствами и методами. <br> 
+`Конструктор` — специальная функция, задача которой заполнить пустой объект свойствами и методами. <br>
 Функция, которая конфигурирует объект для дальнейшего использования.<br>
 Это эквивалент типов данных (классов) в ООП языках программирования (C++, C#, Java).
 
@@ -2491,11 +5254,11 @@ Object является прототипом для всех объектов, �
 Если надо создать N однотипных объектов — можно сделать при помощи функции-конструктора и оператора "new".<br>
 Основная цель конструкторов – удобный способ многократного создания однотипных объектов.
 
-В других языках программирования можно создавать свои типы данных (классы)<br> 
-В JS такой возможности нет, можно оперировать лишь теми типами данных, которые заложены в язык: 
-- примитивами, 
-- тривиальными типами null и undefined, 
-- сложными типами (Объект, Массив) 
+В других языках программирования можно создавать свои типы данных (классы)<br>
+В JS такой возможности нет, можно оперировать лишь теми типами данных, которые заложены в язык:
+- примитивами,
+- тривиальными типами null и undefined,
+- сложными типами (Объект, Массив)
 - специальным типом Функция.
 
 Функции-конструкторы технически являются обычными функциями. Есть два соглашения:
@@ -2511,9 +5274,9 @@ Object является прототипом для всех объектов, �
 - настроенный готовый объект возвращается в переменную, которой он присвоен
 
 В JS мы можем создать строковое значение двумя способами:
-- используя литерал 
+- используя литерал
   - `let simpleStr = 'My String'` — переменная со строковым значением (литерал)
-- используя конструктор 
+- используя конструктор
   - `var objectStr = new String('some String object');` — объект типа String (конструктор)
 
 Добавлять новые свойства и методы можно только к объектам, созданным через оператор new.<br>
@@ -2534,26 +5297,26 @@ Object является прототипом для всех объектов, �
 
 
 - `new function() { … }` — можно обернуть в коде создание одного большого объекта с большим кодом. Конструктор создаётся и тут же вызывается. Не может быть использован дважды. Инкапсуляция кода создания большого объекта
-<br>
-<br>
+  <br>
+  <br>
 
 **new.target**
 Используя специальное свойство new.target внутри функции, мы можем проверить, вызвана ли функция при помощи оператора `new` или без него.
-  - В случае, если функция вызвана при помощи new , то в new.target будет сама функция,в противном случае undefined
-  - Можно использовать, чтобы отличить обычный вызов от вызова «в режиме конструктора» => можно обработать этот случай, написать для него свою логику => чтобы функцию можно было вызывать как с, так и без new. Иногда используется в библиотеках. Плохая практика.
-<br>
-<br>
+- В случае, если функция вызвана при помощи new , то в new.target будет сама функция,в противном случае undefined
+- Можно использовать, чтобы отличить обычный вызов от вызова «в режиме конструктора» => можно обработать этот случай, написать для него свою логику => чтобы функцию можно было вызывать как с, так и без new. Иногда используется в библиотеках. Плохая практика.
+  <br>
+  <br>
 
 **Return из конструктора**
 
 Обычно конструкторы ничего не возвращают явно. Их задача – записать все необходимое в this , который в итоге станет результатом.
 Если return всё же есть:
-  - При вызове return с объектом, будет возвращён объект, а не this .
-  - При вызове return с примитивным значением, примитивное значение будет отброшено.
-Return с объектом возвращает объект, в любом другом случае конструктор вернёт this
+- При вызове return с объектом, будет возвращён объект, а не this .
+- При вызове return с примитивным значением, примитивное значение будет отброшено.
+  Return с объектом возвращает объект, в любом другом случае конструктор вернёт this
 
 
-**Конструктор Function()** 
+**Конструктор Function()**
 
 Позволяет динамически создавать и компилировать анонимные функции. Он принимает неограниченное кол-во параметров, последний параметр всегда является телом создаваемой функции. Параметры, которые передаются в начале списка аргументов Function(), являются входными параметрами для генерируемой функции.
 ```js
@@ -2569,6 +5332,12 @@ console.log( func(10, 20) ); // 30
 
 <br></p>
 </details>
+
+
+<br>
+<br>
+
+
 
 [//]: # (Промисы - Promises )
 <details id="promise"><summary><b>Промисы - Promises</b></summary><p>
@@ -3528,1938 +6297,36 @@ await.
 <br></p>
 </details>
 
-[//]: # (Атрибуты async и defer тега script)
-<details id="asyncDefer"><summary><b>Атрибуты async и defer тега script</b></summary><p>
+[//]: # (Fetch todo: пусто)
+<details id="fetch"><summary><b>Fetch**</b></summary><p>
 
-Аттрибуты тэга `<script>`. Влияют на то, когда будет загружаться и выполняться этот скрипт. Будет ли заблокирован
-парсинг HTML на время загрузки/выполнения или нет.
-
-`Async` — указает браузеру, что скрипт может быть выполнен асинхронно. <br>
-Скрипт скачивается асинхронно (параллельно с формированием документа). Как только скрипт загружен - он запускается,
-парсер на это время будет приостановлен. Атрибут доступен только для файлов, подключающихся внешне.
-
-`Defer` (анг откладывать) - указывает браузеру, что скрипт должен быть выполнен после того, как HTML-документ будет
-полностью разобран. <br>
-Скрипт скачивается асинхронно (параллельно с формированием документа). И после получения - скрипт не запускается сразу,
-а ждёт, пока документ будет полностью сформирован.
-<br>
-<br>
-
-**Где расположен элемент `<script>` ?**
-
-Асинхронное и отложенное выполнения наиболее важны, когда элемент `<script>` не находится в самом конце документа.<br>
-HTML-документы парсятся по порядку, с открытия `<html>` до его закрытия. <br>
-Если внешний JS-файл размещается непосредственно перед закрывающим тегом `</body>`, то использование `async` и `defer`
-становится менее уместным — парсер к тому времени уже разберёт большую часть документа, и JS-файлы уже не будут
-оказывать воздействие на
-него.
-<br>
-<br>
-
-**Async - скрипт самодостаточен**
-
-Для файлов, которые не зависят от других файлов и/или не имеют никаких зависимостей, атрибут async будет наиболее
-полезен. Поскольку нам не важно, когда файл будет исполнен, асинхронная загрузка — наиболее подходящий вариант.
-<br>
-<br>
-
-**Defer - скрипт полагается на полностью разобранный DOM**
-
-Во многих случаях файл скрипта содержит функции, взаимодействующие с DOM. Или, возможно, существует зависимость от
-другого файла на странице. В таких случаях DOM должен быть полностью разобран, прежде чем скрипт будет выполнен. Как
-правило, такой файл помещается в низ страницы, чтобы убедиться, что для его работы всё было разобрано. Однако, в
-ситуации, когда по каким-либо причинам файл должен быть размещён в другом месте — атрибут defer может быть полезен.
-<br>
-<br>
-
-**Синхронный inline - скрипт небольшой и зависим**
-
-Если скрипт является относительно небольшим и/или зависит от других файлов, то, возможно, стоит определить его
-инлайново. Несмотря на то, что встроенный код блокирует разбор HTML-документа, он не должен сильно помешать, если его
-размер небольшой. Кроме того, если он зависит от других файлов, может понадобиться незначительная блокировка.
-<br>
-<br>
+метод реализации асинхронных запросов в нативном JS. Предоставляется
+Fetch API
 
 **Ссылки**
 
-- [learn.javascript.ru - Внешние скрипты, порядок исполнения](https://learn.javascript.ru/external-script)
-- [Асинхронный JavaScript против отложенного](https://habr.com/ru/post/323790/)
-- [Разница между async и defer у тега script](https://wp-kama.ru/id_12151/raznitsa-async-defer.html)
-- [Атрибут defer](http://htmlbook.ru/html/script/defer)
+- [learn.javascript.ru - Fetch](https://learn.javascript.ru/network)
 
 <br></p>
-</details>   
+</details>
 
-[//]: # (Стрелочные функции)
-<details id="arrowFunc"><summary><b>Стрелочные функции</b></summary><p>
+[//]: # (XMLHttpRequest todo: пусто)
+<details id="xmlHttpRequest"><summary><b>XMLHttpRequest**</b></summary><p>
 
-Специальный синтаксис создания функций.
-Появились в ES6.
-
-**Особенности**
-
-- Не имеют своего `this`. Внутри стрелочных функций тот же `this`, что и снаружи. Удобно в обработчиках событий и
-  коллбэках.
-- Не имеют своего `arguments`. Используются аргументы внешней «обычной» функции.
-
-**Отличия от bind**
-
-- `.bind(this)` создаёт «связанную версию» функции.
-- Стрелка => ничего не привязывает. У функции просто нет this. При получении значения this – оно, как обычная
-  переменная, берётся из внешнего лексического окружения.
-
-**Можно ли сделать `.bind` стрелочной функции?**
-
-- нет. У стрелочных функций нет `this`, он всегда будет определяться как контекст, в котором был определен.
-- Если требуется привязка this — надо использовать обычную функцию.
-- Ошибки не будет, просто не сработает (скорее всего)
+Его современный аналог — fetch
 
 **Ссылки**
 
-- [learn.javascript.ru - Стрелочные функции, основы](https://learn.javascript.ru/arrow-functions-basics)
-- [learn.javascript.ru - Повторяем стрелочные функции](https://learn.javascript.ru/arrow-functions)
-- [learn.javascript.ru](https://learn.javascript.ru/es-function)
+- [learn.javascript.ru - XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest)
 
 <br></p>
 </details>
 
-[//]: # (Ключевое слово this. Контекст выполнения)
-<details id="this"><summary><b>Ключевое слово `this`. Контекст выполнения</b></summary><p>
-
-`this` — текущий контекст исполнения функции.<br>
-Ссылка на некий объект, к свойствам которого можно получить доступ внутри вызова функции. <br>
-Т.е. это ссылка на какой-то внешний объект, у которого я беру свойства или методы. На какой объект указывает эта ссылка
-— зависит от того как я вызываю функцию. Вызывая одну и ту же функцию разными способами я могу получать разные
-значения `this`
-
-Методы могут ссылаться на объект (в котором они вызваны) через `this`.
-
-Значение `this` определяется во время исполнения кода.
-
-- При объявлении любой функции в ней можно использовать this, но этот this не имеет значения до тех пор, пока функция не
-  будет вызвана.
-- Функция может быть скопирована между объектами (из одного объекта в другой).
-- Когда функция вызывается синтаксисом «метода» – object.method(), значением this во время вызова является object.
-  Т.е. `this` = слово слева от точки :)
-
-**4 варианта вызова функции в JS**
-
-- Обычный вызов функцию:
-  - `say('Hello!')`
-  - в **use strict** — значение `this` ===  `undefined`.
-  - без **use strict** — значение `this` === `глобальный объект`
-  - даже если функция вложена в другую функцию - ничего не меняется. Undefined или глобальный объект.
-    - Контекст внутренней функции зависит только от вызова, а не от контекста внешней функции. Пример вызвал метод
-      объекта, в нём this === объект, всё ок. Вызвал в этом методе функцию, а вне обратился к this - и тут уже this ===
-      undefined/глобальный объект.
-    - Чтобы получить ожидаемый this, модифицируйте контекст внутренней функции при помощи непрямого вызова (.call() /
-      .apply()) или создайте связанную функцию через .bind()
-- Функция является методом объекта
-  - `user.say('Hello!'),`
-  - this === объект
-  - this определяется в момент вызова функции. Если записать метод объекта в переменную и вызвать её без указания
-    объекта — теряем привязку к объекту. Нужен `bind`
-- Вызов функциии-конструктора
-  - `new User()`
-  - `this` === свежесозданному объекту, созданному конструктором.
-  - конструктор — это функция для создания однотипных объектов.
-  - конструкторы вызывают с помощью ключевого слова `new`
-  - начиная с ECMAScript 6, JS позволяет определять конструкторы ключевым словом `class`
-- Непрямой вызов функции (через `call()` или `apply()`)
-  - `say.call(undefined, 'Hello!')`, `say.apply(undefined, 'Hello!')`
-  - Оба позволяют настроить контекст снаружи явным образом — первым аргументом принимают `this`.
-- Ещё есть метод `bind`
-  - `say('Hello!').bind(admin)`,
-  - позволяет связывать контекст выполнения с функцией — «заранее и точно» определить, каким будет значение `this`
-
-**Стрелочные функции и `this`**
-
-У стрелочных функций нет `this`.<br>
-Когда внутри стрелочной функции обращаются к `this`, то его значение берётся извне. Связываются с ближайшим по иерархии
-контекстом, в котором они определены.<br>
-Удобно, когда нужно передать в стрелочную функцию, например, родительский контекст без использования `bind()`<br>
-При использовании обычной функции внутри контекст бы потерялся, и чтобы добиться того же результата, нам бы пришлось
-использовать `call()`, `apply()` или `bind()`
-<br>
-<br>
-
-**Контекст выполнения**
-У каждого вызова функции есть свой «контекст выполнения» (execution context).
-
-Контекст выполнения – это служебная информация, которая соответствует текущему запуску функции. Она включает в себя
-локальные переменные функции и конкретное место в коде, на котором находится интерпретатор.
-
-При любом вложенном вызове JavaScript запоминает текущий контекст выполнения в специальной внутренней структуре данных –
-«стеке контекстов».
-<br>
-<br>
-
-**Отличия .bind, call() и apply()**
-- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
-- `call` - вызов функции с подменой контекста (`this`) внутри функции.
-- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
-
-**Ссылки**
-
-- [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
-
-**Также смотри темы**
-
-- Замыкания - Lexical Environment и [[Environment]]
-- Стрелочные функции
-- "Call" & "apply"
-- Bind
-- Глобальный объект
-- Use strict
-- Объекты, прототипы
-- Модули
-- Callback
-
-**Ссылки**
-
-- [learn.javascript.ru - Методы объекта, "this"](https://learn.javascript.ru/object-methods)
-- [learn.javascript.ru - Стрелочные функции](https://learn.javascript.ru/arrow-functions)
-- [О ключевом слове «this» языка JavaScript: особенности использования с пояснениями](https://tproger.ru/translations/javascript-this-keyword/)
-- [MDN - this](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this)
-- [Дока - this: контекст выполнения функций](https://doka.guide/js/function-context/)
-- [Habr - Что записано в this? Закулисье JavaScript-объектов](https://habr.com/ru/company/ruvds/blog/455527/)
-- [Habr - Ключевое слово this в JavaScript для начинающих](https://habr.com/ru/company/ruvds/blog/419371/)
-- [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
-
-<br></p>
-</details>   
-
-[//]: # (Bind)
-<details id="#bind"><summary><b>Bind</b></summary><p> 
-
-Метод. Позволяет привязать контекст к функции. Важно при callback
-
-Метод bind() создаёт новую функцию, которая при вызове устанавливает в качестве контекста выполнения this
-предоставленное значение. В метод также передаётся набор аргументов, которые будут установлены перед переданными в
-привязанную функцию аргументами при её вызове.
-
-При вызове callback может нарушиться контекст вызова this.<br>
-Т.е. отвалиться привязка this к родительскому объекту.
-
-```js
-    <App
-        addQuote={store.addQuote} //нет скобок после addQuote - функция не выполянется здесь, а передаётся на выполение
-/>
-```
-
-Не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо, от своего имени.
-
-В таком случае, при создании callback надо сделать привязку контекста - bind
-
-```js 
-    <App
-        addQuote={store.addQuote.bind(store)}
-/>
-```
-
-**Отличия .bind, call() и apply()**
-- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
-- `call` - вызов функции с подменой контекста (`this`) внутри функции.
-- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
-
-**Ссылки**
-
-- [learn.javascript.ru - bind](https://learn.javascript.ru/bind)
-- [code.mu - dind](http://code.mu/javascript/context/bind.html)
-- [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
-- [MDN - Function.prototype.bind()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
-
-<br></p>
-</details>
-
-[//]: # ("Call" & "apply" todo: доработать)
-<details id="callApply"><summary><b>"Call" & "apply"*</b></summary><p>
-
-Методы для явного указания `this` функций
-
-Мы сами устанавливаем контекст, в котором выполняется функция. <br>
-Когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым
-аргументом в `call()/apply`
-
-- `call` — позволяет вызывать функцию, явно устанавливая `this`. Вызывает func с данным контекстом и аргументами. Можно
-  заимствовать методы.
-- `apply` — более мощный метод. Если нам неизвестно, с каким количеством аргументов понадобится вызвать функцию.
-  Вызывает func, передавая context как this и псевдомассив args как список аргументов.
-  <br>
-  <br>
-
-**Отличия .bind, call() и apply()**
-- `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них, `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
-- `call` - вызов функции с подменой контекста (`this`) внутри функции.
-- `apply` - вызов функции с переменным количеством аргументов и с подменой контекста.
-  <br>
-  <br>
-
-**Про коллбек (разбираться)**
-
-Функции `call()` и `apply()` - один из способов вызова callback-функции.<br>
-Здесь мы сами устанавливаем контекст, в котором выполняется функция. <br>
-Т.е. когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в `call()`/`apply()`.
-<br>
-<br>
-
-**Ссылки**
-
-- [learn.javascript.ru](https://learn.javascript.ru/call-apply-decorators)
-- [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
-
-<br></p>
-</details>   
-
-[//]: # (Глобальный объект)
-<details id="#gloablObject"><summary><b>Глобальный объект</b></summary><p> 
-
-Предоставляет переменные и функции, доступные в любом месте программы. <br>
-По умолчанию это те, что встроены в язык или среду исполнения. Но можно добавлять и свои.<br>
-Включает в себя как встроенные объекты (например, `Array`) так и характерные для окружения свойства (например, `window.innerHeight` – высота окна браузера).
-
-В браузере он называется window, в Node.js — global, в другой среде исполнения может называться иначе.<br>
-В 2020 г. в JS добавили стандартное имя для глобального объекта `globalThis` — должно поддерживаться в любом окружении..
-
-Ко всем свойствам глобального объекта можно обращаться напрямую:
-```js
-alert("Привет");
-// это то же самое, что и
-window.alert("Привет");
-```
-Для того, чтобы код был проще и в будущем его легче было поддерживать, следует обращаться к свойствам глобального объекта напрямую, как window.x.
-
-
-В браузере глобальные функции и переменные, объявленные с помощью var (не let/const!), становятся свойствами глобального объекта:
-```js
-var gVar = 5;
-alert(window.gVar); // 5 (становится свойством глобального объекта)
-```
-
-Не рекомендуется использовать глобальные переменные. Следует применять их как можно реже. Дизайн кода, при котором функция получает входные параметры и выдаёт определённый результат, чище, надёжнее и удобнее для тестирования, чем когда используются внешние, а тем более глобальные переменные. Следует хранить значения в глобальном объекте, только если они действительно глобальны для нашего проекта. И стараться свести их количество к минимуму.
-
-\*\*\*
-
-Объект Window - это ключевой объект в клиентском JavaScript. Через него доступны все остальные объекты. Например, любой объект Window содержит свойство document, ссылающееся на связанный с окном объект Document, и свойство location, ссылающееся на связанный с окном объект Location.
-
-И когда мы пишем, например:  `document.write('Строка')`, то мы можем себе позволить это только потому, что браузер понимает такую сокращённую запись. А полная запись вообще-то должна выглядеть так: `window.document.write('Строка');`
-
-То есть объект Window - это глобальный объект в начале цепочки областей видимости, и все клиентские объекты в JavaScript доступны как свойства других объектов. Это значит, что имеется иерархия JavaScript-объектов, в корне которой находится объект Window.
-
-Кроме того, внутри window находится объект document, через который мы будем работать с содержимым страницы в следующих уроках.
-
-Объект window задает глобальный контекст выполнения. window хранит внутри себя все остальные глобально доступные свойства и объекты. Каждый раз, когда мы вызываем глобальные функции, такие как alert() или console.log(), браузер ищет их в объекте window. То есть в действительности происходит вызов window.alert(). То же самое относится и ко всем остальным функциям используемым напрямую, без импортов:
-```js
-console.log('hey');
-// window.console.log('hey');
-
-Math.abs(5);
-// window.Math.abs(5);
-
-// Можно даже так
-close();
-// вместо window.close()
-
-```
-
-**«Глобальные объекты» (или стандартные встроенные объекты)**
-
-Термин «глобальные объекты» (или стандартные встроенные объекты) здесь не следует путать с самим глобальным объектом.<br>
-Далее в главе под этим обозначением понимаются объекты в глобальном пространстве имён (но только, если не используется строгий режим ECMAScript 5! В противном случае они возвращают undefined). <br>
-Сам же глобальный объект в глобальном пространстве имён доступен через оператор `this`. <br>
-На самом деле, глобальное пространство имён состоит из свойств глобального объекта (в том числе включая унаследованные свойства, если они есть).<br>
-[Подробнее - MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
-
-
-**Ссылки**
-
-- [learn.javascript.ru - Глобальный объект](https://learn.javascript.ru/global-object)
-- [Hexlet - Глобальный объект Window](https://ru.hexlet.io/courses/js-dom/lessons/window/theory_unit)
-- [MDN - Объект Window](https://developer.mozilla.org/ru/docs/Web/API/Window)
-- [MDN - Стандартные встроенные объекты](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects)
-- [Объект window в JavaScript](https://info-master.su/programming/web/js/window-object.php)
-- [Habr - Глобальные объекты и места их обитания (2016)](https://habr.com/ru/company/playrix/blog/316416/?ysclid=l8xvbyp6ji236101828)
-
-<br></p>
-</details>
-
-[//]: # (Callback todo: упростить)
-<details id="callback"><summary><b>Callback*</b></summary><p>
-
-Функция, которая должна быть выполнена после того, как другая функция завершила выполнение (отсюда и название: callback
-– функция обратного вызова).
-
-Сами не вызываем функцию. Отдаём её как аругмент в другую функции, и та вызывает, когда сочтёт нужным.
-
-Чуть сложнее: В JavaScript функции – это объекты. Поэтому функции могут принимать другие функции в качестве аргументов,
-а также функции могут возвращать функции в качестве результата. Функции, которые это умеют, называются функциями высшего
-порядка. А любая функция, которая передается как аргумент, называется callback-функцией.
-
-Пример:
-``<button onClik={function}>txt</button>``<br>
-Когда произойдёт событие onClick, кнопка вызовет эту функцию.
-Нет скобок после function - мы не вызываем функцию сейчас, а передаём кому-то. И он вызовет, когда будет надо. От своего
-имени
-
-Неправильно:
-``<button onClik={function()}>txt</button>``<br>
-Здесь функция не передаётся, а сразу вызывается.
-<br>
-<br>
-
-<b>Зачем?</b>
-
-JS - событийно-ориентированный язык. Если функция не отвечает немедленно (например выполянет AJAX-запрос или Timeout) -
-JS не будет останавливать работу, ожидая ответа. Он продолжит выполнение других функций, одновременно ожидая ответа от
-нашей функции. Вывод: нельзя просто вызывать функции в нужном порядке и надеяться, что они в обязательно выполнятся в
-том же порядке.<br>
-
-Пример:
-
-  ```
-    function first(){
-      // Как будто бы запрос к API
-      setTimeout( function(){
-        console.log(1);
-      }, 500 );
-    }
-    function second(){
-      console.log(2);
-    }
-    first();
-    second();
-    
-    //Выдаст ответ:
-    // 2
-    // 1
-  ```
-
-Коллбэки позволяют нам быть уверенными в том, что определенный код не начнет исполнение до того момента, пока другой код
-не завершит исполнение.
-<br>
-<br>
-
-**Коллбэки и контекст**
-
-При вызове callback может нарушиться контекст вызова `this`. Т.е. отвалиться привязка `this` к родительскому объекту.
-
-  ```
-  <App
-      addQuote={store.addQuote}
-    />
-  ```
-
-В таком случае, при создании callback надо сделать привязку контекста - `.bind`
-
-  ```
-    <App
-      addQuote={store.addQuote.bind(store)} 
-    />
-  ```
-
-Функции `call()` и `apply()` - ещё один способ вызова callback-функции.<br>
-Здесь мы сами устанавливаем контекст, в котором выполняется функция.<br>
-Т.е. когда мы используем ключевое слово `this` внутри нашей callback-функции, оно ссылается на то, что мы передаём первым аргументом в `call()`/`apply()`. (см. ниже)
-
-Пример:
-
-  ```js
-  function showFullName(){alert(`что-нибудь`)}
-  
-  var user = {...}
-  
-  function_name.call(user); // вызываем колбек и в качестве контекста this передаём ему user
-
-  ```
-
-  ***
-
-Коллбэки являются самым распространённым средством выражения и выполнения асинхронных действий в программах на
-JavaScript. Более того, коллбэк является наиболее фундаментальным асинхронным шаблоном языка. Бесчисленное множество
-JS-приложений, даже весьма хитроумных и сложных, основано исключительно на коллбэках.
-
-  ***
-Обратные вызовы — фундаментальная часть JavaScript (поскольку являются просто функциями), и вы должны научиться читать и
-писать их прежде, чем переходить к более продвинутым функциям языка, так как все они зависят от понимания обратных
-вызовов. Если вы пока не можете написать удобный для поддержки код обратных вызовов, то продолжайте работать над этим.
-
-Ссылки:
-
-- [learn.javascript.ru - Колбэки](https://learn.javascript.ru/callbacks)
-- [Habr - Понимание callback-функций (колбеков)](https://habr.com/ru/post/151716/)
-- [Habr - Коллбэк в JavaScript… Что за зверь?](https://habr.com/ru/company/ruvds/blog/330880/)
-- [Hexlet - Что такое callback-функция в JavaScript?](https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback)
-- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
-- [Ад обратных вызовов](http://callbackhell.ru/)
-
-<br></p>
-</details>
-
-[//]: # (Cамовыполняющиеся функции. Модули todo: доработать)
-<details id="modules"><summary><b>Самовыполняющиеся функции. Модули</b> ( function(){} )()*</summary><p>
-
-**Анонимные функции и функциональыне выражения**
-
-Анонимная функция — функция, которая объявляются в месте использования и не получаtт уникального имени.
-
-Есть «Function Expression» (функциональное выражение) - синтаксис объявления функций:
-
-```  
-var f = function(параметры) {
-  // тело функции
-};
-```  
-
-Функциональное выражение, которое не записывается в переменную, называют анонимной функцией.
-
-```
-function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
-}
-
-ask(
-  "Вы согласны?",
-  function() { alert("Вы согласились."); },
-  function() { alert("Вы отменили выполнение."); }
-);
-```
-
-Важное отличие Function Expression (и анонимных функций, в частности) - они должны объявляться до их вызова.<br>
-Такая функция создается в момент ее запуска в скрипте, а не во время парсинга. Поэтому в коде её надо прописать до её
-вызова.
-
-```
-//Плохо:
-sayHi("Вася");
-var sayHi = function(name) {
-  alert( "Привет, " + name );
-}
-
-//Хорошо:
-var sayHi = function(name) {
-  alert( "Привет, " + name );
-}
-sayHi("Вася");
-```
-
-См. также Function Expression
-
-Анонимные функции короче, их легче писать. Это удобно (если не надо ссылаться на них в коде). Например в обработчиках.
-
-**Про самовыполняющиеся функции**<br>
-В определенной записи анонимные функции могут вызывать сами себя.
-
-```
-(function() {
-  // код выполняется автоматически
-})();
-```
-
-Эффект создается пустыми скобками в конце функции.
-
-Главная фишка этого приёма – изоляция области видимости функции.<br>
-Переменная, объявленная внутри функции, может быть вызвана только внутри этой функции. В остальном коде данная
-переменная не видна. Поэтому переменная внутри самовыполняющейся функции замыкается внутри этой функции. Такую
-переменную нельзя случайно вызвать из внешнего кода или переписать.
-
-Эта техника аккуратно инкапсулирует переменные и код, пряча их от глобального пространства имен, чтобы они не вступили в
-конфликт с другим кодом. Поэтому полифилы и плагины часто пишутся в виде самовыполняющихся функций.
-
-**Ссылки**
-
-- [Анонимные и самовыполняющиеся функции в JavaScript](https://webformyself.com/anonimnye-i-samovypolnyayushhiesya-funkcii-v-javascript/)
-- [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
-- [learn.javascript.ru - Функциональные выражения](https://learn.javascript.ru/function-declaration-expression)
-- [Wikipedia - Анонимная функция](https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BE%D0%BD%D0%B8%D0%BC%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F)
-- [code.mu - Продвинутая работа с функциями](http://code.mu/books/javascript/advanced/prodvinutaya-rabota-s-funkciyami-javascript.html)
-- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
-- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
-
-<br></p>
-</details>
-
-[//]: # (Модули todo: упростить)
-<details><summary><b>Модули*</b></summary><p>
-
-ES6 (2015)
-
-**Определения**
-
-- переиспользуемая часть кода, содержащая в себе детали реализации и предоставляющая открытое API (позволяет легко
-  загрузить её и использовать в другом коде).
-- Модуль – это просто файл. Один скрипт – один модуль. Модули могут загружать друг друга и использовать
-  директивы `export` и `import`, чтобы обмениваться функциональностью, вызывать функции одного модуля из другого.
-
-**Почему потребовались модули**
-
-- коллизия имён - два разных скрипта могут объявлять одинаковые названия функций и переменных. И затирать друг-друга
-- Поддержка большой кодовой базы - в присложении сотнис криптов. Если каждый подключать вручную с помощью
-  тэга `<script>` — управлять этим трудно.
-
-**Модульность решает задачи**
-
-- обеспечение поддержки изоляции кода
-- определение зависимостей между модулями и легкое управление ими
-- доставка кода в среду выполнения.
-
-**Основные возможности модуле**
-
-- Всегда «use strict»
-- Своя область видимости переменных - переменные и функции, объявленные в модуле, не видны в других скриптах.
-- Код в модуле выполняется только один раз при импорте - если один и тот же модуль используется в нескольких местах, то
-  его код выполнится только один раз, после чего экспортируемая функциональность передаётся всем импортёрам.
-
-**script type="module"**
-
-Надо явно сказать браузеру, что скрипт является модулем - атрибутом `<script type="module">`.<br>
-Модули не работают локально — только через HTTP(s).
-
-**Особенности в браузере**
-
-- Отложенное (deferred) выполнение по умолчанию.
-  - загрузка внешних модулей (например `<script type="module" src="...">`) не блокирует обработку HTML.
-  - модули ожидают полной загрузки HTML документа, и только затем выполняются
-    - Поэтому модули всегда видят полностью загруженную HTML-страницу, включая элементы под ними.
-    - Поэтому вначале выполнятся обычные скрипты, потом модули. Даже если модули объявлены выше по коду
-  - сохраняется относительный порядок скриптов: скрипты, которые идут раньше в документе, выполняются раньше.
-- Для модулей атрибут `async` работает во встроенных скриптах (а не только на внешних). Скрипты с ним запускаются сразу
-  по готовности, не ждут других скриптов или HTML-документа. Полезно, когда модуль ни с чем не связан, например для
-  счётчиков, рекламы, обработчиков событий.
-- Для загрузки внешних модулей с другого источника, он должен ставить заголовки CORS.
-- Дублирующиеся внешние скрипты игнорируются - внешние скрипты с одинаковым атрибутом src запускаются только один раз
-
-**Глобальные переменные**
-
-Переменные объявленные в модулях - видны только в них (надо экспортировать/импортировать). <br>
-Если нам нужно сделать глобальную переменную уровня всей страницы, можно явно присвоить её объекту window, тогда
-получить значение переменной можно обратившись к window.user. Но это должно быть исключением, требующим веской причины.
-
-**Циклические зависимости**
-При вложенности модулей друг в друга может возникнуть циклическая зависимость:
-
-```
-ModuleA -> ModuleB -> ModuleC -> ModuleD -> ModuleA
-//если упростить
-ModuleA <-> ModuleD
-```
-
-ES-модули нативно умеют работать с циклическими зависимостями и корректно их обрабатывать.<br>
-Циклические зависимости не всегда могут быть источником явных ошибок и исключений, но могут стать причиной некорректного
-поведения кода, которое трудно будет отловить.<br>
-Есть несколько хаков, как можно обходить циклические зависимости для некоторые ситуаций, но лучше просто не допускать их
-возниковения.
-
-**Прочее**
-
-- `this` на верхнем уровне модуля = undefined. В не-модульных скриптах `this` – глобальный объект (window, например)
-
-- Объект `import.meta` содержит информацию о текущем модуле.
-
-```js
-<script type="module">
-  alert(import.meta.url); // ссылка на html страницу для встроенного скрипта. Содержимое зависит от окружения. В
-  браузере содержит ссылку на скрипт или ссылку на текущую веб-страницу, если модуль встроен в HTML
-</script>
-```
-
-- В браузере import должен содержать относительный или абсолютный путь к модулю. Модули без пути называются «голыми» (
-  bare). Они не разрешены в import.
-
-```js
-import {sayHi} from 'sayHi'; // Ошибка, "голый" модуль
-// путь должен быть, например './sayHi.js' или абсолютный
-```
-
-**Import / export**
-
-- `export let user = 'Ivan';` — экспорт до объявления
-- `export {user, sayHi};` — экспорт отдельно от объявления
-- `import {user, sayHi} from './say.js'`
-- `import * as say from './say.js`
-- `import {sayHi as hi} from './say.js'`
-- `export {sayHi as hi};`
-- Default
-  - `export default class User {}` — экспорт по-умолчанию
-  - `export {sayHi as default}` — тоже экспорт по-умолчанию
-  - `import User from './user.js'` — импорт по-умолчанию
-  - `import {default as User, sayHi} from './user.js'`  - импорт по-умолчанию + обычный в одной строке
-  - `import * as user from './user.js'` `let User = user.default;` — импортировали всё (и default, и обычное), потом
-    обратились к default-экспорту (User)
-- Реэкспорт
-  - `export {default as User} from './user.js'` — реэкспорт
-  - `export {default as User}` — реэкспорт default-экспорта (`export User from './user.js'` не сработает).
-  - `export * from './user.js'` — реэкспортирует только именованные экспорты, исключая default-экспорт
-
-**Динамический импорт**
-
-Выражение `import(module)` загружает модуль и возвращает промис, результатом которого становится объект модуля,
-содержащий все его экспорты.
-
-```
-let modulePath = prompt("Какой модуль загружать?");
-
-import(modulePath)
-  .then(obj => <объект модуля>)
-  .catch(err => <ошибка загрузки, например если нет такого модуля>)
-```
-
-Использовать его мы можем динамически в любом месте кода.<br>
-Или если внутри асинхронной функции, то можно `let module = await import(modulePath)`.
-
-В "статическом" импорте нельзя:
-
-- Задавать путь к модулю чем-то кроме строки. Вызов функции нельзя<br>
-
-```
-import ... from getModuleName(); // Ошибка, должна быть строка
-```
-
-- делать импорт в зависимости от условий или в процессе выполнения
-
-```
-if(...) {
-  import ...; // Ошибка, запрещено
-}
-
-{
-  import ...; // Ошибка, мы не можем ставить импорт в блок
-}
-```
-
-**Старые реализации модулей**
-
-ДО ES6 были реализации модулей сторонними библиотеками:
-
-- AMD – одна из самых старых модульных систем, изначально реализована библиотекой require.js.
-- CommonJS – модульная система, созданная для сервера Node.js.
-- UMD – ещё одна модульная система, предлагается как универсальная, совместима с AMD и CommonJS.
-
-**Ссылки**
-
-- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
-- [Mentanit - Модули в JS](https://metanit.com/web/javascript/19.1.php)
-- [Habr - Модули](https://habr.com/ru/company/domclick/blog/532084/)
-- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
-- [learn.javascript.ru - Модули через замыкания](https://learn.javascript.ru/closures-module)
-- [Habr - Эволюция модульного JavaScript (2017)](https://habr.com/ru/company/yandex/blog/192874/)
-- [Habr - Путь JavaScript модуля (2013)](https://habr.com/ru/post/181536/)
-
-<br></p>
-</details>
-
-[//]: # (Function Declaration, Function Expression)
-<details id="funcDeclaration"><summary><b>Function Declaration, Function Expression</b></summary><p>
-
-`Function Declaration` – функция, объявленная в основном потоке кода.
-
-- `function sayHi() {...}`
-- создаются интерпретатором до выполнения кода. Поэтому их можно вызвать в коде до объявления. Т.е. вверху вызов
-  функции, а ниже - её код
-
-`Function Expression` – функции, объявленная в контексте какого-то выражения (например присваивания).
-
-- `var f = function sayHi() {...}`
-- создаются интерпретатором в процессе выполнения выражения, в котором созданы. В данном случае – функция будет создана
-  при операции присваивания var f = function...
-- анонимные функции - частный случай Function Expression
-
-В результате инициализации, к началу выполнения кода:
-
-- Функции, объявленные как Function Declaration, создаются полностью и готовы к использованию.
-- Переменные объявлены, но равны undefined. Присваивания выполнятся позже, когда выполнение дойдет до них.
-
-**Ссылки**
-
-- [learn.javascript.ru - Function Declaration / Function Expression](https://learn.javascript.ru/function-expressions)
-
-<br></p>
-</details>
-
-[//]: # (Циклы todo: дополнить)
-<details id="cycles"><summary><b>Циклы*</b></summary><p>
-
-- `while` — многократное выполнение одних и тех же инструкций, пока истинно некоторое условие («под капотом» у него генератор)
-- `do... while` — вначале выполняется, потом проверяет условие. Точно выполнится один раз
-- `for` — часто используется если известно точное количество повторений. «Цикл со счётчиком». («под капотом» у него `while`)
-- `for ... in` — перебор свойств объекта
-- `for ... of` — перебор по массиву. Итерируемые объекты
-- `for await of` — получение данных с помощью асинхронных итераторов. Перебор в цикле данных, поступающих асинхронно.
-  Например: загружаем что-то по частям из сети.
-
-**Ссылки:**
-
-- [learn.javascript.ru - Циклы while и for](https://learn.javascript.ru/while-for)
-- [Дока - Циклы](https://doka.guide/js/loop/)
-- [MDN - Циклы и итерации](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Loops_and_iteration)
-- [Metanit - Циклы](https://metanit.com/web/javascript/2.7.php)
-- [Metanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
-- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
-- [itchief.ru - Циклы в JavaScript](https://itchief.ru/javascript/loops)
-
-<br><p>
-</details>
-
-[//]: # (Switch ... case todo: дополнить)
-<details id="cycles"><summary><b>Switch ... case*</b></summary><p>
-
-Конструкция `switch` заменяет собой сразу несколько `if`.<br>
-Более наглядный способ сравнить выражение сразу с несколькими вариантами.
-
-``` 
-switch(x) {
-  case 'value1':  // if (x === 'value1')
-    ...
-    [break]
-
-  case 'value2':  // if (x === 'value2')
-    ...
-    [break]
-
-  default:
-    ...
-    [break]
-}
-```
-
-**Ссылки**
-- [learn.javascript.ru - Конструкция "switch"](https://learn.javascript.ru/switch)
-
-<br><p>
-</details>
-
-[//]: # (Обработчики событий, events handlers todo: дополнить)
-<details id="eventsHandlers"><summary><b>Обработчики событий*</b> (events handlers)</summary><p>
-
-Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
-
-Когда такой блок кода определяют для запуска в ответ на некое событие, говорят "мы регистрируем обработчик событий".
-Иногда обработчики называют прослушивателями событий (event listeners). Термины часто взаимозаменяемы, но вообще: _
-прослушиватель_ слушает событие, а _обработчик_ — это код, который запускается в ответ на событие.
-
-Ссылки:
-
-- [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
-- [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
-- [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
-      
-<br></p>
-</details>
-
-[//]: # (Web-workers)
-<details id="webWorkers"><summary><b>Web-workers</b></summary><p> 
-
-Спецификация `Web Workers` — позволяет запускать дополнительные JS-процессы (workers).<br>
-Способ исполнить код в другом, параллельном потоке.<br>
-Для длительных тяжёлых вычислений, которые не должны блокировать событийный цикл.
-
-Web Workers могут обмениваться сообщениями с основным процессом, но они имеют свои переменные и свой событийный
-цикл.<br>
-Web Workers не имеют доступа к DOM, поэтому основное их применение – вычисления. <br>
-Позволяют задействовать несколько ядер процессора одновременно.
-
-Мы используем их следующим образом: мы проверяем наличие конструктора Worker() в браузере, и, если он доступен, мы
-создаем экземпляр рабочего объекта с URL-адресом сценария в качестве аргумента. Этот скрипт будет выполняться в
-отдельном потоке.
-
-**Ссылки**
-- [JavaScript Web Workers: руководство для начинающих](https://webdevblog.ru/javascript-web-workers-rukovodstvo-dlya-nachinajushhih/?ysclid=l7id6v4kl6484714219)
-- [MDN - Использование Web Workers](https://developer.mozilla.org/ru/docs/Web/API/Web_Workers_API/Using_web_workers)
-
-<br></p>
-</details>
-
-[//]: # (Встроенные математические функции. Объект Math)
-<details id="webWorkers"><summary><b>Встроенные математические функции. Объект Math</b></summary><p> 
-
-<br></p>
-</details>
-
-[//]: # (Методы примитивов)
-<details id="primitiveMethods"><summary><b>Методы примитивов</b></summary><p>
-
-  ***
-
-Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
-Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
-
-Примитивы `null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
-
-Когда создаётся объект-обёртка (на примере Number):
-
-- если применить к числу эти методы — `(5).toFixed(3)`
-- если вызвать на числе конструктор new Number() — `let num = new Number(100) // typeof num === object`
-
-[//]: # (Меотды String)
-<details><summary><b>Меотды String</b></summary><p>
-
-- `repeat()` — создать строку путем многократного повторения другой строки
-- `indexOf()` — поиск подстроки в строке. Вернёт индекс первого вхождения подстроки
-- `lastIndexOf()` — поиск подстроки в строке. Вернёт индекс последнего вхождения подстроки
-- `includes()` — содержит ли строка опр. подстроку.
-- `search()`— содержит ли строка указанное значение или регулярное выражение. Возвращает индекс начала совпадения.
-- `substr()` — извлекает часть строки указанной длины. Устаревший метод
-- `substring()` — извлекает символы из строки между двумя указанными индексами.
-- `slice()` — извлекает часть строки и возвращает новую строку. Почти идентичен `substring()`, но немного «глупее»
-- `toLowerCase()` — перевод символов в нижний регистр
-- `toUpperCase()` — перевод символов в верхний регистр
-- `charAt()` — получить определенный символ в строке по индексу
-- `charCodeAt()` — получить определенный символ в строке по индексу
-- `trim()` — удаление начальных и концевых пробелов в стоке
-- `trimStart()` — удаляет пробел с начала строки
-- `trimEnd()` — удаляет пробел с конца строки
-- `trimLeft()` — удаляет пробел с левой части строки
-- `trimRight()` — удаляет пробел с правой части строки
-- `concat()` — объединяет две и более строк. Возвращает одну объединённую.
-- `replace()` — заменяет первое вхождение одной подстроки на другую (заменяет только первое вхождение подстроки)
-- `replaceAll()` — позволяет заменить все вхождения подстроки:
-- `split()` — разбивает строку на массив подстрок по опр. разделителю
-- `startsWith()` — возвращает true, если строка начинается с определенной подстроки.
-- `endsWith()` — возвращает true, если строка оканчивается на определенную подстроку.
-- `padStart()` — растянуть строку на N символов и заполнить строку слева.
-- `padEnd()` — растянуть строку на N символов и заполнить строку справа.
-- `join()` — Склеить массив строк в одну. **Метод массива!**
-- 
-- `String.fromCharCode()` — Возвращает строку, созданную из указанной последовательности значений Юникода.
-- `String.fromCodePoint()` — Возвращает строку, созданную из указанной последовательности кодовых точек Юникода.
-- `String.raw()` — Возвращает строку, созданную из сырой шаблонной строки.
-- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
-- 
-- Свойства
-  - length указывает на длину строки
-  - arity, caller, constructor, length, name
-- 
-- `'Hello'.split('')` — преобразовать строку в массив символов
-- `Array.from('Hello')` — преобразовать строку в массив символов
-- `[...'Hello']` — преобразовать строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
-- 
-- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
-- [Mentanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
-- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
-- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
-
-[//]: # (Стандратные методыс MDN)
-<details><summary><b>Стандартные методы с MDN</b></summary><p>
-
-<summary>Методы</summary>
-
-- [String.prototype[@@iterator]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
-- [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
-- [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
-- [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
-- [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
-- [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
-- [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
-- [String.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
-- [String.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-- [String.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
-- [String.prototype.localeCompare()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
-- [String.prototype.match()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-- [String.prototype.matchAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
-- [String.prototype.normalize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
-- [String.prototype.padEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
-- [String.prototype.padStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
-- [String.raw()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/raw)
-- [String.prototype.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
-- [String.prototype.replace()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [String.prototype.replaceAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
-- [String.prototype.search()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/search)
-- [String.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [String.prototype.split()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [String.prototype.startsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-- [String.prototype.toLocaleUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
-- [String.prototype.toLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [String.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.trim()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
-- [String.prototype.trimEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
-- [String.prototype.trimStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
-- [String.prototype.valueOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
--
-- [String.prototype.anchor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/anchor) — Deprecated
-- [String.prototype.big()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/big) — Deprecated
-- [String.prototype.blink()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/blink) — Deprecated
-- [String.prototype.bold()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/bold) — Deprecated
-- [String.prototype.fixed()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fixed) — Deprecated
-- [String.prototype.fontcolor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor) — Deprecated
-- [String.prototype.fontsize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize) — Deprecated
-- [String.prototype.italics()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/italics) — Deprecated
-- [String.prototype.link()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/link) — Deprecated
-- [String.prototype.small()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/small) — Deprecated
-- [String.prototype.strike()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/strike) — Deprecated
-- [String.prototype.sub()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sub) — Deprecated
-- [String.prototype.substr()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr) — Deprecated
-- [String.prototype.substring()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [String.prototype.sup()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sup) — Deprecated
-
-
-
-<br></p>
-</details>
-
-
-<br></p>
-</details>
-
-[//]: # (Меотды Number)
-<details><summary><b>Меотды Number</b></summary><p>
-
-- `Number.isNaN()` — проверить значение на NaN
-- `Number.isFinite()` — true это число, false если специальное значение или нечисловой тип
-- `toString()` — преобразует число в строку в указанной системе счисления.
-- `toFixed()` — преобразует число в строку с указанным количеством знаков после запятой. Округляет. Возвращает строку.
-- `toLocaleString()` — преобразует число в строку, учитывая локаль пользователя
--
-- Если надо вызвать методы на целом числе `5`:
-  - `(5).toFixed(3)`
-  - `5..toFixed(3)`
--
-- Обёртка хранит полезные константы:
-  - `Number.MAX_SAFE_INTEGER` — максимально возможное целое значение числового типа, 253-1.
-  - `Number.MIN_SAFE_INTEGER` — минимально возможное целое значение числового типа, -253-1.
-  - `Number.MAX_VALUE` — максимально большое число, представимое с помощью числового типа.
-    - Больше, чем Number.MAX_SAFE_INTEGER, из-за особенностей хранения чисел с плавающей точкой.
-  - `Number.MIN_VALUE` — минимальное положительное число, представимое с помощью числового типа.
--
-- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
-- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
-
-<br></p>
-</details>
-
-[//]: # (Меотды Boolean)
-<details><summary><b>Меотды Boolean</b></summary><p>
-
-- `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
-  - ```js
-    let a = new Boolean(true);
-    console.log( a ); // [Boolean: true]
-    console.log( typeof a ); // object
-    
-    let a2 = a.valueOf();
-    console.log( a2 );  // true
-    console.log( typeof a2 ); // boolean
-    ```
-- `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
-- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
-
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-
-<br></p>
-</details>
-
-[//]: # (Меотды BigInt)
-<details><summary><b>Меотды BigInt</b></summary><p>
-
-- `asIntN()` — оборачивает BigInt в пределах от -2width-1 до 2width-1-1
-- `asUintN()` — оборачивает a BigInt в пределах от 0 до 2width-1
-- `toLocaleString()` — возвращает строку с языкозависимым представлением числа. Переопределяет метод
-  Object.prototype.toLocaleString().
-- `toString()` — возвращает строку, представляющую указанный объект по указанному основанию системы счисления.
-  Переопределяет метод Object.prototype.toString().
-- `valueOf()` — возвращает примитивное значение указанного объекта. Переопределяет метод Object.prototype.valueOf().
-
-- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
-
-<br></p>
-</details>
-
-[//]: # (Меотды Symbol)
-<details><summary><b>Меотды Symbol</b></summary><p>
-
-- `for(key)` — ищет существующие символы по заданному ключу и возвращает его (если нашёл). Иначе создаёт новый символ
-  для данного ключа в глобальном реестре символов.
-- `keyFor(sym)` — получает по разделяемому символу его ключ из глобального реестра символов.
-- `toString()` — Возвращает описание символа в виде строки.
-- `valueOf()` — Возвращает примитивное значение символьного объекта.
-
-Свойства
-
-- `asyncIterator` — возвращает асинхронный итератор по умолчанию.
-- `hasInstance` — определяет, распознает ли объект конструктора объект как свой инстанс.
-- `isConcatSpreadable` — указывает, должен ли быть объект сплющен до элементов массива.
-- `iterator` — возвращает итератор по умолчанию.
-- `match` — сравнивает со строкой.
-- `matchAll` — возвращает итератор, который выдает совпадения регулярного выражения со строкой.
-- `replace` — заменяет совпадающие подстроки строки.
-- `search` — возвращает индекс в строке, который соответствует регулярному выражению.
-- `split` — разделяет строку по индексам, которые соответствуют регулярному выражению.
-- `species` — создает производные объекты.
-- `toPrimitive` — преобразует объект в примитивное значение.
-- `toStringTag` — возвращает описание объекта по умолчанию.
-- `description` — возвращает описание объекта в виде строки.
-
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
-- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
-
-<br></p>
-</details>
-
-**Ссылки**
-
-- [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
--
-- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
-- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
-- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
-- [Metanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
--
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
--
-- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
-- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
--
-- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
--
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
-- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
-
-<br></p>
-</details>
-
-[//]: # (Массивы)
-<details><summary><b>Массивы</b></summary><p>
-
-Структура для работы с **упорядоченными** наборами данных.<br>
-Особый тип объектов, с дополнительными свойствами и ограничениями.
-<br>
-<br>
-
-**Не использовать как объект**
-- Элементы в массиве должны идти подряд, иначе теряется большая часть преимуществ этой структуры.
-- Добавление нечислового свойства: `arr.test = 5`
-- Создание «дыр»: добавление `arr[0]`, затем `arr[1000]` (между ними ничего нет).
-- Заполнение массива в обратном порядке: `arr[1000]` , `arr[999]` и т.д.
-  <br>
-  <br>
-
-**Многомерные массивы**
-- Массивы, которые содержат массивы
-<br>
-<br>
-
-**Псевдомассивы**
-- Объекты, у которых есть индексы и свойство length, т. е., они выглядят как массивы.
-  <br>
-  <br>
-  
-**Объявление массива**
-- `let arr = [5, 27, "a"]`
-- `let arr = new Array(5, 27, "a")` - если вызвать с одним аргументом-числом - создаст массив без элементов, но заданной длины (length)
-<br>
-<br>
-
-**Свойство `.lenght`**
-- Наибольший цифровой индекс +1 (т.к. нумерация с нуля)
-- Можно сказать, это общее число элементов в массиве - если он заполнен без дырок
-- Если уменьшить `length` - укоротим массив, удалим элементы с конца
-  <br>
-  <br>
-
-**Перебор массива**
-- `For` - Перебор по индексам
-- `For of` - выводит значения элементов, но не сообщает их индекс
-- `For in`
-  - метод объектов. Плохая идея
-  - Выполняет перебор всех свойств объекта, а не только цифровых
-  - В 10-100 раз медленнее, т.к. оптимизирован под обычные объекты
-- +
-- `forEach(func)` – вызывает func для каждого элемента. Ничего не возвращает.
-- Методы преобразования - `map`, `sort` и т.д.
-  <br>
-  <br>
-
-**Оператор `in`**
-- проверка существования элемента в объекте (в т.ч. массиве)
-- принимает индекс элемента
-- возвращает `true`/`false` — элемент с таким индексом существует / нет
-  <br>
-  <br>
-
-**Реализация метода `toString` для массивов**
-- Вернёт список элементов, разделённых запятыми.
-  - `alert(['a', 17, 'c']);` // a,17,c
-- Быть аккуратно с бинарным "+" - произведет сложение строк!
-  - `alert( "" + 1 )` // "1"
-  - `alert( "1" + 1 )` // "11"
-- `alert( "1,2" + 1 )` // "1,21"
-  <br>
-  <br>
-
-**Мутирующие / не мутирующие методы**
-- [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
-  - `arr.sort(/*функция сортировки*/)`
-- [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
-- [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-  <br>
-  <br>
-
-**Ссылки**
-
-- [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
-- [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
-- [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
-- [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
-- [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
-
-<br></p>
-</details>
-
-[//]: # (Методы массивов)
-<details id="arrayMethods"><summary><b>Методы массивов</b></summary><p>
-
-**Основные**
-
-- [push(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в конец,
-- [pop()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из конца,
-- [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
-- [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
-- [splice](https://learn.javascript.ru/array-methods#splice)* - добавлять, удалять и заменять элементы. **Мутирующий!**
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него эл-ты с опр. индексами
-- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-  старых
-- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-  в массиве
-- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск первого совпадения
-- [filter](https://learn.javascript.ru/array-methods#filter) - поиск всех совпадений. Вернёт новый массив.
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив с таким же кол-вом элементов
-- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn)* - сортировка «на месте». **Мутирующий!**
-- [reverse](https://learn.javascript.ru/array-methods#reverse)* - смена порядка элементов на обратный.  **Мутирующий!**
-- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
-- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-- [every(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
-- [some(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
-- join
-<br>
-<br>
-
-**Новые**
-
-- [findLast()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
-  и [findLastIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
-  — поиск в массивах «с конца
-- [at()](https://learn.javascript.ru/array#poluchenie-poslednih-elementov-pri-pomoschi-at) — обращаться к массивам с
-  конца. И строкам тоже
-- [flat()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript)
-  и [flatMap()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript) —
-  рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный массив сделать одномерным.
-  - [flat)()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) на MDN
-  - [flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap) на MDN
-<br>
-<br>
-
-**Чаще всего спрашивают**
-
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Каждый элемент исходного массива обрабатываем в функции, преобразуем и результат записываем в новый массив.
-  - `const result = numbers.map(n => n*2)`
-  - Вернёт массив, со всеми элементами массива numbers, умноженными на 2.
-  - Если не надо возвращать массив — используй `for`/`forEach`.
-    - ```js
-      let myArray = [1, 2, 3, 4, 5];
-      for (let i = 0; i <= myArray.length - 1; i++) {
-        console.log(myArray[i]);
-      }
-      ```
-    - ```js
-      let myArray = [1, 2, 3, 4, 5];
-      for (let item of myArray) {
-        //Не предоставляет доступа к индексу текущего элемента, только к его значению
-        console.log( item );
-      }
-      ```
-- [filter](https://learn.javascript.ru/array-methods#filter) - Каждый элемент исходного массива обрабатываем в функции. Функция вернёт true/false => если true, то результат пишем в новый массив.
-  - `const result = numbers.filter(n => n > 3)` 
-  - Вернёт массив, со всеми элементами массива numbers, которые > 3.
-- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright) - перебрать массив и вычислить одно значение. Каждый элемент исходного массива обрабатываем в функции, на выходе получаем одно значение
-  - `const sum = numbers.reduce((acc, n) => acc + n, 0)` 
-  - Вернёт сумму всех элементов массива numbers (acc). 0 = значение acc на первом шаге
-<br>
-<br>
-
-**Мутирующие методы**
-
-- [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
-- [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
-- [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-<br>
-<br>
-
-**Прочее**
-- - `Array.from()` — преобразовать перебираемый объект в массив (например строку в массив символов)
-
-**Методы `map`/`filter`/`reduce` вместо циклов `for` и `forEach`**
-
-Пришли в JS из функционального программирования. <br>
-Используя эти три метода, вы избегаете циклов `for` и `forEach` в большинстве ситуаций. Вместо них можно использовать совокупность `map`, `filter` и `reduce`.<br>
-Подробнее: [tproger.ru — Шпаргалка по современному JS](https://tproger.ru/translations/javascript-cheatsheet/#arrmthdsmapfltrrdc)
-```js
-//Посчитать сумму оценок студентов с результатом 10 и выше
-const students = [
-  { name: "Nick", grade: 10 },
-  { name: "John", grade: 15 },
-  { name: "Julia", grade: 19 },
-  { name: "Nathalie", grade: 9 },
-];
-
-const aboveTenSum = students
-  .map(student => student.grade) // формируем массив оценок
-  .filter(grade => grade >= 10) // отбираем оценки выше 10
-  .reduce((prev, next) => prev + next, 0); // суммируем каждую оценку выше 10
-
-console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie игнорируется, поскольку её оценка ниже 10
-```
-<br>
-<br>
-
-**Шпаргалки**
-
-- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-  <br>
-  <br>
-
-<details><summary><b>Список с MDN</b></summary><p>
-
-- [Array.prototype\[@@iterator\]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
-- [Array.prototype.at()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
-- [Array.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
-- [Array.prototype.copyWithin()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
-- [Array.prototype.entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
-- [Array.prototype.every()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-- [Array.prototype.fill()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
-- [Array.prototype.filter()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- [Array.prototype.find()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-- [Array.prototype.findIndex()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-- [Array.prototype.flat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
-- [Array.prototype.flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
-- [Array.prototype.forEach()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-- [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
-- [Array.prototype.group()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group)
-- [Array.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-- [Array.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
-- [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
-- [Array.prototype.join()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-- [Array.prototype.keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
-- [Array.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
-- [Array.prototype.map()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [Array.of()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
-- [Array.prototype.pop()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-- [Array.prototype.push()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [Array.prototype.reduce()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-- [Array.prototype.reduceRight()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
-- [Array.prototype.reverse()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
-- [Array.prototype.shift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
-- [Array.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
-- [Array.prototype.some()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- [Array.prototype.sort()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-- [Array.prototype.splice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-- [Array.prototype.toLocaleString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)
-- [Array.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
-- [Array.prototype.unshift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
-- [Array.prototype.values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
-
-<br><p>
-</details>
-
-
-<details><summary><b>UNSORTED</b></summary><p>
-
-
-
-
-- Push/pop
-  - Работают заметно быстрее чем shift/unshift
-  - push - добавляет элемент в конец массива
-  - pop - удаляет последний элемент из массива и возвращает его
-- Shift/unshift
-  - Unshift - добавляет элемент в начало
-  - Shift - удаляет первый элемент и возвращает его
-- 
-- Добавления/удаления элементов:
-  - push (...items) – добавляет элементы в конец,
-  - pop() – извлекает элемент с конца,
-  - shift() – извлекает элемент с начала,
-  - unshift(...items) – добавляет элементы в начало.
-  - splice(pos, deleteCount, ...items) – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
-  - slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
-  - concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если
-    какой-то из items является массивом, тогда берутся его элементы.
-- 
-- Поиска среди элементов:
-  - indexOf/lastIndexOf(item, pos) – ищет item , начиная с позиции pos , и
-  - возвращает его индекс или -1 , если ничего не найдено.
-  - includes(value) – возвращает true , если в массиве имеется элемент value , в
-  - противном случае false .
-  - find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все
-  - значения, при прохождении которых через функцию возвращается true .
-  - findIndex похож на find , но возвращает индекс вместо значения.
-- 
-- Перебора элементов:
-  - forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
-- 
-- Преобразования массива:
-  - map(func) – создаёт новый массив из результатов вызова func для каждогоэлемента.
-  - sort(func) – сортирует массив «на месте», а потом возвращает его.
-  - reverse() – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
-  - split/join – преобразует строку в массив и обратно.
-  - reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и
-    передавая промежуточный результат между вызовами.
-- 
-- Дополнительно:
-  - Array.isArray(arr) проверяет, является ли arr массивом.
-- 
-- Есть другие методы, используются реже
-- Добавить свежие методы 2017-2022
-- 
-- Мутирующие - изменяют исходный массив
-  - sort
-  - reverse
-  - splice
-- 
-- push(...items) – добавляет элементы в конец,
-- pop() – извлекает элемент из конца,
-- shift() – извлекает элемент из начала,
-- unshift(...items) – добавляет элементы в начало.
-- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
-- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-  старых
-- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-  в массиве
-- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
-- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование
-- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
-- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
-- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight]()
-- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-  - 
-- НОВЫЕ
-- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
-- `at()` — обращаться к массивам с конца. И строкам тоже
-- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
-  массив сделать одномерным.
-- 
-- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-  - 
-- Чаще всего спрашивают
-  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
-  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
-  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
- <br><p>
-</details>
-<br>
-<br>
-
-**Ссылки**
-
-- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
-
-<br><p>
-</details>
-
-[//]: # (Объекты)
-<details id="objects"><summary><b>Объекты</b></summary><p>
-
-***
-
-- Структура для хранения данных в формате «ключ - значение».
-- В других языках программирования такую структуру данных также называют «словарь» и «хэш».
-- В JS объекты также используются как элементы ООП, это немного отдельно.
-- Массив - это разновидность объекта. Обладает дополнительными свойствами и ограничениями
-- Квадратные скобки также позволяют обратиться к свойству объекта, имя которого может быть результатом выражения.<br>
-  Например, имя свойства может храниться в переменной:
-  ```js
-  let key = "likes birds";
-  // то же самое, что и user["likes birds"] = true;
-  user[key] = true;
-  ```
-- {Ключ/имя/идентификатор свойства: значение свойства}
-<br>
-<br>
-
-[//]: # (Разные виды объектов)
-<details><summary><b>Разные виды объектов</b></summary><p>
-
-- «простой объект» («plain object») или просто Object
-- массивы
-- функции
-- Date
-- Error
-- RegExp
-- все структуры которые создаются с ключевым словом `new`: Map, Set, WeakMap, WeakSet...
-
-см. раздел «[Что является объектом](#whatIsObject)»
-
-<br></p>
-</details>
-
-[//]: # (Св-ва в объекте упорядочены спец. образом)
-<details><summary><b>Св-ва в объекте упорядочены спец. образом</b></summary><p>
-
-- св-ва с целочисленными ключами сортируются по возрастанию
-- остальные располагаются в порядке создания.
-- «целочисленное свойство» означает строку, которая может быть преобразована в целое число и обратно без изменений.
-- То есть, "49" – это целочисленное имя свойства, потому что если его преобразовать в целое число, а затем обратно в
-  строку, то оно не изменится.
-- А вот свойства "+49" или "1.2" таковыми не являются
-
-<br></p>
-</details>
-
-[//]: # (Объекты хранятся и копируются «по ссылке)
-<details><summary><b>Объекты хранятся и копируются «по ссылке»</b></summary><p>
-
-- Переменная хранит не сам объект, а его «адрес в памяти», другими словами «ссылку» на него.
-- Когда переменная объекта копируется – копируется ссылка, сам же объект не дублируется.
-- Два объекта равны только в том случае, если это один и тот же объект.
-  - Операторы `==` и `===` для объектов работают одинаково.
-  - две переменные ссылаются на один и тот же объект, поэтому они равны друг другу
-  - два разных объекта не равны, хотя оба пусты...
-  - Для сравнений вроде `obj1 > obj2` или для сравнения с примитивом `obj == 5` объекты преобразуются в примитивы.
-
-<br></p>
-</details>
-
-[//]: # (Создание объекта)
-<details><summary><b>Создание объекта</b></summary><p>
-
-- Конструктор объекта - `const user = new Object({name: 'Ivan'});`
-- Литеральная нотация - `let user = {name: 'Ivan'}`
-
-<br></p>
-</details>
-
-[//]: # (Доступ к свойству через [])
-<details><summary><b>Доступ к свойству через []</b></summary><p>
-
-- Если имя св-ва = n слов (`['key name']`)
-- Если имя св-ва = результат выражения. Например хранится в переменой (`[variable]`),  (`[variable + 'SomeText']`)
-- Если имя св-ва = вычисляемое свойство. Имя будет выдано другой переменной/функцией по результатам ее работы
-
-<br></p>
-</details>
-
-[//]: # (Трансформация объектов)
-<details><summary><b>Трансформация объектов</b></summary><p>
-
-- У объектов нет множества методов, которые есть в массивах, например map, filter и других.
-- Если нужен аналог - можно использовать метод `Object.entries` с последующим вызовом `Object.fromEntries` :
-  1. Вызов `Object.entries(obj)` возвращает массив пар ключ/значение для obj .
-  2. На нём вызываем методы массива, например, `map` .
-  3. Используем `Object.fromEntries(array)` на результате, чтобы преобразовать его обратно в объект.
-
-<br></p>
-</details>
-
-[//]: # (Оператор in)
-<details><summary><b>Оператор in</b></summary><p>
-
-- Проверка существования св-ва в объекте.
-- Если св-ва нет - вернёт undefined
-- Позволяет отследить когда свойство есть, но его значение = undefined
-- `alert( "age" in user );` // true если user.age существует. "age" в кавычках — это имя свойства объекта user
-- `variable_with_key_name in user` // variable_with_key_name без кавычек - это не имя свойства, а ссылка на переменную, в которой это имя лежит
-
-<br></p>
-</details>
-
-[//]: # (Цикл `for ... in`)
-<details><summary><b>Цикл `for ... in`</b></summary><p>
-
-- перебор всех св-в объекта
-- ```js
-    for (key in object) { 
-      // выполнится для каждого св-ва объекта
-    }
-    for (let key in object) { 
-      // ... 
-    }
-  ```
-
-<br></p>
-</details>
-
-[//]: # (Способы создания метода объекта)
-<details><summary><b>Способы создания метода объекта</b></summary><p>
-
-- Отдельно создали функцию, потом присвоили её св-ву объекта
-- Добавляем методу св-во и после = сразу пишем функцию
-- В самом объекте сразу пишем свойства, а после пишем функцию
-- В самом объекте пишем
-  ```js
-  // У этих объектов одинаковые методы
-  user = { 
-    sayHi: function() { 
-      alert("Привет"); 
-    }
-  }; 
-
-  // сокращённая запись
-  user = {
-    sayHi() {  
-      alert("Привет");
-    }
-  };
-  ```
-
-<br></p>
-</details>
-
-[//]: # (Ключевое слово `this`)
-<details><summary><b>Ключевое слово `this`</b></summary><p>
-
-- Ключевое слово для доступа из метода объекта к другой информации в этом объекте
-- Значение this - объект перед точкой
-- Не является фиксированным. Его значение вычисляется в момент
-- Вызов функции без объекта:
-  - В "use strict"
-    - this == undefined
-    - в таком коде значением this будет являться undefined . Если мы попытаемся получить доступ к name , используя this.name – это вызовет ошибку.
-  - В нестрогом режиме значением this в таком случае будет глобальный объект (window для браузера).
-  - Обычно подобный вызов является ошибкой программирования. Если внутри функции используется this, тогда ожидается, что она будет вызываться в контексте какого-либо объекта.
-- У  стрелочных функций нет «this»
-  - Его значение берётся снаружи - из внешней «нормальной» функции. Т.е
-- Методы могут ссылаться на объект через this .
-- Значение this определяется во время исполнения кода.
-- При объявлении любой функции в ней можно использовать this , но этот this не имеет значения до тех пор, пока функция не будет вызвана.
-- Эта функция может быть скопирована между объектами (из одного объекта в другой).
-- Когда функция вызывается синтаксисом «метода» – object.method() , значением this во время вызова является объект перед точкой.
-
-<br></p>
-</details>
-
-[//]: # (Функция конструктор объектов и оператор `new)
-<details><summary><b>Функция конструктор объектов и оператор `new`</b></summary><p>
-
-- Чтобы создавать много однотипных функций по шаблону
-- Это обычные функции. 
-- Технически любая функция может быть использована как конструктор. То есть, каждая функция может быть вызвана при помощи оператора new, и выполнится алгоритм создания нового объекта из конструктора (см. [Конструктор](#constructor) )
-
-<br></p>
-</details>
-
-**Классы**<br>
-Для создания сложных объектов есть и более «продвинутый» синтаксис чем конструктор – классы.
-см. раздел «[Классы](#classes)»
-<br>
-<br>
-
-**Другие темы**
-- [Методы объектов](#objectMethods)
-- [Копирование объектов](#objectCopy)
-- [Перебор свойств объектов](#objectEnumeration)
-- [Преобразование объектов в примитивы](#objectToPrimitive)
-- [Аттрибуты свойств. Флаги, дескрипторы, методы доступа](#propertiesAttributes)
-- [Перебор структур данных. Методы «keys», «values», «entries»](#keysValuesEntries)
-
-**Ссылки**
-
-- [learn.javascript.ru - Объекты](https://learn.javascript.ru/object)
-- [learn.javascript.ru - Массивы](https://learn.javascript.ru/array)
-- [learn.javascript.ru - Шпаргалка Методы массивов](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - Несколько полезных кейсов при работе с массивами в JavaScript](https://habr.com/ru/post/279867/)
-- [Козлова О - JS Interview Questions. Массивы](https://medium.com/@olgakozlova/javascript-interview-questions-part-i-arrays-e996f6433089)
-- [Хватит использовать массивы! Как JavaScript Set ускоряет код](https://proglib.io/p/javascript-sets/)
-
-<br></p>
-</details>
-
-[//]: # (Методы объектов todo: упростить)
-<details id="objectMethods"><summary><b>Методы объектов*</b></summary><p>
-
-**Методы конструктора Object**
-
-- [assign()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) - копирование
-  свойств объекта в другой объект.
-  - При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
-- [create()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create) - создать
-  новый объект из существующего.
-- [keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - возвращает
-  массив ключей объекта (имена всех **собственных** перечислимых свойств объекта).
-- [values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/values) -
-  возвращает значения объекта.
-- [freeze](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) - «замораживает»
-  объект. Другой код не сможет удалить или изменить никакое свойство.
-- [seal](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/seal) - предотвращает
-  добавление новых свойств, но позволяет изменять существующие.
-- [entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) - создает
-  вложенный массив пар «ключ-значение» объекта
-- [defineProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-  - Добавляет к объекту именованное свойство, описываемое переданным дескриптором.
-- [defineProperties](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
-  - Добавляет к объекту именованные свойства, описываемые переданными дескрипторами.
-- [getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)
-  - Возвращает дескриптор свойства для именованного свойства объекта.
-- [getOwnPropertyDescriptors](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
-  - возвращает все собственные дескрипторы свойств данного объекта.
-- [getOwnPropertyNames](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
-  - Возвращает массив, содержащий имена всех переданных объекту <strong>собственных</strong> перечисляемых и
-  неперечисляемых свойств.
-- [getOwnPropertySymbols](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
-  - Возвращает массив всех символьных свойств, найденных непосредственно в переданном объекте.
-- [getPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
-  - получение внутреннего скрытого свойства [[Prototype]] объекта (оно также доступно через свойство `__proto__`)
-- [is](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is) - Определяет, являются
-  ли два значения различимыми (то есть, одинаковыми)
-- [isExtensible](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible) -
-  Определяет, разрешено ли расширение объекта.
-- [isFrozen](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen) -
-  Определяет, был ли объект заморожен.
-- [isSealed](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) -
-  Определяет, является ли объект запечатанным (sealed).
-- `observe()` — асинхронно наблюдает за изменениями в объекте.
-- [preventExtensions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)
-    - Предотвращает любое расширение объекта.
-- [setprototypeof](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
-  - устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
-- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) -
-  преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
-- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) -
-  проверять является ли св-во прямым свойством объекта, даже если его значение null или undefined. В отличие от
-  оператора `in` -
-  не проверяет это свойство в цепочке прототипов объекта.
-- [hasOwnProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-  - проверять содержит ли объект указанное неунаследованно) свойство, или метод.
-- [isPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf) -
-  проверяет существует ли указанный объект в цепочке прототипов другого объекта
-- [propertyIsEnumerable](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
-  - является ли указанное свойство перечисляемым. Перечисляемые - все свойства, которые добавляются к объекту, являются
-  перечисляемыми по умолчанию. Встроенные свойства не перечисляется.
-- [setPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
-  - позволяет установить или изменить прототип указанному объекту.Создаваемый объект наследует свойства от прототипа.
-- [toLocaleString](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
-  - возвращает строку, представляющую объект. Предназначен для переопределения унаследованными объектами в целях
-  поддержки зависимости от локали.
-- [toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) -
-  возвращает строку, представляющую объект.
-- [valueOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) - для
-  преобразования объекта в примитивное значение.
-
-**Устаревшие**
-
-- [__
-  defineGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__)
-  - привязывает свойство объекта к функции, вызываемой каждый раз при поиске этого свойства. Вместо
-  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-- [__
-  defineSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__)
-  - привязывает свойство объекта к функции, вызываемой каждый раз при попытке установить значение этого свойства. Вместо
-  него рекомендуется
-  использовать `(синтаксис инициализатора объекта (new Object(), Object.create() или литеральную нотацию)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer)`
-  или `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-- [__
-  lookupGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__)
-  - возвращает функцию, привязанную к геттеру указанного свойства. Вместо
-  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-  и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
-- [__
-  lookupSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__)
-  - возвращает функцию, привязанную к сеттеру указанного свойства. Вместо
-  него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-  и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
-- [__proto__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) - является
-  свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта (
-  являющийся объектом или null), через который осуществлялся доступ. Вместо него `Object.getPrototypeOf`
-  /`Object.setPrototypeOf`
-  /`[Object.create(proto, [descriptors])]((https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create)) `
-  .
-
-**Новые**
-
-- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) — ES13 (
-  2022). проверяет: принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
-- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) —
-  ES10 (2019). преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
-
-**Про мутирование объектов**
-
-- При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
-- Object.freeze предотвращает непосредственное изменение свойств объекта.
-
-<details><summary><b>UNSORTED</b></summary><p>
-
-- Базовые
-  - delete user.age - удаление свойства
-  -
-  - keys() - возвращает ключи объекта.
-  - values() - возвращает значения объекта.
-  - entries() - создает вложенный массив пар «ключ-значение» объекта
-  -
-  - assign() - копирование свойств объекта в другой объект.
-  - create() - создать новый объект из существующего.
-  -
-  - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-  - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-  - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
-    .
-  - ... там ещё много. Изучать
-  - что-то добавили в последние несколько лет
-
-- keys() - возвращает ключи объекта.
-- values() - возвращает значения объекта.
-- create() - создать новый объект из существующего.
-- freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-- seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-- assign() - копирование свойств объекта в другой объект.
-- entries() - создает вложенный массив пар «ключ-значение» объекта
-- getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
--
-- ... там ещё много. Изучать
-- что-то добавили в последние несколько лет
--
-- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-<br><p>
-</details>
-
-**Шпаргалки**
-
-- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
-
-**Ссылки**
-
-- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-- [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
-- [8 методов объектов в JavaScript (2018)](https://www.8host.com/blog/metody-obektov-v-javascript/)
-- [40 методов JavaScript, которые вы должны знать](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
-
-<br><p>
-</details>
-
-[//]: # (Копирование объектов)
-<details id="objectCopy"><summary><b>Копирование объектов</b></summary><p>
-
-**Поверхностное копирование**
-  - Spread оператор (...)
-    -   - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
-  - цикл («наивное» копирование)
-    - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
-    - пример `for (let key in user) {newObj[key] = oldObj[key]}`
-    - проблемы
-      - меняется метод `Object.prototype`,
-      - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
-      - копирует только перечисляемые свойства
-  - object.assign
-    - работает для поверхностного копирования циклических объектов
-    - можно использовать для копирования методов
-<br>
-<br>
-
-**Глубокое копирование**
-  - цикл рекурсивный
-  - JSON.parse(JSON.stringify(object));
-    - нельзя использовать для копирования методов объекта (вообще всех функций)
-    - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
-    - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-  - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) 
-    - пример `const myDeepCopy = structuredClone(myOriginal);`
-  - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
-
-**Ссылки**
-  - [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
-  - [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
-<br><p>
-</details>
-
-[//]: # (Перебор свойств объектов)
-<details id="objectEnumeration"><summary><b>Перебор свойств объектов</b></summary><p>
-
-Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.<br>
-А затем, пройтись по преобразованному массиву привычными методами.
-
-После преобразования объекта в массив (с ключами `Object.keys`, значениями `Object.values` или `Object.entries`) — можно работать с ними дальше в цикле, как с обычным массивом.
-
-- цикл `for..in`
-  - проходит не только по собственным, но и по унаследованным свойствам объекта — итерация происходит с учетом свойств в цепочке Prototype
-  - Приходится проверять, принадлежит ли свойство этому объекту
-  - Если унаследованные свойства не нужны, их можно отфильтровать встроенным методом `obj.hasOwnProperty(key)` — вернёт `true`, если у obj есть собственное, не унаследованное, свойство с именем key.
-  - Наследованное свойствj отображается в цикле. только есkи оно перечислимо. То есть у него внутренний флаг `enumerable` стоит `true`.
-- Метод `Object.keys`
-  - принимает объект в качестве аргумента 
-  - возвращает массив с заданными ключами объекта.
-  - свойства и из цепочки прототипов не учитываются.
-  - Итерируя метод `Object.keys` с методом `forEach`, мы получаем доступ к паре ключ-значение объекта.
-- Метод `Object.values`
-  - принимает объект в качестве аргумента
-  - возвращает массив с заданными значениями объекта.
-  - свойства и из цепочки прототипов не учитываются.
-  - получаем доступ только к значениям объекта.
-- `Object.entries`
-  - принимает объект в качестве аргумента 
-  - возвращает массив массивов, каждый является парой `[key, value]` данного объекта
-  - свойства и из цепочки прототипов не учитываются.
-  - Так как Object.entries возвращает массив массивов, то мы деструктурируем массив в его ключ и свойство.
-  - При переборе полученного массива удобнее всего будет воспользоваться деструктуризацией, присвоив переменной текущий ключ и значение.
-  - ```js
-    const entries = Object.entries(fruits)
-    for (const [fruit, count] of entries) {
-    console.log(`Всего: ${count} ${fruit}s`)
-    }
-    // Всего: 28 apples
-    // Всего: 17 oranges
-    // Всего: 54 pears
-    ```
-- Метод `Object getOwnPropertyNames`
-  - принимает объект в качестве аргумента 
-  - возвращает массив строк, соответствующих перечисляемым и неперечисляемым свойствам, найденным непосредственно в объекте.
 
 <br>
 <br>
 
-**Ссылки**
-  - [Как перебрать свойства объекта в JavaScript](https://frontend-stuff.com/blog/how-to-loop-through-object-in-javascript/)
-  - [Перебор элементов объекта в JavaScript](https://badtry.net/pieriebor-eliemientov-obiekta-v-javascript/)
-  - [learn.javascript.ru - Объекты. Цикл "for..in"](https://learn.javascript.ru/object#forin)
-  - [Перебор свойств](https://www.wm-school.ru/js/js_object-for-in.php)
-<br><p>
-</details>
 
-[//]: # (Преобразование объектов в примитивы todo: доработать)
-<details id="objectToPrimitive"><summary><b>Преобразование объектов в примитивы*</b></summary><p>
-
-Вызывается автоматически многими встроенными функциями и операторами, которые ожидают примитив в качестве аргумента.
-
-Существует всего 3 типа преобразований (хинтов):
-
-- "string" (для alert и других операций, которым нужна строка)
-- "number" (для математических операций)
-- "default" (для некоторых операций)
-
-В спецификации явно указано, какой хинт должен использовать каждый оператор. И существует совсем немного операторов,
-которые не знают, что ожидать, и используют хинт со значением "default" . Обычно для встроенных объектов хинт "default"
-обрабатывается так же, как "number" . Таким образом, последние два очень часто объединяют вместе.
-
-Алгоритм преобразований к примитивам следующий:
-
-1. Сначала вызывается метод `obj[Symbol.toPrimitive](hint)` , если он существует.
-2. Иначе, если хинт равен "string" происходит попытка вызвать obj.toString() , затем obj.valueOf() , смотря что
-   есть.
-3. Иначе, если хинт равен "number" или "default" происходит попытка вызвать obj.valueOf() , затем obj.toString() ,
-   смотря что есть.
-
-На практике довольно часто достаточно реализовать только obj.toString() как «универсальный» метод для всех типов
-преобразований, возвращающий «читаемое» представление объекта, достаточное для логирования или отладки.
-
-**Ссылки:**
-
-- [learn.javascript.ru - Преобразование объектов в примитивы](https://learn.javascript.ru/object-toprimitive)
-
-<br><p>
-</details>
 
 [//]: # (Декораторы)
 <details id="decorators"><summary><b>Декораторы</b></summary><p>
@@ -5514,83 +6381,6 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 * [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
 
 <br></p>
-</details>
-
-[//]: # (Переменные var, let и const)
-<details id="variables"><summary><b>Переменные var, let и const</b></summary><p>
-
-Не надо объявлять переменные без указания директивы (например var или let).
-
-```js
-//Т.е. так писать не стоит
-a = 1
-
-//Надо так
-var a = 1
-let a = 1
-const a = 1
-```
-
-**Var**
-
-- Устаревший способ объявления переменной.
-- Область видимости переменной `var` – функция.
-- `var` существуют и до объявления. Они равны `undefined`.
-- При использовании в цикле у нас будет одна var на все итерации цикла. Не создаётся заново в каждой итерации.
-  Способ объявления переменной. Используем если будем переопределять значение переменной. Видна в блоке
-- [«Поднятие (всплытие) переменных» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var#%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85) — особенность поведения var. Переменная становится доступной до того, как она объявлена. 
-  - Объявление переменных (как и любые другие объявления) обрабатываются до выполнения кода => в каком бы месте кода мы не объявили переменную, это равнозначно тому, что переменную объявили в самом начале кода. 
-    - Формально работает для всех переменных, но реально обращаться к `let` и `const` можно только после присвоения, до тех по выдаёт ошибку [ReferenceError](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError). Этот эффект называется [«Временные мёртвые зоны» (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let#%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%80%D1%82%D0%B2%D1%8B%D0%B5_%D0%B7%D0%BE%D0%BD%D1%8B_%D0%B8_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8_let) — если в блоке кода я пытаюсь использовать переменную до того, как она объявлена. Формально она существует (см выше «Поднятие переменных»), но обращаться к ней нельзя (в отличии от `var`). 
-  - См. также [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#varconstlet)
-
-**Let**
-
-- Область видимости переменной `let` – блок {...}, в котором объявлена.<br>
-- Это, в частности, влияет на объявления внутри if, while или for.
-- let видна только после объявления. До тех пор их просто нет.
-- При использовании в цикле, для каждой итерации создаётся своя переменная.
-- Введена в язык в ES6 (ES-2015)
-
-**Const**
-
-- Способ объявления переменной. Используем для констант
-- Объявление const задаёт константу, то есть переменную, которую нельзя менять. При попытке изменения выдаст ошибку.
-- Eсли в константу присвоен объект, то от изменения защищена сама константа, но не свойства внутри неё.
-- В остальном - аналогичная let.
-- Функции обычно лучше создавать через const.
-- Вообще хороший вариант объявления чего-то, что мы не собираемся менять.
-- В случае использования const современные JavaScript-движки могут выполнить ряд дополнительных оптимизаций.
-- Введена в язык в ES6 (ES-2015)
-  <br>
-  <br>
-
-**Константы и `const`**
-
-Константы, которые жёстко заданы всегда, во время всей программы, обычно пишутся в верхнем регистре. <br>
-Например: const ORANGE = "#ffa500".
-
-Большинство переменных – константы в другом смысле: они не меняются после присвоения. <br>
-Но при разных запусках функции это значение может быть разным. <br>
-Для таких переменных можно использовать const и обычные строчные буквы в имени.
-
-Использование `const` вместо `var` / `let` не говорит о том, что значение является константой или что оно иммутабельно (
-неизменяемо). Ключевое слово `const` просто указывает компилятору следить за тем, что переменной больше не будет
-присвоено никаких других значений.
-
-**Правила именования переменных (договоренности)**
-
-- `Name`  = функция-конструктор (http://learn.javascript.ru/constructor-new) / или класс
-- `NAME`  = константа (http://learn.javascript.ru/variables , http://learn.javascript.ru/let-const)
-- `_name` = приватные методы и свойства (http://theory.phphtml.net/books/javascript/oop/)
-
-**Ссылки**
-
-- [learn.javascript.ru - Переменные](https://learn.javascript.ru/variables)
-- [learn.javascript.ru - Устаревшее ключевое слово "var"](https://learn.javascript.ru/var)
-- [learn.javascript.ru - Переменные: let и const](https://learn.javascript.ru/let-const)
-- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
-
-<br><p>
 </details>
 
 [//]: # (Proxy-объекты)
@@ -5756,284 +6546,6 @@ product(downToOne(5)) // 120
 Ссылки:
 
 - [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#amrphcatmrph)
-
-<br></p>
-</details>
-
-[//]: # (Лексическое всплытие)
-<details id="eventHoisting"><summary><b>Лексическое всплытие</b></summary><p>
-
-Организация процесса обработки события (например клика по div), при котором вначале срабатывают обработчики на целевом
-объекте (сам div), потом на его родителе, потом выше...
-
-Отсюда различия между event.target (куда кликнули) и this (где сейчас включился обработчик).
-
-Всплытие можно искуственно прервать (не желательно без чёткой необходимости) - event.stopPropagation() и
-event.stopImmediatePropagation().
-
-Обратный процесс называетя Погружение - вообще-то вначале идёт погружение и только потом всплытие.
-
-Бывают особые случаи - например событие focus не всплывает и др.
-
-**Ссылки:**
-
-- [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-- [learn.javascript.ru - Всплытие и перехват](https://learn.javascript.ru/event-bubbling)
-
-<br></p>
-</details>
-
-[//]: # (Хранение данных в браузере: Cookie, socalStorage, sessionStorage todo: доработать)
-<details id="dataStorage"><summary><b>Хранение данных в браузере: Cookie, socalStorage, sessionStorage*</b></summary><p>
-
-см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../Network/Network.md#dataStorage)
-
-**Ссылки:**
-
-- [learn.javascript.ru - Cookie](https://learn.javascript.ru/cookie)
-- [learn.javascript.ru - LocalStorage, sessionStorage](https://learn.javascript.ru/localstorage)
-- [IT-Kamasutra - Ликбез из тачиллы. #3 Авторизация с помощью Cookie](https://youtu.be/MFhbPi5UtCU)
-- [IT-Kamasutra - Ликбез из тачиллы. #2 Cookie Куки - введение](https://youtu.be/KcAKrtr4qyg)
-
-  <br></p>
-
-</details>
-
-[//]: # (Symbol)
-<details id="symbol"><summary><b>Symbol</b></summary><p>
-
-**Определения**
-
-- примитивный тип данных, экземпляры которого уникальны и неизменяемы. Для создания уникальных идентификаторов.
-- уникальное и неизменяемое примитивное значение, которое может быть использовано как ключ для свойства объекта.
-  <br>
-  <br>
-
-**Применение**
-- «Скрытые» свойства объектов.<br>
-  - позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и перезаписать их из
-    других частей программы.
-  - Как: создать Symbol, а затем использовать сохранённое значение для создания свойства объекта.
-    - ```js
-      var myPrivateMethod = Symbol();
-      this[myPrivateMethod] = function(){/**/};
-      ```
-  - Надо добавить свойство в объект, который «принадлежит» другому скрипту или библиотеке — создаём символ и используем его в качестве ключа.
-  - Символьное свойство не появится в `for..in`, так что оно не будет нечаянно обработано вместе с другими.
-  - Также оно не будет модифицировано прямым обращением, так как другой скрипт не знает о нашем символе.
-  - Таким образом, свойство будет защищено от случайной перезаписи или использования.
-  - Используя символьные свойства, мы можем спрятать что-то нужное нам, но что другие видеть не должны.
-- Есть 13 `системных символов`, используемых внутри JS, доступных как `Symbol.*.`
-  - Используются, чтобы изменять встроенное поведение ряда объектов.
-  - Например
-    - `Symbol.iterator` для итераторов,
-    - `Symbol.toPrimitive` для настройки преобразования объектов в примитивы и так далее.
-      <br>
-      <br>
-
-**Создание. Имя (описание)**
-- Создаются вызовом функции `Symbol()`, в неё можно передать описание (имя) символа.
-- При создании символу можно дать описание (имя). Это просто метка, она ни на что не влияет. В основном используется для отладки кода:
-- ```js
-  let id = Symbol("id"); // Создаём символ id с описанием (именем) "id"
-  ```
-<br>
-<br>
-
-**Особенности**
-- Даже если символы имеют одно и то же имя, это – разные символы.
-- Описание – это просто метка, которая ни на что не влияет.
-  <br>
-  <br>
-
-**Глобальные символы**
-- Есть глобальный реестр символов. Можем создавать в нём символы и обращаться к ним.
-- Такие символы называются глобальными
-- При каждом обращении нам гарантированно будет возвращаться один и тот же символ.
-- Используется если надо чтоб символы с одинаковыми именами были одной сущностью. Если нужен символ, доступный везде в коде.
-- Например, разные части нашего приложения хотят получить доступ к символу "id", подразумевая именно одно и то же свойство.
-- вызов `Symbol.for(key)` возвращает глобальный символ (или создаёт его) с `key` в качестве имени.
-- Многократные вызовы команды `Symbol.for` с одним и тем же аргументом возвращают один и тот же символ.
-  <br>
-  <br>
-
-**Системные символы**
-- Существует 13 «системных» символов, использующихся внутри самого JS
-- Используются чтобы настраивать различные аспекты поведения объектов.
-- Перечислены в [спецификации JS](https://tc39.es/ecma262/#sec-well-known-symbols):
-  - Symbol.hasInstance
-  - Symbol.isConcatSpreadable
-  - Symbol.iterator
-  - Symbol.toPrimitive — позволяет описать правила для объекта, по которым он будет преобразовываться к примитиву
-  - …
-    <br>
-    <br>
-
-**Сокрытие символов и доступ к ним**
-- Технически символы скрыты не на 100%.
-- Есть встроенный метод `Object.getOwnPropertySymbols(obj)` – получить все свойства объекта с ключами-символами.
-- Есть метод `Reflect.ownKeys(obj)` — получить все ключи объекта, включая символьные.
-- Так что они не совсем спрятаны. Но большинство библиотек, встроенных методов и синтаксических конструкций не используют эти методы.
-  <br>
-  <br>
-
-**Прочее**
-- Появились в ES6 (2015)
-- `Символьный объект` (symbol object) — это объект-обёртка для примитивного символьного типа.
-- Символы не преобразуются автоматически в строки
-- Символы игнорируются циклом `for…in`
-- `Object.assign`, в отличие от цикла `for..in`, копирует и строковые, и символьные свойства:
-- Чтобы использовать символ при литеральном объявлении объекта {...}, его надо заключить в квадратные скобки.
-  - ```js
-    let id = Symbol("id");
-    let user = {
-      name: "Вася",
-      [id]: 123 // просто "id: 123" не сработает
-    };
-   ```
-- Когда символ используется как идентификатор в присваивании свойства, свойство (например, символ) является анонимным; а
-  также не исчислимым. Поскольку свойство не исчислимо, оно не будет отображаться в цикле «for (... in ...)», и поскольку
-  свойство является анонимным, оно не будет отображаться в массиве результатов "Object.getOwnPropertyNames ()". Доступ к
-  этому свойству можно получить с помощью исходного значения символа, создавшего его, или путём итерирования в массиве
-  результатов «Object.getOwnPropertySymbols ()». В предыдущем примере кода доступ к свойству будет осуществляться через
-  значение, которое было сохранено в переменной myPrivateMethod.
-- Символы позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и перезаписать их из
-  других частей программы. Например, мы работаем с объектами user, которые принадлежат стороннему коду. Мы хотим добавить
-  к ним идентификаторы. Так как объект user принадлежит стороннему коду, и этот код также работает с ним, то нам не
-  следует добавлять к нему какие-либо поля. Это небезопасно. Но к символу сложно нечаянно обратиться, сторонний код вряд
-  ли его вообще увидит, и, скорее всего, добавление поля к объекту не вызовет никаких проблем. Кроме того, предположим,
-  что другой скрипт для каких-то своих целей хочет записать собственный идентификатор в объект user. Этот скрипт может
-  быть какой-то JavaScript-библиотекой, абсолютно не связанной с нашим скриптом. Сторонний код может создать для этого
-  свой символ Symbol("id"). Конфликта между их и нашим идентификатором не будет, так как символы всегда уникальны, даже
-  если их имена совпадают.
-  <br>
-  <br>
-
-**Ссылки**
-
-- [Дока - Символ](https://doka.guide/js/symbol/)
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Symbol)
-- [MDN - Типы данных JavaScript и структуры данных](https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures)
-- [learn.javascript.ru](https://learn.javascript.ru/symbol)
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-- [Habr - Особенности использования типа данных Symbol в JavaScript](https://habr.com/ru/company/ruvds/blog/444340/)
-
-<br></p>
-</details>
-
-[//]: # (ООП в JS todo: доработать)
-<details><summary><b>ООП в JS*</b></summary><p>
-
-  ***
-На самом деле, поддержка JS-классов браузерами — не более чем «синтаксический сахар». Эти конструкции преобразуются в те
-же базовые структуры, которые уже поддерживаются языком. В результате, даже если пользоваться новым синтаксисом, на
-более низком уровне всё будет выглядеть как создание конструкторов и манипуляции с прототипами объектов.
-
-**Поддержка классов ES6 в JS-движке V8**
-
-При подготовке JS-кода к выполнению система производит его синтаксический анализ и формирует на его основе абстрактное
-синтаксическое дерево. При разборе конструкций объявления классов в абстрактное синтаксическое дерево попадают узлы типа
-ClassLiteral.
-  
-  В подобных узлах хранится пара интересных вещей. Во-первых — это конструктор в виде отдельной функции, во-вторых — это список свойств класса. Это могут быть методы, геттеры, сеттеры, общедоступные или закрытые поля. Такой узел, кроме того, хранит ссылку на родительский класс, который расширяет класс, для которого сформирован узел, который, опять же, хранит конструктор, список свойств и ссылку на собственный родительский класс.
-  
-  После того, как новый узел ClassLiteral трансформируется в код, он преобразуется в конструкции, состоящие из функций и прототипов.
-
-**Ссылки:**
-
-- [learn.javascript.ru - ООП в функциональном стиле](https://learn.javascript.ru/oop)
-- [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
-- [Habr - Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
-- [Web-dev - Классы (YouTube)](https://youtu.be/BASquaxab_w)
-
-<br></p>
-</details>
-
-[//]: # (Классы)
-<details id="classes"><summary><b>Классы</b></summary><p>
-
-Введены в ECMAScript 2015.<br>
-
-В JS используется модель «прототипного наследования»: каждый объект наследует поля (свойства) и методы
-объекта-прототипа.
-В JS нет таких классов как в Java или Swift, т.е. шаблонов / схем для создания объектов. В прототипном наследовании есть
-только объекты.<br>
-Классы в JS - «синтаксический сахар» над механизмом прототипного наследования. Более простой способ создания объектов и
-организации наследования.
-
-В ООП класс — шаблон для создания объектов, обеспечивающий начальные значения состояний: инициализация полей-переменных
-и реализация поведения функций или методов. Инструкция, чертёж по которому можно создать автомобиль (объект).
-
-В JS класс — функция для создания объектов. Определяет св-ва и методы объекта.
-
-```js
-// создаём класс
-class Task {
-  // метод «конструктор»
-  constructor(isCompleted) {
-    this.title = 'Learn JS',
-            this._isCompleted = isCompleted
-  }
-
-  //  статический метод класса - не наследуется объектами
-  static getDefaultData() {
-    //...
-  }
-
-  // метод класса. Наследуется объектами
-  completed() {
-    this.isCompleted = true
-  }
-
-  // геттер
-  get isCompleted() {
-    return (this._isCompleted === true) ? 'Task is completed' : 'Task is not completed';
-  }
-}
-
-//добавляем статическое св-во класса - не наследуется объектами
-Task.counter = 0; //лучше объявлять его сразу после создания класса, а не ниже по коду (т.е. до создания кземпляров класса)
-
-//создаём объекты на основе класса (экземпляры класса)
-let task1 = new Task(false);
-let task2 = new Task(true);
-```
-
-**Аксессоры**
-
-Это `геттеры` и `сеттеры` — спец. методы класса для установки и чтения его свойств.<br>
-Чтобы случайно не изменить св-ва классе, которые не должны меняться - стараются напрямую св-ва класса не менять.
-Используют геттеры и сеттеры.<br>
-Снаружи ведут себя как свойства:
-
-```js
-    //Вызов обычного метода класса
-task.setSomethingData(10);
-
-//Вызов метода-сеттера
-task.somethingData = 10;
-```
-
-
-**Ключевые слова `extends` и `super`**
-
-Ключевое слово `extends` используют для объявления классов или в выражениях класса для создания дочерних классов. Они получают свойства родительских классов, а также дают возможность добавить новые свойства и изменить заимствованные.
-
-Ключевое слово `super` вызывает функции родителя объекта, включая его конструктор.<br>
-Его следует использовать:
-- до ключевого слова `this` в конструкторе;
-- с вызовом `super(arguments)` при передаче аргументов конструктору класса;
-- как вызов дочернего класса `super.X()` для метода X родительского класса.
-
-Подробнее: [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-
-
-**Ссылки:**
-
-- [WebDev - Классы в JS](https://youtu.be/BASquaxab_w)
-- [LearnJS - Классы](https://learn.javascript.ru/class)
-- [MDN - Классы](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes)
-- [Habr - JavaScript: полное руководство по классам](https://habr.com/ru/post/518386/)
 
 <br></p>
 </details>
@@ -6520,136 +7032,171 @@ async function* generateSequence(start, end) {
 <br></p>
 </details>
 
-[//]: # (Цикл for-await-of todo: пусто)
-<details id="cycleForAwaitOf"><summary><b>Цикл for-await-of**</b></summary><p>
+[//]: # (Web-workers)
+<details id="webWorkers"><summary><b>Web-workers</b></summary><p> 
 
+Спецификация `Web Workers` — позволяет запускать дополнительные JS-процессы (workers).<br>
+Способ исполнить код в другом, параллельном потоке.<br>
+Для длительных тяжёлых вычислений, которые не должны блокировать событийный цикл.
 
+Web Workers могут обмениваться сообщениями с основным процессом, но они имеют свои переменные и свой событийный
+цикл.<br>
+Web Workers не имеют доступа к DOM, поэтому основное их применение – вычисления. <br>
+Позволяют задействовать несколько ядер процессора одновременно.
 
-Ссылки:
-
-- [Цикл for-await-of](https://learn.javascript.ru/async-iterators-generators)
-
-<br></p>
-</details>
-
-[//]: # (Логические операторы. Логические выражения. Truthy/Falsy todo: дополнить)
-<details id="logicalAssignment"><summary><b>Логические операторы. Логические выражения. Truthy/Falsy*</b></summary><p>
-
-**Логические операторы**
-- `&&` — и (and)
-- `||` — или (or)
-- `!` — не (not)
-- `??` — оператор нулевого слияния. Проверка на `null`/`undefined`.
-  - если первый аргумент !=== `null`/`undefined` вернёт его, иначе второй.
-  - `result = a ?? b,`
-  - `result = (a !== null && a !== undefined) ? a : b;`
-  - быстрый способ выбрать первое «определённое» значение из списка. Используется для присвоения переменным значений по умолчанию:
-<br>
-<br>
-
-**Логические выражения**
-
-Значения, похожие на правду и на ложь. <br>
-Примеры логических выражений 
-- проверка значения оператора `if` — `if (myVar) {}`
-- после логического оператора `!` — `!0`
-- с конструктором объектов логических значений — `new Boolean(0)`
-- в трёхкомпонентном сравнении — `myVar ? "truthy" : "falsy"`
-
-Значению присваивается `false`, если оно равно:
-- `false`;
-- `0`;
-- `" "` (пустая строка);
-- `null`;
-- `undefined`;
-- `NaN`.
-<br>
-<br>
-
-Быть аккуратным при сравнении с объектами и массивами<br>
-Значения объекта (которые должны стать истинными) не считаются логическими, но конвертируются в примитивный тип данных. <br>
-При сравнении объекта с логическим значением, например [] == true, он преобразуется в [].toString() == true:
+Мы используем их следующим образом: мы проверяем наличие конструктора Worker() в браузере, и, если он доступен, мы
+создаем экземпляр рабочего объекта с URL-адресом сценария в качестве аргумента. Этот скрипт будет выполняться в
+отдельном потоке.
 
 **Ссылки**
-- [learn.javascript.ru - Логические операторы](https://learn.javascript.ru/logical-operators)
-- [learn.javascript.ru - Оператор нулевого слияния](https://learn.javascript.ru/nullish-coalescing-operator)
-- [Дока - Логические операторы](https://doka.guide/js/logic-operators/)
-- [tproger.ru - Шпаргалка по современному JavaScript. Truthy/Falsy](https://tproger.ru/translations/javascript-cheatsheet/#trthfls)
+- [JavaScript Web Workers: руководство для начинающих](https://webdevblog.ru/javascript-web-workers-rukovodstvo-dlya-nachinajushhih/?ysclid=l7id6v4kl6484714219)
+- [MDN - Использование Web Workers](https://developer.mozilla.org/ru/docs/Web/API/Web_Workers_API/Using_web_workers)
 
 <br></p>
 </details>
 
-[//]: # (Логические операторы присваивания «&&=», «||=», «??=» todo:пусто)
-<details id="logicalAssignment"><summary><b>Логические операторы присваивания `&&=`, `||=`, `??=`**</b></summary><p>
-
-
-
-Ссылки:
-
-- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
+[//]: # (Встроенные математические функции. Объект Math)
+<details id="webWorkers"><summary><b>Встроенные математические функции. Объект Math</b></summary><p> 
 
 <br></p>
 </details>
 
-[//]: # (Опциональная цепочка «?.»  todo: доработать)
-<details id="optionalChaining"><summary><b>Опциональная цепочка `?.`*</b></summary><p>
+[//]: # (Хранение данных в браузере: Cookie, socalStorage, sessionStorage todo: доработать)
+<details id="dataStorage"><summary><b>Хранение данных в браузере: Cookie, socalStorage, sessionStorage*</b></summary><p>
 
-- Не оператор, а синтаксическая конструкция
-- Безопасный способ доступа к свойствам вложенных объектов, даже если какое-либо из промежуточных свойств не существует.
-- Позволяет без возникновения ошибок обратиться к вложенным свойствам.
-- Проверяет левую часть выражения на равенство `null`/`undefined`, и продолжает дальнейшее вычисление, только если это
-  не так.
-- Переменная перед ?. должна быть объявлена. Если переменной `user` вообще нет, то `user?.anything` приведёт к ошибке
-
-Три формы синтаксиса:
-
-1. `obj?.prop` – возвращает `obj.prop`, если существует `obj`, и `undefined` в противном случае.
-2. `obj?.[prop]` – возвращает `obj[prop]`, если существует `obj`, и `undefined` в противном случае.
-3. `obj.method?.()` – вызывает `obj.method()`, если существует `obj.method`, в противном случае возвращает `undefined`
-
-**Используется в сокращённых вычислениях**
-
-- немедленно останавливает вычисление, если левой части не существует.
-- таким образом, последующие вызовы функций или операции не будут выполнены.
-
-**Вызовы `?.()` и `?.[]`**
-
-Используется для вызова потенциально несуществующей функции. <br>
-В следующем примере не у всех пользователей есть метод `admin`
-
-```js
-let userAdmin = {
-  admin() {
-    alert("Я админ");
-  }
-};
-
-let userGuest = {};
-userAdmin.admin?.(); // Я админ
-userGuest.admin?.(); // ничего не произойдет (такого метода нет)
-```
-
-**delete**
-
-Кроме этого, `?.` можно совместно использовать
-с `delete`:  `delete user?.name; // Удалить user.name, если пользователь существует`
-
-**Не злоупотребляйте опциональной цепочкой**
-
-Нам следует использовать ?. только там, где нормально, что чего-то не существует.
-
-К примеру, если, в соответствии с логикой нашего кода, объект user должен существовать, но address является
-необязательным, то нам следует писать user.address?.street, но не user?.address?.street.
-
-В этом случае, если вдруг user окажется undefined, мы увидим программную ошибку по этому поводу и исправим её. В
-противном случае, если слишком часто использовать ?., ошибки могут замалчиваться там, где это неуместно, и их будет
-сложнее отлаживать.
+см. [Legmo notes - Сеть. Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../Network/Network.md#dataStorage)
 
 **Ссылки:**
 
-- [learn.javascript.ru — Опциональная цепочка '?.'](https://learn.javascript.ru/optional-chaining)
+- [learn.javascript.ru - Cookie](https://learn.javascript.ru/cookie)
+- [learn.javascript.ru - LocalStorage, sessionStorage](https://learn.javascript.ru/localstorage)
+- [IT-Kamasutra - Ликбез из тачиллы. #3 Авторизация с помощью Cookie](https://youtu.be/MFhbPi5UtCU)
+- [IT-Kamasutra - Ликбез из тачиллы. #2 Cookie Куки - введение](https://youtu.be/KcAKrtr4qyg)
 
-<br><p>
+  <br></p>
+
+</details>
+
+[//]: # (Symbol)
+<details id="symbol"><summary><b>Symbol</b></summary><p>
+
+**Определения**
+
+- примитивный тип данных, экземпляры которого уникальны и неизменяемы. Для создания уникальных идентификаторов.
+- уникальное и неизменяемое примитивное значение, которое может быть использовано как ключ для свойства объекта.
+  <br>
+  <br>
+
+**Применение**
+- «Скрытые» свойства объектов.<br>
+  - позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и перезаписать их из
+    других частей программы.
+  - Как: создать Symbol, а затем использовать сохранённое значение для создания свойства объекта.
+    - ```js
+      var myPrivateMethod = Symbol();
+      this[myPrivateMethod] = function(){/**/};
+      ```
+  - Надо добавить свойство в объект, который «принадлежит» другому скрипту или библиотеке — создаём символ и используем его в качестве ключа.
+  - Символьное свойство не появится в `for..in`, так что оно не будет нечаянно обработано вместе с другими.
+  - Также оно не будет модифицировано прямым обращением, так как другой скрипт не знает о нашем символе.
+  - Таким образом, свойство будет защищено от случайной перезаписи или использования.
+  - Используя символьные свойства, мы можем спрятать что-то нужное нам, но что другие видеть не должны.
+- Есть 13 `системных символов`, используемых внутри JS, доступных как `Symbol.*.`
+  - Используются, чтобы изменять встроенное поведение ряда объектов.
+  - Например
+    - `Symbol.iterator` для итераторов,
+    - `Symbol.toPrimitive` для настройки преобразования объектов в примитивы и так далее.
+      <br>
+      <br>
+
+**Создание. Имя (описание)**
+- Создаются вызовом функции `Symbol()`, в неё можно передать описание (имя) символа.
+- При создании символу можно дать описание (имя). Это просто метка, она ни на что не влияет. В основном используется для отладки кода:
+- ```js
+  let id = Symbol("id"); // Создаём символ id с описанием (именем) "id"
+  ```
+<br>
+<br>
+
+**Особенности**
+- Даже если символы имеют одно и то же имя, это – разные символы.
+- Описание – это просто метка, которая ни на что не влияет.
+  <br>
+  <br>
+
+**Глобальные символы**
+- Есть глобальный реестр символов. Можем создавать в нём символы и обращаться к ним.
+- Такие символы называются глобальными
+- При каждом обращении нам гарантированно будет возвращаться один и тот же символ.
+- Используется если надо чтоб символы с одинаковыми именами были одной сущностью. Если нужен символ, доступный везде в коде.
+- Например, разные части нашего приложения хотят получить доступ к символу "id", подразумевая именно одно и то же свойство.
+- вызов `Symbol.for(key)` возвращает глобальный символ (или создаёт его) с `key` в качестве имени.
+- Многократные вызовы команды `Symbol.for` с одним и тем же аргументом возвращают один и тот же символ.
+  <br>
+  <br>
+
+**Системные символы**
+- Существует 13 «системных» символов, использующихся внутри самого JS
+- Используются чтобы настраивать различные аспекты поведения объектов.
+- Перечислены в [спецификации JS](https://tc39.es/ecma262/#sec-well-known-symbols):
+  - Symbol.hasInstance
+  - Symbol.isConcatSpreadable
+  - Symbol.iterator
+  - Symbol.toPrimitive — позволяет описать правила для объекта, по которым он будет преобразовываться к примитиву
+  - …
+    <br>
+    <br>
+
+**Сокрытие символов и доступ к ним**
+- Технически символы скрыты не на 100%.
+- Есть встроенный метод `Object.getOwnPropertySymbols(obj)` – получить все свойства объекта с ключами-символами.
+- Есть метод `Reflect.ownKeys(obj)` — получить все ключи объекта, включая символьные.
+- Так что они не совсем спрятаны. Но большинство библиотек, встроенных методов и синтаксических конструкций не используют эти методы.
+  <br>
+  <br>
+
+**Прочее**
+- Появились в ES6 (2015)
+- `Символьный объект` (symbol object) — это объект-обёртка для примитивного символьного типа.
+- Символы не преобразуются автоматически в строки
+- Символы игнорируются циклом `for…in`
+- `Object.assign`, в отличие от цикла `for..in`, копирует и строковые, и символьные свойства:
+- Чтобы использовать символ при литеральном объявлении объекта {...}, его надо заключить в квадратные скобки.
+  - ```js
+    let id = Symbol("id");
+    let user = {
+      name: "Вася",
+      [id]: 123 // просто "id: 123" не сработает
+    };
+   ```
+- Когда символ используется как идентификатор в присваивании свойства, свойство (например, символ) является анонимным; а
+  также не исчислимым. Поскольку свойство не исчислимо, оно не будет отображаться в цикле «for (... in ...)», и поскольку
+  свойство является анонимным, оно не будет отображаться в массиве результатов "Object.getOwnPropertyNames ()". Доступ к
+  этому свойству можно получить с помощью исходного значения символа, создавшего его, или путём итерирования в массиве
+  результатов «Object.getOwnPropertySymbols ()». В предыдущем примере кода доступ к свойству будет осуществляться через
+  значение, которое было сохранено в переменной myPrivateMethod.
+- Символы позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и перезаписать их из
+  других частей программы. Например, мы работаем с объектами user, которые принадлежат стороннему коду. Мы хотим добавить
+  к ним идентификаторы. Так как объект user принадлежит стороннему коду, и этот код также работает с ним, то нам не
+  следует добавлять к нему какие-либо поля. Это небезопасно. Но к символу сложно нечаянно обратиться, сторонний код вряд
+  ли его вообще увидит, и, скорее всего, добавление поля к объекту не вызовет никаких проблем. Кроме того, предположим,
+  что другой скрипт для каких-то своих целей хочет записать собственный идентификатор в объект user. Этот скрипт может
+  быть какой-то JavaScript-библиотекой, абсолютно не связанной с нашим скриптом. Сторонний код может создать для этого
+  свой символ Symbol("id"). Конфликта между их и нашим идентификатором не будет, так как символы всегда уникальны, даже
+  если их имена совпадают.
+  <br>
+  <br>
+
+**Ссылки**
+
+- [Дока - Символ](https://doka.guide/js/symbol/)
+- [MDN - Symbol](https://developer.mozilla.org/ru/docs/conflicting/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [MDN - Типы данных JavaScript и структуры данных](https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures)
+- [learn.javascript.ru](https://learn.javascript.ru/symbol)
+- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [Habr - Особенности использования типа данных Symbol в JavaScript](https://habr.com/ru/company/ruvds/blog/444340/)
+
+<br></p>
 </details>
 
 [//]: # (Коллекции todo: доработать)
@@ -6780,6 +7327,153 @@ userGuest.admin?.(); // ничего не произойдет (такого м�
 <br><p>
 </details>
 
+
+
+[//]: # (Побитовые операции todo:дополнить)
+<details id="typesTransformation"><summary><b>Побитовые операции*</b></summary><p>
+
+Производят операции, используя двоичное представление числа, и возвращают новую последовательность из 32 бит (число) в качестве результата.
+
+- Побитовое И (AND, a & b)
+  - Ставит 1 на бит результата, для которого соответствующие биты операндов равны 1.
+  - Результат a & b равен единице только когда оба бита a и b равны единице.
+- Побитовое ИЛИ (OR, a | b)
+  - Ставит 1 на бит результата, для которого хотя бы один из соответствующих битов операндов равен 1.
+  - Результат a | b равен 1, если хотя бы один бит из a,b равен 1.
+- Побитовое исключающее ИЛИ (XOR, a ^ b)
+  - Ставит 1 на бит результата, для которого только один из соответствующих битов операндов равен 1 (но не оба).
+  - a Исключающее ИЛИ b равно 1, если только a=1 или только b=1, но не оба одновременно a=b=1.
+  - Исключающее или можно использовать для шифрования, так как эта операция полностью обратима.
+- Побитовое НЕ (NOT, ~a)
+  - Заменяет каждый бит операнда на противоположный.
+  - Производит операцию НЕ над каждым битом, заменяя его на обратный ему.
+- Левый сдвиг (a << b)
+  - Сдвигает двоичное представление a на b битов влево, добавляя справа нули.
+  - Левый сдвиг почти равен умножению на 2
+- Правый сдвиг, переносящий знак (a >> b)
+  - Сдвигает двоичное представление a на b битов вправо, отбрасывая сдвигаемые биты.
+  - Правый сдвиг почти равен целочисленному делению на 2
+- Правый сдвиг с заполнением нулями (a >>> b)
+  - Сдвигает двоичное представление a на b битов вправо, отбрасывая сдвигаемые биты и добавляя нули слева.
+  - Для неотрицательных чисел правый сдвиг с заполнением нулями >>> и правый сдвиг с переносом знака >> дадут одинаковый результат, т.к. в обоих случаях слева добавятся нули. Для отрицательных чисел – результат работы разный.
+    <br>
+    <br>
+
+**У побитовых операторов ниpкий приоритет**
+
+Даже ниже, чем у присваивания - нужно ставить скобки.<br>
+Здесь `a == b^0` будет сначала выполнено сравнение `a == b`, а потом уже операция `^0`, как будто стоят скобки `(a == b)^0`.<br>
+Обычно это не то, чего мы хотим.<br>
+Чтобы гарантировать желаемый порядок, нужно ставить скобки: `a == (b^0)`.
+<br>
+<br>
+
+**Основные случаи применения побитовых операторов**
+- XOR применяется в шифровании
+- Упаковки нескольких битовых значений («флагов») в одно значение. Это экономит память и позволяет проверять наличие комбинации флагов одним оператором &.
+- Маска
+- Округление.
+  - Так как битовые операции отбрасывают десятичную часть, то их можно использовать для округления.
+  - Достаточно взять любую операцию, которая не меняет значение числа.
+  - Чаще всего `^0`
+  - `alert( 12.345 ^ 0 ); // 12`
+- Проверка на −1. Применяя `побитовое НЕ (~)` можно легко проверить равенство n == -1
+  - Проверка на -1 пригождается, например, при поиске символа в строке. Вызов str.indexOf("подстрока") возвращает позицию подстроки в str, или -1 если не нашёл.
+- Умножение и деление на степени 2
+- Работа с микроконтроллерами, управлением памятью и другие ситуации, где уже реализовано использования двоичных представлений чисел.
+  <br>
+  <br>
+
+**Вспомогательные функции parseInt, toString**
+- `parseInt("11000", 2)` – переводит строку с двоичной записью числа в десятичное число.
+- `n.toString(2)` – получает для числа n запись в 2-ной системе в виде строки.
+  <br>
+  <br>
+
+**Отличие от логических операторов**
+
+Не путать с логическими операциями
+- При использовании && происходит логическое сравнение, двух результатов,
+  - например: `false && true = false`
+- При использовании & происходит побитовое сравнение, двух результатов,
+  - например: `001 & 101 = 001`
+
+При использовании `&&`, в случае, если результат равен `false`, дальнейшая проверка не выполняется.<br>
+Пример: `(false && a() && b())`. Методы `a()` и `b()` не будут вызваны, т.к. на первом месте стоит `false` и это означает что все выражение будет `false`.
+
+При использовании `&`, в любом случае будут выполнены все проверки, т.к. побитовый сдвиг "надо делать с цифрами", а на этапе выполнения выражения, мы не можем предсказать результат.<br>
+Пример: `(false & a() & b())` . Методы `a()` и `b()` будут вызваны.
+<br>
+<br>
+
+Ссылки:
+- [learn.javascript.ru — Побитовые операторы](https://learn.javascript.ru/bitwise-operators)
+- [Логическое и побитовое "И" (Java?)](https://it-rem.phpdev.one/logicheskoe-i-pobitovoe-i.html)
+
+<br></p>
+</details>
+
+
+[//]: # (Каррирование)
+<details id="nullishCoalescing"><summary><b>Каррирование</b></summary><p>
+
+Техника для работы с функциями.<br>
+Трансформация функций таким образом, чтобы они принимали аргументы не как `f(a, b, c)`, а как `f(a)(b)(c)`.
+
+Позволяет использовать одну и ту же функцию и в обычном виде, и в виде `частично применённой функции`.<br>
+Т.е. с зафиксированным значением одного или нескольких аргументов.<br>
+Например, вместо `function log(date, importance, message) {}` получаем частный случай `debugNow("message")`, в котором `date` всегда равен текущему времени, а `importance = INFO`<br>
+Т.е. универсальная функция `log(date, importance, message)` после каррирования возвращает нам частично применённую функцию, когда вызывается с одним аргументом, как `log(date`) или двумя аргументами, как `log(date, importance)`.
+
+Для каррирования необходима функция с фиксированным количеством аргументов.<br>
+Функцию, которая использует остаточные параметры, типа f(...args), так каррировать не получится.
+
+По определению, каррирование должно превращать `sum(a, b, c)` в `sum(a)(b)(c)`.<br>
+Но большинство реализаций каррирования в JavaScript более продвинуты: они также оставляют вариант вызова функции с несколькими аргументами.
+<br>
+<br>
+
+**Пример**
+```js
+function curry(f) { // curry(f) выполняет каррирование
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// использование
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1)(2) ); // 3
+```
+Более продвинутые реализации каррирования, как например _.curry из библиотеки lodash, возвращают обёртку, которая позволяет запустить функцию как обычным образом, так и частично.
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+let curriedSum = _.curry(sum); // используем _.curry из lodash
+
+alert( curriedSum(1, 2) ); // 3, можно вызывать как обычно
+alert( curriedSum(1)(2) ); // 3, а можно частично
+```
+<br>
+<br>
+
+**Ссылки**
+
+- [learn.javascript.ru - Каррирование (`??`)](https://learn.javascript.ru/currying-partials)
+
+<br></p>
+</details>
+
 [//]: # (Ошибки)
 <details id="errorsObject"><summary><b>Ошибки</b></summary><p>
 
@@ -6841,7 +7535,7 @@ catch(e) {
 [//]: # (Глобальный обработчик ошибок. Window.onerror)
 <details><summary><b>Глобальный обработчик ошибок. Window.onerror</b></summary><p>
 
-Даже если у нас нет `try..catch`, большинство сред позволяют настроить «глобальный» обработчик ошибок, чтобы ловить ошибки, которые «выпадают наружу».<br> 
+Даже если у нас нет `try..catch`, большинство сред позволяют настроить «глобальный» обработчик ошибок, чтобы ловить ошибки, которые «выпадают наружу».<br>
 В браузере это `window.onerror`.
 ```js
 window.onerror = function(message, url, line, col, error) {
@@ -6850,7 +7544,7 @@ window.onerror = function(message, url, line, col, error) {
 ```
 Роль глобального обработчика `window.onerror` обычно заключается не в восстановлении выполнения скрипта – это скорее всего невозможно в случае программной ошибки, а в отправке сообщения об ошибке разработчикам.
 
-Существуют веб-сервисы, которые предоставляют логирование ошибок для таких случаев.<br> 
+Существуют веб-сервисы, которые предоставляют логирование ошибок для таких случаев.<br>
 Например [errorception.com](https://errorception.com) или [muscula.com](http://www.muscula.com).
 
 Они работают так:
@@ -6929,7 +7623,7 @@ Error: please improve your code
 - Мы можем наследовать свои классы ошибок от `Error` и других встроенных классов ошибок, но нужно позаботиться о свойстве `name` и не забыть вызвать `super`.
 - Мы можем использовать оператор `instanceof` для проверки типа ошибок. Этот оператор проверяет, принадлежит ли объект к определённому классу. Это также работает с наследованием. Но иногда у нас объект ошибки, возникшей в сторонней библиотеке, и нет простого способа получить класс. Тогда для проверки типа ошибки можно использовать свойство `name`.
 - [Обёртывание исключений](https://learn.javascript.ru/custom-errors#obyortyvanie-isklyucheniy) является распространённой техникой: функция ловит низкоуровневые исключения и создаёт одно «высокоуровневое» исключение вместо разных низкоуровневых. Иногда низкоуровневые исключения становятся свойствами этого объекта, как err.cause в примерах выше, но это не обязательно.
-<br><p>
+  <br><p>
 </details>
 
 **Ссылки:**
@@ -6948,1009 +7642,127 @@ Error: please improve your code
 <br><p>
 </details>
 
-[//]: # (Утечки памяти в JS todo: доработать)
-<details id="memoryLeak"><summary><b>Утечки памяти в JS*</b></summary><p>
-
-В двух словах, утечки памяти можно определить как фрагменты памяти, которые больше не нужны приложению, но по какой-то
-причине не возвращённые операционной системе или в пул свободной памяти.
-
-Языки программирования используют разные способы управления памятью. Однако, проблема точного определения того,
-используется ли на самом деле некий участок памяти или нет, как уже было сказано, неразрешима. Другими словами, только
-разработчик знает, можно или нет вернуть операционной системе некую область памяти.
-
-[//]: # (1. Глобальные переменные - неявное объявление)
-<details><summary><b>1. Глобальные переменные - неявное объявление</b></summary><p>
-
-Пример:
-
-```js
-function foo(arg) {
-  bar = "скрытая глобальная переменная"; // это то же: window.bar = "явно объявленная глобальная переменная";
-}
-```    
-
-Решение: добавляйте 'use strict'; в начало JavaScript-файлов
-
-<br><p>
-</details>
-
-[//]: # (2. Глобальные переменные - явно объявленные, не вычищенные &#40;кэши и т.д.&#41;)
-<details><summary><b>2. Глобальные переменные - явно объявленные, не вычищенные (кэши и т.д.)</b></summary><p>
-
-Это касается глобальных переменных, использующихся для временного хранения и обработки больших блоков данных. Если вам
-нужна глобальная переменная, чтобы записать в неё большое количество информации, убедитесь, что в конце работы с данными
-её значение будет установлено в null или переопределено.
-
-Примером увеличенного расхода памяти, связанным с глобальными переменными, являются кэши — объекты, которые сохраняют
-повторно используемые данные. Для эффективной работы их следует ограничивать по размеру. Если кэш увеличивается без
-ограничений, он может привести к высокому расходу памяти, поскольку его содержимое не может быть очищено сборщиком
-мусора.
-
-\*\*\*
-
-В JS используется интересный подход к работе с необъявленными переменными. Обращение к такой переменной создаёт новую
-переменную в глобальном объекте. В случае с браузерами, глобальным объектом является window. <br>
-Рассмотрим такую конструкцию:
-
-```js
-function foo(arg) {
-  bar = "some text";
-}
-
-//Она эквивалентна следующему коду:
-function foo(arg) {
-  window.bar = "some text";
-}
-```
-
-Если переменную bar планируется использовать только внутри области видимости функции foo, и при её объявлении забыли о
-ключевом слове var, будет случайно создана глобальная переменная.
-
-В этом примере утечка памяти, выделенной под простую строку, большого вреда не принесёт, но всё может быть гораздо хуже.
-
-Другая ситуация, в которой может появиться случайно созданная глобальная переменная, может возникнуть при неправильной
-работе с ключевым словом this:
-
-```js
-function foo() {
-  this.var1 = "potential accidental global";
-}
-
-// Функция вызывается сама по себе, при этом this указывает на глобальный объект (window),
-// this не равно undefined, или, как при вызове конструктора, не указывает на новый объект
-foo();
-```
-
-Для того, чтобы избежать подобных ошибок, можно добавить оператор "use strict"; в начало JS-файла. Это включит так
-называемый строгий режим, в котором запрещено создание глобальных переменных вышеописанными способами. Подробнее о
-строгом режиме можно почитать здесь.
-
-Даже если говорить о вполне безобидных глобальных переменных, созданных осознанно, во многих программах их слишком
-много. Они, по определению, не подвергаются сборке мусора (если только в такую переменную не записать null или какое-то
-другое значение). В частности, стоит обратить пристальное внимание на глобальные переменные, которые используются для
-временного хранения и обработки больших объёмов данных. Если вы вынуждены использовать глобальную переменную для
-хранения большого объёма данных, не забудьте записать в неё null или что-то другое, нужное для дальнейшей работы, после
-того, как она сыграет свою роль в обработке большого объёма данных.
-
-<br><p>
-</details>
-
-[//]: # (3. Таймеры или забытые коллбэки)
-<details><summary><b>3. Таймеры или забытые коллбэки</b></summary><p>
-
-Пример:
-
-```js
-var someResource = getData();
-setInterval(function () {
-  var node = document.getElementById('Node');
-  if (node) {
-    // Сделаем что-нибудь с node и someResource.
-    node.innerHTML = JSON.stringify(someResource);
-  }
-  ;
-}, 1000);
-```
-
-В JS-программах использование функции setInterval — обычное явление.
-
-Большинство библиотек, которые дают возможность работать с обозревателями и другими механизмами, принимающими коллбэки,
-заботятся о том, чтобы сделать недоступными ссылки на эти коллбэки после того, как экземпляры объектов, которым они
-переданы, становятся недоступными. Однако, в случае с setInterval весьма распространён следующий шаблон:
-
-```js
-var serverData = loadData();
-setInterval(function () {
-  var renderer = document.getElementById('renderer');
-  if (renderer) {
-    renderer.innerHTML = JSON.stringify(serverData);
-  }
-}, 5000); //Это будет вызываться примерно каждые 5 секунд.
-```
-
-В этом примере показано, что может происходить с таймерами, которые создают ссылки на узлы DOM или на данные, которые в
-определённый момент больше не нужны.
-
-Объект, представленный переменной renderer, может быть, в будущем, удалён, что сделает весь блок кода внутри обработчика
-события срабатывания таймера ненужным. Однако, обработчик нельзя уничтожить, освободив занимаемую им память, так как
-таймер всё ещё активен. Таймер, для очистки памяти, надо остановить. Если сам таймер не может быть подвергнут операции
-сборки мусора, это будет касаться и зависимых от него объектов. Это означает, что память, занятую переменной serverData,
-которая, надо полагать, хранит немалый объём данных, так же нельзя очистить.
-
-В случае с обозревателями, важно использовать явные команды для их удаления после того, как они больше не нужны (или
-после того, как окажутся недоступными связанные объекты).
-
-Раньше это было особенно важно, так как определённые браузеры (старый добрый IE6, например) были неспособны нормально
-обрабатывать циклические ссылки. В наши дни большинство браузеров уничтожают обработчики обозревателей после того, как
-объекты обозревателей оказываются недоступными, даже если прослушиватели событий не были явным образом удалены. Однако,
-рекомендуется явно удалять эти обозреватели до уничтожения объекта. Например:
-
-```js
-var element = document.getElementById('launch-button');
-var counter = 0;
-
-function onClick(event) {
-  counter++;
-  element.innerHtml = 'text ' + counter;
-}
-
-element.addEventListener('click', onClick);
-// Сделать что-нибудь
-element.removeEventListener('click', onClick);
-element.parentNode.removeChild(element);
-// Теперь, когда элемент выходит за пределы области видимости,
-// память, занятая обоими элементами и обработчиком onClick будет освобождена даже в старых браузерах,
-// которые не способны нормально обрабатывать ситуации с циклическими ссылками.
-```
-
-В наши дни браузеры (в том числе Internet Explorer и Microsoft Edge) используют современные алгоритмы сборки мусора,
-которые выявляют циклические ссылки и работают с соответствующими объектами правильно. Другими словами, сейчас нет
-острой необходимости в использовании метода removeEventListener перед тем, как узел будет сделан недоступным.
-
-Фреймворки и библиотеки, такие, как jQuery, удаляют прослушиватели перед уничтожением узлов (при использовании для
-выполнения этой операции собственных API). Всё это поддерживается внутренними механизмами библиотек, которые, кроме
-того, контролируют отсутствие утечек памяти даже если код работает в не самых благополучных браузерах, таких как уже
-упомянутый выше IE 6.
-
-<br><p>
-</details>
-
-[//]: # (4. Забытые обработчики событий)
-<details><summary><b>4. Забытые обработчики событий</b></summary><p>
-   Обработчики следует удалять, когда они становятся не нужны, или ассоциированные с ними объекты становятся
-   недоступны.<br>
-   В прошлом это было критично, так как некоторые браузеры (Internet Explorer 6) не умели грамотно обрабатывать
-   циклические ссылки.
-
-Большинство современных браузеров удаляет обработчики событий, как только объекты становятся недостижимы. <br>
-Однако по-прежнему правилом хорошего тона остаётся явное удаление обработчиков событий перед удалением самого
-объекта.<br>
-Рекомендуется явно удалять обработчики событий (removeEventListener) до удаления DOM-узлов или обнулять ссылки внутри
-обработчиков.
-
-<br><p>
-</details>
-
-[//]: # (5. Замыкания)
-<details><summary><b>5. Замыкания</b></summary><p>
-
-Одна из важных и широко используемых возможностей JavaScript — замыкания. Это — внутренняя функция, у которой есть
-доступ к переменным, объявленным во внешней по отношению к ней функции. Особенности реализации среды выполнения
-JavaScript делают возможной утечку памяти в следующем сценарии:
-
-```js
-var theThing = null;
-var replaceThing = function () {
-  var originalThing = theThing;
-  var unused = function () {
-    if (originalThing) // ссылка на originalThing
-      console.log("hi");
-  };
-  theThing = {
-    longStr: new Array(1000000).join('*'),
-    someMethod: function () {
-      console.log("message");
-    }
-  };
-};
-setInterval(replaceThing, 1000);
-```
-
-Самое важное в этом фрагменте кода то, что каждый раз при вызове replaceThing, в theThing записывается ссылка на новый
-объект, который содержит большой массив и новое замыкание (someMethod). В то же время, переменная unused хранит
-замыкание, которое имеет ссылку на originalThing (она ссылается на то, на что ссылалась переменная theThing из
-предыдущего вызова replaceThing). Во всём этом уже можно запутаться, не так ли? Самое важное тут то, что когда создаётся
-область видимости для замыканий, которые находятся в одной и той же родительской области видимости, эта область
-видимости используется ими совместно.
-
-В данном случае в области видимости, созданной для замыкания someMethod, имеется также и переменная unused. Эта
-переменная ссылается на originalThing. Несмотря на то, что unused не используется, someMethod может быть вызван через
-theThing за пределами области видимости replaceThing (то есть — из глобальной области видимости). И, так как someMethod
-и unused находятся в одной и той же области видимости, ссылка на originalThing, записанная в unused, приводит к тому,
-что эта переменная оказывается активной (это — общая для двух замыканий область видимости). Это не даёт нормально
-работать сборщику мусора.
-
-Если вышеприведённый фрагмент кода некоторое время поработает, можно заметить постоянное увеличение потребления им
-памяти. При запуске сборщика мусора память не освобождается. В целом оказывается, что создаётся связанный список
-замыканий (корень которого представлен переменной theThing), и каждая из областей видимости этих замыканий имеет
-непрямую ссылку на большой массив, что приводит к значительной утечке памяти.
-
-Эту проблему обнаружила команда Meteor, у них есть отличная статья, в которой всё это подробно описано.
-
-<br><p>
-</details>
-
-[//]: # (6. Ссылки на элементы, удалённые из DOM)
-<details><summary><b>6. Ссылки на элементы, удалённые из DOM</b></summary><p>
-
-Ссылки на объекты DOM за пределами дерева DOM
-
-Иногда может оказаться полезным хранить ссылки на узлы DOM в неких структурах данных. Например, предположим, что нужно
-быстро обновить содержимое нескольких строк в таблице. В подобной ситуации имеет смысл сохранить ссылки на эти строки в
-словаре или в массиве. В подобных ситуациях система хранит две ссылки на элемент DOM: одну из них в дереве DOM, вторую —
-в словаре. Если настанет время, когда разработчик решит удалить эти строки, нужно позаботиться об обеих ссылках.
-
-```js
-var elements = {
-  button: document.getElementById('button'),
-  image: document.getElementById('image')
-};
-
-function doStuff() {
-  image.src = 'http://example.com/image_name.png';
-}
-
-function removeImage() {
-  // Изображение является прямым потомком элемента body.
-  document.body.removeChild(document.getElementById('image'));
-  // В данный момент у нас есть ссылка на #button в
-  // глобальном объекте elements. Другими словами, элемент button
-  // всё ещё хранится в памяти, она не может быть очищена сборщиком мусора.
-}
-```
-
-Есть ещё одно соображение, которое нужно принимать во внимание при создании ссылок на внутренние элементы дерева DOM или
-на его концевые вершины.
-
-Предположим, мы храним ссылку на конкретную ячейку таблицы (тег <td>) в JS-коде. Через некоторое время решено убрать
-таблицу из DOM, но сохранить ссылку на эту ячейку. Чисто интуитивно можно предположить, что сборщик мусора освободит всю
-память, выделенную под таблицу, за исключением памяти, выделенной под ячейку, на которую у нас есть ссылка В реальности
-же всё не так. Ячейка является узлом-потомком таблицы. Потомки хранят ссылки на родительские объекты. Таким образом,
-наличие ссылки на ячейку таблицы в коде приводит к тому, что в памяти остаётся вся таблица. Учитывайте эту особенность,
-храня ссылки на элементы DOM в программах.
-
-<br><p>
-</details>
-
-[//]: # (Как оптимизировать JS-часть сайта?)
-<details><summary><b>Как оптимизировать JS-часть сайта?</b></summary><p>
-
-- Проверьте зависимости проекта. Избавьтесь от всего ненужного.
-- Разделите код на небольшие фрагменты вместо того, чтобы складывать его в один большой файл.
-- Откладывайте, в тех ситуациях, когда это возможно, загрузку JS-скриптов. При обработке текущего маршрута пользователю
-  можно выдавать только тот код, который необходим для нормальной работы, и ничего лишнего.
-- Используйте инструменты разработчика и средства вроде DeviceTiming для того, чтобы находить узкие места своих
-  проектов.
-- Используйте средства вроде Optimize.js для того, чтобы помочь парсерам определиться с тем, какие фрагменты кода им
-  нужно обработать как можно скорее.
-
-<br></p>
-</details>
-
-**Ссылки**
-
-- [Habr](https://habr.com/ru/post/309318/)
-- [Habr - Как работает JS: управление памятью, четыре вида утечек памяти и борьба с ними](https://habr.com/ru/company/ruvds/blog/338150/)
-
-<br></p>
-</details>
-
-[//]: # (Отладка в консоли. Console )
-<details id="fetch"><summary><b>Отладка в консоли. Console</b></summary><p>
-
-`Console` — это объект для доступа к средствам отладки браузера (debugging console браузера).<br>
-Работа с ним отличается в разных браузерах, но эти методы и свойства по факту поддерживаются всеми браузерами.
-
-Доступ к `Console` можно получить через свойство глобального объекта: 
-- Window в браузере, т.е. `Window.console`. Для простоты на него ссылаются как `console`.
-- WorkerGlobalScope — в workers это специальный способ доступа через свойство console. Он
-
-- Разные типы сообщений
-  - `console.log()`
-  - `console.error()`
-  - `console.info()`
-  - `console.debug()` = console.log ()
-  - `console.warn()`
-- Группировка логов
-  - `console.group('name')`, `console.groupEnd('name')`, `console.groupCollapsed()`
-- Очистка консоли
-  - `console.clear()`
-- Трассировка стека
-  - `console.trace()`
-  - посмотреть как работал стек движка в процессе работы программы
-  - При отладке глубоко вложенных объектов или функций может потребоваться распечатать трассировку стека кода. 
-  - Вызовите console.trace() из нужной функции в верхней части стека вызовов, чтобы увидеть место в коде, где был совершен вызов
-- Счётчик вызовов
-  - `console.count()`
-- Таймер в консоли
-  - `console.time()`
-  - `console.timeEnd()`
-- Работа с логическими выражениями
-  - `console.assert()`
-  - выводить что-то в лог, только если условие === `false` и вывести это в лог. Замена `If`
-  - Функция принимает в качестве аргумента выражение, а также сообщение либо объект.
-- Профилирование
-  - `console.profile()`
-  - профилирование — сбор характеристик работоспособности программы. Чтобы оценить, насколько эффективно она работает, выявить ее «слабые» участки.
-- Метка времени
-  - `console.timeStamp()`
-  - выводит промежуточные отсчёты времени для таймера с указанной меткой.
-  - помогает соотнести точку в вашем коде с другими записанными событиями.
-- Чтение размера буфера
-  - `console.memory`
-  - Показывает размер буфера память браузера
-  - Полезно, когда статистика производительности не совсем прозрачна и нет времени рассматривать графики.
-- Отобразить объект в виде таблицы
-  - `console.table()`
-  - вывода табличного представления объекта с помеченными строками для каждого свойства
-  - принимает в аргументе массив объектов, выводит таблицу, с которой можно взаимодействовать.
-- Есть всякие нестандартные штуки, которые поддерживаются не всеми браузерами
-  - `console.dir()`
-    - console.log() выводит объект в строковом представлении, 
-    - console.dir() распознает его как объект и печатает свойства в виде расширяемого списка.
-  - `console.dirxml()`
-  - ...
-
-
-**CSS-стиль консоли**
-
-Если хотите разнообразить визуальные возможности ведения журнала, используйте `%c` перед строкой и передайте стили CSS в качестве второго аргумента.
-```js
-console.log('%c Some text', 'color: green')
-```
-
-**Ссылки**
-
-- [tproger.ru - 10 консольных команд для упрощения отладки JavaScript-кода](https://tproger.ru/translations/javascript-debug-tricks/)
-- [MDN - Console](https://developer.mozilla.org/ru/docs/Web/API/Console)
-- [Продвинутые советы и хитрости console.log](https://proglib.io/p/prodvinutye-sovety-i-hitrosti-console-log-2021-06-29)
-- [Habr - Используем console на полную](https://habr.com/ru/post/114483/)
-- [Отладка JavaScript в PhpStorm](https://vpawd.ru/articles/javascript_debugging_in_phpstorm?utm_source=pocket_mylist)
-- []()
-- []()
-
-<br></p>
-</details>
-
-[//]: # (Чистота кода todo: доработать)
-<details id="codeCleaning"><summary><b>Чистота кода*</b></summary><p>
-
-**Общее**
-
-- Форматирование кода направлено на передачу информации, а передача информации является первоочередной задачей
-  профессионального разработчика.
-- Фигурные скобки в одном стиле
-- Кавычки в одном стиле
-- Точка с запятой - ставить
-- Длина строки - 120 символов
-- Отступы горизонтальные - не нарушать структуру
-- Отступы вертикальные - не более 9 строк кода подряд без вертикального отступа.
-- Имя любой сущности должно отвечать на 3 вопроса - "Почему она существует?", "Какие функции выполняет?", "Как она
-  используется?"
-- Имя переменной – существительное.
-- Имя функции – глагол или начинается с глагола.
-- Уровней вложенности должно быть немного.
-- Вначале код, под ним функции
-- Большие функции дробить на мелкие
-- Функции = Комментарии
-- Разумные комментарии - не "Что делает?", а "Как устроено?", "Какие параметры принимает?", "Почему выбрано это
-  решение?".
-- Принцип единственной обязанности
-- Разделение команд и запросов - не смешивать функции, выполняющие запросы (например, получить имя) и функции
-  выполняющие команды (например, привести имя к нижнему регистру)
-- Слабое *связывание* - это хорошо, сильное - плохо. Сильное связывание = сильная зависимость разных частей программы
-  друг от друга.
-- Высокий ровень *связности* - хорошо (не путать с сильным связыванием). Низкий - плохо. Высокий - сбор конструкций,
-  объединённых общей идеей, в одном месте.
-- Изоляция кода - выделять фрагменты кода в отдельные блоки, основываясь на их предназначении. В качестве таких блоков
-  обычно выступают функции.
-- Разбивка кода на модули - функции, которые используются похожим образом или выполняют похожие действия, можно
-  сгруппировать в одном модуле (или, если хотите, в отдельном классе).
-- Признак слаженности команды - читая код, ты не можешь понять, написал его ты, или коллега
-
-**Конкретика**
-
-- Вместо == использовать ===
-- Избегать "магических чисел"
-- Имя переменной должно раскрывать её сущность
-- Чем меньше у функции аргументов — тем лучше (**спорно**). Например, её будет легче тестировать. С другой стороны: если
-  у функции N параметров, по первой строчке её объявления сразу видно - что нужно ей передать. Но, больше 5-6 параметров
-  - перебор
-- если функции нужно более 5-6 парамтеров - стоит подумать об использовании объекта с параметрами.
-- Используйте аргументы по умолчанию, отдавая им предпочтение перед условными конструкциями
-- Используйте Object.assign для установки свойств объектов по умолчанию
-- Не используйте флаги в качестве параметров (isOpen и т.д.). Их использование означает, что функция выполняет больше
-  действий, чем следует.
-- Не загрязняйте глобальную область видимости
-- Не называть логические переменные так, чтобы в их именах присутствовало бы отрицание (notAdmin -> isAdmin)
-- Избегайте логических конструкций везде, где возможно. Вместо них используйте полиморфизм и наследование
-- ES-классы стоит предпочесть обычным функциям-конструкторам
-- Организуйте методы так, чтобы их можно было бы объединять в цепочки - в конце каждой из функций класса нужно
-  возвращать this
-- Удаляйте неиспользуемый код
-- Если описывая, что должна делать функция, вы используете союз «и» - эта функция слишком сложна
-- Функция должна решать одну задачу
-- Большие функции стоит перерабатывать в классы. Если функция решает много задач, сильно связаных друг с другом, в
-  которых используются одни и те же данные - имеет смысл переделать её в объект с методами
-- Если имя функции отвечает на некий вопрос - она должна возвращать значение, а не менять состояние данных.
-- Если имя функция "что-то делает" - она должна менять данные и не должна ничего возвращать
-- Жёстко заданные ID в функциях - признак сильного связывания
-- Несколько сильно завиясщих друг от друга функций, по сути = одна большая, просто разделённая на части. Избегай этого
-- Если возникла необходимость модифицировать класс из-за изменений другого класса - это признак сильного связывания
-- Если несколько функций используют одни и те же переменные - они должны быть сгруппированы. Хороший повод объединить их
-  в объект.
-- Одна и та же строка кода не должна повторяться дважды. Повторяющийся код — это надёжный признак низкого уровня
-  связности. Плохо.
-- Одни и те же данные не должны храниться в более чем одной переменной. Если определяете переменные с одинаковыми
-  данными в разных местах программы - используйте класс.
-- Если вы передаёте ссылку на один HTML-элемент в несколько функций - можно сделать ссылку частью экземпляра некоего
-  класса.
-- Не стоит собирать в одном классе сущности, не имеющие друг к другу никакого отношения.
-- Если свойства не используются несколькими методами класса, это может быть признаком низкого уровня связности. Плохо.
-- Если методы нельзя использовать в различных ситуациях (или метод вообще не используется) — признак плохой связности.
-  Плохо.
-- Возвращать что-либо из функций нужно с помощью ключевого слова return.
-- Для экспорта самых важных сущностей, объявленных в модуле, используйте возможности экспорта по умолчанию. Для
-  второстепенных сущностей можно применить именованный экспорт.
-- Используйте деструктурирование
-- Задавайте стандартные значения параметров функций
-- Не передавайте функциям ненужные данные
-- Ограничивайте размер файла. 100 строк - хорошо. 200-300 - приемлемо. Более 400 - не надо
-- Вложенность кода не должна превышать четырёх уровней.
-- Имена массивов. Массивы обычно содержат в себе наборы каких-то значений. В результате к имени переменной, хранящей
-  массив, имеет смысл добавлять букву s. (student*s*)
-- Имен алогических значений - имеет смысл начинать с is или has.
-- Имена параметров функций, передаваемых стандартным методам массивов - лучше называть с учётом данных, которые в них
-  оказываются
-- Использование коллбэков ухудшает читабельность кода. Особенно это касается вложенных коллбэков. Где возможно -
-  используйте конструкцию async/await
-- Подчищать за собой console.log. Лишние выводы захламляют консоль. Использование отладочного кода может негативно
-  сказаться на производительности. Но, некоторые логи имеет смысл оставлять. Например — команды, выводящие сообщения об
-  ошибках и предупреждения.
-- Классы не должны быть длиннее 100 строк кода.
-- Методы и функции не должны быть длиннее 5 строк кода.
-- Методам следует передавать не более 4 параметров.
-- Контроллеры могут инициализировать лишь один объект.
-
-**Книги**
-
-- Макконелл С - Совершенный код
-
-**Руководства по стилю**
-
-- [Google JavaScript Style Guide (en)](https://google.github.io/styleguide/jsguide.html)
-- [jQuery JavaScript Style Guide (en)](http://contribute.jquery.org/style-guide/js/)
-- [Airbnb JavaScript Style Guide (en)](https://github.com/airbnb/javascript)
-- [Airbnb JavaScript Style Guide (ru)](https://github.com/leonidlebedev/javascript-airbnb)
-- [Idiomatic.JS (en)](https://github.com/rwaldron/idiomatic.js)
-- [Idiomatic.JS (ru)](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ru_RU)
-- [Dojo Style Guide (en)](https://dojotoolkit.org/reference-guide/1.10/developer/styleguide.html)
-- [JSLint style (en)](https://www.jslint.com/help.html)
-
-**Автоматизированные средства проверки (линтеры)**
-
-- [JSLint](http://www.jslint.com/)
-- [JSHint ](http://www.jshint.com/) - вариант JSLint с б*о*льшим количеством настроек
-
-**Ссылки**
-
-- [learnjavascript - Как писать неподдерживаемый код?](https://learn.javascript.ru/write-unmain-code)
-- [learnjavascript - Советы по стилю кода](https://learn.javascript.ru/coding-style)
-- [Habr - Рекомендации по написанию чистого кода на JavaScript](https://habr.com/ru/company/ruvds/blog/454520/)
-- [Habr - JavaScript: путь к ясности кода](https://habr.com/ru/company/ruvds/blog/342404/)
-- [Habr - 7 рекомендаций по оформлению кода на JavaScript](https://habr.com/ru/company/ruvds/blog/418631/)
-- [Habr - Как писать чистый и красивый код](https://habr.com/ru/company/ruvds/blog/347610/)
-- [Habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
-- [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
-
-  <br></p>
-
-</details>
 
 <br>
 <br>
 
-[//]: # (Fetch todo: пусто)
-<details id="fetch"><summary><b>Fetch**</b></summary><p>
 
-метод реализации асинхронных запросов в нативном JS. Предоставляется
-Fetch API
+[//]: # (ООП в JS todo: доработать)
+<details><summary><b>ООП в JS*</b></summary><p>
 
-**Ссылки**
+  ***
+На самом деле, поддержка JS-классов браузерами — не более чем «синтаксический сахар». Эти конструкции преобразуются в те
+же базовые структуры, которые уже поддерживаются языком. В результате, даже если пользоваться новым синтаксисом, на
+более низком уровне всё будет выглядеть как создание конструкторов и манипуляции с прототипами объектов.
 
-- [learn.javascript.ru - Fetch](https://learn.javascript.ru/network)
+**Поддержка классов ES6 в JS-движке V8**
 
-<br></p>
-</details>
+При подготовке JS-кода к выполнению система производит его синтаксический анализ и формирует на его основе абстрактное
+синтаксическое дерево. При разборе конструкций объявления классов в абстрактное синтаксическое дерево попадают узлы типа
+ClassLiteral.
 
-[//]: # (XMLHttpRequest todo: пусто)
-<details id="xmlHttpRequest"><summary><b>XMLHttpRequest**</b></summary><p>
+В подобных узлах хранится пара интересных вещей. Во-первых — это конструктор в виде отдельной функции, во-вторых — это список свойств класса. Это могут быть методы, геттеры, сеттеры, общедоступные или закрытые поля. Такой узел, кроме того, хранит ссылку на родительский класс, который расширяет класс, для которого сформирован узел, который, опять же, хранит конструктор, список свойств и ссылку на собственный родительский класс.
 
-Его современный аналог — fetch
-
-**Ссылки**
-
-- [learn.javascript.ru - XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest)
-
-<br></p>
-</details>
-
-[//]: # (Побитовые операции todo:дополнить)
-<details id="typesTransformation"><summary><b>Побитовые операции*</b></summary><p>
-
-Производят операции, используя двоичное представление числа, и возвращают новую последовательность из 32 бит (число) в качестве результата.
-
-- Побитовое И (AND, a & b) 	
-  - Ставит 1 на бит результата, для которого соответствующие биты операндов равны 1.
-  - Результат a & b равен единице только когда оба бита a и b равны единице.
-- Побитовое ИЛИ (OR, a | b)
-  - Ставит 1 на бит результата, для которого хотя бы один из соответствующих битов операндов равен 1.
-  - Результат a | b равен 1, если хотя бы один бит из a,b равен 1.
-- Побитовое исключающее ИЛИ (XOR, a ^ b)
-  - Ставит 1 на бит результата, для которого только один из соответствующих битов операндов равен 1 (но не оба).
-  - a Исключающее ИЛИ b равно 1, если только a=1 или только b=1, но не оба одновременно a=b=1.
-  - Исключающее или можно использовать для шифрования, так как эта операция полностью обратима.
-- Побитовое НЕ (NOT, ~a) 
-  - Заменяет каждый бит операнда на противоположный.
-  - Производит операцию НЕ над каждым битом, заменяя его на обратный ему.
-- Левый сдвиг (a << b)
-  - Сдвигает двоичное представление a на b битов влево, добавляя справа нули.
-  - Левый сдвиг почти равен умножению на 2
-- Правый сдвиг, переносящий знак (a >> b)
-  - Сдвигает двоичное представление a на b битов вправо, отбрасывая сдвигаемые биты.
-  - Правый сдвиг почти равен целочисленному делению на 2
-- Правый сдвиг с заполнением нулями (a >>> b) 
-  - Сдвигает двоичное представление a на b битов вправо, отбрасывая сдвигаемые биты и добавляя нули слева.
-  - Для неотрицательных чисел правый сдвиг с заполнением нулями >>> и правый сдвиг с переносом знака >> дадут одинаковый результат, т.к. в обоих случаях слева добавятся нули. Для отрицательных чисел – результат работы разный.
-<br>
-<br>
-
-**У побитовых операторов ниpкий приоритет**
-
-Даже ниже, чем у присваивания - нужно ставить скобки.<br>
-Здесь `a == b^0` будет сначала выполнено сравнение `a == b`, а потом уже операция `^0`, как будто стоят скобки `(a == b)^0`.<br>
-Обычно это не то, чего мы хотим.<br> 
-Чтобы гарантировать желаемый порядок, нужно ставить скобки: `a == (b^0)`.
-<br>
-<br>
-
-**Основные случаи применения побитовых операторов**
-- XOR применяется в шифровании
-- Упаковки нескольких битовых значений («флагов») в одно значение. Это экономит память и позволяет проверять наличие комбинации флагов одним оператором &.
-- Маска
-- Округление.
-  - Так как битовые операции отбрасывают десятичную часть, то их можно использовать для округления. 
-  - Достаточно взять любую операцию, которая не меняет значение числа.
-  - Чаще всего `^0`
-  - `alert( 12.345 ^ 0 ); // 12`
-- Проверка на −1. Применяя `побитовое НЕ (~)` можно легко проверить равенство n == -1
-  - Проверка на -1 пригождается, например, при поиске символа в строке. Вызов str.indexOf("подстрока") возвращает позицию подстроки в str, или -1 если не нашёл.
-- Умножение и деление на степени 2
-- Работа с микроконтроллерами, управлением памятью и другие ситуации, где уже реализовано использования двоичных представлений чисел. 
-<br>
-<br>
-
-**Вспомогательные функции parseInt, toString**
-- `parseInt("11000", 2)` – переводит строку с двоичной записью числа в десятичное число.
-- `n.toString(2)` – получает для числа n запись в 2-ной системе в виде строки.
-<br>
-<br>
-
-**Отличие от логических операторов**
-
-Не путать с логическими операциями
-- При использовании && происходит логическое сравнение, двух результатов,
-  - например: `false && true = false`
-- При использовании & происходит побитовое сравнение, двух результатов,
-  - например: `001 & 101 = 001`
-
-При использовании `&&`, в случае, если результат равен `false`, дальнейшая проверка не выполняется.<br>
-Пример: `(false && a() && b())`. Методы `a()` и `b()` не будут вызваны, т.к. на первом месте стоит `false` и это означает что все выражение будет `false`.
-
-При использовании `&`, в любом случае будут выполнены все проверки, т.к. побитовый сдвиг "надо делать с цифрами", а на этапе выполнения выражения, мы не можем предсказать результат.<br>
-Пример: `(false & a() & b())` . Методы `a()` и `b()` будут вызваны.
-<br>
-<br>
-
-Ссылки:
-- [learn.javascript.ru — Побитовые операторы](https://learn.javascript.ru/bitwise-operators)
-- [Логическое и побитовое "И" (Java?)](https://it-rem.phpdev.one/logicheskoe-i-pobitovoe-i.html)
-
-<br></p>
-</details>
-
-[//]: # (Оператор нулевого слияния «??» todo:дополнить)
-<details id="nullishCoalescing"><summary><b>Оператор нулевого слияния (`??`)*</b></summary><p>
-
-Быстрый способ выбрать первое «определённое» значение из списка.<br>
-Используется для присвоения переменным значений по умолчанию:
-`// будет height=100, если переменная height равна null или undefined
-height = height ?? 100;`
-
-Если переписать выражение `result = a ?? b`, используя уже знакомые нам операторы:<br>
-`result = (a !== null && a !== undefined) ? a : b;`
-
-Оператор `??` имеет очень низкий приоритет, лишь немного выше, чем у `?` и `=,` поэтому при использовании его в выражении, скорее всего, потребуются скобки.
-
-Запрещено использовать вместе с `||` или `&&` без явно указанного приоритета, то есть без скобок.
-```js
-let x = 1 && 2 ?? 3; // Синтаксическая ошибка
-let x = (1 && 2) ?? 3; // Работает без ошибок
-```
-
-Ссылки:
-
-- [learn.javascript.ru - Оператор нулевого слияния (`??`)](https://learn.javascript.ru/nullish-coalescing-operator)
-
-<br></p>
-</details>
-
-[//]: # (Каррирование)
-<details id="nullishCoalescing"><summary><b>Каррирование</b></summary><p>
-
-Техника для работы с функциями.<br>
-Трансформация функций таким образом, чтобы они принимали аргументы не как `f(a, b, c)`, а как `f(a)(b)(c)`.
-
-Позволяет использовать одну и ту же функцию и в обычном виде, и в виде `частично применённой функции`.<br>
-Т.е. с зафиксированным значением одного или нескольких аргументов.<br>
-Например, вместо `function log(date, importance, message) {}` получаем частный случай `debugNow("message")`, в котором `date` всегда равен текущему времени, а `importance = INFO`<br>
-Т.е. универсальная функция `log(date, importance, message)` после каррирования возвращает нам частично применённую функцию, когда вызывается с одним аргументом, как `log(date`) или двумя аргументами, как `log(date, importance)`.
-
-Для каррирования необходима функция с фиксированным количеством аргументов.<br>
-Функцию, которая использует остаточные параметры, типа f(...args), так каррировать не получится.
-
-По определению, каррирование должно превращать `sum(a, b, c)` в `sum(a)(b)(c)`.<br>
-Но большинство реализаций каррирования в JavaScript более продвинуты: они также оставляют вариант вызова функции с несколькими аргументами.
-<br>
-<br>
-
-**Пример**
-```js
-function curry(f) { // curry(f) выполняет каррирование
-  return function(a) {
-    return function(b) {
-      return f(a, b);
-    };
-  };
-}
-
-// использование
-function sum(a, b) {
-  return a + b;
-}
-
-let curriedSum = curry(sum);
-
-alert( curriedSum(1)(2) ); // 3
-```
-Более продвинутые реализации каррирования, как например _.curry из библиотеки lodash, возвращают обёртку, которая позволяет запустить функцию как обычным образом, так и частично.
-
-```js
-function sum(a, b) {
-  return a + b;
-}
-
-let curriedSum = _.curry(sum); // используем _.curry из lodash
-
-alert( curriedSum(1, 2) ); // 3, можно вызывать как обычно
-alert( curriedSum(1)(2) ); // 3, а можно частично
-```
-<br>
-<br>
-
-**Ссылки**
-
-- [learn.javascript.ru - Каррирование (`??`)](https://learn.javascript.ru/currying-partials)
-
-<br></p>
-</details>
-
-[//]: # (Деструктуризация)
-<details id="destruct"><summary><b>Деструктуризация</b></summary><p>
-
-`Деструктурирование` — создание новых переменных путём извлечения данных из объектов и массивов.
-
-- Специальный синтаксис, который позволяет «распаковать» массивы или объекты в кучу переменных,
-- Зачем
-  - иногда удобнее работать не с элементами объекта/массива, а с отдельными переменными.
-  - передаём объекты/массивы в функцию — ей может понадобиться не объект/массив целиком, а элементы по  
-    отдельности
-- Также прекрасно работает со сложными функциями, которые имеют много параметров, значений по умолчанию и так далее.
-- Ничего не делает с исходным массивом/объектом, только копирует. Просто более короткий вариант записи
-- Пропускайте элементы, используя запятые
-- Работает с любым перебираемым объектом с правой стороны - Set и т.д.
-- Присваивайте чему угодно с левой стороны - например свойствам объекта
-
-**Пример для объекта**
-```js
-const person = {
-  age: 35,
-  firstName: "Nick",
-  lastName: "Anderson",
-  sex: "M"
-}
-
-const { age, firstName: first, city = "Paris" } = person; // деструктурирование
-
-console.log(age) // 35 — создана переменная age, которая равна person.age
-console.log(first) // "Nick" — создана переменная first, значение которой соответствует person.firstName
-console.log(firstName) // ReferenceError — person.firstName существует, но новая переменная называется first
-console.log(city) // Paris — создана переменная city, а поскольку person.city не определена, city равна заданному по умолчанию значению "Paris".
-```
-
-**Пример для функций**
-```js
-const person = {
-  age: 35,
-  firstName: "Nick",
-  lastName: "Anderson",
-  sex: "M"
-}
-
-//Без деструктуризации
-function joinFirstLastName(person) {
-  const firstName = person.firstName;
-  const lastName = person.lastName;
-  return firstName + '-' + lastName;
-}
-
-//С деструктуризацией
-function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
-  return firstName + '-' + lastName;
-}
-
-joinFirstLastName(person); // Nick-Anderson
-```
-
-**Пример для массива**
-```js
-const myArray = ["a", "b", "c"];
-const [x, y] = myArray; // деструктуризация
-
-console.log(x) // "a"
-console.log(y) // "b"
-```
-
-**Пример для хука React**
-```js
-const [fruit, setFruit] = useState('банан');
-```
-
-Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)».
-Он означает, что мы создаём две новые переменные, fruit и setFruit.
-Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
-
-Это равносильно такому коду:
-
-  ```
-    var fruitStateVariable = useState('банан'); // Возвращает пару значений
-    var fruit = fruitStateVariable[0]; // Извлекаем первое значение
-    var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
-  ```
-
-Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух
-элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+После того, как новый узел ClassLiteral трансформируется в код, он преобразуется в конструкции, состоящие из функций и прототипов.
 
 **Ссылки:**
 
-- [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
-- [learn.javascript.ru - Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-- [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
-- [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
-- [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
-- [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
-- [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
-- [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/blog/444348/)
+- [learn.javascript.ru - ООП в функциональном стиле](https://learn.javascript.ru/oop)
+- [learn.javascript.ru - ООП в прототипном стиле](https://learn.javascript.ru/prototypes)
+- [Habr - Как работает JS: классы и наследование, транспиляция в Babel и TypeScript](https://habr.com/ru/company/ruvds/blog/415377/)
+- [Web-dev - Классы (YouTube)](https://youtu.be/BASquaxab_w)
 
 <br></p>
 </details>
 
-[//]: # (Остаточные параметры и оператор расширения. Spread / Rest «...» todo:доработать?)
-<details id="spread"><summary><b>Остаточные параметры и оператор расширения. Spread / Rest «...»*</b></summary><p>
+[//]: # (Классы)
+<details id="classes"><summary><b>Классы</b></summary><p>
 
-`Остаточные параметры` (Rest) — специальный синтаксис функции. Позволяет представлять неограниченное множество аргументов в виде массива.<br>
-Обозначается  `...`<br>
-Остаточные параметры должны располагаться в конце<br>
-Были введены в ES6 для уменьшения количества шаблонного кода.
+Введены в ECMAScript 2015.<br>
 
-Если последний именованный аргумент функции имеет префикс `...`, он автоматически становится массивом с элементами от 0 до theArgs.length-1 в соответствии с актуальным количеством аргументов, переданных в функцию.
+В JS используется модель «прототипного наследования»: каждый объект наследует поля (свойства) и методы
+объекта-прототипа.
+В JS нет таких классов как в Java или Swift, т.е. шаблонов / схем для создания объектов. В прототипном наследовании есть
+только объекты.<br>
+Классы в JS - «синтаксический сахар» над механизмом прототипного наследования. Более простой способ создания объектов и
+организации наследования.
 
-Если `...` располагается в конце списка аргументов функции, то это «остаточные параметры». Он собирает остальные неуказанные аргументы и делает из них массив.<br>
-Иначе — это «оператор расширения» 
+В ООП класс — шаблон для создания объектов, обеспечивающий начальные значения состояний: инициализация полей-переменных
+и реализация поведения функций или методов. Инструкция, чертёж по которому можно создать автомобиль (объект).
 
-```js
-function showName(firstName, lastName, ...titles) {} //собери оставшиеся параметры функции и положи их в массив titles
-```
-
-**«arguments»**
-
-Раньше вместо этого использовался псевдомассив `arguments`.<br>
-Отличия остаточных параметров от объекта `arguments`:
-- остаточные параметры включают только те, которым не задано отдельное имя, в то время как объект arguments содержит все аргументы, передаваемые в функцию;
-- "arguments" не поддерживал методы массивов, например `map`. Остаточные параметры являются экземпляром Array — поддерживают методы sort, map, forEach или pop...
-- стрелочные функции не имеют "arguments". Но поддерживают остаточные параметры
-- объект arguments имеет дополнительную функциональность, специфичную только для него (например, свойство callee).
-<br>
-<br>
-
-**Деструктуризация остаточных параметров**
-
-Остаточные параметры могут быть деструктурированы (только массивы). <br>
-Т.е. их данные могут быть заданы как отдельные значения
-```js
-function f(...[a, b, c]) {
-  return a + b + c;
-}
-```
-<br>
-<br>
-
-**Оператор расширения. Spread**
-
-Извлекает элементы из массива (итерируемого объекта).
-
-Если `...` располагается в конце списка аргументов функции, то это «остаточные параметры». Он собирает остальные неуказанные аргументы и делает из них массив.<br>
-Иначе — это «оператор расширения»
-
-Зачем используется:
-- «разобрать» массив на отдельные переменные `func(...arr)`
-- объединить несколько массивов или «влить» данные одного массива в другой `let newArray = [...arr1, ...arr2, 1]`
-- «влить» данные итерируемого объекта (массив и т .д.) в объект `let objClone = { ...obj };`
-  - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
-- превратить строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
-<br>
-<br>
-
-**Итерируемый/перебираемый объект**
-
-Все, что можно перебрать с помощью цикла `for..of`.<br>
-- массив
-- строка
-- Map
-- Set
-- TypedArray
-- Generator
-- объект, у которого есть метод `Symbol.iterator` — специальный встроенный Symbol, созданный как раз для этого.
-
-Не путать с `псевдомассивом` — это объект, у которого есть индексы и свойство length (т.е. он выглядит как массив)
-
-[Подробнее](#iterable)
-[learn.javascript.ru — Перебираемые объекты](https://learn.javascript.ru/iterable)
-<br>
-<br>
-
-**Ссылки**
-
-- [learn.javascript.ru - Остаточные параметры и оператор расширения / spread (...)](https://learn.javascript.ru/rest-parameters-spread-operator)
-- [MDN - Остаточные параметры (rest parameters)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Rest_parameters)
-- [Doka - Объект arguments](https://doka.guide/js/function-arguments-object/)
-
-<br></p>
-</details>
-
-[//]: # (Шаблонные строки/литералы. Теговые шаблоны)
-<details id="tmpLiterals"><summary><b>Шаблонные строки / литералы. Теговые шаблоны</b></summary><p>
-
-Синтаксис для работы со строками. <br>
-Позволяет использовать выражения JS внутри строк (тип данных `string`).<br>
-Обозначается так: ```js `текст строки ${выражение JS, например переменная} ещё текст строки` ```
-
-Может быть многострочной, все переносы строк в ней будут сохранены.<br>
-Будут сохранены все пробелы и табуляции в начале строк. 
-
-Внутри шаблонной строки любой нестроковый результат в js-выражении (объект, переменная и т.д) будет приведён к строке.
-
-**Зачем**
-- меньше возни с экранированием кавычек в строках (хотя символ `\`` всё равно надо экранировать, конечно)
-- можно делать переносы строк без спецсимовла `\n`
-- будут сохранены все пробелы и табуляции в начале строк
-- `строковая интерполяция` — можно выводить значения JS-выражений прямо в строку (при помощи конструкции ` ${}`). Раньше нужно было использовать конкатенацию через оператор `+` (`'строка 1' + someVariable + 'строка 2'`)
-
-**Пример**
-```js
-`однострочная строка`
-
-`строка на
-несколько строчек,
-можно сколько угодно`
-
-`Дважды два равно ${2 * 2}`
-// Дважды два равно 4
-
-const name = 'Федя'
-`Привет ${name}!`
-// Привет Федя!
-```
-
-**Вложенные шаблоны**
-
-Когда внутрь шаблонной строки помещаем ещё одну, обернув ей в `${ }`.
-```js
-const classes = `header 
-  ${ isLargeScreen()  ? ''  : `icon-${item.isCollapsed ? 'expander' : 'collapser'}` 
-}`;
-````
-
-**Теговые шаблоны**
-
-Функция, которая позволяет разбирать шаблонную строку.. 
-
-Первый аргумент этой функции — массив из кусочков строк, которые разделены выражениями `${}`.<br> 
-Остальные параметры — значения выражений, которые подставляются в шаблонную строку.<br> 
-Вызов функции производится не с использованием круглых скобок `funcName(data)`, а с помощью слитного написания шаблонной строки ```js funcName`data` ```.
-
-В массиве из строк в конце находится кусочек в виде пустой строки. <br>
-Это нужно, чтобы количество элементов в массиве строк всегда было на один больше, чем количество подставляемых значений. <br>
-Если бы в конце была бы ещё строка, то последним элементом была бы именно она.
-
-Теговому шаблону необязательно возвращать строку — это обычная функция (вернуть можно что угодно, либо вообще ничего).
-
-Можно создавать вспомогательные функции, например оборачивать параметры в html.
+В JS класс — функция для создания объектов. Определяет св-ва и методы объекта.
 
 ```js
-var person = 'Mike';
-var age = 28;
-
-//Теговый шаблон
-function myTag(strings, personExp, ageExp) {
-  var str0 = strings[0]; // "That "
-  var str1 = strings[1]; // " is a "
-  // Технически, в конце итогового выражения (в нашем примере) есть ещё одна строка, но она пустая (""), так что пропустим её.
-  // var str2 = strings[2];
-  var ageStr;
-  
-  if (ageExp > 99){
-    ageStr = 'centenarian';
-  } else {
-    ageStr = 'youngster';
+// создаём класс
+class Task {
+  // метод «конструктор»
+  constructor(isCompleted) {
+    this.title = 'Learn JS',
+            this._isCompleted = isCompleted
   }
-  
-  return `${str0}${personExp}${str1}${ageStr}`; // Мы даже можем вернуть строку, построенную другим шаблонным литералом
+
+  //  статический метод класса - не наследуется объектами
+  static getDefaultData() {
+    //...
+  }
+
+  // метод класса. Наследуется объектами
+  completed() {
+    this.isCompleted = true
+  }
+
+  // геттер
+  get isCompleted() {
+    return (this._isCompleted === true) ? 'Task is completed' : 'Task is not completed';
+  }
 }
 
-var output = myTag`That ${ person } is a ${ age }`;
-console.log(output); // That Mike is a youngster
+//добавляем статическое св-во класса - не наследуется объектами
+Task.counter = 0; //лучше объявлять его сразу после создания класса, а не ниже по коду (т.е. до создания кземпляров класса)
+
+//создаём объекты на основе класса (экземпляры класса)
+let task1 = new Task(false);
+let task2 = new Task(true);
 ```
 
-**Ссылки**
+**Аксессоры**
 
-- [MDN - Шаблонные строки](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals)
-- [Doka - Шаблонные строки](https://doka.guide/js/template-strings/)
-- [tproger.ru - Шаблонные строки (шаблонные литералы). Теговые шаблоны](https://tproger.ru/translations/javascript-cheatsheet/#tmpltltrls)
-
-<br></p>
-</details>
-
-[//]: # (Параметры функции по умолчанию todo:доработать)
-<details id="funcDefParam"><summary><b>Параметры функции по умолчанию*</b></summary><p>
+Это `геттеры` и `сеттеры` — спец. методы класса для установки и чтения его свойств.<br>
+Чтобы случайно не изменить св-ва классе, которые не должны меняться - стараются напрямую св-ва класса не менять.
+Используют геттеры и сеттеры.<br>
+Снаружи ведут себя как свойства:
 
 ```js
-function myFunc(x = 10) {
-  return x;
-}
-console.log(myFunc()) // 10 — не задано значение, поэтому значение x по умолчанию присвоено x в функции myFunc
-console.log(myFunc(5)) // 5 — значение задано, поэтому x=5 в функции myFunc
-console.log(myFunc(undefined)) // 10 — задано значение undefined, поэтому по умолчанию равно x
-console.log(myFunc(null)) // null — величина задана
+    //Вызов обычного метода класса
+task.setSomethingData(10);
+
+//Вызов метода-сеттера
+task.somethingData = 10;
 ```
 
-Ссылки:
 
-- [tproger.ru - Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+**Ключевые слова `extends` и `super`**
+
+Ключевое слово `extends` используют для объявления классов или в выражениях класса для создания дочерних классов. Они получают свойства родительских классов, а также дают возможность добавить новые свойства и изменить заимствованные.
+
+Ключевое слово `super` вызывает функции родителя объекта, включая его конструктор.<br>
+Его следует использовать:
+- до ключевого слова `this` в конструкторе;
+- с вызовом `super(arguments)` при передаче аргументов конструктору класса;
+- как вызов дочернего класса `super.X()` для метода X родительского класса.
+
+Подробнее: [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+
+
+**Ссылки:**
+
+- [WebDev - Классы в JS](https://youtu.be/BASquaxab_w)
+- [LearnJS - Классы](https://learn.javascript.ru/class)
+- [MDN - Классы](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes)
+- [Habr - JavaScript: полное руководство по классам](https://habr.com/ru/post/518386/)
 
 <br></p>
 </details>
-
 
 <br>
 <br>
@@ -8139,6 +7951,217 @@ console.dirxml(). Они могут перечислить свойства эл
 
 </details>
 
+[//]: # (Отладка в консоли. Console )
+<details id="fetch"><summary><b>Отладка в консоли. Console</b></summary><p>
+
+`Console` — это объект для доступа к средствам отладки браузера (debugging console браузера).<br>
+Работа с ним отличается в разных браузерах, но эти методы и свойства по факту поддерживаются всеми браузерами.
+
+Доступ к `Console` можно получить через свойство глобального объекта:
+- Window в браузере, т.е. `Window.console`. Для простоты на него ссылаются как `console`.
+- WorkerGlobalScope — в workers это специальный способ доступа через свойство console. Он
+
+- Разные типы сообщений
+  - `console.log()`
+  - `console.error()`
+  - `console.info()`
+  - `console.debug()` = console.log ()
+  - `console.warn()`
+- Группировка логов
+  - `console.group('name')`, `console.groupEnd('name')`, `console.groupCollapsed()`
+- Очистка консоли
+  - `console.clear()`
+- Трассировка стека
+  - `console.trace()`
+  - посмотреть как работал стек движка в процессе работы программы
+  - При отладке глубоко вложенных объектов или функций может потребоваться распечатать трассировку стека кода.
+  - Вызовите console.trace() из нужной функции в верхней части стека вызовов, чтобы увидеть место в коде, где был совершен вызов
+- Счётчик вызовов
+  - `console.count()`
+- Таймер в консоли
+  - `console.time()`
+  - `console.timeEnd()`
+- Работа с логическими выражениями
+  - `console.assert()`
+  - выводить что-то в лог, только если условие === `false` и вывести это в лог. Замена `If`
+  - Функция принимает в качестве аргумента выражение, а также сообщение либо объект.
+- Профилирование
+  - `console.profile()`
+  - профилирование — сбор характеристик работоспособности программы. Чтобы оценить, насколько эффективно она работает, выявить ее «слабые» участки.
+- Метка времени
+  - `console.timeStamp()`
+  - выводит промежуточные отсчёты времени для таймера с указанной меткой.
+  - помогает соотнести точку в вашем коде с другими записанными событиями.
+- Чтение размера буфера
+  - `console.memory`
+  - Показывает размер буфера память браузера
+  - Полезно, когда статистика производительности не совсем прозрачна и нет времени рассматривать графики.
+- Отобразить объект в виде таблицы
+  - `console.table()`
+  - вывода табличного представления объекта с помеченными строками для каждого свойства
+  - принимает в аргументе массив объектов, выводит таблицу, с которой можно взаимодействовать.
+- Есть всякие нестандартные штуки, которые поддерживаются не всеми браузерами
+  - `console.dir()`
+    - console.log() выводит объект в строковом представлении,
+    - console.dir() распознает его как объект и печатает свойства в виде расширяемого списка.
+  - `console.dirxml()`
+  - ...
+
+
+**CSS-стиль консоли**
+
+Если хотите разнообразить визуальные возможности ведения журнала, используйте `%c` перед строкой и передайте стили CSS в качестве второго аргумента.
+```js
+console.log('%c Some text', 'color: green')
+```
+
+**Ссылки**
+
+- [tproger.ru - 10 консольных команд для упрощения отладки JavaScript-кода](https://tproger.ru/translations/javascript-debug-tricks/)
+- [MDN - Console](https://developer.mozilla.org/ru/docs/Web/API/Console)
+- [Продвинутые советы и хитрости console.log](https://proglib.io/p/prodvinutye-sovety-i-hitrosti-console-log-2021-06-29)
+- [Habr - Используем console на полную](https://habr.com/ru/post/114483/)
+- [Отладка JavaScript в PhpStorm](https://vpawd.ru/articles/javascript_debugging_in_phpstorm?utm_source=pocket_mylist)
+- []()
+- []()
+
+<br></p>
+</details>
+
+[//]: # (Чистота кода todo: доработать)
+<details id="codeCleaning"><summary><b>Чистота кода*</b></summary><p>
+
+**Общее**
+
+- Форматирование кода направлено на передачу информации, а передача информации является первоочередной задачей
+  профессионального разработчика.
+- Фигурные скобки в одном стиле
+- Кавычки в одном стиле
+- Точка с запятой - ставить
+- Длина строки - 120 символов
+- Отступы горизонтальные - не нарушать структуру
+- Отступы вертикальные - не более 9 строк кода подряд без вертикального отступа.
+- Имя любой сущности должно отвечать на 3 вопроса - "Почему она существует?", "Какие функции выполняет?", "Как она
+  используется?"
+- Имя переменной – существительное.
+- Имя функции – глагол или начинается с глагола.
+- Уровней вложенности должно быть немного.
+- Вначале код, под ним функции
+- Большие функции дробить на мелкие
+- Функции = Комментарии
+- Разумные комментарии - не "Что делает?", а "Как устроено?", "Какие параметры принимает?", "Почему выбрано это
+  решение?".
+- Принцип единственной обязанности
+- Разделение команд и запросов - не смешивать функции, выполняющие запросы (например, получить имя) и функции
+  выполняющие команды (например, привести имя к нижнему регистру)
+- Слабое *связывание* - это хорошо, сильное - плохо. Сильное связывание = сильная зависимость разных частей программы
+  друг от друга.
+- Высокий ровень *связности* - хорошо (не путать с сильным связыванием). Низкий - плохо. Высокий - сбор конструкций,
+  объединённых общей идеей, в одном месте.
+- Изоляция кода - выделять фрагменты кода в отдельные блоки, основываясь на их предназначении. В качестве таких блоков
+  обычно выступают функции.
+- Разбивка кода на модули - функции, которые используются похожим образом или выполняют похожие действия, можно
+  сгруппировать в одном модуле (или, если хотите, в отдельном классе).
+- Признак слаженности команды - читая код, ты не можешь понять, написал его ты, или коллега
+
+**Конкретика**
+
+- Вместо == использовать ===
+- Избегать "магических чисел"
+- Имя переменной должно раскрывать её сущность
+- Чем меньше у функции аргументов — тем лучше (**спорно**). Например, её будет легче тестировать. С другой стороны: если
+  у функции N параметров, по первой строчке её объявления сразу видно - что нужно ей передать. Но, больше 5-6 параметров
+  - перебор
+- если функции нужно более 5-6 парамтеров - стоит подумать об использовании объекта с параметрами.
+- Используйте аргументы по умолчанию, отдавая им предпочтение перед условными конструкциями
+- Используйте Object.assign для установки свойств объектов по умолчанию
+- Не используйте флаги в качестве параметров (isOpen и т.д.). Их использование означает, что функция выполняет больше
+  действий, чем следует.
+- Не загрязняйте глобальную область видимости
+- Не называть логические переменные так, чтобы в их именах присутствовало бы отрицание (notAdmin -> isAdmin)
+- Избегайте логических конструкций везде, где возможно. Вместо них используйте полиморфизм и наследование
+- ES-классы стоит предпочесть обычным функциям-конструкторам
+- Организуйте методы так, чтобы их можно было бы объединять в цепочки - в конце каждой из функций класса нужно
+  возвращать this
+- Удаляйте неиспользуемый код
+- Если описывая, что должна делать функция, вы используете союз «и» - эта функция слишком сложна
+- Функция должна решать одну задачу
+- Большие функции стоит перерабатывать в классы. Если функция решает много задач, сильно связаных друг с другом, в
+  которых используются одни и те же данные - имеет смысл переделать её в объект с методами
+- Если имя функции отвечает на некий вопрос - она должна возвращать значение, а не менять состояние данных.
+- Если имя функция "что-то делает" - она должна менять данные и не должна ничего возвращать
+- Жёстко заданные ID в функциях - признак сильного связывания
+- Несколько сильно завиясщих друг от друга функций, по сути = одна большая, просто разделённая на части. Избегай этого
+- Если возникла необходимость модифицировать класс из-за изменений другого класса - это признак сильного связывания
+- Если несколько функций используют одни и те же переменные - они должны быть сгруппированы. Хороший повод объединить их
+  в объект.
+- Одна и та же строка кода не должна повторяться дважды. Повторяющийся код — это надёжный признак низкого уровня
+  связности. Плохо.
+- Одни и те же данные не должны храниться в более чем одной переменной. Если определяете переменные с одинаковыми
+  данными в разных местах программы - используйте класс.
+- Если вы передаёте ссылку на один HTML-элемент в несколько функций - можно сделать ссылку частью экземпляра некоего
+  класса.
+- Не стоит собирать в одном классе сущности, не имеющие друг к другу никакого отношения.
+- Если свойства не используются несколькими методами класса, это может быть признаком низкого уровня связности. Плохо.
+- Если методы нельзя использовать в различных ситуациях (или метод вообще не используется) — признак плохой связности.
+  Плохо.
+- Возвращать что-либо из функций нужно с помощью ключевого слова return.
+- Для экспорта самых важных сущностей, объявленных в модуле, используйте возможности экспорта по умолчанию. Для
+  второстепенных сущностей можно применить именованный экспорт.
+- Используйте деструктурирование
+- Задавайте стандартные значения параметров функций
+- Не передавайте функциям ненужные данные
+- Ограничивайте размер файла. 100 строк - хорошо. 200-300 - приемлемо. Более 400 - не надо
+- Вложенность кода не должна превышать четырёх уровней.
+- Имена массивов. Массивы обычно содержат в себе наборы каких-то значений. В результате к имени переменной, хранящей
+  массив, имеет смысл добавлять букву s. (student*s*)
+- Имен алогических значений - имеет смысл начинать с is или has.
+- Имена параметров функций, передаваемых стандартным методам массивов - лучше называть с учётом данных, которые в них
+  оказываются
+- Использование коллбэков ухудшает читабельность кода. Особенно это касается вложенных коллбэков. Где возможно -
+  используйте конструкцию async/await
+- Подчищать за собой console.log. Лишние выводы захламляют консоль. Использование отладочного кода может негативно
+  сказаться на производительности. Но, некоторые логи имеет смысл оставлять. Например — команды, выводящие сообщения об
+  ошибках и предупреждения.
+- Классы не должны быть длиннее 100 строк кода.
+- Методы и функции не должны быть длиннее 5 строк кода.
+- Методам следует передавать не более 4 параметров.
+- Контроллеры могут инициализировать лишь один объект.
+
+**Книги**
+
+- Макконелл С - Совершенный код
+
+**Руководства по стилю**
+
+- [Google JavaScript Style Guide (en)](https://google.github.io/styleguide/jsguide.html)
+- [jQuery JavaScript Style Guide (en)](http://contribute.jquery.org/style-guide/js/)
+- [Airbnb JavaScript Style Guide (en)](https://github.com/airbnb/javascript)
+- [Airbnb JavaScript Style Guide (ru)](https://github.com/leonidlebedev/javascript-airbnb)
+- [Idiomatic.JS (en)](https://github.com/rwaldron/idiomatic.js)
+- [Idiomatic.JS (ru)](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ru_RU)
+- [Dojo Style Guide (en)](https://dojotoolkit.org/reference-guide/1.10/developer/styleguide.html)
+- [JSLint style (en)](https://www.jslint.com/help.html)
+
+**Автоматизированные средства проверки (линтеры)**
+
+- [JSLint](http://www.jslint.com/)
+- [JSHint ](http://www.jshint.com/) - вариант JSLint с б*о*льшим количеством настроек
+
+**Ссылки**
+
+- [learnjavascript - Как писать неподдерживаемый код?](https://learn.javascript.ru/write-unmain-code)
+- [learnjavascript - Советы по стилю кода](https://learn.javascript.ru/coding-style)
+- [Habr - Рекомендации по написанию чистого кода на JavaScript](https://habr.com/ru/company/ruvds/blog/454520/)
+- [Habr - JavaScript: путь к ясности кода](https://habr.com/ru/company/ruvds/blog/342404/)
+- [Habr - 7 рекомендаций по оформлению кода на JavaScript](https://habr.com/ru/company/ruvds/blog/418631/)
+- [Habr - Как писать чистый и красивый код](https://habr.com/ru/company/ruvds/blog/347610/)
+- [Habr - Пишем чистый и масштабируемый JavaScript-код: 12 советов](https://habr.com/ru/company/ruvds/blog/452562/)
+- [YouTube - Доклад Сэнди Метц о 4 правилах написания чистого кода в объектно-ориентированных языках (en)](https://www.youtube.com/watch?v=npOGOmkxuio)
+
+  <br></p>
+
+</details>
 
 <br> 
 <br>
