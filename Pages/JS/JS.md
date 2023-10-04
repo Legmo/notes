@@ -1329,7 +1329,10 @@ Web API...
   <br></p>
   </details>
 
-- **Ссылки**
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
   - [Legmo notes — Задачки для собеседования frontend. Console.log](../JobSearch/InterviewTasks.md#task-1)
   - [YouTube - Как на самом деле работает EventLoop (26 мин)](https://youtu.be/8cV4ZvHXQL4) - Очень просто и понятно.
   - [YouTube - Филипп Робертс: Что за чертовщина такая event loop? (26 мин) Он же?](https://youtu.be/8aGhZQkoFbQ) - Очень
@@ -1357,7 +1360,11 @@ Web API...
   - [Замыкания в JavaScript](https://htmlacademy.ru/blog/useful/javascript/lets-learn-javascript-closures)
   - [Ад обратных вызовов](http://callbackhell.ru/)
   - [Асинхронное программирование: концепция, реализация, примеры](https://proglib.io/p/asynchrony/)
-  - https://doka.guide/js/async-in-js/
+  - [Дока - Асинхронность в JS](https://doka.guide/js/async-in-js/)
+  - [Kyle Simpson - Вы не знаете JS. Асинхронность и Производительность](https://github.com/azat-io/you-dont-know-js-ru/blob/master/async%20%26%20performance/README.md#you-dont-know-js-async--performance)
+
+  <br></p>
+  </details>
 
 <br></p>
 </details>
@@ -8061,7 +8068,7 @@ console.log('%c Some text', 'color: green')
 -
 - [learn.javascript.ru](https://learn.javascript.ru)
 - [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
-- [Kyle Simpson - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru) (есть 2-е издание, 2022 г.)
+- [Kyle Simpson - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru) (в 2022 вышло 2-е издание)
 - [doka.guide](https://doka.guide/js)
 -
 - [metanit.com](https://metanit.com/web/javascript/)
