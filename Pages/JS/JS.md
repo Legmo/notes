@@ -1,52 +1,5 @@
 <h1> Шпаргалка по JavaScript </h1>
 
-[//]: # (Ресурсы по JS)
-<details><summary><h3>Ресурсы по JS</h3></summary><p>
-
-- [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
-- [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
-- 
-- [learn.javascript.ru](https://learn.javascript.ru)
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
-- [Kyle Simpson - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru) (есть 2-е издание, 2022 г.)
-- [doka.guide](https://doka.guide/js)
-- 
-- [metanit.com](https://metanit.com/web/javascript/)
-- [Schoolsw3](https://www.schoolsw3.com/js)
-- [ITchief](https://itchief.ru/javascript/)
-- [code.mu - Учебник JS: основной](https://code.mu/ru/javascript/book/prime/)
-- [code.mu - Учебник JS: высший](https://code.mu/ru/javascript/book/supreme/)
-- [code.mu - Учебник JS: ООП](https://code.mu/ru/javascript/book/oop/)
-- [code.mu - Справочник JavaScript](https://code.mu/ru/javascript/manual/)
-- [code.mu - Практика JS](https://code.mu/ru/javascript/book/practice/)
-- [webref.ru - Знакомство с JavaScript (2015-2019)](https://webref.ru/dev/learn-javascript)
-- [professorweb.ru - Учебник JavaScript](https://professorweb.ru/my/javascript/js_theory/level1/javascript_index.php)
-
-**Видео**
-
-- [IT-Kamasutra - JS в деталях (48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
-- [IT-Kamasutra - Уроки JavaScript с нуля (ну ваще с нуля) (429 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
-- [WebDev - JavaScript (15 видео)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMHKLotIS_d-wyj00pg0AnUg)
-- [WebDev - ES6 (19 видео)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMGLJXugVvdK7i8UagGQNaXD)
-- [code.mu - Видео-уроки JS](https://code.mu/ru/javascript/video/lesson)
-
-**Есть отдельные статьи**
-
-- [Habr.com](https://habr.com/ru/search/?q=javascript)
-- [medium.com](https://medium.com/)
-- [proglib.io](https://proglib.io/search?q=Javascript)
-- [webformyself.com](https://webformyself.com/category/javascriptajax-2/javascriptajax/)
-
-**Прочее**
-
-- [Hexlet - Бесплатный курс JS](https://ru.hexlet.io/courses/js-basics)
-- [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-- [Официальная спецификация - черновик и предложения (en)](https://tc39.github.io/ecma262)
-
-<br></p>
-</details>
-
 [//]: # (Версии JS. Что нового)
 <details id="new"><summary><h3>Версии JS. Что нового</h3></summary><p>
 
@@ -8161,6 +8114,56 @@ console.log('%c Some text', 'color: green')
 
   <br></p>
 
+</details>
+
+<br> 
+<br>
+
+[//]: # (Ресурсы по JS)
+<details><summary><h3>Ресурсы по JS</h3></summary><p>
+
+- [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
+- [Habr - Подводные камни JavaScript](https://habr.com/ru/post/159313)
+-
+- [learn.javascript.ru](https://learn.javascript.ru)
+- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript)
+- [Kyle Simpson - Вы не знаете JS (серия из 6 книг, открытый доступ)](https://github.com/azat-io/you-dont-know-js-ru) (есть 2-е издание, 2022 г.)
+- [doka.guide](https://doka.guide/js)
+-
+- [metanit.com](https://metanit.com/web/javascript/)
+- [Schoolsw3](https://www.schoolsw3.com/js)
+- [ITchief](https://itchief.ru/javascript/)
+- [code.mu - Учебник JS: основной](https://code.mu/ru/javascript/book/prime/)
+- [code.mu - Учебник JS: высший](https://code.mu/ru/javascript/book/supreme/)
+- [code.mu - Учебник JS: ООП](https://code.mu/ru/javascript/book/oop/)
+- [code.mu - Справочник JavaScript](https://code.mu/ru/javascript/manual/)
+- [code.mu - Практика JS](https://code.mu/ru/javascript/book/practice/)
+- [webref.ru - Знакомство с JavaScript (2015-2019)](https://webref.ru/dev/learn-javascript)
+- [professorweb.ru - Учебник JavaScript](https://professorweb.ru/my/javascript/js_theory/level1/javascript_index.php)
+
+**Видео**
+
+- [IT-Kamasutra - JS в деталях (48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
+- [IT-Kamasutra - Уроки JavaScript с нуля (ну ваще с нуля) (429 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
+- [WebDev - JavaScript (15 видео)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMHKLotIS_d-wyj00pg0AnUg)
+- [WebDev - ES6 (19 видео)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMGLJXugVvdK7i8UagGQNaXD)
+- [code.mu - Видео-уроки JS](https://code.mu/ru/javascript/video/lesson)
+
+**Есть отдельные статьи**
+
+- [Habr.com](https://habr.com/ru/search/?q=javascript)
+- [medium.com](https://medium.com/)
+- [proglib.io](https://proglib.io/search?q=Javascript)
+- [webformyself.com](https://webformyself.com/category/javascriptajax-2/javascriptajax/)
+
+**Прочее**
+
+- [Hexlet - Бесплатный курс JS](https://ru.hexlet.io/courses/js-basics)
+- [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+- [Официальная спецификация - черновик и предложения (en)](https://tc39.github.io/ecma262)
+
+<br></p>
 </details>
 
 <br> 
