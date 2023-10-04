@@ -7800,16 +7800,6 @@ task.somethingData = 10;
 <br></p>
 </details>
 
-[//]: # (Math.ceil)
-<details><summary><b>Math.ceil(x)</b> - метод, округляет x в большую сторону</summary><p>
-
-**Ссылки:**
-
-- [MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
-
-<br></p>
-</details>
-
 [//]: # (Console.log)
 <details><summary><b>Console.log</b></summary><p>
 
