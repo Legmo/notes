@@ -7744,6 +7744,7 @@ ClassLiteral.
       mathNotes.addPage("Trigonometry: sin cos tan ...");
       mathNotes.print();
       ```
+  - Механизм class позволяет упаковать данные (text и pages) вместе с поведением (например, addPage(..) и print()). Ту же программу можно было построить без определений классов, но, скорее всего, она получилась бы намного менее организованной, хуже читалась, была бы менее понятной и более подверженной ошибкам и на ее сопровождение потребовалось бы слишком много сил.
   - 
   - Пример 2
     ```js
@@ -7814,6 +7815,112 @@ ClassLiteral.
   - как вызов дочернего класса `super.X()` для метода X родительского класса.
   - 
   - Подробнее: [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+
+  <br></p>
+  </details>
+
+
+[//]: # (Наследование)
+- <details><summary><b>Наследование</b></summary><p>
+
+  - Есть класс Publication, у него есть набор общих данных и поведения, которые могут понадобиться для любой публикации.
+  - Есть классы Book и BlogPost. При их объявлении используется конструкция `extends` — эти классы расширяют общее определение Publication для включения в него дополнительного поведения.
+    - Пример: `class BlogPost extends Publication {...}`
+  - В конструкторах классов Book и BlogPost есть вызов `super(..)` — активизирует конструктор родительского класса Publication для выполнения его части инициализации. Уже после этого выполняются операции конструктора специфические для Book и BlogPost.
+
+  <br></p>
+  </details>
+
+[//]: # (Полиморфизм)
+- <details><summary><b>Полиморфизм</b></summary><p>
+
+  - Продолжим предыдущий пример (см. Наследование)
+  - Есть класс Publication, у него есть данные (имя автора и название публикации) и метод `print` (выводит их в console.log).
+    - Есть классы Book и BlogPost. У них есть свои данные, и свои методы `print`, которые вначале вызывают метод `print` родительского класса Publication, а потом допечатывют в консоль что-то своё.
+  - Пример:
+    ```js
+      print() {
+        super.print();
+        console.log(this.URL);
+      }
+    ```
+  - Тот факт, что унаследованный и переопределенный методы могут иметь одинаковые имена (`print`) и сосуществовать в классе, называется полиморфизмом.
+
+- Пример целиком
+  - ```js 
+      class Publication {
+        constructor(title,author,pubDate) {
+          this.title = title;
+          this.author = author;
+          this.pubDate = pubDate;
+        }
+        print() {
+          console.log(`
+            Title: ${ this.title }
+            By: ${ this.author }
+            ${ this.pubDate }
+          `);
+        }
+      }
+      
+      class Book extends Publication {
+      	constructor(bookDetails) {
+      		super(
+      			bookDetails.title,
+      			bookDetails.author,
+      			bookDetails.publishedOn
+      		);
+      		this.publisher = bookDetails.publisher;
+      		this.ISBN = bookDetails.ISBN;
+      	}
+      	print() {
+      		super.print();
+      		console.log(`
+      			Publisher: ${ this.publisher }
+      			ISBN: ${ this.ISBN }
+      		`);
+      	}
+      }
+      
+      class BlogPost extends Publication {
+        constructor(title,author,pubDate,URL) {
+          super(title,author,pubDate);
+          this.URL = URL;
+        }
+        print() {
+          super.print();
+          console.log(this.URL);
+        }
+      }
+      
+      var YDKJS = new Book({
+        title: "You Don't Know JS",
+        author: "Kyle Simpson",
+        publishedOn: "June 2014",
+        publisher: "O'Reilly",
+        ISBN: "123456-789"
+      });
+
+      YDKJS.print();
+      // Title: You Don't Know JS
+      // By: Kyle Simpson
+      // June 2014
+      // Publisher: O'Reilly
+      // ISBN: 123456-789
+      
+      var forAgainstLet = new BlogPost(
+        "For and against let",
+        "Kyle Simpson",
+        "October 27, 2014",
+        "https://davidwalsh.name/for-and-against-let"
+      );
+      
+      forAgainstLet.print();
+      // Title: For and against let
+      // By: Kyle Simpson
+      // October 27, 2014
+      // https://davidwalsh.name/for-and-against-let
+    ```
 
   <br></p>
   </details>
