@@ -7836,14 +7836,14 @@ ClassLiteral.
 
   - Продолжим предыдущий пример (см. Наследование)
   - Есть класс Publication, у него есть данные (имя автора и название публикации) и метод `print` (выводит их в console.log).
-    - Есть классы Book и BlogPost. У них есть свои данные, и свои методы `print`, которые вначале вызывают метод `print` родительского класса Publication, а потом допечатывют в консоль что-то своё.
-  - Пример:
-    ```js
-      print() {
-        super.print();
-        console.log(this.URL);
-      }
-    ```
+  - Есть классы Book и BlogPost. У них есть свои данные, и свои методы `print`, которые вначале вызывают метод `print` родительского класса Publication, а потом допечатывют в консоль что-то своё.
+    - Пример:
+      ```js
+        print() {
+          super.print();
+          console.log(this.URL);
+        }
+      ```
   - Тот факт, что унаследованный и переопределенный методы могут иметь одинаковые имена (`print`) и сосуществовать в классе, называется полиморфизмом.
 
   - Пример целиком
@@ -7864,22 +7864,22 @@ ClassLiteral.
         }
         
         class Book extends Publication {
-        	constructor(bookDetails) {
-        		super(
-        			bookDetails.title,
-        			bookDetails.author,
-        			bookDetails.publishedOn
-        		);
-        		this.publisher = bookDetails.publisher;
-        		this.ISBN = bookDetails.ISBN;
-        	}
-        	print() {
-        		super.print();
-        		console.log(`
-        			Publisher: ${ this.publisher }
-        			ISBN: ${ this.ISBN }
-        		`);
-        	}
+            constructor(bookDetails) {
+                super(
+                    bookDetails.title,
+                    bookDetails.author,
+                    bookDetails.publishedOn
+                );
+                this.publisher = bookDetails.publisher;
+                this.ISBN = bookDetails.ISBN;
+            }
+            print() {
+                super.print();
+                console.log(`
+                    Publisher: ${ this.publisher }
+                    ISBN: ${ this.ISBN }
+                `);
+            }
         }
         
         class BlogPost extends Publication {
