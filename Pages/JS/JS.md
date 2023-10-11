@@ -7116,43 +7116,43 @@ function * downToOne(n) {
       ```
     - 
   - По большей части для всех встроенных итерируемых значений в JS доступны три формы итераторов:
-  - `values()`  — только для значений. Выводит в каждой итерации только значение
-    - ```js
-      // Есть два элемента DOM, `btn1` и `btn2`
-      // Создадим Map, а потом используем его для перебора
-      var buttonNames = new Map();
-      buttonNames.set(btn1,"Button 1");
-      buttonNames.set(btn2,"Button 2");
-  
-      for (let btnName of buttonNames.values()) {
-      console.log(btnName);
-      }
-      // Button 1
-      // Button 2
+    - `values()`  — только для значений. Выводит в каждой итерации только значение
+      - ```js
+        // Есть два элемента DOM, `btn1` и `btn2`
+        // Создадим Map, а потом используем его для перебора
+        var buttonNames = new Map();
+        buttonNames.set(btn1,"Button 1");
+        buttonNames.set(btn2,"Button 2");
+    
+        for (let btnName of buttonNames.values()) {
+          console.log(btnName);
+        }
+        // Button 1
+        // Button 2
+        ``` 
+    - `keys()` — только для ключей. Выводит в каждой итерации только ключ (для массива и подобный — это индекс)
+      - ```js
+        var someObj = new Map();
+        someObj.set('name','Ivan');
+        someObj.set('surname','Ivanov');
+    
+        for (let data of someObj.keys()) {
+          console.log(data)
+        }
+    
+        //name
+        //surname
+        ``` 
+    - `entries()` — для записей. Выводит в каждой итерации и ключ, и значение
+      - ```js
+        var arr = [ 10, 20, 30 ];
+        for (let [idx,val] of arr.entries()) {
+          console.log(`[${ idx }]: ${ val }`);
+        }
+        // [0]: 10
+        // [1]: 20
+        // [2]: 30
       ``` 
-  - `keys()` — только для ключей. Выводит в каждой итерации только ключ (для массива и подобный — это индекс)
-    - ```js
-      var someObj = new Map();
-      someObj.set('name','Ivan');
-      someObj.set('surname','Ivanov');
-  
-      for (let data of someObj.keys()) {
-      console.log(data)
-      }
-  
-      //name
-      //surname
-      ``` 
-  - `entries()` — для записей. Выводит в каждой итерации и ключ, и значение
-    - ```js
-      var arr = [ 10, 20, 30 ];
-      for (let [idx,val] of arr.entries()) {
-      console.log(`[${ idx }]: ${ val }`);
-    }
-    // [0]: 10
-    // [1]: 20
-    // [2]: 30
-    ``` 
   - 
   - Ссылки:
     - [learn.javascript.ru](https://learn.javascript.ru/iterator)
