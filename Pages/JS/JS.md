@@ -5240,7 +5240,7 @@ sayHi("Вася");
   <br></p>
   </details>
 
-[//]: # (Модули — синтаксис ES (ESM))
+[//]: # (Модули — синтаксис ES/ESM)
 - <details><summary><b>Модули — синтаксис ES (ESM)</b></summary><p>
 
   - 
