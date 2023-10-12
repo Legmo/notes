@@ -4661,7 +4661,7 @@ console.log(myFunc(null)) // null — величина задана
 </details>
 
 [//]: # (Ключевое слово this. Контекст выполнения)
-<details id="this"><summary><b>Ключевое слово `this`. Контекст выполнения</b></summary><p>
+<details id="this"><summary><b>this. Контекст выполнения</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
