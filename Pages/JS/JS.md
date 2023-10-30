@@ -4295,35 +4295,34 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 [//]: # (Объекты. Копирование объектов)
 <details id="objectCopy"><summary><b>Объекты. Копирование объектов</b></summary><p>
 
-**Поверхностное копирование**
-- Spread оператор (...)
-  -   - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
-- цикл («наивное» копирование)
-  - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
-  - пример `for (let key in user) {newObj[key] = oldObj[key]}`
-  - проблемы
-    - меняется метод `Object.prototype`,
-    - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
-    - копирует только перечисляемые свойства
-- object.assign
-  - работает для поверхностного копирования циклических объектов
-  - можно использовать для копирования методов
-    <br>
-    <br>
+- **Поверхностное копирование**
+  - Spread оператор (...)
+    - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
+  - цикл («наивное» копирование)
+    - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
+    - пример `for (let key in user) {newObj[key] = oldObj[key]}`
+    - проблемы
+      - меняется метод `Object.prototype`,
+      - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
+      - копирует только перечисляемые свойства
+  - object.assign
+    - работает для поверхностного копирования циклических объектов
+    - можно использовать для копирования методов
+- 
+- **Глубокое копирование**
+  - цикл рекурсивный
+  - JSON.parse(JSON.stringify(object));
+    - нельзя использовать для копирования методов объекта (вообще всех функций)
+    - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
+    - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
+  - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
+    - пример `const myDeepCopy = structuredClone(myOriginal);`
+  - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
+- 
+- **Ссылки**
+  - [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
+  - [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
 
-**Глубокое копирование**
-- цикл рекурсивный
-- JSON.parse(JSON.stringify(object));
-  - нельзя использовать для копирования методов объекта (вообще всех функций)
-  - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
-  - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
-- [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
-  - пример `const myDeepCopy = structuredClone(myOriginal);`
-- [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
-
-**Ссылки**
-- [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
-- [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
   <br><p>
 </details>
 
@@ -4469,7 +4468,7 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 [//]: # (Перебор свойств объектов)
 - <details ><summary><b>Перебор свойств объектов</b></summary><p>
 
-  - Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.<br>
+  - Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.
   - А затем, пройтись по преобразованному массиву привычными методами.
   - 
   - После преобразования объекта в массив (с ключами `Object.keys`, значениями `Object.values` или `Object.entries`) — можно работать с ними дальше в цикле, как с обычным массивом.
@@ -4500,23 +4499,24 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
       const entries = Object.entries(fruits);
       for (const [fruit, count] of entries) {
         console.log(`Всего: ${count} ${fruit}s`)
-      }
+      };
       // Всего — 28 apples
       // Всего — 17 oranges
       // Всего — 54 pears
+      
       ```
   - Метод `Object getOwnPropertyNames`
     - принимает объект в качестве аргумента
     - возвращает массив строк, соответствующих перечисляемым и неперечисляемым свойствам, найденным непосредственно в объекте.
-  -
-  -
-  - **Ссылки**
+  - 
+  - 
+  - **Ссылки:**
     - [Как перебрать свойства объекта в JavaScript](https://frontend-stuff.com/blog/how-to-loop-through-object-in-javascript/)
     - [Перебор элементов объекта в JavaScript](https://badtry.net/pieriebor-eliemientov-obiekta-v-javascript/)
     - [learn.javascript.ru - Объекты. Цикл "for..in"](https://learn.javascript.ru/object#forin)
     - [Перебор свойств](https://www.wm-school.ru/js/js_object-for-in.php)
   
-  <br><p>
+  <br></p>
   </details>
 
 
@@ -5167,6 +5167,9 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 - `do... while` — вначале выполняется, потом проверяет условие. Точно выполнится один раз
 - `for` — часто используется если известно точное количество повторений. «Цикл со счётчиком». («под капотом» у него `while`)
 - `for ... in` — перебор свойств объекта
+  - Лучше использовать только с объектами, а для перебора массивов — традиционные циклы `for` с числовыми индексами.
+  - Применительно к массивам можеть дать неожиданные результаты — в перечисление массива включаются не только все числовые индексы, но и все перечисляемые свойства.
+  - Ну и он заметно медленне альтернатив
 - `for ... of` — перебор по массиву. Итерируемые объекты
 - `for await of` — получение данных с помощью асинхронных итераторов. Перебор в цикле данных, поступающих асинхронно.
   Например: загружаем что-то по частям из сети.
