@@ -4471,10 +4471,10 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
 
   - Лучший способ пройтись циклом по объектам - это сначала преобразовать объект в массив.<br>
   - А затем, пройтись по преобразованному массиву привычными методами.
-  -
+  - 
   - После преобразования объекта в массив (с ключами `Object.keys`, значениями `Object.values` или `Object.entries`) — можно работать с ними дальше в цикле, как с обычным массивом.
-  -
-  -
+  - 
+  - 
   - цикл `for..in`
     - проходит не только по собственным, но и по унаследованным свойствам объекта — итерация происходит с учетом свойств в цепочке Prototype
     - Приходится проверять, принадлежит ли свойство этому объекту
@@ -4497,29 +4497,26 @@ console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie и
     - Так как Object.entries возвращает массив массивов, то мы деструктурируем массив в его ключ и свойство.
     - При переборе полученного массива удобнее всего будет воспользоваться деструктуризацией, присвоив переменной текущий ключ и значение.
     - ```js
-	    const entries = Object.entries(fruits)
-	    for (const [fruit, count] of entries) {
-	    console.log(`Всего: ${count} ${fruit}s`)
-	    }
-	    // Всего: 28 apples
-	    // Всего: 17 oranges
-	    // Всего: 54 pears
-	    ```
+      const entries = Object.entries(fruits);
+      for (const [fruit, count] of entries) {
+        console.log(`Всего: ${count} ${fruit}s`)
+      }
+      // Всего — 28 apples
+      // Всего — 17 oranges
+      // Всего — 54 pears
+      ```
   - Метод `Object getOwnPropertyNames`
     - принимает объект в качестве аргумента
     - возвращает массив строк, соответствующих перечисляемым и неперечисляемым свойствам, найденным непосредственно в объекте.
-
-  <br>
-  <br>
-
-
-	-**Ссылки**
-	  - [Как перебрать свойства объекта в JavaScript](https://frontend-stuff.com/blog/how-to-loop-through-object-in-javascript/)
-	  - [Перебор элементов объекта в JavaScript](https://badtry.net/pieriebor-eliemientov-obiekta-v-javascript/)
-	  - [learn.javascript.ru - Объекты. Цикл "for..in"](https://learn.javascript.ru/object#forin)
-	  - [Перебор свойств](https://www.wm-school.ru/js/js_object-for-in.php)
-	
-	<br><p>
+  -
+  -
+  - **Ссылки**
+    - [Как перебрать свойства объекта в JavaScript](https://frontend-stuff.com/blog/how-to-loop-through-object-in-javascript/)
+    - [Перебор элементов объекта в JavaScript](https://badtry.net/pieriebor-eliemientov-obiekta-v-javascript/)
+    - [learn.javascript.ru - Объекты. Цикл "for..in"](https://learn.javascript.ru/object#forin)
+    - [Перебор свойств](https://www.wm-school.ru/js/js_object-for-in.php)
+  
+  <br><p>
   </details>
 
 
