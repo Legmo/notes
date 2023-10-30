@@ -270,18 +270,20 @@ function withdraw(account, amount) {
 debounce.<br>
 Функция debounce крайне полезна, когда дело доходит до производительности обработчиков событий.
 
-Ссылки:
 
-* [Habr - Декораторы](https://habr.com/ru/post/60957/)
-* [Для чего нужна функция debounce и как она работает](http://gdrw.ru/reviews/tech/debounce-function-in-javascript)
-* [learn.javascript.ru - реализация на js](https://learn.javascript.ru/task/debounce)
-* [7 важных функций JavaScript](https://getinstance.info/articles/javascript/essential-javascript-functions/)
+- `Debounce` — паттерн микрооптимизации кода. Ждёт Х милисек, если некое событие не произошло за это время — выполняет действие.
 
-- [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
-- [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
-- [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
-- [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
-- [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
+- **Ссылки:**
+  - [Habr - Декораторы](https://habr.com/ru/post/60957/)
+  - [Для чего нужна функция debounce и как она работает](http://gdrw.ru/reviews/tech/debounce-function-in-javascript)
+  - [learn.javascript.ru - реализация на js](https://learn.javascript.ru/task/debounce)
+  - [7 важных функций JavaScript](https://getinstance.info/articles/javascript/essential-javascript-functions/)
+  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+  - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
+  - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
+  - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
+  - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
 
 <br></p>
 </details>
@@ -292,10 +294,12 @@ debounce.<br>
 Данный декоратор позволяет «затормозить» функцию — функция будет выполняться не чаще одного раза в указанный период,
 даже если она будет вызвана много раз в течение этого периода. Т.е. все промежуточные вызовы будут игнорироваться.
 
-Ссылки:
+- `Throttling` — паттерн микрооптимизации кода. Тормозит - выполняй событие не чаще чем Х милисек.
 
-* [Habr - Декораторы](https://habr.com/ru/post/60957/)
-* [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+- **Ссылки:**
+  - [Habr - Декораторы](https://habr.com/ru/post/60957/)
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
 
 <br></p>
 </details>
