@@ -8534,8 +8534,6 @@ function * downToOne(n) {
 [//]: # (Генераторы todo: доработать)
 <details id="generators"><summary><b>Генераторы*</b></summary><p>
 
-***
-
 - Подход, когда вычисляется только следующий элемент
   - не загрузил коллекцию с сервера, а вычисляю каждое её значение только после вызова метода next
   - это подход, который вычисляет только следующее нужное значение
@@ -8708,13 +8706,10 @@ alert(e); // покажет ошибку
 <br></p>
 </details>
 
-**Ссылки**
-
-- [learn.javascript.ru - Генераторы](https://learn.javascript.ru/generators)
-- [WebDev -  #16 Генераторы](https://youtu.be/ejdhriCfF8s)
-- [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=h0IkQhHE8rB3kAjj&t=2784)
-- 
-****
+- **Ссылки**
+  - [learn.javascript.ru - Генераторы](https://learn.javascript.ru/generators)
+  - [WebDev -  #16 Генераторы](https://youtu.be/ejdhriCfF8s)
+  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=h0IkQhHE8rB3kAjj&t=2784)
 
 <br></p>
 </details>
