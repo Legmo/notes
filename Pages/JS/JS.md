@@ -2710,44 +2710,44 @@ HTML-документы парсятся по порядку, с открыти�
 
   - Чему будет равно выражение в каждой строке?
   - ```
-    true + false
-    12 / "6"
-    "number" + 15 + 3
-    15 + 3 + "number"
-    [1] > null
-    "foo" + + "bar"
-    'true' == true
-    false == 'false'
-    null == ''
-    !!"false" == !!"true"
-    [‘x’] == ‘x’
-    [] + null + 1
-    [1,2,3] == [1,2,3]
-    {}+[]+{}+[1]
-    !+[]+[]+![]
-    new Date(0) - 0
-    new Date(0) + 0
+    1)  true + false
+    2)  12 / "6"
+    3)  "number" + 15 + 3
+    4)  15 + 3 + "number"
+    5)  [1] > null
+    6)  "foo" + + "bar"
+    7)  'true' == true
+    8)  false == 'false'
+    9)  null == ''
+    10) !!"false" == !!"true"
+    11) [‘x’] == ‘x’
+    12) [] + null + 1
+    13) [1,2,3] == [1,2,3]
+    14) {}+[]+{}+[1]
+    15) !+[]+[]+![]
+    16) new Date(0) - 0
+    17) new Date(0) + 0
     ```
   - 
   - Ответ
   - ```
-    true + false             // 1
-    12 / "6"                 // 2
-    "number" + 15 + 3        // 'number153'
-    15 + 3 + "number"        // '18number'
-    [1] > null               // true
-    "foo" + + "bar"          // 'fooNaN'
-    'true' == true           // false
-    false == 'false'         // false
-    null == ''               // false
-    !!"false" == !!"true"    // true
-    ['x'] == 'x'             // true
-    [] + null + 1            // 'null1'
-    [1,2,3] == [1,2,3]       // false
-    {}+[]+{}+[1]             // '0[object Object]1'
-    !+[]+[]+![]              // 'truefalse'
-    new Date(0) - 0          // 0
-    new Date(0) + 0          // 'Thu Jan 01 1970 02:00:00(EET)0'
+    1)  true + false             // 1
+    2)  12 / "6"                 // 2
+    3)  "number" + 15 + 3        // 'number153'
+    4)  15 + 3 + "number"        // '18number'
+    5)  [1] > null               // true
+    6)  "foo" + + "bar"          // 'fooNaN'
+    7)  'true' == true           // false
+    8)  false == 'false'         // false
+    9)  null == ''               // false
+    10) !!"false" == !!"true"    // true
+    11) ['x'] == 'x'             // true
+    12) [] + null + 1            // 'null1'
+    13) [1,2,3] == [1,2,3]       // false
+    14) {}+[]+{}+[1]             // '0[object Object]1'
+    15) !+[]+[]+![]              // 'truefalse'
+    16) new Date(0) - 0          // 0
+    17) new Date(0) + 0          // 'Thu Jan 01 1970 02:00:00(EET)0'
     ```
   - Подробный разбор: [Habr - Неявное преобразование типов в JavaScript](https://habr.com/ru/company/ruvds/blog/347866/)
   
