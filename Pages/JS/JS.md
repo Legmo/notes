@@ -3972,6 +3972,26 @@ event.stopImmediatePropagation().
 </details>
 
 
+[//]: # (Ключевые и зарезервированные слова)
+- <details id=""keyword"><summary><b>Ключевые и зарезервированные слова</b></summary><p>
+
+  - В JS есть список слов, которые нельзя использовать в качестве переменных, меток, имен функций или параметров.
+  - Правила Ы относительно зарезервированных слов довольно сложны, предусмотрены исключения, в каких случаях некоторые из этих слов можно применять. Но даже в этих случаях так делать не нужно.
+
+  - В частности это
+    - «ключевые слова»
+    - «слова, зарезервированные на будущее»
+    - литерал `null`
+    - логические литералы `true`/`false`.
+    -
+    - Примеры
+      - `arguments`, `await`, `break`, `case`, `catch`, `class`, `const`, `continue`, `debugger`, `default`, `delete`, `do`, `else`, `enum`, `eval`, `export`, `extends`, `false`, `finally`, `for`, `function`, `if`, `implements`, `import`, `in`, `Infinity`, `instanceof`, `interface`, `let`, `NaN`, `new`, `null`, `package`, `private`, `protected`, `public`, `return`, `static`, `super`, `switch`, `this`, `throw`, `true`, `try`, `typeof`, `undefined`, `var`, `void`, `while`, `with`, `yield`
+
+    - [Полный список на MDN](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0)
+
+  <br></p>
+  </details>
+
 <br>
 <br>
 
