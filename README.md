@@ -53,6 +53,7 @@
 - [Консоли, терминалы и оболочки](/Pages/_Other/Console.md)
 - [Общение с иностранными работодателями. Особенности менталитета](/Pages/JobSearch/ForeignMentality.md)
 - [Список компетенций Drupal 7](/Pages/_Other/DrupalCompetenciesList.md)
+- [Цитаты о программировании](/Pages/Programming/Quotes.md)
 
   <br>
 
