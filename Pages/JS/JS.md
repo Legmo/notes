@@ -2498,6 +2498,7 @@
   <br></p>
   </details>
 
+
 [//]: # (Пример 3 - анонимная самовыполняющуяся функция)
 - <details><summary><b>Пример 3 - анонимная самовыполняющуяся функция (IIFE)</b></summary><p>
   
@@ -3053,15 +3054,20 @@ const a = 1
 [//]: # (Методы примитивов)
 <details id="primitiveMethods"><summary><b>Методы примитивов</b></summary><p>
 
-  ***
 
-Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
-Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
+[//]: # (Заметки)
+- <details><summary><b>Заметки</b></summary><p>
 
-Примитивы `null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
+  - Конструкторы String/Number/Boolean предназначены только для внутреннего пользования!<br>
+  - Категорически не рекомендуется самому вручную использовать конструкторы вроде `new Number(100)`.
+  - 
+  - Примитивы `null` и `undefined` не имеют «объектов-обёрток», не имеют методов.
+
+  <br></p>
+  </details>
 
 [//]: # (Объектные обертки примитивов)
-<details><summary><b>Объектные обертки примитивов</b></summary><p>
+- <details><summary><b>Объектные обертки примитивов</b></summary><p>
 
   - JS предоставляет объектные обертки для примитивных значений (`String`, `Number`, `Boolean` и т. д.). 
   - Объектные обертки предоставляют значениям доступ к поведению, соответствующему каждому подтипу объекта ( `String#trim()` и `Array#concat()` ).
@@ -3071,159 +3077,152 @@ const a = 1
     - если применить к числу эти методы — `(5).toFixed(3)`
     - если вызвать на числе конструктор new Number() — `let num = new Number(100) // typeof num === object`
 
-<br></p>
-</details>
+  <br></p>
+  </details>
 
+[//]: # (Методы String)
+- <details><summary><b>Методы String</b></summary><p>
 
-[//]: # (Меотды String)
-<details><summary><b>Методы String</b></summary><p>
-
-
-- Строки, в отличии от массивов, неизменяемы. Поэтому ни один строковый метод не может изменить свое содержимое «на месте», он должен создавать и возвращать новые строки.
-- Многие методы массивов недоступны для строк. Но можно «позаимствовать» неизменяющие методы массивов для строки. Пример: `var с = Array.prototype.join.call( myString, "-" );`
-
-
-- `repeat()` — создать строку путем многократного повторения другой строки
-- `indexOf()` — поиск подстроки в строке. Вернёт индекс первого вхождения подстроки
-- `lastIndexOf()` — поиск подстроки в строке. Вернёт индекс последнего вхождения подстроки
-- `includes()` — содержит ли строка опр. подстроку.
-- `search()`— содержит ли строка указанное значение или регулярное выражение. Возвращает индекс начала совпадения.
-- `substr()` — извлекает часть строки указанной длины. Устаревший метод
-- `substring()` — извлекает символы из строки между двумя указанными индексами.
-- `slice()` — извлекает часть строки и возвращает новую строку. Почти идентичен `substring()`, но немного «глупее»
-- `toLowerCase()` — перевод символов в нижний регистр
-- `toUpperCase()` — перевод символов в верхний регистр
-- `charAt()` — получить определенный символ в строке по индексу
-- `charCodeAt()` — получить определенный символ в строке по индексу
-- `trim()` — удаление начальных и концевых пробелов в стоке
-- `trimStart()` — удаляет пробел с начала строки
-- `trimEnd()` — удаляет пробел с конца строки
-- `trimLeft()` — удаляет пробел с левой части строки
-- `trimRight()` — удаляет пробел с правой части строки
-- `concat()` — объединяет две и более строк. Возвращает одну объединённую.
-- `replace()` — заменяет первое вхождение одной подстроки на другую (заменяет только первое вхождение подстроки)
-- `replaceAll()` — позволяет заменить все вхождения подстроки:
-- `split()` — разбивает строку на массив подстрок по опр. разделителю
-- `startsWith()` — возвращает true, если строка начинается с определенной подстроки.
-- `endsWith()` — возвращает true, если строка оканчивается на определенную подстроку.
-- `padStart()` — растянуть строку на N символов и заполнить строку слева.
-- `padEnd()` — растянуть строку на N символов и заполнить строку справа.
-- `join()` — Склеить массив строк в одну. **Метод массива!**
--
-- `String.fromCharCode()` — Возвращает строку, созданную из указанной последовательности значений Юникода.
-- `String.fromCodePoint()` — Возвращает строку, созданную из указанной последовательности кодовых точек Юникода.
-- `String.raw()` — Возвращает строку, созданную из сырой шаблонной строки.
-- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
--
-- Свойства
+  - Строки, в отличии от массивов, неизменяемы. Поэтому ни один строковый метод не может изменить свое содержимое «на месте», он должен создавать и   возвращать новые строки.
+  - Многие методы массивов недоступны для строк. Но можно «позаимствовать» неизменяющие методы массивов для строки. Пример: `var с =   Array.prototype.join.call( myString, "-" );`
+  
+  
+  - `repeat()` — создать строку путем многократного повторения другой строки
+  - `indexOf()` — поиск подстроки в строке. Вернёт индекс первого вхождения подстроки
+  - `lastIndexOf()` — поиск подстроки в строке. Вернёт индекс последнего вхождения подстроки
+  - `includes()` — содержит ли строка опр. подстроку.
+  - `search()`— содержит ли строка указанное значение или регулярное выражение. Возвращает индекс начала совпадения.
+  - `substr()` — извлекает часть строки указанной длины. Устаревший метод
+  - `substring()` — извлекает символы из строки между двумя указанными индексами.
+  - `slice()` — извлекает часть строки и возвращает новую строку. Почти идентичен `substring()`, но немного «глупее»
+  - `toLowerCase()` — перевод символов в нижний регистр
+  - `toUpperCase()` — перевод символов в верхний регистр
+  - `charAt()` — получить определенный символ в строке по индексу
+  - `charCodeAt()` — получить определенный символ в строке по индексу
+  - `trim()` — удаление начальных и концевых пробелов в стоке
+  - `trimStart()` — удаляет пробел с начала строки
+  - `trimEnd()` — удаляет пробел с конца строки
+  - `trimLeft()` — удаляет пробел с левой части строки
+  - `trimRight()` — удаляет пробел с правой части строки
+  - `concat()` — объединяет две и более строк. Возвращает одну объединённую.
+  - `replace()` — заменяет первое вхождение одной подстроки на другую (заменяет только первое вхождение подстроки)
+  - `replaceAll()` — позволяет заменить все вхождения подстроки:
+  - `split()` — разбивает строку на массив подстрок по опр. разделителю
+  - `startsWith()` — возвращает true, если строка начинается с определенной подстроки.
+  - `endsWith()` — возвращает true, если строка оканчивается на определенную подстроку.
+  - `padStart()` — растянуть строку на N символов и заполнить строку слева.
+  - `padEnd()` — растянуть строку на N символов и заполнить строку справа.
+  - `join()` — Склеить массив строк в одну. **Метод массива!**
+  -
+  - `String.fromCharCode()` — Возвращает строку, созданную из указанной последовательности значений Юникода.
+  - `String.fromCodePoint()` — Возвращает строку, созданную из указанной последовательности кодовых точек Юникода.
+  - `String.raw()` — Возвращает строку, созданную из сырой шаблонной строки.
+  - Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
+  -
+  - Свойства
   - length указывает на длину строки
   - arity, caller, constructor, length, name
--
-- `'Hello'.split('')` — преобразовать строку в массив символов
-- `Array.from('Hello')` — преобразовать строку в массив символов
-- `[...'Hello']` — преобразовать строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
--
-- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
-- [Mentanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
-- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
-- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+  -
+  - `'Hello'.split('')` — преобразовать строку в массив символов
+  - `Array.from('Hello')` — преобразовать строку в массив символов
+  - `[...'Hello']` — преобразовать строку в массив символов `let symbArray = [...'Привет']; // П,р,и,в,е,т`
+  -
+  - [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
+  - [Mentanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
+  - [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
+  - [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+  
+  [//]: # (Стандратные методы с MDN)
+  - <details><summary><b>Стандартные методы с MDN</b></summary><p>
+  
+    - [String.prototype[@@iterator]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
+    - [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
+    - [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+    - [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+    - [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
+    - [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+    - [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+    - [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+    - [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
+    - [String.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+    - [String.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+    - [String.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
+    - [String.prototype.localeCompare()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+    - [String.prototype.match()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+    - [String.prototype.matchAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
+    - [String.prototype.normalize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
+    - [String.prototype.padEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+    - [String.prototype.padStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+    - [String.raw()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/raw)
+    - [String.prototype.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+    - [String.prototype.replace()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+    - [String.prototype.replaceAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+    - [String.prototype.search()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/search)
+    - [String.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+    - [String.prototype.split()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+    - [String.prototype.startsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+    - [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase  )
+    - [String.prototype.toLocaleUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase  )
+    - [String.prototype.toLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+    - [String.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
+    - [String.prototype.toUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+    - [String.prototype.trim()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+    - [String.prototype.trimEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
+    - [String.prototype.trimStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
+    - [String.prototype.valueOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
+    -
+    - [String.prototype.anchor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/anchor) — Deprecated
+    - [String.prototype.big()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/big) — Deprecated
+    - [String.prototype.blink()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/blink) — Deprecated
+    - [String.prototype.bold()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/bold) — Deprecated
+    - [String.prototype.fixed()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fixed) — Deprecated
+    - [String.prototype.fontcolor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor) — Deprecated
+    - [String.prototype.fontsize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize) — Deprecated
+    - [String.prototype.italics()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/italics) — Deprecated
+    - [String.prototype.link()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/link) — Deprecated
+    - [String.prototype.small()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/small) — Deprecated
+    - [String.prototype.strike()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/strike) — Deprecated
+    - [String.prototype.sub()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sub) — Deprecated
+    - [String.prototype.substr()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr) — Deprecated
+    - [String.prototype.substring()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+    - [String.prototype.sup()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sup) — Deprecated
+    
+    <br></p>
+    </details>
+  
+  <br></p>
+  </details>
 
-[//]: # (Стандратные методыс MDN)
-<details><summary><b>Стандартные методы с MDN</b></summary><p>
+[//]: # (Методы Number)
+- <details><summary><b>Методы Number</b></summary><p>
 
-<summary>Методы</summary>
-
-- [String.prototype[@@iterator]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
-- [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at)
-- [String.prototype.charAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.charCodeAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
-- [String.prototype.codePointAt()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
-- [String.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [String.prototype.endsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
-- [String.fromCharCode()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
-- [String.fromCodePoint()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint)
-- [String.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
-- [String.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-- [String.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
-- [String.prototype.localeCompare()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
-- [String.prototype.match()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-- [String.prototype.matchAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
-- [String.prototype.normalize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
-- [String.prototype.padEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
-- [String.prototype.padStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
-- [String.raw()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/raw)
-- [String.prototype.repeat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
-- [String.prototype.replace()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [String.prototype.replaceAll()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
-- [String.prototype.search()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/search)
-- [String.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [String.prototype.split()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [String.prototype.startsWith()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-- [String.prototype.toLocaleUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
-- [String.prototype.toLowerCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [String.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toString)
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.trim()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
-- [String.prototype.trimEnd()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd)
-- [String.prototype.trimStart()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart)
-- [String.prototype.valueOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
--
-- [String.prototype.anchor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/anchor) — Deprecated
-- [String.prototype.big()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/big) — Deprecated
-- [String.prototype.blink()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/blink) — Deprecated
-- [String.prototype.bold()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/bold) — Deprecated
-- [String.prototype.fixed()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fixed) — Deprecated
-- [String.prototype.fontcolor()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontcolor) — Deprecated
-- [String.prototype.fontsize()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/fontsize) — Deprecated
-- [String.prototype.italics()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/italics) — Deprecated
-- [String.prototype.link()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/link) — Deprecated
-- [String.prototype.small()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/small) — Deprecated
-- [String.prototype.strike()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/strike) — Deprecated
-- [String.prototype.sub()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sub) — Deprecated
-- [String.prototype.substr()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substr) — Deprecated
-- [String.prototype.substring()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [String.prototype.sup()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/sup) — Deprecated
-
-
-
-<br></p>
-</details>
-
-
-<br></p>
-</details>
-
-[//]: # (Меотды Number)
-<details><summary><b>Меотды Number</b></summary><p>
-
-- `Number.isNaN()` — проверить значение на NaN
-- `Number.isFinite()` — true это число, false если специальное значение или нечисловой тип
-- `toString()` — преобразует число в строку в указанной системе счисления.
-- `toFixed()` — преобразует число в строку с указанным количеством знаков после запятой. Округляет. Возвращает строку.
-- `toLocaleString()` — преобразует число в строку, учитывая локаль пользователя
--
-- Если надо вызвать методы на целом числе `5`:
+  - `Number.isNaN()` — проверить значение на NaN
+  - `Number.isFinite()` — true это число, false если специальное значение или нечисловой тип
+  - `toString()` — преобразует число в строку в указанной системе счисления.
+  - `toFixed()` — преобразует число в строку с указанным количеством знаков после запятой. Округляет. Возвращает строку.
+  - `toLocaleString()` — преобразует число в строку, учитывая локаль пользователя
+  -
+  - Если надо вызвать методы на целом числе `5`:
   - `(5).toFixed(3)`
   - `5..toFixed(3)`
--
-- Обёртка хранит полезные константы:
+  -
+  - Обёртка хранит полезные константы:
   - `Number.MAX_SAFE_INTEGER` — максимально возможное целое значение числового типа, 253-1.
   - `Number.MIN_SAFE_INTEGER` — минимально возможное целое значение числового типа, -253-1.
   - `Number.MAX_VALUE` — максимально большое число, представимое с помощью числового типа.
     - Больше, чем Number.MAX_SAFE_INTEGER, из-за особенностей хранения чисел с плавающей точкой.
   - `Number.MIN_VALUE` — минимальное положительное число, представимое с помощью числового типа.
--
-- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
-- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+  -
+  - [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
+  - [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
 
-<br></p>
-</details>
+  <br></p>
+  </details>
 
-[//]: # (Меотды Boolean)
-<details><summary><b>Меотды Boolean</b></summary><p>
+[//]: # (Методы Boolean)
+- <details><summary><b>Методы Boolean</b></summary><p>
 
-- `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
+  - `valueOf()` — возвращает примитивное значение (primitive) настоящего объекта Boolean.
   - ```js
     let a = new Boolean(true);
     console.log( a ); // [Boolean: true]
@@ -3233,81 +3232,85 @@ const a = 1
     console.log( a2 );  // true
     console.log( typeof a2 ); // boolean
     ```
-- `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
-- Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
-
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-
-<br></p>
-</details>
-
-[//]: # (Меотды BigInt)
-<details><summary><b>Меотды BigInt</b></summary><p>
-
-- `asIntN()` — оборачивает BigInt в пределах от -2width-1 до 2width-1-1
-- `asUintN()` — оборачивает a BigInt в пределах от 0 до 2width-1
-- `toLocaleString()` — возвращает строку с языкозависимым представлением числа. Переопределяет метод
+  - `toString` — возвращает строку "true" или "false" в зависимости от значения объекта.
+  - Унаследованные из Function: `apply`, `call`, `toSource`, `toString`.
+  
+  - [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
+  - [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+  
+  <br></p>
+  </details>
+  
+[//]: # (Методы BigInt)
+- <details><summary><b>Методы BigInt</b></summary><p>
+  
+  - `asIntN()` — оборачивает BigInt в пределах от -2width-1 до 2width-1-1
+  - `asUintN()` — оборачивает a BigInt в пределах от 0 до 2width-1
+  - `toLocaleString()` — возвращает строку с языкозависимым представлением числа. Переопределяет метод
   Object.prototype.toLocaleString().
-- `toString()` — возвращает строку, представляющую указанный объект по указанному основанию системы счисления.
+  - `toString()` — возвращает строку, представляющую указанный объект по указанному основанию системы счисления.
   Переопределяет метод Object.prototype.toString().
-- `valueOf()` — возвращает примитивное значение указанного объекта. Переопределяет метод Object.prototype.valueOf().
+  - `valueOf()` — возвращает примитивное значение указанного объекта. Переопределяет метод Object.prototype.valueOf().
+  
+  - [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%  D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
+  
+  <br></p>
+  </details>
 
-- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
-
-<br></p>
-</details>
-
-[//]: # (Меотды Symbol)
-<details><summary><b>Меотды Symbol</b></summary><p>
-
-- `for(key)` — ищет существующие символы по заданному ключу и возвращает его (если нашёл). Иначе создаёт новый символ
+[//]: # (Методы Symbol)
+- <details><summary><b>Методы Symbol</b></summary><p>
+  
+  - `for(key)` — ищет существующие символы по заданному ключу и возвращает его (если нашёл). Иначе создаёт новый символ
   для данного ключа в глобальном реестре символов.
-- `keyFor(sym)` — получает по разделяемому символу его ключ из глобального реестра символов.
-- `toString()` — Возвращает описание символа в виде строки.
-- `valueOf()` — Возвращает примитивное значение символьного объекта.
+  - `keyFor(sym)` — получает по разделяемому символу его ключ из глобального реестра символов.
+  - `toString()` — Возвращает описание символа в виде строки.
+  - `valueOf()` — Возвращает примитивное значение символьного объекта.
+  
+  Свойства
+  
+  - `asyncIterator` — возвращает асинхронный итератор по умолчанию.
+  - `hasInstance` — определяет, распознает ли объект конструктора объект как свой инстанс.
+  - `isConcatSpreadable` — указывает, должен ли быть объект сплющен до элементов массива.
+  - `iterator` — возвращает итератор по умолчанию.
+  - `match` — сравнивает со строкой.
+  - `matchAll` — возвращает итератор, который выдает совпадения регулярного выражения со строкой.
+  - `replace` — заменяет совпадающие подстроки строки.
+  - `search` — возвращает индекс в строке, который соответствует регулярному выражению.
+  - `split` — разделяет строку по индексам, которые соответствуют регулярному выражению.
+  - `species` — создает производные объекты.
+  - `toPrimitive` — преобразует объект в примитивное значение.
+  - `toStringTag` — возвращает описание объекта по умолчанию.
+  - `description` — возвращает описание объекта в виде строки.
+  
+  - [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
+  - [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
+  
+  <br></p>
+  </details>
 
-Свойства
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
 
-- `asyncIterator` — возвращает асинхронный итератор по умолчанию.
-- `hasInstance` — определяет, распознает ли объект конструктора объект как свой инстанс.
-- `isConcatSpreadable` — указывает, должен ли быть объект сплющен до элементов массива.
-- `iterator` — возвращает итератор по умолчанию.
-- `match` — сравнивает со строкой.
-- `matchAll` — возвращает итератор, который выдает совпадения регулярного выражения со строкой.
-- `replace` — заменяет совпадающие подстроки строки.
-- `search` — возвращает индекс в строке, который соответствует регулярному выражению.
-- `split` — разделяет строку по индексам, которые соответствуют регулярному выражению.
-- `species` — создает производные объекты.
-- `toPrimitive` — преобразует объект в примитивное значение.
-- `toStringTag` — возвращает описание объекта по умолчанию.
-- `description` — возвращает описание объекта в виде строки.
-
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
-- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
-
-<br></p>
-</details>
-
-**Ссылки**
-
-- [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
--
-- [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
-- [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
-- [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
-- [Metanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
--
-- [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
-- [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
--
-- [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
-- [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
--
-- [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
--
-- [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
-- [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
+  - [learn.javascript.ru - Методы примитивов (общие вопросы)](https://learn.javascript.ru/primitives-methods)
+  -
+  - [MDN - String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String#methods)
+  - [Шпаргалка - методы строк](https://tproger.ru/articles/metody-strok-v-javascript-shpargalka-dlja-nachinajushhih/)
+  - [Дока - Обёртка String](https://doka.guide/js/string-wrapper/)
+  - [Metanit - Строки, объект String и его методы](https://metanit.com/web/javascript/6.1.php)
+  -
+  - [MDN - Boolean](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean#methods)
+  - [betacode.net - Руководство ECMAScript Boolean](https://betacode.net/12197/ecmascript-boolean)
+  -
+  - [MDN - Number](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number#methods)
+  - [Дока - Обёртка Number](https://doka.guide/js/number-wrapper/#formatirovanie-chisla)
+  -
+  - [MDN - BigInt](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/BigInt#%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%B0)
+  -
+  - [MDN - Symbol](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol#methods)
+  - [Тип данных Symbol в JS](https://codechick.io/tutorials/javascript/js-symbol)
+  
+  <br></p>
+  </details>
 
 <br></p>
 </details>
