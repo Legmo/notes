@@ -2892,8 +2892,8 @@ const a = 1
   - Бывают особые случаи — например событие `focus` не всплывает и др.
   
   - **Ссылки:**
-    - [Лексическое всплытие](https://learn.javascript.ru/bubbling-and-capturing)
-    - [learn.javascript.ru - Всплытие и перехват](https://learn.javascript.ru/event-bubbling)
+    - [learn.javascript.ru - Всплытие и погружение](https://learn.javascript.ru/bubbling-and-capturing)
+    - [learn.javascript.ru - Всплытие и перехват (old)](https://learn.javascript.ru/event-bubbling)
   
 <br></p>
 </details>
