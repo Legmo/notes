@@ -11043,6 +11043,8 @@ Error: please improve your code
 
 ---
 
+<br>
+<br>
 
 ## Приёмы и соглашения ##
 
@@ -11154,8 +11156,6 @@ Error: please improve your code
 
 <br></p>
 </details>
-
-
 
 <br>
 <br>
