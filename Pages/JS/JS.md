@@ -9888,117 +9888,6 @@ console.log( func(10, 20) ); // 30
 ---
 
 
-[//]: # (Декораторы)
-<details id="decorators"><summary><b>Декораторы</b></summary><p>
-
-Декораторы позволяют добавить метаданные классам и функциям.<br>
-Тем самым изменить их поведение без изменения их кода.
-
-По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
-
-**Ссылки**
-
-- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
-- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
-- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
-- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
-
-  <br></p>
-
-</details>
-
-[//]: # (Декоратор Debounce)
-<details id="debounce"><summary><b>Декоратор Debounce (Дебаунс)</b></summary><p>
-
-  - Ждёт Х милисек, если некое событие не произошло за это время — выполняет действие.
-  - "Декоратор" который возвращает обертку. Она откладывает вызов исходной функции на определенное время.
-  - Превращает несколько вызовов функции в течение определенного времени в один вызов.
-  - Причем задержка начинает заново отсчитываться с каждой новой попыткой вызова.
-  - Паттерн микрооптимизации кода.
-  - 
-  - Если дословно переводить — «устранение дребезга».
-  - 
-  - **Ссылки:**
-    - [Legmo - Программирование](../Programming/Programming.md)
-    - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
-    - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
-    - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
-    - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
-    - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
-    - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
-
-<br></p>
-</details>
-
-[//]: # (Декоратор Throttling)
-<details id="throttling"><summary><b>Декоратор Throttling (Тротлинг)</b></summary><p>
-
-- Тормозит - выполняй событие не чаще чем Х милисек.
-- Позволяет «затормозить» функцию — функция будет выполняться не чаще одного раза в указанный период, даже если она будет вызвана много раз в течение этого периода. Т.е. все промежуточные вызовы будут игнорироваться.
-- Декоратор. 
-- Паттерн микрооптимизации кода.
-- 
-- **Ссылки:**
-  - [Habr - Декораторы](https://habr.com/ru/post/60957/)
-  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
-  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
-
-<br></p>
-</details>
-
-[//]: # (Proxy-объекты)
-<details id="proxyObjects"><summary><b>Proxy-объекты</b></summary><p>
-
-Особые объекты, позволяют перехватывать и изменять действия, выполняемые над другими объектами.
-
-В частности, речь идёт о вызове функций, об операциях присваивания, о работе со свойствами, о создании новых объектов, и
-так далее.<br>
-Эту технологию используют для блокирования прямого доступа к целевому объекту или целевой функции и организации
-взаимодействия с объектом или функцией через прокси-объект.
-
-Так выглядит объявление простого прокси-объекта, которому передаётся целевой объект и обработчик:<br>
-`let proxy = new Proxy(target, handler);`
-
-**Стандартное поведение объектов**<br>
-  Объявим объект, а затем попробуем обратиться к несуществующему свойству этого объекта.
-  ```
-    let obj = {
-      c: "car",
-      b: "bike"
-    };
-
-    document.write(obj.b, ""); //Результат -> "bike"
-    document.write(obj.c, ""); //Результат -> "car"
-    document.write(obj.l); 	   //Результат -> "undefined"
-  ```
-  
-  **Использование прокси для объекта**<br>
-  Используем обработчик с перехватчиком get. Обработчик передаст целевой объект и запрошенный ключ перехватчику.
-  ```
-    let handler = {
-        get: function(target, name) {
-        return name in target ? target[name] : "Key does not exist";
-      }
-    }
-
-    let obj = {
-      c: "car",
-      b: "bike"
-    };
-
-    let proxyObj = new Proxy(obj, handler);
-
-    document.write(proxyObj.b, ""); //Результат -> "bike"
-    document.write(proxyObj.c, ""); //Результат -> "car"
-    document.write(proxyObj.l);     //Результат -> "Key does not exist"
-  ```
-  
-  Ссылки:
-
-- [Habr](https://habr.com/ru/company/ruvds/blog/359060/)
-
-  <br></p>
-</details>
 
 [//]: # (Перебор структур данных. Методы «keys», «values», «entries»)
 <details id="keysValuesEntries"><summary><b>Перебор структур данных. Методы `keys`, `values`, `entries`</b></summary><p>
@@ -10609,6 +10498,117 @@ async function* generateSequence(start, end) {
 
 ---
 
+[//]: # (Декораторы)
+<details id="decorators"><summary><b>Декораторы</b></summary><p>
+
+Декораторы позволяют добавить метаданные классам и функциям.<br>
+Тем самым изменить их поведение без изменения их кода.
+
+По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
+
+**Ссылки**
+
+- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
+- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
+- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
+
+  <br></p>
+
+</details>
+
+[//]: # (Декоратор Debounce)
+<details id="debounce"><summary><b>Декоратор Debounce (Дебаунс)</b></summary><p>
+
+- Ждёт Х милисек, если некое событие не произошло за это время — выполняет действие.
+- "Декоратор" который возвращает обертку. Она откладывает вызов исходной функции на определенное время.
+- Превращает несколько вызовов функции в течение определенного времени в один вызов.
+- Причем задержка начинает заново отсчитываться с каждой новой попыткой вызова.
+- Паттерн микрооптимизации кода.
+-
+- Если дословно переводить — «устранение дребезга».
+-
+- **Ссылки:**
+  - [Legmo - Программирование](../Programming/Programming.md)
+  - [learn.javascript.ru - Сделать Debounce](https://learn.javascript.ru/task/debounce)
+  - [doka - Сделать Debounce на примере формы поиска](https://doka.guide/js/debounce/)
+  - [Habr - Debouncing с помощью React Hooks](https://habr.com/ru/post/492248/)
+  - [Habr - Debouncing с помощью React Hooks: хук для функций](https://habr.com/ru/company/domclick/blog/510616/)
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
+
+<br></p>
+</details>
+
+[//]: # (Декоратор Throttling)
+<details id="throttling"><summary><b>Декоратор Throttling (Тротлинг)</b></summary><p>
+
+- Тормозит - выполняй событие не чаще чем Х милисек.
+- Позволяет «затормозить» функцию — функция будет выполняться не чаще одного раза в указанный период, даже если она будет вызвана много раз в течение этого периода. Т.е. все промежуточные вызовы будут игнорироваться.
+- Декоратор.
+- Паттерн микрооптимизации кода.
+-
+- **Ссылки:**
+  - [Habr - Декораторы](https://habr.com/ru/post/60957/)
+  - [Habr - Микропаттерны оптимизации в Javascript: декораторы функций debouncing и throttling](https://habr.com/ru/post/60957/)
+  - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=Z9g8L-5_c5aHx3dA&t=3807)
+
+<br></p>
+</details>
+
+[//]: # (Proxy-объекты)
+<details id="proxyObjects"><summary><b>Proxy-объекты</b></summary><p>
+
+Особые объекты, позволяют перехватывать и изменять действия, выполняемые над другими объектами.
+
+В частности, речь идёт о вызове функций, об операциях присваивания, о работе со свойствами, о создании новых объектов, и
+так далее.<br>
+Эту технологию используют для блокирования прямого доступа к целевому объекту или целевой функции и организации
+взаимодействия с объектом или функцией через прокси-объект.
+
+Так выглядит объявление простого прокси-объекта, которому передаётся целевой объект и обработчик:<br>
+`let proxy = new Proxy(target, handler);`
+
+**Стандартное поведение объектов**<br>
+Объявим объект, а затем попробуем обратиться к несуществующему свойству этого объекта.
+  ```
+    let obj = {
+      c: "car",
+      b: "bike"
+    };
+
+    document.write(obj.b, ""); //Результат -> "bike"
+    document.write(obj.c, ""); //Результат -> "car"
+    document.write(obj.l); 	   //Результат -> "undefined"
+  ```
+
+**Использование прокси для объекта**<br>
+Используем обработчик с перехватчиком get. Обработчик передаст целевой объект и запрошенный ключ перехватчику.
+  ```
+    let handler = {
+        get: function(target, name) {
+        return name in target ? target[name] : "Key does not exist";
+      }
+    }
+
+    let obj = {
+      c: "car",
+      b: "bike"
+    };
+
+    let proxyObj = new Proxy(obj, handler);
+
+    document.write(proxyObj.b, ""); //Результат -> "bike"
+    document.write(proxyObj.c, ""); //Результат -> "car"
+    document.write(proxyObj.l);     //Результат -> "Key does not exist"
+  ```
+
+Ссылки:
+
+- [Habr](https://habr.com/ru/company/ruvds/blog/359060/)
+
+  <br></p>
+</details>
 
 [//]: # (Встроенные математические функции. Объект Math todo: пусто)
 <details id="math"><summary><b>Встроенные математические функции. Объект Math**</b></summary><p> 
