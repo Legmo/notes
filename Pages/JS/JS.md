@@ -744,7 +744,7 @@
 </details>
 
 [//]: # (Атрибуты async и defer тега <script>)
-<details id="asyncDefer"><summary><b>Атрибуты async и defer тега \<script\></b></summary><p>
+<details id="asyncDefer"><summary><b>Атрибуты async и defer тега script</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
