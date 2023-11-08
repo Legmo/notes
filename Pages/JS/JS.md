@@ -259,7 +259,7 @@
   </details>
 
 [//]: # (ES 2017)
-- <details><summary><b>ES8 (2017)</b></summary><p>
+- <details><summary><b>ES 2017</b></summary><p>
 
   - Конструкция `Async/Await` — асинхронные функции, работают на основе promise
   - Методы строк `padStart()` и `padEnd()` — дополнения строк до заданной длины.
@@ -285,7 +285,7 @@
   </details>
 
 [//]: # (ES 2016)
-- <details><summary><b>ES7 (2016)</b></summary><p>
+- <details><summary><b>ES 2016</b></summary><p>
 
   - Метод `Array.prototype.includes()` — проверяем есть ли в массиве некий элемент.
   - Оператор возведения в степень — `**`. Заменяет `Math.pow()`.
@@ -333,8 +333,8 @@
   <br></p>
   </details>
 
-[//]: # (ES5 2009)
-- <details><summary><b>ES 2009</b></summary><p>
+[//]: # (ES 2009, ES 5)
+- <details><summary><b>ES 2009 (ES 5)</b></summary><p>
 
   - Среди изменений:
     - поддержка строгого режима (strict mode);
