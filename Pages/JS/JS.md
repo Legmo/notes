@@ -3896,161 +3896,123 @@ const a = 1
 [//]: # (Объекты. Методы объектов todo: упростить)
 <details id="objectMethods"><summary><b>Объекты. Методы объектов*</b></summary><p>
 
-**Методы конструктора Object**
 
-- [assign()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) - копирование
-  свойств объекта в другой объект.
-  - При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
-- [create()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create) - создать
-  новый объект из существующего.
-- [keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - возвращает
-  массив ключей объекта (имена всех **собственных** перечислимых свойств объекта).
-- [values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/values) -
-  возвращает значения объекта.
-- [freeze](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) - «замораживает»
-  объект. Другой код не сможет удалить или изменить никакое свойство.
-- [seal](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/seal) - предотвращает
-  добавление новых свойств, но позволяет изменять существующие.
-- [entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) - создает
-  вложенный массив пар «ключ-значение» объекта
-- [defineProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-  - Добавляет к объекту именованное свойство, описываемое переданным дескриптором.
-- [defineProperties](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
-  - Добавляет к объекту именованные свойства, описываемые переданными дескрипторами.
-- [getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)
-  - Возвращает дескриптор свойства для именованного свойства объекта.
-- [getOwnPropertyDescriptors](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
-  - возвращает все собственные дескрипторы свойств данного объекта.
-- [getOwnPropertyNames](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
-  - Возвращает массив, содержащий имена всех переданных объекту <strong>собственных</strong> перечисляемых и
-    неперечисляемых свойств.
-- [getOwnPropertySymbols](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
-  - Возвращает массив всех символьных свойств, найденных непосредственно в переданном объекте.
-- [getPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
-  - получение внутреннего скрытого свойства [[Prototype]] объекта (оно также доступно через свойство `__proto__`)
-- [is](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is) - Определяет, являются
-  ли два значения различимыми (то есть, одинаковыми)
-- [isExtensible](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible) -
-  Определяет, разрешено ли расширение объекта.
-- [isFrozen](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen) -
-  Определяет, был ли объект заморожен.
-- [isSealed](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) -
-  Определяет, является ли объект запечатанным (sealed).
-- `observe()` — асинхронно наблюдает за изменениями в объекте.
-- [preventExtensions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)
-  - Предотвращает любое расширение объекта.
-- [setprototypeof](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
-  - устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
-- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) -
-  преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
-- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) -
-  проверять является ли св-во прямым свойством объекта, даже если его значение null или undefined. В отличие от
-  оператора `in` -
-  не проверяет это свойство в цепочке прототипов объекта.
-- [hasOwnProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-  - проверять содержит ли объект указанное неунаследованно) свойство, или метод.
-- [isPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf) -
-  проверяет существует ли указанный объект в цепочке прототипов другого объекта
-- [propertyIsEnumerable](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
-  - является ли указанное свойство перечисляемым. Перечисляемые - все свойства, которые добавляются к объекту, являются
-    перечисляемыми по умолчанию. Встроенные свойства не перечисляется.
-- [setPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
-  - позволяет установить или изменить прототип указанному объекту.Создаваемый объект наследует свойства от прототипа.
-- [toLocaleString](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
-  - возвращает строку, представляющую объект. Предназначен для переопределения унаследованными объектами в целях
-    поддержки зависимости от локали.
-- [toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) -
-  возвращает строку, представляющую объект.
-- [valueOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) - для
-  преобразования объекта в примитивное значение.
+[//]: # (Шпаргалки)
+- <details><summary><b>Шпаргалки</b></summary><p>
 
-**Устаревшие**
+  - [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+    
+  <br></p>
+  </details>
 
-- [__
-  defineGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__)
-  - привязывает свойство объекта к функции, вызываемой каждый раз при поиске этого свойства. Вместо
-    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-- [__
-  defineSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__)
-  - привязывает свойство объекта к функции, вызываемой каждый раз при попытке установить значение этого свойства. Вместо
-    него рекомендуется
-    использовать `(синтаксис инициализатора объекта (new Object(), Object.create() или литеральную нотацию)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer)`
-    или `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-- [__
-  lookupGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__)
-  - возвращает функцию, привязанную к геттеру указанного свойства. Вместо
-    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-    и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
-- [__
-  lookupSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__)
-  - возвращает функцию, привязанную к сеттеру указанного свойства. Вместо
-    него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
-    и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
-- [__proto__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) - является
-  свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта (
-  являющийся объектом или null), через который осуществлялся доступ. Вместо него `Object.getPrototypeOf`
-  /`Object.setPrototypeOf`
-  /`[Object.create(proto, [descriptors])]((https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create)) `
-  .
+[//]: # (Базовые)
+- <details><summary><b>Базовые</b></summary><p>
 
-**Новые**
-
-- [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) — ES13 (
-  2022). проверяет: принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
-- [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) —
-  ES10 (2019). преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
-
-**Про мутирование объектов**
-
-- При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
-- Object.freeze предотвращает непосредственное изменение свойств объекта.
-
-<details><summary><b>UNSORTED</b></summary><p>
-
-- Базовые
-  - delete user.age - удаление свойства
+  - `delete user.age` - удаление свойства
   -
-  - keys() - возвращает ключи объекта.
-  - values() - возвращает значения объекта.
-  - entries() - создает вложенный массив пар «ключ-значение» объекта
+  - `keys()` — возвращает ключи объекта.
+  - `values()` — возвращает значения объекта.
+  - `entries()` — создает вложенный массив пар «ключ-значение» объекта
   -
-  - assign() - копирование свойств объекта в другой объект.
-  - create() - создать новый объект из существующего.
+  - `assign()` — копирование свойств объекта в другой объект.
+  - `create()` — создать новый объект из существующего.
   -
-  - freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-  - seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-  - getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
-    .
+  - `freeze()` — «замораживает» объект. Предотваращает изменения свойств и т.д.
+  - `seal()` — предотвращает добавление новых свойств, но позволяет изменять существующие.
+  - `getPrototypeOf()` — получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
+  - 
   - ... там ещё много. Изучать
   - что-то добавили в последние несколько лет
 
-- keys() - возвращает ключи объекта.
-- values() - возвращает значения объекта.
-- create() - создать новый объект из существующего.
-- freeze() - «замораживает» объект. Предотваращает изменения свойств и т.д.
-- seal() - предотвращает добавление новых свойств, но позволяет изменять существующие.
-- assign() - копирование свойств объекта в другой объект.
-- entries() - создает вложенный массив пар «ключ-значение» объекта
-- getPrototypeOf() - получения внутреннего скрытого [[Prototype]] объекта, также доступного через свойство __proto__
--
-- ... там ещё много. Изучать
-- что-то добавили в последние несколько лет
--
-- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-  <br><p>
-</details>
+  - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+      
+  <br></p>
+  </details>
+  
+[//]: # (Новые)
+- <details><summary><b>Новые</b></summary><p>
 
-**Шпаргалки**
+  - [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) — ES13 ( 2022). проверяет:   принадлежит ли св-во этому объекту? Или оно унаследовано / не существует?
+  - [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) — ES10 (2019). преобразует   список пар ключ-значение в объект. Обратное методу `Object.entries`.
+    
+  <br></p>
+  </details>
 
-- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+[//]: # (Методы конструктора Object)
+- <details><summary><b>Методы конструктора Object</b></summary><p>
 
-**Ссылки**
+  - [assign()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) - копирование свойств объекта в другой объект.
+    - При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
+  - [create()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create) - создать новый объект из существующего.
+  - [keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - возвращает массив ключей объекта (имена всех **собственных** перечислимых свойств объекта).
+  - [values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/values) - возвращает значения объекта.
+  - [freeze](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) - «замораживает» объект. Другой код не сможет удалить или изменить никакое свойство.
+  - [seal](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/seal) - предотвращает добавление новых свойств, но позволяет изменять существующие.
+  - [entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) - создает вложенный массив пар «ключ-значение» объекта
+  - [defineProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) - добавляет к объекту именованное свойство, описываемое переданным дескриптором.
+  - [defineProperties](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) - добавляет к объекту именованные свойства, описываемые переданными дескрипторами.
+  - [getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor) - возвращает дескриптор свойства для именованного свойства объекта.
+  - [getOwnPropertyDescriptors](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors) - возвращает все собственные дескрипторы свойств данного объекта.
+  - [getOwnPropertyNames](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames) - возвращает массив, содержащий имена всех переданных объекту **собственных** перечисляемых и неперечисляемых свойств.
+  - [getOwnPropertySymbols](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols) - Возвращает массив всех символьных свойств, найденных непосредственно в переданном объекте.
+  - [getPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf) - получение внутреннего скрытого свойства [[Prototype]] объекта (оно также доступно через свойство `__proto__`)
+  - [is](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is) - определяет, являются ли два значения различимыми (то есть, одинаковыми)
+  - [isExtensible](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible) - определяет, разрешено ли расширение объекта.
+  - [isFrozen](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen) - определяет, был ли объект заморожен.
+  - [isSealed](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) - определяет, является ли объект запечатанным (sealed).
+  - `observe()` — асинхронно наблюдает за изменениями в объекте.
+  - [preventExtensions](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions) - предотвращает любое расширение объекта.
+  - [setprototypeof](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf) - устанавливает прототип (т.е. внутреннее свойство `[[Prototype]]`)
+  - [fromEntries](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) - преобразует список пар ключ-значение в объект. Обратное методу `Object.entries`.
+  - [hasOwn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) (en) - проверять является ли св-во прямым свойством объекта, даже если его значение null или undefined. В отличие от оператора `in` - не проверяет это свойство в цепочке прототипов объекта.
+  - [hasOwnProperty](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) - проверять содержит ли объект указанное неунаследованно) свойство, или метод.
+  - [isPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf) - проверяет существует ли указанный объект в цепочке прототипов другого объекта
+  - [propertyIsEnumerable](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable) - является ли указанное свойство перечисляемым. Перечисляемые - все свойства, которые добавляются к объекту, являются перечисляемыми по умолчанию. Встроенные свойства не перечисляется.
+  - [setPrototypeOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf) - позволяет установить или изменить прототип указанному объекту.Создаваемый объект наследует свойства от прототипа.
+  - [toLocaleString](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) - возвращает строку, представляющую объект. Предназначен для переопределения унаследованными объектами в целях поддержки зависимости от локали.
+  - [toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) - возвращает строку, представляющую объект.
+  - [valueOf](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) - для преобразования объекта в примитивное значение.
+    
+  <br></p>
+  </details>
 
-- [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-- [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
-- [8 методов объектов в JavaScript (2018)](https://www.8host.com/blog/metody-obektov-v-javascript/)
-- [40 методов JavaScript, которые вы должны знать](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
-- [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+[//]: # (Устаревшие)
+- <details><summary><b>Устаревшие</b></summary><p>
+
+  - [__defineGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__)
+    - привязывает свойство объекта к функции, вызываемой каждый раз при поиске этого свойства. Вместо него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+  - [__defineSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) 
+    - привязывает свойство объекта к функции, вызываемой каждый раз при попытке установить значение этого свойства. Вместо него рекомендуется использовать `(синтаксис инициализатора объекта (new Object(), Object.create() или литеральную нотацию)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer)` или `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)`
+  - [__lookupGetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__)
+    - возвращает функцию, привязанную к геттеру указанного свойства. Вместо него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)` и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+  - [__lookupSetter__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__)
+    - возвращает функцию, привязанную к сеттеру указанного свойства. Вместо него `[defineProperty()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)` и `[getOwnPropertyDescriptor](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)`
+  - [__proto__](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 
+    - является свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта ( являющийся объектом или null), через который осуществлялся доступ. Вместо него `Object.getPrototypeOf`/`Object.setPrototypeOf` /`[Object.create(proto, [descriptors])]((https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create)) `.
+    
+  <br></p>
+  </details>
+
+[//]: # (Про мутации объектов)
+- <details><summary><b>Про мутации объектов</b></summary><p>
+
+  - При объединении двух объектов с `Object.assign` первый объект мутируется. Другие объекты остаются неизменными.
+  - Object.freeze предотвращает непосредственное изменение свойств объекта.
+    
+  <br></p>
+  </details>
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
+  - [Некоторые методы объектов](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+  - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
+  - [8 методов объектов в JavaScript (2018)](https://www.8host.com/blog/metody-obektov-v-javascript/)
+  - [40 методов JavaScript, которые вы должны знать](https://techrocks.ru/2021/10/27/40-javascript-methods-you-should-know/#object)
+  - [MDN - Методы конструктора Object](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object#methods)
+    
+  <br></p>
+  </details>
 
 <br><p>
 </details>
