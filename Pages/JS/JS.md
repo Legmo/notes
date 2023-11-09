@@ -4050,6 +4050,7 @@ const a = 1
     - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
   - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
     - пример `const myDeepCopy = structuredClone(myOriginal);`
+    - [Подробнее](https://habr.com/ru/companies/otus/articles/719460/)
   - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
   
   <br></p>
