@@ -884,7 +884,6 @@
 [//]: # (Типы данных)
 <details id="types"><summary><b>Типы данных</b></summary><p>
 
-
 [//]: # (Кратко)
 - <details><summary><b>Кратко</b></summary><p>
 
@@ -911,7 +910,6 @@
 
   <br></p>
   </details>
-
 
 [//]: # (Примитивы)
 - <details><summary><b>Примитивы</b></summary><p>
@@ -973,8 +971,8 @@
   <br></p>
   </details>
 
-[//]: # (typeof)
-- <details><summary><b>typeof</b></summary><p>
+[//]: # (Оператор «typeof»)
+- <details><summary><b>Оператор «typeof»</b></summary><p>
 
   - возвращает тип примитива, или object в противном случае
   - нюансы
@@ -1007,62 +1005,24 @@
     - например - результат деления 0 на 0, parseInt('неприводимая к числу строка'), Math.sqrt(-1)...
     - деление других чисел на 0 — это бесконечность, для которой в JS есть значения Infinity.
   
-  <br></p>
-  </details>
-
-[//]: # (Странности)
-- <details><summary><b>Странности</b></summary><p>
-
-  - С чем бы мы ни сравнивали `NaN`, результатом сравнения всегда будет `false`.
+  - **Странности**
+    - С чем бы мы ни сравнивали `NaN`, результатом сравнения всегда будет `false`.
       - NaN === NaN; // false
       - сравнения NaN используется специальная функция `Number.isNaN(..)` или функция `Object.is(..)`
-  - 0 === -0; // true
-    - Для сравнения -0 лучше использовать функцию `Object.is(..)`
-  - Оператор `typeof` говорит что тип необъявленной переменной — `undefined`, но при обращении к ней происходит ошибка.
-  - Т.к. необъявленная (Undeclarated) переменная ещё не существует.
-  - Если переменная объявлена, но не инициализирована (её не присвоено значение) — такой ошибки не будте
-  - Можно читать и записывать значение `undefined` => кто-то может перезаписать его и сравнение с undefined будет
-   некорректным.
-  - Т.к. undefined — это не только значение undefined типа Undefined, но и глобальная переменная. Её можно
-    переопределить.
-  - `null` мы перезаписать не можем. Язык даёт перезаписать `undefined`, но не даёт перезаписать `null`.
-  - Это не глобальная переменная, а зарезервированное слово, его перезаписать нельзя
-  - При переопределении undefined всё прошло успешно, при переопределении null возникла ошибка, а при переопределении
-   NaN операция не вызвала ошибки, но свойство не было переопределено.
+    - 0 === -0; // true
+      - Для сравнения -0 лучше использовать функцию `Object.is(..)`
+    - Оператор `typeof` говорит что тип необъявленной переменной — `undefined`, но при обращении к ней происходит ошибка.
+    - Т.к. необъявленная (Undeclarated) переменная ещё не существует.
+    - Если переменная объявлена, но не инициализирована (её не присвоено значение) — такой ошибки не будте
+    - Можно читать и записывать значение `undefined` => кто-то может перезаписать его и сравнение с undefined будет
+     некорректным.
+    - Т.к. undefined — это не только значение undefined типа Undefined, но и глобальная переменная. Её можно
+      переопределить.
+    - `null` мы перезаписать не можем. Язык даёт перезаписать `undefined`, но не даёт перезаписать `null`.
+    - Это не глобальная переменная, а зарезервированное слово, его перезаписать нельзя
+    - При переопределении undefined всё прошло успешно, при переопределении null возникла ошибка, а при переопределении
+     NaN операция не вызвала ошибки, но свойство не было переопределено.
   
-  <br></p>
-  </details>
-
-[//]: # (Советы)
-- <details><summary><b>Советы</b></summary><p>
-
-  - Не использовать булевы операторы с NaN. Для проверки нужно использовать функцию `isNaN`.
-  - Перед обращением к переменной проверять что она объявлена. При обращении к необъявленной (Undeclared) переменной —
-    ошибка.
-  - Не сравнивать переменные с `undefined` — кто-то мог перезаписать глобальную переменную undefined и сравнение будет
-    некорректным. Лучшее решение: сравнивать не значение переменной, а её тип (`typeof a === 'undefined'`).
-
-  <br></p>
-  </details>
-
-[//]: # (Преобразование логическое)
-- <details><summary><b>Преобразование логическое</b></summary><p>
-
-  - `false` = пустая строка, 0, null, NaN, undefined
-  - `true` = все остальное
-
-  <br></p>
-  </details>
-
-[//]: # (Операторы сравнения)
-- <details><summary><b>Операторы сравнения</b></summary><p>
-
-  - Операторы `==` и `===` действуют одинаково!
-  - Одно отличие — `==` допускает преобразование типа перед сравнением. Позволяет сначала выполнить преобразование типа, и когда с обеих сторон будут значения одинаковых типов действует точно также как `===`.
-  - Оператор `==` преобразует нечисловые значения ("42" и true) в числа перед сравнением. Т.е. оператор отдает предпочтение примитивным числовым значениям.
-  - Операторы относительного сравнения обычно используют сравнения чисел, кроме того случая, в котором оба сравниваемых значения уже являются строками; в таком случае используется алфавитное сравнение строк.
-  - Операторы `>`, `<`, `>=`, `<=` ведут себя как `==`!
-
   <br></p>
   </details>
 
@@ -1109,6 +1069,16 @@
     - в `Java` строка — это объект (или ссылочный тип).
     - в `Python все (концептуально) является объектно-ссылочным типом, включая строки (и числа).
   
+  <br></p>
+  </details>
+
+[//]: # (Советы)
+- <details><summary><b>Советы</b></summary><p>
+
+  - Не использовать булевы операторы с NaN. Для проверки нужно использовать функцию `isNaN`.
+  - Перед обращением к переменной проверять что она объявлена. При обращении к необъявленной (Undeclared) переменной — ошибка.
+  - Не сравнивать переменные с `undefined` — кто-то мог перезаписать глобальную переменную undefined и сравнение будет некорректным. Лучшее решение: сравнивать не значение переменной, а её тип (`typeof a === 'undefined'`).
+
   <br></p>
   </details>
 
@@ -3451,260 +3421,214 @@ const a = 1
 
 [//]: # (Массивы. Методы массивов)
 <details id="arrayMethods"><summary><b>Массивы. Методы массивов</b></summary><p>
-
-**Основные**
-
-- [push(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в конец,
-- [pop()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из конца,
-- [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
-- [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
-- [splice](https://learn.javascript.ru/array-methods#splice)* - добавлять, удалять и заменять элементы. **Мутирующий!**
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него эл-ты с опр. индексами
-- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-  старых
-- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-  в массиве
-- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск первого совпадения
-- [filter](https://learn.javascript.ru/array-methods#filter) - поиск всех совпадений. Вернёт новый массив.
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив с таким же кол-вом элементов
-- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn)* - сортировка «на месте». **Мутирующий!**
-- [reverse](https://learn.javascript.ru/array-methods#reverse)* - смена порядка элементов на обратный.  **Мутирующий!**
-- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
-- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-- [every(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
-- [some(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
-- join
-  <br>
-  <br>
-
-**Новые**
-
-- [findLast()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
-  и [findLastIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
-  — поиск в массивах «с конца
-- [at()](https://learn.javascript.ru/array#poluchenie-poslednih-elementov-pri-pomoschi-at) — обращаться к массивам с
-  конца. И строкам тоже
-- [flat()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript)
-  и [flatMap()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript) —
-  рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный массив сделать одномерным.
-  - [flat)()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) на MDN
-  - [flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap) на MDN
-    <br>
-    <br>
-
-**Чаще всего спрашивают**
-
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование. Каждый элемент исходного массива обрабатываем в функции, преобразуем и результат записываем в новый массив.
-  - `const result = numbers.map(n => n*2)`
-  - Вернёт массив, со всеми элементами массива numbers, умноженными на 2.
-  - Если не надо возвращать массив — используй `for`/`forEach`.
-    - ```js
-      let myArray = [1, 2, 3, 4, 5];
-      for (let i = 0; i <= myArray.length - 1; i++) {
-        console.log(myArray[i]);
-      }
-      ```
-    - ```js
-      let myArray = [1, 2, 3, 4, 5];
-      for (let item of myArray) {
-        //Не предоставляет доступа к индексу текущего элемента, только к его значению
-        console.log( item );
-      }
-      ```
-- [filter](https://learn.javascript.ru/array-methods#filter) - Каждый элемент исходного массива обрабатываем в функции. Функция вернёт true/false => если true, то результат пишем в новый массив.
-  - `const result = numbers.filter(n => n > 3)`
-  - Вернёт массив, со всеми элементами массива numbers, которые > 3.
-- [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright) - перебрать массив и вычислить одно значение. Каждый элемент исходного массива обрабатываем в функции, на выходе получаем одно значение
-  - `const sum = numbers.reduce((acc, n) => acc + n, 0)`
-  - Вернёт сумму всех элементов массива numbers (acc). 0 = значение acc на первом шаге
-    <br>
-    <br>
-
-**Мутирующие методы**
-
-- [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
-- [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
-- [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-  <br>
-  <br>
-
-**Прочее**
-- - `Array.from()` — преобразовать перебираемый объект в массив (например строку в массив символов)
-
-**Методы `map`/`filter`/`reduce` вместо циклов `for` и `forEach`**
-
-Пришли в JS из функционального программирования. <br>
-Используя эти три метода, вы избегаете циклов `for` и `forEach` в большинстве ситуаций. Вместо них можно использовать совокупность `map`, `filter` и `reduce`.<br>
-Подробнее: [tproger.ru — Шпаргалка по современному JS](https://tproger.ru/translations/javascript-cheatsheet/#arrmthdsmapfltrrdc)
-```js
-//Посчитать сумму оценок студентов с результатом 10 и выше
-const students = [
-  { name: "Nick", grade: 10 },
-  { name: "John", grade: 15 },
-  { name: "Julia", grade: 19 },
-  { name: "Nathalie", grade: 9 },
-];
-
-const aboveTenSum = students
-  .map(student => student.grade) // формируем массив оценок
-  .filter(grade => grade >= 10) // отбираем оценки выше 10
-  .reduce((prev, next) => prev + next, 0); // суммируем каждую оценку выше 10
-
-console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie игнорируется, поскольку её оценка ниже 10
-```
-<br>
-<br>
-
-**Шпаргалки**
-
-- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-  <br>
-  <br>
-
-<details><summary><b>Список с MDN</b></summary><p>
-
-- [Array.prototype\[@@iterator\]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
-- [Array.prototype.at()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
-- [Array.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
-- [Array.prototype.copyWithin()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
-- [Array.prototype.entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
-- [Array.prototype.every()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-- [Array.prototype.fill()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
-- [Array.prototype.filter()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- [Array.prototype.find()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-- [Array.prototype.findIndex()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-- [Array.prototype.flat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
-- [Array.prototype.flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
-- [Array.prototype.forEach()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-- [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
-- [Array.prototype.group()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group)
-- [Array.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-- [Array.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
-- [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
-- [Array.prototype.join()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-- [Array.prototype.keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
-- [Array.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
-- [Array.prototype.map()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [Array.of()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
-- [Array.prototype.pop()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-- [Array.prototype.push()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [Array.prototype.reduce()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-- [Array.prototype.reduceRight()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
-- [Array.prototype.reverse()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
-- [Array.prototype.shift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
-- [Array.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
-- [Array.prototype.some()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- [Array.prototype.sort()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-- [Array.prototype.splice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-- [Array.prototype.toLocaleString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)
-- [Array.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
-- [Array.prototype.unshift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
-- [Array.prototype.values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
-
-<br><p>
-</details>
+  
 
 
-<details><summary><b>UNSORTED</b></summary><p>
+[//]: # (Ссылки)
+- <details><summary><b>Шпаргалки</b></summary><p>
+
+  - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+  - [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+
+  <br></p>
+  </details>
+
+[//]: # (Основные)
+- <details><summary><b>Основные</b></summary><p>
+
+  - [push(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в конец,
+  - [pop()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из конца,
+  - [shift()](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – извлекает элемент из начала,
+  - [unshift(...items)](https://learn.javascript.ru/array#metody-pop-push-shift-unshift) – добавляет элементы в начало.
+  - [splice](https://learn.javascript.ru/array-methods#splice)* - добавлять, удалять и заменять элементы. **Мутирующий!**
+  - [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него эл-ты с опр. индексами
+  - [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
+    старых
+  - [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
+  - [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
+    в массиве
+  - [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск первого совпадения
+  - [filter](https://learn.javascript.ru/array-methods#filter) - поиск всех совпадений. Вернёт новый массив.
+  - [map](https://learn.javascript.ru/array-methods#map) - преобразование. Вернёт новый массив с таким же кол-вом элементов
+  - [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn)* - сортировка «на месте». **Мутирующий!**
+  - [reverse](https://learn.javascript.ru/array-methods#reverse)* - смена порядка элементов на обратный.  **Мутирующий!**
+  - [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
+  - [join](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join) — преобразует все элементы массива в строки и объединяет их в одну большую строку
+  - [reduce/reduceRight](https://learn.javascript.ru/array-methods#reduce-reduceright) - вычисление одного значения на основе массива. Перебрать массив и вычислить значение.
+  - [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
+  - [every(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every) - удовлетворяют ли все элементы массива условию, заданному в передаваемой функции.
+  - [some(fn)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
 
 
+  - `Array.from()` — преобразовать перебираемый объект в массив (например строку в массив символов)
 
+  
+  - **Добавления/удаления элементов**
+    - `push(...items)` – добавляет элементы в конец. Работает заметно быстрее чем shift/unshift
+    - `pop()` – извлекает элемент с конца. Работает заметно быстрее чем shift/unshift
+    - `shift()` – извлекает элемент с начала,
+    - `unshift(...items)` – добавляет элементы в начало.
+    - `splice(pos, deleteCount, ...items)` – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
+    - `slice(start, end)` – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
+    - `concat(...items)` – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если какой-то из items является массивом, тогда берутся его элементы.
+  
+  - **Поиска среди элементов**
+    - `indexOf/lastIndexOf(item, pos)` – ищет item , начиная с позиции pos , и возвращает его индекс или -1 , если ничего не найдено.
+    - `includes(value)` – возвращает true , если в массиве имеется элемент value , в противном случае false .
+    - `find/filter(func)` – фильтрует элементы через функцию и отдаёт первое/все значения, при прохождении которых через функцию возвращается true.
+    - `findIndex` — похож на find , но возвращает индекс вместо значения.
+  
+  - **Перебора элементов**
+    - `forEach(func)` – вызывает func для каждого элемента. Ничего не возвращает.
+  
+  - **Преобразования массива**
+    - `map(func)` – создаёт новый массив из результатов вызова func для каждогоэлемента.
+    - `sort(func)` – сортирует массив «на месте», а потом возвращает его.
+    - `reverse()` – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
+    - `split/join` – преобразует строку в массив и обратно.
+    - `reduce(func, initial) `– вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и передавая промежуточный результат между вызовами.
 
-- Push/pop
-  - Работают заметно быстрее чем shift/unshift
-  - push - добавляет элемент в конец массива
-  - pop - удаляет последний элемент из массива и возвращает его
-- Shift/unshift
-  - Unshift - добавляет элемент в начало
-  - Shift - удаляет первый элемент и возвращает его
--
-- Добавления/удаления элементов:
-  - push (...items) – добавляет элементы в конец,
-  - pop() – извлекает элемент с конца,
-  - shift() – извлекает элемент с начала,
-  - unshift(...items) – добавляет элементы в начало.
-  - splice(pos, deleteCount, ...items) – начиная с индекса pos , удаляетdeleteCount элементов и вставляет items .
-  - slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end ).
-  - concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items . Если
-    какой-то из items является массивом, тогда берутся его элементы.
--
-- Поиска среди элементов:
-  - indexOf/lastIndexOf(item, pos) – ищет item , начиная с позиции pos , и
-  - возвращает его индекс или -1 , если ничего не найдено.
-  - includes(value) – возвращает true , если в массиве имеется элемент value , в
-  - противном случае false .
-  - find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все
-  - значения, при прохождении которых через функцию возвращается true .
-  - findIndex похож на find , но возвращает индекс вместо значения.
--
-- Перебора элементов:
-  - forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
--
-- Преобразования массива:
-  - map(func) – создаёт новый массив из результатов вызова func для каждогоэлемента.
-  - sort(func) – сортирует массив «на месте», а потом возвращает его.
-  - reverse() – «на месте» меняет порядок следования элементов напротивоположный и возвращает изменённый массив.
-  - split/join – преобразует строку в массив и обратно.
-  - reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и
-    передавая промежуточный результат между вызовами.
--
-- Дополнительно:
-  - Array.isArray(arr) проверяет, является ли arr массивом.
--
-- Есть другие методы, используются реже
-- Добавить свежие методы 2017-2022
--
-- Мутирующие - изменяют исходный массив
-  - sort
-  - reverse
-  - splice
--
-- push(...items) – добавляет элементы в конец,
-- pop() – извлекает элемент из конца,
-- shift() – извлекает элемент из начала,
-- unshift(...items) – добавляет элементы в начало.
-- [splice](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
-- [slice](https://learn.javascript.ru/array-methods#slice) - создаёт новый массив и копирует в него нужные эл-ты
-- [concat](https://learn.javascript.ru/array-methods#concat) - создаёт новый массив и копирует в него данные из
-  старых
-- [forEach](https://learn.javascript.ru/array-methods#perebor-foreach) - перебор
-- [indexOf/lastIndexOf и includes](https://learn.javascript.ru/array-methods#indexof-lastindexof-i-includes) - поиск
-  в массиве
-- [find и findIndex](https://learn.javascript.ru/array-methods#find-i-findindex) - поиск
-- [filter](https://learn.javascript.ru/array-methods#filter) - поиск
-- [map](https://learn.javascript.ru/array-methods#map) - преобразование
-- [sort(fn)](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте»
-- [reverse](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный
-- [split и join](https://learn.javascript.ru/array-methods#split-i-join) - разбивка/объединение
-- [reduce/reduceRight]()
-- [Array.isArray](https://learn.javascript.ru/array-methods#array-isarray) - отличить массив от объекта
-  - 
-- НОВЫЕ
-- `findLast()` и `findLastIndex()` — поиск в массивах «с конца
-- `at()` — обращаться к массивам с конца. И строкам тоже
-- `flat()` и `flatMap()` — рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный
-  массив сделать одномерным.
--
-- [ШПАРГАЛКА](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-  - 
-- Чаще всего спрашивают
-  - Метод [map](https://learn.javascript.ru/array-methods#map) - преобразование
-  - Метод [filter](https://learn.javascript.ru/array-methods#filter)
-  - Метод [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright)
-    <br><p>
-</details>
-<br>
-<br>
+  <br></p>
+  </details>
 
-**Ссылки**
+[//]: # (Новые)
+- <details><summary><b>Новые</b></summary><p>
+  
+  - [findLast()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
+    и [findLastIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
+    — поиск в массивах «с конца
+  - [at()](https://learn.javascript.ru/array#poluchenie-poslednih-elementov-pri-pomoschi-at) — обращаться к массивам с
+    конца. И строкам тоже
+  - [flat()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript)
+    и [flatMap()](https://ru.hexlet.io/blog/posts/flat-i-flatmap-novye-metody-dlya-raboty-s-massivami-v-ecmascript) —
+    рекурсивно сгладить массивы до заданной глубины и вернуть новый массив. Т.е. многомерный массив сделать одномерным.
+    - [flat)()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) на MDN
+    - [flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap) на MDN
+    
+  <br></p>
+  </details>
 
-- [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-- [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
-- [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+[//]: # (Чаще всего спрашивают)
+- <details><summary><b>Чаще всего спрашивают</b></summary><p>
+
+  - [map](https://learn.javascript.ru/array-methods#map) - преобразование. Каждый элемент исходного массива обрабатываем в функции, преобразуем и   результат записываем в новый массив.
+    - `const result = numbers.map(n => n*2)`
+    - Вернёт массив, со всеми элементами массива numbers, умноженными на 2.
+    - Если не надо возвращать массив — используй `for`/`forEach`.
+      - ```js
+        let myArray = [1, 2, 3, 4, 5];
+        for (let i = 0; i <= myArray.length - 1; i++) {
+          console.log(myArray[i]);
+        }
+        ```
+      - ```js
+        let myArray = [1, 2, 3, 4, 5];
+        for (let item of myArray) {
+          //Не предоставляет доступа к индексу текущего элемента, только к его значению
+          console.log( item );
+        }
+        ```
+  - [filter](https://learn.javascript.ru/array-methods#filter) - Каждый элемент исходного массива обрабатываем в функции. Функция вернёт true/false   => если true, то результат пишем в новый массив.
+    - `const result = numbers.filter(n => n > 3)`
+    - Вернёт массив, со всеми элементами массива numbers, которые > 3.
+  - [reduce](https://learn.javascript.ru/array-methods#reduce-reduceright) - перебрать массив и вычислить одно значение. Каждый элемент исходного   массива обрабатываем в функции, на выходе получаем одно значение
+    - `const sum = numbers.reduce((acc, n) => acc + n, 0)`
+    - Вернёт сумму всех элементов массива numbers (acc). 0 = значение acc на первом шаге
+
+  - `Array.from()` — преобразовать перебираемый объект в массив (например строку в массив символов)
+    
+  <br></p>
+  </details>
+
+[//]: # (Мутирующие методы)
+- <details><summary><b>Мутирующие методы</b></summary><p>
+
+  - [sort()](https://learn.javascript.ru/array-methods#sort-fn) - сортировка «на месте».
+  - [reverse()](https://learn.javascript.ru/array-methods#reverse) - смена порядка элементов на обратный.
+  - [splice()](https://learn.javascript.ru/array-methods#splice) - добавлять, удалять и заменять элементы.
+    
+  <br></p>
+  </details>
+
+[//]: # (Методы «map»/«filter»/«reduce» вместо циклов «for» и «forEach»)
+- <details><summary><b>Методы «map»/«filter»/«reduce» вместо циклов «for» и «forEach»</b></summary><p>
+
+  Пришли в JS из функционального программирования. <br>
+  Используя эти три метода, вы избегаете циклов `for` и `forEach` в большинстве ситуаций. Вместо них можно использовать совокупность `map`, `filter` и `reduce`.<br>
+  Подробнее: [tproger.ru — Шпаргалка по современному JS](https://tproger.ru/translations/javascript-cheatsheet/#arrmthdsmapfltrrdc)
+  ```js
+  //Посчитать сумму оценок студентов с результатом 10 и выше
+  const students = [
+    { name: "Nick", grade: 10 },
+    { name: "John", grade: 15 },
+    { name: "Julia", grade: 19 },
+    { name: "Nathalie", grade: 9 },
+  ];
+
+  const aboveTenSum = students
+    .map(student => student.grade) // формируем массив оценок
+    .filter(grade => grade >= 10) // отбираем оценки выше 10
+    .reduce((prev, next) => prev + next, 0); // суммируем каждую оценку выше 10
+
+  console.log(aboveTenSum) // 44 = 10 (Nick) + 15 (John) + 19 (Julia). Nathalie игнорируется, поскольку её оценка ниже 10
+  ```
+    
+  <br></p>
+  </details>
+
+[//]: # (Список с MDN)
+- <details><summary><b>Список с MDN</b></summary><p>
+  
+  - [Array.prototype\[@@iterator\]()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
+  - [Array.prototype.at()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
+  - [Array.prototype.concat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+  - [Array.prototype.copyWithin()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
+  - [Array.prototype.entries()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
+  - [Array.prototype.every()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+  - [Array.prototype.fill()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+  - [Array.prototype.filter()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+  - [Array.prototype.find()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+  - [Array.prototype.findIndex()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+  - [Array.prototype.flat()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+  - [Array.prototype.flatMap()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+  - [Array.prototype.forEach()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+  - [Array.from()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+  - [Array.prototype.group()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/group)
+  - [Array.prototype.includes()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+  - [Array.prototype.indexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+  - [Array.isArray()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+  - [Array.prototype.join()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+  - [Array.prototype.keys()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
+  - [Array.prototype.lastIndexOf()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+  - [Array.prototype.map()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+  - [Array.of()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
+  - [Array.prototype.pop()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+  - [Array.prototype.push()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+  - [Array.prototype.reduce()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+  - [Array.prototype.reduceRight()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
+  - [Array.prototype.reverse()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+  - [Array.prototype.shift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+  - [Array.prototype.slice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+  - [Array.prototype.some()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  - [Array.prototype.sort()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+  - [Array.prototype.splice()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+  - [Array.prototype.toLocaleString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)
+  - [Array.prototype.toString()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
+  - [Array.prototype.unshift()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+  - [Array.prototype.values()](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
+  
+  <br></p>
+  </details>
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
+  - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+  - [Habr - 15 методов работы с массивами в JavaScript, которые необходимо знать в 2020 году](https://habr.com/ru/company/plarium/blog/483958/)
+  - [Habr - Область видимости переменной в Javascript (ES4-5)](https://habr.com/ru/post/78991/)
+  
+  <br></p>
+  </details>
 
 <br><p>
 </details>
