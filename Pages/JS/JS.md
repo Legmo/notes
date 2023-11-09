@@ -3893,8 +3893,8 @@ const a = 1
 <br></p>
 </details>
 
-[//]: # (Объекты. Методы объектов todo: упростить)
-<details id="objectMethods"><summary><b>Объекты. Методы объектов*</b></summary><p>
+[//]: # (Объекты. Методы объектов)
+<details id="objectMethods"><summary><b>Объекты. Методы объектов</b></summary><p>
 
 
 [//]: # (Шпаргалки)
@@ -4020,8 +4020,11 @@ const a = 1
 [//]: # (Объекты. Копирование объектов)
 <details id="objectCopy"><summary><b>Объекты. Копирование объектов</b></summary><p>
 
-- **Поверхностное копирование**
-  - Spread оператор (...)
+
+[//]: # (Поверхностное копирование)
+- <details><summary><b>Поверхностное копирование</b></summary><p>
+
+  - Spread оператор `...`
     - копирует собственные перечисляемые свойства данного объекта в новый объект. [Подробнее](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_%D0%B2_%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%D1%85_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0)
   - цикл («наивное» копирование)
     - создать новый объект и повторить структуру дублируемого объекта, перебирая его свойства и копируя их
@@ -4030,23 +4033,37 @@ const a = 1
       - меняется метод `Object.prototype`,
       - дескрипторы свойств не скопированы (т.е. флаги `writable`, `enumerable`, `configurable`)
       - копирует только перечисляемые свойства
-  - object.assign
+  - `object.assign`
     - работает для поверхностного копирования циклических объектов
     - можно использовать для копирования методов
-- 
-- **Глубокое копирование**
+  
+  <br></p>
+  </details>
+
+[//]: # (Глубокое копирование)
+- <details><summary><b>Глубокое копирование</b></summary><p>
+
   - цикл рекурсивный
-  - JSON.parse(JSON.stringify(object));
+  - `JSON.parse(JSON.stringify(object))`;
     - нельзя использовать для копирования методов объекта (вообще всех функций)
     - не работает для циклических объектов (объекты, у которых есть свойства, ссылающиеся сами на себя)
     - пример `const myDeepCopy = JSON.parse(JSON.stringify(myOriginal))`
   - [WebAPI structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
     - пример `const myDeepCopy = structuredClone(myOriginal);`
   - [lodash.cloneDeep(obj)](https://lodash.com/docs/4.17.15#cloneDeep)
-- 
-- **Ссылки**
+  
+  <br></p>
+  </details>
+
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
   - [Medium - Копирование объектов в JavaScript (2019)](https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff)
   - [Habr - Независимое глубокое клонирование объектов в JavaScript (2019)](https://habr.com/ru/post/480786/)
+  
+  <br></p>
+  </details>
 
   <br><p>
 </details>
