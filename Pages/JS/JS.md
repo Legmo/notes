@@ -6437,8 +6437,8 @@ const a = 1
   <br></p>
   </details>
 
-[//]: # (Отличия bind, call и apply)
-- <details><summary><b>Отличия bind(), call() и apply()</b></summary><p>
+[//]: # (Отличия «bind», «call» и «apply»)
+- <details><summary><b>Отличия «bind()», «call()» и «apply()»</b></summary><p>
 
   - `bind` - создаёт "обёртку" над функцией, которая подменяет контекст этой функции. Поведение похоже на `call` и `apply`, но, в отличие от них,   `bind` не вызывает функцию, а лишь возвращает "обёртку", которую можно вызвать позже.
   - `call` - вызов функции с подменой контекста (`this`) внутри функции.
@@ -6480,7 +6480,7 @@ const a = 1
 
 
 <br></p>
-</details>   
+</details>
 
 [//]: # (Bind)
 <details id="bind"><summary><b>Bind</b></summary><p> 
