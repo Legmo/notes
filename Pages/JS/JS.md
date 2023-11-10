@@ -6627,6 +6627,7 @@ const a = 1
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
+  
   - Методы для явного указания `this` функций
   - 
   - Мы сами устанавливаем контекст, в котором выполняется функция. <br>
@@ -6641,7 +6642,6 @@ const a = 1
   <br></p>
   </details>
 
-
 [//]: # (Отличия «bind», «call» и «apply»)
 - <details><summary><b>Отличия «bind()», «call()» и «apply()»</b></summary><p>
 
@@ -6651,7 +6651,6 @@ const a = 1
   
   <br></p>
   </details>
-
 
 [//]: # (Про колбек todo: уточнить)
 - <details><summary><b>Про колбек (уточнить)</b></summary><p>
@@ -6663,36 +6662,17 @@ const a = 1
   <br></p>
   </details>
 
-
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
 
-- [learn.javascript.ru](https://learn.javascript.ru/call-apply-decorators)
-- [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
-  
+  - [learn.javascript.ru](https://learn.javascript.ru/call-apply-decorators)
+  - [Habr - Bind, Call и Apply в JavaScript (2013)](https://habr.com/ru/post/199456/)
+    
   <br></p>
   </details>
 
 <br></p>
 </details>   
-
-[//]: # (Обработчики событий, events handlers todo: дополнить)
-<details id="eventsHandlers"><summary><b>Обработчики событий*</b> (events handlers)</summary><p>
-
-Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
-
-Когда такой блок кода определяют для запуска в ответ на некое событие, говорят "мы регистрируем обработчик событий".
-Иногда обработчики называют прослушивателями событий (event listeners). Термины часто взаимозаменяемы, но вообще: _
-прослушиватель_ слушает событие, а _обработчик_ — это код, который запускается в ответ на событие.
-
-Ссылки:
-
-- [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
-- [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
-- [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
-
-<br></p>
-</details>
 
 [//]: # (Модули todo: упростить)
 <details id="modules"><summary><b>Модули</b></summary><p>
@@ -10244,7 +10224,6 @@ console.log( func(10, 20) ); // 30
 ---
 
 
-
 [//]: # (Перебор структур данных. Методы «keys», «values», «entries»)
 <details id="keysValuesEntries"><summary><b>Перебор структур данных. Методы `keys`, `values`, `entries`</b></summary><p>
 
@@ -10853,6 +10832,24 @@ async function* generateSequence(start, end) {
 
 
 ---
+
+
+[//]: # (Обработчики событий, events handlers todo: дополнить)
+<details id="eventsHandlers"><summary><b>Обработчики событий *</b> (events handlers)</summary><p>
+
+- Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
+
+- Когда такой блок кода определяют для запуска в ответ на некое событие, говорят "мы регистрируем обработчик событий".
+- Иногда обработчики называют прослушивателями событий (event listeners). Термины часто взаимозаменяемы, но вообще: _прослушиватель_ слушает событие, а _обработчик_ — это код, который запускается в ответ на событие.
+
+- **Ссылки**:
+
+  - [learn.javascript.ru](https://learn.javascript.ru/introduction-browser-events)
+  - [MDN](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F)
+  - [professorweb.ru](https://professorweb.ru/my/javascript/js_theory/level2/2_5.php)
+
+<br></p>
+</details>
 
 [//]: # (Декораторы)
 <details id="decorators"><summary><b>Декораторы</b></summary><p>
