@@ -5348,6 +5348,11 @@ const a = 1
     - после логического оператора `!` — `!0`
     - с конструктором объектов логических значений — `new Boolean(0)`
     - в трёхкомпонентном сравнении — `myVar ? "truthy" : "falsy"`
+    - 
+    - Условие (вторая часть) в заголовке `for ( .. ; .. )`.
+    - Условие в циклах `while ( .. )` и `do .. while( .. )`.
+    - Левый операнд для операторов `||` или `&&` .
+
   - 
   - Значению присваивается `false`, если оно равно:
     - `false`;
@@ -5367,12 +5372,11 @@ const a = 1
 
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
-
   - [learn.javascript.ru - Логические операторы](https://learn.javascript.ru/logical-operators)
   - [learn.javascript.ru - Оператор нулевого слияния](https://learn.javascript.ru/nullish-coalescing-operator)
   - [Дока - Логические операторы](https://doka.guide/js/logic-operators/)
   - [tproger.ru - Шпаргалка по современному JavaScript. Truthy/Falsy](https://tproger.ru/translations/javascript-cheatsheet/#trthfls)
-  - [#objectReference](Приведение типов)
+  - [Приведение типов](#objectReference)
   
   <br></p>
   </details>
