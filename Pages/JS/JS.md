@@ -5254,9 +5254,9 @@ const a = 1
             ```
     - Так как выражение `(а || b == 10)` дает результат "hello world", а не `true`, строгая проверка завершается неудачей. 
     - Проблема решается явным приведением выражения к `true` или `false`. Например: `case !!(а || Ь == 10)`
-  
+  - 
   - **Ссылки**
-  - [learn.javascript.ru - Конструкция "switch"](https://learn.javascript.ru/switch)
+    - [learn.javascript.ru - Конструкция "switch"](https://learn.javascript.ru/switch)
 
 <br><p>
 </details>
