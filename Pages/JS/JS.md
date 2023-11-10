@@ -8242,7 +8242,7 @@ const a = 1
 </details>
 
 [//]: # (Сборщик мусора todo: допоплнить)
-<details id="garbageCollection"><summary><b>Сборщик мусора*</b></summary><p>
+<details id="garbageCollection"><summary><b>Сборщик мусора *</b></summary><p>
 
 - `Сборщик мусора` — фоновый процесс в движке JS. Отслеживает все объекты и удаляет те, которые стали недоступными.
 
@@ -8277,7 +8277,7 @@ const a = 1
 </details>
 
 [//]: # (Утечки памяти в JS todo: доработать)
-<details id="memoryLeak"><summary><b>Утечки памяти в JS*</b></summary><p>
+<details id="memoryLeak"><summary><b>Утечки памяти в JS *</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
@@ -8285,7 +8285,6 @@ const a = 1
   - Фрагменты памяти, которые больше не нужны приложению, но почему-то не возвращённы операционной системе или в пул свободной памяти.
 
   - Разные языки по-разному управляют памятью. Проблема точного определения используется ли на самом деле некий участок памяти или нет, **неразрешима**. Только разработчик знает, можно или нет вернуть операционной системе некую область памяти.
-
 
   <br><p>
   </details>
@@ -8482,7 +8481,7 @@ const a = 1
 </details>
 
 [//]: # (Callback todo: упростить)
-<details id="callback"><summary><b>Callback*</b></summary><p>
+<details id="callback"><summary><b>Callback *</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
@@ -8543,7 +8542,6 @@ const a = 1
   
   <br></p>
   </details>
-
 
 [//]: # (Коллбэки и контекст)
 - <details><summary><b>Коллбэки и контекст</b></summary><p>
@@ -9600,7 +9598,7 @@ const a = 1
 </details>
 
 [//]: # (Fetch)
-<details id="fetch"><summary><b>Fetch </b></summary><p>
+<details id="fetch"><summary><b>Fetch</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
