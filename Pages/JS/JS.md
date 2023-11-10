@@ -6622,8 +6622,8 @@ const a = 1
 <br></p>
 </details>
 
-[//]: # ("Call" & "apply" todo: доработать)
-<details id="callApply"><summary><b>"Call" & "apply"*</b></summary><p>
+[//]: # («Call» & «apply» todo: доработать)
+<details id="callApply"><summary><b>«Call» & «apply» *</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
