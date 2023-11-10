@@ -5261,8 +5261,8 @@ const a = 1
 <br><p>
 </details>
 
-[//]: # (Логические операторы. Логические выражения. Truthy/Falsy todo: дополнить)
-<details id="logicalAssignment"><summary><b>Логические операторы. Логические выражения. Truthy/Falsy*</b></summary><p>
+[//]: # (Логические операторы. Логические выражения. Truthy/Falsy)
+<details id="logicalAssignment"><summary><b>Логические операторы. Логические выражения (truthy/falsy)</b></summary><p>
 
 [//]: # (Логические операторы)
 - <details><summary><b>Логические операторы</b></summary><p>
@@ -5380,14 +5380,41 @@ const a = 1
 <br></p>
 </details>
 
-[//]: # (Логические операторы присваивания «&&=», «||=», «??=» todo:пусто)
-<details id="logicalAssignment"><summary><b>Логические операторы присваивания `&&=`, `||=`, `??=`**</b></summary><p>
+[//]: # (Логические операторы присваивания «&&=», «||=», «??=»)
+<details id="logicalAssignment"><summary><b>Логические операторы присваивания «&&=», «||=», «??=»</b></summary><p>
 
+- `&&=`
+  - Логическое «и»
+  - `x &&= y` выполняет присваивание, только если `x` истинно
+  - эквивалентно `x && (x = 2)`
+  - ```js
+    let a = 1;
+    let b = 0;
 
+    a &&= 2;
+    console.log(a); // output: 2
 
-Ссылки:
-
-- [Логические операторы присваивания(`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
+    b &&= 2;
+    console.log(b); // output: 0, т.к. Boolean(0) -> false, поэтому присваивания не происходит
+    ```
+  -  
+- `||=`
+  - Логическое «или»
+  - `x &&= y` выполняет присваивание, только если `x` ложно
+  - 
+- `??=`
+  - Логическое нулевое присвоение
+  - `x ??= y` переназначает x, только x является null или undefined.
+  - ```js
+    const a = { limit: 50 };
+    a.limit ??= 10;
+    console.log(a.limit); // output: 50. Не выполняется, т.к. (a.limit = 50), что не является null или undefined.
+    a.speed ??= 25;
+    console.log(a.speed); // output: 25. Выполняется, т.к. a.speed первоначально имеет значение undefined
+    ```
+-
+- Ссылки:
+  - [Логические операторы присваивания (`&&=`, `||=`, `??=`)](https://techrocks.ru/2021/01/22/logical-assignment-operators-in-javascript/)
 
 <br></p>
 </details>
