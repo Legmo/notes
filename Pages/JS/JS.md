@@ -5566,26 +5566,26 @@ const a = 1
 - <details><summary><b>Пример для функций</b></summary><p>
 
   ```js
-  const person = {
-    age: 35,
-    firstName: "Nick",
-    lastName: "Anderson",
-    sex: "M"
-  }
-
-  //Без деструктуризации
-  function joinFirstLastName(person) {
-    const firstName = person.firstName;
-    const lastName = person.lastName;
-    return firstName + '-' + lastName;
-  }
-
-  //С деструктуризацией
-  function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
-    return firstName + '-' + lastName;
-  }
-
-  joinFirstLastName(person); // Nick-Anderson
+    const person = {
+      age: 35,
+      firstName: "Nick",
+      lastName: "Anderson",
+      sex: "M"
+    }
+  
+    //Без деструктуризации
+    function joinFirstLastName(person) {
+      const firstName = person.firstName;
+      const lastName = person.lastName;
+      return firstName + '-' + lastName;
+    }
+  
+    //С деструктуризацией
+    function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
+      return firstName + '-' + lastName;
+    }
+  
+    joinFirstLastName(person); // Nick-Anderson
   ```
   
   <br></p>
@@ -5595,11 +5595,11 @@ const a = 1
 - <details><summary><b>Пример для массива</b></summary><p>
 
   ```js
-  const myArray = ["a", "b", "c"];
-  const [x, y] = myArray; // деструктуризация
-
-  console.log(x) // "a"
-  console.log(y) // "b"
+    const myArray = ["a", "b", "c"];
+    const [x, y] = myArray; // деструктуризация
+  
+    console.log(x) // "a"
+    console.log(y) // "b"
   ```
   
   <br></p>
@@ -5610,7 +5610,7 @@ const a = 1
 - <details><summary><b>Пример для хука React</b></summary><p>
 
   - ```js
-    const [fruit, setFruit] = useState('банан');
+      const [fruit, setFruit] = useState('банан');
     ```
   - 
   - Такой синтаксис в JS называется «деструктуризацией массивов» (array destructuring).
@@ -5618,7 +5618,7 @@ const a = 1
   - Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
   - 
   - Это равносильно такому коду:
-    - ```
+    - ```js
         var fruitStateVariable = useState('банан'); // Возвращает пару значений
         var fruit = fruitStateVariable[0]; // Извлекаем первое значение
         var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
