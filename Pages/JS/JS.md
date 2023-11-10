@@ -5647,9 +5647,8 @@ const a = 1
 <br></p>
 </details>
 
-[//]: # (Остаточные параметры и оператор расширения. Spread / Rest «...»)
-<details id="spread"><summary><b>Остаточные параметры и оператор расширения. Spread / Rest «...»</b></summary><p>
-
+[//]: # (Остаточные параметры и оператор расширения «...». Spread / Rest. Arguments)
+<details id="spread"><summary><b>Остаточные параметры и оператор расширения («...»). Spread / Rest. Arguments</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
@@ -5754,21 +5753,20 @@ const a = 1
 </details>
 
 [//]: # (Параметры функции по умолчанию todo:доработать)
-<details id="funcDefParam"><summary><b>Параметры функции по умолчанию**</b></summary><p>
+<details id="funcDefParam"><summary><b>Параметры функции по умолчанию **</b></summary><p>
 
-```js
-function myFunc(x = 10) {
-  return x;
-}
-console.log(myFunc()) // 10 — не задано значение, поэтому значение x по умолчанию присвоено x в функции myFunc
-console.log(myFunc(5)) // 5 — значение задано, поэтому x=5 в функции myFunc
-console.log(myFunc(undefined)) // 10 — задано значение undefined, поэтому по умолчанию равно x
-console.log(myFunc(null)) // null — величина задана
-```
-
-Ссылки:
-
-- [tproger.ru - Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
+  ```js
+    function myFunc(x = 10) {
+      return x;
+    }
+    console.log(myFunc()) // 10 — не задано значение, поэтому значение x по умолчанию присвоено x в функции myFunc
+    console.log(myFunc(5)) // 5 — значение задано, поэтому x=5 в функции myFunc
+    console.log(myFunc(undefined)) // 10 — задано значение undefined, поэтому по умолчанию равно x
+    console.log(myFunc(null)) // null — величина задана
+  ```
+  
+  - **Ссылки**
+    - [tproger.ru - Параметры функции по умолчанию](https://tproger.ru/translations/javascript-cheatsheet/#fnctdefparam)
 
 <br></p>
 </details>
