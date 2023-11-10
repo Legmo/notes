@@ -9017,8 +9017,8 @@ const a = 1
   <br></p>
   </details>
 
-[//]: # (Асинхронные итераторы, for-await-of. ForEach, for и while)
-- <details><summary><b>Асинхронные итераторы, for-await-of. ForEach, for и while</b></summary><p>
+[//]: # (Асинхронные итераторы, for-await-of, forEach, for и while)
+- <details><summary><b>Асинхронные итераторы, for-await-of, forEach, for и while</b></summary><p>
 
   - Надо относиться очень аккуратно к использованию `forEach`, `for` и `while` в промисах.
   - Скорее всего нужен `Promise.all()` или что-то в этом духе.
@@ -9227,358 +9227,338 @@ const a = 1
 [//]: # (Промисы - Async/Await)
 <details id="promiseAsync"><summary><b>Промисы - Async/Await</b></summary><p>
 
-  ***
 
-Специальный синтаксис для работы с промисами.<br>
-Замена `.then` — позволяет оформлять асинхронный код более привычным способом, как синхронный. Синтаксический сахар
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-Ключевое слово `async` сообщает JS-интерпретатору что эту функцию, нужно обрабатывать по-особому:
+  - Специальный синтаксис для работы с промисами.
+  - Замена `.then` — позволяет оформлять асинхронный код более привычным способом, как синхронный. Синтаксический сахар
+  - 
+  - Ключевое слово `async` сообщает JS-интерпретатору что эту функцию, нужно обрабатывать по-особому:
+    - такая функция всегда возвращает промис. Если вернёт что-то другое — это значение автоматически обернется в успешно завершившийся промис.
+    - когда система достигнет в этой функции ключевого слова `await` — она приостановится.
+      - Она считает, что выражение после `await` возвращает промис — ожидает разрешения или отклонения этого промиса перед продолжением.
+  - Ключевое слово `await` перед промисом заставит JS дождаться его выполнения, после чего:
+    - Если промис завершается с ошибкой, будет сгенерировано исключение, как если бы на этом месте находилось `throw`.
+    - Иначе вернётся результат промиса — то, что возвращает асинхронная функция справа от слова await.
+    - Ключевое слово await говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами асинхронной функции.
 
-- такая функция всегда возвращает промис. Если вернёт что-то другое — это значение автоматически обернется в успешно
-  завершившийся промис.
-- когда система достигнет в этой функции ключевого слова `await` — она приостановится.<br>
-  Она считает, что выражение после `await` возвращает промис — ожидает разрешения или отклонения этого промиса перед
-  продолжением.
-
-Ключевое слово `await` перед промисом заставит JS дождаться его выполнения, после чего:
-
-- Если промис завершается с ошибкой, будет сгенерировано исключение, как если бы на этом месте находилось `throw`.
-- Иначе вернётся результат промиса — то, что возвращает асинхронная функция справа от слова await.
-- Ключевое слово await говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами
-  асинхронной функции.
-  <br>
-  <br>
-
+  <br></p>
+  </details>
 
 [//]: # (Преимущества)
 <details><summary><b>Преимущества</b></summary><p>
 
-- код выглядит лучше - можно работать с асинхронными функциями как с синхронными
-- удобнее обрабатывать ошибки
-- удобнее отлаживать
-  <br></p>
+  - код выглядит лучше - можно работать с асинхронными функциями как с синхронными
+  - удобнее обрабатывать ошибки
+  - удобнее отлаживать
 
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Про ошибки)
 <details><summary><b>Про ошибки</b></summary><p>
 
-- При использовании промисов нам приходится использовать блок `.catch()` для обработки асинхронных ошибок, и
-  блок `try / catch` для обработки синхронных ошибок.
-- Конструкция async / await позволяет обрабатывать синхронные и асинхронные ошибки с использованием одних и тех же
-  механизмов — выражением `try / catch`.
-- Также cтек ошибки, возвращённый из цепочки промисов, не содержит сведений о точном месте, в котором произошла ошибка.
-  В В отличие от `async / await` этой проблемы нет
+  - При использовании промисов нам приходится использовать блок `.catch()` для обработки асинхронных ошибок, и блок `try / catch` для обработки синхронных ошибок.
+  - Конструкция async / await позволяет обрабатывать синхронные и асинхронные ошибки с использованием одних и тех же механизмов — выражением `try / catch`.
+  - Также cтек ошибки, возвращённый из цепочки промисов, не содержит сведений о точном месте, в котором произошла ошибка. В В отличие от `async / await` этой проблемы нет
 
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Про отладку)
-<details><summary><b>Про отладку</b></summary><p>
+- <details><summary><b>Про отладку</b></summary><p>
 
-- Если вы пользовались промисами, то вы знаете, что отладка подобных конструкций — это кошмар.
-- Например, если установить nочку останова внутри блока `.then` и использовать команды отладки вроде «step-over»,
-  отладчик не перейдёт к следующему `.then`, так как он умеет «перешагивать» лишь через синхронный код.
-- С использованием `async / await` можно переходить по вызовам, в которых используется ключевое слово `await` так, будто
-  это — обычные синхронные операции.
+  - Если вы пользовались промисами, то вы знаете, что отладка подобных конструкций — это кошмар.
+  - Например, если установить nочку останова внутри блока `.then` и использовать команды отладки вроде «step-over», отладчик не перейдёт к следующему `.then`, так как он умеет «перешагивать» лишь через синхронный код.
+  - С использованием `async / await` можно переходить по вызовам, в которых используется ключевое слово `await` так, будто это — обычные синхронные операции.
+  
   <br></p>
-
-</details>
+  </details>
 
 [//]: # (Про event loop)
-<details><summary><b>Про event loop</b></summary><p>
+- <details><summary><b>Про event loop</b></summary><p>
 
-- Сама по себе async-функция обработается по обычным правилам.
-- А вот ключевое слово `await` в ней — поставит код «на паузу».<br>
-  Интерпретатор JS будет ждать, пока промис справа от `await` не выполнится.
-- После чего оно вернёт его результат, и выполнение кода продолжится.
-- Вроде это должно работать как обычный `.then`
-  - Это просто «синтаксический сахар» для получения результата промиса, аналог `promise.then`.
-  - Хотя await и заставляет JS дожидаться выполнения промиса, это не отнимает ресурсов процессора.
-  - Пока промис не выполнится, JS-движок может заниматься другими задачами: выполнять прочие скрипты, обрабатывать
-    события и т.п.
+  - Сама по себе async-функция обработается по обычным правилам.
+  - А вот ключевое слово `await` в ней — поставит код «на паузу».
+    - Интерпретатор JS будет ждать, пока промис справа от `await` не выполнится.
+  - После чего оно вернёт его результат, и выполнение кода продолжится.
+  - Вроде это должно работать как обычный `.then`
+    - Это просто «синтаксический сахар» для получения результата промиса, аналог `promise.then`.
+    - Хотя await и заставляет JS дожидаться выполнения промиса, это не отнимает ресурсов процессора.
+    - Пока промис не выполнится, JS-движок может заниматься другими задачами: выполнять прочие скрипты, обрабатывать
+      события и т.п.
+  -
+  - Ключевое слово `await` говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами асинхронной функции.
+  - Слово `await` сообщает что
+    - мы должны дождаться выполнения асинхронной функции
+    - не помещать ее в event loop, а выполнить прямо здесь.
+  - 
+  - ```js
+    // Мы дожидаемся выполнения асинхронной функции getData(), 
+    // выполняем прямо здесь (не помещая в event looop) и пишем результат в i-й элемент массива.
 
-Ключевое слово `await` говорит движку JS приостановить код в этой строке, не блокируя остальной код скрипта за пределами
-асинхронной функции.
-
-Слово `await` сообщает что
-
-- мы должны дождаться выполнения асинхронной функции
-- не помещать ее в event loop, а выполнить прямо здесь.
-
-
-- ```js
-  // Мы дожидаемся выполнения асинхронной функции getData(), 
-  // выполняем прямо здесь (не помещая в event looop) и пишем результат в i-й элемент массива.
-
-  async function fillArray() {
-    const arr = [];
-    for (var i = 0; i < 10000; i++) {
-      arr[i] = await getData(i);
+    async function fillArray() {
+      const arr = [];
+      for (var i = 0; i < 10000; i++) {
+        arr[i] = await getData(i);
+      }
     }
-  }
-  ```
+    ```
+  -
+  - Это значит, что при вызове асинхронной функции fillArray() она попадет в очередь контекстов и будет исполнена.
+  - Но следующий контекст будет ждать, пока текущий завершится.
+  - Все пользовательские события, таймеры и прочие помещаемые в очередь контексты будут ждать, пока не пройдут десять тысяч запросов к серверу.
 
-- Это значит, что при вызове асинхронной функции fillArray() она попадет в очередь контекстов и будет исполнена.<br>
-- Но следующий контекст будет ждать, пока текущий завершится. <br>
-- Все пользовательские события, таймеры и прочие помещаемые в очередь контексты будут ждать, пока не пройдут десять
-  тысяч
-  запросов к серверу.
   <br></p>
-
-</details>
+  </details>
 
 [//]: # (Asynс-функция всегда возвращает промис)
-<details><summary><b>Asynс-функция всегда возвращает промис</b></summary><p>
+- <details><summary><b>Asynс-функция всегда возвращает промис</b></summary><p>
 
-- ```js
-  //Можно не писать return Promise(...) — всё равно вренётся промис
-  async function f() { return 1 }
-  f().then(alert); // 1
-  ```
+  - ```js
+    //Можно не писать return Promise(...) — всё равно вренётся промис
+    async function f() { return 1 }
+    f().then(alert); // 1
+    ```
 
-- ```js    
-  //Можно явно вернуть промис — результат будет тот же
-  async function f() {return Promise.resolve(1)}
-  f().then(alert); // 1
-  ```
+  - ```js    
+    //Можно явно вернуть промис — результат будет тот же
+    async function f() {return Promise.resolve(1)}
+    f().then(alert); // 1
+    ```
 
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Async и Promise.all)
-<details><summary><b>Async и Promise.all</b></summary><p>
+- <details><summary><b>Async и Promise.all</b></summary><p>
 
-Await отлично работает в сочетании с `Promise.all`, если необходимо выполнить несколько задач параллельно.
+  - Await отлично работает в сочетании с `Promise.all`, если необходимо выполнить несколько задач параллельно.
+  - `Promise.all` — запустить N промисов параллельно и дождаться, пока все они выполнятся.
+  - Если любой из промисов завершится с ошибкой, то промис, возвращённый Promise.all, немедленно завершается с этой ошибкой. При этом остальные результаты игнорируются.
 
-`Promise.all` — запустить N промисов параллельно и дождаться, пока все они выполнятся.<br>
-Если любой из промисов завершится с ошибкой, то промис, возвращённый Promise.all, немедленно завершается с этой
-ошибкой. При этом остальные результаты игнорируются.
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Асинхронные итераторы, for-await-of. ForEach, for и while)
-<details><summary><b>Асинхронные итераторы, for-await-of. ForEach, for и while</b></summary><p>
+- <details><summary><b>Асинхронные итераторы, for-await-of. ForEach, for и while</b></summary><p>
 
-Надо относиться очень аккуратно к использованию `forEach`, `for` и `while` в промисах.
-Скорее всего нужен `Promise.all()` или что-то в этом духе.
+  - Надо относиться очень аккуратно к использованию `forEach`, `for` и `while` в промисах.
+  - Скорее всего нужен `Promise.all()` или что-то в этом духе.
+  - 
+  - Просто использовать цикл for или метод forEach с асинхронными операциями мы не можем. И цикл for и метод forEach ожидают синхронный код.
+  - Однако мы можем использовать for await...of, который появился в ES2018, для обхода асинхронных итерируемых сущностей.
+  - 
+  - Подробнее:
+    - [Habr - У нас проблемы с промисами](https://habr.com/ru/company/vk/blog/269465/)
+  - 
+  - Есть ещё асинхронные итераторы (используется цикл for-await-of) - объединяют возможности итераторов и операторов async и await.
+    - [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+    - [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+    - [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
 
-Просто использовать цикл for или метод forEach с асинхронными операциями мы не можем. И цикл for и метод forEach ожидают
-синхронный код.<br>
-Однако мы можем использовать for await...of, который появился в ES2018, для обхода асинхронных итерируемых сущностей.
-
-Подробнее:
-
-- [Habr - У нас проблемы с промисами](https://habr.com/ru/company/vk/blog/269465/)
-
-Есть ещё асинхронные итераторы (используется цикл for-await-of) - объединяют возможности итераторов и операторов async и
-await.
-
-- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
-- [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
-- [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Примеры кода)
-<details><summary><b>Примеры использования</b></summary><p>
+- <details><summary><b>Примеры использования</b></summary><p>
 
-- ```js
-  //Использование со стрелочной функцией
-  const foo = async() => {console.log(await getData())};
-  foo();
-  ````
+  - ```js
+    //Использование со стрелочной функцией
+    const foo = async() => {console.log(await getData())};
+    foo();
+    ````
 
-- ```js
-  //Отлавливание ошибок
-  const foo = async() => {
-    try {
-        console.log(await getData())
-    } catch(err) {
-        console.error(err)    
-    }
-  };
-  foo();
-  ````
+  - ```js
+    //Отлавливание ошибок
+    const foo = async() => {
+      try {
+          console.log(await getData())
+      } catch(err) {
+          console.error(err)    
+      }
+    };
+    foo();
+    ````
 
-- ```js
-  //Пример с then
-  new Promise((resolve, reject) => {
-    setTimeout(() => resolve('some result'), 1000);
-      // setTimeout(() => reject(new Error('some error')), 1000);
-  }).then(result => {
-    console.log(result)  
-  }).catch(err => {
-     console.error(err)    
-  });
+  - ```js
+    //Пример с then
+    new Promise((resolve, reject) => {
+      setTimeout(() => resolve('some result'), 1000);
+        // setTimeout(() => reject(new Error('some error')), 1000);
+    }).then(result => {
+      console.log(result)  
+    }).catch(err => {
+       console.error(err)    
+    });
 
-  //Он же с async/await, с обработкой ошибок в try...catch
-  const foo = async() => {
-    try {
+    //Он же с async/await, с обработкой ошибок в try...catch
+    const foo = async() => {
+      try {
+        const result = await new Promise((resolve, reject) => {
+          setTimeout(() => resolve('some result'), 1000);
+          // setTimeout(() => reject(new Error('some error')), 1000);
+        });  
+        console.log(result);
+      } catch(err) {
+        console.error(err);
+      }
+    };
+    foo();
+
+    //Он же с async/await, без обработки ошибок
+    const foo = async() => {
+      const result = await new Promise(resolve => {
+        setTimeout(() => resolve('some result'), 1000);
+      });
+      console.log(result);
+    };
+    foo();
+
+    //Он же с async/await, с обычной обработкой ошибок 
+    const foo = async() => {
       const result = await new Promise((resolve, reject) => {
         setTimeout(() => resolve('some result'), 1000);
         // setTimeout(() => reject(new Error('some error')), 1000);
-      });  
+      });
       console.log(result);
-    } catch(err) {
-      console.error(err);
-    }
-  };
-  foo();
+    };
+    foo().catch(err => {
+        //Эта часть сработает только если промис вёрнет ошибку, иначе игнорируется  
+        console.error(err);
+      });
+    ````
 
-  //Он же с async/await, без обработки ошибок
-  const foo = async() => {
-    const result = await new Promise(resolve => {
-      setTimeout(() => resolve('some result'), 1000);
-    });
-    console.log(result);
-  };
-  foo();
-
-  //Он же с async/await, с обычной обработкой ошибок 
-  const foo = async() => {
-    const result = await new Promise((resolve, reject) => {
-      setTimeout(() => resolve('some result'), 1000);
-      // setTimeout(() => reject(new Error('some error')), 1000);
-    });
-    console.log(result);
-  };
-  foo().catch(err => {
-      //Эта часть сработает только если промис вёрнет ошибку, иначе игнорируется  
-      console.error(err);
-    });
-  ````
-
-- ```js
-  //A. Вариант с .then
-  // 1. Запрашиваем с сервера JSON с данными пользователя
-  fetch('/src/user.json')
-        // 2. Загружаем данные в формате json
-        .then(response => response.json())
-        
-        // 3. Запрашиваем информацию об этом пользователе с GitHub
-        .then(user => fetch(`https://api.github.com/users/${user.name}`))
-
-        // 4. Загружаем ответ в формате json
-        .then(response => response.json())
-
-        // 5. Показываем аватар (githubUser.avatar_url) в течение 3 секунд
-        .then(githubUser => new Promise(function (resolve, reject) {
-          let img = document.createElement('img');
-          img.src = githubUser.avatar_url;
-          img.className = "promise-avatar-example";
-          document.body.append(img);
-
-          // ждём 3 секунды и затем скрываем аватар
-          setTimeout(() => {
-            img.remove();
-            resolve(githubUser); // (**)
-          }, 3000);
-        }))
-
-        // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
-        .then(githubUser => alert(`Закончили показ ${githubUser.name}`));
-
-  //B. Тот же вариант с .async
-  async function showAvatar() {
-
+  - ```js
+    //A. Вариант с .then
     // 1. Запрашиваем с сервера JSON с данными пользователя
-    let response = await fetch('/src/user.json');
-  
-    // 2. Загружаем данные в формате json
-    let user = await response.json();
-  
-    // 3. Запрашиваем информацию об этом пользователе с GitHub
-    let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
-  
-    // 4. Загружаем ответ в формате json
-    let githubUser = await githubResponse.json();
-  
-    // 5. Показываем аватар (githubUser.avatar_url)
-    let img = document.createElement('img');
-    img.src = githubUser.avatar_url;
-    img.className = "promise-avatar-example";
-    document.body.append(img);
-  
-    // ждём 3 секунды и затем скрываем аватар
-    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-    img.remove();
+    fetch('/src/user.json')
+          // 2. Загружаем данные в формате json
+          .then(response => response.json())
+          
+          // 3. Запрашиваем информацию об этом пользователе с GitHub
+          .then(user => fetch(`https://api.github.com/users/${user.name}`))
 
-    // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
-    return githubUser;
-  }
-  showAvatar();
-  ````
+          // 4. Загружаем ответ в формате json
+          .then(response => response.json())
 
-***
+          // 5. Показываем аватар (githubUser.avatar_url) в течение 3 секунд
+          .then(githubUser => new Promise(function (resolve, reject) {
+            let img = document.createElement('img');
+            img.src = githubUser.avatar_url;
+            img.className = "promise-avatar-example";
+            document.body.append(img);
 
-- Функция `getAmount()` вызывает две асинхронные функции — `getUser()` и `getBankBalance()`.<br>
-  Можно сделать это через `.then`, но конструкция `async/await` позволяет решить эту задачу проще и элегантнее.
-- ```js
-  function getUser(userId) {
-    return new Promise(resolve => resolve('Ivan'))
-  }
-  
-  function getBankBalance(user) {
-    return new Promise((resolve, rejected) => {
-      if (user == 'Ivan') {
-        resolve('$1,00')
-      } else {
-        rejected('unknown user')
-      }
-    })
-  }
-  
-  // Раньше, с .then
-  function getAmount(userId) {
-    getUser(userId)
-            .then(user => getBankBalance(user))
-            .then(money => console.log(money))
-  }
-  
-  // Теперь, с Async/Await
-  async function getAmount2(userId) {
-    let user = await getUser(userId);
-    let money = await getBankBalance(user);
-    console.log(money);
-  }
-  ```
+            // ждём 3 секунды и затем скрываем аватар
+            setTimeout(() => {
+              img.remove();
+              resolve(githubUser); // (**)
+            }, 3000);
+          }))
 
-Подробнее этот пример рассмотрен
-здесь: [Habr - Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
-<br></p>
-</details>
+          // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
+          .then(githubUser => alert(`Закончили показ ${githubUser.name}`));
+
+    //B. Тот же вариант с .async
+    async function showAvatar() {
+
+      // 1. Запрашиваем с сервера JSON с данными пользователя
+      let response = await fetch('/src/user.json');
+    
+      // 2. Загружаем данные в формате json
+      let user = await response.json();
+    
+      // 3. Запрашиваем информацию об этом пользователе с GitHub
+      let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+    
+      // 4. Загружаем ответ в формате json
+      let githubUser = await githubResponse.json();
+    
+      // 5. Показываем аватар (githubUser.avatar_url)
+      let img = document.createElement('img');
+      img.src = githubUser.avatar_url;
+      img.className = "promise-avatar-example";
+      document.body.append(img);
+    
+      // ждём 3 секунды и затем скрываем аватар
+      await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+      img.remove();
+
+      // 6. Выполянем какое-то дейстиве после отображения-скрытия аватара
+      return githubUser;
+    }
+    showAvatar();
+    ````
+  - 
+  - 
+  - Функция `getAmount()` вызывает две асинхронные функции — `getUser()` и `getBankBalance()`.
+    - Можно сделать это через `.then`, но конструкция `async/await` позволяет решить эту задачу проще и элегантнее.
+  - ```js
+    function getUser(userId) {
+      return new Promise(resolve => resolve('Ivan'))
+    }
+    
+    function getBankBalance(user) {
+      return new Promise((resolve, rejected) => {
+        if (user == 'Ivan') {
+          resolve('$1,00')
+        } else {
+          rejected('unknown user')
+        }
+      })
+    }
+    
+    // Раньше, с .then
+    function getAmount(userId) {
+      getUser(userId)
+              .then(user => getBankBalance(user))
+              .then(money => console.log(money))
+    }
+    
+    // Теперь, с Async/Await
+    async function getAmount2(userId) {
+      let user = await getUser(userId);
+      let money = await getBankBalance(user);
+      console.log(money);
+    }
+    ```
+  - Подробнее этот пример рассмотрен здесь: [Habr - Обзор новшеств ECMAScript 2016, 2017, и 2018 с примерами](https://habr.com/ru/company/ruvds/blog/353174/)
+
+  <br></p>
+  </details>
 
 [//]: # (Что нового?)
-<details><summary><b>Что нового?</b></summary><p>
+- <details><summary><b>Что нового?</b></summary><p>
 
-- ES8 (2016) — введены Async/Await
-- ES13 (2022) — оператор `await` можно использовать вне функции (без `async`). Полезно для загрузки модулей динамически
-  или условно?
+  - ES8 (2016) — введены Async/Await
+  - ES13 (2022) — оператор `await` можно использовать вне функции (без `async`). Полезно для загрузки модулей динамически или условно.
+  
+  <br></p>
+  </details>
 
-<br></p>
-</details>
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
 
-**Ссылки**
+  - [learn.javascript.ru - Async/await](https://learn.javascript.ru/async-await)
+  - [MDN - Async/await](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Promises)
+  - [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
+  - [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
+  - [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
+  - [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
+  - [Habr - Поймут даже дети: простое объяснение async/await и промисов в JavaScript](https://habr.com/ru/post/474726/?ysclid=l8aawlijry104453440)
+  - [Habr - Разница между асинхронной функцией и функцией, возвращающей промис](https://habr.com/ru/post/475260/)
+  - [Дока - Асинхронность в JS ](https://doka.guide/js/async-in-js/?ysclid=l8abi9sfsv463636739)
+    [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://stasonmars.ru/javascript/polnoe-ponimanie-syncronnogo-i-asyncronnogo-javascript-s-async-await/)
+  - [Ад обратных вызовов](http://callbackhell.ru/)
+  - [WebDev - ES6 #14 Async/Await (YouTube)](https://youtu.be/b17RVAqp5QA)
 
-- [learn.javascript.ru - Async/await](https://learn.javascript.ru/async-await)
-- [MDN - Async/await](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Asynchronous/Promises)
-- [Habr - Конструкция async/await в JavaScript](https://habr.com/ru/company/ruvds/blog/414373/)
-- [Habr - Async/Await в javascript. Взгляд со стороны](https://habr.com/ru/post/282477/)
-- [Habr - Асинхронность в JavaScript: Пособие для тех, кто хочет разобраться](https://habr.com/ru/company/wrike/blog/302896/)
-- [Habr - Как работает JS: цикл событий, асинхронность и пять способов улучшения кода с помощью async / await](https://m.habr.com/ru/company/ruvds/blog/340508/)
-- [Habr - Поймут даже дети: простое объяснение async/await и промисов в JavaScript](https://habr.com/ru/post/474726/?ysclid=l8aawlijry104453440)
-- [Habr - Разница между асинхронной функцией и функцией, возвращающей промис](https://habr.com/ru/post/475260/)
-- [Дока - Асинхронность в JS ](https://doka.guide/js/async-in-js/?ysclid=l8abi9sfsv463636739)
-  [Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://stasonmars.ru/javascript/polnoe-ponimanie-syncronnogo-i-asyncronnogo-javascript-s-async-await/)
-- [Ад обратных вызовов](http://callbackhell.ru/)
-- [WebDev - ES6 #14 Async/Await (YouTube)](https://youtu.be/b17RVAqp5QA)
+  - [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+  - [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+  - [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
 
-- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
-- [Mentanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
-- [Habr - Как работать с async/await в циклах JavaScript](https://habr.com/ru/post/435084/)
+  <br></p>
+  </details>
 
 <br></p>
 </details>
