@@ -5419,8 +5419,8 @@ const a = 1
 <br></p>
 </details>
 
-[//]: # (Опциональная цепочка «?.»)
-<details id="optionalChaining"><summary><b>Опциональная цепочка «?.»</b></summary><p>
+[//]: # (Опциональная цепочка «?.»  todo: доработать)
+<details id="optionalChaining"><summary><b>Опциональная цепочка «?.» *</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
@@ -5455,7 +5455,7 @@ const a = 1
 
   - Используется для вызова потенциально несуществующей функции.
   - В следующем примере не у всех пользователей есть метод `admin`
-  -  ```js
+  - ```js
     let userAdmin = {
       admin() {
         alert("Я админ");
