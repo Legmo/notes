@@ -9718,14 +9718,15 @@ const a = 1
   <br></p>
   </details>
 
+
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
 
- - [learn.javascript.ru - Fetch](https://learn.javascript.ru/network)
+  - [learn.javascript.ru - Fetch](https://learn.javascript.ru/network)
   
   <br></p>
   </details>
-
+  
 <br></p>
 </details>
 
