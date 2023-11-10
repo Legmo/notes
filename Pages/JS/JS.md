@@ -5519,99 +5519,130 @@ const a = 1
 [//]: # (Деструктуризация)
 <details id="destruct"><summary><b>Деструктуризация</b></summary><p>
 
-`Деструктурирование` — создание новых переменных путём извлечения данных из объектов и массивов.
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-- Специальный синтаксис, который позволяет «распаковать» массивы или объекты в кучу переменных,
-- Зачем
-  - иногда удобнее работать не с элементами объекта/массива, а с отдельными переменными.
-  - передаём объекты/массивы в функцию — ей может понадобиться не объект/массив целиком, а элементы по  
-    отдельности
-- Также прекрасно работает со сложными функциями, которые имеют много параметров, значений по умолчанию и так далее.
-- Ничего не делает с исходным массивом/объектом, только копирует. Просто более короткий вариант записи
-- Пропускайте элементы, используя запятые
-- Работает с любым перебираемым объектом с правой стороны - Set и т.д.
-- Присваивайте чему угодно с левой стороны - например свойствам объекта
+  - `Деструктурирование` — создание новых переменных путём извлечения данных из объектов и массивов.
+  - Специальный синтаксис, который позволяет «распаковать» массивы или объекты в кучу переменных,
+  -
+  - Зачем
+    - иногда удобнее работать не с элементами объекта/массива, а с отдельными переменными.
+    - передаём объекты/массивы в функцию — ей может понадобиться не объект/массив целиком, а элементы по  
+      отдельности
+  - Также прекрасно работает со сложными функциями, которые имеют много параметров, значений по умолчанию и так далее.
+  -
+  - Ничего не делает с исходным массивом/объектом, только копирует. Просто более короткий вариант записи
+  - Пропускайте элементы, используя запятые
+  - Работает с любым перебираемым объектом с правой стороны - Set и т.д.
+  - Присваивайте чему угодно с левой стороны - например свойствам объекта
+  
+  <br></p>
+  </details>
 
-**Пример для объекта**
-```js
-const person = {
-  age: 35,
-  firstName: "Nick",
-  lastName: "Anderson",
-  sex: "M"
-}
+[//]: # (Пример для объекта)
+- <details><summary><b>Пример для объекта</b></summary><p>
 
-const { age, firstName: first, city = "Paris" } = person; // деструктурирование
 
-console.log(age) // 35 — создана переменная age, которая равна person.age
-console.log(first) // "Nick" — создана переменная first, значение которой соответствует person.firstName
-console.log(firstName) // ReferenceError — person.firstName существует, но новая переменная называется first
-console.log(city) // Paris — создана переменная city, а поскольку person.city не определена, city равна заданному по умолчанию значению "Paris".
-```
+  ```js
+  const person = {
+    age: 35,
+    firstName: "Nick",
+    lastName: "Anderson",
+    sex: "M"
+  }
 
-**Пример для функций**
-```js
-const person = {
-  age: 35,
-  firstName: "Nick",
-  lastName: "Anderson",
-  sex: "M"
-}
+  const { age, firstName: first, city = "Paris" } = person; // деструктурирование
 
-//Без деструктуризации
-function joinFirstLastName(person) {
-  const firstName = person.firstName;
-  const lastName = person.lastName;
-  return firstName + '-' + lastName;
-}
-
-//С деструктуризацией
-function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
-  return firstName + '-' + lastName;
-}
-
-joinFirstLastName(person); // Nick-Anderson
-```
-
-**Пример для массива**
-```js
-const myArray = ["a", "b", "c"];
-const [x, y] = myArray; // деструктуризация
-
-console.log(x) // "a"
-console.log(y) // "b"
-```
-
-**Пример для хука React**
-```js
-const [fruit, setFruit] = useState('банан');
-```
-
-Такой синтаксис в JS называется «деструктуризацией массивов (array destructuring)».
-Он означает, что мы создаём две новые переменные, fruit и setFruit.
-Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
-
-Это равносильно такому коду:
-
+  console.log(age) // 35 — создана переменная age, которая равна person.age
+  console.log(first) // "Nick" — создана переменная first, значение которой соответствует person.firstName
+  console.log(firstName) // ReferenceError — person.firstName существует, но новая переменная называется first
+  console.log(city) // Paris — создана переменная city, а поскольку person.city не определена, city равна заданному по умолчанию значению "Paris".
   ```
-    var fruitStateVariable = useState('банан'); // Возвращает пару значений
-    var fruit = fruitStateVariable[0]; // Извлекаем первое значение
-    var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
+  
+  <br></p>
+  </details>
+
+[//]: # (Пример для функций)
+- <details><summary><b>Пример для функций</b></summary><p>
+
+  ```js
+  const person = {
+    age: 35,
+    firstName: "Nick",
+    lastName: "Anderson",
+    sex: "M"
+  }
+
+  //Без деструктуризации
+  function joinFirstLastName(person) {
+    const firstName = person.firstName;
+    const lastName = person.lastName;
+    return firstName + '-' + lastName;
+  }
+
+  //С деструктуризацией
+  function joinFirstLastName({ firstName, lastName }) { // Создаём переменные, деструктурируя параметр person
+    return firstName + '-' + lastName;
+  }
+
+  joinFirstLastName(person); // Nick-Anderson
   ```
+  
+  <br></p>
+  </details>
 
-Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух
-элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+[//]: # (Пример для массива)
+- <details><summary><b>Пример для массива</b></summary><p>
 
-**Ссылки:**
+  ```js
+  const myArray = ["a", "b", "c"];
+  const [x, y] = myArray; // деструктуризация
 
-- [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
-- [learn.javascript.ru - Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
-- [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
-- [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
-- [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
-- [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
-- [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
-- [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/blog/444348/)
+  console.log(x) // "a"
+  console.log(y) // "b"
+  ```
+  
+  <br></p>
+  </details>
+
+
+[//]: # (Пример для хука React)
+- <details><summary><b>Пример для хука React</b></summary><p>
+
+  - ```js
+    const [fruit, setFruit] = useState('банан');
+    ```
+  - 
+  - Такой синтаксис в JS называется «деструктуризацией массивов» (array destructuring).
+  - Он означает, что мы создаём две новые переменные, fruit и setFruit.
+  - Во fruit будет записано первое значение, вернувшееся из useState, а в setFruit — второе.
+  - 
+  - Это равносильно такому коду:
+    - ```
+        var fruitStateVariable = useState('банан'); // Возвращает пару значений
+        var fruit = fruitStateVariable[0]; // Извлекаем первое значение
+        var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
+      ```
+  - 
+  - Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив из двух элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+    
+  <br></p>
+  </details>
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
+  - [learn.javascript.ru - Деструктуризация](https://learn.javascript.ru/destructuring)
+  - [learn.javascript.ru - Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment)
+  - [Деструктуризация в ES6. Полное руководство](https://medium.com/@stasonmars/%D0%B4%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%  8F-%D0%B2-es6-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-b865bb71f376)
+  - [Habr - Вы не знаете деструктуризацию, пока](https://habr.com/ru/company/otus/blog/530248/)
+  - [Medium - Learn the basics of destructuring props in React](https://www.freecodecamp.org/news/the-basics-of-destructuring-props-in-react-a196696f5477/)
+  - [IT-Kamasutra #90 - Про деструктуризацию props в функциональных компонентах](https://youtu.be/JtbSOJKRJAI?t=1785)
+  - [IT-Kamasutra #90 - Про деструктуризацию props в классовых компонентах](https://youtu.be/JtbSOJKRJAI?t=3352)
+  - [Дэн Абрамов - Чем функциональные компоненты React отличаются от компонентов, основанных на классах? (см. про деструктуризацию props)](https://habr.com/ru/company/ruvds/  blog/444348/)
+  
+  <br></p>
+  </details>
 
 <br></p>
 </details>
