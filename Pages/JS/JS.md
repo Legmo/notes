@@ -5264,7 +5264,6 @@ const a = 1
 [//]: # (Логические операторы. Логические выражения. Truthy/Falsy todo: дополнить)
 <details id="logicalAssignment"><summary><b>Логические операторы. Логические выражения. Truthy/Falsy*</b></summary><p>
 
-
 [//]: # (Логические операторы)
 - <details><summary><b>Логические операторы</b></summary><p>
 
@@ -5275,7 +5274,6 @@ const a = 1
 
   <br></p>
   </details>
-
 
 [//]: # (Операторы «||» и «&&»)
 - <details><summary><b>Операторы «||» и «&&»</b></summary><p>
@@ -5324,7 +5322,6 @@ const a = 1
   <br></p>
   </details>
 
-
 [//]: # (Оператор «??»)
 - <details><summary><b>Оператор «??»</b></summary><p>
   
@@ -5336,7 +5333,6 @@ const a = 1
 
   <br></p>
   </details>
-
 
 [//]: # (Логические выражения. Truthy/Falsy)
 - <details><summary><b>Логические выражения. Truthy/Falsy</b></summary><p>
@@ -5369,9 +5365,9 @@ const a = 1
   <br></p>
   </details>
 
-
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
+  
   - [learn.javascript.ru - Логические операторы](https://learn.javascript.ru/logical-operators)
   - [learn.javascript.ru - Оператор нулевого слияния](https://learn.javascript.ru/nullish-coalescing-operator)
   - [Дока - Логические операторы](https://doka.guide/js/logic-operators/)
