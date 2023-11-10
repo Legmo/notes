@@ -5236,7 +5236,7 @@ const a = 1
 
 
 [//]: # (Циклы todo: дополнить)
-<details id="cycles"><summary><b>Циклы*</b></summary><p>
+<details id="cycles"><summary><b>Циклы *</b></summary><p>
 
 - `Цикл` — конструкция языка для повторения операций, пока не будет вполнено некое условие
 
@@ -5268,7 +5268,7 @@ const a = 1
 </details>
 
 [//]: # (Switch ... case todo: дополнить)
-<details id="cycles"><summary><b>Switch ... case*</b></summary><p>
+<details id="cycles"><summary><b>Switch ... case *</b></summary><p>
 
   - Конструкция `switch` заменяет собой сразу несколько `if`.
   - Более наглядный способ сравнить выражение сразу с несколькими вариантами.
@@ -9714,6 +9714,7 @@ const a = 1
 
       alert(commits[0].author.login);
       ```
+
   <br></p>
   </details>
 
