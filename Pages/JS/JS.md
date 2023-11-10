@@ -5171,15 +5171,14 @@ const a = 1
 - `for await of` — получение данных с помощью асинхронных итераторов. Перебор в цикле данных, поступающих асинхронно.
   Например: загружаем что-то по частям из сети.
 
-**Ссылки:**
-
-- [learn.javascript.ru - Циклы while и for](https://learn.javascript.ru/while-for)
-- [Дока - Циклы](https://doka.guide/js/loop/)
-- [MDN - Циклы и итерации](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Loops_and_iteration)
-- [Metanit - Циклы](https://metanit.com/web/javascript/2.7.php)
-- [Metanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
-- [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
-- [itchief.ru - Циклы в JavaScript](https://itchief.ru/javascript/loops)
+- **Ссылки:**
+  - [learn.javascript.ru - Циклы while и for](https://learn.javascript.ru/while-for)
+  - [Дока - Циклы](https://doka.guide/js/loop/)
+  - [MDN - Циклы и итерации](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Loops_and_iteration)
+  - [Metanit - Циклы](https://metanit.com/web/javascript/2.7.php)
+  - [Metanit - Асинхронные итераторы](https://metanit.com/web/javascript/17.7.php)
+  - [learn.javascript.ru - Асинхронные итераторы и генераторы](https://learn.javascript.ru/async-iterators-generators)
+  - [itchief.ru - Циклы в JavaScript](https://itchief.ru/javascript/loops)
 
 <br><p>
 </details>
