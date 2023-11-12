@@ -10632,7 +10632,7 @@ const a = 1
   </details>
 
 [//]: # (Перебираемые/итерируемые объекты)
-<details id="iterable"><summary><b>Перебираемые (итерируемые) объекты</b></summary><p>
+- <details id="iterable"><summary><b>Перебираемые (итерируемые) объекты</b></summary><p>
 
   - **Определения** 
     – объекты, которые реализуют метод `Symbol.iterator`. <br>
@@ -10666,15 +10666,15 @@ const a = 1
     - [MDN - Итераторы и генераторы](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Iterators_and_Generators)
     - [Doka - Итератор ](https://doka.guide/js/iterator/)
 
-<br><p>
-</details>
+  <br><p>
+  </details>
 
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
 
   - [learn.javascript.ru](https://learn.javascript.ru/iterator)
   - [YouTube - Асинхронность (Академия Яндекса)](https://youtu.be/x0Y3TfkvCgY?si=h0IkQhHE8rB3kAjj&t=2784)
-  - Симпсон К — Вы (пока) не знаете JavaScript. Познакомьтесь, JavaScript  (2 изд) стр. 115
+  - Симпсон К — «Вы (пока) не знаете JavaScript. Познакомьтесь, JavaScript» (2 изд) стр. 115
   -
   - [learn.javascript.ru - Перебираемые объекты](https://learn.javascript.ru/iterable)
   - [Цикл For…of в JavaScript](https://medium.com/nuances-of-programming/%D1%86%D0%B8%D0%BA%D0%BB-for-of-%D0%B2-javascript-6e35f353ce34)
