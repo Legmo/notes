@@ -10963,7 +10963,7 @@ const a = 1
 </details>
 
 [//]: # (Асинхронная итерация todo: доработать)
-<details id="asyncIteratorsGenerators"><summary><b>Асинхронная итерация*</b></summary><p>
+<details id="asyncIteratorsGenerators"><summary><b>Асинхронная итерация *</b></summary><p>
 
 [//]: # (Общее)
 - <details><summary><b>Общее</b></summary><p>
@@ -11105,8 +11105,8 @@ const a = 1
 ---
 
 
-[//]: # (Обработчики событий, events handlers todo: дополнить)
-<details id="eventsHandlers"><summary><b>Обработчики событий *</b> (events handlers)</summary><p>
+[//]: # (Обработчики событий. Events handlers todo: дополнить)
+<details id="eventsHandlers"><summary><b>Обработчики событий. Events handlers *</b></summary><p>
 
 - Блоки кода (обычно функции), которые позволяют обрабатывать события (щелчок мыши...) и реагировать на них.
 
@@ -11125,20 +11125,17 @@ const a = 1
 [//]: # (Декораторы)
 <details id="decorators"><summary><b>Декораторы</b></summary><p>
 
-Декораторы позволяют добавить метаданные классам и функциям.<br>
-Тем самым изменить их поведение без изменения их кода.
+  - Декораторы позволяют добавить метаданные классам и функциям.
+  - Тем самым изменить их поведение без изменения их кода.
+  - По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
 
-По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
+  - **Ссылки**
+    - [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
+    - [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
+    - [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+    - [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
 
-**Ссылки**
-
-- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
-- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
-- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
-- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
-
-  <br></p>
-
+<br></p>
 </details>
 
 [//]: # (Декоратор Debounce)
