@@ -339,51 +339,42 @@ HTTP-кэш.
 [//]: # (Анаморфизмы и катаморфизмы)
 <details id="iterators"><summary><b>Анаморфизмы и катаморфизмы</b></summary><p>
 
-**Анаморфизмы**
+  - **Анаморфизмы**
+    - `Анаморфизмы`. Функции, с помощью которых объекты разворачиваются в более сложные структуры, содержащие объекты того же типа. 
+    - Например  преобразование целого числа в ряд чисел.
+    - ```js
+        // Преобразование целого числа в ряд чисел:
+        function downToOne(n) {
+          const list = [];
 
-Функции, с помощью которых объекты разворачиваются в более сложные структуры, содержащие объекты того же типа.
-```js
-// Преобразование целого числа в ряд чисел:
-function downToOne(n) {
-  const list = [];
+          for (let i = n; i > 0; --i) {
+            list.push(i);
+          }
 
-  for (let i = n; i > 0; --i) {
-    list.push(i);
-  }
+          return list;
+        }
 
-  return list;
-}
+        downToOne(5) // [ 5, 4, 3, 2, 1 ]
+      ```
+  - **Катаморфизмы**
+    - Противоположность анаморфизмов: сворачивают объекты с более сложной структурой в простые.
+    - Например преобразует несколько чисел в одно.
+    - ```js
+        // Преобразование ряда чисел в одно
+        function product(list) {
+          let product = 1;
 
-downToOne(5) // [ 5, 4, 3, 2, 1 ]
-```
-<br>
-<br>
+          for (const n of list) {
+            product = product * n;
+          }
 
-**Катаморфизмы**
+          return product;
+        }
 
-Противоположность анаморфизмов: сворачивают объекты с более сложной структурой в простые.
-
-```js
-// Преобразование ряда чисел в одно
-function product(list) {
-  let product = 1;
-
-  for (const n of list) {
-    product = product * n;
-  }
-
-  return product;
-}
-
-product(downToOne(5)) // 120
-```
-
-<br>
-<br>
-
-Ссылки:
-
-- [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#amrphcatmrph)
+        product(downToOne(5)) // 120
+      ```
+  - **Ссылки**
+    - [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/#amrphcatmrph)
 
 <br></p>
 </details>
