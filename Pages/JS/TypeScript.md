@@ -596,7 +596,8 @@
         protected age: number = 20; //задано дефолтное значение
         readonly pass: number;
 
-        static secret: number = 12345 //статическое св-во, видно в самом классе без создания экземпляра. Доступно всем экземплярам через User.secret (не this.secret)
+        static secret: number = 12345 //статическое св-во, видно в самом классе без создания экземпляра. 
+        // Доступно всем экземплярам через User.secret (не this.secret)
 
         constructor(name: string, nickName: string, age: number, pass: number) {
           //добавляем возможность принимать эти св-ва при инициализации 
@@ -731,79 +732,90 @@
 [//]: # (Namespaces - Пространства имён)
 <details><summary><b>Namespaces(Пространства имён)</b></summary><p>
 
-Нужны чтоб не засорять переменными глобальную область видимости.<br>
-Альтернатива модулям или обычным классам со статическими свойствами.
+  - Нужны чтоб не засорять переменными глобальную область видимости.
+  - Альтернатива модулям или обычным классам со статическими свойствами.
+  - 
+  - Особая сущность, похожая на объект.
+  - Чтоб получить снаружи доступ к данным из `namespace` — их надо из него экспортировать.
 
-Особая сущность, похожая на объект.<br>
-Чтоб получить снаружи доступ к данным из `namespace` — их надо из него экспортировать.
+  - ```ts
+      namespace Utils {
+        const userPass: string = '12345';
+        export const userName: string = 'Ivan';
+      }
 
-```ts
-namespace Utils {
-  const userPass: string = '12345';
-  export const userName: string = 'Ivan';
-}
+      const myName = Utils.userName; //Всё ок
+      const myPass = Utils.userPass; //Ошибка. Но можно создать тут свою константу myPass - никаких ошибок это не вызовет
+    ```
+  - Сами namespaces тоже можно импортировать/экспортировать из одного файла в другой, есть спец. синтаксис. 
+  - Но это устаревшая возможность. Рекомендуют использовать JS-модули.
 
-const myName = Utils.userName; //Всё ок
-const myPass = Utils.userPass; //Ошибка. Но можно создать тут свою константу myPass - никаких ошибок это не вызовет
-```
-
-Сами namespaces тоже можно импортировать/экспортировать из одного файла в другой, есть спец. синтаксис. Но это
-устаревшая возможность. Рекомендуют использовать JS-модули.
-
-**Ссылки**
-
-- [Mentanit - Модули](https://metanit.com/web/typescript/3.8.php)
-- [WebDev - Модули в TS](https://youtu.be/5Eap2h9AffA)
-- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
-- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
-
+  - **Ссылки**
+    - [Mentanit - Модули](https://metanit.com/web/typescript/3.8.php)
+    - [WebDev - Модули в TS](https://youtu.be/5Eap2h9AffA)
+    - [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
+    - [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
+    
 <br></p>
 </details>
 
 [//]: # (Модули, barrel-файлы)
 <details><summary><b>Модули, barrel-файлы</b></summary><p>
 
-Нужны чтоб не засорять переменными глобальную область видимости.<br>
-Модули создают своё пространство имён.
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-Модули выполняются в собственной области видимости, а не в глобальной. Это означает, что переменные, функции, классы и
-т.д., объявленные в модуле, недоступны за пределами модуля до тех пор, пока они в явном виде не будут из него
-экспортированы. Кроме того, перед использованием экспортированных сущностей, их следует импортировать в соответствующий
-файл.
+  - Нужны чтоб не засорять переменными глобальную область видимости.
+  - Модули создают своё пространство имён.
+  - 
+  - Модули выполняются в собственной области видимости, а не в глобальной. Это означает, что переменные, функции, классы и т.д., объявленные в модуле, недоступны за пределами - модуля до тех пор, пока они в явном виде не будут из него экспортированы. Кроме того, перед использованием экспортированных сущностей, их следует импортировать в - соответствующий
+  - файл.
+  - 
+  - В TS, как и в JS ES6+, любой файл, содержащий `import` или `export` верхнего уровня (глобальный), считается модулем.
+  - Файл, не содержащий указанных ключевых слов, является глобальным скриптом.
 
-В TS, как и в JS ES6+, любой файл, содержащий `import` или `export` верхнего уровня (глобальный), считается модулем.<br>
-Файл, не содержащий указанных ключевых слов, является глобальным скриптом.
+  - ```ts
+      //File Utils.ts 
+      export const userName: string = 'Ivan';
 
-```ts
-//File Utils.ts 
-export const userName: string = 'Ivan';
+      //File User.ts 
+      import {userName} from './Utils'
 
-//File User.ts 
-import {userName} from './Utils'
+      const fullName = userName + ' Ivanov';
+    ```
+  
+  <br></p>
+  </details>
 
-const fullName = userName + ' Ivanov';
 
-```
+[//]: # (Barrel-файлы)
+- <details><summary><b>Barrel-файлы</b></summary><p>
 
-**Barrel-файлы**
+  - Barrel-файлы дают возможность свести нескольких экспортируемых модулей в один более удобный. Для этого достаточно в
+    проекте создать отдельный файл, который будет экспортировать несколько модулей сразу.
+  - ```ts
+      export * from './person';
+      export * from './animal';
+      export * from './human';
+    ```
+  - И после этого можно одной строкой можно импортировать все эти модули вместе: 
+  - `import { Person, Animal, Human } from 'index';`
+    
+  <br></p>
+  </details>
 
-- Barrel-файлы дают возможность свести нескольких экспортируемых модулей в один более удобный. Для этого достаточно в
-  проекте создать отдельный файл, который будет экспортировать несколько модулей сразу.
-- ```ts
-    export * from './person';
-    export * from './animal';
-    export * from './human';
-  ```
-- И после этого можно одной строкой можно импортировать все эти модули
-  вместе: `import { Person, Animal, Human } from 'index';`
 
-**Ссылки**
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
 
-- [Mentanit - Модули в TS](https://metanit.com/web/typescript/3.8.php)
-- [Habr - Модули в TS](https://habr.com/ru/company/macloud/blog/563722/)
-- [WebDev - Модули в TS](https://youtu.be/5Eap2h9AffA)
-- [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
-- [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
+  - [Mentanit - Модули в TS](https://metanit.com/web/typescript/3.8.php)
+  - [Habr - Модули в TS](https://habr.com/ru/company/macloud/blog/563722/)
+  - [WebDev - Модули в TS](https://youtu.be/5Eap2h9AffA)
+  - [WebDev - Модули в JS](https://youtu.be/q_tHi37EMic)
+  - [learn.javascript.ru - Модули](https://learn.javascript.ru/modules)
+  
+  <br></p>
+  </details>
 
 <br></p>
 </details>
