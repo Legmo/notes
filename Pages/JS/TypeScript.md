@@ -872,45 +872,44 @@ const y = helloWorld();
 
 **Важен порядок объявления перегрузок**
 
-Всегда помните о важности порядка объявления перегрузок:
-- вначале объявляем наиболее специфические перегрузки, затем менее
-- основная функция объявляется в последнюю очередь
-- основная функция должна соответствовать всем вариантам описаных типов
+- Всегда помните о важности порядка объявления перегрузок:
+  - вначале объявляем наиболее специфические перегрузки, затем менее
+  - основная функция объявляется в последнюю очередь
+  - основная функция должна соответствовать всем вариантам описаных типов
 
+- **Не следует писать несколько перегрузок, отличающихся только конечными параметрами**
+- ```ts
+    //вместо этого 
+    interface Example {
+      foo(one: number): number;
+      foo(one: number, two: number): number;
+      foo(one: number, two: number, three: number): number;
+    }
+    
+    //делаем так 
+    interface Example {
+      foo(one?: number, two?: number, three?: number): number;
+    }
+  ```
+- 
+- **Не следует писать перегрузки, отличающиеся типом только в одном типе аргумента**
+- ```ts
+    //вместо этого 
+    interface Example {
+      foo(one: number): number;
+      foo(one: number | string): number;
+    }
+    
+    //делаем так
+    interface Example {
+      foo(one: number | string): number; //можно обойтись одним модификатором optional
+    }
+  ```
 
-**Не следует писать несколько перегрузок, отличающихся только конечными параметрами**
-```ts
-//вместо этого 
-interface Example {
-  foo(one: number): number;
-  foo(one: number, two: number): number;
-  foo(one: number, two: number, three: number): number;
-}
-
-//делаем так 
-interface Example {
-  foo(one?: number, two?: number, three?: number): number;
-}
-```
-
-**Не следует писать перегрузки, отличающиеся типом только в одном типе аргумента**
-```ts
-//вместо этого 
-interface Example {
-  foo(one: number): number;
-  foo(one: number | string): number;
-}
-
-//делаем так
-interface Example {
-  foo(one: number | string): number; //можно обойтись одним модификатором optional
-}
-```
-
-**Ссылки**
-- [Medium -  Перегрузка функций в TypeScript](https://medium.com/nuances-of-programming/%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9-%D0%B2-typescript-a2027adadeb1)
-- [Habr - Перегрузка функций в TypeScript](https://habr.com/ru/company/otus/blog/688270/)
-- [Оф. документация — More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+- **Ссылки**
+  - [Medium -  Перегрузка функций в TypeScript](https://medium.com/nuances-of-programming/%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9-%D0%B2-typescript-a2027adadeb1)
+  - [Habr - Перегрузка функций в TypeScript](https://habr.com/ru/company/otus/blog/688270/)
+  - [Оф. документация — More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
 
 <br></p>
 </details>
@@ -918,8 +917,8 @@ interface Example {
 [//]: # (Утилиты  - Utility Types)
 <details><summary><b>Утилиты (Utility Types)</b></summary><p>
 
-Есть 16 типов утилит:
-
+- Есть 16 типов утилит:
+- 
 - `Partial<Type>` — сделать все члены объекта необязательными
 - `Required<Type>` — тип все поля которого становятся обязательными
 - `Readonly<Type>` — тип все св-ва которого предназначены только для чтения
@@ -937,22 +936,20 @@ interface Example {
 - `ThisParameterType<Type>`
 - `OmitThisParameter<Type>`
 - `ThisType<Type>`
-
-```ts
-interface Props {
-  a?: number;
-  b?: string;
-};
-
-const obj1: Props = {a: 5} //Ok
-const obj2: Required<Props> = {a: 5} //Error. Не хвататет св-ва b.
-```
-
-**Ссылки**
-
-- [Оф. документация - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
-- [WebDev - Утилиты (Utility Types)](https://youtu.be/Qf_WJGJf4yw)
-- [Habr - Язык программирования типов, скрытый в TypeScript. Utility Types](https://habr.com/ru/post/648805/)
+- 
+- ```ts
+    interface Props {
+      a?: number;
+      b?: string;
+    };
+    
+    const obj1: Props = {a: 5} //Ok
+    const obj2: Required<Props> = {a: 5} //Error. Не хвататет св-ва b.
+  ```
+- **Ссылки**
+  - [Оф. документация - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+  - [WebDev - Утилиты (Utility Types)](https://youtu.be/Qf_WJGJf4yw)
+  - [Habr - Язык программирования типов, скрытый в TypeScript. Utility Types](https://habr.com/ru/post/648805/)
 
 <br></p>
 </details>
@@ -968,8 +965,7 @@ const obj2: Required<Props> = {a: 5} //Error. Не хвататет св-ва b.
 - [TypeScript и React с использованием create-react-app: пошаговое руководство по настройке вашего первого приложения](https://dev-gang.ru/article/typescript-i-react-s-ispolzovaniem-create-react-app-poshagovoe-rukovodstvo-po-nastroike-vashego-pervogo-prilozhenija/)
 - [Справочник TypeScript for React & Redux (piotrwitek)](https://github.com/piotrwitek/react-redux-typescript-guide)
 - [Habr - Статическая и динамическая типизация (2016)](https://habr.com/ru/post/308484/?ysclid=l75ndzru2v460218152)
-- 
-  +
+-
 - [tproger - Вводный курс по TypeScript](https://tproger.ru/translations/course-on-typescript/)
 - [Medium - TypeScript: основы](https://medium.com/nuances-of-programming/typescript-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-728e88888723)
 - [VC - Крупный гайд по TypeScript](https://vc.ru/dev/423888-krupnyy-gayd-po-typescript)
