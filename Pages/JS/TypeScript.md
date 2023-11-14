@@ -330,10 +330,10 @@
 <details><summary><b>Наполнение параметров (...)</b></summary><p>
 
   - TS позволяет использовать массивы для передачи данных сразу нескольким параметрам. 
-    - ```ts
-        const numbers = [1, 3, 5, 7, 9] as const;
-        let num = sum(...numbers);
-      ```
+  - ```ts
+      const numbers = [1, 3, 5, 7, 9] as const;
+      let num = sum(...numbers);
+    ```
   - **Ссылки**
     - [metanit.com — Неопределенный набор и наполнение параметров](https://metanit.com/web/typescript/2.12.php)
 
