@@ -433,49 +433,44 @@
 - <details><summary><b>Примеры</b></summary><p>
 
   - ```ts
-    //используя any
-    const getter1 = (data: any): any => data;
+      //используя any
+      const getter1 = (data: any): any => data;
 
-    //используя generic
-    const getter2 = <T>(data: T): T => data;
+      //используя generic
+      const getter2 = <T>(data: T): T => data;
 
-    getter1('test').length // 4
-    getter1(10).length // undefined
-    getter2(10).length // Error - у числа нет метода length. Получили ошибку ещё на этапе написания кода
+      getter1('test').length // 4
+      getter1(10).length // undefined
+      getter2(10).length // Error - у числа нет метода length. Получили ошибку ещё на этапе написания кода
 
-    //можно при вызове функции указать какой тип данных будет получать функция, чтоб случайно не впихнуть туда "не то"
-    getter2<string>('test').length
-
-  ```
-
+      //можно при вызове функции указать какой тип данных будет получать функция, чтоб случайно не впихнуть туда "не то"
+      getter2<string>('test').length
+    ```
   - ```ts
-    //generic + класс + два типа данных
-    class User<T, K> {
-      constructor(public name: T, public age: K) {
+      //generic + класс + два типа данных
+      class User<T, K> {
+        constructor(public name: T, public age: K) {
+        }
+  
+        public getPass(): string {
+          return `${this.name}${this.age}`
+        }
       }
-
-      public getPass(): string {
-        return `${this.name}${this.age}`
-      }
-    }
-
-    const Ivan = new User('Ivan', '31');
-    const Petr = new User(123, 27);
-    const Efim = new User('Efim', 15);
-
-    Ivan.getPass(); // "Ivan31"
-    Petr.getPass(); // "12327"
-    Efim.getPass(); // "Efim15"
-  ```
-
+  
+      const Ivan = new User('Ivan', '31');
+      const Petr = new User(123, 27);
+      const Efim = new User('Efim', 15);
+  
+      Ivan.getPass(); // "Ivan31"
+      Petr.getPass(); // "12327"
+      Efim.getPass(); // "Efim15"
+    ```
   - Если надо поставить ограничение на generic-тип, напримре указать что он должен быть только числом
-
-- ```ts
-    class User<T, K extends number> {
-      //...
-    }
-  ```
-
+  - ```ts
+      class User<T, K extends number> {
+        //...
+      }
+    ```
   - Можно создать массив можно с помощью дженерик-типа написав `Array<Type>`
   - ```ts
       let numbers: Array<number> = [1, 2, 3, 4, 5]` Этот код создаёт числовой массив, содержащий 5 элементов.
