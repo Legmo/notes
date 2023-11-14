@@ -443,7 +443,8 @@
       getter1(10).length // undefined
       getter2(10).length // Error - у числа нет метода length. Получили ошибку ещё на этапе написания кода
 
-      //можно при вызове функции указать какой тип данных будет получать функция, чтоб случайно не впихнуть туда "не то"
+      //можно при вызове функции указать какой тип данных будет получать функция, 
+      //чтоб случайно не впихнуть туда "не то"
       getter2<string>('test').length
     ```
   - ```ts
@@ -838,16 +839,16 @@ class User2 {/*...*/
 
 [//]: # (Типизация функций — пример)
 <details><summary><b>Типизация функций — пример</b></summary><p>
-
-```ts
-  let MyFunc: (someArgName: string) => void;
-
-function otherFunc(name: string): void {
-  alert(`Hello ${name}!`);
-};
-
-myFunc = otherFunc
-```
+  
+  - ```ts
+      let MyFunc: (someArgName: string) => void;
+    
+      function otherFunc(name: string): void {
+        alert(`Hello ${name}!`);
+      };
+      
+      myFunc = otherFunc
+    ```
 
 <br></p>
 </details>
@@ -855,91 +856,122 @@ myFunc = otherFunc
 [//]: # (Перегрузка функций. Overloading)
 <details><summary><b>Перегрузка функций. Overloading</b></summary><p>
 
-`Перегрузка функций` — возможность создавать несколько одноименных функций с разными реализациями.<br>
-При вызовах перегруженной функции будет выполняться конкретная реализация этой функции в соответствии с контекстом вызова, позволяя одному вызову функции выполнять разные задачи в зависимости от контекста
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-Пример 1 — самый примитивный вариант
-```ts
-//Соединяет 2 или 3 строки в одну. Если передать только 1 строку  - вернёт её же
-function concatString(s1: string, s2?: string, s3?: string) {
-  let s = s1;
-  if(s2) {
-    s += `, ${s2}`;
-  }
-  if(s3) {
-    s += `, ${s3}`;
-  }
-  return s;
-}
+  - `Перегрузка функций` — возможность создавать несколько одноименных функций с разными реализациями.<br>
+  - При вызовах перегруженной функции будет выполняться конкретная реализация этой функции в соответствии с контекстом вызова, позволяя одному вызову функции выполнять разные задачи в зависимости от контекста
+  
+  <br></p>
+  </details>
 
-// Это сработает 
-concatString('one');
-concatString('one','two');
-concatString('one', 'two', 'three');
+[//]: # (Примеры)
+- <details><summary><b>Примеры</b></summary><p>
 
-// Получим ошибки компиляции 
-concatString('one', true);
-concatString('one', 'two', 'three', 'four');
-```
+  - Пример 1 — самый примитивный вариант
+  - ```ts
+      //Соединяет 2 или 3 строки в одну. Если передать только 1 строку  - вернёт её же
+      function concatString(s1: string, s2?: string, s3?: string) {
+        let s = s1;
+        if(s2) {
+          s += `, ${s2}`;
+        }
+        if(s3) {
+          s += `, ${s3}`;
+        }
+        return s;
+      }
 
-Пример 2 — использование приёма «перегрузка»
-```ts
-//если передать строку - вренёт строку, иначе вернёт случайное число
-function helloWorld(): number; // первая перегрузка — описываем что функция может вернуть число
-function helloWorld(s: string): string; // вторая перегрузка Уточняем — функция может вернуть строку, если приняла строку
-function helloWorld(s?: string) { // Основная функция, должна принять все возможные перегрузки, объявленные ранее. 
-  if (!s) {
-    return Math.random();
-  }
-  return s;
-}
+      // Это сработает 
+      concatString('one');
+      concatString('one','two');
+      concatString('one', 'two', 'three');
 
-// x имеет тип string 
-const x = helloWorld('test');
-// y имеет тип number 
-const y = helloWorld();
-```
+      // Получим ошибки компиляции 
+      concatString('one', true);
+      concatString('one', 'two', 'three', 'four');
+    ```
 
-**Важен порядок объявления перегрузок**
+  - Пример 2 — использование приёма «перегрузка»
+  - ```ts
+      //если передать строку - вренёт строку, иначе вернёт случайное число
+      function helloWorld(): number; // первая перегрузка — описываем что функция может вернуть число
+      function helloWorld(s: string): string; // вторая перегрузка Уточняем — функция может вернуть строку, если приняла строку
+      function helloWorld(s?: string) { // Основная функция, должна принять все возможные перегрузки, объявленные ранее. 
+        if (!s) {
+          return Math.random();
+        }
+        return s;
+      }
 
-- Всегда помните о важности порядка объявления перегрузок:
-  - вначале объявляем наиболее специфические перегрузки, затем менее
-  - основная функция объявляется в последнюю очередь
-  - основная функция должна соответствовать всем вариантам описаных типов
+      // x имеет тип string 
+      const x = helloWorld('test');
+      // y имеет тип number 
+      const y = helloWorld();
+    ```
+  
+  <br></p>
+  </details>
 
-- **Не следует писать несколько перегрузок, отличающихся только конечными параметрами**
-- ```ts
-    //вместо этого 
-    interface Example {
-      foo(one: number): number;
-      foo(one: number, two: number): number;
-      foo(one: number, two: number, three: number): number;
-    }
-    
-    //делаем так 
-    interface Example {
-      foo(one?: number, two?: number, three?: number): number;
-    }
-  ```
-- 
-- **Не следует писать перегрузки, отличающиеся типом только в одном типе аргумента**
-- ```ts
-    //вместо этого 
-    interface Example {
-      foo(one: number): number;
-      foo(one: number | string): number;
-    }
-    
-    //делаем так
-    interface Example {
-      foo(one: number | string): number; //можно обойтись одним модификатором optional
-    }
-  ```
+[//]: # (Важен порядок объявления перегрузок)
+- <details><summary><b>Важен порядок объявления перегрузок</b></summary><p>
 
-- **Ссылки**
+  - Всегда помните о важности порядка объявления перегрузок:
+    - вначале объявляем наиболее специфические перегрузки, затем менее
+    - основная функция объявляется в последнюю очередь
+    - основная функция должна соответствовать всем вариантам описаных типов
+  
+  <br></p>
+  </details>
+
+[//]: # (Не следует писать несколько перегрузок, отличающихся только конечными параметрами)
+- <details><summary><b>Не следует писать несколько перегрузок, отличающихся только конечными параметрами</b></summary><p>
+
+  - ```ts
+      //вместо этого 
+      interface Example {
+        foo(one: number): number;
+        foo(one: number, two: number): number;
+        foo(one: number, two: number, three: number): number;
+      }
+      
+      //делаем так 
+      interface Example {
+        foo(one?: number, two?: number, three?: number): number;
+      }
+    ```
+
+  <br></p>
+  </details>
+
+[//]: # (Не следует писать перегрузки, отличающиеся типом только в одном типе аргумента)
+- <details><summary><b>Не следует писать перегрузки, отличающиеся типом только в одном типе аргумента</b></summary><p>
+
+  - ```ts
+      //вместо этого 
+      interface Example {
+        foo(one: number): number;
+        foo(one: number | string): number;
+      }
+      
+      //делаем так
+      interface Example {
+        foo(one: number | string): number; //можно обойтись одним модификатором optional
+      }
+    ```
+
+  <br></p>
+  </details>
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
   - [Medium -  Перегрузка функций в TypeScript](https://medium.com/nuances-of-programming/%D0%BF%D0%B5%D1%80%D0%B5%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9-%D0%B2-typescript-a2027adadeb1)
   - [Habr - Перегрузка функций в TypeScript](https://habr.com/ru/company/otus/blog/688270/)
   - [Оф. документация — More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+
+  <br></p>
+  </details>
 
 <br></p>
 </details>
