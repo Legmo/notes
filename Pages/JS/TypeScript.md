@@ -165,6 +165,10 @@
 <br></p>
 </details>
 
+
+---
+
+
 [//]: # (Типы переменных todo: дополнить)
 <details><summary><b>Типы переменных *</b></summary><p>
 
@@ -284,6 +288,10 @@
 
 <br></p>
 </details>
+
+
+---
+
 
 [//]: # (Массивы)
 <details><summary><b>Массивы</b></summary><p>
@@ -1022,6 +1030,10 @@ const fullName = userName + ' Ivanov';
 
 <br></p>
 </details>
+
+
+---
+
 
 [//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>
