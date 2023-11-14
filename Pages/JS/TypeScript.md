@@ -661,30 +661,15 @@ TS поддерживает
 - **многоуровневое наследование** - производный класс действует как базовый класс для другого производного класса. Вновь
   созданный производный класс приобретает свойства и поведение других базовых классов.
 
-**Ссылки**
-
-- [Legmo - JS](/Pages/JS/JS.md)
-- [WebDev - Классы в TS](https://youtu.be/OruUd2HULaI)
-- [WebDev - Классы в JS](https://youtu.be/BASquaxab_w)
-- [VC - Крупный гайд по TypeScript](https://vc.ru/dev/423888-krupnyy-gayd-po-typescript)
-- [Mentanit - Наследование](https://metanit.com/web/typescript/3.2.php)
+- **Ссылки**
+  - [Legmo - JS](/Pages/JS/JS.md)
+  - [WebDev - Классы в TS (yuotube)](https://youtu.be/OruUd2HULaI)
+  - [WebDev - Классы в JS (yuotube)](https://youtu.be/BASquaxab_w)
+  - [VC - Крупный гайд по TypeScript](https://vc.ru/dev/423888-krupnyy-gayd-po-typescript)
+  - [Mentanit - Наследование](https://metanit.com/web/typescript/3.2.php)
+  - [WebDev - Наследование в TS (yuotube)](https://youtu.be/wTwPThKzu-U)
 
 <br></p>
-
-</details>
-
-[//]: # (Классы)
-<details><summary><b>Классы</b></summary><p>
-
-
-
-**Ссылки**
-
-- [Mentanit - Наследование](https://metanit.com/web/typescript/3.2.php)
-- [WebDev - Наследование в TS](https://youtu.be/wTwPThKzu-U)
-
-- <br></p>
-
 </details>
 
 [//]: # (Namespaces - Пространства имён)
@@ -770,85 +755,90 @@ const fullName = userName + ' Ivanov';
 [//]: # (Декораторы)
 <details><summary><b>Декораторы</b></summary><p>
 
-Декораторы позволяют добавить метаданные классам и функциям.<br>
-Тем самым изменить их поведение без изменения их кода.
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
+  - Декораторы позволяют добавить метаданные классам и функциям.<br>
+  - Тем самым изменить их поведение без изменения их кода.
+  - 
+  - По сути - обычная функция. Оборачивает некую сущность и модифицирует её поведение. Похоже на High Order Components.
 
-```ts
-//создаём декоратор класса
-const logClass = (constructor: Function) => {
-  console.log(constructor) // если декоратор класса вернет значение, то он заменит объявление класса с помощью предоставленного конструктора 
-};
-
-@logClass //применили декоратор к классу User
-class User {
-  //...
-}
-```
-
-**4 типа декораторов**
-
-- класса
-- свойства
-- метода
-- аксессора (геттеры/сеттеры)
-
-**Фабрика декораторов **
-
-Функция, которая возвращает выражение. Будет вызвана декоратором при выполнении программы.
-
-```ts
-function factory(bvalue: any) {   //Factory
-  return function (target: any) { //Decorator
-    console.log(target)
-  }
-}
-```
-
-**Композиция декораторов **
-
-Можно применять несколько декораторов
-
-```ts
-  //Вариант 1
-@decoratorOne @decoratorTwo
-class User1 {/*...*/
-}
-
-//Вариант 2
-@decoratorOne
-@decoratorTwo
-class User2 {/*...*/
-}
-```
-
-Выражение для каждого декоратора вычисляется сверху вниз.<br>
-Затем результаты вызываются снизу вверх.
-
-**Ссылки**
-
-- [Legmo - JS](/Pages/JS/JS.md)
-- [Mentanit - Декораторы в TS](https://metanit.com/web/typescript/6.1.php8)
-- [WebDev - Декораторы в TS](https://youtu.be/1-lWrocbnK8)
-- [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
-- [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
-
-<br></p>
-</details>
-
-[//]: # (Типизация функций — пример)
-<details><summary><b>Типизация функций — пример</b></summary><p>
-  
   - ```ts
-      let MyFunc: (someArgName: string) => void;
-    
-      function otherFunc(name: string): void {
-        alert(`Hello ${name}!`);
+      //создаём декоратор класса
+      const logClass = (constructor: Function) => {
+        console.log(constructor) // если декоратор класса вернет значение, то он заменит объявление класса с помощью предоставленного конструктора 
       };
       
-      myFunc = otherFunc
+      @logClass //применили декоратор к классу User
+      class User {
+        //...
+      }
     ```
+
+  <br></p>
+  </details>
+
+[//]: # (4 типа декораторов)
+- <details><summary><b>4 типа декораторов</b></summary><p>
+
+  - класса
+  - свойства
+  - метода
+  - аксессора (геттеры/сеттеры)
+
+  <br></p>
+  </details>
+
+[//]: # (Фабрика декораторов)
+- <details><summary><b>Фабрика декораторов</b></summary><p>
+
+  - Функция, которая возвращает выражение. Будет вызвана декоратором при выполнении программы.
+
+  - ```ts
+    function factory(bvalue: any) {   //Factory
+      return function (target: any) { //Decorator
+        console.log(target)
+      }
+    }
+    ```
+
+  <br></p>
+  </details>
+
+[//]: # (Композиция декораторов)
+- <details><summary><b>Композиция декораторов</b></summary><p>
+
+  - Можно применять несколько декораторов
+  - ```ts
+    //Вариант 1
+    @decoratorOne @decoratorTwo
+    class User1 {/*...*/
+    }
+
+    //Вариант 2
+    @decoratorOne
+    @decoratorTwo
+    class User2 {/*...*/
+    }
+    ```
+
+  - Выражение для каждого декоратора вычисляется сверху вниз.
+  - Затем результаты вызываются снизу вверх.
+    
+  <br></p>
+  </details>
+  
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
+  - [Legmo - JS](/Pages/JS/JS.md)
+  - [Mentanit - Декораторы в TS (yuotube)](https://metanit.com/web/typescript/6.1.php8)
+  - [WebDev - Декораторы в TS (yuotube)](https://youtu.be/1-lWrocbnK8)
+  - [Habr - Разбираем декораторы ES2016](https://habr.com/ru/post/277021/)
+  - [learn.javascript.ru - Декораторы и переадресация вызова, сall/apply](https://learn.javascript.ru/call-apply-decorators)
+  
+  <br></p>
+  </details>
 
 <br></p>
 </details>
@@ -1013,6 +1003,22 @@ class User2 {/*...*/
   - [Оф. документация - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
   - [WebDev - Утилиты (Utility Types)](https://youtu.be/Qf_WJGJf4yw)
   - [Habr - Язык программирования типов, скрытый в TypeScript. Utility Types](https://habr.com/ru/post/648805/)
+
+<br></p>
+</details>
+
+[//]: # (Типизация функций — пример)
+<details><summary><b>Типизация функций — пример</b></summary><p>
+
+  - ```ts
+      let MyFunc: (someArgName: string) => void;
+      
+      function otherFunc(name: string): void {
+        alert(`Hello ${name}!`);
+      };
+      
+      myFunc = otherFunc
+    ```
 
 <br></p>
 </details>
