@@ -12298,8 +12298,8 @@ const a = 1
 
 ## Источники ##
 
-[//]: # (Ресурсы по JS)
-<details><summary><h3>Ресурсы по JS</h3></summary><p>
+[//]: # (Базовые)
+<details><summary><b>Базовые</b></summary><p>
 
 - [MDN - Повторное введение в JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 - [tproger.ru - Шпаргалка по современному JavaScript](https://tproger.ru/translations/javascript-cheatsheet/)
@@ -12324,7 +12324,13 @@ const a = 1
 - [golvinov — Введение в программирование](https://golvinov.gitbook.io/js/)
 - [golvinov — Введение в JavaScript](https://golvinov.gitbook.io/js/vvedenie-v-javascript)
 
-**Видео**
+
+<br></p>
+</details>
+
+
+[//]: # (Видео)
+<details><summary><h3>Видео</h3></summary><p>
 
 - [IT-Kamasutra - JS в деталях (48 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DN2nTU8Q10SvAn4k8NpMJvh)
 - [IT-Kamasutra - Уроки JavaScript с нуля (ну ваще с нуля) (429 видео)](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi)
@@ -12332,14 +12338,24 @@ const a = 1
 - [WebDev - ES6 (19 видео)](https://www.youtube.com/playlist?list=PLNkWIWHIRwMGLJXugVvdK7i8UagGQNaXD)
 - [code.mu - Видео-уроки JS](https://code.mu/ru/javascript/video/lesson)
 
-**Есть отдельные статьи**
+<br></p>
+</details>
+
+
+[//]: # (Есть отдельные статьи)
+<details><summary><h3>Есть отдельные статьи</h3></summary><p>
 
 - [Habr.com](https://habr.com/ru/search/?q=javascript)
 - [medium.com](https://medium.com/)
 - [proglib.io](https://proglib.io/search?q=Javascript)
 - [webformyself.com](https://webformyself.com/category/javascriptajax-2/javascriptajax/)
 
-**Прочее**
+<br></p>
+</details>
+
+
+[//]: # (Прочее)
+<details><summary><h3>Прочее</h3></summary><p>
 
 - [Hexlet - Бесплатный курс JS](https://ru.hexlet.io/courses/js-basics)
 - [Официальная спецификация - актуальная (en)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
