@@ -1573,7 +1573,7 @@
   </details>
 
 [//]: # (Картинки)
-<details><summary><b>Картинки</b></summary><p>
+- <details><summary><b>Картинки</b></summary><p>
 
   <img src="/Assets/Img/architecture-react-1.jpg" title="Схема 1" alt="Схема 1" />
   <br>
