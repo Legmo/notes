@@ -629,11 +629,6 @@
 [//]: # (Как работает React)
 <details><summary><b>Как работает React</b></summary><p>
 
-***
-
-[//]: # (Как работает React)
-<details><summary><b>Как работает React</b></summary><p>
-
 [//]: # (Схема работы React todo: доработать)
 - <details><summary><b>Схема работы React</b></summary><p>
 
@@ -1042,6 +1037,7 @@
 <br></p>
 </details>
 
+***
 
 [//]: # (Компоненты)
 <details><summary><b>Компоненты</b></summary><p>
