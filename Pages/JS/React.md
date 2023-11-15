@@ -1551,7 +1551,7 @@
 <details><summary><b>Жизненный цикл</b></summary><p>
 
 [//]: # (Общее)
-<details><summary><b>Общее</b></summary><p>
+- <details><summary><b>Общее</b></summary><p>
 
   - Методы, которые React вызывает при разных событиях из жизни компонента (появление, удаление...).
   - Каждый классовый компонент имеет несколько «методов жизненного цикла».
@@ -1573,7 +1573,7 @@
   </details>
 
 [//]: # (Картинки)
-<details><summary><b>Картинки</b></summary><p>
+- <details><summary><b>Картинки</b></summary><p>
 
   <img src="/Assets/Img/architecture-react-1.jpg" title="Схема 1" alt="Схема 1" />
   <br>
