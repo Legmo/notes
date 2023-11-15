@@ -668,8 +668,8 @@
   <br></p>
   </details>
 
-[//]: # (Разобрать)
-- <details><summary><b>Разобрать (примеры)</b></summary><p>
+[//]: # (Примеры. todo: разобрать)
+- <details><summary><b>Примеры (Разобрать) *</b></summary><p>
 
   - VNode = ReactElement
   - h = React.createElement
