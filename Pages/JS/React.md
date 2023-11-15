@@ -1588,9 +1588,8 @@
 
 - **1. Монтирование**
   - *Когда экземпляр компонента создаётся и монтируется в DOM*
-  
-  [//]: # (1. Монтирование — constructor)
-  - <details><summary><b>1. Монтирование — constructor()</b></summary><p>
+  [//]: # (constructor)
+  - <details><summary><b>constructor()</b></summary><p>
 
     - Конструктор, в котором происходит начальная инициализация компонента
     - Если вы не инициализируете состояние и не привязываете методы, вам не нужно реализовывать конструктор для вашего компонента React.
@@ -1604,9 +1603,8 @@
 
     <br></p>
     </details>
-  
-  [//]: # (1. Монтирование — static getDerivedStateFromProps)
-  - <details><summary><b>1. Монтирование — static getDerivedStateFromProps()</b></summary><p>
+  [//]: # (static getDerivedStateFromProps)
+  - <details><summary><b>static getDerivedStateFromProps()</b></summary><p>
 
     - Заменяет componentWillReceiveProps()
     - Возвращает объект для обновления state или null, чтобы ничего не обновлять.
@@ -1635,9 +1633,8 @@
 
     <br></p>
     </details>
-  
-  [//]: # (1. Монтирование — render)
-  - <details><summary><b>1. Монтирование — render()</b></summary><p>
+  [//]: # (render)
+  - <details><summary><b>render()</b></summary><p>
 
     - Рендеринг компонента.
     - Чистый метод, не пихать сюда никакой логики кроме той что относится к render.
@@ -1683,9 +1680,8 @@
 
     <br></p>
     </details>
-  
-  [//]: # (1. Монтирование — componentDidMount)
-  - <details><summary><b>1. Монтирование — componentDidMount()</b></summary><p>
+  [//]: # (componentDidMount)
+  - <details><summary><b>componentDidMount()</b></summary><p>
 
     - После рендеринга компонента.
     - Что деалем
