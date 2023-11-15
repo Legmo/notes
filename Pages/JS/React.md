@@ -1573,7 +1573,7 @@
   </details>
 
 [//]: # (Картинки)
-- <details><summary><b>Картинки</b></summary><p>
+<details><summary><b>Картинки</b></summary><p>
 
   <img src="/Assets/Img/architecture-react-1.jpg" title="Схема 1" alt="Схема 1" />
   <br>
@@ -1590,7 +1590,7 @@
   - *Когда экземпляр компонента создаётся и монтируется в DOM*
 
 [//]: # (1. Монтирование — constructor)
-<details><summary><b>1. Монтирование — constructor()</b></summary><p>
+  - <details><summary><b>1. Монтирование — constructor()</b></summary><p>
 
   - Конструктор, в котором происходит начальная инициализация компонента
   - Если вы не инициализируете состояние и не привязываете методы, вам не нужно реализовывать конструктор для вашего компонента React.
@@ -1604,6 +1604,7 @@
 
   <br></p>
   </details>
+
 
 [//]: # (static getDerivedStateFromProps)
 <details><summary><b>static getDerivedStateFromProps()</b></summary><p>
