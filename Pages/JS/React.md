@@ -1491,17 +1491,6 @@
     - `Connect` из Redux - это тоже HOC. Ну, если быть точным - он возвращает HOC
     - `withRouter` из React Router - это тоже HOC.
   - 
-  - **Декораторы**
-    - Ещё есть декораторы. Декораторы и HOC делают одно и то же. 
-    - Основные отличия от HOC: 
-      - после добавления декоратора свойство/класс можно использовать только в его оформленной форме. HOC pattern оставляет доступными для использования как компоненты более высокого, так и более низкого порядка.
-      - декораторы используются для мутации переменной, a HOC рекомендуется так не использовать. 
-      - HOC должен представлять компонент, в то время как декораторы могут возвращать разные вещи в зависимости от реализации.
-
-    - **Ссылки по декораторам**
-      - [Декораторы в React или как оптимизировать ваши компоненты](https://webtricks-master.ru/reactjs/dekoratory-v-react-ili-kak-optimizirovat-vashi-komponenty/)
-      - [В чем разница между HOC и декоратором? (en)](https://stackoverflow.com/questions/48686826/react-js-what-is-the-difference-betwen-hoc-and-decorator)
-  - 
   - **Ссылки**
     - [Оф. документация - Компоненты высшего порядка](https://ru.reactjs.org/docs/higher-order-components.html)
     - [YouTube - IT Kamasutra 69](https://www.youtube.com/watch?v=7W4PD4BN3eY)
@@ -1510,6 +1499,22 @@
     - [Habr - Паттерны React](https://habr.com/ru/post/309422/)
     - [Разбираемся с Render Props и HOC в React](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
     - [Путь Самурая 2.0 - #15. Hooks, оно нам надо?](https://youtu.be/UR7YwFevxb4)
+
+  <br></p>
+  </details>
+
+[//]: # (HOC и Декораторы)
+- <details><summary><b>HOC и Декораторы</b></summary><p>
+
+  - Ещё есть декораторы. Декораторы и HOC делают одно и то же.
+  - Основные отличия от HOC:
+    - после добавления декоратора свойство/класс можно использовать только в его оформленной форме. HOC pattern оставляет доступными для использования как компоненты более высокого, так и более низкого порядка.
+    - декораторы используются для мутации переменной, a HOC рекомендуется так не использовать.
+    - HOC должен представлять компонент, в то время как декораторы могут возвращать разные вещи в зависимости от реализации.
+  
+  - **Ссылки по декораторам**
+    - [Декораторы в React или как оптимизировать ваши компоненты](https://webtricks-master.ru/reactjs/dekoratory-v-react-ili-kak-optimizirovat-vashi-komponenty/)
+    - [В чем разница между HOC и декоратором? (en)](https://stackoverflow.com/questions/48686826/react-js-what-is-the-difference-betwen-hoc-and-decorator)
 
   <br></p>
   </details>
