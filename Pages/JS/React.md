@@ -1587,8 +1587,7 @@
   </details>
 
 - **1. Монтирование**
-  - *Когда экземпляр компонента создаётся и монтируется в DOM*</br>
-  [//]: # (  constructor)
+  - *Когда экземпляр компонента создаётся и монтируется в DOM*
   - <details><summary><b>constructor()</b></summary><p>
 
     - Конструктор, в котором происходит начальная инициализация компонента
@@ -1701,17 +1700,14 @@
 
 - **2. Обновление**
   - *Когда компонент перерисовывается. Может быть вызвано изменениями в state или props*
+  [//]: # (2. Обновление — static getDerivedStateFromProps)
+  - <details><summary><b>2. Обновление — static getDerivedStateFromProps()</b>></summary><p>
 
-[//]: # (static getDerivedStateFromProps)
-<details><summary><b>static getDerivedStateFromProps()</b>></summary><p>
+    - См. выше.
+    - [Оф. документация - static getDerivedStateFromProps()](https://ru.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
 
-См. выше.
-
-[Оф. документация - static getDerivedStateFromProps()](https://ru.reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
-
-<br></p>
-</details>
-
+    <br></p>
+    </details>
 [//]: # (shouldComponentUpdate)
 <details><summary><b>shouldComponentUpdate()</b></summary><p>
 
@@ -1738,7 +1734,6 @@
 
 <br></p>
 </details>
-
 [//]: # (render)
 <details><summary><b>render()</b></summary><p>
 
@@ -1746,7 +1741,6 @@
 
 <br></p>
 </details>
-
 [//]: # (getSnapshotBeforeUpdate)
 <details><summary><b>getSnapshotBeforeUpdate()</b></summary><p>
 
@@ -1763,7 +1757,6 @@
 
 <br></p>
 </details>
-
 [//]: # (componentDidUpdate)
 <details><summary><b>componentDidUpdate(prevProps, prevState, snapshot)</b></summary><p>
 
