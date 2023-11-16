@@ -3936,11 +3936,7 @@
   <br></p>
   </details>
 
-  - Работа с формами при помощи кастомных хуков - useState, useCallback
-
-
-  <br></p>
-  </details>
+- Работа с формами при помощи кастомных хуков - useState, useCallback
 
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
@@ -3956,7 +3952,6 @@
 
 <br></p>
 </details>
-
 
 [//]: # (Графики, визуализация данных)
 <details><summary><b>Графики, визуализация данных</b></summary><p>
