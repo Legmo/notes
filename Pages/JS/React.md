@@ -2141,21 +2141,28 @@
   </details>
 
 <br>
-<br>
 
 [//]: # (useState)
 - <details><summary><b>useState</b></summary><p>
 
-  - [useState](https://ru.reactjs.org/docs/hooks-reference.html#usestate) — работа с локальным стейтом компонента.
-  - 
-  - Задаем состояние компонента + получаем возможность его менять.
-  - В одном компоненте можно вызвать несколько useState() — получим несколько отдельных state.
-  - Изменение каждого будет вызывать ререндер компонента.
-  - ```js
-    const [state, setState] = useState(initialState);
-    ```
-    
-  - **Хук useState()**
+  [//]: # (Общее)
+  - <details><summary><b>Общее</b></summary><p>
+
+    - [useState](https://ru.reactjs.org/docs/hooks-reference.html#usestate) — работа с локальным стейтом компонента.
+    - 
+    - Задаем состояние компонента + получаем возможность его менять.
+    - В одном компоненте можно вызвать несколько useState() — получим несколько отдельных state.
+    - Изменение каждого будет вызывать ререндер компонента.
+    - ```js
+      const [state, setState] = useState(initialState);
+      ```
+      
+    <br></p>
+    </details>
+ 
+  [//]: # (Хук useState)
+  - <details><summary><b>Хук useState()</b></summary><p>   
+
     - Принимает `начальное значение` для state. Используется при первом рендеринге компонента.
     - Здесь можно использовать массив или объект (если надо), а не только примитив
     - `Ленивая инициализация состояния` - можно передать сюда функцию, котора будет выполняться при первом рендеринге и возвращать начальные значения state. Полезно при сложных вычислениях начального значения.
@@ -2224,8 +2231,13 @@
               </button>
             ```
       - В отличие от this.setState в классах, обновление переменной состояния всегда замещает её значение, а не осуществляет слияние.
-  - 
-  - **Функция `setState(newState)`**
+
+    <br></p>
+    </details>
+
+  [//]: # (Функция setState)
+  - <details><summary><b>Функция `setState(newState)</b></summary><p>
+
     - Принимает
       - значение стейта — `setCount(newCount)`
       - или функцию для вычисления значения на основе предыдущего state — `setCount(prevCount => prevCount - 1)`
@@ -2297,8 +2309,13 @@
         например двойное нажатие кнопки). Это предотвращает логические ошибки.
     - Идентичность функции setState стабильна и не изменяется при повторных рендерах => её можно безопасно не включать в
       списки зависимостей хуков useEffect и useCallback.
-  -
-  - **Ссылки**
+
+    <br></p>
+    </details>
+
+  [//]: # (Ссылки)
+  - <details><summary><b>Ссылки</b></summary><p>
+    
     - [Вопросы для собеседования по хукам React - useState](https://temofeev.ru/info/articles/voprosy-dlya-sobesedovaniya-po-khukam-react/)
     - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
     - [Hexlet - Хук useState](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-state/theory_unit)
@@ -2306,6 +2323,9 @@
     - [Оф. документация - Хук useState](https://ru.reactjs.org/docs/hooks-reference.html#usestate)
     - [Mentanit - UseState](https://metanit.com/web/react/6.2.php)
     - [Habr - React hooks, как не выстрелить себе в ноги. Часть 1: работа с состоянием](https://habr.com/ru/company/otus/blog/667706/)
+
+    <br></p>
+    </details>
 
   <br></p>
   </details>
