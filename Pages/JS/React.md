@@ -2315,7 +2315,7 @@
 
   [//]: # (Ссылки)
   - <details><summary><b>Ссылки</b></summary><p>
-    
+
     - [Вопросы для собеседования по хукам React - useState](https://temofeev.ru/info/articles/voprosy-dlya-sobesedovaniya-po-khukam-react/)
     - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
     - [Hexlet - Хук useState](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-state/theory_unit)
