@@ -4443,7 +4443,6 @@
             );
           }
         }
-
         Greeting.propTypes = {
           name: React.PropTypes.string
         };
@@ -4496,53 +4495,74 @@
 [//]: # (Тестирование React-component)
 <details><summary><b>Тестирование React-component</b></summary><p>
 
-Есть `unit-тестирование`(проверка работы отдельных модулей самих по себе) и `e2e тестирование` (проверка всей системы
-целиком).
-В первую очередь, все говорят про unit-тесты
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
 
-**Что тестировать**
+  - Есть `unit-тестирование`(проверка работы отдельных модулей самих по себе) и `e2e тестирование` (проверка всей системы целиком).
+  - В первую очередь, все говорят про unit-тесты
 
-- значения приходящие в компонент через `props` должно быть доступно ей изнутри, например в её стэйте
-- при рендере компонента в ней есть нужные html-тэги. Например, у компонента есть два режима - «Edit mode» и «Normal»,
-  переключатся по пропсам или стэйту. В одном случае выводится <span>, в другом <button>. Проверяем, есть ли в
-  разметке <span> при таком-то выводе
-- в пропсах закинули статус, он должен отобразиться в <span>. Проверяем что в <span> придёт именно этот текст.
-- кнопки нажимаются
-- проверить работу Callback - что он вызывается и делает что надо....
-- имитировать клики, хэндеры, разные пропсы... - что произойдёт
+  <br></p>
+  </details>
 
-**Популярные технологии**
+[//]: # (Что тестировать)
+- <details><summary><b>Что тестировать</b></summary><p>
 
-- [Jest](https://facebook.github.io/jest/) - delightful JavaScript testing used by Facebook to test all JavaScript code
-  including React applications. Разрабатывается Facebook
-- [Enzyme](https://github.com/airbnb/enzyme/) - a JavaScript Testing utility for React that makes it easier to assert,
-  manipulate, and traverse your React Components’ output.
-- [Mocha](https://mochajs.org/)
+  - значения приходящие в компонент через `props` должно быть доступно ей изнутри, например в её стэйте
+  - при рендере компонента в ней есть нужные html-тэги. Например, у компонента есть два режима - «Edit mode» и «Normal»,
+    переключатся по пропсам или стэйту. В одном случае выводится <span>, в другом <button>. Проверяем, есть ли в
+    разметке <span> при таком-то выводе
+  - в пропсах закинули статус, он должен отобразиться в <span>. Проверяем что в <span> придёт именно этот текст.
+  - кнопки нажимаются
+  - проверить работу Callback - что он вызывается и делает что надо....
+  - имитировать клики, хэндеры, разные пропсы... - что произойдёт
 
-**На оф. сайте также упоминаются**
+  <br></p>
+  </details>
 
-- [react-testing-library](https://github.com/kentcdodds/react-testing-library) - Simple and complete React DOM testing
-  utilities that encourage good testing practices.
-- [React-unit](https://github.com/pzavolinsky/react-unit) - a lightweight unit test library for ReactJS with very few (
-  js-only) dependencies.
-- [Skin-deep](https://github.com/glenjamin/skin-deep) - Testing helpers for use with React’s shallowRender test utils.
-- [Unexpected-react](https://github.com/bruderstein/unexpected-react/) - Plugin for the unexpected assertion library
-  that makes it easy to assert over your React Components and trigger events.
+[//]: # (Популярные технологии)
+- <details><summary><b>Популярные технологии</b></summary><p>
 
-**Ссылки**
+  - [Jest](https://facebook.github.io/jest/) - delightful JavaScript testing used by Facebook to test all JavaScript code
+    including React applications. Разрабатывается Facebook
+  - [Enzyme](https://github.com/airbnb/enzyme/) - a JavaScript Testing utility for React that makes it easier to assert,
+    manipulate, and traverse your React Components’ output.
+  - [Mocha](https://mochajs.org/)
 
-- [Википедия - модульное тестирование](https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
-- [Оф. документация - инструменты тестирования (en)](https://ru.reactjs.org/community/testing.html)
-- [Habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
-- [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
-- [Habr - React: тестируем компоненты с помощью Jest и Testing Library (2022)](https://habr.com/ru/company/timeweb/blog/670480/)
-- [Hexlet - Тестирование JSReact (платный доступ)](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
-- [Пацианский М - Тестирование React компонентов с помощью jest и enzyme](https://maxpfrontend.ru/vebinary/testirovanie-komponentov-s-pomoschyu-jest-enzyme/)
-- [Medium - Модульное тестирование React-приложения с помощью Jest и Enzyme](https://medium.com/devschacht/berry-de-witte-unit-testing-your-react-application-with-jest-and-enzyme-6ef3658fdc93)
-- [Medium - Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
-- [learn.javascript.ru - Автоматические тесты при помощи chai и mocha](https://learn.javascript.ru/testing)
-- [Знакомство с разработкой через тестирование в JavaScript (Mocha)](https://tproger.ru/translations/unit-testing-in-javascript/)
-- [IT-Kamasutra #92 - тестируем компоненты, тесты, react-test-renderer - React JS](https://youtu.be/Kyc_Z_2b2Hc)
+  <br></p>
+  </details>
+
+[//]: # (На оф. сайте также упоминаются)
+- <details><summary><b>На оф. сайте также упоминаются</b></summary><p>
+
+  - [react-testing-library](https://github.com/kentcdodds/react-testing-library) - Simple and complete React DOM testing
+    utilities that encourage good testing practices.
+  - [React-unit](https://github.com/pzavolinsky/react-unit) - a lightweight unit test library for ReactJS with very few (
+    js-only) dependencies.
+  - [Skin-deep](https://github.com/glenjamin/skin-deep) - Testing helpers for use with React’s shallowRender test utils.
+  - [Unexpected-react](https://github.com/bruderstein/unexpected-react/) - Plugin for the unexpected assertion library
+    that makes it easy to assert over your React Components and trigger events.
+
+  <br></p>
+  </details>
+
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
+
+  - [Википедия - модульное тестирование](https://ru.m.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+  - [Оф. документация - инструменты тестирования (en)](https://ru.reactjs.org/community/testing.html)
+  - [Habr - Тестирование React-Redux приложения (Jest)](https://habr.com/ru/post/340514/)
+  - [Тестирование компонентов в React с использованием Jest: основы](https://code.tutsplus.com/ru/articles/testing-components-in-react-using-jest-the-basics--cms-28934)
+  - [Habr - React: тестируем компоненты с помощью Jest и Testing Library (2022)](https://habr.com/ru/company/timeweb/blog/670480/)
+  - [Hexlet - Тестирование JSReact (платный доступ)](https://ru.hexlet.io/courses/js-react/lessons/tests/theory_unit)
+  - [Пацианский М - Тестирование React компонентов с помощью jest и enzyme](https://maxpfrontend.ru/vebinary/testirovanie-komponentov-s-pomoschyu-jest-enzyme/)
+  - [Medium - Модульное тестирование React-приложения с помощью Jest и Enzyme](https://medium.com/devschacht/berry-de-witte-unit-testing-your-react-application-with-jest-and-enzyme-6ef3658fdc93)
+  - [Medium - Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
+  - [learn.javascript.ru - Автоматические тесты при помощи chai и mocha](https://learn.javascript.ru/testing)
+  - [Знакомство с разработкой через тестирование в JavaScript (Mocha)](https://tproger.ru/translations/unit-testing-in-javascript/)
+  - [IT-Kamasutra #92 - тестируем компоненты, тесты, react-test-renderer - React JS](https://youtu.be/Kyc_Z_2b2Hc)
+  
+  <br></p>
+  </details>
 
 <br></p>
 </details>
