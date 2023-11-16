@@ -2236,7 +2236,7 @@
     </details>
 
   [//]: # (Функция setState)
-  - <details><summary><b>Функция `setState(newState)</b></summary><p>
+  - <details><summary><b>Функция setState(newState)</b></summary><p>
 
     - Принимает
       - значение стейта — `setCount(newCount)`
@@ -2245,8 +2245,7 @@
     - Ререндер компонента
       - Если метод setState() обновил значение state — происходит ререндер компонента.
       - Если метод setState() вернул тот же результат, что и текущий state — повторного рендеринга не будет.
-        `Досрочное прекращение обновления состояния` — если обновить state хука тем же значением, что и текущее состояние,
-        React досрочно выйдет из хука без повторного рендера дочерних элементов и запуска эффектов.
+        - `Досрочное прекращение обновления состояния` — если обновить state хука тем же значением, что и текущее состояние, React досрочно выйдет из хука без повторного рендера дочерних элементов и запуска эффектов.
     - Перезапись объекта `state`
       - Если в state хранится объект — `useState` не объединяет объекты, а заменяет старый объект новым.
         - Получаем новый объект `state`, который заменит предыдущий.
@@ -2305,17 +2304,15 @@
       - Повышает производительность.
       - До React 18 пакеты обновлялись только внутри обработчиков событий React.
       - Начиная с React 18, пакетная обработка включена для всех обновлений по умолчанию.
-      - Обновления из N разных событий, инициированных пользователем, всегда обрабатываются отдельно и не объединяются (
-        например двойное нажатие кнопки). Это предотвращает логические ошибки.
-    - Идентичность функции setState стабильна и не изменяется при повторных рендерах => её можно безопасно не включать в
-      списки зависимостей хуков useEffect и useCallback.
+      - Обновления из N разных событий, инициированных пользователем, всегда обрабатываются отдельно и не объединяются (например двойное нажатие кнопки). Это предотвращает логические ошибки.
+    - Идентичность функции setState стабильна и не изменяется при повторных рендерах => её можно безопасно не включать в списки зависимостей хуков useEffect и useCallback.
 
     <br></p>
     </details>
 
   [//]: # (Ссылки)
   - <details><summary><b>Ссылки</b></summary><p>
-
+    
     - [Вопросы для собеседования по хукам React - useState](https://temofeev.ru/info/articles/voprosy-dlya-sobesedovaniya-po-khukam-react/)
     - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
     - [Hexlet - Хук useState](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-state/theory_unit)
@@ -2694,141 +2691,126 @@
 <br>
 
 [//]: # (useImperativeHandle)
-<details><summary><b>useImperativeHandle</b></summary><p>
+- <details><summary><b>useImperativeHandle</b></summary><p>
 
-[useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle) — передавать данные от
-дочернего компонента родительскому (значение, state или функцию)
+  - [useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle) — передавать данные от дочернего компонента родительскому (значение, state или функцию)
+  - 
+  - Организовать двунаправленный поток данных и логики (обычно в React используется однонаправленный поток)
+  - 
+  - **Ссылки**
+    - [оф. документация - useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle)
 
-Организовать двунаправленный поток данных и логики (обычно в React используется однонаправленный поток)
-
-**Ссылки**
-
-- [оф. документация - useImperativeHandle](https://ru.reactjs.org/docs/hooks-reference.html#useimperativehandle)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useDebugValue )
-<details><summary><b>useDebugValue</b></summary><p>
+- <details><summary><b>useDebugValue</b></summary><p>
 
-[useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue) — позволяет добавлять хукам метки
-отладки,
-которые выводятся в React DevTools.
+  - [useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue) — позволяет добавлять хукам метки отладки, которые выводятся в React DevTools.
+  - Полезно для отладки пользовательских хуков.
+  - Введён в React 18 (2022)
+  - 
+  - **Ссылки**
+    - [Оф. документация - useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue)
 
-Полезно для отладки пользовательских хуков.
-
-Введён в React 18 (2022)
-
-**Ссылки**
-
-- [Оф. документация - useDebugValue](https://ru.reactjs.org/docs/hooks-reference.html#usedebugvalue)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useDeferredValue)
-<details><summary><b>useDeferredValue</b></summary><p>
+- <details><summary><b>useDeferredValue</b></summary><p>
 
-[useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue) — аналог debouncing /
-throttling. Позволяет отложить повторный рендеринг несрочной части дерева.
+  - [useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue) — аналог debouncing / throttling. Позволяет отложить повторный рендеринг несрочной части дерева.
+  - 
+  - Например, показать пользователю старые данные, пока подгружаются новые.
+  - Похож на `debouncing`, но имеет несколько преимуществ по сравнению с ним.
+  - Фиксированной задержки по времени нет, поэтому React попытается выполнить отложенный рендеринг сразу после того,
+    как первый рендер отобразится на экране.
+  - Отложенный рендеринг может быть прерван и не будет блокировать ввод данных пользователем.
+  - Введён в React 18 (2022)
+  - 
+  - **Ссылки**
+    - [Оф. документация - useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue)
 
-- Например, показать пользователю старые данные, пока подгружаются новые.
-- Похож на `debouncing`, но имеет несколько преимуществ по сравнению с ним.
-- Фиксированной задержки по времени нет, поэтому React попытается выполнить отложенный рендеринг сразу после того,
-  как первый рендер отобразится на экране.
-- Отложенный рендеринг может быть прерван и не будет блокировать ввод данных пользователем.
-- Введён в React 18 (2022)
-
-**Ссылки**
-
-- [Оф. документация - useDeferredValue](https://ru.reactjs.org/docs/hooks-reference.html#usedeferredvalue)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useTransition)
-<details><summary><b>useTransition</b></summary><p>
+- <details><summary><b>useTransition</b></summary><p>
 
-[useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition) — помечать некоторые обновления
-состояния как несрочные
+  - [useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition) — помечать некоторые обновления состояния как несрочные
+  - 
+  - Другие обновления состояния по умолчанию считаются срочными. React позволит срочным обновлениям состояния (
+    например, обновлению ввода текста) прерывать несрочные обновления состояния (например, отображение списка
+    результатов поиска).
+  - Введён в React 18 (2022)
+  - 
+  - **Ссылки**
+    - [Оф. документация - useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition)
 
-- Другие обновления состояния по умолчанию считаются срочными. React позволит срочным обновлениям состояния (
-  например, обновлению ввода текста) прерывать несрочные обновления состояния (например, отображение списка
-  результатов поиска).
-- Введён в React 18 (2022)
-
-**Ссылки**
-
-- [Оф. документация - useTransition](https://ru.reactjs.org/docs/hooks-reference.html#usetransition)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useId)
-<details><summary><b>useId</b></summary><p>
+- <details><summary><b>useId</b></summary><p>
 
-[useId](https://ru.reactjs.org/docs/hooks-reference.html#useid) — создание уникальных ID как на клиенте, так и на
-сервере, избегая hydration несоответствий.
+  - [useId](https://ru.reactjs.org/docs/hooks-reference.html#useid) — создание уникальных ID как на клиенте, так и на
+  - сервере, избегая hydration несоответствий.
 
-- Наиболее полезно для библиотек компонентов, интегрирующихся с API, для которых требуются уникальные ID.
-- Особенно актуально в React 18 т.к. новый рендер сервера доставляет HTML не по порядку.
-- Введён в React 18 (2022)
+  - Наиболее полезно для библиотек компонентов, интегрирующихся с API, для которых требуются уникальные ID.
+  - Особенно актуально в React 18 т.к. новый рендер сервера доставляет HTML не по порядку.
+  - Введён в React 18 (2022)
 
-**Ссылки**
+  - **Ссылки**
+    - [Оф. документация - useId](https://ru.reactjs.org/docs/hooks-reference.html#useid)
 
-- [Оф. документация - useId](https://ru.reactjs.org/docs/hooks-reference.html#useid)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useSyncExternalStore)
-<details><summary><b>useSyncExternalStore</b></summary><p>
+- <details><summary><b>useSyncExternalStore</b></summary><p>
 
-[useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore) — позволяет внешним
-хранилищам поддерживать параллельное чтение. Заставляет обновления в хранилище быть синхронными.
+  - [useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore) — позволяет внешним
+  - хранилищам поддерживать параллельное чтение. Заставляет обновления в хранилище быть синхронными.
+  - 
+  - Устраняет необходимость в useEffect при реализации подписок на внешние источники данных
+  - Рекомендуется для любой библиотеки, которая интегрируется со сторонним состоянием по отношению к React.
+  - Введён в React 18 (2022)
 
-- Устраняет необходимость в useEffect при реализации подписок на внешние источники данных
-- Рекомендуется для любой библиотеки, которая интегрируется со сторонним состоянием по отношению к React.
-- Введён в React 18 (2022)
+  - **Ссылки**
+    - [Оф. документация - useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
 
-**Ссылки**
-
-- [Оф. документация - useSyncExternalStore](https://ru.reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useInsertionEffect )
-<details><summary><b>useInsertionEffect</b></summary><p>
+- <details><summary><b>useInsertionEffect</b></summary><p>
 
-[useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect) — позволяет библиотекам
-CSS-in-JS решать проблемы с производительностью при внедрении стилей во время рендеринга.
+  - [useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect) — позволяет библиотекам
+  - CSS-in-JS решать проблемы с производительностью при внедрении стилей во время рендеринга.
+  - 
+  - Если вы не планируете создавать библиотеку CSS-in-JS, мы не ожидаем, что вы когда-либо будете это использовать.
+  - Запустится после изменения DOM, но до того, как эффекты лейаута узнают об этом.
+  - Особенно актуален в React 18, поскольку React уступает браузеру во время одновременного рендеринга, давая ему
+    возможность пересчитать лейаут.
+  - Введён в React 18 (2022)
 
-- Если вы не планируете создавать библиотеку CSS-in-JS, мы не ожидаем, что вы когда-либо будете это использовать.
-- Запустится после изменения DOM, но до того, как эффекты лейаута узнают об этом.
-- Особенно актуален в React 18, поскольку React уступает браузеру во время одновременного рендеринга, давая ему
-  возможность пересчитать лейаут.
-- Введён в React 18 (2022)
+  - **Ссылки**
+    - [Оф. документация - useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect)
 
-**Ссылки**
-
-- [Оф. документация - useInsertionEffect](https://ru.reactjs.org/docs/hooks-reference.html#useinsertioneffect)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Пользовательские хуки)
-<details><summary><b>Пользовательские хуки</b></summary><p>
+- <details><summary><b>Пользовательские хуки</b></summary><p>
 
-функция, имя которой начинается с «use», и которая может вызывать другие хуки.
+  - Функция, имя которой начинается с «use», и которая может вызывать другие хуки.
+  - 
+  - **Ссылки**
+    - [Оф. документация](https://ru.reactjs.org/docs/hooks-custom.html)
+    - [Hexlet - React hooks](https://ru.hexlet.io/courses/js-react-hooks)
 
-**Ссылки**
-
-- [Оф. документация](https://ru.reactjs.org/docs/hooks-custom.html)
-- [Hexlet - React hooks](https://ru.hexlet.io/courses/js-react-hooks)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Ссылки)
 - <details><summary><b>Ссылки</b></summary><p>
