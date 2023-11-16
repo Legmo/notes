@@ -6,7 +6,6 @@
 
 [//]: # (Общая схема работы)
 - <details><summary><b>Общая схема работы</b></summary><p>
-
   - Получение ресурсов (`Fetching`) - скачиваем
   - Парсинг (`Parsing`)
     - `DOM` (Document Object Model) — абстрактное представление HTML-документа. Дерево
@@ -60,7 +59,7 @@
 
 [//]: # (Дорогие операции)
 - <details><summary><b>Дорогие операции</b></summary><p>
-  
+
   - "дорогие" операции. `Relayout` / `repaint`
   - "дорогие" операции чтения (getComputedStyle() и т.д.)
   
@@ -105,7 +104,7 @@
   <br></p>
   </details>
 
-[//]: # (Критические этапы рендеринга (Critical Rendering Path))
+[//]: # (Критические этапы рендеринга. Critical Rendering Path)
 - <details><summary><b>Критические этапы рендеринга (Critical Rendering Path)</b></summary><p>
 
   - Последовательность шагов, которые выполняет браузер, когда преобразуется HTML, CSS и JS в пиксели на экране.
