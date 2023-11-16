@@ -3380,73 +3380,72 @@
 [//]: # (Порталы)
 <details><summary><b>Порталы</b></summary><p>
 
-Способ отображения дочерних компонентов в узел DOM вне DOM-иерархии родительского компонента.
-Если надо, чтобы дочерние компоненты визуально вырывались из родительского контейнера.
+  - Способ отображения дочерних компонентов в узел DOM вне DOM-иерархии родительского компонента.
+  - Если надо, чтобы дочерние компоненты визуально вырывались из родительского контейнера.
+  - 
+  - Примеры:
+    - Модальные окна
+    - Всплывающие подсказки
+    - Загрузчики
+    - ...
+  -
+  - Т.е. у меня компонент, который выводит что-то внутри `body.div#root.div#component`.
+  - А я хочу вывести из него модальное окно, которое будет отображаться в `body`
+  - ```html
+      <html>
+        <body>
+          <div id="root">
+            <div id="component">Компонент здесь</div>
+          </div>
+          <div id="modal">Модальное окно должно быть здесь</div>
+        </body>
+      </html>
+    ```
+  - 
+  - **Синтаксис**
+    - ```jsx 
+        ReactDOM.createPortal(child, container)
+      ```
+    - ```jsx 
+        return ReactDOM.createPortal(
+          <div className="modal">
+            <span>{message}</span>
+            <button onClick={onClose}>Close</button>
+          </div>,
+          document.body
+        );
+      ```
+    - ```jsx 
+        const Modal =({ message, isOpen, onClose, children })=> {
+          if (!isOpen) return null;
+          
+          return ReactDOM.createPortal(
+            <div className="modal">
+              <span>{message}</span>
+              <button onClick={onClose}>Close</button>
+            </div>,
+            document.body
+          );
+        }
 
-Примеры:
-- Модальные окна
-- Всплывающие подсказки
-- Загрузчики
-- ...
+        function Component() {
+          const [open, setOpen] = useState(false)
 
-Т.е. у меня компонент, который выводит что-то внутри `body.div#root.div#component`.
-А я хочу вывести из него модальное окно, которое будет отображаться в `body`
-```
-<html>
-  <body>
-    <div id="root">
-      <div id="component">Компонент здесь</div>
-    </div>
-    <div id="modal">Модальное окно должно быть здесь</div>
-  </body>
-</html>
-```
-
-Синтаксис:
-```jsx 
-ReactDOM.createPortal(child, container)
-```
-```jsx 
-return ReactDOM.createPortal(
-  <div className="modal">
-    <span>{message}</span>
-    <button onClick={onClose}>Close</button>
-  </div>,
-  document.body
-);
-```
-```jsx 
-const Modal =({ message, isOpen, onClose, children })=> {
-  if (!isOpen) return null;
-  
-  return ReactDOM.createPortal(
-    <div className="modal">
-      <span>{message}</span>
-      <button onClick={onClose}>Close</button>
-    </div>,
-    document.body
-  );
-}
-
-function Component() {
-  const [open, setOpen] = useState(false)
-
-  return (
-    <div className="component">
-      <button onClick={() => setOpen(true)}>Open Modal</button>
-      <Modal 
-       message="Hello World!" 
-       isOpen={open} 
-       onClose={() => setOpen(false)}
-      />
-    </div>
-  )
-}
-```
-
-**Ссылки**
-- [Оф. документация - Порталы](https://ru.reactjs.org/docs/portals.html)
-- [Medium - Понятие о порталах в React с примерами использования](https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D0%B8%D0%B5-%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D0%B0%D1%85-%D0%B2-react-%D1%81-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-9184c95a54d7)
+          return (
+            <div className="component">
+              <button onClick={() => setOpen(true)}>Open Modal</button>
+              <Modal 
+               message="Hello World!" 
+               isOpen={open} 
+               onClose={() => setOpen(false)}
+              />
+            </div>
+          )
+        }
+      ```
+  - **Ссылки**
+    - [Оф. документация - Порталы](https://ru.reactjs.org/docs/portals.html)
+    - [Medium - Понятие о порталах в React с примерами использования](https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D0%B8%D0%B5-%D0%BE-%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%BB%D0%B0%D1%85-%D0%B2-react-%D1%81-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-9184c95a54d7)
 
 <br></p>
 </details>
@@ -3454,94 +3453,83 @@ function Component() {
 [//]: # (Роутинг)
 <details><summary><b>Роутинг</b></summary><p>
 
----
-
 [//]: # (Что такое React-Router)
-<details><summary>Что такое React-Router?</summary><p>
+- <details><summary>Что такое React-Router?</summary><p>
 
-React-Router - набор компонентов определяющих на основе текущего пути, какой компонент будет выводиться.
-
-- react-router - пакет с базовым набором функций
-- router-dom - пакет с набором функций для работы в браузере
-
-<br></p>
-</details>
-
-[//]: # (React-router-dom)
-<details><summary>React-router-dom</summary><p>
-
-- Модуль npm + специальная разметка в корневом компоненте
-- Переключение компонентов на странице, в зависимости от адреса в адресной строке.
-
-**Отличия React-router, React-router-dom и React-router-native****
-
-- React-router - базовая библиотека, необходимая для работы React-router-dom и React-router-native
-- React-router-dom и React-router-native ставятся поверх неё. Все функции использовать тольько из них, никогда не
-  использовать напрямую React-router
-- React-router-dom - для роутинга в веб-разработке
-- React-router-native - для роутинга в разработке под мобильные
-
-+
-
-- https://stackoverflow.com/questions/42684809/react-router-vs-react-router-dom-when-to-use-one-or-the-other
-- https://reactdev.ru/libs/react-router/?ysclid=l7v9mkltgi451956102#match
-- https://habr.com/ru/post/329996/?ysclid=l7v9rl06yb497534719
-- https://metanit.com/web/react/4.1.php?ysclid=l7v9ssxl69809229348
-- https://www.npmjs.com/package/react-router
-
-**Ссылки**
-
-- [IT-Kamasutra #19 - React-router-dom](https://youtu.be/5X5ZLWdAnt4)
-- [IT-Kamasutra #22 - Route-exact](https://youtu.be/HfGD5xRIiMU) — настройка роута для страниц 2 уровня - переключаем
-  адрес в адресной строке,
+  - React-Router - набор компонентов определяющих на основе текущего пути, какой компонент будет выводиться.
+    - react-router - пакет с базовым набором функций
+    - router-dom - пакет с набором функций для работы в браузере
 
   <br></p>
+  </details>
 
-</details>
+[//]: # (React-router-dom)
+- <details><summary>React-router-dom</summary><p>
+
+  - Модуль npm + специальная разметка в корневом компоненте
+  - Переключение компонентов на странице, в зависимости от адреса в адресной строке.
+
+  - **Отличия React-router, React-router-dom и React-router-native****
+    - React-router - базовая библиотека, необходимая для работы React-router-dom и React-router-native
+    - React-router-dom и React-router-native ставятся поверх неё. Все функции использовать тольько из них, никогда не
+      использовать напрямую React-router
+    - React-router-dom - для роутинга в веб-разработке
+    - React-router-native - для роутинга в разработке под мобильные
+    - .
+    - https://stackoverflow.com/questions/42684809/react-router-vs-react-router-dom-when-to-use-one-or-the-other
+    - https://reactdev.ru/libs/react-router/?ysclid=l7v9mkltgi451956102#match
+    - https://habr.com/ru/post/329996/?ysclid=l7v9rl06yb497534719
+    - https://metanit.com/web/react/4.1.php?ysclid=l7v9ssxl69809229348
+    - https://www.npmjs.com/package/react-router
+
+  - **Ссылки**
+    - [IT-Kamasutra #19 - React-router-dom](https://youtu.be/5X5ZLWdAnt4)
+    - [IT-Kamasutra #22 - Route-exact](https://youtu.be/HfGD5xRIiMU) — настройка роута для страниц 2 уровня - переключаем адрес в адресной строке,
+
+  <br></p>
+  </details>
 
 [//]: # (BrowserRouter и HashRouter)
-<details><summary>BrowserRouter и HashRouter</summary><p>
+- <details><summary>BrowserRouter и HashRouter</summary><p>
 
-Для браузерных проектов есть BrowserRouter и HashRouter компоненты.
+  - Для браузерных проектов есть BrowserRouter и HashRouter компоненты.
+    - BrowserRouter — следует использовать когда вы обрабатываете на сервере динамические запросы. Если проект предполагает бекенд - бери BrowserRouter.
+    - HashRouter - когда у вас статический веб сайт.
 
-- BrowserRouter — следует использовать когда вы обрабатываете на сервере динамические запросы. Если проект предполагает
-  бекенд - бери BrowserRouter.
-- HashRouter - когда у вас статический веб сайт.
+  - Обычно предпочтительнее использовать BrowserRouter, но если ваш сайт расположен на статическом сервере(как github pages) , то использовать HashRouter это хорошее решение проблемы.
 
-Обычно предпочтительнее использовать BrowserRouter, но если ваш сайт расположен на статическом сервере(как github pages)
-, то использовать HashRouter это хорошее решение проблемы.
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Компонент Route)
-<details><summary>Компонент Route</summary><p>
+- <details><summary>Компонент Route</summary><p>
 
-`<Route/>` - компонент, строительный блок React Router'а.
-Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент `<Route/>`
+  - `<Route/>` - компонент, строительный блок React Router'а.
+  - Если вам нужно рендерить элемент в зависимости от pathname URL'ов, то следует использовать компонент `<Route/>`
 
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Как связаны Route и NavLink?)
-<details><summary>Как связаны Route и NavLink?</summary><p>
+- <details><summary>Как связаны Route и NavLink?</summary><p>
 
-Route и NavLink = два независимых элемента.
+  - Route и NavLink = два независимых элемента.
+  - Фактически, это обычные компоненты, написанные разработчиками, и подключаемые из билиотеки. В них передаются параметры и функции. ПРи наступлении условия X сделай то-=то (например, отрисуй компоненту такую-то)
+  - 
+  - Route - меняет содержимое страницы, в зависимости от того, что введено в адресной строке. Следит за ней, и при изменениии - отрабатывает
+  - NavLink - при клике меняет адрес в адресной строке
 
-Фактически, это обычные компоненты, написанные разработчиками, и подключаемые из билиотеки. В них передаются параметры и
-функции. ПРи наступлении условия X сделай то-=то (например, отрисуй компоненту такую-то)
+  <br></p>
+  </details>
 
-- Route - меняет содержимое страницы, в зависимости от того, что введено в адресной строке. Следит за ней, и при
-  изменениии - отрабатывает
-- NavLink - при клике меняет адрес в адресной строке
+[//]: # (Ссылки)
+- <details><summary><b>Ссылки</b></summary><p>
 
-<br></p>
-</details>
-
-**Ссылки**
-
-- http://bogdanov-blog.ru/react-router-v4-notes/
-- https://habrahabr.ru/post/329996/
+  - http://bogdanov-blog.ru/react-router-v4-notes/
+  - https://habrahabr.ru/post/329996/
+    
+  <br></p>
+  </details>
 
 <br></p>
 </details>
@@ -3549,44 +3537,43 @@ Route и NavLink = два независимых элемента.
 [//]: # (StrictMode, Строгий режим)
 <details><summary><b>StrictMode (Строгий режим)</b></summary><p>
 
-`StrictMode` — инструмент для выделения потенциальных проблем в приложении. 
-Активирует дополнительные проверки и предупреждения.
-Появился в React 16.3 в марте 2018.
+  - `StrictMode` — инструмент для выделения потенциальных проблем в приложении. 
+  - Активирует дополнительные проверки и предупреждения.
+  - Появился в React 16.3 в марте 2018.
+  - 
+  - Не отображает ничего визуального (похожего на Fragment), но обнаруживает потенциальные проблемы в коде и даёт полезные предупреждения. 
+  - Строгий режим работает только в режиме разработки (development), никак не влияет на продакшен-сборку. 
+  - 
+  - С появлением Hooks и Concurrent Mode (параллельный режим), который не за горами, строгий режим становится всё более важным инструментом для обнаружения плохих практик (параллельный режим, вероятно, не будет работать, пока не исправишь предупреждения, выдаваемые в строгом режиме).
+  - 
+  - **Зачем**
+    - Обнаружение небезопасных методов жизненного цикла
+    - Предупреждение об использовании устаревшего API строковых реф
+    - Предупреждение об использовании устаревшего метода findDOMNode
+    - Обнаружение неожиданных побочных эффектов
+    - Обнаружение устаревшего API контекста
+    - Обеспечение переиспользованного состояния
+    - Дополнительные проверки будут включены в будущих релизах React
+  - 
+  -
+  - **Использование**
+    - Обычно в `index.js` оборачивают весь компонент приложения в `<React.StrictMode> </React.StrictMode>`:
+    - ```jsx
+        import React from "react";
+        import ReactDOM from "react-dom";
+        
+        ReactDOM.render(
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>,
+          document.getElementById("root")
+        );
+      ```
+  - Можно обернуть один/несколько компонентов в код
 
-Не отображает ничего визуального (похожего на Fragment), но обнаруживает потенциальные проблемы в коде и даёт полезные предупреждения. 
-Строгий режим работает только в режиме разработки (development), никак не влияет на продакшен-сборку. 
-
-С появлением Hooks и Concurrent Mode (параллельный режим), который не за горами, строгий режим становится всё более важным инструментом для обнаружения плохих практик (параллельный режим, вероятно, не будет работать, пока не исправишь предупреждения, выдаваемые в строгом режиме).
-
-**Зачем**
-- Обнаружение небезопасных методов жизненного цикла
-- Предупреждение об использовании устаревшего API строковых реф
-- Предупреждение об использовании устаревшего метода findDOMNode
-- Обнаружение неожиданных побочных эффектов
-- Обнаружение устаревшего API контекста
-- Обеспечение переиспользованного состояния
-- Дополнительные проверки будут включены в будущих релизах React
-
-
-**Использование**
-- Обычно в `index.js` оборачивают весь компонент приложения в `<React.StrictMode> </React.StrictMode>`:
-  - ```jsx
-    import React from "react";
-    import ReactDOM from "react-dom";
-    
-    ReactDOM.render(
-    <React.StrictMode>
-    <App />
-    </React.StrictMode>,
-    document.getElementById("root")
-    );
-    ```
-- Можно обернуть один/несколько компонентов в код
-
-**Ссылки**
-
-- [Оф. документация - React StrictMode](https://ru.reactjs.org/docs/strict-mode.html)
-- [Что такое React StrictMode и как его использовать](https://frontend-stuff.com/blog/react-strictmode/)
+  - **Ссылки**
+    - [Оф. документация - React StrictMode](https://ru.reactjs.org/docs/strict-mode.html)
+    - [Что такое React StrictMode и как его использовать](https://frontend-stuff.com/blog/react-strictmode/)
 
 <br></p>
 </details>
