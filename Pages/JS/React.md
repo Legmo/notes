@@ -3229,9 +3229,10 @@
   </details>
 
 [//]: # (В JSX нельзя вывести два html-элемента рядом)
-- <details><summary>В JSX нельзя вывести два html-элемента рядом, вот так:</summary><p> 
+- <details><summary>В JSX нельзя вывести два html-элемента рядом</summary><p> 
       
-  - ```js
+  - Так нельзя
+  - ```jsx
       function Test() {
         return (
           <h1>Title</h1>
@@ -3315,7 +3316,7 @@
   </details>
 
 [//]: # (Аттрибуты)
--  <details><summary>В JXS аттрибуты html пишут так:</summary><p>
+- <details><summary>В JXS аттрибуты html пишут так:</summary><p>
 
   - ```js
       function Test() {
