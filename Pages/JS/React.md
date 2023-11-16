@@ -2331,7 +2331,7 @@
   </details>
 
 [//]: # (useEffect и useLayoutEffect)
-<details><summary><b>useEffect и useLayoutEffect</b></summary><p>
+- <details><summary><b>useEffect и useLayoutEffect</b></summary><p>
 
   [//]: # (Общее)
   - <details><summary><b>Общее</b></summary><p>
@@ -2502,236 +2502,195 @@
   </details>
 
 [//]: # (useContext)
-<details><summary><b>useContext</b></summary><p>
+- <details><summary><b>useContext</b></summary><p>
 
-[useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext) — работа с контекстом (обмен данными между
-компонентами без прокидывания props)
+  - [useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext) — работа с контекстом (обмен данными между компонентами без прокидывания props)
+  - 
+  - **Ссылки**
+    - [Оф. документация - useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext)
+    - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+    - [Hexlet - Хук useContext ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit)
+    - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
-**Ссылки**
-
-- [Оф. документация - useContext](https://ru.reactjs.org/docs/hooks-reference.html#usecontext)
-- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Hexlet - Хук useContext ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-context/theory_unit)
-- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useReducer)
-<details><summary><b>useReducer</b></summary><p>
+- <details><summary><b>useReducer</b></summary><p>
 
-[useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer) — аналог reducer в Redux. Можно вынести
-данные из компонента
+  - [useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer) — аналог reducer в Redux. Можно вынести данные из компонента
 
-**Ссылки**
+  - **Ссылки**
+    - [Оф. документация — useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer)
+    - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+    - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
-- [Оф. документация — useReducer](https://ru.reactjs.org/docs/hooks-reference.html#usereducer)
-- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useCallback)
-<details><summary><b>useCallback</b></summary><p>
+- <details><summary><b>useCallback</b></summary><p>
 
-[useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback) — мемоизация/кэширование коллбэка (т.е. функции).
+  - [useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback) — мемоизация/кэширование коллбэка (т.е. функции).
+  - 
+  - Возвращает мемоизированнный коллбэк (экземпляр функции).
+  - Создаёт новый экземпляр функции только если изменилась зависимость.
+  - Получает два параметра: функцию и массив зависимостей.
+  - Полезно когда надо прокидывать колбэки в дочерний компонент — позволяет избежать лишнего ре-рендера.
+  - Возвращает один и тот же экземпляр передаваемой функции (коллбэк) вместо создания нового при каждом повторном рендеринге компонента. Новый экземпляр коллбэка будет создан только при изменении массива зависимостей.
 
-Возвращает мемоизированнный коллбэк (экземпляр функции).
-Создаёт новый экземпляр функции только если изменилась зависимость.
+  - Особенность работы с функциями в React: когда мы используем их в качестве колбеков в компонентах, ссылка на функцию меняется.
+  - Так происходит потому, что каждый раз создается новая функция, и React вызывает перерисовку компонента.
+  - Т.е. когда компонент повторно визуализируется, он создает новые экземпляры всех объектов, включая все функции в нем.
+  - Чтобы избежать такой проблемы, можно использовать`useCallback()`, который возвращает всегда одну и ту же ссылку на переданную функцию.
+  - 
+  - **Отличия от useMemo**
+    - `useCallback(fn, deps)` — это эквивалент `useMemo(() => fn, deps)`.
+  - 
+  - **Когда использовать?**
+    - Если вы подумываете о добавлении `useCallback` и `useMemo` в ваш компонент, не торопитесь. 
+    - Они добавляют некоторую дополнительную сложность коду и ухудшают читабельность.
+    - Менеджмент производительности с помощью `useCallback` и `useMemo` обходится дорого и это не всегда оправдано.
+    - 
+    - Рассмотрите возможность использования useCallback/useMemo в следующих ситуациях:
+      - обработка больших объемов данных;
+      - работа с интерактивными графиками и диаграммами;
+      - реализация анимации;
+      - включение компонента в ленивую загрузку.
+  - 
+  - **Ссылки**
+    - [Оф. докуиентация - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
+    - [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
+    - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+    - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
+    - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
+    - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
+    - [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
 
-Получает два параметра: функцию и массив зависимостей.
-
-Полезно когда надо прокидывать колбэки в дочерний компонент — позволяет избежать лишнего ре-рендера.
-
-Возвращает один и тот же экземпляр передаваемой функции (коллбэк) вместо создания нового при каждом повторном рендеринге компонента. Новый экземпляр коллбэка будет создан только при изменении массива зависимостей.
-
-Особенность работы с функциями в React: когда мы используем их в качестве колбеков в компонентах, ссылка на функцию меняется.
-Так происходит потому, что каждый раз создается новая функция, и React вызывает перерисовку компонента.
-Т.е. когда компонент повторно визуализируется, он создает новые экземпляры всех объектов, включая все функции в нем.
-Чтобы избежать такой проблемы, можно использовать`useCallback()`, который возвращает всегда одну и ту же ссылку на переданную функцию.
-<br>
-<br>
-
-**Отличия от useMemo**
-- `useCallback(fn, deps)` — это эквивалент `useMemo(() => fn, deps)`.
-<br>
-<br>
-
-**Когда использовать?**
-
-Если вы подумываете о добавлении `useCallback` и `useMemo` в ваш компонент, не торопитесь. 
-Они добавляют некоторую дополнительную сложность коду и ухудшают читабельность.
-Менеджмент производительности с помощью `useCallback` и `useMemo` обходится дорого и это не всегда оправдано.
-
-Рассмотрите возможность использования useCallback/useMemo в следующих ситуациях:
-- обработка больших объемов данных;
-- работа с интерактивными графиками и диаграммами;
-- реализация анимации;
-- включение компонента в ленивую загрузку.
-
-**Ссылки**
-
-- [Оф. докуиентация - useCallback](https://ru.reactjs.org/docs/hooks-reference.html#usecallback)
-- [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
-- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
-- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
-- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
-- [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
-- [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useMemo)
-<details><summary><b>useMemo</b></summary><p>
+- <details><summary><b>useMemo</b></summary><p>
 
-[useMemo](https://ru.reactjs.org/docs/hooks-reference.html#usememo) — мемоизация/кэширование значений, результатов работы
-функции. 
+  - [useMemo](https://ru.reactjs.org/docs/hooks-reference.html#usememo) — мемоизация/кэширование значений, результатов работы функции. 
+  - 
+  - Возвращает мемоизированное значение.
+  - Запоминает значение, которое возвращает функция.
+  - Вычисляет значение заново только если изменилась зависимость — позволяет избежать дорогостоящих вычислений при каждом рендере.
+  - 
+  - Получает два параметра: функцию и массив зависимостей.
+  - Если массив зависимостей не был передан, новое значение будет вычисляться при каждом рендере.
+  - 
+  - Позволяет предотвращать лишние повторные рендеры. 
+  - Замена `PureComponent` и `shouldComponentUpdate`.
+  - Также смотри HOC `React.memo`
+  - 
+  - Принимает функцию, которая возвращает какой-то результат. 
+  - Хук запоминает этот результат и возвращает его каждый раз, не вызывая повторно переданную функцию.
+  - 
+  - Используется вместо того, чтобы возвращать невызванную функцию, как это делает `useCallback` – он работает с передаваемой функцией и возвращает результирующее значение только при изменении массива параметров. 
+  - Т.е. useMemo вызывает функцию только при необходимости и возвращает кэшированное значение для других визуализаций.
+  - 
+  - Особенность работы с функциями в React: когда мы используем их в качестве колбеков в компонентах, ссылка на функцию меняется.
+  - Так происходит потому, что каждый раз создается новая функция, и React вызывает перерисовку компонента.
+  - Т.е. когда компонент повторно визуализируется, он создает новые экземпляры всех объектов, включая все функции в нем.
+  - Чтобы при каждом ре-рендере не проводить ресурсоёмкие вычисления заново — можно мемоизировать результаты вычислений функции, использую хук `useMemo()`.
+  - 
+  - Функция, переданная `useMemo`, запускается во время рендеринга.
+  - Не делайте там ничего, что вы обычно не делаете во время рендеринга.
+  - Например, побочные эффекты принадлежат `useEffect`, а не `useMemo`.
+  - 
+  - **Отличия от useCallback**
+    - `useCallback(fn, deps)` — это эквивалент `useMemo(() => fn, deps)`.
+  - 
+  - **Когда использовать?**
+    - Если вы подумываете о добавлении `useCallback` и `useMemo` в ваш компонент, не торопитесь.
+    - Они добавляют некоторую дополнительную сложность коду и ухудшают читабельность.
+    - Менеджмент производительности с помощью `useCallback` и `useMemo` обходится дорого и это не всегда оправдано.
+    - 
+    - Рассмотрите возможность использования useCallback/useMemo в следующих ситуациях:
+      - обработка больших объемов данных;
+      - работа с интерактивными графиками и диаграммами;
+      - реализация анимации;
+      - включение компонента в ленивую загрузку.
+  -   
+  - **Ссылки**
+    - [Оф. докуиентация - useMemo](https://ru.reactjs.org/docs/hooks-reference.html#usememo)
+    - [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
+    - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+    - [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
+    - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
+    - [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
+    - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
+    - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
+    - [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
 
-Возвращает мемоизированное значение.
-Запоминает значение, которое возвращает функция.
-Вычисляет значение заново только если изменилась зависимость — позволяет избежать дорогостоящих вычислений при каждом рендере.
-
-Получает два параметра: функцию и массив зависимостей.
-Если массив зависимостей не был передан, новое значение будет вычисляться при каждом рендере.
-
-Позволяет предотвращать лишние повторные рендеры. 
-Замена `PureComponent` и `shouldComponentUpdate`.
-Также смотри HOC `React.memo`
-
-Принимает функцию, которая возвращает какой-то результат. 
-Хук запоминает этот результат и возвращает его каждый раз, не вызывая повторно переданную функцию.
-
-Используется вместо того, чтобы возвращать невызванную функцию, как это делает `useCallback` – он работает с передаваемой функцией и возвращает результирующее значение только при изменении массива параметров. 
-Т.е. useMemo вызывает функцию только при необходимости и возвращает кэшированное значение для других визуализаций.
-
-Особенность работы с функциями в React: когда мы используем их в качестве колбеков в компонентах, ссылка на функцию меняется.
-Так происходит потому, что каждый раз создается новая функция, и React вызывает перерисовку компонента.
-Т.е. когда компонент повторно визуализируется, он создает новые экземпляры всех объектов, включая все функции в нем.
-Чтобы при каждом ре-рендере не проводить ресурсоёмкие вычисления заново — можно мемоизировать результаты вычислений функции, использую хук `useMemo()`.
-
-Функция, переданная `useMemo`, запускается во время рендеринга.
-Не делайте там ничего, что вы обычно не делаете во время рендеринга.
-Например, побочные эффекты принадлежат `useEffect`, а не `useMemo`.
-<br>
-<br>
-
-**Отличия от useCallback**
-- `useCallback(fn, deps)` — это эквивалент `useMemo(() => fn, deps)`.
-<br>
-<br>
-
-**Когда использовать?**
-
-Если вы подумываете о добавлении `useCallback` и `useMemo` в ваш компонент, не торопитесь.
-Они добавляют некоторую дополнительную сложность коду и ухудшают читабельность.
-Менеджмент производительности с помощью `useCallback` и `useMemo` обходится дорого и это не всегда оправдано.
-
-Рассмотрите возможность использования useCallback/useMemo в следующих ситуациях:
-- обработка больших объемов данных;
-- работа с интерактивными графиками и диаграммами;
-- реализация анимации;
-- включение компонента в ленивую загрузку.
-
-**Ссылки**
-
-- [Оф. докуиентация - useMemo](https://ru.reactjs.org/docs/hooks-reference.html#usememo)
-- [Hexklet - Хуки useCallback и useMemo ](https://ru.hexlet.io/courses/js-react-hooks/lessons/use-callback/theory_unit)
-- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Учим useMemo на примерах — React Hooks](https://webtricks-master.ru/react-hooks/uchim-usememo-na-primerah/)
-- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.1: мемоизация, memo](https://habr.com/ru/company/otus/blog/669962/)
-- [Habr - React hooks, как не выстрелить себе в ноги. Часть 3.2: useMemo, useCallback](https://habr.com/ru/company/otus/blog/696610/)
-- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
-- [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
-- [Dan Abramov - Before You memo()](https://overreacted.io/before-you-memo/)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (useRef)
-<details><summary><b>useRef</b></summary><p>
+- <details><summary><b>useRef</b></summary><p>
 
-[useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref) — позволяет хранить объект, который можно изменять. 
-Объект хранится в течение всей жизни компонента.
-Изменение значения этого объекта не вызовет ререндер
+  - [useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref) — позволяет хранить объект, который можно изменять. 
+  - Объект хранится в течение всей жизни компонента.
+  - Изменение значения этого объекта не вызовет ререндер
+  - 
+  - Хук `useRef` часто используется взаимодействие с DOM-объектами, аналог Ref.
+  - принимает начальное значение хранимого объекта. 
+    - это значение запишется в свойство `.current` при инициализации
+  - возвращает 
+    - изменяемый ref-объект 
+    - иначе говоря - ссылка-объект, из свойства current которого можно получить хранимое значение
+  - 
+  - **Зачем используется**
+    - работа с DOM-объектами, аналог [React.createRef()](https://ru.reactjs.org/docs/refs-and-the-dom.html) в классовых компонентах.
+    - вместо `useState` 
+      - может хранить любой объект
+      - изменение значения не вызовет ре-рендер (в отличие от setState())
+      - для сохранения любого мутируемого значения, которое надо сохранить между ренедерами компонента
+  - 
+  - **Где обновлять значение useRef()?**
+    - Обновление значения ref считается побочным эффектом. Именно по этой причине необходимо обновить значение ref в обработчиках событий и эффектах, а не во время визуализации (если только вы не работаете с ленивой инициализацией). React docs предупреждает нас, что несоблюдение этого правила может привести к неожиданному поведению приложения.
+  -  
+  - **Использовать ли refs вместо state?**
+    - Нет. Refs – нереактивный, а значит, изменения значений не приведет к обновлению HTML. 
+  - 
+  - **useRef() аналог createRef?**
+    - Нет.
+    - `createRef()` полезен для доступа к узлам DOM или элементам React, но он создает новый экземпляр `ref` на каждом рендере вместо того, чтобы сохранять значение между визуализациями при использовании в функциональных компонентах.
+    -  `useRef()` полезен для доступа к узлам DOM или элементам React. Он сохраняет значение даже при повторной визуализации компонента.
+  - 
+  - **Пример**
+    - ```jsx
+        const App = () => {
+          const ref = useRef(); //1. Создали объект ref
+         
+          useEffect(() => {
+            console.log(ref.current); //3. Взаимодействуем в DOM-элементом
+          }, []);
+         
+          return <div ref={ref} />; //2. привязали DOM-элемент
+        };
+      ```
+  - 
+  1. создаём объект ref 
+  2. указываем его в качестве элемента, обозначающего DOM-объект, к которому мы хотим обратиться, а также прописываем этот объект в качестве параметра. 
+  3. теперь мы можем взаимодействовать с Dom-объектом напрямую, как если бы мы нашли его с помощью селектора. Для этого используем свойство current у объекта ref.
+  - 
+  - **Ссылки**
+    - [Habr - React hooks, как не выстрелить себе в ноги. Часть 4](https://habr.com/ru/company/otus/blog/677208/)
+    - [Habr - React hooks, как не выстрелить себе в ноги. Разбираемся с замыканиями. Совместное использование хуков](https://habr.com/ru/company/otus/blog/699434/)
+    - [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
+    - [Mentanit - useRef](https://metanit.com/web/react/6.4.php)
+    - [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
+    - [Hexlet - Хуки](https://ru.hexlet.io/courses/js-react-hooks)
+    - [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
+    - [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
 
-Хук `useRef` часто используется взаимодействие с DOM-объектами, аналог Ref.
+  <br></p>
+  </details>
 
-- принимает начальное значение хранимого объекта. 
-  - это значение запишется в свойство `.current` при инициализации
-- возвращает 
-  - изменяемый ref-объект 
-  - иначе говоря - ссылка-объект, из свойства current которого можно получить хранимое значение
-<br>
-<br>
-
-**Зачем используется**
-- работа с DOM-объектами, аналог [React.createRef()](https://ru.reactjs.org/docs/refs-and-the-dom.html) в классовых компонентах.
-- вместо `useState` 
-  - может хранить любой объект
-  - изменение значения не вызовет ре-рендер (в отличие от setState())
-  - для сохранения любого мутируемого значения, которое надо сохранить между ренедерами компонента
-<br>
-<br>
-
-**Где обновлять значение useRef()?**
-
-Обновление значения ref считается побочным эффектом. Именно по этой причине необходимо обновить значение ref в обработчиках событий и эффектах, а не во время визуализации (если только вы не работаете с ленивой инициализацией). React docs предупреждает нас, что несоблюдение этого правила может привести к неожиданному поведению приложения.
-<br>
-<br>
-
-**Использовать ли refs вместо state?**
-
-Нет. Refs – нереактивный, а значит, изменения значений не приведет к обновлению HTML. 
-<br>
-<br>
-
-**useRef() аналог createRef?**
-
-Нет.
-`createRef()` полезен для доступа к узлам DOM или элементам React, но он создает новый экземпляр `ref` на каждом рендере вместо того, чтобы сохранять значение между визуализациями при использовании в функциональных компонентах.
-
-`useRef()` полезен для доступа к узлам DOM или элементам React. Он сохраняет значение даже при повторной визуализации компонента.
-
-
-<br>
-<br>
-
-**Пример**
-```jsx
-const App = () => {
-  const ref = useRef(); //1. Создали объект ref
- 
-  useEffect(() => {
-    console.log(ref.current); //3. Взаимодействуем в DOM-элементом
-  }, []);
- 
-  return <div ref={ref} />; //2. привязали DOM-элемент
-};
-```
-
-1. создаём объект ref 
-2. указываем его в качестве элемента, обозначающего DOM-объект, к которому мы хотим обратиться, а также прописываем этот объект в качестве параметра. 
-3. теперь мы можем взаимодействовать с Dom-объектом напрямую, как если бы мы нашли его с помощью селектора. Для этого используем свойство current у объекта ref.
-<br>
-<br>
-
-**Ссылки**
-
-- [Habr - React hooks, как не выстрелить себе в ноги. Часть 4](https://habr.com/ru/company/otus/blog/677208/)
-- [Habr - React hooks, как не выстрелить себе в ноги. Разбираемся с замыканиями. Совместное использование хуков](https://habr.com/ru/company/otus/blog/699434/)
-- [Habr - React Hooks простыми словами](https://habr.com/ru/company/simbirsoft/blog/652321/)
-- [Mentanit - useRef](https://metanit.com/web/react/6.4.php)
-- [Оф. документация - Хук useRef](https://ru.reactjs.org/docs/hooks-reference.html#useref)
-- [Hexlet - Хуки](https://ru.hexlet.io/courses/js-react-hooks)
-- [Умный способ использования хука useRef() в React](https://bookflow.ru/umnyj-sposob-ispolzovaniya-huka-useref-v-react/)
-- [Демистификация хуков React: useCallback, useMemo и все-все-все](https://proglib.io/p/demistifikaciya-hukov-react-usecallback-usememo-i-vse-vse-vse-2021-02-28)
-
-<br></p>
-</details>
-
-<br>
 <br>
 
 [//]: # (useImperativeHandle)
