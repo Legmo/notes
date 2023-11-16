@@ -3581,335 +3581,291 @@
 [//]: # (CSS)
 <details><summary><b>CSS</b></summary><p>
 
----
 [//]: # (Структура проекта)
-<details><summary><b>Структура проекта</b></summary><p>
+- <details><summary><b>Структура проекта</b></summary><p>
 
-- Если нужно добавить для компонента CSS - создаю для этого компонента отдельную папку (название = названию компонента),
-  в ней файл компонента (index.js) и style.css
-- Есть ещё различные варианты CSS-in-JS - когда CSS хранится и генерируется прямо в JS-коде. Подходы интересные, но со
-  совимим минусами. См Styled component.
+  - Если нужно добавить для компонента CSS - создаю для этого компонента отдельную папку (название = названию компонента), в ней файл компонента (index.js) и style.css
+  - Есть ещё различные варианты CSS-in-JS - когда CSS хранится и генерируется прямо в JS-коде. Подходы интересные, но со совимим минусами. См Styled component.
 
   <br><p>
-
-</details>
+  </details>
 
 [//]: # (Библиотеки для работы с ClassNames: Classnames, CLSX)
-<details><summary><b>Библиотеки для работы с ClassNames: Classnames, CLSX</b></summary><p>
+- <details><summary><b>Библиотеки для работы с ClassNames: Classnames, CLSX</b></summary><p>
 
-Позволяют более простым способом объединять разные classes в зависимости от различных условий.
-Предположим, у вас есть 2 класса, из которых один будет использоваться каждый раз, а второй будет использоваться в
-зависимости от некоторого условия.
+  - Позволяют более простым способом объединять разные classes в зависимости от различных условий.
+  - Предположим, у вас есть 2 класса, из которых один будет использоваться каждый раз, а второй будет использоваться в зависимости от некоторого условия.
+  - 
+  - Есть две самых популярных библиотеки для работы ClassNames:
+    - [classnames](https://www.npmjs.com/package/classnames) — немного популярнее, более функциональна (см документацию)
+    - [clsx](https://www.npmjs.com/package/clsx) — легче и быстрее (т.к. функциональность меньше)
+  - 
+  - **Classnames**
+    - https://www.npmjs.com/package/classnames
+    - объединять имена css-классов, чтоб просто писать через запятую, без конструкций типа ’&{styleName1} + ', ' +
+      &{stylenmae2
+    - динамический css - писать простые условия в именах css-классов. Если props = true, то ставь класс
+    - ```js
+       classNames('foo', 'bar'); // => 'foo bar'
+       classNames('foo', { bar: true }); // => 'foo bar'
+       classNames({ 'foo-bar': true }); // => 'foo-bar'
+       classNames({ 'foo-bar': false }); // => ''
+       classNames({ foo: true }, { bar: true }); // => 'foo bar'
+       classNames({ foo: true, bar: true }); // => 'foo bar'
 
-Есть две самых популярных библиотеки для работы ClassNames:
+       // lots of arguments of various types
+       classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
 
-- [classnames](https://www.npmjs.com/package/classnames)
-- [clsx](https://www.npmjs.com/package/clsx)
+       // other falsy values are just ignored
+       classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
 
-Classnames немного популярнее, и более функциональна (читай документацию)<br>
-CLSX полегче и побыстрее (потому что функциональность меньше)
+       //Arrays
+       var arr = ['b', { c: true, d: false }];
+       classNames('a', arr); // => 'a b c'
 
-**Classnames**
-- https://www.npmjs.com/package/classnames
-- объединять имена css-классов, чтоб просто писать через запятую, без конструкций типа ’&{styleName1} + ', ' +
-  &{stylenmae2
-- динамический css - писать простые условия в именах css-классов. Если props = true, то ставь класс
-- ```js
-   classNames('foo', 'bar'); // => 'foo bar'
-   classNames('foo', { bar: true }); // => 'foo bar'
-   classNames({ 'foo-bar': true }); // => 'foo-bar'
-   classNames({ 'foo-bar': false }); // => ''
-   classNames({ foo: true }, { bar: true }); // => 'foo bar'
-   classNames({ foo: true, bar: true }); // => 'foo bar'
+       //Dynamic class names
+       let buttonType = 'primary';
+       classNames({ [`btn-${buttonType}`]: true });
+       ```
+  - 
+  - **Ссылки**
+    - [classnames](https://www.npmjs.com/package/classnames)
+    - [clsx](https://www.npmjs.com/package/clsx)
+    - [npmtrends](https://npmtrends.com/classnames-vs-clsx)
+    - [https://habr.com/ru/post/649381/](https://habr.com/ru/post/649381/)
+    - [Арек Нао - Вы не знаете библиотеку classnames](https://areknawo.com/you-dont-know-the-classnames-library)
+    - [Hexlet - Упрощённое использование библиотеки classnames](https://ru.hexlet.io/blog/posts/uproschyonnoe-ispolzovanie-biblioteki-classnames)
 
-   // lots of arguments of various types
-   classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
-
-   // other falsy values are just ignored
-   classNames(null, false, 'bar', undefined, 0, 1, { baz: null }, ''); // => 'bar 1'
-
-   //Arrays
-   var arr = ['b', { c: true, d: false }];
-   classNames('a', arr); // => 'a b c'
-
-   //Dynamic class names
-   let buttonType = 'primary';
-   classNames({ [`btn-${buttonType}`]: true });
-   ```
-
-**Ссылки**
-
-- [classnames](https://www.npmjs.com/package/classnames)
-- [clsx](https://www.npmjs.com/package/clsx)
-- [npmtrends](https://npmtrends.com/classnames-vs-clsx)
-- [https://habr.com/ru/post/649381/](https://habr.com/ru/post/649381/)
-- [Арек Нао - Вы не знаете библиотеку classnames](https://areknawo.com/you-dont-know-the-classnames-library)
-- [Hexlet - Упрощённое использование библиотеки classnames](https://ru.hexlet.io/blog/posts/uproschyonnoe-ispolzovanie-biblioteki-classnames)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (Adaptive/Responsive. Способы различения десктопа / мобильного)
-<details><summary><b>Adaptive/Responsive. Способы различения десктопа / мобильного</b></summary><p>
+- <details><summary><b>Adaptive/Responsive. Способы различения десктопа / мобильного</b></summary><p>
 
-`Адаптивный (Adaptive)` — комплекс визуальных интерфейсов, созданных под конкретные размеры экрана.
-`Отзывчивый (Responsive)` — единый интерфейс, который подстраивается под любой размер экрана.
+  - `Адаптивный (Adaptive)` — комплекс визуальных интерфейсов, созданных под конкретные размеры экрана.
+  - `Отзывчивый (Responsive)` — единый интерфейс, который подстраивается под любой размер экрана.
+  - 
+  - Два основных подхода к реализации:
+    - по ширине экрана. Определяем ширину скриптом (например `window.innerWidth`), храним в `state`, сравниваем с
+      константами-breakpoints, по результатам выводим нужный компонент или меняем класс)
+    - по user-agent
+  - Для обоих есть модули и библиотеки.
+  - Лучше всего использовать оба.
+  - 
+  - Подход с user-agent проще, но использовать только его недостаточно. Любой, кто серьезно разрабатывал адаптивные интерфейсы, знает про «магический поворот» iPad-ов и подобных ему девайсов, которые в вертикальном положении попадают под определение мобильных, а в горизонтальном — десктопных, но при этом имеют user-agent мобильного устройства. Также стоит отметить, что в рамках полностью адаптивно/отзывчивого приложения по одной лишь информации о user-agent невозможно определить мобильность, если пользователь использует, например, десктопный браузер, но сжал окно до «мобильного»размера.
+  - Не стоит пренебрегать информацией о user-agent. Очень часто в коде можно встретить такие константы, как isSafari, isIE и т.д., которые обрабатывают «особенности» этих устройств и браузеров. Лучше всего комбинировать оба подхода.
+  -
+  - **ВАЖНО**: при использовании системы типа [Google material UI](https://mui.com/material-ui/) - используй её встроенные возможности. Там есть `родные` методы реализации адаптивности/отзывчивости.
+  -
+  - **Общие соображения**
+    - надо отслеживать мобильность и на уровне CSS (менять вёрстку) и на уровне компонент (в одних случаях выводим
+      мобильные, в других десктопные, или просто изменять их).
+    - желательно и там и там использовать какой-то единый метод, иначе может получиться что в CSS (media-query)
+      определилиась одна ширина, а в компоненте (по ширине дисплея) - другая
+    - при этом, из компоненты я могу добавить класс Desktop, а вот из CSS передать в компонент информацию сложно
+    - откуда вывод: лучше работать «от комопненты» — определять мобильность там, прописывать в глобальный стэйт, и там где
+    нужен специальный css — выводить доп. класс (на основании этого знаения в state)
+  - 
+  - **Библиотеки**
+    - [react-use (979 199) - отслеживает кучу всего, в том числе MediaQuery и WindowSize](https://www.npmjs.com/package/react-use)
+    - [react-device-detect (530 267) - работает с user agent](https://www.npmjs.com/package/react-device-detect)
+    - [react-responsive (511 397) - работает с шириной экрана](https://www.npmjs.com/package/react-responsive)
+    - [mobile-detect (164 455) - работает с user agent](https://www.npmjs.com/package/mobile-detect)
+    - [react-media (112 694) - работает с шириной экрана](https://www.npmjs.com/package/react-media)
+    - [react-socks (4 401) - HOC](https://www.npmjs.com/package/react-socks)
+  - 
+  - **Ссылки**
+    - [Keohan J - 3 Ways To Implement Responsive Design In Your React App (2019)](https://itnext.io/3-ways-to-implement-responsive-design-in-your-react-app-bcb6ee7eb424)
+    - [Habr - Адаптивный или отзывчивый? Разбираем структуру React-компонентов (2020)](https://habr.com/ru/company/youla/blog/493292/)
+    - [Адаптивные веб-страницы с помощью React-Response и TypeScript (2022)](https://webformyself.com/adaptivnye-veb-stranicy-s-pomoshhyu-react-response-i-typescript/)
+    - [Build Responsive Web Pages With React-responsive and TypeScript (2021)](https://blog.openreplay.com/build-responsive-web-pages-with-react-responsive-and-typescript)
 
-Два основных подхода к реализации:
-
-- по ширине экрана. Определяем ширину скриптом (например `window.innerWidth`), храним в `state`, сравниваем с
-  константами-breakpoints, по результатам выводим нужный компонент или меняем класс)
-- по user-agent
-
-Для обоих есть модули и библиотеки.
-
-Лучше всего использовать оба.
-Подход с user-agent проще, но использовать только его недостаточно. Любой, кто серьезно разрабатывал адаптивные
-интерфейсы, знает про «магический поворот» iPad-ов и подобных ему девайсов, которые в вертикальном положении попадают
-под определение мобильных, а в горизонтальном — десктопных, но при этом имеют user-agent мобильного устройства. Также
-стоит отметить, что в рамках полностью адаптивно/отзывчивого приложения по одной лишь информации о user-agent невозможно
-определить мобильность, если пользователь использует, например, десктопный браузер, но сжал окно до
-«мобильного»размера.
-Также не стоит пренебрегать информацией о user-agent. Очень часто в коде можно встретить такие константы, как isSafari,
-isIE и т.д., которые обрабатывают «особенности» этих устройств и браузеров. Лучше всего комбинировать оба подхода.
-
-**ВАЖНО**: при использовании системы типа [Google material UI](https://mui.com/material-ui/) - используй её встроенные
-возможности. Там есть `родные` методы реализации адаптивности/отзывчивости.
-
-**Общие соображения**
-- надо отслеживать мобильность и на уровне CSS (менять вёрстку) и на уровне компонент (в одних случаях выводим
-  мобильные, в других десктопные, или просто изменять их).
-- желательно и там и там использовать какой-то единый метод, иначе может получиться что в CSS (media-query)
-  определилиась одна ширина, а в компоненте (по ширине дисплея) - другая
-- при этом, из компоненты я могу добавить класс Desktop, а вот из CSS передать в компонент информацию сложно
-- откуда вывод: лучше работать «от комопненты» — определять мобильность там, прописывать в глобальный стэйт, и там где
-  нужен специальный css — выводить доп. класс (на основании этого знаения в state)
-
-**Библиотеки**
-- [react-use (979 199) - отслеживает кучу всего, в том числе MediaQuery и WindowSize](https://www.npmjs.com/package/react-use)
-- [react-device-detect (530 267) - работает с user agent](https://www.npmjs.com/package/react-device-detect)
-- [react-responsive (511 397) - работает с шириной экрана](https://www.npmjs.com/package/react-responsive)
-- [mobile-detect (164 455) - работает с user agent](https://www.npmjs.com/package/mobile-detect)
-- [react-media (112 694) - работает с шириной экрана](https://www.npmjs.com/package/react-media)
-- [react-socks (4 401) - HOC](https://www.npmjs.com/package/react-socks)
-
-**Ссылки**
-- [Keohan J - 3 Ways To Implement Responsive Design In Your React App (2019)](https://itnext.io/3-ways-to-implement-responsive-design-in-your-react-app-bcb6ee7eb424)
-- [Habr - Адаптивный или отзывчивый? Разбираем структуру React-компонентов (2020)](https://habr.com/ru/company/youla/blog/493292/)
-- [Адаптивные веб-страницы с помощью React-Response и TypeScript (2022)](https://webformyself.com/adaptivnye-veb-stranicy-s-pomoshhyu-react-response-i-typescript/)
-- [Build Responsive Web Pages With React-responsive and TypeScript (2021)](https://blog.openreplay.com/build-responsive-web-pages-with-react-responsive-and-typescript)
-
-<br></p>
-</details>
+  <br></p>
+  </details>
 
 [//]: # (SCSS, SASS)
-<details><summary><b>SCSS, SASS</b></summary><p> 
+- <details><summary><b>SCSS, SASS</b></summary><p> 
 
-- Разработчики React не рекомендуют повторно использовать одни и те же классы CSS в разных компонентах. Например, вместо использования css-класса `.Button`  в компонентах `<AcceptButton>` а также `<RejectButton>`, рекомендуется создать отдельный компонент `<Button>` со своим стилем `.Button` => его можно отображать и в `<AcceptButton>`, и в `<RejectButton>` (но не наследовать).
-- Следование этому правилу часто делает препроцессоры CSS менее полезными (SCSS и SASS в том числе), поскольку такие функции, как примеси и вложенность, заменяются композицией компонентов. Однако вы можете интегрировать препроцессор CSS, если считаете его полезным.
-- Например, с его помощью удобно выносить в отдельный файл css-переменные (цвета, кегль шрифтов, размеры отступов и т.д.)
-  <br>
-  <br>
+  - Разработчики React не рекомендуют повторно использовать одни и те же классы CSS в разных компонентах. Например, вместо использования css-класса `.Button`  в компонентах `<AcceptButton>` а также `<RejectButton>`, рекомендуется создать отдельный компонент `<Button>` со своим стилем `.Button` => его можно отображать и в `<AcceptButton>`, и в `<RejectButton>` (но не наследовать).
+  - Следование этому правилу часто делает препроцессоры CSS менее полезными (SCSS и SASS в том числе), поскольку такие функции, как примеси и вложенность, заменяются композицией компонентов. Однако вы можете интегрировать препроцессор CSS, если считаете его полезным.
+  - Например, с его помощью удобно выносить в отдельный файл css-переменные (цвета, кегль шрифтов, размеры отступов и т.д.)
+    <br>
+    <br>
+  - 
+  - **Как включить поддержку SCSS**
+    1. `yarn add sass`
+    2. В некоторых случаях надо настраивать пути `SASS_PATH` и файл `.env` (см. [оф. документацию Create React APP](https://create-react-app.dev/docs/adding-a-sass-stylesheet))
+     <br>
+     <br>
+  - 
+  - **Ссылки**
+    - [Оф. документация Create React APP - Добавление таблицы стилей Sass (en)](https://create-react-app.dev/docs/adding-a-sass-stylesheet)
 
-**Как включить поддержку SCSS**
-1. `yarn add sass`
-2. В некоторых случаях надо настраивать пути `SASS_PATH` и файл `.env` (см. [оф. документацию Create React APP](https://create-react-app.dev/docs/adding-a-sass-stylesheet))
-   <br>
-   <br>
-
-
-**Ссылки**
-- [Оф. документация Create React APP - Добавление таблицы стилей Sass (en)](https://create-react-app.dev/docs/adding-a-sass-stylesheet)
+    <br></p>
 
   <br></p>
-
-<br></p>
-</details>
+  </details>
 
 [//]: # (Сss-modules)
-<details><summary><b>Сss-modules</b></summary><p> 
+- <details><summary><b>Сss-modules</b></summary><p> 
 
-- CSS модуль — это CSS файл, в котором все имена классов и анимаций имеют локальную область видимости по умолчанию.
-- Такой метод подключения CSS, при можно использовать одинаковые имена css-классов в разных компонентах, и конфликта не
-  будет. Что-то типа автоматизированного BEM. При это css по-прежнему хранятся в отдельном файле и пишутся практически
-  как обычно
-- Вместе с CSS-modules обычно используют библиотеки `CLSX` или `Classnames` (см. выше)
-  <br>
-  <br>
+  - CSS модуль — это CSS файл, в котором все имена классов и анимаций имеют локальную область видимости по умолчанию.
+  - Такой метод подключения CSS, при можно использовать одинаковые имена css-классов в разных компонентах, и конфликта не
+    будет. Что-то типа автоматизированного BEM. При это css по-прежнему хранятся в отдельном файле и пишутся практически
+    как обычно
+  - Вместе с CSS-modules обычно используют библиотеки `CLSX` или `Classnames` (см. выше)
+    <br>
+    <br>
+  - 
+  - **Как использовать (Create React APP)**
+    1. Переименовать файл стилей из `file.css` в `file.module.css`
+    2. В компоненте, где используются стили импортировать так: `import styles from './file.module.css';`
+    3. Классы прописывать так:
+      - Было: `<div className = 'App'>`
+      - Стало: `<div className = {styles.App}>`
+    4. Если в className нужно несколько стилей или какие-то условия (при значении Х ставь класс Y) используем библиотеки
+       `CLSX` или `Classnames` (см. выше).
+       <br>
+       <br>
+  - 
+  - **Ссылки**
+    - [Habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
+    - [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+    - [You-Tube - IT-Kamasutra 14. Уроки React JS (css-модули, css-modules)](https://youtu.be/bQ3UPYFHyJ0)
 
-**Как использовать (Create React APP)**
-1. Переименовать файл стилей из `file.css` в `file.module.css`
-2. В компоненте, где используются стили импортировать так: `import styles from './file.module.css';`
-3. Классы прописывать так:
-  - Было: `<div className = 'App'>`
-  - Стало: `<div className = {styles.App}>`
-4. Если в className нужно несколько стилей или какие-то условия (при значении Х ставь класс Y) используем библиотеки
-   `CLSX` или `Classnames` (см. выше).
-   <br>
-   <br>
-
-
-**Ссылки**
-- [Habr - Практическое руководство по использованию CSS Modules в React приложениях](https://habr.com/ru/post/335244/)
-- [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
-- [You-Tube - IT-Kamasutra 14. Уроки React JS (css-модули, css-modules)](https://youtu.be/bQ3UPYFHyJ0)
+    <br></p>
 
   <br></p>
-
-<br></p>
-</details>
+  </details>
 
 [//]: # (Styled components todo: дополнить)
-<details><summary><b>Styled components</b></summary><p>
+- <details><summary><b>Styled components</b></summary><p>
 
-
-Библиотека для работы со стилями методом `CSS in JS` (описание стилей в JavaScript файлах).
-
-Аналоги:
-
-- [Emotion](https://emotion.sh/docs/introduction)
-
-Среди причин выбора CSS-in-JS можно назвать то, что эта технология позволяет ограничивать область видимости стилей и
-отказаться от глобальной стилизации. Её удобно применять для работы с темами приложений.
-
-В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS
-быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме
-того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components
-занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее
-загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
-
-**Особенности**
-
-- Css in JS - использование компонент. Стиль становится частью компонента
-- динамический css
-- Вся мощь JS - у нас обычная функция, которая вернёт строку со стилями. Модем делать все что можно в функции
-- Lazy loading - стили подгружаются вместе с компонентом. Через это решается вопрос с critical css - компонент первый
-  загрузился, и стили уже загрузились с ним. Именно стили для него.
-- Стили формируются на этапе runtime.
-- Коллизии имён - имена стилей уникальны, не надо об этом беспокоится. Имена классов формируются автоматически, они
-  уникальны
-- Dead css - т.к. стили хранятся в компоненте, не бывает что компонент уже удален, а стили от него остались
-- Объединение не по технологиям (отдельные файлы html, JS, css), а по бищнес-залачам (кнопка, модальное окно).
-  Архитектурно более правильно - абстракция с точки зрения бизнес-функции
-- Работает в runtime - браузер парсит josh строку компонента и засовывает в css в header. Это быстро
-- Можно прокидывать стили в сторонние библиотеки ui-компонентов (оборачивать их)
-- атрибут attrs - пробросить в DOM-элемент какие-то property, которые хочется не через стили меняться, а прокидываться
-  сразу в DOM. Например быстрая-частая смена цвета фона - через inline-стили, чтоб не генерировать кучу classname
-- Есть отдельный компонент Icon, есть компонент Avatar внутри которого выводится Icon. Могу из компонента Avatar
-  управлять параметрами Icon. Если в Avatar пришёл props X - можно, например предать в Icons width = (размер*Х).rem
-
-**Ссылки**
-
-- [Официальный сайт проекта (en)](https://www.styled-components.com)
-- [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
-- [Habr - Styled Components — идеальная стилизация React-приложения (2021)](https://habr.com/ru/post/591381/)
-- [Habr - Знакомство с Styled components](https://habr.com/ru/company/digital-ecosystems/blog/321804/)
-- [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
-- [Habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
-- [Habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
-- [Habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
-- [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
-- [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
-- [Как использовать стилизованные компоненты в React](https://webformyself.com/kak-ispolzovat-stilizovannye-komponenty-v-react/)
-- [Знакомство с библиотекой Styled Components в React](https://medium.com/nuances-of-programming/%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%BE-%D1%81-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%BE%D0%B9-styled-components-%D0%B2-react-8bc58cd9d07d)
-
-<br></p>
-</details>
-
-[//]: # (React + Bootstrap)
-<details><summary><b>React + Bootstrap</b></summary><p>
-
-C Bootstrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют
-Bootstrap в React.
-
-<br></p>
-</details>
-
-[//]: # (React +  Google Material UI)
-<details><summary><b>React + Google Material UI</b></summary><p>
-
-[Material Design](https://mui.com) — фрэймворк/дизайн-система, создана Google дл быстрой разработки интрефейсов.
-
-Есть различные js-библиотеки, которые интегрируют Material Design в React.
-Я использую официальную библиотеку Google - [Material UI](https://mui.com/material-ui/getting-started/overview)
-
-Material UI использует «под капотом» библиотеку для работы со стилями — [Emotion](https://emotion.sh/docs/introduction)
-либо [Styled-components](https://styled-components.com/).
-Какую из этих двух библиотек использовать — выбирается
-при [установке npm-пакета](https://mui.com/material-ui/getting-started/installation/).
-
-Краткий алгоритм установки/настройки
-
-- ставим Material Ui и зависимости
-  - сам Material Ui `yarn add @mui/material @mui/styled-engine-sc styled-components`
-  - шрифт Roboto `yarn add @fontsource/roboto` или подключить из
-    CDN (https://mui.com/material-ui/react-typography/#general)
-  - SVG-иконки `yarn add @mui/icons-material`
-- ставим пакеты типизации (кажется не нужно, всё работает из коробки)
-- опционально: настраиваем IDE (подсветка Styled-components/Emotion и т.д.)
-  - Настройки: File | Settings | Plugins
-  - [Styled Components & Styled JSX](https://plugins.jetbrains.com/plugin/9997-styled-components--styled-jsx)
-  - https://www.jetbrains.com/help/phpstorm/react.html
-- настраиваю провайдер `theme` — объект с базовыми настройками дефолтных стилей, прокидывается по дереву проекта (или
-  его части) на подобии `context`
-  - https://mui.com/material-ui/customization/theming/
-  - Создаю файл с темой, например muiTheme.ts
-     ```js
-        import { red } from '@mui/material/colors';
-        import { createTheme } from '@mui/material/styles';
-  
-        export const theme = createTheme({
-          palette: {
-            primary: {
-              main: red[500],
-            },
-          },
-        });
-     ```
-  - оборачиваю компонент верхнего уровня в `ThemeProvider` и прокидываю в него `theme`
-    ```jsx
-      import React from 'react';
-      import App from './components/App';
-      import { ThemeProvider } from '@mui/material/styles';
-      import { theme } from './config/muiTheme';
-  
-      root.render(
-        <ThemeProvider theme = {theme}>
-          <App />
-        </ThemeProvider>
-      );
-    ```
-- задаю базовую разметку страницы
-  ```
-    <Box>
-      <Container>
-        < >
-      </Container>
-    </Box>
-  ```
-- подключаю готовые стилизованные компоненты (кнопки, меню и т.д.)
-- если надо - настраиваю и стилизую их
-
-**Ссылки**
-
-- [Оф. сайт](https://mui.com)
-- [Руководство - русский перевод (Notion, 2021)](https://www.notion.so/rsgd/Material-Design-2-afad31afd1bd48ed933005bc02f4527f)
-- [Руководство - русский перевод (Medium, 2021)](https://medium.com/@ruslanshgd)
-- [Habr - Reactjs, Material-UI with JSS. Краткий гайд (2020, устарело)](https://habr.com/ru/post/492378/)
-- [Полное руководство по React JS material-ui (2018)](https://webformyself.com/polnoe-rukovodstvo-po-react-js-material-ui/)
-
-<br></p>
-</details>
-
-[//]: # (Заметки)
-<details><summary><b>Заметки</b></summary><p>
-
-- Если не используешь CSS-modules - CSS лучше писать по [BEM-методологии](https://ru.bem.info/methodology/)
-- Про [CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
+  - Библиотека для работы со стилями методом `CSS in JS` (описание стилей в JavaScript файлах).
+  - Аналоги:
+    - [Emotion](https://emotion.sh/docs/introduction)
+  -
+  - Среди причин выбора CSS-in-JS можно назвать то, что эта технология позволяет ограничивать область видимости стилей и отказаться от глобальной стилизации. Её удобно применять для работы с темами приложений.
+  - В старой версии приложения я использовал библиотеку styled-components. Чем это плохо? Дело в том, что обычный CSS быстрее и занимает меньше места. Современные браузеры умеют загружать CSS-код параллельно с JavaScript-бандлом. Кроме того, для использования обычного CSS не нужно дополнительной библиотеки. Минифицированный вариант styled-components занимает порядка 54 Кб. Использование обычного CSS вместо styled-components привело к тому, что код приложения быстрее загружается, и к тому, что при изменении стилей системе приходится выполнять меньше вычислений
+  - 
+  - **Особенности**
+    - Css in JS - использование компонент. Стиль становится частью компонента - динамический css
+    - Вся мощь JS - у нас обычная функция, которая вернёт строку со стилями. Модем делать все что можно в функции
+    - Lazy loading - стили подгружаются вместе с компонентом. Через это решается вопрос с critical css - компонент первый загрузился, и стили уже загрузились с ним. Именно стили для него.
+    - Стили формируются на этапе runtime.
+    - Коллизии имён - имена стилей уникальны, не надо об этом беспокоится. Имена классов формируются автоматически, они уникальны
+    - Dead css - т.к. стили хранятся в компоненте, не бывает что компонент уже удален, а стили от него остались
+    - Объединение не по технологиям (отдельные файлы html, JS, css), а по бищнес-залачам (кнопка, модальное окно). Архитектурно более правильно - абстракция с точки зрения бизнес-функции
+    - Работает в runtime - браузер парсит josh строку компонента и засовывает в css в header. Это быстро
+    - Можно прокидывать стили в сторонние библиотеки ui-компонентов (оборачивать их)
+    - атрибут attrs - пробросить в DOM-элемент какие-то property, которые хочется не через стили меняться, а прокидываться сразу в DOM. Например быстрая-частая смена цвета фона - через inline-стили, чтоб не генерировать кучу classname
+    - Есть отдельный компонент Icon, есть компонент Avatar внутри которого выводится Icon. Могу из компонента Avatar управлять параметрами Icon. Если в Avatar пришёл props X - можно, например предать в Icons width = (размер*Х).rem
+  - 
+  - **Ссылки**
+    - [Официальный сайт проекта (en)](https://www.styled-components.com)
+    - [YouTube - Артём Арутюнян с докладом о библиотеке styled-components](https://www.youtube.com/watch?v=eOBz3_mQwo8)
+    - [Habr - Styled Components — идеальная стилизация React-приложения (2021)](https://habr.com/ru/post/591381/)
+    - [Habr - Знакомство с Styled components](https://habr.com/ru/company/digital-ecosystems/blog/321804/)
+    - [Habr - Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
+    - [Habr - CSS-in-JS — мифы и реальность (на примере styled-components)](https://habr.com/ru/post/417707/)
+    - [Habr - Анонс новой версии Styled Components v5](https://m.habr.com/ru/post/456422/)
+    - [Habr - История четырёхкратного ускорения React-приложения](https://habr.com/ru/company/ruvds/blog/455505/)
+    - [Medium - Styled-components getting started (en)](https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd)
+    - [Medium - How to use styled components with Material UI in a React app (en)](https://medium.com/sipios/use-styled-components-with-material-ui-react-e0759f9a15ce)
+    - [Как использовать стилизованные компоненты в React](https://webformyself.com/kak-ispolzovat-stilizovannye-komponenty-v-react/)
+    - [Знакомство с библиотекой Styled Components в React](https://medium.com/nuances-of-programming/%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%BC%D1%81%D1%82%D0%B2%D0%BE-%D1%81-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%BE%D0%B9-styled-components-%D0%B2-react-8bc58cd9d07d)
 
   <br></p>
+  </details>
 
-</details>
+[//]: # (React + Bootstrap)
+- <details><summary><b>React + Bootstrap</b></summary><p>
+
+  - C Bootstrap в React можно работать как в чистом виде, так и при помощи специальных react-библиотек, которые интегрируют Bootstrap в React.
+
+  <br></p>
+  </details>
+
+[//]: # (React +  Google Material UI)
+- <details><summary><b>React + Google Material UI</b></summary><p>
+
+  - [Material Design](https://mui.com) — фрэймворк/дизайн-система, создана Google дл быстрой разработки интрефейсов.
+  - 
+  - Есть различные js-библиотеки, которые интегрируют Material Design в React.
+  - Я использую официальную библиотеку Google - [Material UI](https://mui.com/material-ui/getting-started/overview)
+  - 
+  - Material UI использует «под капотом» библиотеку для работы со стилями — [Emotion](https://emotion.sh/docs/introduction) либо [Styled-components](https://styled-components.com/).
+  - Какую из этих двух библиотек использовать — выбирается при [установке npm-пакета](https://mui.com/material-ui/getting-started/installation/).
+  - 
+  - Краткий алгоритм установки/настройки
+    - ставим Material Ui и зависимости
+      - сам Material Ui `yarn add @mui/material @mui/styled-engine-sc styled-components`
+      - шрифт Roboto `yarn add @fontsource/roboto` или подключить из
+        CDN (https://mui.com/material-ui/react-typography/#general)
+      - SVG-иконки `yarn add @mui/icons-material`
+    - ставим пакеты типизации (кажется не нужно, всё работает из коробки)
+    - опционально: настраиваем IDE (подсветка Styled-components/Emotion и т.д.)
+      - Настройки: File | Settings | Plugins
+      - [Styled Components & Styled JSX](https://plugins.jetbrains.com/plugin/9997-styled-components--styled-jsx)
+      - https://www.jetbrains.com/help/phpstorm/react.html
+    - настраиваю провайдер `theme` — объект с базовыми настройками дефолтных стилей, прокидывается по дереву проекта (или
+      его части) на подобии `context`
+      - https://mui.com/material-ui/customization/theming/
+      - Создаю файл с темой, например muiTheme.ts
+         ```js
+            import { red } from '@mui/material/colors';
+            import { createTheme } from '@mui/material/styles';
+      
+            export const theme = createTheme({
+              palette: {
+                primary: {
+                  main: red[500],
+                },
+              },
+            });
+         ```
+      - оборачиваю компонент верхнего уровня в `ThemeProvider` и прокидываю в него `theme`
+        ```jsx
+          import React from 'react';
+          import App from './components/App';
+          import { ThemeProvider } from '@mui/material/styles';
+          import { theme } from './config/muiTheme';
+      
+          root.render(
+            <ThemeProvider theme = {theme}>
+              <App />
+            </ThemeProvider>
+          );
+        ```
+    - задаю базовую разметку страницы
+      ```
+        <Box>
+          <Container>
+            < >
+          </Container>
+        </Box>
+      ```
+    - подключаю готовые стилизованные компоненты (кнопки, меню и т.д.)
+    - если надо - настраиваю и стилизую их
+
+  - **Ссылки**
+    - [Оф. сайт](https://mui.com)
+    - [Руководство - русский перевод (Notion, 2021)](https://www.notion.so/rsgd/Material-Design-2-afad31afd1bd48ed933005bc02f4527f)
+    - [Руководство - русский перевод (Medium, 2021)](https://medium.com/@ruslanshgd)
+    - [Habr - Reactjs, Material-UI with JSS. Краткий гайд (2020, устарело)](https://habr.com/ru/post/492378/)
+    - [Полное руководство по React JS material-ui (2018)](https://webformyself.com/polnoe-rukovodstvo-po-react-js-material-ui/)
+
+  <br></p>
+  </details>
+
+[//]: # (Заметки)
+- <details><summary><b>Заметки</b></summary><p>
+
+  - Если не используешь CSS-modules - CSS лучше писать по [BEM-методологии](https://ru.bem.info/methodology/)
+  - Про [CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
+
+  <br></p>
+  </details>
 
 <br></p>
 </details>
