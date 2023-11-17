@@ -1,9 +1,15 @@
 <h1>Паттерны проектирования</h1>
 
-Повторяемая архитектурная конструкция, представляющая собой решение проблемы проектирования в рамках некоторого часто
-возникающего контекста.<br>
-Наиболее известны 23 классических шаблона проектирования - описаны в книге «Приёмы объектно-ориентированного
-проектирования. Паттерны проектирования» (банда четырёх - Эрих Гамма, Ричард Хелм, Ральф Джонсон, Джон Влиссидес)
+[//]: # (Общее)
+<details><summary><b>Общее</b></summary><p>
+
+  - Повторяемая архитектурная конструкция, представляющая собой решение проблемы проектирования в рамках некоторого часто возникающего контекста.
+  - Наиболее известны 23 классических шаблона проектирования
+  - Описаны в книге «Приёмы объектно-ориентированного проектирования. Паттерны проектирования» (банда четырёх - Эрих Гамма, Ричард Хелм, Ральф Джонсон, Джон Влиссидес)
+
+<br></p>
+</details>
+
 
 **Основные шаблоны (Fundamental)**
 
@@ -51,36 +57,48 @@
 - `Приспособленец` (Flyweight)
 - `Заместитель` (Proxy)
 
-**Поведенческие шаблоны (Behavioral)**<br>
-определяют взаимодействие между объектами, увеличивая таким образом его гибкость.
+[//]: # (Поведенческие шаблоны (Behavioral))
+<details><summary><b>Поведенческие шаблоны (Behavioral)</b></summary><p>
 
-- `Цепочка обязанностей` (Chain of responsibility)
-- `Команда` (Action, Transaction Command)
+- Определяют взаимодействие между объектами, увеличивая таким образом его гибкость
+- 
+- `Цепочка обязанностей` (Chain of responsibility) — [Описание 1](https://refactoring.guru/ru/design-patterns/chain-of-responsibility), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/chain-of-responsibility)
+- `Команда` (Action, Transaction Command) — [Описание 1](https://refactoring.guru/ru/design-patterns/command), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/command)
 - `Интерпретатор` (Interpreter)
-- `Итератор` (Cursor Iterator)
-- `Посредник` (Mediator)
-- `Хранитель` (Memento)
+- `Итератор` (Cursor Iterator) — [Описание 1](https://refactoring.guru/ru/design-patterns/iterator), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/iterator)
+- `Посредник` (Mediator) — [Описание 1](https://refactoring.guru/ru/design-patterns/mediator), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/mediator)
+- `Хранитель` (Memento, Опекун, Наблюдатель) — [Описание 1](https://refactoring.guru/ru/design-patterns/memento), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/memento)
 - `Null Object` ()
 - `Слуга` (Servant)
 - `Спецификация` (Specification)
-- `Состояние` (State)
-- `Стратегия` (Strategy)
-- `Шаблонный метод` (Template method)
-- `Посетитель` (Visitor)
+- `Состояние` (State) — [Описание 1](https://refactoring.guru/ru/design-patterns/state), [Описание 2]()
+- `Стратегия` (Strategy) — [Описание 1](https://refactoring.guru/ru/design-patterns/strategy), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/strategy)
+- `Шаблонный метод` (Template method) — [Описание 1](https://refactoring.guru/ru/design-patterns/template-method), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/tamplate-method)
+- `Посетитель` (Visitor) — [Описание 1](https://refactoring.guru/ru/design-patterns/visitor), [Описание 2](https://makarov-ivan.gitbook.io/patterns/patterns/behavioral-patterns/visitor)
 - `Простая политика` (Simple Policy)
 - `Event listener` (Event listener)
 - `Одноразовый посетитель` (Single-serving visitor)
 - `Иерархический посетитель` (Hierarchical visitor )
+  
+<br></p>
+</details>
 
-**Ссылки**
 
-- [Habr - Паттерны ООП в метафорах](https://habr.com/ru/post/136766/)
-- [Шпаргалка по шаблонам проектирования](https://habr.com/ru/post/210288/)
-- [Wiki - Шаблон проектирования](https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
-- [Doka - Архитектура и паттерны проектирования](https://doka.guide/js/architecture-and-design-patterns/)
-- [Doka - Порождающие паттерны](https://doka.guide/js/design-patterns-creational/)
-- [Doka - Структурные паттерны](https://doka.guide/js/design-patterns-structural/)
-- [Doka - Поведенческие паттерны](https://doka.guide/js/design-patterns-behaviorial/)
+[//]: # (Ссылки)
+<details><summary><b>Ссылки</b></summary><p>
+
+  - [Habr - Паттерны ООП в метафорах](https://habr.com/ru/post/136766/)
+  - [Шпаргалка по шаблонам проектирования](https://habr.com/ru/post/210288/)
+  - [Wiki - Шаблон проектирования](https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
+  - [Doka - Архитектура и паттерны проектирования](https://doka.guide/js/architecture-and-design-patterns/)
+  - [Doka - Порождающие паттерны](https://doka.guide/js/design-patterns-creational/)
+  - [Doka - Структурные паттерны](https://doka.guide/js/design-patterns-structural/)
+  - [Doka - Поведенческие паттерны](https://doka.guide/js/design-patterns-behaviorial/)
+  - .
+  - [refactoring.guru](https://refactoring.guru/ru)
+  
+<br></p>
+</details>
 
 <br> 
 <br> 
