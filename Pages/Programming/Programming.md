@@ -601,35 +601,40 @@
 [//]: # (Некоторые принципы программирования)
 <details><summary><b>Некоторые принципы программирования</b></summary><p>
 
-- `DRY` - Don't repeat yourself (Не повторяйся)
-- `KISS` - Keep it simple, stupid (Делай проще, тупица)
-- `YAGNI` - You aren't gonna need it (Вам это не понадобится)
-- `SOLID`
-    - (см выше - ООП)
-    - Single Responsibility Principle («Принцип единой ответственности», SRP)
-    - Open-Closed Principle («Принцип открытости-закрытости», OCP)
-    - Liskov Substitution Principle («Принцип подстановки Барбары Лисков», LSP)
-    - Interface Segregation Principle («Принцип разделения интерфейса», ISP)
-    - Dependency Inversion Principle («Принцип инверсии зависимостей», DIP)
-- `GRASP` - Gneral responsibility assignment software patterns (общие шаблоны распределения ответственностей, паттерны
-  проектирования) ООП
-    - Информационный эксперт (Information Expert)
-    - Создатель (Creator)
-    - Контроллер (Controller)
-    - Слабое зацепление (Low Coupling)
-    - Высокая связность (High Cohesion)
-    - Полиморфизм (Polymorphism)
-    - Чистое изготовление (Pure Fabrication)
-    - Перенаправление (Indirection)
-    - Устойчивость к изменениям (Protected Variations)
-- `CQS` - Command-query Separation (Разделение ответственности команд и запросов)
-- `Law of Demeter` - Закон Деметры (см ООП)
-- `SLAP` - Single level of Abstraction Principle (Принцип единого уровня абстракций)
-- 
-- **Интересные идеи на тему**
-  - [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
-- 
-- **Некоторые принципы Объектно Ориентированнаого Дизайна**
+  - `DRY` - Don't repeat yourself (Не повторяйся)
+  - `KISS` - Keep it simple, stupid (Делай проще, тупица)
+  - `YAGNI` - You aren't gonna need it (Вам это не понадобится)
+  - `SOLID`
+      - (см выше - ООП)
+      - Single Responsibility Principle («Принцип единой ответственности», SRP)
+      - Open-Closed Principle («Принцип открытости-закрытости», OCP)
+      - Liskov Substitution Principle («Принцип подстановки Барбары Лисков», LSP)
+      - Interface Segregation Principle («Принцип разделения интерфейса», ISP)
+      - Dependency Inversion Principle («Принцип инверсии зависимостей», DIP)
+  - `GRASP` - Gneral responsibility assignment software patterns (общие шаблоны распределения ответственностей, паттерны
+    проектирования) ООП
+      - Информационный эксперт (Information Expert)
+      - Создатель (Creator)
+      - Контроллер (Controller)
+      - Слабое зацепление (Low Coupling)
+      - Высокая связность (High Cohesion)
+      - Полиморфизм (Polymorphism)
+      - Чистое изготовление (Pure Fabrication)
+      - Перенаправление (Indirection)
+      - Устойчивость к изменениям (Protected Variations)
+  - `CQS` - Command-query Separation (Разделение ответственности команд и запросов)
+  - `Law of Demeter` - Закон Деметры (см ООП)
+  - `SLAP` - Single level of Abstraction Principle (Принцип единого уровня абстракций)
+  - 
+  - **Интересные идеи на тему**
+    - [YouTube - Ментальное программирование](https://www.youtube.com/watch?v=EEq1wdM2M2w)
+
+<br></p>
+</details>
+
+[//]: # (Некоторые принципы Объектно Ориентированнаого Дизайна)
+<details><summary><b>Некоторые принципы Объектно Ориентированнаого Дизайна</b></summary><p>
+
   - **Закон Деметры** (англ. Law of Demeter, LoD) - каждый программный модуль:
     - должен обладать ограниченным знанием о других модулях: знать о модулях, которые имеют «непосредственное» отношение
       к этому модулю.
