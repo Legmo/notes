@@ -820,6 +820,8 @@
 <br></p>
 </details>
 
+<br> 
+
 [//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>
 
