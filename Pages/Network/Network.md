@@ -789,34 +789,32 @@
 [//]: # (HTTP-протокол — Коды состояний)
 <details><summary><b>HTTP-протокол — Коды состояний</b></summary><p>
 
-**Основные группы кодов состояний**
+- **Основные группы кодов состояний**
+  - `1xx` - Information
+  - 100 - Continue
+  - `2xx` - Success
+  - 200 - OK
+  - 201 - Created
+  - 202 - Accepted
+  - 204 - No Content
+  - `3xx` - Redirect
+  - 301 - Moved Permanently
+  - 307 - Temporary Redirect
+  - `4xx` - Client Error
+  - 400 - Bad Request
+  - 401 - Unauthorized
+  - 403 - Forbidden
+  - 404 - Not Found
+  - `5xx` - Server Error
+  - 500 - Internal Server Error
+  - 501 - Not Implemented
+  - 502 - Bad Gateway
+  - 503 - Service Unavailable
+  - 504 - Gateway Timeout
 
-- `1xx` - Information
-- 100 - Continue
-- `2xx` - Success
-- 200 - OK
-- 201 - Created
-- 202 - Accepted
-- 204 - No Content
-- `3xx` - Redirect
-- 301 - Moved Permanently
-- 307 - Temporary Redirect
-- `4xx` - Client Error
-- 400 - Bad Request
-- 401 - Unauthorized
-- 403 - Forbidden
-- 404 - Not Found
-- `5xx` - Server Error
-- 500 - Internal Server Error
-- 501 - Not Implemented
-- 502 - Bad Gateway
-- 503 - Service Unavailable
-- 504 - Gateway Timeout
-
-**Ссылки**
-
-- [Яндекс.Справка - Справочник по кодам статуса HTTP](https://yandex.ru/support/webmaster/error-dictionary/http-codes.html)
-- [MDN - Коды ответа HTTP](https://developer.mozilla.org/ru/docs/Web/HTTP/Status)
+- **Ссылки**
+  - [Яндекс.Справка - Справочник по кодам статуса HTTP](https://yandex.ru/support/webmaster/error-dictionary/http-codes.html)
+  - [MDN - Коды ответа HTTP](https://developer.mozilla.org/ru/docs/Web/HTTP/Status)
 
 <br></p>
 </details>
