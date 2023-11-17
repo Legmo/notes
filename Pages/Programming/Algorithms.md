@@ -71,10 +71,10 @@
   - `Big Theta` (пишется как О с чёрточкой) располагается между О и омегой и показывает точную функцию сложности алгоритма. С её помощью правильнее искать average case.
   - `Small o` и `Small omega` находятся по краям этой иерархии и используются в основном для сравнения алгоритмов между собой.
 
-**Ссылки**
-- [Habr - Big O](https://habr.com/ru/post/444594/)
-- [Big O Notation: что это такое и как её посчитать](https://skillbox.ru/media/code/big-o-notation-chto-eto-takoe-i-kak-eye-poschitat/)
-- [Proglib - Big O нотация: что это такое и почему ее обязательно нужно знать каждому программисту](https://proglib.io/p/big-o-notaciya-chto-eto-takoe-i-pochemu-ee-obyazatelno-nuzhno-znat-kazhdomu-programmistu-2022-02-17)
+- **Ссылки**
+  - [Habr - Big O](https://habr.com/ru/post/444594/)
+  - [Big O Notation: что это такое и как её посчитать](https://skillbox.ru/media/code/big-o-notation-chto-eto-takoe-i-kak-eye-poschitat/)
+  - [Proglib - Big O нотация: что это такое и почему ее обязательно нужно знать каждому программисту](https://proglib.io/p/big-o-notaciya-chto-eto-takoe-i-pochemu-ee-obyazatelno-nuzhno-znat-kazhdomu-programmistu-2022-02-17)
 
 <br></p>
 </details>
