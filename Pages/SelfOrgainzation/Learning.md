@@ -223,6 +223,7 @@
 - [Tim Urban - Часть 2. Матрица прокрастинации (откладывания дел «на потом»)](https://habr.com/ru/post/303140/)
 - [Knife — Что такое «четвертая промышленная революция» и как она повлияет на нашу работу](https://knife.media/the-fourth-industrial-revolution/)
 - [YouTube. Шульман Е — Как выбрать эксперта](https://youtu.be/tzcbUuz5vy0?t=1221)
+- [YouTube - Что такое soft-skills по-русски](https://youtu.be/SGdMCRSMtOk?si=SfaKd4scwMhGnFRp)
 
 <br></p>
 </details>

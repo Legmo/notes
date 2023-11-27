@@ -82,6 +82,7 @@
 - [MetaLamp - Roadmap. Frontend & Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
 - [MetaLamp - Roadmap. Frontend (GitHub)](https://github.com/fullstack-development/developers-roadmap/tree/master/frontend)
 - [IT-Kamasutra - Как пройти испытательный срок? (YouTube)](https://youtu.be/U62-XQRpFT4)
+- [YouTube - Что такое soft-skills по-русски](https://youtu.be/SGdMCRSMtOk?si=SfaKd4scwMhGnFRp)
 
 <br>
 <br>

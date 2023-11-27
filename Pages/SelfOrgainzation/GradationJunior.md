@@ -79,6 +79,7 @@
 - [MetaLamp - Бесплатный курс](https://www.metalamp.io/education)
 - [MetaLamp - Roadmap. Frontend & Backend (GitHub)](https://github.com/fullstack-development/developers-roadmap)
 - [MetaLamp - Roadmap. Frontend (GitHub)](https://github.com/fullstack-development/developers-roadmap/tree/master/frontend)
+- [YouTube - Что такое soft-skills по-русски](https://youtu.be/SGdMCRSMtOk?si=SfaKd4scwMhGnFRp)
 
 <br>
 <br>
