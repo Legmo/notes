@@ -147,9 +147,9 @@
     - 2014 - Vue
     - 2015 - Polymer
     - 2015 - Aurelia
-  - 
+  -  
   - Также Facebook разработал **Flux** - архитектурный шаблон, который дополняет React (см. Redux). 
-    -
+  -
   - **Ссылки**
     - [Angular vs. React: Сравнение 7 Основных характеристик](https://code.tutsplus.com/ru/articles/angular-vs-react-7-key-features-compared--cms-29044)
     - [React и SEO: преимущества изоморфности React для одностраничных приложений](https://xbsoftware.ru/blog/react-seo-izomorphnost-react-odnostrannoe-prilozhenie/)
