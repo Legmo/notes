@@ -3,11 +3,9 @@
 [//]: # (Общий список вопросов)
 <details><summary><b>Общий список вопросов</b></summary><p>
 
-[//]: # (JS)
-- <details><summary><b>JS</b></summary><p>
+[//]: # (JS — вопросы с собеседований)
+- <details><summary><b>JS — вопросы с собеседований</b></summary><p>
 
-
-  - **С СОБЕСЕДОВАНИЙ**
   - Асинхронность
     - Как работает движок JS «под капотом» (event loop и т.д.)?
     - Что такое окружение?
@@ -18,6 +16,13 @@
     - Что это такое?
     - Promise API — promise.all и т.д.
     - Можно ли реализовать аналог callback-hell с использованием промисов (внутри промиса?)
+    - Как из SetTimeout сделать Promise? (не очень понял вопрос, видимо имелось ввиду - как вызвать промис из setTimeout)
+  - Замыкания
+  - This, bind, call. Контекст
+  - Стрелочные функции 
+    - Отличие стрелочных функций от обычных
+    - Можно ли сделать .bind стрелочной функции
+      - ОТВЕТ: Нет. У стрелочных функций нет `this`, он всегда будет определяться как контекст, в котором был определен. Если требуется привязка this — надо использовать обычную функцию. Ошибки не будет, просто не сработает (скорее всего)
   - Типы данных
     - Какие есть типы данных в JS?
     - Что даёт typeof
@@ -34,54 +39,56 @@
     - Что находится в конце цепочки прототипов?
       - ОТВЕТ: Object.prototype. Все объекты наследуют свойства и методы Object. Любая попытка поиска за пределами цепочки приводит к null.
     - Можно ли как-то поменять прототип
-  - Замыкания
-  - Делегирование, всплытие
-  - This, bind, call
-  - Стрелочные функции 
-    - Отличие стрелочных функций от обычных
-    - Можно ли сделать .bind стрелочной функции
-      - ОТВЕТ: Нет. У стрелочных функций нет `this`, он всегда будет определяться как контекст, в котором был определен. Если требуется привязка this — надо использовать обычную функцию. Ошибки не будет, просто не сработает (скорее всего)
-  - Отличия Cookie, LocalStorage, sessionStorage 
-    - https://learn.javascript.ru/localstorage
+  - Делегирование и всплытие событий
+  - Отличия `cookie`, `localStorage`, `sessionStorage` 
+    - ОТВЕТ: https://learn.javascript.ru/localstorage
   - Объекты
-    - Массивы - это объекты?
+    - Массивы — это объекты?
+    - Как скопировать объект в JS?
     - Как сделать полную копию объекта со свойствами типа 'number' и 'string'.
       - ОТВЕТ: 
-      1. создать новый объект и воспроизвести структуру существующего, перебрав его свойства и скопировав их на
-         примитивном уровне. Нпрмиер циклом `for..in`
+      1. создать новый объект и воспроизвести структуру существующего, перебрав его свойства и скопировав их на примитивном уровне. Например циклом `for..in`
       2. использовать метод `Object.assign.` (`Object.assign(целевой_объект, [исходный_объект1, исходный_объект2, ...])`)
       3. при глубоком копировании - использовать рекурсию или что-то вроде cloneDeep из библиотеки lodash
-    - Как скопировать объект в JS?
     - Как удалить поле из объекта без копирования самого объекта?
       - ОТВЕТ: метод `delete`. Но не использовать это в массивах! В массивах - `.splice`, `slice`, `pop`, `.length - 1`... Если нужен новый объект со всеми ключами оригинала, кроме некоторых — деструктурирование.
     - Создание объекта через функции-конструкторы
-  - Загрузка скриптов — обычная, async и defer
+  - Способы загрузки скриптов — обычная, `async` и `defer`
+  - Какие есть способы объявить переменную? Чем они отличаются?
+  - Что такое «область видимости»?
+  - Что такое «блок кода»?
+  - Метод массива `.map()`
   - Зачем нужна конструкция `??` 
     - ОТВЕТ: оператор «логического или»
-  - Что такое область видимости
-  - Какие есть способы объявить переменную, чем они отличаются
-  - Что такое блок кода
-  - Метод массива .map()
-  - В чём разница `.preventDefault()` и `.stopPropagation()`
+  - В чём разница `.preventDefault()` и `.stopPropagation()`?
     - ОТВЕТ: `.preventDefault()` — метод для отмены действия браузера
     - ОТВЕТ: `.stopPropagation()` — остановка всплытия события. По умолчанию событие будет всплывать до элемента <html>, а затем до объекта document, а иногда даже до window, вызывая все обработчики на своём пути. Любой промежуточный обработчик может решить, что событие полностью обработано, и остановить всплытие. Не использовать без явной нужды, очевидной и архитектурно прозрачной. Иногда вместо этого мы можем использовать event.defaultPrevented, чтобы просигналить другим обработчикам, что событие обработано.
-  - Какие есть циклы в JS
-  - Как работает цикл `for`, что у него под капотом? (Под капотом у него `while`, а у того — генератор)
-  - Как из SetTimeout сделать Promise? (не очень понял вопрос, видимо имелось ввиду - как вызвать промис из setTimeout)
-  - Что такое WebWorkers API?
-  - Что такое Service Worker API?
+  - Циклы
+    - Какие есть циклы в JS?
+    - Как работает цикл `for`, что у него под капотом? (Под капотом у него `while`, а у того — генератор)
   - ООП
     - Классы, объекты, ООП
     - Как работает класс в JS  
-  - .
-  - .
-  - **ПРОЧЕЕ**
-  - Типы данных, приведение типов
-  - Работа JS-движка 
+  - Что такое `WebWorkers API`?
+    - ОТВЕТ: API для параллельного выполнения сложных вычислительных задач. Потоки, принадлежащие браузеру, которые можно использовать для выполнения JS-кода без блокировки цикла событий.
+  - Что такое `Service Worker API`?
+    - ОТВЕТ: разновидность WebWorkers. Скрипт, выполняется браузером в фоне, отдельно от веб-страницы. Не имеет доступа к DOM. Может выполнять функции для которых не требуется взаимодействие со страницей или пользователем. Продолжает работать, даже когда вкладка с сайтом закрыта. Например: кешированть файлы из онлайн веб-приложения на локальное устройство пользователя и затем работать полностью в оффлайне.
+
+  <br></p>
+  </details> 
+
+  [//]: # (JS)
+- <details><summary><b>JS</b></summary><p>
+
+  - Типы данных
+    - Какие есть типы данных
+    - Приведение типов
+    - Оператор “+” с типами данных,
+  - Движок JS 
     - Event Loop, стэк, очередь задач, микро/макро задачи, веб-воркеры, SetInterval/Promises...
     - Асинхронность и однопоточность JS - что это значит и чем обусловлено.
-    - Сборщик мусора
     - Интерпретатор
+  - Сборщик мусора
   - Промисы
     - Promises
     - Promises API
@@ -91,48 +98,67 @@
       - это промис или просто обработчик, в котором я могу использовать промис?
     - как await ставит код на паузу
       - блокируется весь скрипт? Только данный блок?
-    - циклы,  for-await-of
+    - циклы, for-await-of
     - 
     - [Хабр — Визуализация промисов и Async/Await](https://habr.com/ru/articles/501702)
     - [Хабр — Задачи, микрозадачи, очереди и планы](https://habr.com/ru/articles/264993/)
     - [Хабр — Оптимизация производительности фронтенда. Часть 2. Event loop, layout, paint, composite](https://habr.com/ru/articles/517594/)
-  - Feetch  и альтернативы (XMLHttpRequest...)
+  - Способы выполнения HTTP-запросов
+    - Feetch
     - XMLHttpRequest - [Learnjs](https://learn.javascript.ru/xmlhttprequest) (его современный вариант — fetch)
   - Прототипы
-    - прототипное наследование
+    - Прототипное наследование
   - Замыкания
   - Передача "по значению" и "по ссылке"
   - Различие стрелочных функций и обычных
   - This, bind, call
   - Контекст выполнения
     - [Контекст выполнения](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#this)
+    - [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
   - Атрибуты async и defer у тега script
   - Лексическое всплытие
-  - .
   - Методы базовых типов
   - Переменные
   - Лексическое окружение
-  - Каррирование
-  - Операторы
-  - Функции, включая IIFE
+  - [Use strict](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#useStrict)
+  - [Атрибуты async и defer у тега script](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#asyncDefer)
+  - Функции, IIFE
     - Синтаксис "new Function"
     - Immediately Invoked Function Expression, IIFE — это функция, которая выполняется сразу же после того, как была определена.
-    - Самовыполняющиеся функции. Модули 
-  - Функции высшего порядка
+    - [Function Declaration / Function Expression](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#funcDeclaration) — `function sayHi(){}` / `let sayHi = function(){}`
+    - Функции высшего порядка
+    - [Анонимные функции, функциональные выражения](https://learn.javascript.ru/function-expressions)
+    - Продвинутая работа с функциями (learnjs)
+    - Callback
+  - Модули
   - Объекты
+    - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
+    - Флаги и дескрипторы  
+    - Аттрибуты свойств. Флаги, дескрипторы, методы доступа
   - Методы массивов и объектов
-  - Флаги и дескрипторы  
+  - Создать копию массива = [...arraynme]
+  - Как обращаться к свойствам объекта через object .['key']
   - API
   - Поднятие/погружение
   - Лексическое всплытие
   - Поднятие переменных (hoisting)
     - механизм, при котором переменные и объявления функций, передвигаются вверх своей области видимости перед тем, как код будет выполнен.
-  - Callback
-  - Symbol
-  - Логические операторы присваивания `&&=`, `||=`, `??=`**
+  - Оператор объединения с null - `??`
+      - возвращает первый аргумент, если он не null/undefined , иначе второй.
+      -  [Оператор нулевого слияния (learnjs)](https://learn.javascript.ru/nullish-coalescing-operator)
+  - Список сокращённых лог. операторов
+  - Логические операторы присваивания `&&=`, `||=`, `??=` — «присвоить если...»
+    - `user &&= 'A'` — если user === true  
+    - *user && (user = 'A')*
+    - `user ||= 'A'` — если user === false  
+    - if(!user)(user = 'A')
+    - `user ??= 'A'` — если user === null или undefined  
+    - *if(user === null || user === undefined)( user = 'A')*
   - Опциональная цепочка `?.`*
-  - Коллекции
-  - Аттрибуты свойств. Флаги, дескрипторы, методы доступа
+  - Побитовые операции
+  - BigInt
+  - Symbol
+  - Коллекции Set, Map, WeakSet и WeakMap
   - Перебор структур данных. Методы `keys`, `values`, `entries`
   - ООП
     - Классы
@@ -141,41 +167,118 @@
     - паттерны
     - SOLID
     - Архитектурные паттерны и стили MVC, MVVM, MVP, RESTful и пр.
-    - ...
-  - 
-  - [Use strict](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#useStrict)
-  - [Атрибуты async и defer у тега script](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#asyncDefer)
-  - [Function Declaration / Function Expression](https://github.com/Legmo/notes/blob/master/Pages/JS/JS.md#funcDeclaration) — `function sayHi(){}` / `let sayHi = function(){}`
-  - Декораторы
+    - Свойства геттеры и сеттеры
+  - Каррирование
+  - Декораторы и переадресация вызова
+  - Proxy и Reflect
   - Proxy-объекты
-  - 
-  - Свойства геттеры и сеттеры
+  - Перебираемые объекты
   - [Итераторы, генераторы](https://learn.javascript.ru/generators-iterators)
   - Асинхронные итераторы и генераторы 
     - https://learn.javascript.ru/async-iterators-generators
     - https://learn.javascript.ru/async-await
   - Цикл for-await-of  - [Learnjs](https://learn.javascript.ru/async-await)  
-  - [Habr - Работа с объектами в JavaScript: теория и практика](https://habr.com/ru/post/48542/)
   - [MDN - раздел про JS-фрэймворки (частично на русском)](https://developer.mozilla.org/ru/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
-  - Контекст выполнения - [Habr - Контекст выполнения и стек вызовов в JavaScript](https://habr.com/ru/company/ruvds/blog/422089/)
+  - Как профилировать и отлаживать js (кроме console.log)
+  - [Прокси](https://learn.javascript.ru/proxy)
+  - DOM
+    - [DOM](https://learn.javascript.ru/ui)
+    - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
+  - Eval
+  - Интернационализация
+  - Switch
+  - Ошибки, обработка ошибок
+  - Отладка в браузере
+    - debugger
+    - выполнение кода в консоли
+    - Разобраться как использовать debugger в коде и в расширении браузера
+  - Если в компоненте поставил addEventListener - обязательно ставить removeEventListener https://youtu.be/BhwoKN1E3C8?t=2553
+  - .
+  - .
+  - 
+  - [Что нового в последних 3 версиях JS](../JS/JS.md#new)
+  - [Работа JS-движка](../JS/JS.md#engine)
+    - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
+      промисов (then, catch, finally), async/await, веб-воркеры,
+    - асинхронность и однопоточность JS - что это значит и чем обусловлено
+    - В каком порядке будут выводиться console.log, Promise
+  - [Сборщик мусора](../JS/JS.md#garbageCollection)
+  - 
+  - [Use strict](../JS/JS.md#useStrict)
+  - [Атрибуты async и defer у тега script](../JS/JS.md#asyncDefer)
+  - [Function Declaration / Function Expression](../JS/JS.md#funcDeclaration) — `function sayHi(){}`
+    / `let sayHi = function(){}`
+  - [Замыкания](../JS/JS.md#closures)
+  - [Стрелочные функции](../JS/JS.md#arrowFunc)
+  - [Контекст выполнения](../JS/JS.md#this)
+  - [Ключевое слово this](../JS/JS.md#this)
+  - [Метод bind()](../JS/JS.md#bind)
+  - [Методы apply() и call()](../JS/JS.md#callApply)
+  - 
+  - [Promise](../JS/JS.md#promise)
+  - [Async/Await](../JS/JS.md#promiseAsync)
+  - [Асинхронная итерация](../JS/JS.md#asyncIteratorsGenerators)
+  - [Цикл for-await-of](../JS/JS.md#cycleForAwaitOf)
+  - [Fetch](../JS/JS.md#fetch) - метод реализации асинхронных запросов в нативном JS. Предоставляется Fetch API
+  - [XMLHttpRequest](../JS/JS.md#xmlHttpRequest) - его современный аналог — fetch
+  - 
+  - [Что является объектом в JS?](../JS/JS.mdwhatIsObject#)
+  - [Передача по значению / по ссылке](../JS/JS.md#bjectReference)
+  - [Методы объектов](../JS/JS.md#objectMethods)
+  - [Методы массивов](../JS/JS.md#arrayMethods)
+    - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
+  - [Мутирующие методы массивов](../JS/JS.md#arrayMethods) - sort, reverse, splice
+  - [Копирование объектов](../JS/JS.md#objectCopy) - обычное, глубокое
+  - 
+  - [Типы в JS (string, number, object...)](../JS/JS.md#types)
+  - [Приведение типов](../JS/JS.md#typesTransformation)
+  - [Различия Undefined и Null](../JS/JS.md#types)
+  - [Методы примитивов](../JS/JS.md#primitiveMethods)
+  - [Ver, Let, Const](../JS/JS.md#variables)
+  - [Оператор нулевого слияния (`??`)](../JS/JS.md#nullishСoalescing)
+  - [Логические операторы присваивания(`&&=`, `||=`, `??=`)](../JS/JS.md#logicalAssignment)
+  - [Опциональная цепочка `?.`](../JS/JS.md#optionalChaining)
+  - [Деструктурирующее присваивание](../JS/JS.md#destruct)
+  - [Остаточные параметры и оператор расширения / spread (...)](../JS/JS.md#spread)
+  - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](../JS/JS.md#tmpLiterals)
+  - [Параметры функции по умолчанию](../JS/JS.md#funcDefParam)
+  - 
+  - [Лексическое всплытие](../JS/JS.md#eventHoisting)
+  - [Рекурсия](../Programming/Programming.md#recursion)
+  - [Коллекции Map и Set, WeakMap и WeakSet](../JS/JS.md#collections)
+  - [Декораторы](../JS/JS.md#decorators)
+  - [Декоратор Debounce](../JS/JS.md#debounce)
+  - [Декоратор Throttling](../JS/JS.md#throttling)
+  - [Прототипы](../JS/JS.md#prototype)
+  - [Классы](../JS/JS.md#classes)
+    - [Базовые вопросы (learn.javascript.ru)](https://learn.javascript.ru/classes)
+    - [Ключевые слова extends и super (tproger)](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
+    - [Публичные поля классов (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
+    - ...
+  - [Аттрибуты свойств (Флаги, дескрипторы, методы доступа)](../JS/JS.md#propertiesAttributes)
   - Как профилировать и отлаживать js (кроме console.log)
   - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
-  - [Анонимные функции, функциональные выражения](https://learn.javascript.ru/function-expressions)
-  - [Прокси](https://learn.javascript.ru/proxy)
-  - [DOM](https://learn.javascript.ru/ui)
-  - Перебираемые объекты
-  - Декораторы и переадресация вызова
-  - JSON
-  - Продвинутая работа с функциями 
-  - Прототипы, наследование
-  - Обработка ошибок
-  - Модули
-  - Proxy и Reflect
-  - Eval
-  - Побитовые операции
-  - BigInt
-  - Интернационализация
   - 
+  - [Циклы](../JS/JS.md#cycles)
+  - [Перебор структур данных. Методы «keys», «values», «entries»](../JS/JS.md#keysValuesEntries)
+  - [Перебираемые/итерируемые объекты](../JS/JS.md#iterable)
+  - [Преобразование объектов в примитивы](../JS/JS.md#objectToPrimitive)
+  - [Symbol](../JS/JS.md#symbol)
+  - [Callback](../JS/JS.md#callback)
+  - [Cамовыполняющиеся функции. Модули](../JS/JS.md#modules)
+  - [Обработчики событий, events handlers](../JS/JS.md#eventsHandlers)
+  - [Web-workers](../JS/JS.md#webWorkers)
+  - [Proxy-объекты](../JS/JS.md#proxyObjects)
+  - [Функции-генераторы](../JS/JS.md#funcGenerators)
+  - [Итераторы](../JS/JS.md#iterators)
+  - [Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../JS/JS.md#dataStorage)
+  - [Утечки памяти в JS](../JS/JS.md#memoryLeak)
+  - [Объект Error](../JS/JS.md#errorsObject)
+  - [Чистота кода](../JS/JS.md#codeCleaning)
+  - [Языки поверх JavaScript](../JS/JS.md#metaLanguages)
+  - .
+  - .
+  - **ТЕМЫ ИЗ LEARN.JAVASCRIPT.RU**
   - Браузер - документ, события, интерфейсы
     - Документ
       - Браузерное окружение, спецификации
@@ -254,118 +357,6 @@
     - Настройка стилей теневого DOM
     - Теневой DOM и события
   - Регулярные выражения
-  - 
-  - Приведение типов данных, 
-  - Оператор “+” с типами данных, 
-  - Методы массивов
-  - Коллекции Set, Map, WeakSet и WeakMap
-  - Циклы
-  - Switch
-  - Ошибки
-  - Сборка мусора  
-  - Контекст выполнения, коллбэк, this, bind, call/apply
-  - Оператор объединения с null - `??`  
-    - возвращает первый аргумент, если он не null/undefined , иначе второй.  
-    -  [Оператор нулевого слияния (learnjs)](https://learn.javascript.ru/nullish-coalescing-operator)
-  - Список сокращённых лог. операторов
-  - Логические операторы присваивания `&&=`, `||=`, `??=` — «присвоить если...»
-          - `user &&= 'A'` — если user === true  
-            - *user && (user = 'A')*
-          - `user ||= 'A'` — если user === false  
-            - if(!user)(user = 'A')
-          - `user ??= 'A'` — если user === null или undefined  
-            - *if(user === null || user === undefined)( user = 'A')*
-  - Отладка в браузере
-    - debugger
-    - выполнение кода в консоли
-
-  - Разобраться как использовать debugger в коде и в расширении браузера
-  - Создать копию массива = [...arraynme]
-  - Как обращаться к свойствам объекта через object .['key']
-  - Если в компоненте поставил addEventListener - обязательно ставить removeEventListener https://youtu.be/BhwoKN1E3C8?t=2553
-  - .
-  - .
-  -
-  - [Что нового в последних 3 версиях JS](../JS/JS.md#new)
-  - [Работа JS-движка](../JS/JS.md#engine)
-    - event loop, среда, web API, стэк, очередь задач, микро/макро задачи, setInterval/setTimeout, promises, обработчики
-      промисов (then, catch, finally), async/await, веб-воркеры,
-    - асинхронность и однопоточность JS - что это значит и чем обусловлено
-    - В каком порядке будут выводиться console.log, Promise
-  - [Сборщик мусора](../JS/JS.md#garbageCollection)
-  -
-  - [Use strict](../JS/JS.md#useStrict)
-  - [Атрибуты async и defer у тега script](../JS/JS.md#asyncDefer)
-  - [Function Declaration / Function Expression](../JS/JS.md#funcDeclaration) — `function sayHi(){}`
-    / `let sayHi = function(){}`
-  - [Замыкания](../JS/JS.md#closures)
-  - [Стрелочные функции](../JS/JS.md#arrowFunc)
-  - [Контекст выполнения](../JS/JS.md#this)
-  - [Ключевое слово this](../JS/JS.md#this)
-  - [Метод bind()](../JS/JS.md#bind)
-  - [Методы apply() и call()](../JS/JS.md#callApply)
-  -
-  - [Promise](../JS/JS.md#promise)
-  - [Async/Await](../JS/JS.md#promiseAsync)
-  - [Асинхронная итерация](../JS/JS.md#asyncIteratorsGenerators)
-  - [Цикл for-await-of](../JS/JS.md#cycleForAwaitOf)
-  - [Fetch](../JS/JS.md#fetch) - метод реализации асинхронных запросов в нативном JS. Предоставляется Fetch API
-  - [XMLHttpRequest](../JS/JS.md#xmlHttpRequest) - его современный аналог — fetch
-  -
-  - [Что является объектом в JS?](../JS/JS.mdwhatIsObject#)
-  - [Передача по значению / по ссылке](../JS/JS.md#bjectReference)
-  - [Методы объектов](../JS/JS.md#objectMethods)
-  - [Методы массивов](../JS/JS.md#arrayMethods)
-    - [learn.javascript.ru - Шпаргалка](https://learn.javascript.ru/array-methods#itogo)
-  - [Мутирующие методы массивов](../JS/JS.md#arrayMethods) - sort, reverse, splice
-  - [Копирование объектов](../JS/JS.md#objectCopy) - обычное, глубокое
-  -
-  - [Типы в JS (string, number, object...)](../JS/JS.md#types)
-  - [Приведение типов](../JS/JS.md#typesTransformation)
-  - [Различия Undefined и Null](../JS/JS.md#types)
-  - [Методы примитивов](../JS/JS.md#primitiveMethods)
-  - [Ver, Let, Const](../JS/JS.md#variables)
-  - [Оператор нулевого слияния (`??`)](../JS/JS.md#nullishСoalescing)
-  - [Логические операторы присваивания(`&&=`, `||=`, `??=`)](../JS/JS.md#logicalAssignment)
-  - [Опциональная цепочка `?.`](../JS/JS.md#optionalChaining)
-  - [Деструктурирующее присваивание](../JS/JS.md#destruct)
-  - [Остаточные параметры и оператор расширения / spread (...)](../JS/JS.md#spread)
-  - [Шаблонные строки (шаблонные литералы). Теговые шаблоны](../JS/JS.md#tmpLiterals)
-  - [Параметры функции по умолчанию](../JS/JS.md#funcDefParam)
-  -
-  - [Лексическое всплытие](../JS/JS.md#eventHoisting)
-  - [Рекурсия](../Programming/Programming.md#recursion)
-  - [Коллекции Map и Set, WeakMap и WeakSet](../JS/JS.md#collections)
-  - [Декораторы](../JS/JS.md#decorators)
-  - [Декоратор Debounce](../JS/JS.md#debounce)
-  - [Декоратор Throttling](../JS/JS.md#throttling)
-  - [Прототипы](../JS/JS.md#prototype)
-  - [Классы](../JS/JS.md#classes)
-    - [Базовые вопросы (learn.javascript.ru)](https://learn.javascript.ru/classes)
-    - [Ключевые слова extends и super (tproger)](https://tproger.ru/translations/javascript-cheatsheet/#extendsuperkwrds)
-    - [Публичные поля классов (MDN)](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/Public_class_fields#публичные_поля_экземпляра)
-    - ...
-  - [Аттрибуты свойств (Флаги, дескрипторы, методы доступа)](../JS/JS.md#propertiesAttributes)
-  - Как профилировать и отлаживать js (кроме console.log)
-  - Нативный JS: как обратиться к элементам DOM-страницы? А к конкретному? А по тегам?
-  -
-  - [Циклы](../JS/JS.md#cycles)
-  - [Перебор структур данных. Методы «keys», «values», «entries»](../JS/JS.md#keysValuesEntries)
-  - [Перебираемые/итерируемые объекты](../JS/JS.md#iterable)
-  - [Преобразование объектов в примитивы](../JS/JS.md#objectToPrimitive)
-  - [Symbol](../JS/JS.md#symbol)
-  - [Callback](../JS/JS.md#callback)
-  - [Cамовыполняющиеся функции. Модули](../JS/JS.md#modules)
-  - [Обработчики событий, events handlers](../JS/JS.md#eventsHandlers)
-  - [Web-workers](../JS/JS.md#webWorkers)
-  - [Proxy-объекты](../JS/JS.md#proxyObjects)
-  - [Функции-генераторы](../JS/JS.md#funcGenerators)
-  - [Итераторы](../JS/JS.md#iterators)
-  - [Хранение данных в браузере: Cookie, socalStorage, sessionStorage](../JS/JS.md#dataStorage)
-  - [Утечки памяти в JS](../JS/JS.md#memoryLeak)
-  - [Объект Error](../JS/JS.md#errorsObject)
-  - [Чистота кода](../JS/JS.md#codeCleaning)
-  - [Языки поверх JavaScript](../JS/JS.md#metaLanguages)
 
   <br></p>
   </details> 
