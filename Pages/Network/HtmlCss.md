@@ -82,9 +82,10 @@
 [//]: # (UiKit's)
 <details><summary><b>UiKit's</b></summary><p>
 
-- [MaterialUI](https://v2.tailwindcss.ru/docs/installation/)
-- [AntDesign](https://bootstrap5.ru/docs/getting-started/introduction)
-- 
+- [MaterialUI — англйиская документация (оф.)](https://mui.com/)
+- [MaterialUI — русская документация (неоф.)](https://mui-ru.artyom.me/material-ui/getting-started/overview/)
+- [Ant Design — англйиская документация (оф.)](https://ant.design/)
+
 <br></p>
 </details>
 
