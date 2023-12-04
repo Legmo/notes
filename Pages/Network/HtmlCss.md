@@ -160,10 +160,14 @@
   - [Дока — CSS-анимация](https://doka.guide/css/animation/)
   - [hcdev.ru— CSS-анимация](https://hcdev.ru/learn/css3/animations/)
 - JS-анимация
-  - [learn.javascript.ru  — JavaScript-анимации](https://learn.javascript.ru/js-animation)
-  - [MDN — Canvas. Простые анимации](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+  - [learn.javascript.ru — JavaScript-анимации](https://learn.javascript.ru/js-animation)
   - [Skillbox — Как создать анимацию в JavaScript за 30 минут](https://skillbox.ru/media/code/kak_sozdat_animatsiyu_v_javascript_za_30_minut/?ysclid=lpqkb0tgtt164953922)
   - [codelab.pro — Подробное руководство про анимацию в JavaScript](https://codelab.pro/podrobnoe-rukovodstvo-pro-animacziyu-v-javascript/?ysclid=lpqkb2t378674522801)
+  - 
+  - [metanit.com — Введение в WebGL](https://metanit.com/web/webgl/1.1.php)
+  - [webformyself.com — Использование GSAP 3 для веб-анимации](https://webformyself.com/ispolzovanie-gsap-3-dlya-veb-animacii)
+  - [threejs.org — Three JS. Официальная документация](https://threejs.org/manual/#ru/fundamentals)
+  - [MDN — Canvas. Простые анимации](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
 
 <br></p>
 </details>
