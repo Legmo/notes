@@ -21,29 +21,58 @@
 [//]: # (CSS)
 <details><summary><b>CSS</b></summary><p>
 
-- **Общее**
+[//]: # (Общее)
+- <details><summary><b>Общее</b></summary><p>
+
   - [hcdev-ru — Учим CSS3](https://hcdev-ru.pages.dev/learn/css3/)
   - [html5book.ru — CSS и CSS3](https://html5book.ru/css-css3/)
   - [MDN — Основы CSS](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics)
   - [itchief.ru — Подробное руководство по HTML и CSS](https://itchief.ru/html-and-css/)
   - [Дока — CSS](https://doka.guide/css/)
   - [MDN — Css селекторы ](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Selectors)
-  - [w3schools.com — CSS Tutorial (en)](https://www.w3schools.com/css/default.asp))
-- **Что нового?**
+  - [w3schools.com — CSS Tutorial (en)](https://www.w3schools.com/css/default.asp)
+
+  <br></p>
+  </details>
+
+[//]: # (Что нового?)
+- <details><summary><b>Что нового?</b></summary><p>
+
+- Примеры «новых» возможностей на осень 2023:
+
+- **Ссылки**
   - [Habr — Новинки CSS и UI: I/O 2023](https://habr.com/ru/articles/741914)
   - [Medium — Обзор функциональностей CSS, которые появились в 2022 году](https://medium.com/nuances-of-programming/%D0%BE%D0%B1%D0%B7%D0%BE%D1%80-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9-css-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BF%D0%BE%D1%8F%D0%B2%D0%B8%D0%BB%D0%B8%D1%81%D1%8C-%D0%B2-2022-%D0%B3%D0%BE%D0%B4%D1%83-9b754380e700)
   - [webdevblog.ru — CSS следующего поколения: @container](https://webdevblog.ru/css-sledujushhego-pokoleniya-container)
-- **Grid**
+
+  <br></p>
+  </details>
+
+[//]: # (Grid)
+- <details><summary><b>Grid</b></summary><p>
+  
   - [Habr — Полное визуальное руководство/шпаргалка по CSS Grid](https://habr.com/ru/company/macloud/blog/564182/)
   - [Дока — Гайд по Grid](https://doka.guide/css/grid-guide/)
   - [hcdev-ru — Grid](https://hcdev-ru.pages.dev/learn/grid/)
-- **Flexbox**
+
+  <br></p>
+  </details>
+
+[//]: # (Flexbox)
+- <details><summary><b>Flexbox</b></summary><p>
+  
   - [Habr — Полное руководство по Flexbox](https://habr.com/ru/articles/467049/)
   - [Дока — Гайд по Flexbox](https://doka.guide/css/flexbox-guide/?ysclid=lpqk079mmj22424324)
   - [hcdev-ru — Flexbox](https://hcdev-ru.pages.dev/learn/flex/)
   - [webref.ru — Визуальное руководство по свойствам flexbox](https://webref.ru/layout/visual-guide-flexbox/usage)
   - [webref.ru — Руководство по флексбоксам](https://webref.ru/layout/flexbox-tutorial)
-- **Отдельные темы**
+
+  <br></p>
+  </details>
+
+[//]: # (Отдельные темы)
+- <details><summary><b>Отдельные темы</b></summary><p>
+
   - [Дока — Контекст наложения](https://doka.guide/css/stacking-context/)
   - [Дока — Специфичность](https://doka.guide/css/specificity/)
   - [Дока — Принцип каскада](https://doka.guide/css/cascade/)
@@ -71,6 +100,9 @@
     - [designformasters.info — CSS Float в теории и на практике (WebArchive)](https://web.archive.org/web/20101127115023/http://designformasters.info/posts/css-float-theory-and-practice/)
     - [css-tricks.ru — Всё о свойстве floats](http://www.css-tricks.ru/articles/Details/AllAboutFloats)
     - [css-tricks.com — All about floats](https://css-tricks.com/all-about-floats/)
+
+  <br></p>
+  </details>
 
 <br></p>
 </details>
