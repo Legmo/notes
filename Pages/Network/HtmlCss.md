@@ -70,7 +70,37 @@
 <br></p>
 </details>
 
+[//]: # (CSS-фрэймворки)
+<details><summary><b>CSS-фрэймворки</b></summary><p>
+
+- [v2.tailwindcss.ru — Документация по Tailwind CSS](https://v2.tailwindcss.ru/docs/installation/)
+- [bootstrap5.ru — Документация по Bootstrap](https://bootstrap5.ru/docs/getting-started/introduction)
+- 
+<br></p>
+</details>
+
+[//]: # (UiKit's)
+<details><summary><b>UiKit's</b></summary><p>
+
+- [MaterialUI](https://v2.tailwindcss.ru/docs/installation/)
+- [AntDesign](https://bootstrap5.ru/docs/getting-started/introduction)
+- 
+<br></p>
+</details>
+
+
+[//]: # (Прочее)
+<details><summary><b>Прочее</b></summary><p>
+
 - [Legmo — Некоторые вопросы по вёрстке для собеседования frontend](https://github.com/Legmo/notes/blob/master/Pages/JobSearch/HtmlCssQuestions.md)
+- [BEM — официальная документация](https://ru.bem.info/methodology/quick-start/)
+- [MDN — CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
+- [SASS — Документация на русском](https://sass-scss.ru/?ysclid=lpqm4hl0m7451762557)
+- [LESS — Введение в LESS](https://tokmakov.msk.ru/articles/item/5)
+
+<br></p>
+</details>
+
 
 <br>
 <br>
