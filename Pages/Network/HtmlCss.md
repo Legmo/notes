@@ -35,21 +35,26 @@
   - [Habr — Полное визуальное руководство/шпаргалка по CSS Grid](https://habr.com/ru/company/macloud/blog/564182/)
   - [Дока — Гайд по Grid](https://doka.guide/css/grid-guide/)
   - [hcdev-ru — Grid](https://hcdev-ru.pages.dev/learn/grid/)
-- **Flex**
+- **Flexbox**
   - [Habr — Полное руководство по Flexbox](https://habr.com/ru/articles/467049/)
   - [Дока — Гайд по Flexbox](https://doka.guide/css/flexbox-guide/?ysclid=lpqk079mmj22424324)
   - [hcdev-ru — Flexbox](https://hcdev-ru.pages.dev/learn/flex/)
   - [webref.ru — Визуальное руководство по свойствам flexbox](https://webref.ru/layout/visual-guide-flexbox/usage)
   - [webref.ru — Руководство по флексбоксам](https://webref.ru/layout/flexbox-tutorial)
-  - **Отедльные темы**
+  - 
+  - **Отдельные темы**
     - [Дока — Контекст наложения](https://doka.guide/css/stacking-context/)
-    - **Float**
-      - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
-      - [Дока — Float](https://doka.guide/css/float)
-      - [learn.javascript.ru — float](https://learn.javascript.ru/float)
-      - [designformasters.info — CSS Float в теории и на практике (WebArchive)](https://web.archive.org/web/20101127115023/http://designformasters.info/posts/css-float-theory-and-practice/)
-      - [css-tricks.ru — Всё о свойстве floats](http://www.css-tricks.ru/articles/Details/AllAboutFloats)
-      - [css-tricks.com — All about floats](https://css-tricks.com/all-about-floats/)
+    - [Дока — Специфичность](https://doka.guide/css/specificity/)
+    - [Дока — Принцип каскада](https://doka.guide/css/cascade/)
+    - [Дока — Наследование](https://doka.guide/css/inheritance/)
+  - **Поток и свойство «float»**
+    - [Дока — Поток документа](https://doka.guide/html/flow)
+    - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
+    - [Дока — Float](https://doka.guide/css/float)
+    - [learn.javascript.ru — float](https://learn.javascript.ru/float)
+    - [designformasters.info — CSS Float в теории и на практике (WebArchive)](https://web.archive.org/web/20101127115023/http://designformasters.info/posts/css-float-theory-and-practice/)
+    - [css-tricks.ru — Всё о свойстве floats](http://www.css-tricks.ru/articles/Details/AllAboutFloats)
+    - [css-tricks.com — All about floats](https://css-tricks.com/all-about-floats/)
 
 <br></p>
 </details>
