@@ -41,13 +41,15 @@
   - [hcdev-ru — Flexbox](https://hcdev-ru.pages.dev/learn/flex/)
   - [webref.ru — Визуальное руководство по свойствам flexbox](https://webref.ru/layout/visual-guide-flexbox/usage)
   - [webref.ru — Руководство по флексбоксам](https://webref.ru/layout/flexbox-tutorial)
-- **Float**
-  - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
-  - [Дока — Float](https://doka.guide/css/float)
-  - [learn.javascript.ru — float](https://learn.javascript.ru/float)
-  - [designformasters.info — CSS Float в теории и на практике (WebArchive)](https://web.archive.org/web/20101127115023/http://designformasters.info/posts/css-float-theory-and-practice/)
-  - [css-tricks.ru — Всё о свойстве floats](http://www.css-tricks.ru/articles/Details/AllAboutFloats)
-  - [css-tricks.com — All about floats](https://css-tricks.com/all-about-floats/)
+  - **Отедльные темы**
+    - [Дока — Контекст наложения](https://doka.guide/css/stacking-context/)
+    - **Float**
+      - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
+      - [Дока — Float](https://doka.guide/css/float)
+      - [learn.javascript.ru — float](https://learn.javascript.ru/float)
+      - [designformasters.info — CSS Float в теории и на практике (WebArchive)](https://web.archive.org/web/20101127115023/http://designformasters.info/posts/css-float-theory-and-practice/)
+      - [css-tricks.ru — Всё о свойстве floats](http://www.css-tricks.ru/articles/Details/AllAboutFloats)
+      - [css-tricks.com — All about floats](https://css-tricks.com/all-about-floats/)
 
 <br></p>
 </details>
@@ -67,6 +69,8 @@
 
 <br></p>
 </details>
+
+- [Legmo — Некоторые вопросы по вёрстке для собеседования frontend](https://github.com/Legmo/notes/blob/master/Pages/JobSearch/HtmlCssQuestions.md)
 
 <br>
 <br>
