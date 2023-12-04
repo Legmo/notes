@@ -10,6 +10,9 @@
 - Flexbox
 - CSS-grid
 - Когда применять flexbox, а когда grid
+- Вендорные префиксы
+- Что такое «CSS-директива»
+- Колонки (columns)
 - BEM
 - Canvas
 - CSS-анимация
@@ -49,6 +52,7 @@
 - Перенос слов в CSS
 - Работа со шрифтами. Форматы шрифтов. Библиотеки шрифтовых пиктограмм
 - Графические форматы в вёрстке
+- CSS-свойтсво `image-set()` и html-тэг `<picture>`
 - Какие есть способы позиционировать элемент по центру вертикально/горизонтально (text-align: center, margi: auto, position:absolute + margin, line-height, разные вариации с vertical-align, grid, flexbox через ьфкпштЖ фгещ, flexbox через justify-content и align-items, margin + transform)
 - Какие есть способы скрыть элемент на странице? В чём их различия?
   - `display: none`, `visibility: hidden`, `opacity: 0`, `clip-path`, `transparent`, html-аттрибут `hidden`,  html-аттрибут `aria-hidden`, смещение текста `transition`, скрытие позиционированием (вынос за рамки видимости блока), выставление нулевого размера, JavaScript...
@@ -57,6 +61,7 @@
   - раскасить строки таблицы «зеброй»
   - скрывать кнопку на мелких экранах
   - расположить изображения так-то
+  - поставить многоточие в конце текста (свойство `text-overflow`, псевдоэлемент `:after`)
 - ...
 - 
 - Некоторые ответы можно найти здесь: [Legmo — HTML и CSS](https://github.com/Legmo/notes/blob/master/Pages/Network/HtmlCss.md)
