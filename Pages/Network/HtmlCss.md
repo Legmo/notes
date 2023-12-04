@@ -164,10 +164,11 @@
   - [Skillbox — Как создать анимацию в JavaScript за 30 минут](https://skillbox.ru/media/code/kak_sozdat_animatsiyu_v_javascript_za_30_minut/?ysclid=lpqkb0tgtt164953922)
   - [codelab.pro — Подробное руководство про анимацию в JavaScript](https://codelab.pro/podrobnoe-rukovodstvo-pro-animacziyu-v-javascript/?ysclid=lpqkb2t378674522801)
   - 
+  - [MDN — Canvas API](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API)
+  - [metanit.com — Canvas API](https://metanit.com/web/javascript/21.1.php)
   - [metanit.com — Введение в WebGL](https://metanit.com/web/webgl/1.1.php)
   - [webformyself.com — Использование GSAP 3 для веб-анимации](https://webformyself.com/ispolzovanie-gsap-3-dlya-veb-animacii)
   - [threejs.org — Three JS. Официальная документация](https://threejs.org/manual/#ru/fundamentals)
-  - [MDN — Canvas. Простые анимации](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
 
 <br></p>
 </details>
@@ -200,6 +201,7 @@
 - [MDN — CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
 - [SASS — Документация на русском](https://sass-scss.ru/?ysclid=lpqm4hl0m7451762557)
 - [LESS — Введение в LESS](https://tokmakov.msk.ru/articles/item/5)
+- [Habr — Краткий обзор отличий LESS от SASS (2011)](https://habr.com/ru/articles/130886/)
 - [html5book.ru — Веб-типографика](https://html5book.ru/web-topography/)
 
 <br></p>
