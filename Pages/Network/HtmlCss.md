@@ -38,19 +38,19 @@
 [//]: # (Что нового?)
 - <details><summary><b>Что нового?</b></summary><p>
 
-- Примеры «новых» возможностей на осень 2023:
-
-- **Ссылки**
-  - [Habr — Новинки CSS и UI: I/O 2023](https://habr.com/ru/articles/741914)
-  - [Medium — Обзор функциональностей CSS, которые появились в 2022 году](https://medium.com/nuances-of-programming/%D0%BE%D0%B1%D0%B7%D0%BE%D1%80-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9-css-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BF%D0%BE%D1%8F%D0%B2%D0%B8%D0%BB%D0%B8%D1%81%D1%8C-%D0%B2-2022-%D0%B3%D0%BE%D0%B4%D1%83-9b754380e700)
-  - [webdevblog.ru — CSS следующего поколения: @container](https://webdevblog.ru/css-sledujushhego-pokoleniya-container)
+  - Примеры «новых» возможностей на осень 2023:
+  
+  - **Ссылки**
+    - [Habr — Новинки CSS и UI: I/O 2023](https://habr.com/ru/articles/741914)
+    - [Medium — Обзор функциональностей CSS, которые появились в 2022 году](https://medium.com/nuances-of-programming/%D0%BE%D0%B1%D0%B7%D0%BE%D1%80-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9-css-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BF%D0%BE%D1%8F%D0%B2%D0%B8%D0%BB%D0%B8%D1%81%D1%8C-%D0%B2-2022-%D0%B3%D0%BE%D0%B4%D1%83-9b754380e700)
+    - [webdevblog.ru — CSS следующего поколения: @container](https://webdevblog.ru/css-sledujushhego-pokoleniya-container)
 
   <br></p>
   </details>
 
 [//]: # (Grid)
 - <details><summary><b>Grid</b></summary><p>
-  
+
   - [Habr — Полное визуальное руководство/шпаргалка по CSS Grid](https://habr.com/ru/company/macloud/blog/564182/)
   - [Дока — Гайд по Grid](https://doka.guide/css/grid-guide/)
   - [hcdev-ru — Grid](https://hcdev-ru.pages.dev/learn/grid/)
