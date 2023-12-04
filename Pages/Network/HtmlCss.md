@@ -47,6 +47,7 @@
     - [Дока — Специфичность](https://doka.guide/css/specificity/)
     - [Дока — Принцип каскада](https://doka.guide/css/cascade/)
     - [Дока — Наследование](https://doka.guide/css/inheritance/)
+    - [Дока — Блочная модель](https://doka.guide/css/box-model/)
   - **Поток и свойство «float»**
     - [Дока — Поток документа](https://doka.guide/html/flow)
     - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
