@@ -74,4 +74,4 @@ HTTP. Микросервисы будут отделены друг от дру�
 <br> 
 <br> 
 
-*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
+*[Legmo, 2019-2023](https://github.com/Legmo/notes/)*

@@ -9,6 +9,7 @@
 - [Качество кода - линтеры и т.д.](/Pages/JS/CodeQuality.md)
 
 ## Сеть ##
+- [HTML и CSS](/Pages/Network/HtmlCss.md)
 - [Работа браузера](/Pages/Network/Browser.md)
 - [Работа сети (HTTP, REST, AJAX, JSON, CORS...)](/Pages/Network/Network.md)
 - [Микросервисная архитектура](/Pages/Network/Microservices.md)
@@ -26,7 +27,6 @@
 - [Паттерны проектирования](/Pages/Programming/Pattern.md)
 
 ## Поиск работы ##
-
 - [Вопросы-ответы для собеседования frontend](/Pages/JobSearch/InterviewQuestions.md)
 - [Задачки для собеседования frontend](/Pages/JobSearch/InterviewTasks.md)
 - [Как проходить собеседования?](/Pages/JobSearch/Interview.md)
@@ -69,5 +69,5 @@ PS: конструктивная обратная связь приветств�
 <br>
 <br>
 
-*[Legmo, 2019-2022](https://github.com/Legmo/notes/)*
+*[Legmo, 2019-2023](https://github.com/Legmo/notes/)*
 
