@@ -52,6 +52,22 @@
 <br></p>
 </details>
 
+[//]: # (Анимация CSS/JS)
+<details><summary><b>Анимация CSS/JS</b></summary><p>
+
+- CSS-анимация
+  - [webref.ru — CSS-анимация для начинающих](https://webref.ru/layout/cssanimation101)
+  - [Дока — CSS-анимация](https://doka.guide/css/animation/)
+  - [hcdev.ru— CSS-анимация](https://hcdev.ru/learn/css3/animations/)
+- JS-анимация
+  - [learn.javascript.ru  — JavaScript-анимации](https://learn.javascript.ru/js-animation)
+  - [MDN — Canvas. Простые анимации](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+  - [Skillbox — Как создать анимацию в JavaScript за 30 минут](https://skillbox.ru/media/code/kak_sozdat_animatsiyu_v_javascript_za_30_minut/?ysclid=lpqkb0tgtt164953922)
+  - [codelab.pro — Подробное руководство про анимацию в JavaScript](https://codelab.pro/podrobnoe-rukovodstvo-pro-animacziyu-v-javascript/?ysclid=lpqkb2t378674522801)
+
+<br></p>
+</details>
+
 <br>
 <br>
 
