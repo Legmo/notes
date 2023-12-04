@@ -6,6 +6,7 @@
 <details><summary><b>HTML</b></summary><p>
 
 - [schoolsw3.com — HTML Самоучитель](https://www.schoolsw3.com/html/html_form_attributes.php)
+- [html5book.ru — HTML и HTML5](https://html5book.ru/html-html5/)
 - [Estelle Weyl, Rachel Andrew, Jhey Tompkins — Учим HTML5](https://hcdev-ru.pages.dev/learn/html5/)
 - [itchief.ru — Подробное руководство по HTML и CSS](https://itchief.ru/html-and-css/)
 - [MDN — Основы HTML](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics)
@@ -22,6 +23,7 @@
 
 - **Общее**
   - [hcdev-ru — Учим CSS3](https://hcdev-ru.pages.dev/learn/css3/)
+  - [html5book.ru — CSS и CSS3](https://html5book.ru/css-css3/)
   - [MDN — Основы CSS](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics)
   - [itchief.ru — Подробное руководство по HTML и CSS](https://itchief.ru/html-and-css/)
   - [Дока — CSS](https://doka.guide/css/)
@@ -48,6 +50,14 @@
     - [Дока — Принцип каскада](https://doka.guide/css/cascade/)
     - [Дока — Наследование](https://doka.guide/css/inheritance/)
     - [Дока — Блочная модель](https://doka.guide/css/box-model/)
+    - [Дока — Единицы измерения](https://doka.guide/css/numeric-types)
+    - [Дока — Свойство inset](https://doka.guide/css/inset/)
+    - [html5book.ru — CSS3-фильтры](https://html5book.ru/css3-filtry/)
+    - [html5book.ru — Объединение и смешивание слоев](https://html5book.ru/obedinenie-i-smeshivanije-sloev/)
+    - [Habr — Методы скрытия элементов веб-страниц (2020)](https://habr.com/ru/companies/ruvds/articles/485640/)
+    - [shpargalkablog.ru — Перенос слов в CSS](http://shpargalkablog.ru/2013/02/word-wrap.html)
+    - [Дока — Блок по центру экрана](https://doka.guide/recipes/center/?ysclid=lpqsutznis953455996)
+    - [learn.javascript.ru — Центрирование горизонтальное и вертикальное](https://learn.javascript.ru/css-center)
   - **Поток и свойство «float»**
     - [Дока — Поток документа](https://doka.guide/html/flow)
     - [habr — Подробно о свойстве float](https://habr.com/ru/articles/142486/)
@@ -104,6 +114,7 @@
 - [MDN — CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
 - [SASS — Документация на русском](https://sass-scss.ru/?ysclid=lpqm4hl0m7451762557)
 - [LESS — Введение в LESS](https://tokmakov.msk.ru/articles/item/5)
+- [html5book.ru — Веб-типографика](https://html5book.ru/web-topography/)
 
 <br></p>
 </details>
