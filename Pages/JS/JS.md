@@ -11754,6 +11754,21 @@
 
 </details>
 
+[//]: # (JS-анимация todo: дополн)
+<details><summary><b>JS-анимация **</b></summary><p>
+
+  - [learn.javascript.ru — JavaScript-анимации](https://learn.javascript.ru/js-animation)
+  - [Skillbox — Как создать анимацию в JavaScript за 30 минут](https://skillbox.ru/media/code/kak_sozdat_animatsiyu_v_javascript_za_30_minut/?ysclid=lpqkb0tgtt164953922)
+  - [codelab.pro — Подробное руководство про анимацию в JavaScript](https://codelab.pro/podrobnoe-rukovodstvo-pro-animacziyu-v-javascript/?ysclid=lpqkb2t378674522801)
+  -
+  - [MDN — Canvas API](https://developer.mozilla.org/ru/docs/Web/API/Canvas_API)
+  - [metanit.com — Canvas API](https://metanit.com/web/javascript/21.1.php)
+  - [metanit.com — Введение в WebGL](https://metanit.com/web/webgl/1.1.php)
+  - [webformyself.com — Использование GSAP 3 для веб-анимации](https://webformyself.com/ispolzovanie-gsap-3-dlya-veb-animacii)
+  - [threejs.org — Three JS. Официальная документация](https://threejs.org/manual/#ru/fundamentals)
+
+<br></p>
+
 [//]: # (Ошибки. Try..catch..finally)
 <details id="errorsObject"><summary><b>Ошибки. Try..catch..finally</b></summary><p>
 
