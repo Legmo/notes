@@ -185,6 +185,10 @@
 <br></p>
 </details>
 
+
+---
+
+
 [//]: # (Рекурсия)
 <details id="recursion"><summary><b>Рекурсия</b></summary><p>
 
