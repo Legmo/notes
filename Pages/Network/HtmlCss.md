@@ -2,6 +2,7 @@
 
 Ссылки на материалы для самоподготовки
 <br>
+<br>
 
 [//]: # (HTML)
 <details><summary><b>HTML</b></summary><p>
