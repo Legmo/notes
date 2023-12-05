@@ -1,6 +1,7 @@
 <h1>HTML и CSS</h1>
 
 Ссылки на материалы для самоподготовки
+<br>
 
 [//]: # (HTML)
 <details><summary><b>HTML</b></summary><p>
