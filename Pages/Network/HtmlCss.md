@@ -133,6 +133,7 @@
   - [Дока — Свойство inset](https://doka.guide/css/inset/)
   - [Дока — Свойство image-set()](https://doka.guide/css/image-set/)
   - [Дока — HTML-тэг `<picture>`](https://doka.guide/html/picture/)
+  - [MDN — CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
   - [html5book.ru — CSS3-фильтры](https://html5book.ru/css3-filtry/)
   - [html5book.ru — Объединение и смешивание слоев](https://html5book.ru/obedinenie-i-smeshivanije-sloev/)
   - [Habr — Методы скрытия элементов веб-страниц (2020)](https://habr.com/ru/companies/ruvds/articles/485640/)
@@ -200,7 +201,6 @@
 
 - [Legmo — Некоторые вопросы по вёрстке для собеседования frontend](https://github.com/Legmo/notes/blob/master/Pages/JobSearch/HtmlCssQuestions.md)
 - [BEM — официальная документация](https://ru.bem.info/methodology/quick-start/)
-- [MDN — CSS-переменные](https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties)
 - [SASS — Документация на русском](https://sass-scss.ru/?ysclid=lpqm4hl0m7451762557)
 - [LESS — Введение в LESS](https://tokmakov.msk.ru/articles/item/5)
 - [Habr — Краткий обзор отличий LESS от SASS (2011)](https://habr.com/ru/articles/130886/)
