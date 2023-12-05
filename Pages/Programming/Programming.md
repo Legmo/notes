@@ -285,9 +285,11 @@
 - <b>Throttling</b> — паттерн микрооптимизации кода. Тормозит - выполняй событие не чаще чем Х милисек.
 - <b>Шлюз</b> (gate) — механизм, который ожидает завершения двух и более параллельных задач. Неважно, в каком порядке они будут завершаться, важно только то, что все они должны быть завершены, чтобы шлюз открылся и пропустил поток команд. В Promise API этот паттерн называется all([ .. ]).
 
+<br>
+
 - **Ссылки**
-  [golvinov — Введение в программирование](https://golvinov.gitbook.io/js/)
-  [golvinov — Введение в JavaScript](https://golvinov.gitbook.io/js/vvedenie-v-javascript)
+  - [golvinov — Введение в программирование](https://golvinov.gitbook.io/js/)
+  - [golvinov — Введение в JavaScript](https://golvinov.gitbook.io/js/vvedenie-v-javascript)
 
 <br></p>
 </details>
