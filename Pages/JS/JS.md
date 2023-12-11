@@ -7544,7 +7544,6 @@
           // 1, Promise, 4, timeOut 1, timeOut 2 (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOut 3
         ```
     - Про порядок выполнения промисов
-      - Пример:
       - ```js
           p.then( function(){
               p.then( function(){
@@ -7557,7 +7556,7 @@
           } );
           // A B C
         ```
-      - Здесь "C" не может прервать и опередить "B" вследствие самого определения механизма работы обещаний.
+      - Здесь "C" не может прервать и опередить "B" вследствие самого определения механизма работы промисов.
 
   <br></p>
   </details>
@@ -9587,6 +9586,7 @@
     - [Medium - Полное понимание синхронного и асинхронного JavaScript с Async/Await](https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5-%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-javascript-%D1%81-async-await-ba5f47f4436)
     - [Ад обратных вызовов](http://callbackhell.ru/)
     - [WebDev - ES6 #13 Промисы (YouTube)](https://youtu.be/XD1MKx7eIuQ)
+    - [dSalieri - Аргумент resolve внутри Promise и Promise.resolve работают ли они одинаково? ](https://gist.github.com/dSalieri/eb698ab2409c3672b778c33e99455bbd)
     
     <br></p>
     </details>
