@@ -7330,6 +7330,7 @@
 <details id="engine"><summary><b>Движок. Окружение. Асинхронность *</b></summary><p>
 
 <p>  КРАТКО</p>
+
 [//]: # (Совсем кратко)
 - <details><summary><b>Совсем кратко</b></summary><p>
 
@@ -7543,6 +7544,22 @@
           // 1, Promise, 4, timeOut 1, timeOut 2 (Сработал resolve! Очередь макрозадач прервалась) then1, then2, timeOut 3
         ```
 
+    - Про порядок выполнения промисов
+    - Пример:
+    - ```js
+        p.then( function(){
+            p.then( function(){
+                console.log( "C" );
+            } );
+            console.log( "A" );
+        } );
+        p.then( function(){
+            console.log( "B" );
+        } );
+        // A B C
+      ```
+    - Здесь "C" не может прервать и опередить "B" вследствие самого определения механизма работы обещаний.
+
   <br></p>
   </details>
 
@@ -7599,7 +7616,7 @@
 
   <br></p>
   </details>
-ё
+
 
 ***
 
