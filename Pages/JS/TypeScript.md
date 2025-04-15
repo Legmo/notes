@@ -1111,6 +1111,26 @@
 - [Medium - TypeScript: основы](https://medium.com/nuances-of-programming/typescript-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-728e88888723)
 - [VC - Крупный гайд по TypeScript](https://vc.ru/dev/423888-krupnyy-gayd-po-typescript)
 - [Дока - Версии языка, транспайлеры, бандлеры](https://doka.guide/js/language-versions/)
+  <br></p>
+</details>
+
+
+---
+
+
+[//]: # (Ссылки англйиский )
+<details><summary><b>Ссылки английски</b></summary><p>
+
+- [Codecademy — Learn TypeScript](https://www.codecademy.com/learn/learn-typescript)
+- [Scrimba — Learn TypeScript](https://scrimba.com/learn-typescript-c03c)
+- [Codemastery — Interactive Handbook](https://codemastery.dev/ts/interactive-handbook/intro/0)
+- [Basarat.gitbook.io — TypeScript Deep Dive](https://basarat.gitbook.io/typescript)
+- [Egghead.io — Up and Running with TypeScript](https://egghead.io/courses/up-and-running-with-typescript)
+- [YouTube — No BS TS (44 episodes)](https://www.youtube.com/playlist?list=PLNqp92_EXZBJYFrpEzdO2EapvU0GOJ09n)
+- [YouTube — TypeScript Crash Course (51 min)](https://youtu.be/BCg4U1FzODs?si=xP3CoOvF289r7Iwo)
+- [YouTube — TypeScript Full Course for Beginners (8 hours)](https://youtu.be/gieEQFIfgYc?si=4NpYt2QjEyicXm6O)
+- [YouTube — Learn TypeScript. Full Course for Beginners (2 hour)](https://youtu.be/SpwzRDUQ1GI?si=gsbB-dkmo9-pTcbL)
+- [YouTube — TypeScript Course for Beginners. Learn TypeScript from Scratch (3 hours)](https://youtu.be/BwuLxPH8IDs?si=r5jSDPOMoWGxllwr)
 
   <br></p>
 </details>

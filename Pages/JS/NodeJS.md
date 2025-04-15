@@ -83,7 +83,10 @@
   - Менеджер версий Node.js, управляет версиями node.js и npm
   - Позволяет удобно переключаться между различными версиями Node.js, с его помощью можно, например, установить и попробовать новую версию Node.js, после чего, при необходимости, вернуться на старую. 
   - Полезно когда нужно испытать какой-нибудь код на старой версии Node.js.
+  - ВНИМАНИЕ! Для Windows используетя `nvm-windows` — это другая версия программы! У неё другие команды в командной строке!
   - С появлением NPX уже не так актуален
+  - 
+  - [Как установить и использовать NVM в Windows](https://blog.openreplay.com/ru/%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-nvm-windows/)
 
 <br></p>
 </details>
@@ -110,6 +113,7 @@
 - [Дока - Что такое Webpack](https://doka.guide/tools/webpack/#otslezhivanie-izmeneniy-v-proekte)
 - [Дока - Виды веб-приложений ](https://doka.guide/js/web-app-types/)
 - [Дока - Версии языка, транспайлеры, бандлеры](https://doka.guide/js/language-versions/)
+- [Как установить и использовать NVM в Windows](https://blog.openreplay.com/ru/%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-nvm-windows/)
 
 
   <br> 
