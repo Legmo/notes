@@ -204,6 +204,7 @@
 [//]: # (Ссылки)
 <details><summary><b>Ссылки</b></summary><p>  
 
+- [Левенчук А.И. — Образование для образованных](https://habr.com/ru/articles/520232/)
 - [Процесс изучения](https://rakh.im/learning/)
 - [A Nobel Prize Winner's 3-Step Plan to Mastering Any Subject (en)](https://www.inc.com/jessica-stillman/a-nobel-prize-winners-3-step-plan-to-master-any-subject.html)
 - [YouTue. Мокевнин - Как эффективно обучаться программированию](https://www.youtube.com/watch?v=AgR-vFn094Y)
