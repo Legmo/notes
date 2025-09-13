@@ -176,6 +176,7 @@
   
 
 **Telegram**
+- https://t.me/g_jobbot — телеграмм-бот от Яндекса
 - [netology.ru - 133 канала и чата в Telegram для программистов](https://netology.ru/blog/prg-tg)
 - [hh.ru - Development (Разработка)](https://t.me/s/hh_vacancy_development)
 - https://telegram.me/arbeit_bot
@@ -214,6 +215,7 @@
 
 
 **Разное**
+- https://career.habr.com/vacancies?type=suitable
 - [Яндекс.Толока - Неквалицированная удалёнка](https://toloka.yandex.ru/)
 - [Робот Вера - ИИ для посика сотрудников](https://robotvera.com/static/newrobot/index.html)
 - [Habr - посты по HR](https://habr.com/ru/search/?target_type=posts&order_by=relevance&q=hr&flow=)
