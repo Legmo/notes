@@ -46,6 +46,9 @@
 - [Про эмоциональное выгорание](/Pages/SelfOrgainzation/Burnout.md)
 - [Организация работы команды](/Pages/_Other/TeamManagement.md)
 
+## Блокчейн ##
+- [Про крипто-валюту](/Pages/Blockhain/Cripto.md)
+
 ## Прочее ##
 - [GIT](/Pages/_Other/GIT.md)
 - [UX/UI](/Pages/_Other/UxUi.md)
