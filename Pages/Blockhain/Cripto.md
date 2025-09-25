@@ -16,6 +16,7 @@
 **Ссылки**
 - [cryppi — Лучший гайд по крипте](https://teletype.in/@cryppi/howtocrypto)
 - [cryppi — Все способы заработка в крипте](https://teletype.in/@cryppi/howtoearn)
+- [Alex_210 — Трилемма блокчейна](https://habr.com/ru/articles/655633/)
   <br> 
   <br> 
 
