@@ -1,4 +1,4 @@
-# Про крипвтоалюту #
+# Про крипвтвоалюту #
  
 <details><summary><b>Термины </b></summary><p>
 
@@ -10,6 +10,8 @@
 - .
 - .
 
+<br></p>
+</details>
 
 **Ссылки**
 - [cryppi — Лучший гайд по крипте](https://teletype.in/@cryppi/howtocrypto)
